@@ -1,25 +1,34 @@
 {
   "expo": {
     "name": "Kizz",
-    "slug": "Kizz",
+    "slug": "kizz",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/kizz-logo-v2.png",
+    "userInterfaceStyle": "dark",
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.kizz.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#0A0E0D",
+        "foregroundImage": "./assets/kizz-logo-v2.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": []
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#0A0E0D",
+      "barStyle": "light-content"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-status-bar",
+      "expo-sharing"
+    ]
   }
 }

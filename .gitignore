@@ -5,6 +5,10 @@ node_modules/
 
 # Expo
 .expo/
+.expo-export-check/
+expo-phone*.log
+kizz-*.png
+.tmp-kizz-*.xml
 dist/
 web-build/
 expo-env.d.ts

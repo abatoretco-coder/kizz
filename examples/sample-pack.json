@@ -1,0 +1,42 @@
+{
+  "format": "kizz.quiz-pack",
+  "version": 1,
+  "id": "sample-philosophy-fr-v1",
+  "name": "Exemple philosophie",
+  "description": "Petite banque servant de modèle d'import Kizz.",
+  "language": "fr",
+  "topics": [
+    {
+      "id": "philosophy",
+      "title": "Philosophie",
+      "subtitle": "Concepts et penseurs",
+      "icon": "P",
+      "color": "#6D5A8D"
+    }
+  ],
+  "questions": [
+    {
+      "id": "phi-sample-001",
+      "topicId": "philosophy",
+      "difficulty": 1,
+      "prompt": "Qui a écrit Le Discours de la méthode ?",
+      "choices": ["René Descartes", "Blaise Pascal", "Voltaire", "Jean-Jacques Rousseau"],
+      "answerIndex": 0,
+      "explanation": "René Descartes publie le Discours de la méthode en 1637.",
+      "tags": ["philosophie", "france"],
+      "sourceLabel": "Exemple Kizz"
+    },
+    {
+      "id": "phi-sample-002",
+      "topicId": "philosophy",
+      "difficulty": 2,
+      "type": "free-text",
+      "prompt": "À quel philosophe associe-t-on l'allégorie de la caverne ?",
+      "acceptedAnswers": ["Platon", "Plato"],
+      "explanation": "Platon présente cette allégorie au livre VII de La République.",
+      "tags": ["antiquité", "connaissance"],
+      "sourceLabel": "Exemple Kizz",
+      "learnMoreUrl": "https://fr.wikipedia.org/wiki/Allégorie_de_la_caverne"
+    }
+  ]
+}
