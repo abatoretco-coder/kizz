@@ -6,9 +6,12 @@ node_modules/
 # Expo
 .expo/
 .expo-export-check/
+.expo-export-resume/
+.gradle-home/
 expo-phone*.log
 kizz-*.png
 .tmp-kizz-*.xml
+.tmp-*.xml
 dist/
 web-build/
 expo-env.d.ts
