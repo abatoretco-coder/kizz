@@ -6,7 +6,7 @@ L'interface utilise un thème sombre sobre et ouvre directement les quiz depuis 
 
 ## Fonctionnalités actuelles
 
-- 13 themes et 1847 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, reconnaissance visuelle, mini-cours langues, economie et 72 placements geographiques sur carte vectorielle embarquee;
+- 13 themes et 1847 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, reconnaissance visuelle, mini-cours langues, economie et 72 placements geographiques sur carte satellite offline avec frontieres embarquees;
 - accueil en trois panneaux: dashboard, quiz culture, parcours langues, avec rail pleine largeur synchronise au geste et aux onglets tactiles;
 - theme dedie Carte France: 51 questions, dont 30 placements tactiles et 9 numeros de departements en texte libre;
 - difficulté, tags, explication et provenance par question;
@@ -101,6 +101,6 @@ Créer rapidement un nouveau squelette de banque:
 npm run pack:new -- "Cinéma"
 ```
 
-La banque initiale est maintenue localement dans `src/content*.ts`. Les anciens scripts de generation OpenTrivia ont ete retires pour garder une base editoriale originale, verifiable et en francais.
+La banque initiale est maintenue localement dans `src/content*.ts`. Les anciens scripts de generation OpenTrivia ont ete retires pour garder une base editoriale originale, verifiable et en francais. Le fond de carte satellite est embarque dans `assets/maps/blue-marble-world.jpg`; les frontieres pays/departements restent en GeoJSON local.
 
 

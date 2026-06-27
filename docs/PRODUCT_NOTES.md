@@ -8,7 +8,7 @@
 - Drapeaux du monde: 585 questions, soit 195 pays en texte libre, 195 QCM drapeau -> pays et 195 QCM pays -> drapeau.
 - Nouveau theme Carte France: 51 questions, dont 30 placements tactiles sur carte.
 - Couverture geographie: pays/capitales du monde, drapeaux, regions francaises, departements et chefs-lieux.
-- Carte: frontieres de pays et departements francais embarquees en GeoJSON local, rendues en canvas Mercator avec pinch, double tap et pan inertiel, sans fetch, tuiles, Leaflet ni serveur externe.
+- Carte: fond satellite offline Blue Marble embarque, frontieres de pays et departements francais en GeoJSON local, rendu canvas Mercator avec pinch, double tap et pan inertiel, sans fetch, tuiles, Leaflet ni serveur externe.
 - Extension jeux TV originale: 36 questions inspirees des formats TTMC, Trivial, reponse rapide et Question pour un champion, sans copie de questions proprietaires.
 - Extension editoriale par grand theme: histoire, sciences, sport, arts, nature, technologie, cinema, architecture et economie.
 - Reconnaissance visuelle: tableaux, sculptures, monuments et architecture en medias embarques, avec questions image -> reponse et reponse -> choix d'image.

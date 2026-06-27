@@ -17,7 +17,7 @@
 - Import/export JSON transactionnel et import CSV assiste.
 - Repetition espacee locale et confiance facultative.
 - Banque riche: 1847 questions, 13 themes, 72+ cartes, drapeaux du monde, reconnaissance visuelle et couverture France/monde renforcee.
-- Carte tactile hors ligne via WebView/canvas Mercator, pinch, double tap, pan inertiel et frontieres embarquees.
+- Carte tactile hors ligne via WebView/canvas Mercator, fond satellite embarque, pinch, double tap, pan inertiel et frontieres embarquees.
 - Medias visuels embarques pour tableaux, sculptures, monuments et architecture, avec manifeste de provenance.
 - Accueil navigable au swipe et par onglets tactiles; retour Android intercepte dans l'app.
 - Garde-fou de test contre les textes mojibake visibles.
@@ -37,7 +37,7 @@
 3. Ajouter un editeur de packs plus confortable.
 4. Ajouter labels optionnels, silhouettes et niveaux de detail sans dependance reseau.
 5. Enrichir le bilan par theme; le bilan par type d'interaction est livre en premiere version.
-6. Surveiller la taille du bundle avec les GeoJSON et images embarques.
+6. Surveiller la taille du bundle avec les GeoJSON, images de questions et fond satellite embarques.
 
 ## Non-objectifs court terme
 

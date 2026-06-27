@@ -34,6 +34,7 @@ const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
   'eiffel-tower': require('./assets/questions/eiffel-tower.jpg'),
   'villa-savoye': require('./assets/questions/villa-savoye.jpg'),
 };
+const OFFLINE_SATELLITE_URI = Image.resolveAssetSource(require('./assets/maps/blue-marble-world.jpg')).uri;
 export default function App() {
   const [ready, setReady] = useState(false);
   const [screen, setScreen] = useState<Screen>('home');
@@ -990,6 +991,9 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { que
         source={{ html: satelliteMapHtml(question, guess, target, disabled) }}
         javaScriptEnabled
         domStorageEnabled
+        allowFileAccess
+        allowFileAccessFromFileURLs
+        allowUniversalAccessFromFileURLs={false}
         onMessage={handleMapMessage}
         scrollEnabled={false}
         nestedScrollEnabled={false}
@@ -1008,6 +1012,7 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
     : { minLon: -180, maxLon: 180, minLat: -58, maxLat: 83 };
   const boundaryGeoJson = isFranceMap ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson;
   const title = isFranceMap ? 'France' : 'Monde';
+  const satelliteUri = OFFLINE_SATELLITE_URI;
   return `<!doctype html>
 <html>
 <head>
@@ -1038,8 +1043,11 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
       var guess = ${JSON.stringify(guess)};
       var target = ${JSON.stringify(target ?? null)};
       var disabled = ${disabled ? 'true' : 'false'};
+      var satelliteUri = ${JSON.stringify(satelliteUri)};
       var canvas = document.getElementById('canvas');
       var ctx = canvas.getContext('2d', { alpha: false });
+      var satellite = new Image();
+      var satelliteReady = false;
       var dpr = Math.max(1, Math.min(3, window.devicePixelRatio || 1));
       var width = 0;
       var height = 0;
@@ -1060,6 +1068,8 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
       var inertiaFrame = 0;
       var pendingGuess = null;
       var rings = [];
+      satellite.onload = function () { satelliteReady = true; draw(); };
+      satellite.src = satelliteUri;
 
       function project(lon, lat) {
         var sin = Math.sin(Math.max(-85.05112878, Math.min(85.05112878, lat)) * Math.PI / 180);
@@ -1142,21 +1152,79 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
           ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(d.x, d.y); ctx.stroke();
         }
       }
+      function normalizedLon(lon) {
+        return ((lon + 180) % 360 + 360) % 360 - 180;
+      }
+      function satelliteX(lon) {
+        return ((normalizedLon(lon) + 180) / 360) * satellite.width;
+      }
+      function satelliteY(lat) {
+        return ((90 - Math.max(-90, Math.min(90, lat))) / 180) * satellite.height;
+      }
+      function drawSatelliteRow(y, rowHeight, leftLon, rightLon, lat) {
+        var sy = satelliteY(lat);
+        var sh = Math.max(1, satellite.height / 1024);
+        var span = rightLon - leftLon;
+        if (span >= 359) {
+          ctx.globalAlpha = 0.96;
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+          ctx.drawImage(satellite, 0, sy, satellite.width, sh, 0, y, width, rowHeight + 1);
+          ctx.globalAlpha = 1;
+          return;
+        }
+        var left = normalizedLon(leftLon);
+        var right = normalizedLon(rightLon);
+        ctx.globalAlpha = 0.96;
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        if (right >= left) {
+          ctx.drawImage(satellite, satelliteX(left), sy, Math.max(1, satelliteX(right) - satelliteX(left)), sh, 0, y, width, rowHeight + 1);
+        } else {
+          var firstWidth = (180 - left) / ((180 - left) + (right + 180)) * width;
+          ctx.drawImage(satellite, satelliteX(left), sy, Math.max(1, satellite.width - satelliteX(left)), sh, 0, y, firstWidth, rowHeight + 1);
+          ctx.drawImage(satellite, 0, sy, Math.max(1, satelliteX(right)), sh, firstWidth, y, width - firstWidth, rowHeight + 1);
+        }
+        ctx.globalAlpha = 1;
+      }
+      function drawSatelliteBase() {
+        var gradient = ctx.createLinearGradient(0, 0, 0, height);
+        gradient.addColorStop(0, '#0B1B24');
+        gradient.addColorStop(1, '#071116');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+        if (!satelliteReady) return;
+        var rowHeight = zoom > 12 ? 1 : 2;
+        for (var y = 0; y < height; y += rowHeight) {
+          var leftWorld = screenToWorld(0, y + rowHeight / 2);
+          var rightWorld = screenToWorld(width, y + rowHeight / 2);
+          var leftGeo = unproject(leftWorld.x, leftWorld.y);
+          var rightGeo = unproject(rightWorld.x, rightWorld.y);
+          drawSatelliteRow(y, rowHeight, leftGeo.lon, rightGeo.lon, leftGeo.lat);
+        }
+        ctx.fillStyle = 'rgba(0,0,0,0.14)';
+        ctx.fillRect(0, 0, width, height);
+      }
       function drawBoundaries() {
-        ctx.fillStyle = 'rgba(56, 91, 75, 0.45)';
-        ctx.strokeStyle = 'rgba(232, 241, 237, 0.82)';
-        ctx.lineWidth = Math.max(0.55, Math.min(${isFranceMap ? '1.2' : '0.9'}, 1.4 / Math.sqrt(zoom)));
-        rings.forEach(function (ring) {
-          ctx.beginPath();
-          ring.forEach(function (point, index) {
-            var s = worldToScreen(point);
-            if (index === 0) ctx.moveTo(s.x, s.y);
-            else ctx.lineTo(s.x, s.y);
+        function stroke(style, widthValue) {
+          ctx.strokeStyle = style;
+          ctx.lineWidth = widthValue;
+          ctx.lineJoin = 'round';
+          ctx.lineCap = 'round';
+          rings.forEach(function (ring) {
+            ctx.beginPath();
+            ring.forEach(function (point, index) {
+              var s = worldToScreen(point);
+              if (index === 0) ctx.moveTo(s.x, s.y);
+              else ctx.lineTo(s.x, s.y);
+            });
+            ctx.closePath();
+            ctx.stroke();
           });
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
-        });
+        }
+        var baseWidth = Math.max(0.65, Math.min(${isFranceMap ? '1.55' : '1.15'}, 1.65 / Math.sqrt(zoom)));
+        stroke('rgba(3,8,7,0.88)', baseWidth + 1.8);
+        stroke(${isFranceMap ? "'rgba(255,246,210,0.92)'" : "'rgba(228,241,236,0.88)'"}, baseWidth);
       }
       function drawMarker(point, color, label) {
         var s = worldToScreen(project(point.lon, point.lat));
@@ -1195,11 +1263,7 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
       function draw() {
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.clearRect(0, 0, width, height);
-        var gradient = ctx.createLinearGradient(0, 0, 0, height);
-        gradient.addColorStop(0, '#112A34');
-        gradient.addColorStop(1, '#0B1519');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, width, height);
+        drawSatelliteBase();
         drawGrid();
         drawBoundaries();
         drawAnswers();
