@@ -6,7 +6,7 @@ L'interface utilise un thÃ¨me sombre sobre et ouvre directement les quiz depui
 
 ## FonctionnalitÃ©s actuelles
 
-- 13 themes et 1829 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, mini-cours langues, economie et 72 placements geographiques sur vraie carte satellite;
+- 13 themes et 1829 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, mini-cours langues, economie et 72 placements geographiques sur carte vectorielle embarquee;
 - accueil en trois panneaux: dashboard, quiz culture, parcours langues, avec rail pleine largeur synchronise au geste;
 - theme dedie Carte France: 51 questions, dont 30 placements tactiles et 9 numeros de departements en texte libre;
 - difficultÃ©, tags, explication et provenance par question;
@@ -75,7 +75,7 @@ Ajouter des objets conformes Ã  `QuestionSeed` dans `src/content.ts`, avec un 
 
 L'Ã©cran **Banques** importe et exporte le format `kizz.quiz-pack` version 1. Un export de l'application constitue aussi un exemple complet du schÃ©ma. Les imports sont validÃ©s avant Ã©criture, limitÃ©s Ã  50 Mo / 100 000 questions et appliquÃ©s dans une transaction SQLite. Un identifiant de question dÃ©jÃ  prÃ©sent est conservÃ© et signalÃ© comme doublon.
 
-Le fichier `examples/sample-pack.json` est un modÃ¨le prÃªt Ã  importer. Les thÃ¨mes ajoutÃ©s apparaissent sur l'accueil dÃ¨s la fermeture de l'Ã©cran Banques. La banque de quiz fonctionne hors ligne; la carte satellite interactive charge ses tuiles depuis le rÃ©seau.
+Le fichier `examples/sample-pack.json` est un modÃ¨le prÃªt Ã  importer. Les thÃ¨mes ajoutÃ©s apparaissent sur l'accueil dÃ¨s la fermeture de l'Ã©cran Banques. La banque de quiz et les cartes de placement fonctionnent hors ligne avec des frontieres embarquees.
 
 ### Import CSV
 

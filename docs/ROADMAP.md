@@ -10,21 +10,21 @@ Le plan operationnel des prochains lots est maintenu dans `docs/IMPLEMENTATION_P
 
 Priorites actuelles:
 
-1. Stabiliser l'APK sur telephone reel, surtout la carte satellite tactile et les parcours critiques.
+1. Stabiliser l'APK sur telephone reel, surtout la carte vectorielle tactile hors ligne et les parcours critiques.
 2. Refactorer l'UI sans changer le produit: theme couleur centralise, extraction des ecrans de `App.tsx` a faire.
 3. Ajouter une progression plus lisible: matrice theme x difficulte livree et cliquable, historique local livre, sous-themes livres, recommandations locales a enrichir.
 4. Renforcer la qualite editoriale: audit automatique, signalement local, import CSV assiste, astronomie et drapeaux livres; editeur de packs a faire.
 5. Preparer les interactions multimodales: image zoomable, point chaud, ordre chronologique, appariement et cartes offline.
 
-## Mise a jour livree - Carte satellite
+## Mise a jour livree - Carte embarquee
 
-- premier moteur `map-point` livre: placement tactile sur une vraie carte satellite avec zoom et deplacement;
+- premier moteur `map-point` livre: placement tactile sur une carte vectorielle embarquee avec zoom et deplacement;
 - calcul de distance geodesique en kilometres et credit total/partiel selon une tolerance par question;
 - 30 nouvelles questions de geographie, reparties en 10 faciles, 10 intermediaires et 10 difficiles;
 - schema v2 amorce avec `interaction_type`, `prompt_blocks`, `answer_schema` et `geo_target`;
 - import/export JSON compatible avec les questions de placement geographique;
 - correction carte enrichie: direction cardinale vers la cible et zone de tolerance visible;
-- prochaine etape carte offline: packs de tuiles satellite par zone, avec avertissement de taille APK/stockage;
+- frontieres des pays du monde et des departements francais embarquees en GeoJSON local;
 - prochaines etapes carte: silhouettes de pays, frontieres voisines, monuments, regions et correction visuelle plus fine.
 
 ## MVP actuel
@@ -236,7 +236,7 @@ Le schéma `QuestionSeed` doit évoluer vers des blocs d'interaction explicites 
 
 1. **Partiel** : composant image et réponses associées livrés ; schéma multimodal v2 à faire.
 2. **Partiel** : mini-pack Art local livré ; objectif de 30 médias encore à faire.
-3. **Livré** : vraie carte satellite tactile et 30 questions de placement géographique. **À faire** : packs de tuiles offline.
+3. **Livré** : carte vectorielle tactile hors ligne et 30 questions de placement géographique. **À faire** : labels optionnels et silhouettes.
 4. **Livré** : score partiel et réponses œuvre + artiste.
 5. **Partiel** : banque Architecture livrée ; interaction point chaud à faire.
 6. **Partiel** : banque Cinéma textuelle livrée ; scènes et indices progressifs à faire.

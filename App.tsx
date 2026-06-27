@@ -12,6 +12,7 @@ import { gradeMapPoint, gradeMultiText, isFreeTextCorrect } from './src/quizEngi
 import { palette } from './src/theme';
 import { summarizeByInteraction } from './src/sessionSummary';
 import { subthemesForTopics } from './src/subthemes';
+import { franceDepartmentBoundaryGeoJson, worldBoundaryGeoJson } from './src/mapBoundaries';
 
 type Screen = 'home' | 'configure' | 'languages' | 'quiz' | 'result' | 'library' | 'search' | 'admin';
 const emptyStats: DashboardStats = { answered: 0, correct: 0, sessions: 0, streakDays: 0, dueReview: 0 };
@@ -931,114 +932,184 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { que
         overScrollMode="never"
         style={styles.satelliteMap}
       />
-      <Text style={styles.mapHint}>{disabled ? 'Satellite - point vert: ta reponse - cible rouge' : 'Vraie carte satellite: pince pour zoomer, glisse pour naviguer, touche pour placer ton point'}</Text>
+      <Text style={styles.mapHint}>{disabled ? 'Carte embarquee - point vert: ta reponse - cible rouge' : 'Carte embarquee: zoome avec +/-, glisse pour naviguer, touche pour placer ton point'}</Text>
     </View>
   );
 }
 
 function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target: (GeoPoint & { toleranceKm?: number }) | undefined, disabled: boolean) {
   const isFranceMap = question.topicId === 'france-map' || question.tags.includes('carte-france') || question.tags.includes('carte-france-dediee');
-  const defaultCenter = isFranceMap ? { lat: 46.75, lon: 2.35 } : { lat: 20, lon: 0 };
-  const defaultZoom = isFranceMap ? 5 : 2;
-  const answerZoom = isFranceMap ? 7 : 5;
-  const center = guess ?? target ?? defaultCenter;
+  const bounds = isFranceMap
+    ? { minLon: -6.2, maxLon: 10.2, minLat: 41.0, maxLat: 51.4, width: 1000, height: 780 }
+    : { minLon: -180, maxLon: 180, minLat: -60, maxLat: 85, width: 1200, height: 640 };
+  const boundaryGeoJson = isFranceMap ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson;
+  const title = isFranceMap ? 'Carte France - departements' : 'Carte monde - frontieres pays';
   return `<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=no" />
   <style>
     html, body, #map { height: 100%; width: 100%; margin: 0; background: #0F1D23; overflow: hidden; touch-action: none; }
-    .leaflet-container { background: #0F1D23; touch-action: none; }
-    .leaflet-control-zoom a { background: rgba(10,14,13,0.88); color: #f3f7f5; border-color: rgba(255,255,255,0.18); }
-    .leaflet-control-attribution { background: rgba(10,14,13,0.72); color: #9fb0a8; font: 10px system-ui; }
-    .leaflet-control-attribution a { color: #8edcb6; }
-    .satellite-badge { position: absolute; z-index: 500; top: 10px; left: 10px; padding: 6px 9px; border-radius: 999px; background: rgba(7,17,12,0.82); color: #dce6e1; font: 700 11px system-ui; pointer-events: none; }
-    .leaflet-overlay-pane path { vector-effect: non-scaling-stroke; }
-    .fallback { color: #dce6e1; font: 13px system-ui; padding: 18px; line-height: 1.45; }
+    #map { position: relative; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+    svg { width: 100%; height: 100%; display: block; background: #102128; touch-action: none; }
+    .badge { position: absolute; z-index: 4; top: 10px; left: 10px; padding: 6px 9px; border-radius: 999px; background: rgba(7,17,12,0.84); color: #dce6e1; font: 800 11px system-ui; pointer-events: none; }
+    .controls { position: absolute; z-index: 4; right: 10px; top: 10px; display: grid; gap: 8px; }
+    .controls button { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; background: rgba(10,14,13,0.9); color: #f3f7f5; font: 900 20px system-ui; }
+    .land { fill: rgba(42, 72, 60, 0.34); stroke: rgba(233, 241, 237, 0.72); stroke-width: ${isFranceMap ? '1.15' : '0.72'}; vector-effect: non-scaling-stroke; }
+    .graticule { stroke: rgba(255,255,255,0.08); stroke-width: 1; vector-effect: non-scaling-stroke; }
+    .target-zone { fill: rgba(228,125,112,0.16); stroke: #E47D70; stroke-width: 2; vector-effect: non-scaling-stroke; }
+    .marker-ring { stroke: #07110C; stroke-width: 3; vector-effect: non-scaling-stroke; }
+    .label { fill: #dce6e1; font: 700 12px system-ui; paint-order: stroke; stroke: rgba(7,17,12,0.9); stroke-width: 4; stroke-linejoin: round; }
   </style>
 </head>
 <body>
-  <div id="map"><div class="fallback">Chargement de la vraie carte satellite...</div><div class="satellite-badge">Satellite - navigable</div></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <div id="map">
+    <div class="badge">${title}</div>
+    <div class="controls"><button id="zoom-in" type="button">+</button><button id="zoom-out" type="button">-</button></div>
+    <svg id="svg" viewBox="0 0 ${bounds.width} ${bounds.height}" preserveAspectRatio="xMidYMid meet" aria-label="${title}">
+      <rect x="0" y="0" width="${bounds.width}" height="${bounds.height}" fill="#102128" />
+      <g id="viewport"><g id="grid"></g><g id="boundaries"></g><g id="answers"></g></g>
+    </svg>
+  </div>
   <script>
     (function () {
+      var bounds = ${JSON.stringify(bounds)};
+      var boundaryGeoJson = ${JSON.stringify(boundaryGeoJson)};
       var guess = ${JSON.stringify(guess)};
       var target = ${JSON.stringify(target ?? null)};
-      var map = L.map('map', {
-        zoomControl: true,
-        worldCopyJump: true,
-        dragging: true,
-        touchZoom: true,
-        doubleClickZoom: true,
-        scrollWheelZoom: true,
-        boxZoom: false,
-        keyboard: false,
-        tap: true
-      }).setView([${center.lat}, ${center.lon}], ${guess || target ? answerZoom : defaultZoom});
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19,
-        minZoom: ${isFranceMap ? 4 : 2},
-        crossOrigin: true,
-        attribution: 'Tiles Esri, Maxar, Earthstar Geographics'
-      }).addTo(map);
-      ${isFranceMap ? "map.setMaxBounds([[39.5, -8.5], [52.8, 11.5]]);" : ''}
-      var boundaryUrl = ${JSON.stringify(isFranceMap
-        ? 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements.geojson'
-        : 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')};
-      fetch(boundaryUrl)
-        .then(function (response) { return response.ok ? response.json() : null; })
-        .then(function (geojson) {
-          if (!geojson) return;
-          L.geoJSON(geojson, {
-            interactive: false,
-            style: {
-              color: ${isFranceMap ? "'#F5F7F5'" : "'#E9F1ED'"},
-              weight: ${isFranceMap ? '1.2' : '0.85'},
-              opacity: ${isFranceMap ? '0.78' : '0.64'},
-              fillOpacity: 0
-            }
-          }).addTo(map);
-        })
-        .catch(function () {});
-      function addMarker(point, color, label) {
-        L.circleMarker([point.lat, point.lon], {
-          radius: 9, color: '#07110C', weight: 2, fillColor: color, fillOpacity: 1
-        }).addTo(map).bindTooltip(label, { direction: 'top' });
+      var disabled = ${disabled ? 'true' : 'false'};
+      var baseWidth = bounds.width;
+      var baseHeight = bounds.height;
+      var svg = document.getElementById('svg');
+      var viewport = document.getElementById('viewport');
+      var grid = document.getElementById('grid');
+      var boundaries = document.getElementById('boundaries');
+      var answers = document.getElementById('answers');
+      var scale = 1;
+      var tx = 0;
+      var ty = 0;
+      var pointer = null;
+      var moved = false;
+      var pendingGuess = null;
+
+      function project(lon, lat) {
+        return { x: ((lon - bounds.minLon) / (bounds.maxLon - bounds.minLon)) * baseWidth, y: ((bounds.maxLat - lat) / (bounds.maxLat - bounds.minLat)) * baseHeight };
       }
-      if (guess) addMarker(guess, '#68D7A2', 'Ta reponse');
-      if (target) {
-        if (target.toleranceKm) {
-          L.circle([target.lat, target.lon], {
-            radius: target.toleranceKm * 1000,
-            color: '#E47D70',
-            weight: 2,
-            fillColor: '#E47D70',
-            fillOpacity: 0.18
-          }).addTo(map);
+      function unproject(x, y) {
+        return { lon: bounds.minLon + (x / baseWidth) * (bounds.maxLon - bounds.minLon), lat: bounds.maxLat - (y / baseHeight) * (bounds.maxLat - bounds.minLat) };
+      }
+      function screenToMap(event) {
+        var rect = svg.getBoundingClientRect();
+        var x = ((event.clientX - rect.left) / rect.width) * baseWidth;
+        var y = ((event.clientY - rect.top) / rect.height) * baseHeight;
+        return { x: (x - tx) / scale, y: (y - ty) / scale };
+      }
+      function applyTransform() { viewport.setAttribute('transform', 'translate(' + tx + ' ' + ty + ') scale(' + scale + ')'); }
+      function setScale(nextScale) {
+        var cx = baseWidth / 2;
+        var cy = baseHeight / 2;
+        var old = scale;
+        scale = Math.max(1, Math.min(12, nextScale));
+        tx = cx - ((cx - tx) / old) * scale;
+        ty = cy - ((cy - ty) / old) * scale;
+        applyTransform();
+      }
+      function svgNode(name, attributes) {
+        var node = document.createElementNS('http://www.w3.org/2000/svg', name);
+        Object.keys(attributes).forEach(function (key) { node.setAttribute(key, String(attributes[key])); });
+        return node;
+      }
+      function pathForRing(ring) {
+        var output = '';
+        for (var index = 0; index < ring.length; index += 1) {
+          var point = project(ring[index][0], ring[index][1]);
+          output += (index === 0 ? 'M' : 'L') + point.x.toFixed(2) + ' ' + point.y.toFixed(2);
         }
-        addMarker(target, '#E47D70', target.label || 'Cible');
+        return output + 'Z';
       }
-      if (guess && target) {
-        map.fitBounds([[guess.lat, guess.lon], [target.lat, target.lon]], { padding: [38, 38], maxZoom: ${isFranceMap ? 9 : 7} });
+      function pathForGeometry(geometry) {
+        if (!geometry) return '';
+        if (geometry.type === 'Polygon') return geometry.coordinates.map(pathForRing).join(' ');
+        if (geometry.type === 'MultiPolygon') return geometry.coordinates.map(function (polygon) { return polygon.map(pathForRing).join(' '); }).join(' ');
+        return '';
       }
-      if (!${disabled ? 'true' : 'false'}) {
-        var marker;
-        map.on('click', function (event) {
-          if (marker) map.removeLayer(marker);
-          marker = L.circleMarker([event.latlng.lat, event.latlng.lng], {
-            radius: 9, color: '#07110C', weight: 2, fillColor: '#68D7A2', fillOpacity: 1
-          }).addTo(map).bindTooltip('Ta reponse', { direction: 'top' });
-          window.ReactNativeWebView.postMessage(JSON.stringify({ lat: event.latlng.lat, lon: event.latlng.lng }));
+      function drawGrid() {
+        var lonStep = ${isFranceMap ? '2' : '30'};
+        var latStep = ${isFranceMap ? '2' : '20'};
+        for (var lon = Math.ceil(bounds.minLon / lonStep) * lonStep; lon <= bounds.maxLon; lon += lonStep) {
+          var a = project(lon, bounds.minLat);
+          var b = project(lon, bounds.maxLat);
+          grid.appendChild(svgNode('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, class: 'graticule' }));
+        }
+        for (var lat = Math.ceil(bounds.minLat / latStep) * latStep; lat <= bounds.maxLat; lat += latStep) {
+          var c = project(bounds.minLon, lat);
+          var d = project(bounds.maxLon, lat);
+          grid.appendChild(svgNode('line', { x1: c.x, y1: c.y, x2: d.x, y2: d.y, class: 'graticule' }));
+        }
+      }
+      function drawBoundaries() {
+        boundaryGeoJson.features.forEach(function (feature) {
+          var path = pathForGeometry(feature.geometry);
+          if (path) boundaries.appendChild(svgNode('path', { d: path, class: 'land' }));
         });
       }
+      function drawMarker(point, color, label) {
+        var projected = project(point.lon, point.lat);
+        answers.appendChild(svgNode('circle', { cx: projected.x, cy: projected.y, r: 8, fill: color, class: 'marker-ring' }));
+        answers.appendChild(svgNode('text', { x: projected.x + 11, y: projected.y - 10, class: 'label' })).textContent = label;
+      }
+      function drawAnswers() {
+        answers.innerHTML = '';
+        if (pendingGuess) drawMarker(pendingGuess, '#68D7A2', 'Ta reponse');
+        else if (guess) drawMarker(guess, '#68D7A2', 'Ta reponse');
+        if (target) {
+          if (target.toleranceKm) {
+            var projected = project(target.lon, target.lat);
+            var lonRadius = target.toleranceKm / 111;
+            var radius = (lonRadius / (bounds.maxLon - bounds.minLon)) * baseWidth;
+            answers.appendChild(svgNode('circle', { cx: projected.x, cy: projected.y, r: Math.max(6, radius), class: 'target-zone' }));
+          }
+          drawMarker(target, '#E47D70', target.label || 'Cible');
+        }
+      }
+      document.getElementById('zoom-in').addEventListener('click', function () { setScale(scale * 1.45); });
+      document.getElementById('zoom-out').addEventListener('click', function () { setScale(scale / 1.45); });
+      svg.addEventListener('pointerdown', function (event) {
+        pointer = { id: event.pointerId, x: event.clientX, y: event.clientY, tx: tx, ty: ty };
+        moved = false;
+        svg.setPointerCapture(event.pointerId);
+      });
+      svg.addEventListener('pointermove', function (event) {
+        if (!pointer || pointer.id !== event.pointerId) return;
+        var dx = event.clientX - pointer.x;
+        var dy = event.clientY - pointer.y;
+        if (Math.abs(dx) + Math.abs(dy) > 6) moved = true;
+        tx = pointer.tx + dx;
+        ty = pointer.ty + dy;
+        applyTransform();
+      });
+      svg.addEventListener('pointerup', function (event) {
+        if (!pointer || pointer.id !== event.pointerId) return;
+        svg.releasePointerCapture(event.pointerId);
+        if (!moved && !disabled) {
+          var mapPoint = screenToMap(event);
+          var geo = unproject(mapPoint.x, mapPoint.y);
+          pendingGuess = { lat: geo.lat, lon: geo.lon };
+          drawAnswers();
+          window.ReactNativeWebView.postMessage(JSON.stringify(pendingGuess));
+        }
+        pointer = null;
+      });
+      drawGrid();
+      drawBoundaries();
+      drawAnswers();
+      applyTransform();
     })();
   </script>
 </body>
 </html>`;
 }
-
 function Result({ topic, questions, answers, onAgain, onHome }: { topic: Topic; questions: QuizQuestion[]; answers: SessionAnswer[]; onAgain: () => void; onHome: () => void }) {
   const score = answers.reduce((total, answer) => total + (answer.credit ?? (answer.correct ? 1 : 0)), 0);
   const percent = Math.round((score / answers.length) * 100);

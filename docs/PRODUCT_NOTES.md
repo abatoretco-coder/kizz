@@ -8,7 +8,7 @@
 - Drapeaux du monde: 585 questions, soit 195 pays en texte libre, 195 QCM drapeau -> pays et 195 QCM pays -> drapeau.
 - Nouveau theme Carte France: 51 questions, dont 30 placements tactiles sur carte.
 - Couverture geographie: pays/capitales du monde, drapeaux, regions francaises, departements et chefs-lieux.
-- Carte: frontieres de pays et departements francais ajoutees en surcouche GeoJSON non bloquante.
+- Carte: frontieres de pays et departements francais embarquees en GeoJSON local, sans fetch, tuiles, Leaflet ni serveur externe.
 - Extension jeux TV originale: 36 questions inspirees des formats TTMC, Trivial, reponse rapide et Question pour un champion, sans copie de questions proprietaires.
 - Extension editoriale par grand theme: histoire, sciences, sport, arts, nature, technologie, cinema, architecture et economie.
 - Signalement local d'une question apres correction: ambigue, trop facile, trop dure ou a reformuler.
@@ -33,7 +33,7 @@
 - Les recommandations privilegient la reprise, la revision espacee et les sessions finies.
 - Les sessions gardent une promesse cognitive claire: choisir, repondre, comprendre, sortir.
 - Les phases suivantes sont pilotees par `docs/IMPLEMENTATION_PHASES.md`.
-- La carte satellite est un mode d'apprentissage spatial; tant que les tuiles offline ne sont pas livrees, elle doit annoncer clairement son besoin reseau.
+- La carte est un mode d'apprentissage spatial hors ligne; les frontieres sont embarquees dans l'application.
 
 ## Apports produit a fort impact
 
@@ -45,4 +45,4 @@
 6. Mode salon: quiz local a plusieurs joueurs sur le meme telephone, style plateau TV, sans compte.
 7. Reglage cognitif: option "moins de hasard" pour prioriser la repetition espacee, option "surprise" pour varier.
 8. Assistant d'import: analyser une banque JSON/CSV et proposer automatiquement theme, difficulte et tags.
-9. Cartes offline: embarquer des GeoJSON simplifies et des tuiles par zone pour supprimer la dependance reseau des cartes.
+9. Cartes avancees: ajouter silhouettes, zoom regional guide et labels optionnels sans introduire de dependance reseau.

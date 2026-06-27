@@ -118,9 +118,9 @@ Livrables:
 - notes de version locales;
 - sauvegarde/export des banques et de la progression;
 - documentation d'installation USB;
-- option future: packs de tuiles carte offline, avec avertissement de taille.
+- option future: labels regionaux et silhouettes de pays/departements embarques.
 
 Definition of done:
 - APK installe sans Metro;
 - les quiz fonctionnent hors ligne;
-- la carte satellite indique clairement qu'elle a besoin du reseau tant que les tuiles offline ne sont pas livrees.
+- les cartes de placement fonctionnent sans reseau avec frontieres embarquees.
