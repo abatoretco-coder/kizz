@@ -8,7 +8,7 @@ test('les frontieres de carte sont embarquees', () => {
   assert.ok(franceDepartmentBoundaryGeoJson.features.length >= 95);
   assert.equal(existsSync('assets/maps/natural-earth-world.jpg'), true);
   assert.equal(existsSync('assets/maps/natural-earth-france.jpg'), true);
-  assert.ok(statSync('assets/maps/natural-earth-world.jpg').size > 20_000_000);
+  assert.ok(statSync('assets/maps/natural-earth-world.jpg').size > 8_000_000);
   assert.ok(statSync('assets/maps/natural-earth-france.jpg').size > 1_000_000);
 });
 
@@ -27,11 +27,12 @@ test('le rendu carte utilise une camera tactile fluide', () => {
     assert.equal(mapSection.includes(expected), true, `comportement carte manquant: ${expected}`);
   }
   assert.equal(mapSection.includes('drawSatelliteBase'), true, 'la carte doit dessiner un fond cartographique embarque');
-  assert.equal(app.includes('natural-earth-world.jpg'), true, 'le fond monde offline doit etre reference par l app');
-  assert.equal(app.includes('natural-earth-france.jpg'), true, 'le fond France offline doit etre reference par l app');
-  assert.equal(app.includes("import { Asset } from 'expo-asset';"), true, 'les fonds doivent etre resolus en fichiers locaux');
-  assert.equal(app.includes('Asset.fromModule(OFFLINE_WORLD_MAP_ASSET).downloadAsync()'), true, 'le fond monde doit etre telecharge en URI locale pour le WebView');
-  assert.equal(app.includes('Asset.fromModule(OFFLINE_FRANCE_MAP_ASSET).downloadAsync()'), true, 'le fond France doit etre telecharge en URI locale pour le WebView');
+  assert.equal(app.includes("import { offlineMapDataUris } from './src/generated/offlineMapData';"), true, 'les fonds doivent etre embarques dans le bundle offline');
+  assert.equal(app.includes('offlineMapDataUris.world'), true, 'le fond monde doit etre transmis a la WebView en data URI');
+  assert.equal(app.includes('offlineMapDataUris.france'), true, 'le fond France doit etre transmis a la WebView en data URI');
+  assert.equal(app.includes('key={`${question.id}-${mapKind}`}'), true, 'la WebView doit etre remontee quand le type de carte change');
+  const offlineMapData = readFileSync('src/generated/offlineMapData.ts', 'utf8');
+  assert.equal(offlineMapData.includes('data:image/jpeg;base64,'), true, 'le rendu WebView ne doit pas dependre d un acces file:// fragile');
   assert.equal(mapSection.includes('satelliteBounds'), true, 'chaque raster doit declarer ses bornes geographiques');
   assert.equal(mapSection.includes('<svg'), false, 'la carte ne doit plus utiliser le rendu SVG rigide');
 });

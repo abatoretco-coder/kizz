@@ -587,6 +587,21 @@ export async function getTaggedQuestions(tag: string, limit = 10): Promise<QuizQ
   return rows.map(mapQuestionRow);
 }
 
+export async function getMapPointQuestions(scope: 'world' | 'france' | 'all', limit = 10): Promise<QuizQuestion[]> {
+  const db = await dbPromise;
+  const scopeWhere = scope === 'world'
+    ? `AND q.topic_id = 'geography' AND q.tags_json NOT LIKE '%"carte-france"%'`
+    : scope === 'france'
+      ? `AND (q.topic_id = 'france-map' OR q.tags_json LIKE '%"carte-france"%')`
+      : '';
+  const rows = await db.getAllAsync<QuestionRow>(
+    `SELECT q.*, EXISTS(SELECT 1 FROM favorites f WHERE f.question_id = q.id) AS is_favorite
+     FROM questions q WHERE q.question_type = 'map-point' ${scopeWhere} ORDER BY RANDOM() LIMIT ?`,
+    limit,
+  );
+  return rows.map(mapQuestionRow);
+}
+
 export async function searchQuestions(query: string, limit = 30): Promise<QuizQuestion[]> {
   const db = await dbPromise;
   const pattern = `%${query.trim()}%`;

@@ -1,15 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
-import { Asset } from 'expo-asset';
 import { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator, Alert, BackHandler, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
 } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
-import { AdminQuestion, QuestionReportReason, adminDeleteQuestion, adminUpdateQuestionDifficulty, clearSessionDraft, getAdminQuestions, getDailyVocabularyQuestions, getDashboardStats, getFavoriteQuestions, getFilteredQuestions, getLanguageProgress, getLanguageQuestions, getLibraryStats, getRandomQuestionByDifficulty, getRandomTopicQuestionsByDifficulty, getRecentSessions, getReviewQuestions, getSessionDraft, getTaggedQuestions, getTopicProgress, getTopics, initializeDatabase, reportQuestion, saveSession, saveSessionDraft, searchQuestions, toggleFavorite } from './src/database';
+import { AdminQuestion, QuestionReportReason, adminDeleteQuestion, adminUpdateQuestionDifficulty, clearSessionDraft, getAdminQuestions, getDailyVocabularyQuestions, getDashboardStats, getFavoriteQuestions, getFilteredQuestions, getLanguageProgress, getLanguageQuestions, getLibraryStats, getMapPointQuestions, getRandomQuestionByDifficulty, getRandomTopicQuestionsByDifficulty, getRecentSessions, getReviewQuestions, getSessionDraft, getTaggedQuestions, getTopicProgress, getTopics, initializeDatabase, reportQuestion, saveSession, saveSessionDraft, searchQuestions, toggleFavorite } from './src/database';
 import { CefrLevel, DashboardStats, Difficulty, GeoPoint, LanguageCode, LanguageProgressCell, LanguageSessionFilters, LanguageSkill, LibraryStats, QuizQuestion, RecentSession, SessionAnswer, SessionDraft, SessionFilters, Topic, TopicProgress } from './src/domain';
 import { createAndShareQuestionReports, createAndShareQuizPack, importCsvQuizPackDraft, pickAndImportQuizPack, pickCsvQuizPackDraft } from './src/quizPack';
-import { gradeMapPoint, gradeMultiText, isFreeTextCorrect } from './src/quizEngine';
+import { gradeMapPoint, gradeMultiText, isFreeTextCorrect, shuffleQuestions } from './src/quizEngine';
 import { palette } from './src/theme';
 import { summarizeByInteraction } from './src/sessionSummary';
 import { subthemesForTopics } from './src/subthemes';
@@ -17,6 +16,7 @@ import { franceDepartmentBoundaryGeoJson, worldBoundaryGeoJson } from './src/map
 import { generatedQuestionImages } from './src/generated/questionImages';
 import { natureQuestionImages } from './src/generated/natureQuestionImages';
 import { landmarkQuestionImages } from './src/generated/landmarkQuestionImages';
+import { offlineMapDataUris } from './src/generated/offlineMapData';
 
 type Screen = 'home' | 'configure' | 'languages' | 'quiz' | 'result' | 'library' | 'search' | 'admin';
 const emptyStats: DashboardStats = { answered: 0, correct: 0, sessions: 0, streakDays: 0, dueReview: 0 };
@@ -91,8 +91,9 @@ const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
   ...natureQuestionImages,
   ...landmarkQuestionImages,
 };
-const OFFLINE_WORLD_MAP_ASSET = require('./assets/maps/natural-earth-world.jpg');
-const OFFLINE_FRANCE_MAP_ASSET = require('./assets/maps/natural-earth-france.jpg');
+function isFranceMapQuestion(question: QuizQuestion) {
+  return question.topicId === 'france-map' || question.tags.includes('carte-france') || question.tags.includes('carte-france-dediee');
+}
 
 function questionImageSource(question?: QuizQuestion) {
   if (!question) return undefined;
@@ -302,7 +303,25 @@ export default function App() {
   }
 
   async function startCollection(kind: 'review' | 'favorites' | 'maps') {
-    const nextQuiz = kind === 'review' ? await getReviewQuestions(10) : kind === 'maps' ? await getTaggedQuestions('map-point', 10) : await getFavoriteQuestions(10);
+    let nextQuiz: QuizQuestion[];
+    if (kind === 'review') nextQuiz = await getReviewQuestions(10);
+    else if (kind === 'favorites') nextQuiz = await getFavoriteQuestions(10);
+    else {
+      const [worldMaps, franceMaps] = await Promise.all([
+        getMapPointQuestions('world', 5),
+        getMapPointQuestions('france', 5),
+      ]);
+      const selectedIds = new Set([...worldMaps, ...franceMaps].map((question) => question.id));
+      const fallback = selectedIds.size < 10 ? (await getMapPointQuestions('all', 10)).filter((question) => !selectedIds.has(question.id)) : [];
+      const shuffledWorld = shuffleQuestions(worldMaps);
+      const shuffledFrance = shuffleQuestions(franceMaps);
+      const balancedMaps: QuizQuestion[] = [];
+      for (let index = 0; index < Math.max(shuffledWorld.length, shuffledFrance.length); index += 1) {
+        if (shuffledWorld[index]) balancedMaps.push(shuffledWorld[index]);
+        if (shuffledFrance[index]) balancedMaps.push(shuffledFrance[index]);
+      }
+      nextQuiz = [...balancedMaps, ...fallback].slice(0, 10);
+    }
     if (!nextQuiz.length) {
       Alert.alert(kind === 'review' ? 'Rien à réviser' : kind === 'maps' ? 'Aucune carte' : 'Aucun favori', kind === 'review' ? 'Les questions ratées apparaîtront ici.' : kind === 'maps' ? 'Les questions carte apparaîtront ici.' : 'Ajoute une question avec l’étoile pendant un quiz.');
       return;
@@ -1080,20 +1099,10 @@ function MediaZoomModal({ media, onClose }: { media: { source: ImageSourcePropTy
 }
 
 function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { question: QuizQuestion; guess: GeoPoint | null; target?: GeoPoint & { toleranceKm?: number }; disabled: boolean; onPick: (point: GeoPoint) => void }) {
-  const [mapAssetUris, setMapAssetUris] = useState<{ world?: string; france?: string }>({});
-
-  useEffect(() => {
-    let cancelled = false;
-    async function loadMapAssets() {
-      const [world, france] = await Promise.all([
-        Asset.fromModule(OFFLINE_WORLD_MAP_ASSET).downloadAsync(),
-        Asset.fromModule(OFFLINE_FRANCE_MAP_ASSET).downloadAsync(),
-      ]);
-      if (!cancelled) setMapAssetUris({ world: world.localUri ?? world.uri, france: france.localUri ?? france.uri });
-    }
-    void loadMapAssets().catch(() => undefined);
-    return () => { cancelled = true; };
-  }, []);
+  const mapKind = isFranceMapQuestion(question) ? 'france' : 'world';
+  const mapAssetUris = mapKind === 'france'
+    ? { france: offlineMapDataUris.france }
+    : { world: offlineMapDataUris.world };
 
   function handleMapMessage(event: WebViewMessageEvent) {
     if (disabled) return;
@@ -1113,6 +1122,7 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { que
   return (
     <View style={styles.satelliteMapWrap}>
       <WebView
+        key={`${question.id}-${mapKind}`}
         testID="world-map-picker"
         originWhitelist={['*']}
         source={{ html: satelliteMapHtml(question, guess, target, disabled, mapAssetUris) }}
@@ -1133,14 +1143,13 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { que
 }
 
 function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target: (GeoPoint & { toleranceKm?: number }) | undefined, disabled: boolean, mapAssetUris: { world?: string; france?: string }) {
-  const isFranceMap = question.topicId === 'france-map' || question.tags.includes('carte-france') || question.tags.includes('carte-france-dediee');
+  const isFranceMap = isFranceMapQuestion(question);
   const bounds = isFranceMap
     ? { minLon: -5.8, maxLon: 10.0, minLat: 41.1, maxLat: 51.3 }
     : { minLon: -180, maxLon: 180, minLat: -58, maxLat: 83 };
   const boundaryGeoJson = isFranceMap ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson;
   const title = isFranceMap ? 'France' : 'Monde';
-  const fallbackSatelliteUri = Image.resolveAssetSource(isFranceMap ? OFFLINE_FRANCE_MAP_ASSET : OFFLINE_WORLD_MAP_ASSET).uri;
-  const satelliteUri = isFranceMap ? mapAssetUris.france ?? fallbackSatelliteUri : mapAssetUris.world ?? fallbackSatelliteUri;
+  const satelliteUri = isFranceMap ? mapAssetUris.france ?? '' : mapAssetUris.world ?? '';
   const satelliteBounds = isFranceMap
     ? { minLon: -6.8, maxLon: 10.2, minLat: 41.0, maxLat: 51.8 }
     : { minLon: -180, maxLon: 180, minLat: -90, maxLat: 90 };
@@ -1284,53 +1293,6 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
           ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(d.x, d.y); ctx.stroke();
         }
       }
-      function normalizedLon(lon) {
-        return ((lon + 180) % 360 + 360) % 360 - 180;
-      }
-      function satelliteX(lon) {
-        var value = satelliteBounds.minLon === -180 && satelliteBounds.maxLon === 180 ? normalizedLon(lon) : Math.max(satelliteBounds.minLon, Math.min(satelliteBounds.maxLon, lon));
-        return ((value - satelliteBounds.minLon) / (satelliteBounds.maxLon - satelliteBounds.minLon)) * satellite.width;
-      }
-      function satelliteY(lat) {
-        var value = Math.max(satelliteBounds.minLat, Math.min(satelliteBounds.maxLat, lat));
-        return ((satelliteBounds.maxLat - value) / (satelliteBounds.maxLat - satelliteBounds.minLat)) * satellite.height;
-      }
-      function drawSatelliteRow(y, rowHeight, leftLon, rightLon, lat) {
-        var sy = satelliteY(lat);
-        var sh = Math.max(1, satellite.height / 1024);
-        var span = rightLon - leftLon;
-        if (span >= 359) {
-          ctx.globalAlpha = 0.96;
-          ctx.imageSmoothingEnabled = true;
-          ctx.imageSmoothingQuality = 'high';
-          ctx.drawImage(satellite, 0, sy, satellite.width, sh, 0, y, width, rowHeight + 1);
-          ctx.globalAlpha = 1;
-          return;
-        }
-        if (!(satelliteBounds.minLon === -180 && satelliteBounds.maxLon === 180)) {
-          var x1 = satelliteX(leftLon);
-          var x2 = satelliteX(rightLon);
-          ctx.globalAlpha = 0.98;
-          ctx.imageSmoothingEnabled = true;
-          ctx.imageSmoothingQuality = 'high';
-          ctx.drawImage(satellite, Math.min(x1, x2), sy, Math.max(1, Math.abs(x2 - x1)), sh, 0, y, width, rowHeight + 1);
-          ctx.globalAlpha = 1;
-          return;
-        }
-        var left = normalizedLon(leftLon);
-        var right = normalizedLon(rightLon);
-        ctx.globalAlpha = 0.96;
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = 'high';
-        if (right >= left) {
-          ctx.drawImage(satellite, satelliteX(left), sy, Math.max(1, satelliteX(right) - satelliteX(left)), sh, 0, y, width, rowHeight + 1);
-        } else {
-          var firstWidth = (180 - left) / ((180 - left) + (right + 180)) * width;
-          ctx.drawImage(satellite, satelliteX(left), sy, Math.max(1, satellite.width - satelliteX(left)), sh, 0, y, firstWidth, rowHeight + 1);
-          ctx.drawImage(satellite, 0, sy, Math.max(1, satelliteX(right)), sh, firstWidth, y, width - firstWidth, rowHeight + 1);
-        }
-        ctx.globalAlpha = 1;
-      }
       function drawSatelliteBase() {
         var gradient = ctx.createLinearGradient(0, 0, 0, height);
         gradient.addColorStop(0, '#0B1B24');
@@ -1338,27 +1300,14 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, width, height);
         if (!satelliteReady) return;
-        if (!(satelliteBounds.minLon === -180 && satelliteBounds.maxLon === 180)) {
-          var topLeft = worldToScreen(project(satelliteBounds.minLon, satelliteBounds.maxLat));
-          var bottomRight = worldToScreen(project(satelliteBounds.maxLon, satelliteBounds.minLat));
-          ctx.globalAlpha = 0.98;
-          ctx.imageSmoothingEnabled = true;
-          ctx.imageSmoothingQuality = 'high';
-          ctx.drawImage(satellite, topLeft.x, topLeft.y, bottomRight.x - topLeft.x, bottomRight.y - topLeft.y);
-          ctx.globalAlpha = 1;
-          ctx.fillStyle = 'rgba(0,0,0,0.08)';
-          ctx.fillRect(0, 0, width, height);
-          return;
-        }
-        var rowHeight = zoom > 12 ? 1 : 2;
-        for (var y = 0; y < height; y += rowHeight) {
-          var leftWorld = screenToWorld(0, y + rowHeight / 2);
-          var rightWorld = screenToWorld(width, y + rowHeight / 2);
-          var leftGeo = unproject(leftWorld.x, leftWorld.y);
-          var rightGeo = unproject(rightWorld.x, rightWorld.y);
-          drawSatelliteRow(y, rowHeight, leftGeo.lon, rightGeo.lon, leftGeo.lat);
-        }
-        ctx.fillStyle = 'rgba(0,0,0,0.14)';
+        var topLeft = worldToScreen(project(satelliteBounds.minLon, satelliteBounds.maxLat));
+        var bottomRight = worldToScreen(project(satelliteBounds.maxLon, satelliteBounds.minLat));
+        ctx.globalAlpha = 0.98;
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(satellite, topLeft.x, topLeft.y, bottomRight.x - topLeft.x, bottomRight.y - topLeft.y);
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = 'rgba(0,0,0,0.10)';
         ctx.fillRect(0, 0, width, height);
       }
       function drawBoundaries() {
