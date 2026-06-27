@@ -1,6 +1,5 @@
 ﻿import { QuestionSeed, Topic } from './domain';
 import { mvpQuestions, mvpTopics } from './contentMvp';
-import { openTriviaGeographyQuestions } from './generated/openTriviaGeography';
 import { expandedQuestions } from './contentExpanded';
 import { dedicatedLanguageQuestions } from './contentLanguages';
 import { frequencyLanguageQuestions } from './languageLexicon';
@@ -46,7 +45,7 @@ const rawQuestions: QuestionSeed[] = [
   { id: 'geo-01', topicId: 'geography', difficulty: 1, prompt: 'Quel est le plus grand océan de la planète ?', choices: ['Atlantique', 'Indien', 'Arctique', 'Pacifique'], answerIndex: 3, explanation: 'Le Pacifique couvre environ un tiers de la surface terrestre.', tags: ['océans'], sourceLabel: 'Contenu original Kizz' },
   { id: 'geo-02', topicId: 'geography', difficulty: 1, prompt: 'Quelle est la capitale du Canada ?', choices: ['Toronto', 'Ottawa', 'Montréal', 'Vancouver'], answerIndex: 1, explanation: 'Ottawa est la capitale fédérale du Canada depuis 1867.', tags: ['capitales', 'amérique'], sourceLabel: 'Contenu original Kizz' },
   { id: 'geo-03', topicId: 'geography', difficulty: 2, prompt: 'Dans quelle chaîne de montagnes se trouve l’Aconcagua ?', choices: ['Les Alpes', 'Les Rocheuses', 'Les Andes', 'L’Himalaya'], answerIndex: 2, explanation: 'L’Aconcagua, en Argentine, est le plus haut sommet des Andes et des Amériques.', tags: ['relief', 'amérique'], sourceLabel: 'Contenu original Kizz' },
-  { id: 'geo-04', topicId: 'geography', difficulty: 3, prompt: 'Quel pays est entièrement enclavé dans l’Afrique du Sud ?', choices: ['Eswatini', 'Lesotho', 'Botswana', 'Namibie'], answerIndex: 1, explanation: 'Le Lesotho est un Ã‰tat enclavé dont tout le territoire est entouré par l’Afrique du Sud.', tags: ['afrique', 'frontières'], sourceLabel: 'Contenu original Kizz' },
+  { id: 'geo-04', topicId: 'geography', difficulty: 3, prompt: 'Quel pays est entièrement enclavé dans l’Afrique du Sud ?', choices: ['Eswatini', 'Lesotho', 'Botswana', 'Namibie'], answerIndex: 1, explanation: 'Le Lesotho est un État enclavé dont tout le territoire est entouré par l’Afrique du Sud.', tags: ['afrique', 'frontières'], sourceLabel: 'Contenu original Kizz' },
   { id: 'sci-01', topicId: 'science', difficulty: 1, prompt: 'Quelle planète est la plus proche du Soleil ?', choices: ['Vénus', 'Terre', 'Mercure', 'Mars'], answerIndex: 2, explanation: 'Mercure orbite à une distance moyenne d’environ 58 millions de kilomètres du Soleil.', tags: ['astronomie'], sourceLabel: 'Contenu original Kizz' },
   { id: 'sci-02', topicId: 'science', difficulty: 1, prompt: 'Quel gaz les plantes absorbent-elles principalement pour la photosynthèse ?', choices: ['Oxygène', 'Dioxyde de carbone', 'Azote', 'Hydrogène'], answerIndex: 1, explanation: 'La photosynthèse utilise notamment le dioxyde de carbone, l’eau et l’énergie lumineuse.', tags: ['biologie'], sourceLabel: 'Contenu original Kizz' },
   { id: 'sci-03', topicId: 'science', difficulty: 2, prompt: 'Quelle unité mesure la résistance électrique ?', choices: ['Le volt', 'Le watt', 'L’ohm', 'L’ampère'], answerIndex: 2, explanation: 'La résistance électrique se mesure en ohms, symbole Ω.', tags: ['physique'], sourceLabel: 'Contenu original Kizz' },
@@ -56,7 +55,7 @@ const rawQuestions: QuestionSeed[] = [
   { id: 'spo-03', topicId: 'sport', difficulty: 2, prompt: 'Quelle est la distance officielle d’un marathon ?', choices: ['40 km', '41,195 km', '42,195 km', '43 km'], answerIndex: 2, explanation: 'La distance officielle du marathon est de 42,195 kilomètres.', tags: ['athlétisme'], sourceLabel: 'Contenu original Kizz' },
   { id: 'spo-04', topicId: 'sport', difficulty: 3, prompt: 'Quelle surface du Grand Chelem de Roland-Garros est utilisée ?', choices: ['Gazon', 'Dur extérieur', 'Terre battue', 'Moquette'], answerIndex: 2, explanation: 'Roland-Garros se joue sur terre battue, une surface plus lente et sensible aux effets.', tags: ['tennis'], sourceLabel: 'Contenu original Kizz' },
   { id: 'art-01', topicId: 'arts', difficulty: 1, prompt: 'Qui a peint La Nuit étoilée ?', choices: ['Claude Monet', 'Vincent van Gogh', 'Paul Cézanne', 'Gustav Klimt'], answerIndex: 1, explanation: 'Vincent van Gogh peint La Nuit étoilée en 1889, durant son séjour à Saint-Rémy-de-Provence.', tags: ['peinture'], sourceLabel: 'Contenu original Kizz' },
-  { id: 'art-02', topicId: 'arts', difficulty: 2, prompt: 'Ã€ quel mouvement artistique Claude Monet est-il associé ?', choices: ['Cubisme', 'Surréalisme', 'Impressionnisme', 'Fauvisme'], answerIndex: 2, explanation: 'Le tableau Impression, soleil levant de Monet a donné son nom à l’impressionnisme.', tags: ['peinture', 'mouvements'], sourceLabel: 'Contenu original Kizz' },
+  { id: 'art-02', topicId: 'arts', difficulty: 2, prompt: 'À quel mouvement artistique Claude Monet est-il associé ?', choices: ['Cubisme', 'Surréalisme', 'Impressionnisme', 'Fauvisme'], answerIndex: 2, explanation: 'Le tableau Impression, soleil levant de Monet a donné son nom à l’impressionnisme.', tags: ['peinture', 'mouvements'], sourceLabel: 'Contenu original Kizz' },
   { id: 'art-03', topicId: 'arts', difficulty: 2, prompt: 'Qui a composé Les Quatre Saisons ?', choices: ['Mozart', 'Vivaldi', 'Bach', 'Chopin'], answerIndex: 1, explanation: 'Antonio Vivaldi publie les quatre concertos pour violon vers 1725.', tags: ['musique'], sourceLabel: 'Contenu original Kizz' },
   { id: 'art-04', topicId: 'arts', difficulty: 3, prompt: 'Quel architecte est à l’origine de la Sagrada Família ?', choices: ['Le Corbusier', 'Antoni Gaudí', 'Frank Lloyd Wright', 'Oscar Niemeyer'], answerIndex: 1, explanation: 'Antoni Gaudí consacre une grande partie de sa vie à cette basilique barcelonaise.', tags: ['architecture'], sourceLabel: 'Contenu original Kizz' },
   { id: 'art-05', topicId: 'arts', difficulty: 1, prompt: 'Qui a peint cette œuvre ?', choices: ['Sandro Botticelli', 'Léonard de Vinci', 'Raphaël', 'Titien'], answerIndex: 1, explanation: 'La Joconde, ou Mona Lisa, est un portrait peint par Léonard de Vinci au début du XVIe siècle.', tags: ['peinture', 'renaissance', 'image'], sourceLabel: 'Wikimedia Commons — domaine public', imageAsset: 'mona-lisa', imageAlt: 'La Joconde de Léonard de Vinci', learnMoreUrl: 'https://fr.wikipedia.org/wiki/La_Joconde' },
@@ -74,7 +73,6 @@ const rawQuestions: QuestionSeed[] = [
   ...geoMapQuestions,
   ...economyQuestions,
   ...franceMapQuestions,
-  ...openTriviaGeographyQuestions,
   ...gameStyleQuestions,
   ...quizShowExpansionQuestions,
   ...worldCountryQuestions,

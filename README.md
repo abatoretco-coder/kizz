@@ -60,6 +60,7 @@ Les contrôles principaux exposent des identifiants ADB stables (`topic-starter`
 - `src/database.ts`: schéma SQLite, import et statistiques;
 - `src/domain.ts`: contrats TypeScript;
 - `src/theme.ts`: tokens visuels partages;
+- `docs/ACCOMPLISHMENTS.md`: état livré et vérifications récentes;
 - `docs/ROADMAP.md`: vision produit et étapes;
 - `docs/IMPLEMENTATION_PHASES.md`: phases de developpement et criteres de validation;
 - `docs/CODE_AUDIT.md`: audit technique court et risques prioritaires;
