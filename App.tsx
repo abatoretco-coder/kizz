@@ -90,7 +90,8 @@ const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
   ...natureQuestionImages,
   ...landmarkQuestionImages,
 };
-const OFFLINE_SATELLITE_URI = Image.resolveAssetSource(require('./assets/maps/blue-marble-world.jpg')).uri;
+const OFFLINE_WORLD_MAP_URI = Image.resolveAssetSource(require('./assets/maps/natural-earth-world.jpg')).uri;
+const OFFLINE_FRANCE_MAP_URI = Image.resolveAssetSource(require('./assets/maps/natural-earth-france.jpg')).uri;
 
 function questionImageSource(question?: QuizQuestion) {
   if (!question) return undefined;
@@ -1122,7 +1123,10 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
     : { minLon: -180, maxLon: 180, minLat: -58, maxLat: 83 };
   const boundaryGeoJson = isFranceMap ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson;
   const title = isFranceMap ? 'France' : 'Monde';
-  const satelliteUri = OFFLINE_SATELLITE_URI;
+  const satelliteUri = isFranceMap ? OFFLINE_FRANCE_MAP_URI : OFFLINE_WORLD_MAP_URI;
+  const satelliteBounds = isFranceMap
+    ? { minLon: -6.8, maxLon: 10.2, minLat: 41.0, maxLat: 51.8 }
+    : { minLon: -180, maxLon: 180, minLat: -90, maxLat: 90 };
   return `<!doctype html>
 <html>
 <head>
@@ -1154,6 +1158,7 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
       var target = ${JSON.stringify(target ?? null)};
       var disabled = ${disabled ? 'true' : 'false'};
       var satelliteUri = ${JSON.stringify(satelliteUri)};
+      var satelliteBounds = ${JSON.stringify(satelliteBounds)};
       var canvas = document.getElementById('canvas');
       var ctx = canvas.getContext('2d', { alpha: false });
       var satellite = new Image();
@@ -1266,10 +1271,12 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
         return ((lon + 180) % 360 + 360) % 360 - 180;
       }
       function satelliteX(lon) {
-        return ((normalizedLon(lon) + 180) / 360) * satellite.width;
+        var value = satelliteBounds.minLon === -180 && satelliteBounds.maxLon === 180 ? normalizedLon(lon) : Math.max(satelliteBounds.minLon, Math.min(satelliteBounds.maxLon, lon));
+        return ((value - satelliteBounds.minLon) / (satelliteBounds.maxLon - satelliteBounds.minLon)) * satellite.width;
       }
       function satelliteY(lat) {
-        return ((90 - Math.max(-90, Math.min(90, lat))) / 180) * satellite.height;
+        var value = Math.max(satelliteBounds.minLat, Math.min(satelliteBounds.maxLat, lat));
+        return ((satelliteBounds.maxLat - value) / (satelliteBounds.maxLat - satelliteBounds.minLat)) * satellite.height;
       }
       function drawSatelliteRow(y, rowHeight, leftLon, rightLon, lat) {
         var sy = satelliteY(lat);
@@ -1280,6 +1287,16 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
           ctx.imageSmoothingEnabled = true;
           ctx.imageSmoothingQuality = 'high';
           ctx.drawImage(satellite, 0, sy, satellite.width, sh, 0, y, width, rowHeight + 1);
+          ctx.globalAlpha = 1;
+          return;
+        }
+        if (!(satelliteBounds.minLon === -180 && satelliteBounds.maxLon === 180)) {
+          var x1 = satelliteX(leftLon);
+          var x2 = satelliteX(rightLon);
+          ctx.globalAlpha = 0.98;
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+          ctx.drawImage(satellite, Math.min(x1, x2), sy, Math.max(1, Math.abs(x2 - x1)), sh, 0, y, width, rowHeight + 1);
           ctx.globalAlpha = 1;
           return;
         }

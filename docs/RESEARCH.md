@@ -46,7 +46,7 @@ Le lot Nature du 27 juin 2026 ajoute 93 questions simples d'identification visue
 
 Le lot Monuments du 27 juin 2026 ajoute 266 questions simples de reconnaissance visuelle: monument, ville/zone, pays, style et choix d'image. Le corpus embarque 59 photos issues de Wikimedia Commons avec provenance dans `assets/questions/landmarks/landmark-manifest.json`; la generation est centralisee dans `scripts/build-landmark-content.mjs` et la table Expo/Metro dans `src/generated/landmarkQuestionImages.ts`.
 
-## Provenance carte satellite
+## Provenance cartes offline
 
-Le fond satellite offline utilise Blue Marble distribue par NOAA/NASA (`assets/maps/blue-marble-world.jpg`). Il sert de raster global embarque; les frontieres pays et departements sont dessinees localement au-dessus depuis `src/mapBoundaries.ts`.
+Les fonds cartographiques offline utilisent Natural Earth II avec relief, eau et drainages (`assets/maps/natural-earth-world.jpg` et `assets/maps/natural-earth-france.jpg`). Le monde est embarque en 21600 x 10800, la France en 3600 x 2300 avec reperes urbains; les frontieres pays et departements sont dessinees localement au-dessus depuis `src/mapBoundaries.ts`. La provenance est resumee dans `assets/maps/map-manifest.json`.
 

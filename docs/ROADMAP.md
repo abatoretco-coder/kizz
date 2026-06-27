@@ -25,6 +25,7 @@ Kizz est une application mobile de culture générale hors ligne, centrée sur l
 - Accueil refondu: Dashboard, Culture, Langues accessibles au tap et au swipe.
 - Retour Android intercepté dans l'application depuis les écrans internes.
 - Tests et audits: 39 tests automatisés, audit de contenu, tests d'encodage visible et vérification des assets.
+- Cartes: fonds Natural Earth offline monde/France branches; prochaine passe possible sur etiquettes de relief, fleuves et niveaux de zoom par region.
 
 ## Priorités Maintenant
 

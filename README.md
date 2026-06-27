@@ -104,6 +104,6 @@ Créer rapidement un nouveau squelette de banque:
 npm run pack:new -- "Cinéma"
 ```
 
-La banque initiale est maintenue localement dans `src/content*.ts`. Les anciens scripts de generation OpenTrivia ont ete retires pour garder une base editoriale originale, verifiable et en francais. Le fond de carte satellite est embarque dans `assets/maps/blue-marble-world.jpg`; les frontieres pays/departements restent en GeoJSON local.
+La banque initiale est maintenue localement dans `src/content*.ts`. Les anciens scripts de generation OpenTrivia ont ete retires pour garder une base editoriale originale, verifiable et en francais. Les fonds de carte offline sont embarques dans `assets/maps/natural-earth-world.jpg` et `assets/maps/natural-earth-france.jpg`; les frontieres pays/departements restent en GeoJSON local.
 
 

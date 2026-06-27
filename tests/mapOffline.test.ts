@@ -1,12 +1,15 @@
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import test from 'node:test';
 import { franceDepartmentBoundaryGeoJson, worldBoundaryGeoJson } from '../src/mapBoundaries';
 
 test('les frontieres de carte sont embarquees', () => {
   assert.ok(worldBoundaryGeoJson.features.length >= 150);
   assert.ok(franceDepartmentBoundaryGeoJson.features.length >= 95);
-  assert.equal(existsSync('assets/maps/blue-marble-world.jpg'), true);
+  assert.equal(existsSync('assets/maps/natural-earth-world.jpg'), true);
+  assert.equal(existsSync('assets/maps/natural-earth-france.jpg'), true);
+  assert.ok(statSync('assets/maps/natural-earth-world.jpg').size > 20_000_000);
+  assert.ok(statSync('assets/maps/natural-earth-france.jpg').size > 1_000_000);
 });
 
 test('le rendu carte ne depend pas de scripts ou tuiles distants', () => {
@@ -23,7 +26,9 @@ test('le rendu carte utilise une camera tactile fluide', () => {
   for (const expected of ['<canvas', 'pointerdown', 'pointermove', 'wheel', 'requestAnimationFrame', 'project(lon, lat)', 'zoomAround']) {
     assert.equal(mapSection.includes(expected), true, `comportement carte manquant: ${expected}`);
   }
-  assert.equal(mapSection.includes('drawSatelliteBase'), true, 'la carte doit dessiner un fond satellite embarque');
-  assert.equal(app.includes('blue-marble-world.jpg'), true, 'le fond satellite offline doit etre reference par l app');
+  assert.equal(mapSection.includes('drawSatelliteBase'), true, 'la carte doit dessiner un fond cartographique embarque');
+  assert.equal(app.includes('natural-earth-world.jpg'), true, 'le fond monde offline doit etre reference par l app');
+  assert.equal(app.includes('natural-earth-france.jpg'), true, 'le fond France offline doit etre reference par l app');
+  assert.equal(mapSection.includes('satelliteBounds'), true, 'chaque raster doit declarer ses bornes geographiques');
   assert.equal(mapSection.includes('<svg'), false, 'la carte ne doit plus utiliser le rendu SVG rigide');
 });

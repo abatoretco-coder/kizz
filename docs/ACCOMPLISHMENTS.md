@@ -52,6 +52,7 @@
 - Audit contenu automatisé.
 - Générateurs de banques visuelles Arts/Histoire et Nature.
 - 39 tests automatisés.
+- Cartes offline enrichies: fond Natural Earth monde et fond France dedie, avec frontieres locales conservees.
 
 ## Dernier État Vérifié
 
