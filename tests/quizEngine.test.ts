@@ -183,6 +183,15 @@ test('la banque Arts/Histoire generee reste presente', () => {
   assert.ok(questions.filter((question) => question.imageAsset?.startsWith('generated/') && !question.imageAsset.startsWith('generated/art-')).length >= 45);
 });
 
+test('la banque Nature propose des identifications visuelles', () => {
+  const natureVisual = questions.filter((question) => question.topicId === 'nature' && question.tags.includes('identification-espece'));
+  assert.ok(natureVisual.length >= 90);
+  assert.ok(natureVisual.filter((question) => question.tags.includes('animaux')).length >= 40);
+  assert.ok(natureVisual.filter((question) => question.tags.includes('botanique')).length >= 40);
+  assert.ok(natureVisual.filter((question) => question.imageAsset?.startsWith('nature/')).length >= 30);
+  assert.ok(natureVisual.filter((question) => question.tags.includes('image-choice')).length >= 30);
+});
+
 test('la banque sciences couvre la chimie niveau ingenieur', () => {
   const chemistry = questions.filter((question) => question.topicId === 'science' && question.tags.includes('tableau-periodique'));
   assert.ok(chemistry.length >= 170);

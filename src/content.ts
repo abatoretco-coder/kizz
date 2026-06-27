@@ -18,6 +18,7 @@ import { astronomyQuestions, astronomyTopic } from './contentAstronomy';
 import { subthemeExpansionQuestions } from './contentSubthemeExpansion';
 import { visualRecognitionQuestions } from './contentVisualRecognition';
 import { visualHistoryQuestions } from './generated/contentVisualHistory';
+import { natureVisualQuestions } from './generated/contentNatureVisual';
 import { scienceChemistryQuestions } from './contentScienceChemistry';
 
 const retiredTopicIds = new Set(['daily']);
@@ -84,6 +85,7 @@ const rawQuestions: QuestionSeed[] = [
   ...subthemeExpansionQuestions,
   ...visualRecognitionQuestions,
   ...visualHistoryQuestions,
+  ...natureVisualQuestions,
   ...scienceChemistryQuestions,
 ];
 

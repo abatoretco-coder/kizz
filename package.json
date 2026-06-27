@@ -28,6 +28,7 @@
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/**/*.test.ts",
     "audit:content": "node --import tsx scripts/audit-content.mjs",
+    "content:nature": "node scripts/build-nature-content.mjs",
     "pack:new": "node scripts/create-quiz-pack.mjs"
   },
   "private": true

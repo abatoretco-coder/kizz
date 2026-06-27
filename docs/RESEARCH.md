@@ -42,6 +42,8 @@ Le lot visuel du 27 juin 2026 ajoute 15 fichiers issus de Wikimedia Commons: tab
 
 Le lot Arts/Histoire du 27 juin 2026 ajoute 425 questions simples sur peintures, mouvements, artistes et personnages historiques. Le corpus embarque 99 images generees: 49 oeuvres d'art et 50 personnages historiques issus de Wikidata/Wikimedia Commons quand une image JPEG exploitable existe. La generation est centralisee dans `scripts/build-visual-history-content.mjs`, la table Expo/Metro dans `src/generated/questionImages.ts` et la provenance dans `assets/questions/generated/visual-history-manifest.json`.
 
+Le lot Nature du 27 juin 2026 ajoute 93 questions simples d'identification visuelle: animaux, arbres, arbustes, fleurs, fougeres et mousses. Le corpus embarque 31 photos issues de Wikimedia Commons avec provenance dans `assets/questions/nature/nature-manifest.json`; la generation est centralisee dans `scripts/build-nature-content.mjs` et la table Expo/Metro dans `src/generated/natureQuestionImages.ts`.
+
 ## Provenance carte satellite
 
 Le fond satellite offline utilise Blue Marble distribue par NOAA/NASA (`assets/maps/blue-marble-world.jpg`). Il sert de raster global embarque; les frontieres pays et departements sont dessinees localement au-dessus depuis `src/mapBoundaries.ts`.
