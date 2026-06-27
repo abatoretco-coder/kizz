@@ -1,11 +1,14 @@
 import * as SQLite from 'expo-sqlite';
 import { questions, topics } from './content';
-import { DashboardStats, ImportReport, LanguageSessionFilters, LibraryStats, QUIZ_PACK_FORMAT, QuizPack, QuizQuestion, SessionAnswer, SessionDraft, SessionFilters, Topic } from './domain';
+import { DashboardStats, Difficulty, ImportReport, LanguageProgressCell, LanguageSessionFilters, LibraryStats, ProgressCell, QUIZ_PACK_FORMAT, QuizPack, QuizQuestion, RecentSession, SessionAnswer, SessionDraft, SessionFilters, Topic, TopicProgress } from './domain';
+import { summarizeLanguageProgress } from './languageProgress';
 import { nextReviewState } from './quizEngine';
 import { parseSessionDraftPayload } from './sessionDraft';
 
 const dbPromise = SQLite.openDatabaseAsync('kizz.db');
 const retiredTopicIds = ['starter', 'daily'];
+
+export type QuestionReportReason = 'ambiguous' | 'too-easy' | 'too-hard' | 'reword';
 
 export async function initializeDatabase() {
   const db = await dbPromise;
@@ -49,6 +52,20 @@ export async function initializeDatabase() {
       id INTEGER PRIMARY KEY NOT NULL CHECK (id = 1), payload_json TEXT NOT NULL,
       updated_at TEXT NOT NULL
     );
+    CREATE TABLE IF NOT EXISTS question_admin_overrides (
+      question_id TEXT PRIMARY KEY NOT NULL,
+      deleted_at TEXT,
+      difficulty_override INTEGER,
+      updated_at TEXT NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS question_reports (
+      question_id TEXT NOT NULL,
+      reason TEXT NOT NULL,
+      count INTEGER NOT NULL DEFAULT 1,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL,
+      PRIMARY KEY(question_id, reason)
+    );
   `);
 
   const questionColumns = new Set((await db.getAllAsync<{ name: string }>('PRAGMA table_info(questions)')).map((column) => column.name));
@@ -81,6 +98,7 @@ export async function initializeDatabase() {
       await db.runAsync('DELETE FROM questions WHERE topic_id = ?', retiredTopicId);
       await db.runAsync('DELETE FROM topics WHERE id = ?', retiredTopicId);
     }
+    await deleteRetiredQuestions(db, "id LIKE 'otdb-%'");
     await db.runAsync("DELETE FROM session_draft WHERE payload_json LIKE '%\"id\":\"daily\"%' OR payload_json LIKE '%\"topicId\":\"daily\"%' OR payload_json LIKE '%\"id\":\"starter\"%' OR payload_json LIKE '%\"topicId\":\"starter\"%'");
     for (const topic of topics) {
       await db.runAsync(
@@ -103,7 +121,40 @@ export async function initializeDatabase() {
         question.interactionType ?? question.type ?? 'choice', JSON.stringify(question.promptBlocks ?? []), JSON.stringify(question.answerSchema ?? {}), question.geoTarget ? JSON.stringify(question.geoTarget) : null,
       );
     }
+    await applyQuestionAdminOverrides(db);
   });
+}
+
+async function deleteRetiredQuestions(db: SQLite.SQLiteDatabase, questionWhere: string) {
+  const questionSubquery = `SELECT id FROM questions WHERE ${questionWhere}`;
+  await db.runAsync(`DELETE FROM answers WHERE question_id IN (${questionSubquery})`);
+  await db.runAsync(`DELETE FROM favorites WHERE question_id IN (${questionSubquery})`);
+  await db.runAsync(`DELETE FROM review_state WHERE question_id IN (${questionSubquery})`);
+  await db.runAsync(`DELETE FROM question_reports WHERE question_id IN (${questionSubquery})`);
+  await db.runAsync(`DELETE FROM questions WHERE ${questionWhere}`);
+  await db.runAsync('DELETE FROM sessions WHERE NOT EXISTS (SELECT 1 FROM answers WHERE answers.session_id = sessions.id)');
+}
+
+async function applyQuestionAdminOverrides(db: SQLite.SQLiteDatabase) {
+  await db.runAsync(
+    `UPDATE questions
+     SET difficulty = (
+       SELECT difficulty_override FROM question_admin_overrides o WHERE o.question_id = questions.id
+     )
+     WHERE id IN (
+       SELECT question_id FROM question_admin_overrides WHERE difficulty_override IN (1, 2, 3)
+     )`,
+  );
+  const deletedRows = await db.getAllAsync<{ question_id: string }>('SELECT question_id FROM question_admin_overrides WHERE deleted_at IS NOT NULL');
+  for (const row of deletedRows) await removeQuestionRows(db, row.question_id);
+}
+
+async function removeQuestionRows(db: SQLite.SQLiteDatabase, questionId: string) {
+  await db.runAsync('DELETE FROM answers WHERE question_id = ?', questionId);
+  await db.runAsync('DELETE FROM favorites WHERE question_id = ?', questionId);
+  await db.runAsync('DELETE FROM review_state WHERE question_id = ?', questionId);
+  await db.runAsync('DELETE FROM question_reports WHERE question_id = ?', questionId);
+  await db.runAsync('DELETE FROM questions WHERE id = ?', questionId);
 }
 
 export async function saveSessionDraft(draft: Omit<SessionDraft, 'updatedAt'>) {
@@ -140,6 +191,114 @@ export async function getLibraryStats(): Promise<LibraryStats> {
   const questionCount = await db.getFirstAsync<{ count: number }>('SELECT COUNT(*) AS count FROM questions');
   const importCount = await db.getFirstAsync<{ count: number }>('SELECT COUNT(*) AS count FROM imports');
   return { topics: topicCount?.count ?? 0, questions: questionCount?.count ?? 0, imports: importCount?.count ?? 0 };
+}
+
+export type AdminQuestion = QuizQuestion & {
+  topicTitle: string;
+  answerCount: number;
+  reportCount: number;
+};
+
+export async function getAdminQuestions(filters: { query?: string; topicId?: string; difficulty?: Difficulty | 'all'; limit?: number } = {}): Promise<AdminQuestion[]> {
+  const db = await dbPromise;
+  const clauses: string[] = [];
+  const parameters: Array<string | number> = [];
+  if (filters.query?.trim()) {
+    clauses.push('(q.prompt LIKE ? OR q.id LIKE ? OR q.tags_json LIKE ?)');
+    const pattern = `%${filters.query.trim()}%`;
+    parameters.push(pattern, pattern, pattern);
+  }
+  if (filters.topicId && filters.topicId !== 'all') {
+    clauses.push('q.topic_id = ?');
+    parameters.push(filters.topicId);
+  }
+  if (filters.difficulty && filters.difficulty !== 'all') {
+    clauses.push('q.difficulty = ?');
+    parameters.push(filters.difficulty);
+  }
+  const where = clauses.length ? `WHERE ${clauses.join(' AND ')}` : '';
+  parameters.push(filters.limit ?? 80);
+  const rows = await db.getAllAsync<QuestionRow & { topic_title: string; answer_count: number; report_count: number }>(
+    `SELECT q.*, t.title AS topic_title, EXISTS(SELECT 1 FROM favorites f WHERE f.question_id = q.id) AS is_favorite,
+            (SELECT COUNT(*) FROM answers a WHERE a.question_id = q.id) AS answer_count,
+            (SELECT COALESCE(SUM(r.count), 0) FROM question_reports r WHERE r.question_id = q.id) AS report_count
+     FROM questions q JOIN topics t ON t.id = q.topic_id
+     ${where}
+     ORDER BY t.title, q.difficulty, q.prompt LIMIT ?`,
+    ...parameters,
+  );
+  return rows.map((row) => ({ ...mapQuestionRow(row), topicTitle: row.topic_title, answerCount: row.answer_count, reportCount: row.report_count }));
+}
+
+export async function reportQuestion(questionId: string, reason: QuestionReportReason) {
+  const db = await dbPromise;
+  const now = new Date().toISOString();
+  await db.runAsync(
+    `INSERT INTO question_reports (question_id, reason, count, created_at, updated_at)
+     VALUES (?, ?, 1, ?, ?)
+     ON CONFLICT(question_id, reason) DO UPDATE SET count = count + 1, updated_at = excluded.updated_at`,
+    questionId, reason, now, now,
+  );
+}
+
+export async function exportQuestionReports() {
+  const db = await dbPromise;
+  const rows = await db.getAllAsync<{
+    question_id: string;
+    prompt: string | null;
+    topic_id: string | null;
+    reason: QuestionReportReason;
+    count: number;
+    created_at: string;
+    updated_at: string;
+  }>(
+    `SELECT r.question_id, q.prompt, q.topic_id, r.reason, r.count, r.created_at, r.updated_at
+     FROM question_reports r
+     LEFT JOIN questions q ON q.id = r.question_id
+     ORDER BY r.updated_at DESC, r.question_id`,
+  );
+  return {
+    format: 'kizz.question-reports' as const,
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    reports: rows.map((row) => ({
+      questionId: row.question_id,
+      topicId: row.topic_id ?? undefined,
+      prompt: row.prompt ?? undefined,
+      reason: row.reason,
+      count: row.count,
+      createdAt: row.created_at,
+      updatedAt: row.updated_at,
+    })),
+  };
+}
+
+export async function adminDeleteQuestion(questionId: string) {
+  const db = await dbPromise;
+  const now = new Date().toISOString();
+  await db.withTransactionAsync(async () => {
+    await db.runAsync(
+      `INSERT INTO question_admin_overrides (question_id, deleted_at, difficulty_override, updated_at)
+       VALUES (?, ?, NULL, ?)
+       ON CONFLICT(question_id) DO UPDATE SET deleted_at=excluded.deleted_at, updated_at=excluded.updated_at`,
+      questionId, now, now,
+    );
+    await removeQuestionRows(db, questionId);
+  });
+}
+
+export async function adminUpdateQuestionDifficulty(questionId: string, difficulty: Difficulty) {
+  const db = await dbPromise;
+  const now = new Date().toISOString();
+  await db.withTransactionAsync(async () => {
+    await db.runAsync('UPDATE questions SET difficulty = ? WHERE id = ?', difficulty, questionId);
+    await db.runAsync(
+      `INSERT INTO question_admin_overrides (question_id, deleted_at, difficulty_override, updated_at)
+       VALUES (?, NULL, ?, ?)
+       ON CONFLICT(question_id) DO UPDATE SET difficulty_override=excluded.difficulty_override, updated_at=excluded.updated_at`,
+      questionId, difficulty, now,
+    );
+  });
 }
 
 export async function getTopics(): Promise<Topic[]> {
@@ -230,15 +389,6 @@ function mapQuestionRow(row: QuestionRow): QuizQuestion {
   };
 }
 
-export async function getQuizQuestions(topicId: string, limit = 8): Promise<QuizQuestion[]> {
-  const db = await dbPromise;
-  const rows = await db.getAllAsync<QuestionRow>(
-    `SELECT q.*, EXISTS(SELECT 1 FROM favorites f WHERE f.question_id = q.id) AS is_favorite
-     FROM questions q WHERE q.topic_id = ? ORDER BY RANDOM() LIMIT ?`, topicId, limit,
-  );
-  return rows.map(mapQuestionRow);
-}
-
 export async function getFilteredQuestions(filters: SessionFilters): Promise<QuizQuestion[]> {
   const db = await dbPromise;
   const clauses: string[] = [];
@@ -250,6 +400,10 @@ export async function getFilteredQuestions(filters: SessionFilters): Promise<Qui
   if (filters.difficulties.length) {
     clauses.push(`q.difficulty IN (${filters.difficulties.map(() => '?').join(', ')})`);
     parameters.push(...filters.difficulties);
+  }
+  if (filters.subthemes?.length) {
+    clauses.push(`(${filters.subthemes.map(() => 'q.tags_json LIKE ?').join(' OR ')})`);
+    parameters.push(...filters.subthemes.map((tag) => `%"${tag}"%`));
   }
   const where = clauses.length ? `WHERE ${clauses.join(' AND ')}` : '';
   parameters.push(filters.limit);
@@ -322,6 +476,57 @@ export async function getLanguageQuestions(filters: LanguageSessionFilters): Pro
     ...parameters,
   );
   return rows.map(mapQuestionRow);
+}
+
+const cefrRank = ['A1', 'A2', 'B1', 'B2', 'C1'];
+
+function languageQuestionLevel(question: QuizQuestion) {
+  const tag = question.tags.find((item) => item.startsWith('cefr:'));
+  return tag?.slice(5);
+}
+
+function frequencyRank(question: QuizQuestion) {
+  const tag = question.tags.find((item) => item.startsWith('frequency-rank:'));
+  return tag?.slice('frequency-rank:'.length);
+}
+
+export async function getDailyVocabularyQuestions(filters: Pick<LanguageSessionFilters, 'language' | 'level'>): Promise<QuizQuestion[]> {
+  const db = await dbPromise;
+  const rows = await db.getAllAsync<QuestionRow>(
+    `SELECT q.*, EXISTS(SELECT 1 FROM favorites f WHERE f.question_id = q.id) AS is_favorite
+     FROM questions q
+     WHERE q.topic_id = 'language'
+       AND q.tags_json LIKE ?
+       AND q.tags_json LIKE '%"skill:vocabulary"%'
+       AND q.tags_json LIKE '%"frequency-rank:%'
+     ORDER BY q.id`,
+    `%"lang:${filters.language}"%`,
+  );
+  const maxLevel = cefrRank.indexOf(filters.level);
+  const grouped = new Map<string, QuizQuestion[]>();
+  for (const question of rows.map(mapQuestionRow)) {
+    const level = languageQuestionLevel(question);
+    const rank = frequencyRank(question);
+    if (!rank || !level || cefrRank.indexOf(level) > maxLevel) continue;
+    grouped.set(rank, [...(grouped.get(rank) ?? []), question]);
+  }
+  const keys = [...grouped.keys()].sort();
+  if (!keys.length) return [];
+  const dayKey = Math.floor(Date.now() / 86_400_000);
+  const rotated = keys.slice(dayKey % keys.length).concat(keys.slice(0, dayKey % keys.length));
+  return rotated.slice(0, 10).flatMap((key) => grouped.get(key) ?? []).slice(0, 20);
+}
+
+export async function getLanguageProgress(): Promise<LanguageProgressCell[]> {
+  const db = await dbPromise;
+  const rows = await db.getAllAsync<{ tags_json: string; answered: number; score: number }>(
+    `SELECT q.tags_json, COUNT(*) AS answered, COALESCE(SUM(COALESCE(a.credit, a.correct)), 0) AS score
+     FROM answers a
+     JOIN questions q ON q.id = a.question_id
+     WHERE q.topic_id = 'language'
+     GROUP BY q.tags_json`,
+  );
+  return summarizeLanguageProgress(rows.map((row) => ({ tags: JSON.parse(row.tags_json) as string[], answered: row.answered, score: row.score })));
 }
 
 export async function getReviewQuestions(limit = 10): Promise<QuizQuestion[]> {
@@ -421,4 +626,85 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     cursor.setDate(cursor.getDate() - 1);
   }
   return { answered: totals?.answered ?? 0, correct: totals?.correct ?? 0, sessions: sessions?.count ?? 0, streakDays, dueReview: due?.count ?? 0 };
+}
+
+export async function getRecentSessions(limit = 5): Promise<RecentSession[]> {
+  const db = await dbPromise;
+  const rows = await db.getAllAsync<{
+    id: number;
+    topic_id: string;
+    topic_title: string | null;
+    score: number;
+    total: number;
+    completed_at: string;
+  }>(
+    `SELECT s.id, s.topic_id, t.title AS topic_title, s.score, s.total, s.completed_at
+     FROM sessions s
+     LEFT JOIN topics t ON t.id = s.topic_id
+     ORDER BY s.completed_at DESC
+     LIMIT ?`,
+    limit,
+  );
+  return rows.map((row) => ({
+    id: row.id,
+    topicId: row.topic_id,
+    topicTitle: row.topic_title ?? sessionTopicFallback(row.topic_id),
+    score: row.score,
+    total: row.total,
+    completedAt: row.completed_at,
+  }));
+}
+
+function sessionTopicFallback(topicId: string) {
+  if (topicId === 'mixed') return 'Session mixte';
+  if (topicId === 'review') return 'Revision';
+  if (topicId === 'favorites') return 'Favoris';
+  if (topicId === 'maps') return 'Cartes';
+  if (topicId.startsWith('language-')) return 'Langues';
+  if (topicId.startsWith('daily-vocab-')) return '10 mots du jour';
+  if (topicId.startsWith('infinite-')) return 'Infini';
+  return topicId;
+}
+
+export async function getTopicProgress(limit = 6): Promise<TopicProgress[]> {
+  const db = await dbPromise;
+  const rows = await db.getAllAsync<{
+    topic_id: string;
+    difficulty: Difficulty;
+    answered: number;
+    score: number;
+  }>(
+    `SELECT q.topic_id, COALESCE(o.difficulty_override, q.difficulty) AS difficulty, COUNT(*) AS answered, COALESCE(SUM(COALESCE(a.credit, a.correct)), 0) AS score
+     FROM answers a
+     JOIN questions q ON q.id = a.question_id
+     LEFT JOIN question_admin_overrides o ON o.question_id = q.id
+     WHERE o.deleted_at IS NULL
+     GROUP BY q.topic_id, COALESCE(o.difficulty_override, q.difficulty)`,
+  );
+  if (!rows.length) return [];
+  const topics = await getTopics();
+  const topicById = new Map(topics.map((topic) => [topic.id, topic]));
+  const byTopic = new Map<string, ProgressCell[]>();
+  for (const row of rows) {
+    if (!topicById.has(row.topic_id)) continue;
+    const current = byTopic.get(row.topic_id) ?? [];
+    current.push({ difficulty: row.difficulty, answered: row.answered, score: row.score });
+    byTopic.set(row.topic_id, current);
+  }
+  return [...byTopic.entries()]
+    .map(([topicId, cells]) => {
+      const normalizedCells = ([1, 2, 3] as Difficulty[]).map((difficulty) => cells.find((cell) => cell.difficulty === difficulty) ?? { difficulty, answered: 0, score: 0 });
+      const totalAnswered = normalizedCells.reduce((sum, cell) => sum + cell.answered, 0);
+      const totalScore = normalizedCells.reduce((sum, cell) => sum + cell.score, 0);
+      return {
+        topic: topicById.get(topicId)!,
+        totalAnswered,
+        totalScore,
+        accuracy: totalAnswered ? Math.round((totalScore / totalAnswered) * 100) : 0,
+        cells: normalizedCells,
+      };
+    })
+    .filter((item) => item.totalAnswered > 0)
+    .sort((a, b) => b.totalAnswered - a.totalAnswered || a.accuracy - b.accuracy)
+    .slice(0, limit);
 }

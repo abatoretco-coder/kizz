@@ -4,10 +4,17 @@ import { openTriviaGeographyQuestions } from './generated/openTriviaGeography';
 import { expandedQuestions } from './contentExpanded';
 import { dedicatedLanguageQuestions } from './contentLanguages';
 import { frequencyLanguageQuestions } from './languageLexicon';
+import { languageCourseQuestions } from './contentLanguageCourses';
 import { geoMapQuestions } from './contentGeoMap';
 import { economyQuestions, economyTopic } from './contentEconomy';
-import { openTdbGameShowQuestions } from './generated/openTdbGameShow';
 import { gameStyleQuestions } from './contentGameStyles';
+import { franceMapQuestions, franceMapTopic } from './contentFranceMap';
+import { quizShowExpansionQuestions } from './contentQuizShowExpansion';
+import { worldCountryQuestions } from './contentWorldCountries';
+import { worldFlagQuestions } from './contentWorldFlags';
+import { franceAdminQuestions } from './contentFranceAdmin';
+import { thematicExpansionQuestions } from './contentThemeExpansion';
+import { astronomyQuestions, astronomyTopic } from './contentAstronomy';
 
 const retiredTopicIds = new Set(['daily']);
 
@@ -19,6 +26,8 @@ const rawTopics: Topic[] = [
   { id: 'arts', title: 'Arts', subtitle: 'Œuvres, styles et artistes', icon: 'A', color: '#9A5B9E' },
   { id: 'language', title: 'Langues', subtitle: 'Premiers pas multilingues', icon: 'L', color: '#2E7E9C' },
   economyTopic,
+  astronomyTopic,
+  franceMapTopic,
   ...mvpTopics,
 ];
 
@@ -56,11 +65,75 @@ const rawQuestions: QuestionSeed[] = [
   ...expandedQuestions,
   ...dedicatedLanguageQuestions,
   ...frequencyLanguageQuestions,
+  ...languageCourseQuestions,
   ...geoMapQuestions,
   ...economyQuestions,
+  ...franceMapQuestions,
   ...openTriviaGeographyQuestions,
-  ...openTdbGameShowQuestions,
   ...gameStyleQuestions,
+  ...quizShowExpansionQuestions,
+  ...worldCountryQuestions,
+  ...worldFlagQuestions,
+  ...franceAdminQuestions,
+  ...thematicExpansionQuestions,
+  ...astronomyQuestions,
 ];
 
-export const questions: QuestionSeed[] = rawQuestions.filter((question) => !retiredTopicIds.has(question.topicId));
+function hashQuestionId(id: string) {
+  let hash = 0;
+  for (let index = 0; index < id.length; index += 1) hash = (hash * 31 + id.charCodeAt(index)) >>> 0;
+  return hash;
+}
+
+function balancedAnswerOrder(seed: QuestionSeed[]) {
+  const answerCounts = [0, 0, 0, 0];
+  return seed.map((question) => {
+    if (!question.choices || question.choices.length !== 4 || question.answerIndex === undefined) return question;
+    const correctChoice = question.choices[question.answerIndex];
+    const distractors = question.choices.filter((_, index) => index !== question.answerIndex);
+    const tieBreaker = hashQuestionId(question.id);
+    const targetIndex = [0, 1, 2, 3].sort((left, right) => (
+      answerCounts[left] - answerCounts[right] || ((left + tieBreaker) % 4) - ((right + tieBreaker) % 4)
+    ))[0];
+    answerCounts[targetIndex] += 1;
+    const choices = [...distractors];
+    choices.splice(targetIndex, 0, correctChoice);
+    return { ...question, choices: choices as [string, string, string, string], answerIndex: targetIndex };
+  });
+}
+
+function enrichSubthemeTags(question: QuestionSeed): QuestionSeed {
+  const tags = new Set(question.tags);
+  if (question.topicId === 'geography') {
+    if (tags.has('drapeaux') || tags.has('coverage:world-flags')) tags.add('subtheme:geo:flags');
+    else if (question.type === 'map-point') tags.add('subtheme:geo:map-world');
+    else if (tags.has('capitales') || tags.has('capital') || tags.has('pays') || question.id.startsWith('world-')) tags.add('subtheme:geo:capitals');
+    else tags.add('subtheme:geo:qcm');
+  }
+  if (question.topicId === 'france-map') {
+    if (question.type === 'map-point') tags.add('subtheme:france:map');
+    else tags.add('subtheme:france:admin');
+  }
+  if (question.topicId === 'history') {
+    if (tags.has('france')) tags.add('subtheme:history:france');
+    else if (tags.has('antiquite') || tags.has('antiquité')) tags.add('subtheme:history:antiquity');
+    else if (tags.has('xxe-siècle') || tags.has('xxe-siÃ¨cle') || tags.has('moderne')) tags.add('subtheme:history:modern');
+    else tags.add('subtheme:history:world');
+  }
+  if (question.topicId === 'sport') {
+    if (tags.has('football')) tags.add('subtheme:sport:football');
+    else if (tags.has('tennis')) tags.add('subtheme:sport:tennis');
+    else if (tags.has('rugby')) tags.add('subtheme:sport:rugby');
+  }
+  if (question.topicId === 'arts') {
+    if (tags.has('sculpture')) tags.add('subtheme:arts:sculpture');
+    else if (tags.has('musique')) tags.add('subtheme:arts:music');
+    else tags.add('subtheme:arts:painting');
+  }
+  if (question.topicId === 'cinema') tags.add('subtheme:cinema:films');
+  if (question.topicId === 'architecture') tags.add('subtheme:architecture:styles');
+  if (question.topicId === 'economy') tags.add('subtheme:economy:basics');
+  return { ...question, tags: [...tags] };
+}
+
+export const questions: QuestionSeed[] = balancedAnswerOrder(rawQuestions.filter((question) => !retiredTopicIds.has(question.topicId)).map(enrichSubthemeTags));

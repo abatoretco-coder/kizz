@@ -1,0 +1,3 @@
+id,topicId,topicTitle,topicSubtitle,topicIcon,topicColor,difficulty,prompt,type,choiceA,choiceB,choiceC,choiceD,answer,acceptedAnswers,explanation,tags,sourceLabel,sourceUrl
+csv-demo-001,geo-demo,Geo demo,Exemple CSV,Geo,#68D7A2,1,"Quelle capitale est celle de l Italie ?",multiple-choice,Rome,Madrid,Lisbonne,Berlin,A,,"Rome est la capitale de l Italie.","capitales|europe",Exemple CSV,https://fr.wikipedia.org/wiki/Rome
+csv-demo-002,geo-demo,Geo demo,Exemple CSV,Geo,#68D7A2,1,"Quelle ville est la capitale de l Espagne ?",free-text,,,,,Madrid,"Madrid|madrid","La capitale espagnole est Madrid.","capitales|europe",Exemple CSV,https://fr.wikipedia.org/wiki/Madrid

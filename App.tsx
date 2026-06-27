@@ -2,34 +2,23 @@ import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
 import { useEffect, useState } from 'react';
 import {
-  ActivityIndicator, Alert, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View,
+  ActivityIndicator, Alert, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
 } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
-import { clearSessionDraft, getDashboardStats, getFavoriteQuestions, getFilteredQuestions, getLanguageQuestions, getLibraryStats, getQuizQuestions, getRandomQuestionByDifficulty, getRandomTopicQuestionsByDifficulty, getReviewQuestions, getSessionDraft, getTaggedQuestions, getTopics, initializeDatabase, saveSession, saveSessionDraft, searchQuestions, toggleFavorite } from './src/database';
-import { CefrLevel, DashboardStats, Difficulty, GeoPoint, LanguageCode, LanguageSessionFilters, LanguageSkill, LibraryStats, QuizQuestion, SessionAnswer, SessionDraft, SessionFilters, Topic } from './src/domain';
-import { createAndShareQuizPack, pickAndImportQuizPack } from './src/quizPack';
+import { AdminQuestion, QuestionReportReason, adminDeleteQuestion, adminUpdateQuestionDifficulty, clearSessionDraft, getAdminQuestions, getDailyVocabularyQuestions, getDashboardStats, getFavoriteQuestions, getFilteredQuestions, getLanguageProgress, getLanguageQuestions, getLibraryStats, getRandomQuestionByDifficulty, getRandomTopicQuestionsByDifficulty, getRecentSessions, getReviewQuestions, getSessionDraft, getTaggedQuestions, getTopicProgress, getTopics, initializeDatabase, reportQuestion, saveSession, saveSessionDraft, searchQuestions, toggleFavorite } from './src/database';
+import { CefrLevel, DashboardStats, Difficulty, GeoPoint, LanguageCode, LanguageProgressCell, LanguageSessionFilters, LanguageSkill, LibraryStats, QuizQuestion, RecentSession, SessionAnswer, SessionDraft, SessionFilters, Topic, TopicProgress } from './src/domain';
+import { createAndShareQuestionReports, createAndShareQuizPack, importCsvQuizPackDraft, pickAndImportQuizPack, pickCsvQuizPackDraft } from './src/quizPack';
 import { gradeMapPoint, gradeMultiText, isFreeTextCorrect } from './src/quizEngine';
+import { palette } from './src/theme';
+import { summarizeByInteraction } from './src/sessionSummary';
+import { subthemesForTopics } from './src/subthemes';
 
-type Screen = 'home' | 'configure' | 'languages' | 'quiz' | 'result' | 'library' | 'search';
+type Screen = 'home' | 'configure' | 'languages' | 'quiz' | 'result' | 'library' | 'search' | 'admin';
 const emptyStats: DashboardStats = { answered: 0, correct: 0, sessions: 0, streakDays: 0, dueReview: 0 };
 const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
   'mona-lisa': require('./assets/questions/mona-lisa.jpg'),
   'the-thinker': require('./assets/questions/the-thinker.jpg'),
 };
-const palette = {
-  bg: '#0A0E0D',
-  surface: '#121815',
-  surface2: '#151B18',
-  line: '#26312C',
-  text: '#F3F7F5',
-  muted: '#8A9791',
-  dim: '#66736D',
-  primary: '#68D7A2',
-  blue: '#75A7FF',
-  gold: '#E6B759',
-  rose: '#D982AD',
-};
-
 export default function App() {
   const [ready, setReady] = useState(false);
   const [screen, setScreen] = useState<Screen>('home');
@@ -46,15 +35,28 @@ export default function App() {
   const [initialTopicIds, setInitialTopicIds] = useState<string[]>([]);
   const [draft, setDraft] = useState<SessionDraft | null>(null);
   const [infiniteDifficulty, setInfiniteDifficulty] = useState<Difficulty | null>(null);
+  const [progress, setProgress] = useState<TopicProgress[]>([]);
+  const [recentSessions, setRecentSessions] = useState<RecentSession[]>([]);
+  const [languageProgress, setLanguageProgress] = useState<LanguageProgressCell[]>([]);
 
   const refreshStats = async () => setStats(await getDashboardStats());
   const refreshTopics = async () => setAvailableTopics(await getTopics());
+  const refreshRecentSessions = async () => setRecentSessions(await getRecentSessions());
+  const refreshLanguageProgress = async () => setLanguageProgress(await getLanguageProgress());
+  const refreshProgress = async () => {
+    try {
+      setProgress(await getTopicProgress());
+    } catch {
+      setProgress([]);
+    }
+  };
 
   useEffect(() => {
     initializeDatabase().then(async () => {
-      await Promise.all([refreshStats(), refreshTopics()]);
+      await Promise.all([refreshStats(), refreshTopics(), refreshRecentSessions(), refreshLanguageProgress()]);
       setDraft(await getSessionDraft());
       setReady(true);
+      void refreshProgress();
     });
   }, []);
 
@@ -85,7 +87,20 @@ export default function App() {
     }
     const names: Record<LanguageCode, string> = { es: 'Espagnol', de: 'Allemand', it: 'Italien' };
     prepareSession(
-      { id: `language-${filters.language}-${filters.level}`, title: `${names[filters.language]} · ${filters.level}`, subtitle: 'Parcours linguistique ciblé', icon: filters.language.toUpperCase(), color: '#5FB8C9' },
+      { id: `language-${filters.language}-${filters.level}`, title: `${names[filters.language]} - ${filters.level}`, subtitle: 'Parcours linguistique ciblé', icon: filters.language.toUpperCase(), color: '#5FB8C9' },
+      nextQuiz,
+    );
+  }
+
+  async function launchDailyVocabulary(filters: Pick<LanguageSessionFilters, 'language' | 'level'>) {
+    const nextQuiz = await getDailyVocabularyQuestions(filters);
+    if (!nextQuiz.length) {
+      Alert.alert('Vocabulaire à enrichir', 'Aucun mot fréquentiel ne correspond encore à cette langue et ce niveau.');
+      return;
+    }
+    const names: Record<LanguageCode, string> = { es: 'Espagnol', de: 'Allemand', it: 'Italien' };
+    prepareSession(
+      { id: `daily-vocab-${filters.language}-${filters.level}`, title: `10 mots du jour - ${names[filters.language]}`, subtitle: `Quiz aller-retour niveau ${filters.level}`, icon: '10', color: '#E6B759' },
       nextQuiz,
     );
   }
@@ -108,6 +123,18 @@ export default function App() {
     prepareSession(sessionTopic, nextQuiz);
   }
 
+  async function launchProgressSession(nextTopic: Topic, difficulty: Difficulty) {
+    const nextQuiz = await getFilteredQuestions({ topicIds: [nextTopic.id], difficulties: [difficulty], limit: 10 });
+    if (!nextQuiz.length) {
+      Alert.alert('Aucune question', 'Ce theme ne contient pas encore ce niveau de difficulte.');
+      return;
+    }
+    prepareSession(
+      { ...nextTopic, subtitle: `Session courte - niveau ${difficulty}` },
+      nextQuiz,
+    );
+  }
+
   async function launchEnduranceSession(difficulty: Difficulty) {
     const picked = await getRandomTopicQuestionsByDifficulty(difficulty, 10);
     if (!picked?.questions.length) {
@@ -115,7 +142,7 @@ export default function App() {
       return;
     }
     prepareSession(
-      { ...picked.topic, title: `Endurance · ${picked.topic.title}`, subtitle: `Thème tiré au hasard · niveau ${difficulty}` },
+      { ...picked.topic, title: `Endurance - ${picked.topic.title}`, subtitle: `Thème tiré au hasard - niveau ${difficulty}` },
       picked.questions,
     );
   }
@@ -127,7 +154,7 @@ export default function App() {
       return;
     }
     prepareSession(
-      { id: `infinite-${difficulty}`, title: `Infini · Niveau ${difficulty}`, subtitle: 'Thèmes tirés au hasard', icon: '∞', color: '#8FB3FF' },
+      { id: `infinite-${difficulty}`, title: `Infini - Niveau ${difficulty}`, subtitle: 'Thèmes tirés au hasard', icon: '∞', color: '#8FB3FF' },
       [firstQuestion],
       difficulty,
     );
@@ -227,6 +254,26 @@ export default function App() {
     Haptics.selectionAsync();
   }
 
+  function handleReportQuestion() {
+    const question = quiz[questionIndex];
+    const submit = async (reason: QuestionReportReason) => {
+      await reportQuestion(question.id, reason);
+      Haptics.selectionAsync();
+    };
+    Alert.alert('Signaler la question', 'Le signalement reste local.', [
+      { text: 'Ambigue', onPress: () => submit('ambiguous') },
+      {
+        text: 'Difficulte',
+        onPress: () => Alert.alert('Difficulte', 'Choisis le probleme.', [
+          { text: 'Trop facile', onPress: () => submit('too-easy') },
+          { text: 'Trop dure', onPress: () => submit('too-hard') },
+          { text: 'Annuler', style: 'cancel' },
+        ]),
+      },
+      { text: 'A reformuler', onPress: () => submit('reword') },
+    ]);
+  }
+
   function setAnswerConfidence(confidence: 1 | 2 | 3) {
     const questionId = quiz[questionIndex]?.id;
     const nextAnswers = answers.map((answer, index) => index === answers.length - 1 && answer.questionId === questionId ? { ...answer, confidence } : answer);
@@ -267,6 +314,9 @@ export default function App() {
     await clearSessionDraft();
     setDraft(null);
     await refreshStats();
+    await refreshProgress();
+    await refreshRecentSessions();
+    await refreshLanguageProgress();
     setScreen('result');
   }
 
@@ -276,6 +326,9 @@ export default function App() {
       await clearSessionDraft();
       setDraft(null);
       await refreshStats();
+      await refreshProgress();
+      await refreshRecentSessions();
+      await refreshLanguageProgress();
     }
     setInfiniteDifficulty(null);
     setScreen('home');
@@ -288,9 +341,9 @@ export default function App() {
   return (
     <View style={styles.safe}>
       <StatusBar style="light" />
-      {screen === 'home' && <Home stats={stats} topics={availableTopics} draft={draft} onResume={resumeSession} onStart={startQuiz} onLanguages={() => setScreen('languages')} onCompose={configureMixedSession} onEndurance={launchEnduranceSession} onInfinite={launchInfiniteSession} onReview={() => startCollection('review')} onFavorites={() => startCollection('favorites')} onMaps={() => startCollection('maps')} onSearch={() => setScreen('search')} onLibrary={() => setScreen('library')} />}
+      {screen === 'home' && <HomeV2 stats={stats} topics={availableTopics} progress={progress} recentSessions={recentSessions} draft={draft} onResume={resumeSession} onStart={startQuiz} onProgressCell={launchProgressSession} onLanguages={() => setScreen('languages')} onCompose={configureMixedSession} onEndurance={launchEnduranceSession} onInfinite={launchInfiniteSession} onReview={() => startCollection('review')} onFavorites={() => startCollection('favorites')} onMaps={() => startCollection('maps')} onSearch={() => setScreen('search')} onLibrary={() => setScreen('library')} />}
       {screen === 'configure' && <SessionConfigurator topics={availableTopics} initialTopicIds={initialTopicIds} onClose={() => setScreen('home')} onStart={launchConfiguredSession} />}
-      {screen === 'languages' && <LanguageHub onClose={() => setScreen('home')} onStart={launchLanguageSession} />}
+      {screen === 'languages' && <LanguageHub progress={languageProgress} onClose={() => setScreen('home')} onStart={launchLanguageSession} onDailyVocabulary={launchDailyVocabulary} />}
       {screen === 'quiz' && topic && quiz.length > 0 && (
         <Quiz
           topic={topic} questions={quiz} index={questionIndex} selected={selected} freeText={freeText}
@@ -299,14 +352,15 @@ export default function App() {
           answerCorrect={answers.at(-1)?.correct ?? false} onFreeTextChange={setFreeText} onSubmitFreeText={submitFreeText}
           confidence={answers.at(-1)?.questionId === quiz[questionIndex].id ? answers.at(-1)?.confidence : undefined} onConfidence={setAnswerConfidence}
           infiniteDifficulty={infiniteDifficulty}
-          onSelect={selectAnswer} onToggleFavorite={handleToggleFavorite} onContinue={continueQuiz} onClose={closeQuiz}
+          onSelect={selectAnswer} onToggleFavorite={handleToggleFavorite} onReportQuestion={handleReportQuestion} onContinue={continueQuiz} onClose={closeQuiz}
         />
       )}
       {screen === 'result' && topic && (
-        <Result topic={topic} answers={answers} onAgain={() => prepareSession(topic, quiz)} onHome={() => setScreen('home')} />
+        <Result topic={topic} questions={quiz} answers={answers} onAgain={() => prepareSession(topic, quiz)} onHome={() => setScreen('home')} />
       )}
-      {screen === 'library' && <Library onClose={async () => { await refreshTopics(); setScreen('home'); }} />}
+      {screen === 'library' && <Library onClose={async () => { await refreshTopics(); setScreen('home'); }} onAdmin={() => setScreen('admin')} />}
       {screen === 'search' && <Search onClose={() => setScreen('home')} onStart={(questions) => prepareSession({ id: 'search', title: 'Recherche', subtitle: 'Sélection personnelle', icon: '?', color: '#68D7A2' }, questions)} />}
+      {screen === 'admin' && <AdminPanel topics={availableTopics} onClose={async () => { await Promise.all([refreshTopics(), refreshStats(), refreshProgress()]); setScreen('library'); }} />}
     </View>
   );
 }
@@ -325,78 +379,87 @@ function getHomeRecommendation(stats: DashboardStats, draft: SessionDraft | null
   return { action: 'endurance', title: 'Varier sans choisir', text: 'Une session finie de 10 questions, difficulte moyenne, theme tire au hasard.', label: 'Lancer', color: '#8FB3FF' };
 }
 
-function Home({ stats, topics, draft, onResume, onStart, onLanguages, onCompose, onEndurance, onInfinite, onReview, onFavorites, onMaps, onSearch, onLibrary }: { stats: DashboardStats; topics: Topic[]; draft: SessionDraft | null; onResume: () => void; onStart: (topic: Topic) => void; onLanguages: () => void; onCompose: () => void; onEndurance: (difficulty: Difficulty) => void; onInfinite: (difficulty: Difficulty) => void; onReview: () => void; onFavorites: () => void; onMaps: () => void; onSearch: () => void; onLibrary: () => void }) {
+type HomeProps = { stats: DashboardStats; topics: Topic[]; progress: TopicProgress[]; recentSessions: RecentSession[]; draft: SessionDraft | null; onResume: () => void; onStart: (topic: Topic) => void; onProgressCell: (topic: Topic, difficulty: Difficulty) => void; onLanguages: () => void; onCompose: () => void; onEndurance: (difficulty: Difficulty) => void; onInfinite: (difficulty: Difficulty) => void; onReview: () => void; onFavorites: () => void; onMaps: () => void; onSearch: () => void; onLibrary: () => void };
+
+function HomeV2({ stats, topics, progress, recentSessions, draft, onResume, onStart, onProgressCell, onLanguages, onCompose, onEndurance, onInfinite, onReview, onFavorites, onMaps, onSearch, onLibrary }: HomeProps) {
+  const { width } = useWindowDimensions();
+  const [homePage, setHomePage] = useState(0);
+  const [homePageProgress, setHomePageProgress] = useState(0);
   const accuracy = stats.answered ? Math.round((stats.correct / stats.answered) * 100) : 0;
   const recommendation = getHomeRecommendation(stats, draft);
+  const cultureTopics = topics.filter((item) => item.id !== 'language');
   const runRecommendation = () => {
     if (recommendation.action === 'resume') onResume();
     else if (recommendation.action === 'review') onReview();
     else if (recommendation.action === 'compose') onCompose();
     else onEndurance(2);
   };
+  const updateHomePageProgress = (event: { nativeEvent: { contentOffset: { x: number } } }) => {
+    const progress = Math.max(0, Math.min(2, event.nativeEvent.contentOffset.x / width));
+    setHomePageProgress(progress);
+    setHomePage(Math.round(progress));
+  };
   return (
-    <ScrollView contentContainerStyle={styles.page} showsVerticalScrollIndicator={false}>
+    <View style={styles.homeRoot}>
       <View style={styles.brandRow}><Image source={require('./assets/kizz-logo-v2.png')} style={styles.logoImage} /><Text style={styles.brand}>Kizz</Text><Pressable onPress={onLibrary} style={styles.libraryShortcut}><Text style={styles.libraryShortcutText}>Banques</Text></Pressable></View>
-      <View style={styles.dashboardHeader}><Text style={styles.dashboardTitle}>Tableau de bord</Text><Text style={styles.dashboardCaption}>Progression locale</Text></View>
-      <View style={styles.kpiGrid}>
-        <Kpi value={String(stats.sessions)} label="Sessions" accent="#68D7A2" />
-        <Kpi value={String(stats.answered)} label="Réponses" accent="#75A7FF" />
-        <Kpi value={`${accuracy}%`} label="Précision" accent="#E6B759" />
-        <Kpi value={String(stats.dueReview)} label="À réviser" accent="#D982AD" />
+      <View style={styles.homeTabs}>
+        <View style={[styles.homeTabIndicator, { transform: [{ translateX: ((width - 44) / 3) * homePageProgress }] }]} />
+        {['Dashboard', 'Culture', 'Langues'].map((label, index) => <Text key={label} style={[styles.homeTab, homePage === index && styles.homeTabActive]}>{label}</Text>)}
       </View>
-
-      {draft && <Pressable testID="resume-session" accessibilityRole="button" onPress={onResume} style={styles.resumeCard}><View style={styles.resumeProgress}><View style={[styles.resumeProgressFill, { width: `${Math.round(((draft.questionIndex + 1) / draft.questions.length) * 100)}%`, backgroundColor: draft.topic.color }]} /></View><Text style={styles.resumeEyebrow}>SESSION EN COURS</Text><View style={styles.resumeRow}><View><Text style={styles.resumeTitle}>{draft.topic.title}</Text><Text style={styles.resumeText}>Question {draft.questionIndex + 1} sur {draft.questions.length}</Text></View><Text style={[styles.resumeArrow, { color: draft.topic.color }]}>Reprendre →</Text></View></Pressable>}
-
-      <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Choisis un mode</Text><Text style={styles.sectionHint}>à ton rythme</Text></View>
-      <Pressable testID="recommended-action" accessibilityRole="button" onPress={runRecommendation} style={({ pressed }) => [styles.recommendCard, pressed && styles.pressed]}>
-        <View style={[styles.recommendRail, { backgroundColor: recommendation.color }]} />
-        <View style={{ flex: 1 }}>
-          <Text style={styles.recommendEyebrow}>PROCHAINE ACTION UTILE</Text>
-          <Text style={styles.recommendTitle}>{recommendation.title}</Text>
-          <Text style={styles.recommendText}>{recommendation.text}</Text>
-        </View>
-        <Text style={[styles.recommendAction, { color: recommendation.color }]}>{recommendation.label}</Text>
-      </Pressable>
-
-      <View style={styles.modeStack}>
-        <Pressable testID="compose-session" accessibilityRole="button" onPress={onCompose} style={({ pressed }) => [styles.composeCard, pressed && styles.pressed]}><View><Text style={styles.composeEyebrow}>SESSION SUR MESURE</Text><Text style={styles.composeTitle}>Mélanger thèmes et niveaux</Text><Text style={styles.modeText}>Le mode le plus complet pour composer ton entraînement.</Text></View><Text style={styles.composeArrow}>→</Text></Pressable>
-
-        <View style={styles.enduranceCard}>
-          <View style={{ flex: 1 }}><Text style={styles.composeEyebrow}>MODE ENDURANCE</Text><Text style={styles.composeTitle}>Thème aléatoire par difficulté</Text><Text style={styles.enduranceText}>Choisis le niveau, Kizz tire le thème et lance 10 questions.</Text></View>
-          <View style={styles.enduranceButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`endurance-${difficulty}`} accessibilityRole="button" onPress={() => onEndurance(difficulty)} style={({ pressed }) => [styles.enduranceButton, pressed && styles.pressed]}><Text style={styles.enduranceButtonText}>{difficulty}</Text><Text style={styles.enduranceDots}>{'●'.repeat(difficulty)}</Text></Pressable>)}</View>
-        </View>
-
-        <View style={styles.infiniteCard}>
-          <View style={{ flex: 1 }}><Text style={styles.infiniteEyebrow}>MODE INFINI CALME</Text><Text style={styles.composeTitle}>Difficulté fixe, thèmes aléatoires</Text><Text style={styles.infiniteText}>Continue tant que tu veux. La croix sauvegarde les réponses et te ramène au calme.</Text></View>
-          <View style={styles.enduranceButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`infinite-${difficulty}`} accessibilityRole="button" onPress={() => onInfinite(difficulty)} style={({ pressed }) => [styles.infiniteButton, pressed && styles.pressed]}><Text style={styles.infiniteButtonText}>{difficulty}</Text><Text style={styles.infiniteDots}>∞</Text></Pressable>)}</View>
-        </View>
-
-        <Pressable testID="language-hub" accessibilityRole="button" onPress={onLanguages} style={({ pressed }) => [styles.languageHero, pressed && styles.pressed]}>
-          <View style={styles.languageHeroIcon}><Text style={styles.languageHeroIconText}>Aa</Text></View>
-          <View style={{ flex: 1 }}><Text style={styles.languageHeroEyebrow}>PARCOURS LANGUES</Text><Text style={styles.languageHeroTitle}>Espagnol · Allemand · Italien</Text><Text style={styles.languageHeroText}>Choisis ton niveau et une compétence précise.</Text></View>
-          <Text style={styles.composeArrow}>→</Text>
-        </Pressable>
-      </View>
-
-      <View style={styles.quickRow}>
-        <Pressable testID="review-errors" accessibilityRole="button" onPress={onReview} style={styles.quickAction}><Text style={styles.quickIcon}>↻</Text><Text style={styles.quickText}>Mes erreurs</Text></Pressable>
-        <Pressable testID="favorites" accessibilityRole="button" onPress={onFavorites} style={styles.quickAction}><Text style={styles.quickIcon}>☆</Text><Text style={styles.quickText}>Favoris</Text></Pressable>
-        <Pressable testID="map-session" accessibilityRole="button" onPress={onMaps} style={styles.quickAction}><Text style={styles.quickIcon}>⌖</Text><Text style={styles.quickText}>Cartes</Text></Pressable>
-        <Pressable testID="search" accessibilityRole="button" onPress={onSearch} style={styles.quickAction}><Text style={styles.quickIcon}>⌕</Text><Text style={styles.quickText}>Rechercher</Text></Pressable>
-      </View>
-
-      <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Choisis un thème</Text><Text style={styles.sectionHint}>{topics.filter((item) => item.id !== 'language').length} parcours</Text></View>
-      <View style={styles.topicGrid}>
-        {topics.filter((item) => item.id !== 'language').map((item) => (
-          <Pressable key={item.id} testID={`topic-${item.id}`} accessibilityRole="button" accessibilityLabel={`Commencer le thème ${item.title}`} onPress={() => onStart(item)} style={({ pressed }) => [styles.topicCard, pressed && styles.pressed]}>
-            <View style={[styles.topicIcon, { backgroundColor: `${item.color}1A` }]}><Text style={[styles.topicIconText, { color: item.color }]}>{item.icon}</Text></View>
-            <Text style={styles.topicTitle}>{item.title}</Text><Text style={styles.topicSubtitle}>{item.subtitle}</Text>
-            <Text style={[styles.go, { color: item.color }]}>Commencer  →</Text>
+      <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false} decelerationRate="fast" onScroll={updateHomePageProgress} scrollEventThrottle={16} style={styles.homePager}>
+        <ScrollView style={{ width }} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
+          <View style={styles.dashboardHeader}><Text style={styles.dashboardTitle}>Tableau de bord</Text><Text style={styles.dashboardCaption}>Progression locale</Text></View>
+          <View style={styles.kpiGrid}>
+            <Kpi value={String(stats.sessions)} label="Sessions" accent="#68D7A2" />
+            <Kpi value={String(stats.answered)} label="Reponses" accent="#75A7FF" />
+            <Kpi value={`${accuracy}%`} label="Precision" accent="#E6B759" />
+            <Kpi value={String(stats.dueReview)} label="A reviser" accent="#D982AD" />
+          </View>
+          <ProgressMatrix progress={progress} onCompose={onCompose} onStartCell={onProgressCell} />
+          <RecentSessions sessions={recentSessions} />
+          {draft && <Pressable testID="resume-session" accessibilityRole="button" onPress={onResume} style={styles.resumeCard}><View style={styles.resumeProgress}><View style={[styles.resumeProgressFill, { width: `${Math.round(((draft.questionIndex + 1) / draft.questions.length) * 100)}%`, backgroundColor: draft.topic.color }]} /></View><Text style={styles.resumeEyebrow}>SESSION EN COURS</Text><View style={styles.resumeRow}><View><Text style={styles.resumeTitle}>{draft.topic.title}</Text><Text style={styles.resumeText}>Question {draft.questionIndex + 1} sur {draft.questions.length}</Text></View><Text style={[styles.resumeArrow, { color: draft.topic.color }]}>Reprendre -&gt;</Text></View></Pressable>}
+          <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Prochaine action</Text><Text style={styles.sectionHint}>utile, courte</Text></View>
+          <Pressable testID="recommended-action" accessibilityRole="button" onPress={runRecommendation} style={({ pressed }) => [styles.recommendCard, pressed && styles.pressed]}>
+            <View style={[styles.recommendRail, { backgroundColor: recommendation.color }]} />
+            <View style={{ flex: 1 }}><Text style={styles.recommendEyebrow}>PROCHAINE ACTION UTILE</Text><Text style={styles.recommendTitle}>{recommendation.title}</Text><Text style={styles.recommendText}>{recommendation.text}</Text></View>
+            <Text style={[styles.recommendAction, { color: recommendation.color }]}>{recommendation.label}</Text>
           </Pressable>
-        ))}
-      </View>
-      <Text style={styles.privacy}>Tes réponses restent sur ce téléphone. Aucun compte requis.</Text>
-    </ScrollView>
+          <View style={styles.quickRow}>
+            <Pressable testID="review-errors" accessibilityRole="button" onPress={onReview} style={styles.quickAction}><Text style={styles.quickIcon}>R</Text><Text style={styles.quickText}>Mes erreurs</Text></Pressable>
+            <Pressable testID="favorites" accessibilityRole="button" onPress={onFavorites} style={styles.quickAction}><Text style={styles.quickIcon}>*</Text><Text style={styles.quickText}>Favoris</Text></Pressable>
+            <Pressable testID="map-session" accessibilityRole="button" onPress={onMaps} style={styles.quickAction}><Text style={styles.quickIcon}>+</Text><Text style={styles.quickText}>Cartes</Text></Pressable>
+            <Pressable testID="search" accessibilityRole="button" onPress={onSearch} style={styles.quickAction}><Text style={styles.quickIcon}>?</Text><Text style={styles.quickText}>Rechercher</Text></Pressable>
+          </View>
+          <Text style={styles.privacy}>Tes reponses restent sur ce telephone. Aucun compte requis.</Text>
+        </ScrollView>
+
+        <ScrollView style={{ width }} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
+          <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Quiz culture</Text><Text style={styles.sectionHint}>{cultureTopics.length} parcours</Text></View>
+          <View style={styles.modeStack}>
+            <Pressable testID="compose-session" accessibilityRole="button" onPress={onCompose} style={({ pressed }) => [styles.composeCard, pressed && styles.pressed]}><View><Text style={styles.composeEyebrow}>SESSION SUR MESURE</Text><Text style={styles.composeTitle}>Themes + difficultes</Text><Text style={styles.modeText}>Compose un mix: mono-theme, multi-theme, niveau fixe ou croise.</Text></View><Text style={styles.composeArrow}>-&gt;</Text></Pressable>
+            <View style={styles.enduranceCard}><View style={{ flex: 1 }}><Text style={styles.composeEyebrow}>MODE ENDURANCE</Text><Text style={styles.composeTitle}>Theme aleatoire par difficulte</Text><Text style={styles.enduranceText}>Choisis le niveau, Kizz tire le theme et lance 10 questions.</Text></View><View style={styles.enduranceButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`endurance-${difficulty}`} accessibilityRole="button" onPress={() => onEndurance(difficulty)} style={({ pressed }) => [styles.enduranceButton, pressed && styles.pressed]}><Text style={styles.enduranceButtonText}>{difficulty}</Text><Text style={styles.enduranceDots}>{'o'.repeat(difficulty)}</Text></Pressable>)}</View></View>
+            <View style={styles.infiniteCard}><View style={{ flex: 1 }}><Text style={styles.infiniteEyebrow}>MODE INFINI CALME</Text><Text style={styles.composeTitle}>Difficulte fixe, themes aleatoires</Text><Text style={styles.infiniteText}>Une question apres l'autre, avec sortie visible et sauvegarde locale.</Text></View><View style={styles.enduranceButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`infinite-${difficulty}`} accessibilityRole="button" onPress={() => onInfinite(difficulty)} style={({ pressed }) => [styles.infiniteButton, pressed && styles.pressed]}><Text style={styles.infiniteButtonText}>{difficulty}</Text><Text style={styles.infiniteDots}>inf</Text></Pressable>)}</View></View>
+          </View>
+          <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Themes</Text><Text style={styles.sectionHint}>QCM, texte, carte</Text></View>
+          <View style={styles.topicGrid}>
+            {cultureTopics.map((item) => (
+              <Pressable key={item.id} testID={`topic-${item.id}`} accessibilityRole="button" accessibilityLabel={`Commencer le theme ${item.title}`} onPress={() => onStart(item)} style={({ pressed }) => [styles.topicCard, pressed && styles.pressed]}>
+                <View style={[styles.topicIcon, { backgroundColor: `${item.color}1A` }]}><Text style={[styles.topicIconText, { color: item.color }]}>{item.icon}</Text></View>
+                <Text style={styles.topicTitle}>{item.title}</Text><Text style={styles.topicSubtitle}>{item.subtitle}</Text>
+                <Text style={[styles.go, { color: item.color }]}>Commencer -&gt;</Text>
+              </Pressable>
+            ))}
+          </View>
+        </ScrollView>
+
+        <ScrollView style={{ width }} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
+          <View style={styles.languagePanelHero}><Text style={styles.languagePanelEyebrow}>LANGUES</Text><Text style={styles.languagePanelTitle}>Une langue a la fois.</Text><Text style={styles.languagePanelText}>Cours courts, vocabulaire frequent, conjugaison en texte libre, puis quiz pour verifier.</Text></View>
+          <Pressable testID="language-hub" accessibilityRole="button" onPress={onLanguages} style={({ pressed }) => [styles.languageHero, pressed && styles.pressed]}><View style={styles.languageHeroIcon}><Text style={styles.languageHeroIconText}>Aa</Text></View><View style={{ flex: 1 }}><Text style={styles.languageHeroEyebrow}>PARCOURS DEDIE</Text><Text style={styles.languageHeroTitle}>Espagnol, Allemand, Italien</Text><Text style={styles.languageHeroText}>Choisis langue, niveau et competence.</Text></View><Text style={styles.composeArrow}>-&gt;</Text></Pressable>
+          <View style={styles.languageMiniGrid}>{LANGUAGE_OPTIONS.map((item) => <View key={item.code} style={styles.languageMiniCard}><Text style={styles.languageMiniCode}>{item.code.toUpperCase()}</Text><Text style={styles.languageMiniName}>{item.name}</Text><Text style={styles.languageMiniText}>Vocabulaire, lecture, ecriture, culture.</Text></View>)}</View>
+          <Text style={styles.privacy}>Objectif: progresser sans bruit. Sessions finies, reprise possible.</Text>
+        </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 
@@ -408,17 +471,20 @@ const LANGUAGE_OPTIONS: Array<{ code: LanguageCode; name: string; native: string
 const CEFR_LEVELS: CefrLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 const LANGUAGE_SKILLS: Array<{ id: LanguageSkill; title: string; detail: string }> = [
   { id: 'vocabulary', title: 'Vocabulaire fréquent', detail: 'Mots essentiels et fréquence d’usage' },
+  { id: 'lesson', title: 'Mini-cours guidés', detail: 'Conjugaisons, règles et pièges utiles' },
   { id: 'reading', title: 'Compréhension écrite', detail: 'Phrases, consignes et textes courts' },
   { id: 'writing', title: 'Expression écrite', detail: 'Produire la forme attendue sans QCM' },
   { id: 'culture', title: 'Culture', detail: 'Repères du monde hispanique, germanique ou italien' },
 ];
 
-function LanguageHub({ onClose, onStart }: { onClose: () => void; onStart: (filters: LanguageSessionFilters) => void }) {
+function LanguageHub({ progress, onClose, onStart, onDailyVocabulary }: { progress: LanguageProgressCell[]; onClose: () => void; onStart: (filters: LanguageSessionFilters) => void; onDailyVocabulary: (filters: Pick<LanguageSessionFilters, 'language' | 'level'>) => void }) {
   const [language, setLanguage] = useState<LanguageCode>('es');
   const [level, setLevel] = useState<CefrLevel>('A1');
   const [skills, setSkills] = useState<LanguageSkill[]>(LANGUAGE_SKILLS.map((skill) => skill.id));
   const [limit, setLimit] = useState<5 | 10 | 20>(5);
   const toggleSkill = (skill: LanguageSkill) => setSkills((current) => current.includes(skill) ? current.filter((item) => item !== skill) : [...current, skill]);
+  const currentProgress = CEFR_LEVELS.map((item) => progress.find((cell) => cell.language === language && cell.level === item) ?? { language, level: item, answered: 0, score: 0, accuracy: 0 });
+  const currentLevelProgress = currentProgress.find((cell) => cell.level === level);
   return (
     <ScrollView contentContainerStyle={styles.languagePage} showsVerticalScrollIndicator={false}>
       <View style={styles.libraryHeader}><Pressable onPress={onClose} hitSlop={16}><Text style={styles.back}>‹</Text></Pressable><Text style={styles.libraryTitle}>Parcours Langues</Text></View>
@@ -427,12 +493,20 @@ function LanguageHub({ onClose, onStart }: { onClose: () => void; onStart: (filt
       <View style={styles.languageChoices}>{LANGUAGE_OPTIONS.map((item) => <Pressable key={item.code} testID={`language-${item.code}`} onPress={() => setLanguage(item.code)} style={[styles.languageChoice, language === item.code && styles.languageChoiceActive]}><Text style={[styles.languageChoiceName, language === item.code && styles.filterChipTextActive]}>{item.name}</Text><Text style={styles.languageChoiceNative}>{item.native}</Text></Pressable>)}</View>
       <Text style={styles.configSection}>NIVEAU CECRL</Text>
       <View style={styles.cefrRow}>{CEFR_LEVELS.map((item) => <Pressable key={item} testID={`cefr-${item}`} onPress={() => setLevel(item)} style={[styles.cefrButton, level === item && styles.filterChipActive]}><Text style={[styles.cefrText, level === item && styles.filterChipTextActive]}>{item}</Text></Pressable>)}</View>
+      <View style={styles.languageProgressCard}>
+        <View style={styles.languageProgressHeader}><Text style={styles.languageProgressTitle}>Progression {LANGUAGE_OPTIONS.find((item) => item.code === language)?.name}</Text><Text style={styles.languageProgressMeta}>{currentLevelProgress?.answered ?? 0} rep. niveau {level}</Text></View>
+        <View style={styles.languageProgressGrid}>{currentProgress.map((cell) => <Pressable key={cell.level} onPress={() => setLevel(cell.level)} style={[styles.languageProgressCell, level === cell.level && styles.languageProgressCellActive]}><Text style={[styles.languageProgressLevel, level === cell.level && styles.filterChipTextActive]}>{cell.level}</Text><Text style={styles.languageProgressAccuracy}>{cell.answered ? `${cell.accuracy}%` : '-'}</Text><Text style={styles.languageProgressCount}>{cell.answered} rep.</Text></Pressable>)}</View>
+      </View>
       <Text style={styles.levelHelp}>{level === 'A1' ? 'Débutant : mots et phrases indispensables.' : level === 'A2' ? 'Élémentaire : situations courantes.' : level === 'B1' ? 'Intermédiaire : comprendre et raconter.' : level === 'B2' ? 'Avancé : nuances et argumentation.' : 'Autonome : idiomes, registre et culture fine.'}</Text>
       <Text style={styles.configSection}>COMPÉTENCES</Text>
       <View style={styles.skillList}>{LANGUAGE_SKILLS.map((item) => { const active = skills.includes(item.id); return <Pressable key={item.id} testID={`language-skill-${item.id}`} onPress={() => toggleSkill(item.id)} style={[styles.skillCard, active && styles.skillCardActive]}><View style={[styles.skillCheck, active && styles.skillCheckActive]}><Text style={styles.searchCheckText}>{active ? '✓' : ''}</Text></View><View style={{ flex: 1 }}><Text style={styles.skillTitle}>{item.title}</Text><Text style={styles.skillDetail}>{item.detail}</Text></View></Pressable>; })}</View>
       <Text style={styles.configSection}>LONGUEUR MAXIMALE</Text>
       <View style={styles.lengthRow}>{([5, 10, 20] as const).map((item) => <Pressable key={item} onPress={() => setLimit(item)} style={[styles.lengthButton, limit === item && styles.lengthButtonActive]}><Text style={[styles.lengthValue, limit === item && styles.lengthValueActive]}>{item}</Text><Text style={styles.lengthLabel}>questions</Text></Pressable>)}</View>
       <View style={styles.languageMethod}><Text style={styles.languageMethodTitle}>Méthode fréquence</Text><Text style={styles.languageMethodText}>Le vocabulaire est organisé par bandes de fréquence. Le socle commence par les mots les plus utiles avant d’élargir progressivement vers un lexique de 10 000 mots.</Text></View>
+      <Pressable testID="daily-vocabulary" onPress={() => onDailyVocabulary({ language, level })} style={styles.dailyVocabCard}>
+        <View><Text style={styles.dailyVocabEyebrow}>RITUEL COURT</Text><Text style={styles.dailyVocabTitle}>10 mots du jour</Text><Text style={styles.dailyVocabText}>Lis les mots utiles, puis vérifie dans les deux sens: vers le français et depuis le français.</Text></View>
+        <Text style={styles.composeArrow}>→</Text>
+      </Pressable>
       <Pressable testID="launch-language-session" disabled={!skills.length} onPress={() => onStart({ language, level, skills, limit })} style={[styles.primaryButton, !skills.length && styles.disabled]}><Text style={styles.primaryButtonText}>Commencer en {LANGUAGE_OPTIONS.find((item) => item.code === language)?.name}</Text></Pressable>
     </ScrollView>
   );
@@ -458,11 +532,11 @@ function Search({ onClose, onStart }: { onClose: () => void; onStart: (questions
     <View style={styles.searchPage}>
       <View style={styles.libraryHeader}><Pressable onPress={onClose} hitSlop={16}><Text style={styles.back}>‹</Text></Pressable><Text style={styles.libraryTitle}>Créer une session</Text></View>
       <TextInput value={query} onChangeText={setQuery} autoFocus placeholder="Sujet, mot ou notion…" placeholderTextColor="#68746E" style={styles.searchInput} />
-      <Text style={styles.searchHint}>{query.length < 2 ? 'Saisis au moins deux caractères.' : `${results.length} résultat(s) · touche pour sélectionner`}</Text>
+      <Text style={styles.searchHint}>{query.length < 2 ? 'Saisis au moins deux caractères.' : `${results.length} résultat(s) - touche pour sélectionner`}</Text>
       <ScrollView contentContainerStyle={styles.searchResults} keyboardShouldPersistTaps="handled">
         {results.map((question) => {
           const active = selectedIds.includes(question.id);
-          return <Pressable key={question.id} onPress={() => toggle(question.id)} style={[styles.searchResult, active && styles.searchResultActive]}><View style={[styles.searchCheck, active && styles.searchCheckActive]}><Text style={styles.searchCheckText}>{active ? '✓' : ''}</Text></View><View style={{ flex: 1 }}><Text style={styles.searchQuestion}>{question.prompt}</Text><Text style={styles.searchTags}>{question.tags.join(' · ')}</Text></View></Pressable>;
+          return <Pressable key={question.id} onPress={() => toggle(question.id)} style={[styles.searchResult, active && styles.searchResultActive]}><View style={[styles.searchCheck, active && styles.searchCheckActive]}><Text style={styles.searchCheckText}>{active ? '✓' : ''}</Text></View><View style={{ flex: 1 }}><Text style={styles.searchQuestion}>{question.prompt}</Text><Text style={styles.searchTags}>{question.tags.join(' - ')}</Text></View></Pressable>;
         })}
       </ScrollView>
       <View style={styles.searchFooter}><Pressable disabled={!selected.length} onPress={() => onStart(selected)} style={[styles.primaryButton, !selected.length && styles.disabled]}><Text style={styles.primaryButtonText}>Lancer {selected.length || ''} question{selected.length > 1 ? 's' : ''}</Text></Pressable></View>
@@ -470,7 +544,7 @@ function Search({ onClose, onStart }: { onClose: () => void; onStart: (questions
   );
 }
 
-function Library({ onClose }: { onClose: () => void }) {
+function Library({ onClose, onAdmin }: { onClose: () => void; onAdmin: () => void }) {
   const [stats, setStats] = useState<LibraryStats>({ topics: 0, questions: 0, imports: 0 });
   const [busy, setBusy] = useState(false);
   const [lastReport, setLastReport] = useState<string | null>(null);
@@ -493,6 +567,36 @@ function Library({ onClose }: { onClose: () => void }) {
     } finally { setBusy(false); }
   }
 
+  async function handleImportCsv() {
+    setBusy(true);
+    try {
+      const draft = await pickCsvQuizPackDraft();
+      if (!draft) return;
+      setBusy(false);
+      const sample = draft.preview.samplePrompts.map((prompt) => `- ${prompt}`).join('\n');
+      Alert.alert('Importer ce CSV ?', `${draft.preview.questions} question(s), ${draft.preview.topics} theme(s).\n${sample}`, [
+        { text: 'Annuler', style: 'cancel' },
+        {
+          text: 'Importer',
+          onPress: async () => {
+            setBusy(true);
+            try {
+              const report = await importCsvQuizPackDraft(draft);
+              const summary = `${report.questionsAdded} ajoutee(s), ${report.questionsSkipped} doublon(s) ignore(s)`;
+              setLastReport(`${report.bankName}: ${summary}.`);
+              await refresh();
+              Alert.alert('Import termine', summary);
+            } catch (error) {
+              Alert.alert('Import impossible', error instanceof Error ? error.message : 'Le CSV n a pas pu etre importe.');
+            } finally { setBusy(false); }
+          },
+        },
+      ]);
+    } catch (error) {
+      Alert.alert('Import impossible', error instanceof Error ? error.message : 'Le CSV n a pas pu etre lu.');
+    } finally { setBusy(false); }
+  }
+
   async function handleExport() {
     setBusy(true);
     try {
@@ -500,6 +604,16 @@ function Library({ onClose }: { onClose: () => void }) {
       setLastReport(`Export prêt: ${stats.questions} question(s).`);
     } catch (error) {
       Alert.alert('Export impossible', error instanceof Error ? error.message : 'Le fichier n’a pas pu être créé.');
+    } finally { setBusy(false); }
+  }
+
+  async function handleExportReports() {
+    setBusy(true);
+    try {
+      await createAndShareQuestionReports();
+      setLastReport('Export des signalements prêt.');
+    } catch (error) {
+      Alert.alert('Export impossible', error instanceof Error ? error.message : 'Les signalements n’ont pas pu être exportés.');
     } finally { setBusy(false); }
   }
 
@@ -517,9 +631,21 @@ function Library({ onClose }: { onClose: () => void }) {
         <View style={[styles.actionIcon, { backgroundColor: '#E6F1EB' }]}><Text style={styles.actionIconText}>↓</Text></View>
         <View style={styles.actionCopy}><Text style={styles.actionTitle}>Importer une banque</Text><Text style={styles.actionText}>Choisir un fichier JSON Kizz sur le téléphone</Text></View><Text style={styles.actionArrow}>›</Text>
       </Pressable>
+      <Pressable disabled={busy} onPress={handleImportCsv} style={[styles.actionCard, busy && styles.disabled]}>
+        <View style={[styles.actionIcon, { backgroundColor: '#17231F' }]}><Text style={[styles.actionIconText, { color: '#68D7A2' }]}>CSV</Text></View>
+        <View style={styles.actionCopy}><Text style={styles.actionTitle}>Importer un CSV</Text><Text style={styles.actionText}>Previsualiser puis ajouter QCM ou texte libre</Text></View><Text style={styles.actionArrow}>â€º</Text>
+      </Pressable>
       <Pressable disabled={busy} onPress={handleExport} style={[styles.actionCard, busy && styles.disabled]}>
         <View style={[styles.actionIcon, { backgroundColor: '#EAEAF5' }]}><Text style={[styles.actionIconText, { color: '#5367C7' }]}>↑</Text></View>
         <View style={styles.actionCopy}><Text style={styles.actionTitle}>Exporter la bibliothèque</Text><Text style={styles.actionText}>Créer un JSON et ouvrir la feuille de partage</Text></View><Text style={styles.actionArrow}>›</Text>
+      </Pressable>
+      <Pressable disabled={busy} onPress={handleExportReports} style={[styles.actionCard, busy && styles.disabled]}>
+        <View style={[styles.actionIcon, { backgroundColor: '#241821' }]}><Text style={[styles.actionIconText, { color: '#D982AD' }]}>!</Text></View>
+        <View style={styles.actionCopy}><Text style={styles.actionTitle}>Exporter les signalements</Text><Text style={styles.actionText}>Partager les retours locaux sur les questions</Text></View><Text style={styles.actionArrow}>›</Text>
+      </Pressable>
+      <Pressable onPress={onAdmin} style={styles.actionCard}>
+        <View style={[styles.actionIcon, { backgroundColor: '#241D13' }]}><Text style={[styles.actionIconText, { color: '#E6B759' }]}>A</Text></View>
+        <View style={styles.actionCopy}><Text style={styles.actionTitle}>Mode admin questions</Text><Text style={styles.actionText}>Consulter, filtrer, masquer et ajuster la difficulté</Text></View><Text style={styles.actionArrow}>›</Text>
       </Pressable>
       {busy && <ActivityIndicator style={{ marginTop: 22 }} color="#2F6B55" />}
       {lastReport && <View style={styles.report}><Text style={styles.reportText}>{lastReport}</Text></View>}
@@ -528,8 +654,138 @@ function Library({ onClose }: { onClose: () => void }) {
   );
 }
 
+function AdminPanel({ topics, onClose }: { topics: Topic[]; onClose: () => void }) {
+  const [query, setQuery] = useState('');
+  const [difficulty, setDifficulty] = useState<Difficulty | 'all'>('all');
+  const [topicId, setTopicId] = useState('all');
+  const [questions, setQuestions] = useState<AdminQuestion[]>([]);
+  const [busy, setBusy] = useState(false);
+
+  async function load() {
+    setBusy(true);
+    try {
+      setQuestions(await getAdminQuestions({ query, difficulty, topicId, limit: 80 }));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  useEffect(() => { void load(); }, [difficulty, topicId]);
+
+  async function changeDifficulty(questionId: string, nextDifficulty: Difficulty) {
+    await adminUpdateQuestionDifficulty(questionId, nextDifficulty);
+    await load();
+  }
+
+  function deleteQuestion(question: AdminQuestion) {
+    Alert.alert('Masquer cette question ?', question.prompt, [
+      { text: 'Annuler', style: 'cancel' },
+      { text: 'Masquer', style: 'destructive', onPress: async () => { await adminDeleteQuestion(question.id); await load(); } },
+    ]);
+  }
+
+  return (
+    <ScrollView contentContainerStyle={styles.adminPage} keyboardShouldPersistTaps="handled">
+      <View style={styles.libraryHeader}><Pressable onPress={onClose} hitSlop={16}><Text style={styles.back}>‹</Text></Pressable><Text style={styles.libraryTitle}>Admin questions</Text></View>
+      <Text style={styles.configTitle}>Piloter la banque locale</Text><Text style={styles.configLead}>Les suppressions sont des masquages persistants. Les changements de difficulté survivent aux relances.</Text>
+      <View style={styles.adminSearchRow}>
+        <TextInput value={query} onChangeText={setQuery} placeholder="Question, tag ou identifiant" placeholderTextColor="#68746E" style={styles.adminSearchInput} returnKeyType="search" onSubmitEditing={load} />
+        <Pressable testID="admin-search" onPress={load} style={styles.adminSearchButton}><Text style={styles.adminSearchButtonText}>OK</Text></Pressable>
+      </View>
+      <Text style={styles.configSection}>DIFFICULTÉ</Text>
+      <View style={styles.chipWrap}>
+        <Pressable onPress={() => setDifficulty('all')} style={[styles.filterChip, difficulty === 'all' && styles.filterChipActive]}><Text style={[styles.filterChipText, difficulty === 'all' && styles.filterChipTextActive]}>Toutes</Text></Pressable>
+        {([1, 2, 3] as Difficulty[]).map((item) => <Pressable key={item} onPress={() => setDifficulty(item)} style={[styles.filterChip, difficulty === item && styles.filterChipActive]}><Text style={[styles.filterChipText, difficulty === item && styles.filterChipTextActive]}>Niveau {item}</Text></Pressable>)}
+      </View>
+      <Text style={styles.configSection}>THÈME</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.adminTopicRow}>
+        <Pressable onPress={() => setTopicId('all')} style={[styles.filterChip, topicId === 'all' && styles.filterChipActive]}><Text style={[styles.filterChipText, topicId === 'all' && styles.filterChipTextActive]}>Tous</Text></Pressable>
+        {topics.map((topic) => <Pressable key={topic.id} onPress={() => setTopicId(topic.id)} style={[styles.filterChip, topicId === topic.id && styles.filterChipActive]}><Text style={[styles.filterChipText, topicId === topic.id && styles.filterChipTextActive]}>{topic.title}</Text></Pressable>)}
+      </ScrollView>
+      <View style={styles.adminSummary}><Text style={styles.adminSummaryText}>{questions.length} question(s) affichée(s)</Text>{busy && <ActivityIndicator color="#68D7A2" />}</View>
+      <View style={styles.adminList}>
+        {questions.map((question) => (
+          <View key={question.id} style={styles.adminQuestionCard}>
+            <View style={styles.adminQuestionHeader}><Text style={styles.adminTopic}>{question.topicTitle}</Text><Text style={styles.adminId}>{question.id}</Text></View>
+            <Text style={styles.adminPrompt}>{question.prompt}</Text>
+            <Text style={styles.adminMeta}>Difficulté {question.difficulty} - {question.type ?? 'multiple-choice'} - {question.answerCount} réponse(s){question.reportCount ? ` - ${question.reportCount} signalement(s)` : ''}</Text>
+            <View style={styles.adminActions}>
+              {([1, 2, 3] as Difficulty[]).map((item) => <Pressable key={item} onPress={() => changeDifficulty(question.id, item)} style={[styles.adminDifficultyButton, question.difficulty === item && styles.adminDifficultyActive]}><Text style={[styles.adminDifficultyText, question.difficulty === item && styles.adminDifficultyTextActive]}>{item}</Text></Pressable>)}
+              <Pressable onPress={() => deleteQuestion(question)} style={styles.adminDeleteButton}><Text style={styles.adminDeleteText}>Masquer</Text></Pressable>
+            </View>
+          </View>
+        ))}
+      </View>
+    </ScrollView>
+  );
+}
+
 function Stat({ value, label }: { value: string; label: string }) {
   return <View style={styles.stat}><Text style={styles.statValue}>{value}</Text><Text style={styles.statLabel}>{label}</Text></View>;
+}
+
+function ProgressMatrix({ progress, onCompose, onStartCell }: { progress: TopicProgress[]; onCompose: () => void; onStartCell: (topic: Topic, difficulty: Difficulty) => void }) {
+  if (!progress.length) {
+    return (
+      <Pressable testID="progress-empty" onPress={onCompose} style={({ pressed }) => [styles.progressCard, pressed && styles.pressed]}>
+        <View style={styles.progressHeader}><Text style={styles.progressTitle}>Matrice locale</Text><Text style={styles.progressHint}>nouveau</Text></View>
+        <Text style={styles.progressEmptyTitle}>Commence par une session courte.</Text>
+        <Text style={styles.progressEmptyText}>Kizz affichera ensuite tes zones fortes et celles a consolider par theme et difficulte.</Text>
+      </Pressable>
+    );
+  }
+  return (
+    <View style={styles.progressCard}>
+      <View style={styles.progressHeader}><Text style={styles.progressTitle}>Matrice locale</Text><Text style={styles.progressHint}>theme x niveau</Text></View>
+      {progress.map((item) => (
+        <View key={item.topic.id} style={styles.progressRow}>
+          <View style={styles.progressTopicWrap}><Text style={styles.progressTopic}>{item.topic.title}</Text><Text style={styles.progressMeta}>{item.totalAnswered} rep. - {item.accuracy}%</Text></View>
+          <View style={styles.progressCells}>
+            {item.cells.map((cell) => {
+              const rate = cell.answered ? cell.score / cell.answered : 0;
+              const state = !cell.answered ? 'empty' : rate >= 0.8 ? 'strong' : rate >= 0.5 ? 'medium' : 'weak';
+              return (
+                <Pressable
+                  key={cell.difficulty}
+                  testID={`progress-cell-${item.topic.id}-${cell.difficulty}`}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${item.topic.title}, niveau ${cell.difficulty}`}
+                  onPress={() => onStartCell(item.topic, cell.difficulty)}
+                  style={({ pressed }) => [styles.progressCell, state === 'strong' ? styles.progressCellStrong : state === 'medium' ? styles.progressCellMedium : state === 'weak' ? styles.progressCellWeak : styles.progressCellEmpty, pressed && styles.pressed]}
+                >
+                  <Text style={styles.progressCellText}>{cell.difficulty}</Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
+      ))}
+      <Pressable testID="progress-compose" onPress={onCompose} style={({ pressed }) => [styles.progressCta, pressed && styles.pressed]}><Text style={styles.progressCtaText}>Composer la prochaine session</Text></Pressable>
+    </View>
+  );
+}
+
+function RecentSessions({ sessions }: { sessions: RecentSession[] }) {
+  if (!sessions.length) return null;
+  return (
+    <View style={styles.historyCard}>
+      <View style={styles.progressHeader}><Text style={styles.progressTitle}>Historique</Text><Text style={styles.progressHint}>recent</Text></View>
+      {sessions.map((session) => {
+        const percent = session.total ? Math.round((session.score / session.total) * 100) : 0;
+        const date = session.completedAt.slice(5, 10).replace('-', '/');
+        return (
+          <View key={session.id} style={styles.historyRow}>
+            <View style={styles.historyMain}>
+              <Text style={styles.historyTitle}>{session.topicTitle}</Text>
+              <Text style={styles.historyDate}>{date}</Text>
+            </View>
+            <Text style={styles.historyScore}>{Number.isInteger(session.score) ? session.score : session.score.toFixed(1)}/{session.total}</Text>
+            <Text style={styles.historyPercent}>{percent}%</Text>
+          </View>
+        );
+      })}
+    </View>
+  );
 }
 
 function Kpi({ value, label, accent }: { value: string; label: string; accent: string }) {
@@ -538,17 +794,24 @@ function Kpi({ value, label, accent }: { value: string; label: string; accent: s
 
 function SessionConfigurator({ topics, initialTopicIds, onClose, onStart }: { topics: Topic[]; initialTopicIds: string[]; onClose: () => void; onStart: (filters: SessionFilters) => void }) {
   const [topicIds, setTopicIds] = useState(initialTopicIds);
+  const [selectedSubthemes, setSelectedSubthemes] = useState<string[]>([]);
   const [difficulties, setDifficulties] = useState<Difficulty[]>([1, 2, 3]);
   const [limit, setLimit] = useState<5 | 10 | 20>(10);
+  const availableSubthemes = subthemesForTopics(topicIds, topics);
 
   function toggleTopic(topicId: string) {
     setTopicIds((current) => current.includes(topicId) ? current.filter((id) => id !== topicId) : [...current, topicId]);
+    setSelectedSubthemes([]);
   }
 
   function toggleDifficulty(difficulty: Difficulty) {
     setDifficulties((current) => current.includes(difficulty)
       ? current.length === 1 ? current : current.filter((item) => item !== difficulty)
       : [...current, difficulty].sort() as Difficulty[]);
+  }
+
+  function toggleSubtheme(tag: string) {
+    setSelectedSubthemes((current) => current.includes(tag) ? current.filter((item) => item !== tag) : [...current, tag]);
   }
 
   const topicLabel = topicIds.length === 0 ? 'Tous les thèmes' : topicIds.length === 1 ? topics.find((topic) => topic.id === topicIds[0])?.title : `${topicIds.length} thèmes`;
@@ -561,12 +824,13 @@ function SessionConfigurator({ topics, initialTopicIds, onClose, onStart }: { to
         <Pressable testID="config-topic-all" onPress={() => setTopicIds([])} style={[styles.filterChip, topicIds.length === 0 && styles.filterChipActive]}><Text style={[styles.filterChipText, topicIds.length === 0 && styles.filterChipTextActive]}>Tous</Text></Pressable>
         {topics.map((topic) => <Pressable key={topic.id} testID={`config-topic-${topic.id}`} onPress={() => toggleTopic(topic.id)} style={[styles.filterChip, topicIds.includes(topic.id) && styles.filterChipActive]}><Text style={[styles.filterChipText, topicIds.includes(topic.id) && styles.filterChipTextActive]}>{topic.title}</Text></Pressable>)}
       </View>
+      {!!availableSubthemes.length && <><Text style={styles.configSection}>SOUS-THEMES</Text><View style={styles.chipWrap}><Pressable testID="config-subtheme-all" onPress={() => setSelectedSubthemes([])} style={[styles.filterChip, selectedSubthemes.length === 0 && styles.filterChipActive]}><Text style={[styles.filterChipText, selectedSubthemes.length === 0 && styles.filterChipTextActive]}>Tous</Text></Pressable>{availableSubthemes.map((subtheme) => <Pressable key={subtheme.id} testID={`config-subtheme-${subtheme.id}`} onPress={() => toggleSubtheme(subtheme.tag)} style={[styles.filterChip, selectedSubthemes.includes(subtheme.tag) && styles.filterChipActive]}><Text style={[styles.filterChipText, selectedSubthemes.includes(subtheme.tag) && styles.filterChipTextActive]}>{subtheme.title}</Text></Pressable>)}</View></>}
       <Text style={styles.configSection}>DIFFICULTÉ</Text>
       <View style={styles.difficultyGrid}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`config-difficulty-${difficulty}`} onPress={() => toggleDifficulty(difficulty)} style={[styles.difficultyCard, difficulties.includes(difficulty) && styles.difficultyCardActive]}><Text style={styles.difficultyNumber}>{difficulty}</Text><Text style={styles.difficultyName}>{difficulty === 1 ? 'Découverte' : difficulty === 2 ? 'Intermédiaire' : 'Expert'}</Text><Text style={styles.difficultyDots}>{'●'.repeat(difficulty)}{'○'.repeat(3 - difficulty)}</Text></Pressable>)}</View>
       <Text style={styles.configSection}>LONGUEUR</Text>
       <View style={styles.lengthRow}>{([5, 10, 20] as const).map((value) => <Pressable key={value} testID={`config-length-${value}`} onPress={() => setLimit(value)} style={[styles.lengthButton, limit === value && styles.lengthButtonActive]}><Text style={[styles.lengthValue, limit === value && styles.lengthValueActive]}>{value}</Text><Text style={styles.lengthLabel}>questions</Text></Pressable>)}</View>
-      <View style={styles.configSummary}><Text style={styles.configSummaryLabel}>{topicLabel} · niveaux {difficulties.join(', ')}</Text><Text style={styles.configSummaryValue}>{limit} questions maximum</Text></View>
-      <Pressable testID="launch-configured-session" accessibilityRole="button" onPress={() => onStart({ topicIds, difficulties, limit })} style={styles.primaryButton}><Text style={styles.primaryButtonText}>Lancer la session</Text></Pressable>
+      <View style={styles.configSummary}><Text style={styles.configSummaryLabel}>{topicLabel}{selectedSubthemes.length ? ` - ${selectedSubthemes.length} sous-theme(s)` : ''} - niveaux {difficulties.join(', ')}</Text><Text style={styles.configSummaryValue}>{limit} questions maximum</Text></View>
+      <Pressable testID="launch-configured-session" accessibilityRole="button" onPress={() => onStart({ topicIds, difficulties, subthemes: selectedSubthemes, limit })} style={styles.primaryButton}><Text style={styles.primaryButtonText}>Lancer la session</Text></Pressable>
     </ScrollView>
   );
 }
@@ -576,12 +840,12 @@ type QuizProps = {
   freeText: string; answerCorrect: boolean; onFreeTextChange: (value: string) => void; onSubmitFreeText: () => void;
   fieldValues: Record<string, string>; answerCredit: number; onFieldChange: (id: string, value: string) => void; onSubmitMultiText: () => void;
   mapGuess: GeoPoint | null; onMapGuess: (point: GeoPoint) => void; onSubmitMapPoint: () => void;
-  onSelect: (index: number) => void; onToggleFavorite: () => void; onContinue: () => void; onClose: () => void;
+  onSelect: (index: number) => void; onToggleFavorite: () => void; onReportQuestion: () => void; onContinue: () => void; onClose: () => void;
   infiniteDifficulty?: Difficulty | null;
   confidence?: 1 | 2 | 3; onConfidence: (confidence: 1 | 2 | 3) => void;
 };
 
-function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGuess, answerCorrect, answerCredit, confidence, infiniteDifficulty, onConfidence, onFreeTextChange, onFieldChange, onMapGuess, onSubmitFreeText, onSubmitMultiText, onSubmitMapPoint, onSelect, onToggleFavorite, onContinue, onClose }: QuizProps) {
+function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGuess, answerCorrect, answerCredit, confidence, infiniteDifficulty, onConfidence, onFreeTextChange, onFieldChange, onMapGuess, onSubmitFreeText, onSubmitMultiText, onSubmitMapPoint, onSelect, onToggleFavorite, onReportQuestion, onContinue, onClose }: QuizProps) {
   const question = questions[index];
   const answered = selected !== null;
   const infinite = !!infiniteDifficulty;
@@ -598,7 +862,7 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
       </View>
       <ScrollView contentContainerStyle={styles.quizBody} keyboardShouldPersistTaps="handled">
         <View style={styles.metaRow}><Text style={[styles.pill, { color: topic.color, backgroundColor: `${topic.color}16` }]}>{topic.title}</Text><Text style={styles.difficulty}>{'●'.repeat(question.difficulty)}{'○'.repeat(3 - question.difficulty)}</Text></View>
-        {infinite && <Text style={styles.infiniteQuizHint}>Mode infini · niveau {infiniteDifficulty} · touche × pour arrêter et sauvegarder</Text>}
+        {infinite && <Text style={styles.infiniteQuizHint}>Mode infini - niveau {infiniteDifficulty} - touche × pour arrêter et sauvegarder</Text>}
         {imageSource && <View style={styles.questionImageWrap}><Image source={imageSource} style={styles.questionImage} resizeMode="cover" accessibilityLabel={question.imageAlt} /></View>}
         <Text style={styles.question}>{question.prompt}</Text>
         {(question.type ?? 'multiple-choice') === 'multiple-choice' ? <View style={styles.choices}>
@@ -613,9 +877,9 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
             );
           })}
         </View> : question.type === 'map-point' ? <View>
-          <SatelliteMapPicker guess={mapGuess} target={answered ? question.geoTarget : undefined} disabled={answered} onPick={onMapGuess} />
+          <SatelliteMapPicker question={question} guess={mapGuess} target={answered ? question.geoTarget : undefined} disabled={answered} onPick={onMapGuess} />
           {!answered && <Pressable testID="check-map-answer" accessibilityRole="button" disabled={!mapGuess} onPress={onSubmitMapPoint} style={[styles.checkButton, !mapGuess && styles.disabled]}><Text style={styles.checkButtonText}>Valider le point</Text></Pressable>}
-          {answered && question.geoTarget && <View style={styles.mapFeedback}><Text style={styles.mapFeedbackTitle}>Correction spatiale</Text><Text style={styles.mapFeedbackText}>Distance : {mapGrade.distanceKm ?? '?'} km{mapGrade.direction && !mapGrade.correct ? ` · vise ${mapGrade.direction}` : ''}</Text><Text style={styles.mapFeedbackText}>Tolerance : {question.geoTarget.toleranceKm} km autour de {question.geoTarget.label}.</Text></View>}
+          {answered && question.geoTarget && <View style={styles.mapFeedback}><Text style={styles.mapFeedbackTitle}>Correction spatiale</Text><Text style={styles.mapFeedbackText}>Distance : {mapGrade.distanceKm ?? '?'} km{mapGrade.direction && !mapGrade.correct ? ` - vise ${mapGrade.direction}` : ''}</Text><Text style={styles.mapFeedbackText}>Tolerance : {question.geoTarget.toleranceKm} km autour de {question.geoTarget.label}.</Text></View>}
         </View> : question.type === 'multi-text' ? <View style={styles.multiFields}>
           {(question.answerFields ?? []).map((field) => <View key={field.id}><Text style={styles.multiFieldLabel}>{field.label}</Text><TextInput testID={`multi-field-${field.id}`} accessibilityLabel={field.label} value={fieldValues[field.id] ?? ''} onChangeText={(value) => onFieldChange(field.id, value)} editable={!answered} placeholder="Ta réponse…" placeholderTextColor="#758079" style={[styles.freeInput, answered && (multiGrade.fieldResults[field.id] ? styles.choiceCorrect : styles.choiceWrong)]} />{answered && !multiGrade.fieldResults[field.id] && <Text style={styles.acceptedAnswer}>Attendu : {field.acceptedAnswers[0]}</Text>}</View>)}
           {!answered && <Pressable testID="check-multi-answer" accessibilityRole="button" disabled={!allFieldsFilled} onPress={onSubmitMultiText} style={[styles.checkButton, !allFieldsFilled && styles.disabled]}><Text style={styles.checkButtonText}>Vérifier les réponses</Text></Pressable>}
@@ -629,15 +893,15 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
           {!answered && <Pressable testID="check-answer" accessibilityRole="button" disabled={!freeText.trim()} onPress={onSubmitFreeText} style={[styles.checkButton, !freeText.trim() && styles.disabled]}><Text style={styles.checkButtonText}>Vérifier</Text></Pressable>}
           {answered && !answerCorrect && <Text style={styles.acceptedAnswer}>Réponse attendue : {(question.acceptedAnswers ?? []).join(' / ')}</Text>}
         </View>}
-        {answered && <View style={[styles.explanation, answerCredit === 1 ? styles.explanationCorrect : answerCredit > 0 ? styles.explanationPartial : styles.explanationWrong]}><Text style={styles.explanationTitle}>{answerCredit === 1 ? 'Bien vu' : answerCredit > 0 ? 'Réponse partielle' : 'À retenir'}</Text>{answerCredit > 0 && answerCredit < 1 && <Text style={styles.partialCredit}>{Math.round(answerCredit * 100)} % des éléments trouvés</Text>}<Text style={styles.explanationText}>{question.explanation}</Text>{question.learnMoreUrl && <Pressable onPress={() => Linking.openURL(question.learnMoreUrl!)} style={styles.learnMore}><Text style={styles.learnMoreText}>En savoir plus  →</Text></Pressable>}</View>}
-        {answered && <View style={styles.confidenceCard}><Text style={styles.confidenceTitle}>Tu le savais vraiment ?</Text><Text style={styles.confidenceHint}>Facultatif · ajuste seulement la prochaine révision</Text><View style={styles.confidenceRow}>{([{ value: 1, label: 'Hésitant' }, { value: 2, label: 'Moyen' }, { value: 3, label: 'Sûr' }] as const).map((item) => <Pressable key={item.value} testID={`confidence-${item.value}`} onPress={() => onConfidence(item.value)} style={[styles.confidenceButton, confidence === item.value && styles.confidenceButtonActive]}><Text style={[styles.confidenceButtonText, confidence === item.value && styles.confidenceButtonTextActive]}>{item.label}</Text></Pressable>)}</View></View>}
+        {answered && <View style={[styles.explanation, answerCredit === 1 ? styles.explanationCorrect : answerCredit > 0 ? styles.explanationPartial : styles.explanationWrong]}><Text style={styles.explanationTitle}>{answerCredit === 1 ? 'Bien vu' : answerCredit > 0 ? 'Réponse partielle' : 'À retenir'}</Text>{answerCredit > 0 && answerCredit < 1 && <Text style={styles.partialCredit}>{Math.round(answerCredit * 100)} % des éléments trouvés</Text>}<Text style={styles.explanationText}>{question.explanation}</Text><View style={styles.explanationActions}>{question.learnMoreUrl && <Pressable onPress={() => Linking.openURL(question.learnMoreUrl!)} style={styles.learnMore}><Text style={styles.learnMoreText}>En savoir plus  →</Text></Pressable>}<Pressable testID="report-question" onPress={onReportQuestion} style={styles.reportQuestion}><Text style={styles.reportQuestionText}>Signaler</Text></Pressable></View></View>}
+        {answered && <View style={styles.confidenceCard}><Text style={styles.confidenceTitle}>Tu le savais vraiment ?</Text><Text style={styles.confidenceHint}>Facultatif - ajuste seulement la prochaine révision</Text><View style={styles.confidenceRow}>{([{ value: 1, label: 'Hésitant' }, { value: 2, label: 'Moyen' }, { value: 3, label: 'Sûr' }] as const).map((item) => <Pressable key={item.value} testID={`confidence-${item.value}`} onPress={() => onConfidence(item.value)} style={[styles.confidenceButton, confidence === item.value && styles.confidenceButtonActive]}><Text style={[styles.confidenceButtonText, confidence === item.value && styles.confidenceButtonTextActive]}>{item.label}</Text></Pressable>)}</View></View>}
       </ScrollView>
       {answered && <View style={styles.quizFooter}><Pressable testID="continue-quiz" accessibilityRole="button" onPress={onContinue} style={styles.primaryButton}><Text style={styles.primaryButtonText}>{infinite ? 'Question suivante' : index === questions.length - 1 ? 'Voir mon bilan' : 'Continuer'}</Text></Pressable></View>}
     </KeyboardAvoidingView>
   );
 }
 
-function SatelliteMapPicker({ guess, target, disabled, onPick }: { guess: GeoPoint | null; target?: GeoPoint & { toleranceKm?: number }; disabled: boolean; onPick: (point: GeoPoint) => void }) {
+function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { question: QuizQuestion; guess: GeoPoint | null; target?: GeoPoint & { toleranceKm?: number }; disabled: boolean; onPick: (point: GeoPoint) => void }) {
   function handleMapMessage(event: WebViewMessageEvent) {
     if (disabled) return;
     try {
@@ -658,51 +922,92 @@ function SatelliteMapPicker({ guess, target, disabled, onPick }: { guess: GeoPoi
       <WebView
         testID="world-map-picker"
         originWhitelist={['*']}
-        source={{ html: satelliteMapHtml(guess, target, disabled) }}
+        source={{ html: satelliteMapHtml(question, guess, target, disabled) }}
         javaScriptEnabled
         domStorageEnabled
         onMessage={handleMapMessage}
-        scrollEnabled={false}
+        scrollEnabled
+        nestedScrollEnabled
+        overScrollMode="never"
         style={styles.satelliteMap}
       />
-      <Text style={styles.mapHint}>{disabled ? 'Point vert: ta réponse · cible rouge' : 'Zoome, déplace-toi, puis touche la carte pour placer ta réponse'}</Text>
+      <Text style={styles.mapHint}>{disabled ? 'Satellite - point vert: ta reponse - cible rouge' : 'Vraie carte satellite: pince pour zoomer, glisse pour naviguer, touche pour placer ton point'}</Text>
     </View>
   );
 }
 
-function satelliteMapHtml(guess: GeoPoint | null, target: (GeoPoint & { toleranceKm?: number }) | undefined, disabled: boolean) {
-  const center = guess ?? target ?? { lat: 20, lon: 0 };
+function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target: (GeoPoint & { toleranceKm?: number }) | undefined, disabled: boolean) {
+  const isFranceMap = question.topicId === 'france-map' || question.tags.includes('carte-france') || question.tags.includes('carte-france-dediee');
+  const defaultCenter = isFranceMap ? { lat: 46.75, lon: 2.35 } : { lat: 20, lon: 0 };
+  const defaultZoom = isFranceMap ? 5 : 2;
+  const answerZoom = isFranceMap ? 7 : 5;
+  const center = guess ?? target ?? defaultCenter;
   return `<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    html, body, #map { height: 100%; width: 100%; margin: 0; background: #0F1D23; }
+    html, body, #map { height: 100%; width: 100%; margin: 0; background: #0F1D23; overflow: hidden; touch-action: none; }
+    .leaflet-container { background: #0F1D23; touch-action: none; }
+    .leaflet-control-zoom a { background: rgba(10,14,13,0.88); color: #f3f7f5; border-color: rgba(255,255,255,0.18); }
     .leaflet-control-attribution { background: rgba(10,14,13,0.72); color: #9fb0a8; font: 10px system-ui; }
     .leaflet-control-attribution a { color: #8edcb6; }
+    .satellite-badge { position: absolute; z-index: 500; top: 10px; left: 10px; padding: 6px 9px; border-radius: 999px; background: rgba(7,17,12,0.82); color: #dce6e1; font: 700 11px system-ui; pointer-events: none; }
+    .leaflet-overlay-pane path { vector-effect: non-scaling-stroke; }
     .fallback { color: #dce6e1; font: 13px system-ui; padding: 18px; line-height: 1.45; }
   </style>
 </head>
 <body>
-  <div id="map"><div class="fallback">Chargement de la carte satellite...</div></div>
+  <div id="map"><div class="fallback">Chargement de la vraie carte satellite...</div><div class="satellite-badge">Satellite - navigable</div></div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     (function () {
       var guess = ${JSON.stringify(guess)};
       var target = ${JSON.stringify(target ?? null)};
-      var map = L.map('map', { zoomControl: true, worldCopyJump: true }).setView([${center.lat}, ${center.lon}], ${guess || target ? 5 : 2});
+      var map = L.map('map', {
+        zoomControl: true,
+        worldCopyJump: true,
+        dragging: true,
+        touchZoom: true,
+        doubleClickZoom: true,
+        scrollWheelZoom: true,
+        boxZoom: false,
+        keyboard: false,
+        tap: true
+      }).setView([${center.lat}, ${center.lon}], ${guess || target ? answerZoom : defaultZoom});
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 19,
+        minZoom: ${isFranceMap ? 4 : 2},
+        crossOrigin: true,
         attribution: 'Tiles Esri, Maxar, Earthstar Geographics'
       }).addTo(map);
+      ${isFranceMap ? "map.setMaxBounds([[39.5, -8.5], [52.8, 11.5]]);" : ''}
+      var boundaryUrl = ${JSON.stringify(isFranceMap
+        ? 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements.geojson'
+        : 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')};
+      fetch(boundaryUrl)
+        .then(function (response) { return response.ok ? response.json() : null; })
+        .then(function (geojson) {
+          if (!geojson) return;
+          L.geoJSON(geojson, {
+            interactive: false,
+            style: {
+              color: ${isFranceMap ? "'#F5F7F5'" : "'#E9F1ED'"},
+              weight: ${isFranceMap ? '1.2' : '0.85'},
+              opacity: ${isFranceMap ? '0.78' : '0.64'},
+              fillOpacity: 0
+            }
+          }).addTo(map);
+        })
+        .catch(function () {});
       function addMarker(point, color, label) {
         L.circleMarker([point.lat, point.lon], {
           radius: 9, color: '#07110C', weight: 2, fillColor: color, fillOpacity: 1
         }).addTo(map).bindTooltip(label, { direction: 'top' });
       }
-      if (guess) addMarker(guess, '#68D7A2', 'Ta réponse');
+      if (guess) addMarker(guess, '#68D7A2', 'Ta reponse');
       if (target) {
         if (target.toleranceKm) {
           L.circle([target.lat, target.lon], {
@@ -716,10 +1021,15 @@ function satelliteMapHtml(guess: GeoPoint | null, target: (GeoPoint & { toleranc
         addMarker(target, '#E47D70', target.label || 'Cible');
       }
       if (guess && target) {
-        map.fitBounds([[guess.lat, guess.lon], [target.lat, target.lon]], { padding: [38, 38], maxZoom: 7 });
+        map.fitBounds([[guess.lat, guess.lon], [target.lat, target.lon]], { padding: [38, 38], maxZoom: ${isFranceMap ? 9 : 7} });
       }
       if (!${disabled ? 'true' : 'false'}) {
+        var marker;
         map.on('click', function (event) {
+          if (marker) map.removeLayer(marker);
+          marker = L.circleMarker([event.latlng.lat, event.latlng.lng], {
+            radius: 9, color: '#07110C', weight: 2, fillColor: '#68D7A2', fillOpacity: 1
+          }).addTo(map).bindTooltip('Ta reponse', { direction: 'top' });
           window.ReactNativeWebView.postMessage(JSON.stringify({ lat: event.latlng.lat, lon: event.latlng.lng }));
         });
       }
@@ -729,51 +1039,11 @@ function satelliteMapHtml(guess: GeoPoint | null, target: (GeoPoint & { toleranc
 </html>`;
 }
 
-function WorldMapPicker({ guess, target, disabled, onPick }: { guess: GeoPoint | null; target?: GeoPoint & { toleranceKm?: number }; disabled: boolean; onPick: (point: GeoPoint) => void }) {
-  const [size, setSize] = useState({ width: 0, height: 0 });
-  const toPoint = (point: GeoPoint) => ({
-    left: size.width ? ((point.lon + 180) / 360) * size.width : 0,
-    top: size.height ? ((90 - point.lat) / 180) * size.height : 0,
-  });
-  const toleranceDiameter = target && typeof target.toleranceKm === 'number' && size.width
-    ? Math.max(22, Math.min(88, (target.toleranceKm * 2 * size.width) / 40075))
-    : 0;
-  const mapBands = [-60, -30, 0, 30, 60];
-  const meridians = [-120, -60, 0, 60, 120];
-  return (
-    <Pressable
-      testID="world-map-picker"
-      accessibilityRole="button"
-      accessibilityLabel="Carte du monde tactile"
-      disabled={disabled}
-      onLayout={(event) => setSize(event.nativeEvent.layout)}
-      onPress={(event) => {
-        if (!size.width || !size.height) return;
-        const lon = (event.nativeEvent.locationX / size.width) * 360 - 180;
-        const lat = 90 - (event.nativeEvent.locationY / size.height) * 180;
-        onPick({ lat: Math.max(-90, Math.min(90, lat)), lon: Math.max(-180, Math.min(180, lon)) });
-      }}
-      style={({ pressed }) => [styles.worldMap, pressed && !disabled && styles.pressed]}
-    >
-      {mapBands.map((lat) => <View key={`lat-${lat}`} style={[styles.mapLineHorizontal, { top: `${((90 - lat) / 180) * 100}%` }]} />)}
-      {meridians.map((lon) => <View key={`lon-${lon}`} style={[styles.mapLineVertical, { left: `${((lon + 180) / 360) * 100}%` }]} />)}
-      <View style={[styles.continentBlob, styles.americaNorth]} />
-      <View style={[styles.continentBlob, styles.americaSouth]} />
-      <View style={[styles.continentBlob, styles.europeAfrica]} />
-      <View style={[styles.continentBlob, styles.asia]} />
-      <View style={[styles.continentBlob, styles.australia]} />
-      {target && toleranceDiameter > 0 && <View style={[styles.mapToleranceRing, toPoint(target), { width: toleranceDiameter, height: toleranceDiameter, marginLeft: -toleranceDiameter / 2, marginTop: -toleranceDiameter / 2, borderRadius: toleranceDiameter / 2 }]} />}
-      {target && <View style={[styles.mapMarker, styles.mapTarget, toPoint(target)]}><Text style={styles.mapMarkerText}>×</Text></View>}
-      {guess && <View style={[styles.mapMarker, styles.mapGuess, toPoint(guess)]}><Text style={styles.mapMarkerText}>•</Text></View>}
-      <Text style={styles.mapHint}>{disabled ? 'Point vert: ta réponse · croix: cible' : 'Touche la carte pour placer ta réponse'}</Text>
-    </Pressable>
-  );
-}
-
-function Result({ topic, answers, onAgain, onHome }: { topic: Topic; answers: SessionAnswer[]; onAgain: () => void; onHome: () => void }) {
+function Result({ topic, questions, answers, onAgain, onHome }: { topic: Topic; questions: QuizQuestion[]; answers: SessionAnswer[]; onAgain: () => void; onHome: () => void }) {
   const score = answers.reduce((total, answer) => total + (answer.credit ?? (answer.correct ? 1 : 0)), 0);
   const percent = Math.round((score / answers.length) * 100);
   const message = percent >= 80 ? 'Solide !' : percent >= 50 ? 'Bonne progression' : 'Chaque erreur fait apprendre';
+  const interactionStats = summarizeByInteraction(questions, answers);
   const confidenceStats = [
     { label: 'A revoir', value: answers.filter((answer) => answer.confidence === 1).length },
     { label: 'A consolider', value: answers.filter((answer) => answer.confidence === 2).length },
@@ -794,6 +1064,17 @@ function Result({ topic, answers, onAgain, onHome }: { topic: Topic; answers: Se
           ))}
         </View>
       </View>
+      {interactionStats.length > 1 && <View style={styles.breakdownCard}>
+        <Text style={styles.calibrationTitle}>Par type</Text>
+        {interactionStats.map((stat) => (
+          <View key={stat.type} style={styles.breakdownRow}>
+            <Text style={styles.breakdownLabel}>{stat.label}</Text>
+            <Text style={styles.breakdownMeta}>{stat.answered} rep.</Text>
+            <Text style={styles.breakdownScore}>{Number.isInteger(stat.score) ? stat.score : stat.score.toFixed(1)}/{stat.answered}</Text>
+            <Text style={styles.breakdownPercent}>{stat.accuracy}%</Text>
+          </View>
+        ))}
+      </View>}
       <Pressable onPress={onAgain} style={styles.primaryButton}><Text style={styles.primaryButtonText}>Rejouer ce thème</Text></Pressable>
       <Pressable onPress={onHome} style={styles.secondaryButton}><Text style={styles.secondaryButtonText}>Retour aux thèmes</Text></Pressable>
     </View>
@@ -802,23 +1083,32 @@ function Result({ topic, answers, onAgain, onHome }: { topic: Topic; answers: Se
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: palette.bg, paddingTop: Platform.OS === 'android' ? 24 : 0, paddingBottom: Platform.OS === 'android' ? 48 : 0 }, loading: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: palette.bg, gap: 16, paddingTop: Platform.OS === 'android' ? 24 : 0, paddingBottom: Platform.OS === 'android' ? 48 : 0 }, loadingText: { color: palette.muted },
-  page: { padding: 22, paddingBottom: 40 }, brandRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 38 }, logo: { width: 40, height: 40, borderRadius: 13, backgroundColor: '#68D7A2', alignItems: 'center', justifyContent: 'center' }, logoText: { color: '#09110E', fontSize: 22, fontWeight: '900' }, brand: { fontSize: 23, fontWeight: '800', color: '#F3F7F5', marginLeft: 11 }, libraryShortcut: { marginLeft: 'auto', backgroundColor: '#17211D', borderWidth: 1, borderColor: '#28362F', paddingHorizontal: 13, paddingVertical: 9, borderRadius: 20 }, libraryShortcutText: { color: '#91E8BD', fontSize: 12, fontWeight: '800' },
-  logoImage: { width: 42, height: 42, borderRadius: 13 }, dashboardHeader: { flexDirection: 'row', alignItems: 'baseline', marginBottom: 14 }, dashboardTitle: { color: '#F3F7F5', fontSize: 25, fontWeight: '800', letterSpacing: -0.5 }, dashboardCaption: { color: '#6F7C75', fontSize: 11, marginLeft: 'auto' }, kpiGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 28 }, kpiCard: { width: '48%', minHeight: 108, borderRadius: 18, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 15 }, kpiDot: { width: 7, height: 7, borderRadius: 4, marginBottom: 12 }, kpiValue: { color: '#F1F6F3', fontSize: 25, fontWeight: '900' }, kpiLabel: { color: '#7F8C85', fontSize: 11, fontWeight: '700', marginTop: 4 },
+  homeRoot: { flex: 1, backgroundColor: '#0A0E0D' }, homePager: { flex: 1 }, homePanel: { paddingHorizontal: 22, paddingBottom: 44 }, homeTabs: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 22, marginTop: -24, marginBottom: 18, minHeight: 38, borderRadius: 999, borderWidth: 1, borderColor: '#222C27', backgroundColor: '#101714', overflow: 'hidden' }, homeTabIndicator: { position: 'absolute', left: 0, top: 0, bottom: 0, width: '33.3333%', backgroundColor: '#68D7A2', borderRadius: 999 }, homeTab: { flex: 1, textAlign: 'center', color: '#8A9791', fontSize: 11, fontWeight: '800', paddingHorizontal: 8, paddingVertical: 11, zIndex: 1 }, homeTabActive: { color: '#07110C', fontWeight: '900' },
+  page: { padding: 22, paddingBottom: 40 }, brandRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 38, paddingHorizontal: 22, paddingTop: 22 }, logo: { width: 40, height: 40, borderRadius: 13, backgroundColor: '#68D7A2', alignItems: 'center', justifyContent: 'center' }, logoText: { color: '#09110E', fontSize: 22, fontWeight: '900' }, brand: { fontSize: 23, fontWeight: '800', color: '#F3F7F5', marginLeft: 11 }, libraryShortcut: { marginLeft: 'auto', backgroundColor: '#17211D', borderWidth: 1, borderColor: '#28362F', paddingHorizontal: 13, paddingVertical: 9, borderRadius: 20 }, libraryShortcutText: { color: '#91E8BD', fontSize: 12, fontWeight: '800' },
+  logoImage: { width: 42, height: 42, borderRadius: 13 }, dashboardHeader: { flexDirection: 'row', alignItems: 'baseline', marginBottom: 14 }, dashboardTitle: { color: '#F3F7F5', fontSize: 25, fontWeight: '800', letterSpacing: -0.5 }, dashboardCaption: { color: '#6F7C75', fontSize: 11, marginLeft: 'auto' }, kpiGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 16 }, kpiCard: { width: '48%', minHeight: 108, borderRadius: 18, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 15 }, kpiDot: { width: 7, height: 7, borderRadius: 4, marginBottom: 12 }, kpiValue: { color: '#F1F6F3', fontSize: 25, fontWeight: '900' }, kpiLabel: { color: '#7F8C85', fontSize: 11, fontWeight: '700', marginTop: 4 },
+  progressCard: { borderRadius: 22, backgroundColor: '#111714', borderWidth: 1, borderColor: '#26312C', padding: 15, marginBottom: 18 }, progressHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 }, progressTitle: { color: '#EAF3EE', fontSize: 15, fontWeight: '900' }, progressHint: { marginLeft: 'auto', color: '#68756E', fontSize: 10, fontWeight: '800' }, progressEmptyTitle: { color: '#EAF3EE', fontSize: 14, fontWeight: '900' }, progressEmptyText: { color: '#7F8C85', fontSize: 11, lineHeight: 17, marginTop: 5 }, progressRow: { minHeight: 44, flexDirection: 'row', alignItems: 'center', borderTopWidth: 1, borderTopColor: '#202A25', paddingTop: 10, marginTop: 9 }, progressTopicWrap: { flex: 1, paddingRight: 10 }, progressTopic: { color: '#DDE8E3', fontSize: 12, fontWeight: '900' }, progressMeta: { color: '#6F7C75', fontSize: 10, marginTop: 2 }, progressCells: { flexDirection: 'row', gap: 6 }, progressCell: { width: 30, height: 30, borderRadius: 10, alignItems: 'center', justifyContent: 'center', borderWidth: 1 }, progressCellStrong: { backgroundColor: '#1A3B2B', borderColor: '#4EBA88' }, progressCellMedium: { backgroundColor: '#332A15', borderColor: '#E6B759' }, progressCellWeak: { backgroundColor: '#351D1A', borderColor: '#C96358' }, progressCellEmpty: { backgroundColor: '#151B18', borderColor: '#2B3530' }, progressCellText: { color: '#EAF3EE', fontSize: 11, fontWeight: '900' }, progressCta: { minHeight: 40, borderRadius: 13, backgroundColor: '#18271F', alignItems: 'center', justifyContent: 'center', marginTop: 13 }, progressCtaText: { color: '#8EE0B5', fontSize: 12, fontWeight: '900' },
+  historyCard: { borderRadius: 22, backgroundColor: '#111714', borderWidth: 1, borderColor: '#26312C', padding: 15, marginBottom: 18 }, historyRow: { minHeight: 38, flexDirection: 'row', alignItems: 'center', borderTopWidth: 1, borderTopColor: '#202A25', paddingTop: 9, marginTop: 8 }, historyMain: { flex: 1, paddingRight: 10 }, historyTitle: { color: '#DDE8E3', fontSize: 12, fontWeight: '900' }, historyDate: { color: '#6F7C75', fontSize: 10, marginTop: 2 }, historyScore: { color: '#EAF3EE', fontSize: 12, fontWeight: '900', minWidth: 44, textAlign: 'right' }, historyPercent: { color: '#8EE0B5', fontSize: 12, fontWeight: '900', minWidth: 44, textAlign: 'right' },
   modeStack: { gap: 12, marginBottom: 18 }, recommendCard: { minHeight: 98, borderRadius: 22, backgroundColor: '#121815', borderWidth: 1, borderColor: '#28342F', padding: 15, flexDirection: 'row', alignItems: 'center', gap: 13, marginBottom: 12 }, recommendRail: { width: 4, alignSelf: 'stretch', borderRadius: 99 }, recommendEyebrow: { color: '#78857F', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, recommendTitle: { color: '#EFF6F2', fontSize: 15, fontWeight: '900', marginTop: 5 }, recommendText: { color: '#84918A', fontSize: 11, lineHeight: 16, marginTop: 5 }, recommendAction: { fontSize: 12, fontWeight: '900' }, composeCard: { minHeight: 96, borderRadius: 22, backgroundColor: '#18271F', borderWidth: 1, borderColor: '#2E5944', padding: 17, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }, composeEyebrow: { color: '#68D7A2', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, composeTitle: { color: '#EAF3EE', fontSize: 15, fontWeight: '800', marginTop: 5 }, modeText: { color: '#8CA39A', fontSize: 11, lineHeight: 16, marginTop: 6, maxWidth: 250 }, composeArrow: { color: '#68D7A2', fontSize: 25 }, enduranceCard: { minHeight: 132, borderRadius: 22, backgroundColor: '#151A23', borderWidth: 1, borderColor: '#31446F', padding: 16, flexDirection: 'row', alignItems: 'center', gap: 14 }, enduranceText: { color: '#8D9CAE', fontSize: 11, lineHeight: 16, marginTop: 6 }, enduranceButtons: { width: 112, gap: 7 }, enduranceButton: { minHeight: 35, borderRadius: 12, backgroundColor: '#1C2638', borderWidth: 1, borderColor: '#40557F', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 11 }, enduranceButtonText: { color: '#E9F0FF', fontSize: 14, fontWeight: '900' }, enduranceDots: { color: '#8FB3FF', fontSize: 8, letterSpacing: 1.5 }, infiniteCard: { minHeight: 132, borderRadius: 22, backgroundColor: '#1E1826', borderWidth: 1, borderColor: '#4B3463', padding: 16, flexDirection: 'row', alignItems: 'center', gap: 14 }, infiniteEyebrow: { color: '#C29BFF', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, infiniteText: { color: '#A899B8', fontSize: 11, lineHeight: 16, marginTop: 6 }, infiniteButton: { minHeight: 35, borderRadius: 12, backgroundColor: '#2A2036', borderWidth: 1, borderColor: '#594073', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 11 }, infiniteButtonText: { color: '#F1E8FF', fontSize: 14, fontWeight: '900' }, infiniteDots: { color: '#C29BFF', fontSize: 13, fontWeight: '900' }, configPage: { padding: 22, paddingBottom: 60, backgroundColor: '#0A0E0D' }, configTitle: { color: '#F3F7F5', fontSize: 30, lineHeight: 35, fontWeight: '900', letterSpacing: -0.8 }, configLead: { color: '#87938D', fontSize: 14, marginTop: 8, marginBottom: 30 }, configSection: { color: '#68756E', fontSize: 10, fontWeight: '900', letterSpacing: 1.5, marginTop: 12, marginBottom: 12 }, chipWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 20 }, filterChip: { borderWidth: 1, borderColor: '#2A3530', backgroundColor: '#121815', borderRadius: 20, paddingHorizontal: 13, paddingVertical: 10 }, filterChipActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, filterChipText: { color: '#A1ACA6', fontSize: 12, fontWeight: '700' }, filterChipTextActive: { color: '#07110C', fontWeight: '900' }, difficultyGrid: { gap: 9, marginBottom: 20 }, difficultyCard: { minHeight: 66, borderRadius: 16, borderWidth: 1, borderColor: '#2A3530', backgroundColor: '#121815', paddingHorizontal: 14, flexDirection: 'row', alignItems: 'center' }, difficultyCardActive: { borderColor: '#68D7A2', backgroundColor: '#13251E' }, difficultyNumber: { color: '#68D7A2', fontSize: 20, fontWeight: '900', width: 32 }, difficultyName: { color: '#DCE4E0', fontSize: 13, fontWeight: '800', flex: 1 }, difficultyDots: { color: '#68D7A2', fontSize: 10, letterSpacing: 2 }, lengthRow: { flexDirection: 'row', gap: 9, marginBottom: 22 }, lengthButton: { flex: 1, minHeight: 70, borderRadius: 16, borderWidth: 1, borderColor: '#2A3530', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center' }, lengthButtonActive: { borderColor: '#68D7A2', backgroundColor: '#13251E' }, lengthValue: { color: '#A4B0AA', fontSize: 20, fontWeight: '900' }, lengthValueActive: { color: '#68D7A2' }, lengthLabel: { color: '#6D7972', fontSize: 9, marginTop: 2 }, configSummary: { backgroundColor: '#101512', borderRadius: 14, padding: 14, marginBottom: 16 }, configSummaryLabel: { color: '#B8C2BD', fontSize: 12, fontWeight: '700' }, configSummaryValue: { color: '#67736D', fontSize: 10, marginTop: 4 },
   resumeCard: { borderRadius: 19, backgroundColor: '#151B18', borderWidth: 1, borderColor: '#34423B', padding: 16, marginBottom: 14, overflow: 'hidden' }, resumeProgress: { height: 4, borderRadius: 3, backgroundColor: '#27312C', marginBottom: 14, overflow: 'hidden' }, resumeProgressFill: { height: 4, borderRadius: 3 }, resumeEyebrow: { color: '#7F8D86', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, resumeRow: { flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 6 }, resumeTitle: { color: '#EDF4F0', fontSize: 17, fontWeight: '900' }, resumeText: { color: '#74817A', fontSize: 11, marginTop: 3 }, resumeArrow: { fontSize: 12, fontWeight: '900' },
   hero: { color: '#F3F7F5', fontSize: 41, lineHeight: 45, fontWeight: '800', letterSpacing: -1.3 }, lead: { color: '#96A29C', fontSize: 16, lineHeight: 24, marginTop: 14, marginBottom: 28, maxWidth: 350 },
   statsCard: { flexDirection: 'row', backgroundColor: '#131917', borderRadius: 20, paddingVertical: 18, paddingHorizontal: 10, borderWidth: 1, borderColor: '#242D29', marginBottom: 34 }, stat: { flex: 1, alignItems: 'center' }, statValue: { color: '#EFF5F2', fontSize: 21, fontWeight: '800' }, statLabel: { color: '#78857F', fontSize: 11, marginTop: 3 }, divider: { width: 1, backgroundColor: '#27312C' }, sectionRow: { flexDirection: 'row', alignItems: 'baseline', marginBottom: 14 }, sectionTitle: { color: '#E8EFEB', fontSize: 19, fontWeight: '800' }, sectionHint: { marginLeft: 'auto', color: '#738079', fontSize: 12 },
   quickRow: { flexDirection: 'row', gap: 9, marginBottom: 28 }, quickAction: { flex: 1, minHeight: 74, borderRadius: 18, borderWidth: 1, borderColor: '#26312C', backgroundColor: '#111614', alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 }, quickIcon: { color: '#79DDAA', fontSize: 20, fontWeight: '800', marginBottom: 5 }, quickText: { color: '#AAB5AF', fontSize: 10.5, fontWeight: '800', textAlign: 'center' },
   languageHero: { minHeight: 112, borderRadius: 22, borderWidth: 1, borderColor: '#285262', backgroundColor: '#102027', flexDirection: 'row', alignItems: 'center', padding: 15, gap: 13 }, languageHeroIcon: { width: 52, height: 52, borderRadius: 16, backgroundColor: '#5FB8C9', alignItems: 'center', justifyContent: 'center' }, languageHeroIconText: { color: '#071116', fontSize: 18, fontWeight: '900' }, languageHeroEyebrow: { color: '#6FC8D9', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, languageHeroTitle: { color: '#EDF6F8', fontSize: 15, fontWeight: '900', marginTop: 5 }, languageHeroText: { color: '#78949C', fontSize: 11, marginTop: 4 },
+  languagePanelHero: { borderRadius: 26, backgroundColor: '#102027', borderWidth: 1, borderColor: '#285262', padding: 20, marginBottom: 14 }, languagePanelEyebrow: { color: '#6FC8D9', fontSize: 10, fontWeight: '900', letterSpacing: 1.4 }, languagePanelTitle: { color: '#F3F9FA', fontSize: 29, lineHeight: 33, fontWeight: '900', letterSpacing: -0.8, marginTop: 8 }, languagePanelText: { color: '#8EA6AD', fontSize: 13, lineHeight: 19, marginTop: 8 }, languageMiniGrid: { gap: 10, marginTop: 14 }, languageMiniCard: { borderRadius: 18, backgroundColor: '#121815', borderWidth: 1, borderColor: '#25302B', padding: 15 }, languageMiniCode: { color: '#5FB8C9', fontSize: 11, fontWeight: '900' }, languageMiniName: { color: '#EAF3EE', fontSize: 16, fontWeight: '900', marginTop: 4 }, languageMiniText: { color: '#7C8B85', fontSize: 11, marginTop: 4 },
+  languageProgressCard: { borderRadius: 18, backgroundColor: '#101B1D', borderWidth: 1, borderColor: '#26464D', padding: 13, marginTop: 12, marginBottom: 16 }, languageProgressHeader: { flexDirection: 'row', alignItems: 'baseline', marginBottom: 10 }, languageProgressTitle: { color: '#E6F2F4', fontSize: 13, fontWeight: '900' }, languageProgressMeta: { color: '#78949C', fontSize: 10, fontWeight: '800', marginLeft: 'auto' }, languageProgressGrid: { flexDirection: 'row', gap: 7 }, languageProgressCell: { flex: 1, minHeight: 62, borderRadius: 14, borderWidth: 1, borderColor: '#2A3B3F', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center', paddingVertical: 8 }, languageProgressCellActive: { borderColor: '#5FB8C9', backgroundColor: '#163039' }, languageProgressLevel: { color: '#DCE6E1', fontSize: 12, fontWeight: '900' }, languageProgressAccuracy: { color: '#8EE0B5', fontSize: 13, fontWeight: '900', marginTop: 3 }, languageProgressCount: { color: '#718079', fontSize: 9, fontWeight: '800', marginTop: 2 },
   languagePage: { padding: 22, paddingBottom: 60, backgroundColor: '#0A0E0D' }, languageChoices: { gap: 9, marginBottom: 20 }, languageChoice: { minHeight: 67, borderRadius: 17, borderWidth: 1, borderColor: '#293631', backgroundColor: '#121815', paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center' }, languageChoiceActive: { borderColor: '#5FB8C9', backgroundColor: '#12252B' }, languageChoiceName: { color: '#DCE6E1', fontSize: 15, fontWeight: '800' }, languageChoiceNative: { color: '#70827A', fontSize: 12, marginLeft: 'auto' }, cefrRow: { flexDirection: 'row', gap: 7 }, cefrButton: { flex: 1, height: 48, borderRadius: 14, borderWidth: 1, borderColor: '#2A3530', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center' }, cefrText: { color: '#A1ACA6', fontWeight: '900' }, levelHelp: { color: '#718079', fontSize: 11, lineHeight: 17, marginTop: 9, marginBottom: 14 }, skillList: { gap: 9, marginBottom: 18 }, skillCard: { minHeight: 72, borderRadius: 17, borderWidth: 1, borderColor: '#29332F', backgroundColor: '#121815', padding: 13, flexDirection: 'row', alignItems: 'center' }, skillCardActive: { borderColor: '#417B86', backgroundColor: '#102126' }, skillCheck: { width: 29, height: 29, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', alignItems: 'center', justifyContent: 'center', marginRight: 12 }, skillCheckActive: { backgroundColor: '#5FB8C9', borderColor: '#5FB8C9' }, skillTitle: { color: '#E4ECE8', fontSize: 13, fontWeight: '800' }, skillDetail: { color: '#718079', fontSize: 10, marginTop: 4 }, languageMethod: { borderRadius: 17, backgroundColor: '#121A17', borderWidth: 1, borderColor: '#29352F', padding: 15, marginBottom: 18 }, languageMethodTitle: { color: '#8EDCB6', fontSize: 13, fontWeight: '900' }, languageMethodText: { color: '#7E8C85', fontSize: 11, lineHeight: 18, marginTop: 6 },
   topicGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 }, topicCard: { width: '48%', minHeight: 176, padding: 16, borderRadius: 22, backgroundColor: '#121815', borderWidth: 1, borderColor: '#26312C' }, pressed: { opacity: 0.72, transform: [{ scale: 0.985 }] }, topicIcon: { width: 44, height: 44, borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginBottom: 15 }, topicIconText: { fontSize: 17, fontWeight: '900' }, topicTitle: { color: '#ECF2EF', fontWeight: '900', fontSize: 16 }, topicSubtitle: { color: '#84918A', fontSize: 11.5, lineHeight: 17, marginTop: 4 }, go: { fontSize: 12, fontWeight: '900', marginTop: 'auto' }, privacy: { textAlign: 'center', color: '#66736D', fontSize: 11, marginTop: 28 },
-  quizPage: { flex: 1, backgroundColor: '#0A0E0D' }, quizHeader: { height: 64, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 22, gap: 13 }, close: { fontSize: 32, color: '#829089', lineHeight: 34 }, progressTrack: { flex: 1, height: 7, borderRadius: 8, backgroundColor: '#202925', overflow: 'hidden' }, progressFill: { height: '100%', borderRadius: 8 }, counter: { color: '#78857F', fontWeight: '700', fontSize: 12 }, favoriteStar: { color: '#64716A', fontSize: 24 }, favoriteStarActive: { color: '#E6B759' }, quizBody: { padding: 22, paddingBottom: 32 }, metaRow: { flexDirection: 'row', alignItems: 'center' }, pill: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20, fontSize: 12, fontWeight: '800' }, difficulty: { marginLeft: 'auto', color: '#59655F', letterSpacing: 2, fontSize: 11 }, infiniteQuizHint: { color: '#9B8CB2', fontSize: 11, fontWeight: '800', marginTop: 12 }, questionImageWrap: { height: 190, overflow: 'hidden', borderRadius: 20, backgroundColor: '#17201C', marginTop: 20 }, questionImage: { width: '100%', height: '100%' }, question: { color: '#F1F6F3', fontSize: 28, lineHeight: 35, fontWeight: '800', marginTop: 22, marginBottom: 28 }, choices: { gap: 11 }, choice: { minHeight: 68, borderRadius: 17, borderWidth: 1.5, borderColor: '#2A3530', backgroundColor: '#131917', padding: 12, flexDirection: 'row', alignItems: 'center' }, choiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#13271F' }, choiceWrong: { borderColor: '#E47D70', backgroundColor: '#291816' }, choiceLetter: { width: 38, height: 38, borderRadius: 12, backgroundColor: '#222B27', alignItems: 'center', justifyContent: 'center', marginRight: 13 }, choiceLetterCorrect: { backgroundColor: '#4EBA88' }, choiceLetterWrong: { backgroundColor: '#C96358' }, choiceLetterText: { color: '#A0ACA6', fontWeight: '800' }, choiceLetterActive: { color: '#07110C' }, choiceText: { color: '#E3EAE6', flex: 1, fontSize: 15, fontWeight: '600' }, choiceMark: { color: '#68D7A2', fontSize: 21, fontWeight: '900', marginHorizontal: 6 }, freeInput: { minHeight: 62, borderWidth: 1.5, borderColor: '#303B36', backgroundColor: '#131917', borderRadius: 17, paddingHorizontal: 17, color: '#EDF4F0', fontSize: 16 }, checkButton: { minHeight: 50, backgroundColor: '#68D7A2', borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginTop: 12 }, checkButtonText: { color: '#07110C', fontSize: 15, fontWeight: '900' }, acceptedAnswer: { color: '#F09A8E', fontSize: 13, fontWeight: '700', marginTop: 10 }, explanation: { borderRadius: 17, padding: 17, marginTop: 20, borderLeftWidth: 4 }, explanationCorrect: { backgroundColor: '#13251E', borderLeftColor: '#68D7A2' }, explanationWrong: { backgroundColor: '#281917', borderLeftColor: '#E47D70' }, explanationTitle: { color: '#EDF4F0', fontWeight: '800', fontSize: 16, marginBottom: 6 }, explanationText: { color: '#A4B0AA', lineHeight: 21 }, learnMore: { alignSelf: 'flex-start', marginTop: 13, paddingVertical: 5 }, learnMoreText: { color: '#83E3B3', fontWeight: '800', fontSize: 13 },
-  satelliteMapWrap: { height: 330, borderRadius: 22, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, satelliteMap: { flex: 1, backgroundColor: '#0F1D23' }, worldMap: { height: 255, borderRadius: 22, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, mapLineHorizontal: { position: 'absolute', left: 0, right: 0, height: 1, backgroundColor: '#27414A' }, mapLineVertical: { position: 'absolute', top: 0, bottom: 0, width: 1, backgroundColor: '#27414A' }, continentBlob: { position: 'absolute', backgroundColor: '#244A3A', opacity: 0.75 }, americaNorth: { left: '11%', top: '20%', width: '22%', height: '26%', borderRadius: 34, transform: [{ rotate: '-12deg' }] }, americaSouth: { left: '27%', top: '51%', width: '12%', height: '31%', borderRadius: 26, transform: [{ rotate: '16deg' }] }, europeAfrica: { left: '45%', top: '26%', width: '17%', height: '44%', borderRadius: 31, transform: [{ rotate: '8deg' }] }, asia: { left: '58%', top: '20%', width: '29%', height: '35%', borderRadius: 42, transform: [{ rotate: '-8deg' }] }, australia: { left: '76%', top: '62%', width: '12%', height: '14%', borderRadius: 25, transform: [{ rotate: '-8deg' }] }, mapToleranceRing: { position: 'absolute', borderWidth: 2, borderColor: '#E47D70AA', backgroundColor: '#E47D7022' }, mapMarker: { position: 'absolute', width: 24, height: 24, marginLeft: -12, marginTop: -12, borderRadius: 12, alignItems: 'center', justifyContent: 'center', borderWidth: 2 }, mapGuess: { backgroundColor: '#68D7A2', borderColor: '#D7FFE8' }, mapTarget: { backgroundColor: '#E47D70', borderColor: '#FFD8D3' }, mapMarkerText: { color: '#07110C', fontWeight: '900', fontSize: 15, lineHeight: 18 }, mapHint: { position: 'absolute', left: 14, right: 14, bottom: 12, color: '#A6B9B0', fontSize: 11, fontWeight: '800', textAlign: 'center', paddingHorizontal: 10, paddingVertical: 7, borderRadius: 999, backgroundColor: '#07110CCC', overflow: 'hidden' }, mapFeedback: { borderRadius: 16, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 14, marginTop: 10 }, mapFeedbackTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 6 }, mapFeedbackText: { color: '#8FA19A', fontSize: 12, lineHeight: 18 },
+  quizPage: { flex: 1, backgroundColor: '#0A0E0D' }, quizHeader: { height: 64, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 22, gap: 13 }, close: { fontSize: 32, color: '#829089', lineHeight: 34 }, progressTrack: { flex: 1, height: 7, borderRadius: 8, backgroundColor: '#202925', overflow: 'hidden' }, progressFill: { height: '100%', borderRadius: 8 }, counter: { color: '#78857F', fontWeight: '700', fontSize: 12 }, favoriteStar: { color: '#64716A', fontSize: 24 }, favoriteStarActive: { color: '#E6B759' }, quizBody: { padding: 22, paddingBottom: 32 }, metaRow: { flexDirection: 'row', alignItems: 'center' }, pill: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20, fontSize: 12, fontWeight: '800' }, difficulty: { marginLeft: 'auto', color: '#59655F', letterSpacing: 2, fontSize: 11 }, infiniteQuizHint: { color: '#9B8CB2', fontSize: 11, fontWeight: '800', marginTop: 12 }, questionImageWrap: { height: 190, overflow: 'hidden', borderRadius: 20, backgroundColor: '#17201C', marginTop: 20 }, questionImage: { width: '100%', height: '100%' }, question: { color: '#F1F6F3', fontSize: 28, lineHeight: 35, fontWeight: '800', marginTop: 22, marginBottom: 28 }, choices: { gap: 11 }, choice: { minHeight: 68, borderRadius: 17, borderWidth: 1.5, borderColor: '#2A3530', backgroundColor: '#131917', padding: 12, flexDirection: 'row', alignItems: 'center' }, choiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#13271F' }, choiceWrong: { borderColor: '#E47D70', backgroundColor: '#291816' }, choiceLetter: { width: 38, height: 38, borderRadius: 12, backgroundColor: '#222B27', alignItems: 'center', justifyContent: 'center', marginRight: 13 }, choiceLetterCorrect: { backgroundColor: '#4EBA88' }, choiceLetterWrong: { backgroundColor: '#C96358' }, choiceLetterText: { color: '#A0ACA6', fontWeight: '800' }, choiceLetterActive: { color: '#07110C' }, choiceText: { color: '#E3EAE6', flex: 1, fontSize: 15, fontWeight: '600' }, choiceMark: { color: '#68D7A2', fontSize: 21, fontWeight: '900', marginHorizontal: 6 }, freeInput: { minHeight: 62, borderWidth: 1.5, borderColor: '#303B36', backgroundColor: '#131917', borderRadius: 17, paddingHorizontal: 17, color: '#EDF4F0', fontSize: 16 }, checkButton: { minHeight: 50, backgroundColor: '#68D7A2', borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginTop: 12 }, checkButtonText: { color: '#07110C', fontSize: 15, fontWeight: '900' }, acceptedAnswer: { color: '#F09A8E', fontSize: 13, fontWeight: '700', marginTop: 10 }, explanation: { borderRadius: 17, padding: 17, marginTop: 20, borderLeftWidth: 4 }, explanationCorrect: { backgroundColor: '#13251E', borderLeftColor: '#68D7A2' }, explanationWrong: { backgroundColor: '#281917', borderLeftColor: '#E47D70' }, explanationTitle: { color: '#EDF4F0', fontWeight: '800', fontSize: 16, marginBottom: 6 }, explanationText: { color: '#A4B0AA', lineHeight: 21 }, explanationActions: { flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 13 }, learnMore: { alignSelf: 'flex-start', paddingVertical: 5 }, learnMoreText: { color: '#83E3B3', fontWeight: '800', fontSize: 13 }, reportQuestion: { paddingVertical: 5, paddingHorizontal: 2 }, reportQuestionText: { color: '#8A9791', fontWeight: '800', fontSize: 13 },
+  satelliteMapWrap: { height: 430, borderRadius: 22, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, satelliteMap: { flex: 1, backgroundColor: '#0F1D23' }, worldMap: { height: 255, borderRadius: 22, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, mapLineHorizontal: { position: 'absolute', left: 0, right: 0, height: 1, backgroundColor: '#27414A' }, mapLineVertical: { position: 'absolute', top: 0, bottom: 0, width: 1, backgroundColor: '#27414A' }, continentBlob: { position: 'absolute', backgroundColor: '#244A3A', opacity: 0.75 }, americaNorth: { left: '11%', top: '20%', width: '22%', height: '26%', borderRadius: 34, transform: [{ rotate: '-12deg' }] }, americaSouth: { left: '27%', top: '51%', width: '12%', height: '31%', borderRadius: 26, transform: [{ rotate: '16deg' }] }, europeAfrica: { left: '45%', top: '26%', width: '17%', height: '44%', borderRadius: 31, transform: [{ rotate: '8deg' }] }, asia: { left: '58%', top: '20%', width: '29%', height: '35%', borderRadius: 42, transform: [{ rotate: '-8deg' }] }, australia: { left: '76%', top: '62%', width: '12%', height: '14%', borderRadius: 25, transform: [{ rotate: '-8deg' }] }, mapToleranceRing: { position: 'absolute', borderWidth: 2, borderColor: '#E47D70AA', backgroundColor: '#E47D7022' }, mapMarker: { position: 'absolute', width: 24, height: 24, marginLeft: -12, marginTop: -12, borderRadius: 12, alignItems: 'center', justifyContent: 'center', borderWidth: 2 }, mapGuess: { backgroundColor: '#68D7A2', borderColor: '#D7FFE8' }, mapTarget: { backgroundColor: '#E47D70', borderColor: '#FFD8D3' }, mapMarkerText: { color: '#07110C', fontWeight: '900', fontSize: 15, lineHeight: 18 }, mapHint: { position: 'absolute', left: 14, right: 14, bottom: 12, color: '#A6B9B0', fontSize: 11, fontWeight: '800', textAlign: 'center', paddingHorizontal: 10, paddingVertical: 7, borderRadius: 999, backgroundColor: '#07110CCC', overflow: 'hidden' }, mapFeedback: { borderRadius: 16, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 14, marginTop: 10 }, mapFeedbackTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 6 }, mapFeedbackText: { color: '#8FA19A', fontSize: 12, lineHeight: 18 },
   multiFields: { gap: 14 }, multiFieldLabel: { color: '#AAB5AF', fontSize: 11, fontWeight: '800', marginBottom: 7, marginLeft: 3 }, explanationPartial: { backgroundColor: '#2A2414', borderLeftColor: '#E6B759' }, partialCredit: { color: '#E6B759', fontSize: 11, fontWeight: '800', marginBottom: 8 },
   confidenceCard: { borderRadius: 17, borderWidth: 1, borderColor: '#28342E', backgroundColor: '#111714', padding: 15, marginTop: 13 }, confidenceTitle: { color: '#DEE8E3', fontSize: 14, fontWeight: '800' }, confidenceHint: { color: '#65736C', fontSize: 10, marginTop: 3, marginBottom: 12 }, confidenceRow: { flexDirection: 'row', gap: 7 }, confidenceButton: { flex: 1, minHeight: 42, borderRadius: 12, borderWidth: 1, borderColor: '#303C36', alignItems: 'center', justifyContent: 'center' }, confidenceButtonActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, confidenceButtonText: { color: '#8D9A93', fontSize: 11, fontWeight: '800' }, confidenceButtonTextActive: { color: '#07110C' },
   quizFooter: { padding: 18, borderTopWidth: 1, borderTopColor: '#222B27', backgroundColor: '#0A0E0D' }, primaryButton: { backgroundColor: '#68D7A2', minHeight: 56, borderRadius: 17, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 28 }, primaryButtonText: { color: '#07110C', fontWeight: '900', fontSize: 16 }, disabled: { opacity: 0.32 },
-  resultPage: { flex: 1, padding: 28, justifyContent: 'center', alignItems: 'stretch', backgroundColor: '#0A0E0D' }, resultCircle: { width: 180, height: 180, borderRadius: 90, borderWidth: 10, backgroundColor: '#131917', alignSelf: 'center', alignItems: 'center', justifyContent: 'center', marginBottom: 32 }, resultPercent: { fontSize: 43, fontWeight: '900' }, resultScore: { color: '#839089', marginTop: 2 }, resultTitle: { color: '#F0F5F2', fontSize: 30, fontWeight: '800', textAlign: 'center' }, resultText: { color: '#96A29C', fontSize: 15, lineHeight: 22, textAlign: 'center', marginTop: 12, marginBottom: 20 }, calibrationCard: { borderRadius: 18, borderWidth: 1, borderColor: '#26332D', backgroundColor: '#111714', padding: 15, marginBottom: 22 }, calibrationTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 12 }, calibrationRow: { flexDirection: 'row', gap: 8 }, calibrationItem: { flex: 1, borderRadius: 13, backgroundColor: '#171F1B', paddingVertical: 12, alignItems: 'center' }, calibrationValue: { color: '#68D7A2', fontSize: 22, fontWeight: '900' }, calibrationLabel: { color: '#7F8D86', fontSize: 10, fontWeight: '800', marginTop: 3, textAlign: 'center' }, secondaryButton: { minHeight: 54, alignItems: 'center', justifyContent: 'center', marginTop: 8 }, secondaryButtonText: { color: '#8DDBB2', fontWeight: '800', fontSize: 15 },
+  resultPage: { flex: 1, padding: 28, justifyContent: 'center', alignItems: 'stretch', backgroundColor: '#0A0E0D' }, resultCircle: { width: 180, height: 180, borderRadius: 90, borderWidth: 10, backgroundColor: '#131917', alignSelf: 'center', alignItems: 'center', justifyContent: 'center', marginBottom: 32 }, resultPercent: { fontSize: 43, fontWeight: '900' }, resultScore: { color: '#839089', marginTop: 2 }, resultTitle: { color: '#F0F5F2', fontSize: 30, fontWeight: '800', textAlign: 'center' }, resultText: { color: '#96A29C', fontSize: 15, lineHeight: 22, textAlign: 'center', marginTop: 12, marginBottom: 20 }, calibrationCard: { borderRadius: 18, borderWidth: 1, borderColor: '#26332D', backgroundColor: '#111714', padding: 15, marginBottom: 22 }, calibrationTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 12 }, calibrationRow: { flexDirection: 'row', gap: 8 }, calibrationItem: { flex: 1, borderRadius: 13, backgroundColor: '#171F1B', paddingVertical: 12, alignItems: 'center' }, calibrationValue: { color: '#68D7A2', fontSize: 22, fontWeight: '900' }, calibrationLabel: { color: '#7F8D86', fontSize: 10, fontWeight: '800', marginTop: 3, textAlign: 'center' }, breakdownCard: { borderRadius: 18, borderWidth: 1, borderColor: '#26332D', backgroundColor: '#111714', padding: 15, marginBottom: 22 }, breakdownRow: { minHeight: 34, flexDirection: 'row', alignItems: 'center', borderTopWidth: 1, borderTopColor: '#202A25', paddingTop: 8, marginTop: 7 }, breakdownLabel: { color: '#E6EFEA', fontSize: 12, fontWeight: '900', flex: 1 }, breakdownMeta: { color: '#7F8D86', fontSize: 10, minWidth: 44, textAlign: 'right' }, breakdownScore: { color: '#DDE8E3', fontSize: 11, fontWeight: '900', minWidth: 48, textAlign: 'right' }, breakdownPercent: { color: '#8EE0B5', fontSize: 12, fontWeight: '900', minWidth: 42, textAlign: 'right' }, secondaryButton: { minHeight: 54, alignItems: 'center', justifyContent: 'center', marginTop: 8 }, secondaryButtonText: { color: '#8DDBB2', fontWeight: '800', fontSize: 15 },
   libraryPage: { padding: 22, paddingBottom: 40, backgroundColor: '#0A0E0D' }, libraryHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 30 }, back: { color: '#83E3B3', fontSize: 40, lineHeight: 40, marginRight: 12 }, libraryTitle: { color: '#E8EFEB', fontSize: 20, fontWeight: '800' }, libraryHero: { color: '#F3F7F5', fontSize: 36, lineHeight: 41, fontWeight: '800', letterSpacing: -1 }, libraryStats: { flexDirection: 'row', backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', borderRadius: 20, paddingVertical: 17, marginBottom: 22 }, actionCard: { flexDirection: 'row', alignItems: 'center', minHeight: 86, borderRadius: 19, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 14, marginBottom: 12 }, actionIcon: { width: 48, height: 48, borderRadius: 15, alignItems: 'center', justifyContent: 'center' }, actionIconText: { color: '#68D7A2', fontWeight: '900', fontSize: 23 }, actionCopy: { flex: 1, paddingHorizontal: 13 }, actionTitle: { color: '#E9F0EC', fontSize: 15, fontWeight: '800' }, actionText: { color: '#84918A', fontSize: 12, lineHeight: 17, marginTop: 3 }, actionArrow: { color: '#5F6C65', fontSize: 28 }, report: { backgroundColor: '#13251E', borderRadius: 15, padding: 15, marginTop: 8 }, reportText: { color: '#8BE4B7', fontSize: 13, fontWeight: '700', lineHeight: 19 }, formatCard: { marginTop: 22, borderTopWidth: 1, borderTopColor: '#28312D', paddingTop: 20 }, formatTitle: { color: '#DDE6E1', fontWeight: '800', marginBottom: 7 }, formatText: { color: '#84918A', fontSize: 12, lineHeight: 19 },
   preparePage: { padding: 22, paddingBottom: 36, backgroundColor: '#0A0E0D' }, prepareEyebrow: { color: '#748079', fontSize: 11, fontWeight: '900', letterSpacing: 1.4 }, prepareBadge: { width: 58, height: 58, borderRadius: 18, alignItems: 'center', justifyContent: 'center', marginBottom: 18 }, prepareBadgeText: { fontSize: 20, fontWeight: '900' }, prepareTitle: { color: '#F2F7F4', fontSize: 36, lineHeight: 40, fontWeight: '900', letterSpacing: -1 }, prepareMeta: { color: '#85918B', fontSize: 13, marginTop: 9, marginBottom: 28 }, calmCard: { backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', borderRadius: 21, padding: 18, marginBottom: 12 }, calmTitle: { color: '#E9F0EC', fontSize: 16, fontWeight: '800' }, calmText: { color: '#89968F', fontSize: 12, lineHeight: 18, marginTop: 5 }, tensionRow: { flexDirection: 'row', gap: 9, marginTop: 18 }, tensionButton: { flex: 1, aspectRatio: 1, maxHeight: 48, borderRadius: 14, borderWidth: 1, borderColor: '#303A35', alignItems: 'center', justifyContent: 'center' }, tensionActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, tensionText: { color: '#A4B0AA', fontWeight: '800' }, tensionTextActive: { color: '#07110C' }, tensionLabels: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 7 }, tensionLabel: { color: '#626F68', fontSize: 10 }, breathCard: { backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', borderRadius: 21, padding: 16, marginBottom: 18, flexDirection: 'row', alignItems: 'center' }, breathOrb: { width: 54, height: 54, borderRadius: 27, backgroundColor: '#202A25', borderWidth: 1, borderColor: '#344139', alignItems: 'center', justifyContent: 'center' }, breathOrbActive: { borderColor: '#68D7A2', backgroundColor: '#163024' }, breathOrbText: { color: '#B7E8CE', fontWeight: '900', fontSize: 16 }, breathCopy: { flex: 1, paddingHorizontal: 13 }, breathButton: { paddingVertical: 9, paddingHorizontal: 11 }, breathButtonText: { color: '#7DDEAD', fontWeight: '800', fontSize: 12 }, reassurance: { color: '#A5B0AA', fontSize: 13, lineHeight: 20, textAlign: 'center', marginHorizontal: 12, marginBottom: 20 }, healthNote: { color: '#5F6B65', fontSize: 10, lineHeight: 15, textAlign: 'center', marginTop: 16 },
   searchPage: { flex: 1, paddingTop: 20, backgroundColor: '#0A0E0D' }, searchInput: { marginHorizontal: 22, height: 58, borderRadius: 17, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 16, paddingHorizontal: 17 }, searchHint: { color: '#748079', fontSize: 11, marginHorizontal: 24, marginTop: 9 }, searchResults: { padding: 22, gap: 10, paddingBottom: 120 }, searchResult: { minHeight: 74, borderRadius: 17, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 13, flexDirection: 'row', alignItems: 'center' }, searchResultActive: { borderColor: '#68D7A2', backgroundColor: '#12231C' }, searchCheck: { width: 28, height: 28, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', marginRight: 12, alignItems: 'center', justifyContent: 'center' }, searchCheckActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, searchCheckText: { color: '#07110C', fontWeight: '900' }, searchQuestion: { color: '#E5ECE8', fontSize: 14, fontWeight: '700', lineHeight: 19 }, searchTags: { color: '#6F7C75', fontSize: 10, marginTop: 4 }, searchFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, padding: 18, backgroundColor: '#0A0E0DEE', borderTopWidth: 1, borderTopColor: '#222B27' },
+  dailyVocabCard: { minHeight: 104, borderRadius: 20, backgroundColor: '#211A0F', borderWidth: 1, borderColor: '#4A3518', padding: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }, dailyVocabEyebrow: { color: '#E6B759', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, dailyVocabTitle: { color: '#FFF3D7', fontSize: 16, fontWeight: '900', marginTop: 5 }, dailyVocabText: { color: '#A99570', fontSize: 11, lineHeight: 16, marginTop: 5, maxWidth: 260 },
+  adminPage: { padding: 22, paddingBottom: 54, backgroundColor: '#0A0E0D' }, adminSearchRow: { flexDirection: 'row', gap: 8, marginBottom: 16 }, adminSearchInput: { flex: 1, minHeight: 52, borderRadius: 15, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 14, paddingHorizontal: 14 }, adminSearchButton: { width: 58, borderRadius: 15, backgroundColor: '#68D7A2', alignItems: 'center', justifyContent: 'center' }, adminSearchButtonText: { color: '#07110C', fontWeight: '900' }, adminTopicRow: { gap: 8, paddingRight: 20, paddingBottom: 16 }, adminSummary: { minHeight: 42, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }, adminSummaryText: { color: '#8A9791', fontSize: 12, fontWeight: '800' }, adminList: { gap: 11 }, adminQuestionCard: { borderRadius: 18, borderWidth: 1, borderColor: '#25302B', backgroundColor: '#121815', padding: 14 }, adminQuestionHeader: { flexDirection: 'row', gap: 8, alignItems: 'center', marginBottom: 8 }, adminTopic: { color: '#68D7A2', fontSize: 11, fontWeight: '900' }, adminId: { color: '#5D6963', fontSize: 10, marginLeft: 'auto' }, adminPrompt: { color: '#EAF0ED', fontSize: 14, fontWeight: '800', lineHeight: 20 }, adminMeta: { color: '#78857F', fontSize: 11, marginTop: 8 }, adminActions: { flexDirection: 'row', alignItems: 'center', gap: 7, marginTop: 12 }, adminDifficultyButton: { width: 36, height: 34, borderRadius: 11, borderWidth: 1, borderColor: '#334039', alignItems: 'center', justifyContent: 'center' }, adminDifficultyActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, adminDifficultyText: { color: '#AAB5AF', fontWeight: '900' }, adminDifficultyTextActive: { color: '#07110C' }, adminDeleteButton: { marginLeft: 'auto', minHeight: 34, borderRadius: 11, borderWidth: 1, borderColor: '#70413B', paddingHorizontal: 12, alignItems: 'center', justifyContent: 'center' }, adminDeleteText: { color: '#F09A8E', fontSize: 12, fontWeight: '900' },
 });
+
+

@@ -30,6 +30,9 @@ function buildLexicon(language: LanguageCode, languageName: string, lexemes: Lex
 
 const spanish: Lexeme[] = [
   ['A1', 'ser', 'être', ['avoir', 'faire', 'aller']], ['A1', 'tener', 'avoir', ['être', 'venir', 'voir']], ['A1', 'hacer', 'faire', ['dire', 'savoir', 'prendre']],
+  ['A1', 'ir', 'aller', ['rester', 'donner', 'penser']], ['A1', 'decir', 'dire', ['lire', 'ouvrir', 'tomber']], ['A1', 'ver', 'voir', ['vivre', 'vouloir', 'mettre']],
+  ['A1', 'poder', 'pouvoir', ['devoir', 'payer', 'porter']], ['A1', 'querer', 'vouloir', ['croire', 'courir', 'perdre']], ['A1', 'casa', 'maison', ['rue', 'ville', 'porte']],
+  ['A1', 'día', 'jour', ['nuit', 'mois', 'année']], ['A1', 'tiempo', 'temps', ['argent', 'famille', 'travail']], ['A1', 'persona', 'personne', ['pays', 'question', 'réponse']],
   ['A2', 'llegar', 'arriver', ['partir', 'rester', 'attendre']], ['A2', 'buscar', 'chercher', ['trouver', 'oublier', 'porter']], ['A2', 'volver', 'revenir', ['sortir', 'tomber', 'ouvrir']],
   ['B1', 'lograr', 'réussir à', ['renoncer à', 'éviter', 'remplacer']], ['B1', 'aunque', 'bien que', ['parce que', 'donc', 'pendant']], ['B1', 'entorno', 'environnement', ['entretien', 'entrée', 'distance']],
   ['B2', 'plantear', 'soulever une question', ['cacher un fait', 'terminer', 'mesurer']], ['B2', 'ámbito', 'domaine', ['preuve', 'rythme', 'frontière']], ['B2', 'llevar a cabo', 'mener à bien', ['laisser tomber', 'mettre en doute', 'faire semblant']],
@@ -46,6 +49,9 @@ const german: Lexeme[] = [
 
 const italian: Lexeme[] = [
   ['A1', 'essere', 'être', ['avoir', 'faire', 'venir']], ['A1', 'avere', 'avoir', ['aller', 'dire', 'voir']], ['A1', 'fare', 'faire', ['prendre', 'savoir', 'rester']],
+  ['A1', 'andare', 'aller', ['rester', 'ouvrir', 'penser']], ['A1', 'dire', 'dire', ['lire', 'mettre', 'tomber']], ['A1', 'vedere', 'voir', ['vivre', 'vouloir', 'payer']],
+  ['A1', 'potere', 'pouvoir', ['devoir', 'porter', 'perdre']], ['A1', 'volere', 'vouloir', ['croire', 'courir', 'sortir']], ['A1', 'casa', 'maison', ['rue', 'ville', 'porte']],
+  ['A1', 'giorno', 'jour', ['nuit', 'mois', 'année']], ['A1', 'tempo', 'temps', ['argent', 'famille', 'travail']], ['A1', 'persona', 'personne', ['pays', 'question', 'réponse']],
   ['A2', 'trovare', 'trouver', ['perdre', 'attendre', 'apporter']], ['A2', 'scegliere', 'choisir', ['refuser', 'payer', 'fermer']], ['A2', 'succedere', 'arriver / se produire', ['décider', 'terminer', 'voyager']],
   ['B1', 'invece', 'en revanche', ['de plus', 'autrefois', 'peut-être']], ['B1', 'raggiungere', 'atteindre', ['abandonner', 'cacher', 'réduire']], ['B1', 'svolgere', 'effectuer', ['interdire', 'oublier', 'renverser']],
   ['B2', 'affrontare', 'faire face à', ['éviter', 'ignorer', 'reporter']], ['B2', 'consapevole', 'conscient', ['inquiet', 'imprécis', 'solitaire']], ['B2', 'nonostante', 'malgré', ['grâce à', 'avant', 'sauf']],

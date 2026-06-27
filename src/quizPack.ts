@@ -2,7 +2,8 @@ import * as DocumentPicker from 'expo-document-picker';
 import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import { ImportReport, QUIZ_PACK_FORMAT, QuizPack } from './domain';
-import { exportQuizPack, importQuizPack } from './database';
+import { exportQuestionReports, exportQuizPack, importQuizPack } from './database';
+import { CsvQuizPackDraft, parseCsvQuizPack } from './csvQuizPack';
 
 const MAX_PACK_BYTES = 50 * 1024 * 1024;
 
@@ -86,6 +87,19 @@ export async function pickAndImportQuizPack(): Promise<ImportReport | null> {
   return importQuizPack(parseQuizPack(await file.text()));
 }
 
+export async function pickCsvQuizPackDraft(): Promise<CsvQuizPackDraft | null> {
+  const result = await DocumentPicker.getDocumentAsync({ type: ['text/csv', 'text/comma-separated-values', 'application/vnd.ms-excel'], copyToCacheDirectory: true, multiple: false });
+  if (result.canceled) return null;
+  const asset = result.assets[0];
+  if (asset.size && asset.size > MAX_PACK_BYTES) throw new Error('Le fichier dÃ©passe la limite de 50 Mo.');
+  const file = new File(asset.uri);
+  return parseCsvQuizPack(await file.text(), asset.name ?? 'import.csv');
+}
+
+export async function importCsvQuizPackDraft(draft: CsvQuizPackDraft): Promise<ImportReport> {
+  return importQuizPack(draft.pack);
+}
+
 export async function createAndShareQuizPack(): Promise<string> {
   const pack = await exportQuizPack();
   const stamp = new Date().toISOString().slice(0, 10);
@@ -94,6 +108,18 @@ export async function createAndShareQuizPack(): Promise<string> {
   file.write(JSON.stringify(pack, null, 2));
   if (await Sharing.isAvailableAsync()) {
     await Sharing.shareAsync(file.uri, { mimeType: 'application/json', dialogTitle: 'Exporter ma banque Kizz', UTI: 'public.json' });
+  }
+  return file.uri;
+}
+
+export async function createAndShareQuestionReports(): Promise<string> {
+  const report = await exportQuestionReports();
+  const stamp = new Date().toISOString().slice(0, 10);
+  const file = new File(Paths.cache, `kizz-question-reports-${stamp}.json`);
+  file.create({ overwrite: true });
+  file.write(JSON.stringify(report, null, 2));
+  if (await Sharing.isAvailableAsync()) {
+    await Sharing.shareAsync(file.uri, { mimeType: 'application/json', dialogTitle: 'Exporter les signalements Kizz', UTI: 'public.json' });
   }
   return file.uri;
 }

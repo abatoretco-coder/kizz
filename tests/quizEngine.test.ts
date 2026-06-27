@@ -1,7 +1,13 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { questions, topics } from '../src/content';
+import { countryCapitalData } from '../src/contentWorldCountries';
+import { franceDepartmentData, franceRegionData } from '../src/contentFranceAdmin';
+import { auditContent } from '../src/contentAudit';
+import { parseCsvQuizPack } from '../src/csvQuizPack';
 import { bearingDegrees, cardinalDirection, distanceKm, gradeMapPoint, gradeMultiText, isFreeTextCorrect, nextReviewState, normalizeAnswer, sessionScore, shuffleQuestions } from '../src/quizEngine';
+import { summarizeByInteraction } from '../src/sessionSummary';
+import { summarizeLanguageProgress } from '../src/languageProgress';
 
 test('normalise accents, espaces et casse', () => {
   assert.equal(normalizeAnswer('  ÉPARGNE  '), 'epargne');
@@ -37,6 +43,50 @@ test('calcule une distance et crédite une réponse carte', () => {
   const far = gradeMapPoint(paris!, { lat: 35.6762, lon: 139.6503 });
   assert.equal(far.credit, 0);
   assert.ok(far.direction);
+});
+
+test('prepare un import CSV avec preview QCM et texte libre', () => {
+  const csv = [
+    'id,topicId,topicTitle,difficulty,prompt,type,choiceA,choiceB,choiceC,choiceD,answer,acceptedAnswers,explanation,tags,sourceLabel',
+    'csv-1,geo,Geographie,1,"Quelle capitale est celle de l Italie ?",multiple-choice,Rome,Madrid,Lisbonne,Berlin,A,,Rome est la capitale de l Italie.,capitales|europe,Test CSV',
+    'csv-2,geo,Geographie,1,"Quelle ville est la capitale de l Espagne ?",free-text,,,,,Madrid,Madrid|madrid,La capitale espagnole est Madrid.,capitales|europe,Test CSV',
+  ].join('\n');
+  const draft = parseCsvQuizPack(csv, 'demo.csv');
+  assert.equal(draft.preview.questions, 2);
+  assert.equal(draft.preview.topics, 1);
+  assert.equal(draft.pack.questions[0].answerIndex, 0);
+  assert.deepEqual(draft.pack.questions[1].acceptedAnswers, ['Madrid', 'madrid']);
+});
+
+test('resume une session par type d interaction', () => {
+  const sessionQuestions = [
+    questions.find((item) => (item.type ?? 'multiple-choice') === 'multiple-choice')!,
+    questions.find((item) => item.type === 'map-point')!,
+    questions.find((item) => item.type === 'multi-text')!,
+  ];
+  const summary = summarizeByInteraction(sessionQuestions, [
+    { questionId: sessionQuestions[0].id, selectedIndex: 0, correct: true },
+    { questionId: sessionQuestions[1].id, selectedIndex: -3, correct: false, credit: 0.5 },
+    { questionId: sessionQuestions[2].id, selectedIndex: -2, correct: true, credit: 1 },
+  ]);
+  assert.deepEqual(summary.map((item) => [item.type, item.answered, item.accuracy]), [
+    ['map-point', 1, 50],
+    ['multi-text', 1, 100],
+    ['multiple-choice', 1, 100],
+  ]);
+});
+
+test('resume la progression langue par langue et niveau', () => {
+  const summary = summarizeLanguageProgress([
+    { tags: ['lang:es', 'cefr:A1', 'skill:vocabulary'], answered: 2, score: 1 },
+    { tags: ['lang:es', 'cefr:A1', 'skill:writing'], answered: 1, score: 1 },
+    { tags: ['lang:de', 'cefr:B1', 'skill:lesson'], answered: 4, score: 3 },
+    { tags: ['lang:xx', 'cefr:A1'], answered: 10, score: 10 },
+  ]);
+  assert.deepEqual(summary.map((item) => [item.language, item.level, item.answered, item.accuracy]), [
+    ['de', 'B1', 4, 75],
+    ['es', 'A1', 3, 67],
+  ]);
 });
 
 test('planifie les révisions selon le crédit obtenu', () => {
@@ -96,6 +146,12 @@ test('la banque éditoriale respecte le contrat MVP', () => {
   }
 });
 
+test('l’audit automatique de banque ne remonte aucune erreur', () => {
+  const report = auditContent(topics, questions);
+  assert.deepEqual(report.issues.filter((issue) => issue.severity === 'error'), []);
+  assert.ok(Math.max(...report.answerIndexCounts) - Math.min(...report.answerIndexCounts) <= 1);
+});
+
 test('le pack étendu couvre tous les thèmes et toutes les difficultés', () => {
   assert.ok(questions.length >= 189);
   for (const topic of topics) {
@@ -112,10 +168,18 @@ test('le pack étendu couvre tous les thèmes et toutes les difficultés', () =>
 
 test('la géographie contient un premier pack carte équilibré', () => {
   const mapQuestions = questions.filter((question) => question.type === 'map-point');
-  assert.equal(mapQuestions.length, 30);
+  assert.ok(mapQuestions.length >= 72);
   for (const difficulty of [1, 2, 3] as const) {
-    assert.equal(mapQuestions.filter((question) => question.difficulty === difficulty).length, 10);
+    assert.ok(mapQuestions.filter((question) => question.difficulty === difficulty).length >= 18);
   }
+  const franceMapQuestions = questions.filter((question) => question.topicId === 'france-map' && question.type === 'map-point');
+  assert.ok(franceMapQuestions.length >= 30);
+  for (const difficulty of [1, 2, 3] as const) {
+    assert.ok(franceMapQuestions.filter((question) => question.difficulty === difficulty).length >= 8);
+  }
+  assert.ok(questions.some((question) => question.tags.includes('departement') && question.type === 'free-text'));
+  assert.ok(mapQuestions.some((question) => question.tags.includes('pays')));
+  assert.ok(mapQuestions.some((question) => question.tags.includes('region-monde')));
 });
 
 test('les parcours de langues ne mélangent ni langue, ni niveau, ni compétence', () => {
@@ -127,6 +191,22 @@ test('les parcours de langues ne mélangent ni langue, ni niveau, ni compétence
       for (const skill of skills) {
         assert.ok(questions.some((question) => question.tags.includes(`lang:${language}`) && question.tags.includes(`cefr:${level}`) && question.tags.includes(`skill:${skill}`)), `${language}/${level}/${skill}: cellule absente`);
       }
+    }
+  }
+  for (const language of languages) {
+    for (const level of levels) {
+      assert.ok(questions.some((question) => question.tags.includes(`lang:${language}`) && question.tags.includes(`cefr:${level}`) && question.tags.includes('skill:lesson')), `${language}/${level}/lesson: cours absent`);
+    }
+  }
+  assert.ok(questions.some((question) => question.type === 'free-text' && question.tags.includes('conjugation:practice')));
+});
+
+test('chaque grand thème reçoit une extension éditoriale ciblée', () => {
+  for (const topicId of ['history', 'science', 'sport', 'arts', 'nature', 'technology', 'cinema', 'architecture', 'economy']) {
+    const topicQuestions = questions.filter((question) => question.topicId === topicId && question.tags.includes('theme-expansion'));
+    assert.equal(topicQuestions.length, 3, `${topicId}: extension thématique incomplète`);
+    for (const difficulty of [1, 2, 3] as const) {
+      assert.ok(topicQuestions.some((question) => question.difficulty === difficulty), `${topicId}: niveau ${difficulty} absent`);
     }
   }
 });
@@ -141,6 +221,20 @@ test('chaque langue et niveau fournit une session complète et un rang fréquent
     }
   }
   const ranked = questions.filter((question) => question.tags.some((tag) => tag.startsWith('frequency-rank:')));
-  assert.equal(ranked.length, 90);
+  assert.equal(ranked.length, 126);
   assert.ok(ranked.every((question) => question.tags.includes('mode:recognition') || question.tags.includes('mode:recall')));
+});
+
+test('la banque couvre tous les pays, régions et départements demandés', () => {
+  assert.equal(countryCapitalData.length, 195);
+  assert.equal(franceRegionData.length, 18);
+  assert.equal(franceDepartmentData.length, 101);
+  assert.equal(questions.filter((question) => question.tags.includes('coverage:world-countries')).length, 390);
+  assert.equal(questions.filter((question) => question.tags.includes('coverage:world-flags')).length, 585);
+  assert.equal(questions.filter((question) => question.tags.includes('coverage:world-flags') && question.type === 'free-text').length, 195);
+  assert.equal(questions.filter((question) => question.id.startsWith('world-flag-choice-')).length, 195);
+  assert.equal(questions.filter((question) => question.id.startsWith('world-country-flag-')).length, 195);
+  assert.equal(questions.filter((question) => question.tags.includes('coverage:france-regions')).length, 18);
+  assert.equal(questions.filter((question) => question.tags.includes('coverage:france-departements-cheflieux')).length, 101);
+  assert.equal(questions.filter((question) => question.tags.includes('coverage:france-departements')).length, 101);
 });

@@ -4,6 +4,18 @@
 
 Kizz est une application mobile de culture générale hors ligne, centrée sur le rappel actif, la reconnaissance visuelle et le raisonnement spatial. Une session a une fin claire. Aucun fil infini, minuteur imposé, classement public, vie ou récompense aléatoire.
 
+## Guide d'execution
+
+Le plan operationnel des prochains lots est maintenu dans `docs/IMPLEMENTATION_PHASES.md`.
+
+Priorites actuelles:
+
+1. Stabiliser l'APK sur telephone reel, surtout la carte satellite tactile et les parcours critiques.
+2. Refactorer l'UI sans changer le produit: theme couleur centralise, extraction des ecrans de `App.tsx` a faire.
+3. Ajouter une progression plus lisible: matrice theme x difficulte livree et cliquable, historique local livre, sous-themes livres, recommandations locales a enrichir.
+4. Renforcer la qualite editoriale: audit automatique, signalement local, import CSV assiste, astronomie et drapeaux livres; editeur de packs a faire.
+5. Preparer les interactions multimodales: image zoomable, point chaud, ordre chronologique, appariement et cartes offline.
+
 ## Mise a jour livree - Carte satellite
 
 - premier moteur `map-point` livre: placement tactile sur une vraie carte satellite avec zoom et deplacement;
@@ -17,11 +29,20 @@ Kizz est une application mobile de culture générale hors ligne, centrée sur l
 
 ## MVP actuel
 
+- banque enrichie a 1816 questions, avec formats jeux TV originaux, astronomie, couverture pays/capitales du monde, drapeaux, regions/departements/chefs-lieux de France et mini-cours langues;
+- 72 questions `map-point`, dont 30 dans le theme dedie `Carte France`;
+- accueil refondu en trois panneaux: tableau de bord, quiz culture, langues, avec rail pleine largeur synchronise au geste;
+- sous-themes de session pour geographie, histoire, sport, arts, cinema, architecture, economie et astronomie;
+- formats non-QCM renforces: texte libre, multi-champs, placement carte, numeros de departements et conjugaison saisie;
 - mode Infini calme avec theme aleatoire et difficulte constante;
 - reprise des brouillons infinis avec conservation du niveau choisi;
 - recommandation dashboard "prochaine action utile" pour guider sans pousser a l'usage compulsif;
+- matrice de progression locale theme x difficulte, affichee dans le dashboard;
+- cellules de progression cliquables pour relancer un theme a un niveau precis;
+- historique local des dernieres sessions dans le dashboard;
+- bilan de session par type d'interaction quand une session melange QCM, texte, multi-champs ou carte;
 - dashboard sombre avec sessions, réponses, précision et jours actifs;
-- 11 thèmes et 595 questions hors cartes, dont 250 questions trivia type jeu télé, Economie, trois questions visuelles Art et 150 exercices linguistiques structurés;
+- 13 themes et 1816 questions locales, dont jeux TV originaux, economie, astronomie, langues, art visuel, geographie monde, drapeaux et carte de France;
 - Architecture comme thème autonome;
 - correction immédiate, explication et lien d'approfondissement;
 - favoris, recherche, sessions personnalisées et révision des erreurs;
@@ -31,6 +52,13 @@ Kizz est une application mobile de culture générale hors ligne, centrée sur l
 - auto-évaluation de confiance facultative, persistée et utilisée pour l'espacement (livré);
 - sauvegarde automatique et reprise exacte des sessions interrompues (livré);
 - SQLite hors ligne et import/export de banques JSON;
+- mode admin local: consultation, filtre, masquage durable, ajustement de difficulte et compteur de signalements;
+- signalement local d'une question apres correction: ambigue, trop facile, trop dure ou a reformuler;
+- export JSON des signalements depuis l'ecran Banques;
+- audit automatique de la banque via `npm run audit:content`;
+- import CSV assiste avec previsualisation pour QCM et texte libre;
+- tokens couleur centralises dans `src/theme.ts`;
+- checklist smoke tests Android/ADB documentee;
 - tests unitaires du moteur et smoke tests sur téléphone Android réel.
 
 ## Prochaine étape: moteur multimodal
@@ -102,15 +130,18 @@ Le schéma `QuestionSeed` doit évoluer vers des blocs d'interaction explicites 
 - niveaux CECRL A1, A2, B1, B2 et C1;
 - filtres vocabulaire fréquent, compréhension écrite, expression écrite et culture;
 - 60 exercices pédagogiques initiaux couvrant chaque combinaison langue, niveau et compétence;
-- 90 exercices fréquentiels supplémentaires en reconnaissance et rappel écrit;
+- 126 exercices fréquentiels supplémentaires en reconnaissance et rappel écrit;
+- mini-cours espagnol, allemand et italien sur conjugaisons, regles, connecteurs et registre, completes par exercices en texte libre;
+- rituel "10 mots du jour" en session aller-retour depuis le lexique fréquentiel;
 - 10 exercices disponibles pour chacun des 15 couples langue/niveau;
+- progression locale separee par langue et niveau CECRL dans l'ecran Langues;
 - ordre de session stable et ciblé, sans mélange aléatoire entre langues;
 - réponses écrites corrigées avec variantes accentuées ou translittérées;
 - répétition espacée réutilisant le moteur local existant.
 
 ### Corpus fréquentiel
 
-**État actuel : socle technique livré, corpus massif à poursuivre.** Les rangs stables, les modes reconnaissance/rappel et les bandes CECRL sont intégrés. Le corpus contient actuellement 45 lemmes et 90 exercices dérivés ; il ne prétend pas encore constituer une liste scientifique de 10 000 mots.
+**État actuel : socle technique livré, corpus massif à poursuivre.** Les rangs stables, les modes reconnaissance/rappel et les bandes CECRL sont intégrés. Le corpus contient actuellement 63 lemmes et 126 exercices dérivés ; il ne prétend pas encore constituer une liste scientifique de 10 000 mots.
 
 1. Constituer pour chaque langue un lexique hors ligne de 10 000 lemmes avec rang, fréquence, nature grammaticale et niveau CECRL estimé.
 2. Dédupliquer les formes fléchies autour d'un lemme, sans apprendre dix fois le même mot.
@@ -130,7 +161,7 @@ Le schéma `QuestionSeed` doit évoluer vers des blocs d'interaction explicites 
 
 ### Progression et culture
 
-- profil et progression indépendants pour chaque langue;
+- profil et progression indépendants pour chaque langue, livre en premiere version par niveau CECRL;
 - niveau de départ configurable, avec espagnol A1 proposé par défaut;
 - parcours thématiques: voyage, quotidien, travail, médias, littérature et société;
 - culture liée à la langue choisie, incluant plusieurs pays et régions plutôt qu'un seul État;
@@ -142,12 +173,13 @@ Le schéma `QuestionSeed` doit évoluer vers des blocs d'interaction explicites 
 1. **Livré** : sélection stricte langue, CECRL et compétences.
 2. **Livré** : 15 cellules langue/niveau capables de produire une session de 10 exercices.
 3. **Livré** : premier lexique classé et exercices bidirectionnels reconnaissance/rappel.
-4. **À faire** : importer des listes fréquentielles sourcées et lemmatisées jusqu'à 1 000 mots par langue.
-5. **À faire** : ajouter plusieurs textes gradués par niveau avec questions d'inférence.
-6. **À faire** : stocker une progression et un niveau recommandés séparément pour chaque langue.
-7. **À faire** : classer automatiquement les erreurs par nature grammaticale.
-8. **À faire** : étendre progressivement de 1 000 à 5 000 puis 10 000 lemmes validés.
-9. **À faire** : packs audio hors ligne, dictée et compréhension orale.
+4. **Livré partiel** : rituel "10 mots du jour", mini-cours espagnol/allemand/italien et premieres conjugaisons en texte libre.
+5. **À faire** : importer des listes fréquentielles sourcées et lemmatisées jusqu'à 1 000 mots par langue.
+6. **À faire** : ajouter plusieurs textes gradués par niveau avec questions d'inférence.
+7. **Livré partiel** : progression separee par langue/niveau livree ; niveau recommande par langue a faire.
+8. **À faire** : classer automatiquement les erreurs par nature grammaticale.
+9. **À faire** : étendre progressivement de 1 000 à 5 000 puis 10 000 lemmes validés.
+10. **À faire** : packs audio hors ligne, dictée et compréhension orale.
 
 ### Critères de qualité
 
@@ -174,7 +206,7 @@ Le schéma `QuestionSeed` doit évoluer vers des blocs d'interaction explicites 
 
 ### Schéma v2
 
-- `interaction_type`, `prompt_blocks` et `answer_schema` (**à faire**);
+- `interaction_type`, `prompt_blocks` et `answer_schema` (**socle livre, generalisation a poursuivre**);
 - réponses multi-champs et score partiel (**première version livrée**);
 - médias locaux avec hash, dimensions, légende et attribution;
 - coordonnées latitude/longitude et rayon de tolérance;
@@ -194,6 +226,7 @@ Le schéma `QuestionSeed` doit évoluer vers des blocs d'interaction explicites 
 ### Édition de contenu
 
 - import CSV assisté avec prévisualisation;
+- admin mobile local pour masquer, reclasser, auditer et voir les signalements (**premiere version livree**);
 - éditeur desktop de packs texte, image, carte et audio;
 - détection de doublons par identifiant et hash média;
 - validation des réponses, liens et coordonnées;
@@ -208,9 +241,9 @@ Le schéma `QuestionSeed` doit évoluer vers des blocs d'interaction explicites 
 5. **Partiel** : banque Architecture livrée ; interaction point chaud à faire.
 6. **Partiel** : banque Cinéma textuelle livrée ; scènes et indices progressifs à faire.
 7. **Partiel** : répétition simple, confiance, bilan de calibration et sessions mixtes livrées ; migration FSRS à étudier.
-8. **Partiel** : import/export JSON livré ; éditeur et import CSV assisté à faire.
-9. **Partiel** : tests unitaires et smoke Android effectués ; E2E reproductibles et audit accessibilité à faire.
-10. **En cours** : parcours Langues, corpus fréquentiel et progression indépendante par langue.
+8. **Partiel** : import/export JSON, import CSV assiste, signalement local, export des signalements et audit automatique livres ; editeur de packs a faire.
+9. **Partiel** : tests unitaires, bilan par interaction et smoke Android documentes ; E2E reproductibles et audit accessibilité à faire.
+10. **En cours** : parcours Langues et corpus frequentiel ; progression independante langue/niveau livree en premiere version.
 
 ## Références produit
 

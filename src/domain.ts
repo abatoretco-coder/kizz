@@ -52,6 +52,37 @@ export type DashboardStats = {
   dueReview: number;
 };
 
+export type ProgressCell = {
+  difficulty: Difficulty;
+  answered: number;
+  score: number;
+};
+
+export type TopicProgress = {
+  topic: Topic;
+  totalAnswered: number;
+  totalScore: number;
+  accuracy: number;
+  cells: ProgressCell[];
+};
+
+export type RecentSession = {
+  id: number;
+  topicId: string;
+  topicTitle: string;
+  score: number;
+  total: number;
+  completedAt: string;
+};
+
+export type LanguageProgressCell = {
+  language: LanguageCode;
+  level: CefrLevel;
+  answered: number;
+  score: number;
+  accuracy: number;
+};
+
 export type SessionAnswer = {
   questionId: string;
   selectedIndex: number;
@@ -105,12 +136,13 @@ export type LibraryStats = {
 export type SessionFilters = {
   topicIds: string[];
   difficulties: Difficulty[];
+  subthemes?: string[];
   limit: 5 | 10 | 20;
 };
 
 export type LanguageCode = 'es' | 'de' | 'it';
 export type CefrLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1';
-export type LanguageSkill = 'vocabulary' | 'reading' | 'writing' | 'culture';
+export type LanguageSkill = 'vocabulary' | 'reading' | 'writing' | 'culture' | 'lesson';
 
 export type LanguageSessionFilters = {
   language: LanguageCode;

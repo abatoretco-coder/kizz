@@ -27,9 +27,8 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/**/*.test.ts",
-    "pack:new": "node scripts/create-quiz-pack.mjs",
-    "bank:opentrivia": "node scripts/import-opentriviaqa.mjs",
-    "bank:opentdb": "node scripts/import-opentdb.mjs"
+    "audit:content": "node --import tsx scripts/audit-content.mjs",
+    "pack:new": "node scripts/create-quiz-pack.mjs"
   },
   "private": true
 }

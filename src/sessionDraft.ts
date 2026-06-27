@@ -1,5 +1,9 @@
 import { SessionDraft } from './domain';
 
+function cleanDraftLabel(value: string) {
+  return value.replace(/\u00c2\u00b7|\u00b7/g, '-');
+}
+
 export function parseSessionDraftPayload(payload: string, updatedAt: string): SessionDraft | null {
   try {
     const draft = JSON.parse(payload) as Omit<SessionDraft, 'updatedAt'>;
@@ -9,6 +13,11 @@ export function parseSessionDraftPayload(payload: string, updatedAt: string): Se
     const rawIndex = Number.isInteger(draft.questionIndex) ? draft.questionIndex : 0;
     return {
       ...draft,
+      topic: {
+        ...draft.topic,
+        title: cleanDraftLabel(draft.topic.title),
+        subtitle: cleanDraftLabel(draft.topic.subtitle),
+      },
       mode,
       questionIndex: Math.min(Math.max(0, rawIndex), draft.questions.length - 1),
       updatedAt,
