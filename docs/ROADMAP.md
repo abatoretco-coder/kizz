@@ -27,6 +27,12 @@ Priorites actuelles:
 - frontieres des pays du monde et des departements francais embarquees en GeoJSON local;
 - prochaines etapes carte: silhouettes de pays, frontieres voisines, monuments, regions et correction visuelle plus fine.
 
+## Mise a jour livree - Qualite UX
+
+- accueil: les onglets Dashboard, Culture et Langues sont tactiles et synchronises avec le swipe;
+- Android: le bouton retour revient dans l'app au lieu de fermer l'application depuis un ecran interne;
+- encodage: nettoyage des textes mojibake visibles et ajout d'un test anti-regression.
+
 ## MVP actuel
 
 - banque enrichie a 1829 questions, avec formats jeux TV originaux, astronomie, couverture pays/capitales du monde, drapeaux, regions/departements/chefs-lieux de France et mini-cours langues;

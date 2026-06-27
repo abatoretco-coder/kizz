@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
-  ActivityIndicator, Alert, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
+  ActivityIndicator, Alert, BackHandler, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
 } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
 import { AdminQuestion, QuestionReportReason, adminDeleteQuestion, adminUpdateQuestionDifficulty, clearSessionDraft, getAdminQuestions, getDailyVocabularyQuestions, getDashboardStats, getFavoriteQuestions, getFilteredQuestions, getLanguageProgress, getLanguageQuestions, getLibraryStats, getRandomQuestionByDifficulty, getRandomTopicQuestionsByDifficulty, getRecentSessions, getReviewQuestions, getSessionDraft, getTaggedQuestions, getTopicProgress, getTopics, initializeDatabase, reportQuestion, saveSession, saveSessionDraft, searchQuestions, toggleFavorite } from './src/database';
@@ -23,6 +23,7 @@ const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
 export default function App() {
   const [ready, setReady] = useState(false);
   const [screen, setScreen] = useState<Screen>('home');
+  const navigationHistory = useRef<Screen[]>([]);
   const [stats, setStats] = useState(emptyStats);
   const [availableTopics, setAvailableTopics] = useState<Topic[]>([]);
   const [topic, setTopic] = useState<Topic | null>(null);
@@ -52,6 +53,23 @@ export default function App() {
     }
   };
 
+  function navigateTo(nextScreen: Screen, options: { replace?: boolean } = {}) {
+    setScreen((current) => {
+      if (current === nextScreen) return current;
+      if (options.replace) {
+        navigationHistory.current = [];
+      } else {
+        navigationHistory.current = [...navigationHistory.current, current].slice(-12);
+      }
+      return nextScreen;
+    });
+  }
+
+  function goBackInApp() {
+    const previous = navigationHistory.current.pop();
+    setScreen(previous ?? 'home');
+  }
+
   useEffect(() => {
     initializeDatabase().then(async () => {
       await Promise.all([refreshStats(), refreshTopics(), refreshRecentSessions(), refreshLanguageProgress()]);
@@ -73,11 +91,11 @@ export default function App() {
 
   async function startQuiz(nextTopic: Topic) {
     if (nextTopic.id === 'language') {
-      setScreen('languages');
+      navigateTo('languages');
       return;
     }
     setInitialTopicIds([nextTopic.id]);
-    setScreen('configure');
+    navigateTo('configure');
   }
 
   async function launchLanguageSession(filters: LanguageSessionFilters) {
@@ -108,7 +126,7 @@ export default function App() {
 
   function configureMixedSession() {
     setInitialTopicIds([]);
-    setScreen('configure');
+    navigateTo('configure');
   }
 
   async function launchConfiguredSession(filters: SessionFilters) {
@@ -172,7 +190,7 @@ export default function App() {
     setMapGuess(null);
     setAnswers([]);
     void persistDraft(nextTopic, nextQuiz, 0, [], nextInfiniteDifficulty);
-    setScreen('quiz');
+    navigateTo('quiz');
   }
 
   function resumeSession() {
@@ -191,7 +209,7 @@ export default function App() {
     if (currentAnswer?.selectedIndex === -3 && currentAnswer.selectedText) {
       try { setMapGuess(JSON.parse(currentAnswer.selectedText)); } catch { setMapGuess(null); }
     } else setMapGuess(null);
-    setScreen('quiz');
+    navigateTo('quiz');
   }
 
   async function startCollection(kind: 'review' | 'favorites' | 'maps') {
@@ -318,7 +336,7 @@ export default function App() {
     await refreshProgress();
     await refreshRecentSessions();
     await refreshLanguageProgress();
-    setScreen('result');
+    navigateTo('result', { replace: true });
   }
 
   async function closeQuiz() {
@@ -332,8 +350,26 @@ export default function App() {
       await refreshLanguageProgress();
     }
     setInfiniteDifficulty(null);
-    setScreen('home');
+    navigateTo('home', { replace: true });
   }
+
+  useEffect(() => {
+    if (Platform.OS !== 'android') return undefined;
+    const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+      if (screen === 'home') return true;
+      if (screen === 'quiz') {
+        void closeQuiz();
+        return true;
+      }
+      if (screen === 'admin') {
+        void Promise.all([refreshTopics(), refreshStats(), refreshProgress()]).then(() => navigateTo('library', { replace: true }));
+        return true;
+      }
+      goBackInApp();
+      return true;
+    });
+    return () => subscription.remove();
+  }, [screen, topic, quiz, questionIndex, answers, infiniteDifficulty]);
 
   if (!ready) {
     return <View style={styles.loading}><ActivityIndicator color="#2F6B55" size="large" /><Text style={styles.loadingText}>Préparation de ta bibliothèque…</Text></View>;
@@ -342,9 +378,9 @@ export default function App() {
   return (
     <View style={styles.safe}>
       <StatusBar style="light" />
-      {screen === 'home' && <HomeV2 stats={stats} topics={availableTopics} progress={progress} recentSessions={recentSessions} draft={draft} onResume={resumeSession} onStart={startQuiz} onProgressCell={launchProgressSession} onLanguages={() => setScreen('languages')} onCompose={configureMixedSession} onEndurance={launchEnduranceSession} onInfinite={launchInfiniteSession} onReview={() => startCollection('review')} onFavorites={() => startCollection('favorites')} onMaps={() => startCollection('maps')} onSearch={() => setScreen('search')} onLibrary={() => setScreen('library')} />}
-      {screen === 'configure' && <SessionConfigurator topics={availableTopics} initialTopicIds={initialTopicIds} onClose={() => setScreen('home')} onStart={launchConfiguredSession} />}
-      {screen === 'languages' && <LanguageHub progress={languageProgress} onClose={() => setScreen('home')} onStart={launchLanguageSession} onDailyVocabulary={launchDailyVocabulary} />}
+      {screen === 'home' && <HomeV2 stats={stats} topics={availableTopics} progress={progress} recentSessions={recentSessions} draft={draft} onResume={resumeSession} onStart={startQuiz} onProgressCell={launchProgressSession} onLanguages={() => navigateTo('languages')} onCompose={configureMixedSession} onEndurance={launchEnduranceSession} onInfinite={launchInfiniteSession} onReview={() => startCollection('review')} onFavorites={() => startCollection('favorites')} onMaps={() => startCollection('maps')} onSearch={() => navigateTo('search')} onLibrary={() => navigateTo('library')} />}
+      {screen === 'configure' && <SessionConfigurator topics={availableTopics} initialTopicIds={initialTopicIds} onClose={() => navigateTo('home', { replace: true })} onStart={launchConfiguredSession} />}
+      {screen === 'languages' && <LanguageHub progress={languageProgress} onClose={() => navigateTo('home', { replace: true })} onStart={launchLanguageSession} onDailyVocabulary={launchDailyVocabulary} />}
       {screen === 'quiz' && topic && quiz.length > 0 && (
         <Quiz
           topic={topic} questions={quiz} index={questionIndex} selected={selected} freeText={freeText}
@@ -357,11 +393,11 @@ export default function App() {
         />
       )}
       {screen === 'result' && topic && (
-        <Result topic={topic} questions={quiz} answers={answers} onAgain={() => prepareSession(topic, quiz)} onHome={() => setScreen('home')} />
+        <Result topic={topic} questions={quiz} answers={answers} onAgain={() => prepareSession(topic, quiz)} onHome={() => navigateTo('home', { replace: true })} />
       )}
-      {screen === 'library' && <Library onClose={async () => { await refreshTopics(); setScreen('home'); }} onAdmin={() => setScreen('admin')} />}
-      {screen === 'search' && <Search onClose={() => setScreen('home')} onStart={(questions) => prepareSession({ id: 'search', title: 'Recherche', subtitle: 'Sélection personnelle', icon: '?', color: '#68D7A2' }, questions)} />}
-      {screen === 'admin' && <AdminPanel topics={availableTopics} onClose={async () => { await Promise.all([refreshTopics(), refreshStats(), refreshProgress()]); setScreen('library'); }} />}
+      {screen === 'library' && <Library onClose={async () => { await refreshTopics(); navigateTo('home', { replace: true }); }} onAdmin={() => navigateTo('admin')} />}
+      {screen === 'search' && <Search onClose={() => navigateTo('home', { replace: true })} onStart={(questions) => prepareSession({ id: 'search', title: 'Recherche', subtitle: 'Sélection personnelle', icon: '?', color: '#68D7A2' }, questions)} />}
+      {screen === 'admin' && <AdminPanel topics={availableTopics} onClose={async () => { await Promise.all([refreshTopics(), refreshStats(), refreshProgress()]); navigateTo('library', { replace: true }); }} />}
     </View>
   );
 }
@@ -384,11 +420,13 @@ type HomeProps = { stats: DashboardStats; topics: Topic[]; progress: TopicProgre
 
 function HomeV2({ stats, topics, progress, recentSessions, draft, onResume, onStart, onProgressCell, onLanguages, onCompose, onEndurance, onInfinite, onReview, onFavorites, onMaps, onSearch, onLibrary }: HomeProps) {
   const { width } = useWindowDimensions();
+  const pagerRef = useRef<ScrollView>(null);
   const [homePage, setHomePage] = useState(0);
   const [homePageProgress, setHomePageProgress] = useState(0);
   const accuracy = stats.answered ? Math.round((stats.correct / stats.answered) * 100) : 0;
   const recommendation = getHomeRecommendation(stats, draft);
   const cultureTopics = topics.filter((item) => item.id !== 'language');
+  const homeTabs = ['Dashboard', 'Culture', 'Langues'];
   const runRecommendation = () => {
     if (recommendation.action === 'resume') onResume();
     else if (recommendation.action === 'review') onReview();
@@ -400,14 +438,23 @@ function HomeV2({ stats, topics, progress, recentSessions, draft, onResume, onSt
     setHomePageProgress(progress);
     setHomePage(Math.round(progress));
   };
+  const goToHomePage = (index: number) => {
+    setHomePage(index);
+    setHomePageProgress(index);
+    pagerRef.current?.scrollTo({ x: width * index, animated: true });
+  };
   return (
     <View style={styles.homeRoot}>
       <View style={styles.brandRow}><Image source={require('./assets/kizz-logo-v2.png')} style={styles.logoImage} /><Text style={styles.brand}>Kizz</Text><Pressable onPress={onLibrary} style={styles.libraryShortcut}><Text style={styles.libraryShortcutText}>Banques</Text></Pressable></View>
       <View style={styles.homeTabs}>
         <View style={[styles.homeTabIndicator, { transform: [{ translateX: ((width - 44) / 3) * homePageProgress }] }]} />
-        {['Dashboard', 'Culture', 'Langues'].map((label, index) => <Text key={label} style={[styles.homeTab, homePage === index && styles.homeTabActive]}>{label}</Text>)}
+        {homeTabs.map((label, index) => (
+          <Pressable key={label} testID={`home-tab-${index}`} accessibilityRole="tab" accessibilityState={{ selected: homePage === index }} onPress={() => goToHomePage(index)} style={styles.homeTab}>
+            <Text style={[styles.homeTabText, homePage === index && styles.homeTabActive]}>{label}</Text>
+          </Pressable>
+        ))}
       </View>
-      <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false} decelerationRate="fast" onScroll={updateHomePageProgress} scrollEventThrottle={16} style={styles.homePager}>
+      <ScrollView ref={pagerRef} horizontal pagingEnabled showsHorizontalScrollIndicator={false} decelerationRate="fast" onScroll={updateHomePageProgress} scrollEventThrottle={16} style={styles.homePager}>
         <ScrollView style={{ width }} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
           <View style={styles.dashboardHeader}><Text style={styles.dashboardTitle}>Tableau de bord</Text><Text style={styles.dashboardCaption}>Progression locale</Text></View>
           <View style={styles.kpiGrid}>
@@ -634,7 +681,7 @@ function Library({ onClose, onAdmin }: { onClose: () => void; onAdmin: () => voi
       </Pressable>
       <Pressable disabled={busy} onPress={handleImportCsv} style={[styles.actionCard, busy && styles.disabled]}>
         <View style={[styles.actionIcon, { backgroundColor: '#17231F' }]}><Text style={[styles.actionIconText, { color: '#68D7A2' }]}>CSV</Text></View>
-        <View style={styles.actionCopy}><Text style={styles.actionTitle}>Importer un CSV</Text><Text style={styles.actionText}>Previsualiser puis ajouter QCM ou texte libre</Text></View><Text style={styles.actionArrow}>â€º</Text>
+        <View style={styles.actionCopy}><Text style={styles.actionTitle}>Importer un CSV</Text><Text style={styles.actionText}>Previsualiser puis ajouter QCM ou texte libre</Text></View><Text style={styles.actionArrow}>›</Text>
       </Pressable>
       <Pressable disabled={busy} onPress={handleExport} style={[styles.actionCard, busy && styles.disabled]}>
         <View style={[styles.actionIcon, { backgroundColor: '#EAEAF5' }]}><Text style={[styles.actionIconText, { color: '#5367C7' }]}>↑</Text></View>
@@ -1154,7 +1201,7 @@ function Result({ topic, questions, answers, onAgain, onHome }: { topic: Topic; 
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: palette.bg, paddingTop: Platform.OS === 'android' ? 24 : 0, paddingBottom: Platform.OS === 'android' ? 48 : 0 }, loading: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: palette.bg, gap: 16, paddingTop: Platform.OS === 'android' ? 24 : 0, paddingBottom: Platform.OS === 'android' ? 48 : 0 }, loadingText: { color: palette.muted },
-  homeRoot: { flex: 1, backgroundColor: '#0A0E0D' }, homePager: { flex: 1 }, homePanel: { paddingHorizontal: 22, paddingBottom: 44 }, homeTabs: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 22, marginTop: -24, marginBottom: 18, minHeight: 38, borderRadius: 999, borderWidth: 1, borderColor: '#222C27', backgroundColor: '#101714', overflow: 'hidden' }, homeTabIndicator: { position: 'absolute', left: 0, top: 0, bottom: 0, width: '33.3333%', backgroundColor: '#68D7A2', borderRadius: 999 }, homeTab: { flex: 1, textAlign: 'center', color: '#8A9791', fontSize: 11, fontWeight: '800', paddingHorizontal: 8, paddingVertical: 11, zIndex: 1 }, homeTabActive: { color: '#07110C', fontWeight: '900' },
+  homeRoot: { flex: 1, backgroundColor: '#0A0E0D' }, homePager: { flex: 1 }, homePanel: { paddingHorizontal: 22, paddingBottom: 44 }, homeTabs: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 22, marginTop: -24, marginBottom: 18, minHeight: 38, borderRadius: 999, borderWidth: 1, borderColor: '#222C27', backgroundColor: '#101714', overflow: 'hidden' }, homeTabIndicator: { position: 'absolute', left: 0, top: 0, bottom: 0, width: '33.3333%', backgroundColor: '#68D7A2', borderRadius: 999 }, homeTab: { flex: 1, minHeight: 38, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 8, zIndex: 1 }, homeTabText: { color: '#8A9791', fontSize: 11, fontWeight: '800', textAlign: 'center' }, homeTabActive: { color: '#07110C', fontWeight: '900' },
   page: { padding: 22, paddingBottom: 40 }, brandRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 38, paddingHorizontal: 22, paddingTop: 22 }, logo: { width: 40, height: 40, borderRadius: 13, backgroundColor: '#68D7A2', alignItems: 'center', justifyContent: 'center' }, logoText: { color: '#09110E', fontSize: 22, fontWeight: '900' }, brand: { fontSize: 23, fontWeight: '800', color: '#F3F7F5', marginLeft: 11 }, libraryShortcut: { marginLeft: 'auto', backgroundColor: '#17211D', borderWidth: 1, borderColor: '#28362F', paddingHorizontal: 13, paddingVertical: 9, borderRadius: 20 }, libraryShortcutText: { color: '#91E8BD', fontSize: 12, fontWeight: '800' },
   logoImage: { width: 42, height: 42, borderRadius: 13 }, dashboardHeader: { flexDirection: 'row', alignItems: 'baseline', marginBottom: 14 }, dashboardTitle: { color: '#F3F7F5', fontSize: 25, fontWeight: '800', letterSpacing: -0.5 }, dashboardCaption: { color: '#6F7C75', fontSize: 11, marginLeft: 'auto' }, kpiGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 16 }, kpiCard: { width: '48%', minHeight: 108, borderRadius: 18, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 15 }, kpiDot: { width: 7, height: 7, borderRadius: 4, marginBottom: 12 }, kpiValue: { color: '#F1F6F3', fontSize: 25, fontWeight: '900' }, kpiLabel: { color: '#7F8C85', fontSize: 11, fontWeight: '700', marginTop: 4 },
   progressCard: { borderRadius: 22, backgroundColor: '#111714', borderWidth: 1, borderColor: '#26312C', padding: 15, marginBottom: 18 }, progressHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 }, progressTitle: { color: '#EAF3EE', fontSize: 15, fontWeight: '900' }, progressHint: { marginLeft: 'auto', color: '#68756E', fontSize: 10, fontWeight: '800' }, progressEmptyTitle: { color: '#EAF3EE', fontSize: 14, fontWeight: '900' }, progressEmptyText: { color: '#7F8C85', fontSize: 11, lineHeight: 17, marginTop: 5 }, progressRow: { minHeight: 44, flexDirection: 'row', alignItems: 'center', borderTopWidth: 1, borderTopColor: '#202A25', paddingTop: 10, marginTop: 9 }, progressTopicWrap: { flex: 1, paddingRight: 10 }, progressTopic: { color: '#DDE8E3', fontSize: 12, fontWeight: '900' }, progressMeta: { color: '#6F7C75', fontSize: 10, marginTop: 2 }, progressCells: { flexDirection: 'row', gap: 6 }, progressCell: { width: 30, height: 30, borderRadius: 10, alignItems: 'center', justifyContent: 'center', borderWidth: 1 }, progressCellStrong: { backgroundColor: '#1A3B2B', borderColor: '#4EBA88' }, progressCellMedium: { backgroundColor: '#332A15', borderColor: '#E6B759' }, progressCellWeak: { backgroundColor: '#351D1A', borderColor: '#C96358' }, progressCellEmpty: { backgroundColor: '#151B18', borderColor: '#2B3530' }, progressCellText: { color: '#EAF3EE', fontSize: 11, fontWeight: '900' }, progressCta: { minHeight: 40, borderRadius: 13, backgroundColor: '#18271F', alignItems: 'center', justifyContent: 'center', marginTop: 13 }, progressCtaText: { color: '#8EE0B5', fontSize: 12, fontWeight: '900' },

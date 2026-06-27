@@ -91,7 +91,7 @@ export async function pickCsvQuizPackDraft(): Promise<CsvQuizPackDraft | null> {
   const result = await DocumentPicker.getDocumentAsync({ type: ['text/csv', 'text/comma-separated-values', 'application/vnd.ms-excel'], copyToCacheDirectory: true, multiple: false });
   if (result.canceled) return null;
   const asset = result.assets[0];
-  if (asset.size && asset.size > MAX_PACK_BYTES) throw new Error('Le fichier dÃ©passe la limite de 50 Mo.');
+  if (asset.size && asset.size > MAX_PACK_BYTES) throw new Error('Le fichier dépasse la limite de 50 Mo.');
   const file = new File(asset.uri);
   return parseCsvQuizPack(await file.text(), asset.name ?? 'import.csv');
 }
