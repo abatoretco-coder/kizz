@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import test from 'node:test';
 import { questions, topics } from '../src/content';
@@ -174,6 +174,14 @@ test('les questions visuelles embarquent des assets complets', () => {
       for (const asset of question.choiceImageAssets) assert.ok(existsSync(join(assetsDir, `${asset}.jpg`)), `${question.id}: choix image introuvable ${asset}`);
     }
   }
+});
+
+test('le quiz expose un zoom image et precharge les medias', () => {
+  const app = readFileSync('App.tsx', 'utf8');
+  assert.ok(app.includes('MediaZoomModal'));
+  assert.ok(app.includes('Image.prefetch'));
+  assert.ok(app.includes('maximumZoomScale'));
+  assert.ok(app.includes('Appui long pour agrandir'));
 });
 
 test('la banque Arts/Histoire generee reste presente', () => {

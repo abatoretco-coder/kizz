@@ -26,6 +26,8 @@
 - 99 images générées Arts/Histoire avec manifeste de provenance.
 - 31 photos Nature avec manifeste de provenance.
 - Questions image vers réponse et réponse vers choix d'image.
+- Zoom plein écran sur les images de question et appui long sur les images de choix.
+- Préchargement local des médias de la question courante et de la suivante.
 - Carte hors ligne avec fond satellite Blue Marble.
 - Frontières pays et départements embarquées.
 - Moteur carte canvas Mercator avec zoom, double tap et déplacement inertiel.
@@ -47,7 +49,7 @@
 - Signalement local et export des signalements.
 - Audit contenu automatisé.
 - Générateurs de banques visuelles Arts/Histoire et Nature.
-- 34 tests automatisés.
+- 35 tests automatisés.
 
 ## Dernier État Vérifié
 

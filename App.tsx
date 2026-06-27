@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
 import { useEffect, useRef, useState } from 'react';
 import {
-  ActivityIndicator, Alert, BackHandler, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
+  ActivityIndicator, Alert, BackHandler, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
 } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
 import { AdminQuestion, QuestionReportReason, adminDeleteQuestion, adminUpdateQuestionDifficulty, clearSessionDraft, getAdminQuestions, getDailyVocabularyQuestions, getDashboardStats, getFavoriteQuestions, getFilteredQuestions, getLanguageProgress, getLanguageQuestions, getLibraryStats, getRandomQuestionByDifficulty, getRandomTopicQuestionsByDifficulty, getRecentSessions, getReviewQuestions, getSessionDraft, getTaggedQuestions, getTopicProgress, getTopics, initializeDatabase, reportQuestion, saveSession, saveSessionDraft, searchQuestions, toggleFavorite } from './src/database';
@@ -89,6 +89,22 @@ const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
   ...natureQuestionImages,
 };
 const OFFLINE_SATELLITE_URI = Image.resolveAssetSource(require('./assets/maps/blue-marble-world.jpg')).uri;
+
+function questionImageSource(question?: QuizQuestion) {
+  if (!question) return undefined;
+  return question.imageAsset ? QUESTION_IMAGES[question.imageAsset] : question.imageUrl ? { uri: question.imageUrl } : undefined;
+}
+
+function choiceImageSource(question: QuizQuestion, index: number) {
+  const asset = question.choiceImageAssets?.[index];
+  return asset ? QUESTION_IMAGES[asset] : undefined;
+}
+
+function preloadMediaSource(source?: ImageSourcePropType) {
+  if (!source) return;
+  const resolved = Image.resolveAssetSource(source);
+  if (resolved?.uri) void Image.prefetch(resolved.uri).catch(() => undefined);
+}
 export default function App() {
   const [ready, setReady] = useState(false);
   const [screen, setScreen] = useState<Screen>('home');
@@ -966,10 +982,18 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
   const question = questions[index];
   const answered = selected !== null;
   const infinite = !!infiniteDifficulty;
-  const imageSource = question.imageAsset ? QUESTION_IMAGES[question.imageAsset] : question.imageUrl ? { uri: question.imageUrl } : undefined;
+  const imageSource = questionImageSource(question);
+  const [zoomMedia, setZoomMedia] = useState<{ source: ImageSourcePropType; alt?: string; title?: string } | null>(null);
   const multiGrade = gradeMultiText(question, fieldValues);
   const mapGrade = gradeMapPoint(question, mapGuess);
   const allFieldsFilled = (question.answerFields ?? []).every((field) => fieldValues[field.id]?.trim());
+  useEffect(() => {
+    for (const item of [question, questions[index + 1]]) {
+      if (!item) continue;
+      preloadMediaSource(questionImageSource(item));
+      for (let choiceIndex = 0; choiceIndex < 4; choiceIndex += 1) preloadMediaSource(choiceImageSource(item, choiceIndex));
+    }
+  }, [index, question, questions]);
   return (
     <KeyboardAvoidingView style={styles.quizPage} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={8}>
       <View style={styles.quizHeader}>
@@ -980,7 +1004,7 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
       <ScrollView contentContainerStyle={styles.quizBody} keyboardShouldPersistTaps="handled">
         <View style={styles.metaRow}><Text style={[styles.pill, { color: topic.color, backgroundColor: `${topic.color}16` }]}>{topic.title}</Text><Text style={styles.difficulty}>{'●'.repeat(question.difficulty)}{'○'.repeat(3 - question.difficulty)}</Text></View>
         {infinite && <Text style={styles.infiniteQuizHint}>Mode infini - niveau {infiniteDifficulty} - touche × pour arrêter et sauvegarder</Text>}
-        {imageSource && <View style={styles.questionImageWrap}><Image source={imageSource} style={styles.questionImage} resizeMode="cover" accessibilityLabel={question.imageAlt} /></View>}
+        {imageSource && <Pressable accessibilityRole="imagebutton" accessibilityLabel={question.imageAlt ?? 'Image de la question'} accessibilityHint="Ouvre l'image en plein ecran" onPress={() => setZoomMedia({ source: imageSource, alt: question.imageAlt, title: question.imageAlt ?? question.prompt })} style={styles.questionImageWrap}><Image source={imageSource} style={styles.questionImage} resizeMode="cover" accessibilityLabel={question.imageAlt} /></Pressable>}
         <Text style={styles.question}>{question.prompt}</Text>
         {(question.type ?? 'multiple-choice') === 'multiple-choice' ? <View style={styles.choices}>
           {(question.choices ?? []).map((choice, choiceIndex) => {
@@ -989,7 +1013,7 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
             const choiceImageAsset = question.choiceImageAssets?.[choiceIndex];
             const choiceImageSource = choiceImageAsset ? QUESTION_IMAGES[choiceImageAsset] : undefined;
             return (
-              <Pressable key={choice} testID={`choice-${choiceIndex}`} accessibilityRole="button" accessibilityLabel={`Réponse ${String.fromCharCode(65 + choiceIndex)} : ${choice}`} onPress={() => onSelect(choiceIndex)} style={({ pressed }) => [styles.choice, choiceImageSource ? styles.choiceWithImage : undefined, correct ? styles.choiceCorrect : undefined, wrong ? styles.choiceWrong : undefined, pressed && !answered ? styles.pressed : undefined]}>
+              <Pressable key={choice} testID={`choice-${choiceIndex}`} accessibilityRole="button" accessibilityLabel={`Réponse ${String.fromCharCode(65 + choiceIndex)} : ${choice}`} accessibilityHint={choiceImageSource ? "Appui long pour agrandir l'image" : undefined} onLongPress={choiceImageSource ? () => setZoomMedia({ source: choiceImageSource, alt: question.choiceImageAlts?.[choiceIndex] ?? choice, title: choice }) : undefined} onPress={() => onSelect(choiceIndex)} style={({ pressed }) => [styles.choice, choiceImageSource ? styles.choiceWithImage : undefined, correct ? styles.choiceCorrect : undefined, wrong ? styles.choiceWrong : undefined, pressed && !answered ? styles.pressed : undefined]}>
                 <View style={[styles.choiceLetter, correct && styles.choiceLetterCorrect, wrong && styles.choiceLetterWrong]}><Text style={[styles.choiceLetterText, (correct || wrong) && styles.choiceLetterActive]}>{String.fromCharCode(65 + choiceIndex)}</Text></View>
                 {choiceImageSource && <Image source={choiceImageSource} style={styles.choiceImage} resizeMode="cover" accessibilityLabel={question.choiceImageAlts?.[choiceIndex] ?? choice} />}
                 <Text style={styles.choiceText}>{choice}</Text><Text style={styles.choiceMark}>{correct ? '✓' : wrong ? '×' : ''}</Text>
@@ -1017,7 +1041,34 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
         {answered && <View style={styles.confidenceCard}><Text style={styles.confidenceTitle}>Tu le savais vraiment ?</Text><Text style={styles.confidenceHint}>Facultatif - ajuste seulement la prochaine révision</Text><View style={styles.confidenceRow}>{([{ value: 1, label: 'Hésitant' }, { value: 2, label: 'Moyen' }, { value: 3, label: 'Sûr' }] as const).map((item) => <Pressable key={item.value} testID={`confidence-${item.value}`} onPress={() => onConfidence(item.value)} style={[styles.confidenceButton, confidence === item.value && styles.confidenceButtonActive]}><Text style={[styles.confidenceButtonText, confidence === item.value && styles.confidenceButtonTextActive]}>{item.label}</Text></Pressable>)}</View></View>}
       </ScrollView>
       {answered && <View style={styles.quizFooter}><Pressable testID="continue-quiz" accessibilityRole="button" onPress={onContinue} style={styles.primaryButton}><Text style={styles.primaryButtonText}>{infinite ? 'Question suivante' : index === questions.length - 1 ? 'Voir mon bilan' : 'Continuer'}</Text></Pressable></View>}
+      <MediaZoomModal media={zoomMedia} onClose={() => setZoomMedia(null)} />
     </KeyboardAvoidingView>
+  );
+}
+
+function MediaZoomModal({ media, onClose }: { media: { source: ImageSourcePropType; alt?: string; title?: string } | null; onClose: () => void }) {
+  const [zoom, setZoom] = useState(1);
+  const { width, height } = useWindowDimensions();
+  useEffect(() => {
+    if (media) setZoom(1);
+  }, [media]);
+  return (
+    <Modal visible={!!media} animationType="fade" transparent onRequestClose={onClose}>
+      <View style={styles.mediaModal}>
+        <View style={styles.mediaModalHeader}>
+          <Text style={styles.mediaModalTitle} numberOfLines={1}>{media?.title ?? 'Image'}</Text>
+          <Pressable accessibilityRole="button" accessibilityLabel="Fermer l'image" onPress={onClose} hitSlop={12}><Text style={styles.mediaModalClose}>×</Text></Pressable>
+        </View>
+        <ScrollView contentContainerStyle={[styles.mediaModalScroll, { minHeight: height - 150 }]} maximumZoomScale={4} minimumZoomScale={1} centerContent showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
+          {media && <Image source={media.source} resizeMode="contain" accessibilityLabel={media.alt} style={[styles.mediaModalImage, { width: width - 28, height: height - 190, transform: [{ scale: zoom }] }]} />}
+        </ScrollView>
+        <View style={styles.mediaZoomControls}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Reduire le zoom" onPress={() => setZoom((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10))} style={styles.mediaZoomButton}><Text style={styles.mediaZoomText}>-</Text></Pressable>
+          <Text style={styles.mediaZoomValue}>{Math.round(zoom * 100)}%</Text>
+          <Pressable accessibilityRole="button" accessibilityLabel="Agrandir le zoom" onPress={() => setZoom((value) => Math.min(4, Math.round((value + 0.5) * 10) / 10))} style={styles.mediaZoomButton}><Text style={styles.mediaZoomText}>+</Text></Pressable>
+        </View>
+      </View>
+    </Modal>
   );
 }
 
@@ -1496,4 +1547,14 @@ const styles = StyleSheet.create({
   searchPage: { flex: 1, paddingTop: 20, backgroundColor: '#0A0E0D' }, searchInput: { marginHorizontal: 22, height: 58, borderRadius: 17, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 16, paddingHorizontal: 17 }, searchHint: { color: '#748079', fontSize: 11, marginHorizontal: 24, marginTop: 9 }, searchResults: { padding: 22, gap: 10, paddingBottom: 120 }, searchResult: { minHeight: 74, borderRadius: 17, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 13, flexDirection: 'row', alignItems: 'center' }, searchResultActive: { borderColor: '#68D7A2', backgroundColor: '#12231C' }, searchCheck: { width: 28, height: 28, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', marginRight: 12, alignItems: 'center', justifyContent: 'center' }, searchCheckActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, searchCheckText: { color: '#07110C', fontWeight: '900' }, searchQuestion: { color: '#E5ECE8', fontSize: 14, fontWeight: '700', lineHeight: 19 }, searchTags: { color: '#6F7C75', fontSize: 10, marginTop: 4 }, searchFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, padding: 18, backgroundColor: '#0A0E0DEE', borderTopWidth: 1, borderTopColor: '#222B27' },
   dailyVocabCard: { minHeight: 104, borderRadius: 20, backgroundColor: '#211A0F', borderWidth: 1, borderColor: '#4A3518', padding: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }, dailyVocabEyebrow: { color: '#E6B759', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, dailyVocabTitle: { color: '#FFF3D7', fontSize: 16, fontWeight: '900', marginTop: 5 }, dailyVocabText: { color: '#A99570', fontSize: 11, lineHeight: 16, marginTop: 5, maxWidth: 260 },
   adminPage: { padding: 22, paddingBottom: 54, backgroundColor: '#0A0E0D' }, adminSearchRow: { flexDirection: 'row', gap: 8, marginBottom: 16 }, adminSearchInput: { flex: 1, minHeight: 52, borderRadius: 15, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 14, paddingHorizontal: 14 }, adminSearchButton: { width: 58, borderRadius: 15, backgroundColor: '#68D7A2', alignItems: 'center', justifyContent: 'center' }, adminSearchButtonText: { color: '#07110C', fontWeight: '900' }, adminTopicRow: { gap: 8, paddingRight: 20, paddingBottom: 16 }, adminSummary: { minHeight: 42, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }, adminSummaryText: { color: '#8A9791', fontSize: 12, fontWeight: '800' }, adminList: { gap: 11 }, adminQuestionCard: { borderRadius: 18, borderWidth: 1, borderColor: '#25302B', backgroundColor: '#121815', padding: 14 }, adminQuestionHeader: { flexDirection: 'row', gap: 8, alignItems: 'center', marginBottom: 8 }, adminTopic: { color: '#68D7A2', fontSize: 11, fontWeight: '900' }, adminId: { color: '#5D6963', fontSize: 10, marginLeft: 'auto' }, adminPrompt: { color: '#EAF0ED', fontSize: 14, fontWeight: '800', lineHeight: 20 }, adminMeta: { color: '#78857F', fontSize: 11, marginTop: 8 }, adminActions: { flexDirection: 'row', alignItems: 'center', gap: 7, marginTop: 12 }, adminDifficultyButton: { width: 36, height: 34, borderRadius: 11, borderWidth: 1, borderColor: '#334039', alignItems: 'center', justifyContent: 'center' }, adminDifficultyActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, adminDifficultyText: { color: '#AAB5AF', fontWeight: '900' }, adminDifficultyTextActive: { color: '#07110C' }, adminDeleteButton: { marginLeft: 'auto', minHeight: 34, borderRadius: 11, borderWidth: 1, borderColor: '#70413B', paddingHorizontal: 12, alignItems: 'center', justifyContent: 'center' }, adminDeleteText: { color: '#F09A8E', fontSize: 12, fontWeight: '900' },
+  mediaModal: { flex: 1, backgroundColor: '#050807F5', paddingTop: Platform.OS === 'android' ? 24 : 0, paddingHorizontal: 14, paddingBottom: 18 },
+  mediaModalHeader: { minHeight: 56, flexDirection: 'row', alignItems: 'center', gap: 12 },
+  mediaModalTitle: { flex: 1, color: '#F2F7F4', fontSize: 14, fontWeight: '900' },
+  mediaModalClose: { color: '#DDE8E3', fontSize: 34, lineHeight: 36 },
+  mediaModalScroll: { alignItems: 'center', justifyContent: 'center' },
+  mediaModalImage: { backgroundColor: '#0B100E' },
+  mediaZoomControls: { minHeight: 54, borderRadius: 18, borderWidth: 1, borderColor: '#26312C', backgroundColor: '#111714', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  mediaZoomButton: { width: 44, height: 38, borderRadius: 13, backgroundColor: '#1C2621', alignItems: 'center', justifyContent: 'center' },
+  mediaZoomText: { color: '#8EE0B5', fontSize: 22, fontWeight: '900' },
+  mediaZoomValue: { color: '#DDE8E3', minWidth: 56, textAlign: 'center', fontSize: 13, fontWeight: '900' },
 });
