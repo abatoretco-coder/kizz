@@ -13,8 +13,8 @@ Priorites actuelles:
 1. Stabiliser l'APK sur telephone reel, surtout la carte vectorielle tactile hors ligne et les parcours critiques.
 2. Refactorer l'UI sans changer le produit: theme couleur centralise, extraction des ecrans de `App.tsx` a faire.
 3. Ajouter une progression plus lisible: matrice theme x difficulte livree et cliquable, historique local livre, sous-themes livres, recommandations locales a enrichir.
-4. Renforcer la qualite editoriale: audit automatique, signalement local, import CSV assiste, astronomie et drapeaux livres; editeur de packs a faire.
-5. Preparer les interactions multimodales: image zoomable, point chaud, ordre chronologique, appariement et cartes offline.
+4. Renforcer la qualite editoriale: audit automatique, signalement local, import CSV assiste, astronomie, drapeaux et premier pack visuel livres; editeur de packs a faire.
+5. Generaliser les interactions multimodales: image zoomable, point chaud, ordre chronologique, appariement et cartes offline.
 
 ## Mise a jour livree - Carte embarquee
 
@@ -34,9 +34,17 @@ Priorites actuelles:
 - Android: le bouton retour revient dans l'app au lieu de fermer l'application depuis un ecran interne;
 - encodage: nettoyage des textes mojibake visibles et ajout d'un test anti-regression.
 
+## Mise a jour livree - Reconnaissance visuelle
+
+- 18 questions visuelles ajoutees sur arts, sculpture, architecture et geographie monumentale;
+- medias telecharges depuis Wikimedia Commons puis embarques dans `assets/questions`, avec manifeste de provenance;
+- QCM avec image principale et QCM avec quatre images de reponse;
+- schema et SQLite etendus avec `choiceImageAssets` et `choiceImageAlts`;
+- reequilibrage automatique A/B/C/D mis a jour pour garder les images synchronisees avec les choix.
+
 ## MVP actuel
 
-- banque enrichie a 1829 questions, avec formats jeux TV originaux, astronomie, couverture pays/capitales du monde, drapeaux, regions/departements/chefs-lieux de France et mini-cours langues;
+- banque enrichie a 1847 questions, avec formats jeux TV originaux, astronomie, couverture pays/capitales du monde, drapeaux, regions/departements/chefs-lieux de France, reconnaissance visuelle et mini-cours langues;
 - 72 questions `map-point`, dont 30 dans le theme dedie `Carte France`;
 - accueil refondu en trois panneaux: tableau de bord, quiz culture, langues, avec rail pleine largeur synchronise au geste;
 - sous-themes de session pour geographie, histoire par pays/epoque, sciences, sport, arts, cinema, architecture, nature, technologie, langues, economie et astronomie;
@@ -49,7 +57,7 @@ Priorites actuelles:
 - historique local des dernieres sessions dans le dashboard;
 - bilan de session par type d'interaction quand une session melange QCM, texte, multi-champs ou carte;
 - dashboard sombre avec sessions, réponses, précision et jours actifs;
-- 13 themes et 1829 questions locales, dont jeux TV originaux, economie, astronomie, langues, art visuel, geographie monde, drapeaux et carte de France;
+- 13 themes et 1847 questions locales, dont jeux TV originaux, economie, astronomie, langues, art visuel, geographie monde, drapeaux et carte de France;
 - Architecture comme thème autonome;
 - correction immédiate, explication et lien d'approfondissement;
 - favoris, recherche, sessions personnalisées et révision des erreurs;

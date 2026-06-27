@@ -36,5 +36,7 @@ Mise a jour du 27 juin 2026: revue produit rapide de Quizlet, Kahoot, Anki, Duol
 
 ## Provenance des médias
 
-Les deux premiers médias Art sont embarqués dans `assets/questions`: La Joconde est dans le domaine public; la photographie du Penseur est créditée Didier Descouens / Wikimedia Commons, CC BY-SA 4.0.
+Les médias Art et Architecture sont embarqués dans `assets/questions` pour rester disponibles hors ligne. La Joconde est dans le domaine public; la photographie du Penseur est créditée Didier Descouens / Wikimedia Commons, CC BY-SA 4.0.
+
+Le lot visuel du 27 juin 2026 ajoute 15 fichiers issus de Wikimedia Commons: tableaux en domaine public, sculptures et monuments sous licences CC compatibles ou CC0 selon les fichiers. Les crédits, URLs et licences observées sont conservés dans `assets/questions/visual-manifest.json`.
 

@@ -31,6 +31,8 @@ export function parseQuizPack(raw: string): QuizPack {
     if (!topicIds.has(topicId)) throw new Error(`La question ${index + 1} référence un thème absent.`);
     const type: 'free-text' | 'multiple-choice' | 'multi-text' | 'map-point' = row.type === 'free-text' ? 'free-text' : row.type === 'multi-text' ? 'multi-text' : row.type === 'map-point' ? 'map-point' : 'multiple-choice';
     const choices = row.choices;
+    const choiceImageAssets = row.choiceImageAssets;
+    const choiceImageAlts = row.choiceImageAlts;
     const acceptedAnswers = row.acceptedAnswers;
     if (type === 'multiple-choice' && (!Array.isArray(choices) || choices.length !== 4 || choices.some((choice) => typeof choice !== 'string' || !choice.trim()))) throw new Error(`La question ${index + 1} doit avoir exactement 4 choix.`);
     if (type === 'multiple-choice' && (!Number.isInteger(row.answerIndex) || Number(row.answerIndex) < 0 || Number(row.answerIndex) > 3)) throw new Error(`Réponse invalide pour la question ${index + 1}.`);
@@ -45,6 +47,8 @@ export function parseQuizPack(raw: string): QuizPack {
       id: text(row.id, `questions[${index}].id`), topicId, difficulty: Number(row.difficulty) as 1 | 2 | 3,
       prompt: text(row.prompt, `questions[${index}].prompt`), type,
       choices: type === 'multiple-choice' ? choices as [string, string, string, string] : undefined,
+      choiceImageAssets: Array.isArray(choiceImageAssets) && choiceImageAssets.length === 4 && choiceImageAssets.every((asset) => typeof asset === 'string') ? choiceImageAssets as [string, string, string, string] : undefined,
+      choiceImageAlts: Array.isArray(choiceImageAlts) && choiceImageAlts.length === 4 && choiceImageAlts.every((alt) => typeof alt === 'string') ? choiceImageAlts as [string, string, string, string] : undefined,
       answerIndex: type === 'multiple-choice' ? Number(row.answerIndex) : undefined,
       acceptedAnswers: type === 'free-text' ? acceptedAnswers as string[] : undefined,
       answerFields: type === 'multi-text' ? answerFields as Array<{ id: string; label: string; acceptedAnswers: string[] }> : undefined,

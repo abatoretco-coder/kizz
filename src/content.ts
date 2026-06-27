@@ -16,6 +16,7 @@ import { franceAdminQuestions } from './contentFranceAdmin';
 import { thematicExpansionQuestions } from './contentThemeExpansion';
 import { astronomyQuestions, astronomyTopic } from './contentAstronomy';
 import { subthemeExpansionQuestions } from './contentSubthemeExpansion';
+import { visualRecognitionQuestions } from './contentVisualRecognition';
 
 const retiredTopicIds = new Set(['daily']);
 
@@ -79,6 +80,7 @@ const rawQuestions: QuestionSeed[] = [
   ...thematicExpansionQuestions,
   ...astronomyQuestions,
   ...subthemeExpansionQuestions,
+  ...visualRecognitionQuestions,
 ];
 
 function hashQuestionId(id: string) {
@@ -91,16 +93,27 @@ function balancedAnswerOrder(seed: QuestionSeed[]) {
   const answerCounts = [0, 0, 0, 0];
   return seed.map((question) => {
     if (!question.choices || question.choices.length !== 4 || question.answerIndex === undefined) return question;
-    const correctChoice = question.choices[question.answerIndex];
-    const distractors = question.choices.filter((_, index) => index !== question.answerIndex);
+    const rows = question.choices.map((choice, index) => ({
+      choice,
+      choiceImageAsset: question.choiceImageAssets?.[index],
+      choiceImageAlt: question.choiceImageAlts?.[index],
+    }));
+    const correctRow = rows[question.answerIndex];
+    const distractors = rows.filter((_, index) => index !== question.answerIndex);
     const tieBreaker = hashQuestionId(question.id);
     const targetIndex = [0, 1, 2, 3].sort((left, right) => (
       answerCounts[left] - answerCounts[right] || ((left + tieBreaker) % 4) - ((right + tieBreaker) % 4)
     ))[0];
     answerCounts[targetIndex] += 1;
-    const choices = [...distractors];
-    choices.splice(targetIndex, 0, correctChoice);
-    return { ...question, choices: choices as [string, string, string, string], answerIndex: targetIndex };
+    const orderedRows = [...distractors];
+    orderedRows.splice(targetIndex, 0, correctRow);
+    return {
+      ...question,
+      choices: orderedRows.map((row) => row.choice) as [string, string, string, string],
+      choiceImageAssets: question.choiceImageAssets ? orderedRows.map((row) => row.choiceImageAsset ?? '') as [string, string, string, string] : undefined,
+      choiceImageAlts: question.choiceImageAlts ? orderedRows.map((row) => row.choiceImageAlt ?? '') as [string, string, string, string] : undefined,
+      answerIndex: targetIndex,
+    };
   });
 }
 

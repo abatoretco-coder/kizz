@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import test from 'node:test';
 import { questions, topics } from '../src/content';
 import { countryCapitalData } from '../src/contentWorldCountries';
@@ -143,6 +145,25 @@ test('la banque éditoriale respecte le contrat MVP', () => {
     else {
       assert.equal(question.choices?.length, 4, `${question.id}: quatre choix requis`);
       assert.ok(Number.isInteger(question.answerIndex) && question.answerIndex! >= 0 && question.answerIndex! < 4, `${question.id}: index invalide`);
+    }
+  }
+});
+
+test('les questions visuelles embarquent des assets complets', () => {
+  const assetsDir = join(process.cwd(), 'assets', 'questions');
+  const visualQuestions = questions.filter((question) => question.imageAsset || question.choiceImageAssets?.length);
+  assert.ok(visualQuestions.length >= 15);
+  assert.ok(questions.some((question) => question.tags.includes('image-choice')));
+
+  for (const question of visualQuestions) {
+    if (question.imageAsset) {
+      assert.ok(existsSync(join(assetsDir, `${question.imageAsset}.jpg`)), `${question.id}: imageAsset introuvable`);
+      assert.ok(question.imageAlt?.trim(), `${question.id}: texte alternatif absent`);
+    }
+    if (question.choiceImageAssets) {
+      assert.equal(question.choiceImageAssets.length, 4, `${question.id}: quatre images de choix requises`);
+      assert.equal(question.choiceImageAlts?.length, 4, `${question.id}: quatre textes alternatifs requis`);
+      for (const asset of question.choiceImageAssets) assert.ok(existsSync(join(assetsDir, `${asset}.jpg`)), `${question.id}: choix image introuvable ${asset}`);
     }
   }
 });

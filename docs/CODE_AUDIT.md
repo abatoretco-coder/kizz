@@ -7,7 +7,7 @@
 - Donnees editoriales chargees depuis `src/content.ts` et modules satellites.
 - SQLite local via `src/database.ts`.
 - Moteurs testes dans `src/quizEngine.ts`, `src/sessionDraft.ts` et `src/quizPack.ts`.
-- Tests actuels: 29 tests unitaires/integrite.
+- Tests actuels: 30 tests unitaires/integrite.
 - Audit automatique de contenu: `npm run audit:content`.
 
 ## Forces
@@ -16,8 +16,9 @@
 - Schema de question deja extensible: QCM, texte libre, multi-champs, carte.
 - Import/export JSON transactionnel et import CSV assiste.
 - Repetition espacee locale et confiance facultative.
-- Banque riche: 1829 questions, 13 themes, 72+ cartes, drapeaux du monde et couverture France/monde renforcee.
+- Banque riche: 1847 questions, 13 themes, 72+ cartes, drapeaux du monde, reconnaissance visuelle et couverture France/monde renforcee.
 - Carte tactile hors ligne via WebView/canvas Mercator, pinch, double tap, pan inertiel et frontieres embarquees.
+- Medias visuels embarques pour tableaux, sculptures, monuments et architecture, avec manifeste de provenance.
 - Accueil navigable au swipe et par onglets tactiles; retour Android intercepte dans l'app.
 - Garde-fou de test contre les textes mojibake visibles.
 
@@ -27,7 +28,7 @@
 2. Les textes visibles les plus exposes sont nettoyes; le risque restant porte sur des contenus importes externes non controles.
 3. Le rendu carte est hors ligne et plus fluide; le risque restant est surtout sa taille et son maintien dans App.tsx.
 4. Les tests couvrent bien les moteurs, mais pas encore les parcours UI Android.
-5. Les contenus grossissent dans le bundle TypeScript; a moyen terme, des packs JSON versionnes seront plus maintenables.
+5. Les contenus et medias grossissent dans le bundle; a moyen terme, des packs JSON versionnes avec manifeste media seront plus maintenables.
 
 ## Recommandations prioritaires
 
@@ -36,7 +37,7 @@
 3. Ajouter un editeur de packs plus confortable.
 4. Ajouter labels optionnels, silhouettes et niveaux de detail sans dependance reseau.
 5. Enrichir le bilan par theme; le bilan par type d'interaction est livre en premiere version.
-6. Surveiller la taille du bundle avec les GeoJSON embarques.
+6. Surveiller la taille du bundle avec les GeoJSON et images embarques.
 
 ## Non-objectifs court terme
 

@@ -73,6 +73,8 @@ export async function initializeDatabase() {
     ['question_type', "ALTER TABLE questions ADD COLUMN question_type TEXT NOT NULL DEFAULT 'multiple-choice'"],
     ['accepted_answers_json', "ALTER TABLE questions ADD COLUMN accepted_answers_json TEXT NOT NULL DEFAULT '[]'"],
     ['answer_fields_json', "ALTER TABLE questions ADD COLUMN answer_fields_json TEXT NOT NULL DEFAULT '[]'"],
+    ['choice_image_assets_json', "ALTER TABLE questions ADD COLUMN choice_image_assets_json TEXT NOT NULL DEFAULT '[]'"],
+    ['choice_image_alts_json', "ALTER TABLE questions ADD COLUMN choice_image_alts_json TEXT NOT NULL DEFAULT '[]'"],
     ['image_url', 'ALTER TABLE questions ADD COLUMN image_url TEXT'],
     ['image_asset', 'ALTER TABLE questions ADD COLUMN image_asset TEXT'],
     ['image_alt', 'ALTER TABLE questions ADD COLUMN image_alt TEXT'],
@@ -110,13 +112,13 @@ export async function initializeDatabase() {
       await db.runAsync(
         `INSERT OR REPLACE INTO questions
           (id, topic_id, difficulty, prompt, choices_json, answer_index, explanation, tags_json, source_label, source_url,
-           question_type, accepted_answers_json, answer_fields_json, image_url, image_asset, image_alt, learn_more_url,
+           question_type, accepted_answers_json, answer_fields_json, choice_image_assets_json, choice_image_alts_json, image_url, image_asset, image_alt, learn_more_url,
            interaction_type, prompt_blocks_json, answer_schema_json, geo_target_json)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         question.id, question.topicId, question.difficulty, question.prompt,
         JSON.stringify(question.choices ?? []), question.answerIndex ?? -1, question.explanation,
         JSON.stringify(question.tags), question.sourceLabel, question.sourceUrl ?? null,
-        question.type ?? 'multiple-choice', JSON.stringify(question.acceptedAnswers ?? []), JSON.stringify(question.answerFields ?? []), question.imageUrl ?? null, question.imageAsset ?? null,
+        question.type ?? 'multiple-choice', JSON.stringify(question.acceptedAnswers ?? []), JSON.stringify(question.answerFields ?? []), JSON.stringify(question.choiceImageAssets ?? []), JSON.stringify(question.choiceImageAlts ?? []), question.imageUrl ?? null, question.imageAsset ?? null,
         question.imageAlt ?? null, question.learnMoreUrl ?? wikipediaSearchUrl(question.prompt),
         question.interactionType ?? question.type ?? 'choice', JSON.stringify(question.promptBlocks ?? []), JSON.stringify(question.answerSchema ?? {}), question.geoTarget ? JSON.stringify(question.geoTarget) : null,
       );
@@ -325,13 +327,13 @@ export async function importQuizPack(pack: QuizPack): Promise<ImportReport> {
       const result = await db.runAsync(
         `INSERT OR IGNORE INTO questions
           (id, topic_id, difficulty, prompt, choices_json, answer_index, explanation, tags_json, source_label, source_url,
-           question_type, accepted_answers_json, answer_fields_json, image_url, image_asset, image_alt, learn_more_url,
+           question_type, accepted_answers_json, answer_fields_json, choice_image_assets_json, choice_image_alts_json, image_url, image_asset, image_alt, learn_more_url,
            interaction_type, prompt_blocks_json, answer_schema_json, geo_target_json)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         question.id, question.topicId, question.difficulty, question.prompt,
         JSON.stringify(question.choices ?? []), question.answerIndex ?? -1, question.explanation,
         JSON.stringify(question.tags), question.sourceLabel, question.sourceUrl ?? null,
-        question.type ?? 'multiple-choice', JSON.stringify(question.acceptedAnswers ?? []), JSON.stringify(question.answerFields ?? []), question.imageUrl ?? null, question.imageAsset ?? null,
+        question.type ?? 'multiple-choice', JSON.stringify(question.acceptedAnswers ?? []), JSON.stringify(question.answerFields ?? []), JSON.stringify(question.choiceImageAssets ?? []), JSON.stringify(question.choiceImageAlts ?? []), question.imageUrl ?? null, question.imageAsset ?? null,
         question.imageAlt ?? null, question.learnMoreUrl ?? wikipediaSearchUrl(question.prompt),
         question.interactionType ?? question.type ?? 'choice', JSON.stringify(question.promptBlocks ?? []), JSON.stringify(question.answerSchema ?? {}), question.geoTarget ? JSON.stringify(question.geoTarget) : null,
       );
@@ -366,7 +368,7 @@ export async function exportQuizPack(): Promise<QuizPack> {
 type QuestionRow = {
   id: string; topic_id: string; difficulty: number; prompt: string; choices_json: string;
   answer_index: number; explanation: string; tags_json: string; source_label: string; source_url: string | null;
-  question_type: 'multiple-choice' | 'free-text' | 'multi-text' | 'map-point'; accepted_answers_json: string; answer_fields_json: string; image_url: string | null; image_asset: string | null;
+  question_type: 'multiple-choice' | 'free-text' | 'multi-text' | 'map-point'; accepted_answers_json: string; answer_fields_json: string; choice_image_assets_json: string; choice_image_alts_json: string; image_url: string | null; image_asset: string | null;
   image_alt: string | null; learn_more_url: string | null; interaction_type: 'choice' | 'text' | 'multi-text' | 'map-point' | null; prompt_blocks_json: string; answer_schema_json: string; geo_target_json: string | null;
   is_favorite?: number;
 };
@@ -379,7 +381,7 @@ function mapQuestionRow(row: QuestionRow): QuizQuestion {
   return {
     id: row.id, topicId: row.topic_id, difficulty: row.difficulty as 1 | 2 | 3,
     prompt: row.prompt, type: row.question_type, choices: JSON.parse(row.choices_json), answerIndex: row.answer_index,
-    acceptedAnswers: JSON.parse(row.accepted_answers_json), answerFields: JSON.parse(row.answer_fields_json), explanation: row.explanation,
+    acceptedAnswers: JSON.parse(row.accepted_answers_json), answerFields: JSON.parse(row.answer_fields_json), choiceImageAssets: JSON.parse(row.choice_image_assets_json ?? '[]'), choiceImageAlts: JSON.parse(row.choice_image_alts_json ?? '[]'), explanation: row.explanation,
     tags: JSON.parse(row.tags_json), sourceLabel: row.source_label, sourceUrl: row.source_url ?? undefined,
     imageUrl: row.image_url ?? undefined, imageAsset: row.image_asset ?? undefined, imageAlt: row.image_alt ?? undefined,
     learnMoreUrl: row.learn_more_url ?? wikipediaSearchUrl(row.prompt),

@@ -25,6 +25,8 @@ export type QuestionSeed = {
   prompt: string;
   type?: 'multiple-choice' | 'free-text' | 'multi-text' | 'map-point';
   choices?: [string, string, string, string];
+  choiceImageAssets?: [string, string, string, string];
+  choiceImageAlts?: [string, string, string, string];
   answerIndex?: number;
   acceptedAnswers?: string[];
   answerFields?: Array<{ id: string; label: string; acceptedAnswers: string[] }>;

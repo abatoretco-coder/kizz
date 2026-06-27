@@ -2,7 +2,7 @@
 
 ## Livre maintenant
 
-- Banque enrichie: 1829 questions locales au total.
+- Banque enrichie: 1847 questions locales au total.
 - Nouveau theme Astronomie: systeme solaire, observation, galaxie et histoire spatiale.
 - Sous-themes dans le constructeur: geographie, histoire par pays/epoque, sciences, sport, arts, cinema, architecture, nature, technologie, langues, economie et astronomie.
 - Drapeaux du monde: 585 questions, soit 195 pays en texte libre, 195 QCM drapeau -> pays et 195 QCM pays -> drapeau.
@@ -11,6 +11,7 @@
 - Carte: frontieres de pays et departements francais embarquees en GeoJSON local, rendues en canvas Mercator avec pinch, double tap et pan inertiel, sans fetch, tuiles, Leaflet ni serveur externe.
 - Extension jeux TV originale: 36 questions inspirees des formats TTMC, Trivial, reponse rapide et Question pour un champion, sans copie de questions proprietaires.
 - Extension editoriale par grand theme: histoire, sciences, sport, arts, nature, technologie, cinema, architecture et economie.
+- Reconnaissance visuelle: tableaux, sculptures, monuments et architecture en medias embarques, avec questions image -> reponse et reponse -> choix d'image.
 - Signalement local d'une question apres correction: ambigue, trop facile, trop dure ou a reformuler.
 - Export JSON des signalements depuis l'ecran Banques.
 - Audit automatique de banque disponible avec `npm run audit:content`.
@@ -45,4 +46,5 @@
 6. Mode salon: quiz local a plusieurs joueurs sur le meme telephone, style plateau TV, sans compte.
 7. Reglage cognitif: option "moins de hasard" pour prioriser la repetition espacee, option "surprise" pour varier.
 8. Assistant d'import: analyser une banque JSON/CSV et proposer automatiquement theme, difficulte et tags.
-9. Cartes avancees: ajouter silhouettes, zoom regional guide et labels optionnels sans introduire de dependance reseau.
+9. Visuel avance: image zoomable, details recadres, attribution media visible et validation de licences par pack.
+10. Cartes avancees: ajouter silhouettes, zoom regional guide et labels optionnels sans introduire de dependance reseau.

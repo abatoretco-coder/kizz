@@ -10,6 +10,7 @@ const filesToScan = [
   'docs/ROADMAP.md',
   'docs/RESEARCH.md',
   'src/content.ts',
+  'src/contentVisualRecognition.ts',
   'src/quizPack.ts',
 ];
 
