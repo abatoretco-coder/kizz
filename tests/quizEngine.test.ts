@@ -182,6 +182,8 @@ test('le quiz expose un zoom image et precharge les medias', () => {
   assert.ok(app.includes('Image.prefetch'));
   assert.ok(app.includes('maximumZoomScale'));
   assert.ok(app.includes('Appui long pour agrandir'));
+  assert.ok(app.includes('mediaCredit'));
+  assert.ok(app.includes('Média :'));
 });
 
 test('la banque Arts/Histoire generee reste presente', () => {

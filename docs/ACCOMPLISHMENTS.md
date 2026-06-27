@@ -28,6 +28,7 @@
 - Questions image vers réponse et réponse vers choix d'image.
 - Zoom plein écran sur les images de question et appui long sur les images de choix.
 - Préchargement local des médias de la question courante et de la suivante.
+- Attribution média visible après correction, avec lien source quand disponible.
 - Carte hors ligne avec fond satellite Blue Marble.
 - Frontières pays et départements embarquées.
 - Moteur carte canvas Mercator avec zoom, double tap et déplacement inertiel.
