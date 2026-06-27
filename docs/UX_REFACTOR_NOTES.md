@@ -6,7 +6,7 @@
 - Navigation d'accueil pleine largeur: Dashboard, Culture et Langues occupent tout le rail, sans texte "swipe".
 - Indicateur visuel du rail synchronise au deplacement horizontal.
 - Constructeur de session enrichi avec sous-themes selectionnables.
-- Logo Kizz v3 branche sur l'accueil et l'icone Expo.
+- Vrai logo Kizz branche sur l'accueil, l'icone Expo et les ressources Android natives.
 - Mode Infini calme: difficulte constante, themes aleatoires, sortie explicite par la croix avec sauvegarde des reponses.
 - Reprise du mode infini: le brouillon conserve son niveau et restaure le contexte.
 - Mode Endurance conserve comme session finie de 10 questions.

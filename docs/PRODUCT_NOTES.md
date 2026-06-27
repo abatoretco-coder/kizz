@@ -25,7 +25,7 @@
 - Parcours langues renforces: mini-cours espagnol, allemand et italien avec exercices de rappel ecrit.
 - Progression Langues: grille locale separee par langue et niveau CECRL.
 - Accueil: retrait du libelle swipe et rail Dashboard/Culture/Langues pleine largeur synchronise au geste.
-- Logo Kizz v3 livre dans `assets/kizz-logo-v3.png` et branche comme icone Expo/adaptive icon.
+- Vrai logo Kizz branche dans l'accueil, `app.json` et les icones Android natives.
 
 ## Decisions produit
 

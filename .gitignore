@@ -10,6 +10,7 @@ node_modules/
 .gradle-home/
 expo-phone*.log
 kizz-*.png
+!assets/kizz-logo-v2.png
 .tmp-kizz-*.xml
 .tmp-*.xml
 dist/
