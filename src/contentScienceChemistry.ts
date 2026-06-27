@@ -88,6 +88,14 @@ function rotate<T>(items: T[], answer: T): [T, T, T, T] {
   return [answer, distractors[0], distractors[1], distractors[2]];
 }
 
+function nearbyNumberChoices(answer: number): [string, string, string, string] {
+  const values = elements.map((element) => element.atomicNumber);
+  const ordered = values
+    .filter((value) => value !== answer)
+    .sort((left, right) => Math.abs(left - answer) - Math.abs(right - answer) || left - right);
+  return [String(answer), ...ordered.slice(0, 3).map(String)] as [string, string, string, string];
+}
+
 function q(id: string, difficulty: 1 | 2 | 3, prompt: string, choices: [string, string, string, string], explanation: string, tags: string[]): QuestionSeed {
   return {
     id,
@@ -105,7 +113,6 @@ function q(id: string, difficulty: 1 | 2 | 3, prompt: string, choices: [string, 
 
 const symbols = elements.map((element) => element.symbol);
 const names = elements.map((element) => element.name);
-const numbers = elements.map((element) => String(element.atomicNumber));
 const families = [...new Set(elements.map((element) => element.family))];
 
 function formulaDifficulty(index: number): 1 | 2 | 3 {
@@ -121,7 +128,7 @@ export const scienceChemistryQuestions: QuestionSeed[] = [
     const difficulty = (index % 4 === 0 ? 1 : index % 4 === 1 ? 2 : 3) as 1 | 2 | 3;
     return [
       q(`sci-chem-el-${element.symbol.toLowerCase()}-symbol`, difficulty, `Quel est le symbole chimique de ${element.name} ?`, rotate(symbols, element.symbol), `${element.name} a pour symbole ${element.symbol}.`, ['element', 'symbole']),
-      q(`sci-chem-el-${element.symbol.toLowerCase()}-z`, difficulty, `Quel est le numero atomique de ${element.name} ?`, rotate(numbers, String(element.atomicNumber)), `Le numero atomique Z de ${element.name} est ${element.atomicNumber}: c est le nombre de protons du noyau.`, ['element', 'numero-atomique']),
+      q(`sci-chem-el-${element.symbol.toLowerCase()}-z`, difficulty, `Quel est le numero atomique de ${element.name} ?`, nearbyNumberChoices(element.atomicNumber), `Le numero atomique Z de ${element.name} est ${element.atomicNumber}: c est le nombre de protons du noyau.`, ['element', 'numero-atomique']),
       q(`sci-chem-el-${element.symbol.toLowerCase()}-family`, difficulty, `A quelle famille rattache-t-on surtout ${element.name} ?`, rotate(families, element.family), `${element.name} est classe ici comme ${element.family}.`, ['element', 'famille']),
       q(`sci-chem-el-${element.symbol.toLowerCase()}-clue`, difficulty, `Quel element correspond a cet indice : ${element.clue} ?`, rotate(names, element.name), `L indice renvoie a ${element.name}, symbole ${element.symbol}, Z=${element.atomicNumber}.`, ['element', 'indice']),
     ];

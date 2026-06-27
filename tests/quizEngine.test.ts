@@ -211,12 +211,41 @@ test('la banque Monuments enrichit fortement les questions visuelles', () => {
   assert.ok(landmarks.filter((question) => question.tags.includes('geographie')).length >= 110);
 });
 
+test('les difficultes evidentes des visuels et drapeaux restent calibrees', () => {
+  const italyFlags = questions.filter((question) => question.id.includes('italie') && question.tags.includes('coverage:world-flags'));
+  assert.equal(italyFlags.length, 3);
+  assert.ok(italyFlags.every((question) => question.difficulty === 1));
+
+  const atomiumQuestions = questions.filter((question) => question.id.startsWith('landmark-036'));
+  assert.ok(atomiumQuestions.length >= 4);
+  assert.ok(atomiumQuestions.every((question) => question.difficulty <= 2));
+  assert.ok(atomiumQuestions.filter((question) => question.tags.includes('style')).every((question) => question.difficulty === 2));
+});
+
 test('la banque sciences couvre la chimie niveau ingenieur', () => {
   const chemistry = questions.filter((question) => question.topicId === 'science' && question.tags.includes('tableau-periodique'));
   assert.ok(chemistry.length >= 170);
   assert.ok(chemistry.filter((question) => question.tags.includes('numero-atomique')).length >= 30);
   assert.ok(chemistry.filter((question) => question.tags.includes('formule')).length >= 12);
   assert.ok(chemistry.filter((question) => question.tags.includes('raisonnement')).length >= 20);
+});
+
+test('les distracteurs de numero atomique restent plausibles', () => {
+  const atomicNumberQuestions = questions.filter((question) => question.tags.includes('numero-atomique'));
+  for (const question of atomicNumberQuestions) {
+    const correct = Number(question.choices?.[question.answerIndex ?? -1]);
+    const distractors = (question.choices ?? []).filter((_, index) => index !== question.answerIndex).map(Number);
+    assert.ok(distractors.every((value) => Number.isInteger(value)), `${question.id}: distracteur non numerique`);
+    if (correct > 10) assert.notDeepEqual([...distractors].sort((a, b) => a - b), [1, 2, 3], `${question.id}: distracteurs trop triviaux`);
+    assert.ok(Math.max(...distractors.map((value) => Math.abs(value - correct))) <= 25 || correct >= 70, `${question.id}: distracteurs trop eloignes`);
+  }
+});
+
+test('les choix image ne revelent pas leur reponse avant correction', () => {
+  const app = readFileSync('App.tsx', 'utf8');
+  assert.ok(app.includes('const visualChoiceOnly = !!question.choiceImageAssets?.length;'));
+  assert.ok(app.includes('visibleChoiceLabel = visualChoiceOnly ? `Image ${String.fromCharCode(65 + choiceIndex)}` : choice'));
+  assert.ok(app.includes('{answered ? choice : visibleChoiceLabel}'));
 });
 
 test('l’audit automatique de banque ne remonte aucune erreur', () => {

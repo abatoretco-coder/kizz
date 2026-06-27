@@ -24,7 +24,7 @@ Kizz est une application mobile de culture générale hors ligne, centrée sur l
 - Import/export JSON, import CSV avec prévisualisation, mode admin local et signalement de questions.
 - Accueil refondu: Dashboard, Culture, Langues accessibles au tap et au swipe.
 - Retour Android intercepté dans l'application depuis les écrans internes.
-- Tests et audits: 36 tests automatisés, audit de contenu, tests d'encodage visible et vérification des assets.
+- Tests et audits: 39 tests automatisés, audit de contenu, tests d'encodage visible et vérification des assets.
 
 ## Priorités Maintenant
 

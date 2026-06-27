@@ -51,7 +51,7 @@
 - Signalement local et export des signalements.
 - Audit contenu automatisé.
 - Générateurs de banques visuelles Arts/Histoire et Nature.
-- 36 tests automatisés.
+- 39 tests automatisés.
 
 ## Dernier État Vérifié
 

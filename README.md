@@ -27,7 +27,7 @@ L'interface utilise un thème sombre sobre et ouvre directement les quiz depuis 
 - parcours Langues enrichi: mini-cours espagnol/allemand/italien, conjugaisons en texte libre et rituel "10 mots du jour";
 - progression Langues separee par langue et niveau CECRL;
 - audit automatique de banque avec `npm run audit:content`;
-- trente-six tests automatises du moteur, des brouillons, des banques, des assets visuels, de l'encodage et de l'integrite editoriale;
+- trente-neuf tests automatises du moteur, des brouillons, des banques, des assets visuels, de l'encodage et de l'integrite editoriale;
 - configuration Expo pour produire un APK Android autonome.
 
 ## Démarrer

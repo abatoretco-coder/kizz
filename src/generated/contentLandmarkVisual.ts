@@ -225,7 +225,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-003-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Petra",
@@ -250,7 +250,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-003-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Petra ?",
     "choices": [
       "Wadi Musa",
@@ -273,7 +273,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-003-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Petra ?",
     "choices": [
       "Jordanie",
@@ -318,7 +318,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-003-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Petra.",
     "choices": [
       "Taj Mahal",
@@ -574,7 +574,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-006-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Christ Redempteur",
@@ -599,7 +599,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-006-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Christ Redempteur ?",
     "choices": [
       "Rio de Janeiro",
@@ -622,7 +622,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-006-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Christ Redempteur ?",
     "choices": [
       "Bresil",
@@ -795,7 +795,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-008-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Burj Khalifa",
@@ -820,7 +820,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-008-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Burj Khalifa ?",
     "choices": [
       "Dubai",
@@ -843,7 +843,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-008-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Burj Khalifa ?",
     "choices": [
       "Emirats arabes unis",
@@ -888,7 +888,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-009-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Empire State Building",
@@ -913,7 +913,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-009-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Empire State Building ?",
     "choices": [
       "New York",
@@ -936,7 +936,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-009-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Empire State Building ?",
     "choices": [
       "Etats-Unis",
@@ -981,7 +981,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-009-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Empire State Building.",
     "choices": [
       "Empire State Building",
@@ -1109,7 +1109,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-011-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Tower Bridge",
@@ -1134,7 +1134,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-011-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Tower Bridge ?",
     "choices": [
       "Londres",
@@ -1157,7 +1157,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-011-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Tower Bridge ?",
     "choices": [
       "Royaume-Uni",
@@ -1202,7 +1202,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-011-image-choice",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Tower Bridge.",
     "choices": [
       "Empire State Building",
@@ -1237,7 +1237,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-012-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Big Ben",
@@ -1262,7 +1262,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-012-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Big Ben ?",
     "choices": [
       "Londres",
@@ -1285,7 +1285,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-012-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Big Ben ?",
     "choices": [
       "Royaume-Uni",
@@ -1458,7 +1458,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-014-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Mont-Saint-Michel",
@@ -1483,7 +1483,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-014-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Mont-Saint-Michel ?",
     "choices": [
       "Normandie",
@@ -1506,7 +1506,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-014-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Mont-Saint-Michel ?",
     "choices": [
       "France",
@@ -1551,7 +1551,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-015-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Chateau de Chambord",
@@ -1576,7 +1576,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-015-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Chateau de Chambord ?",
     "choices": [
       "Loir-et-Cher",
@@ -1599,7 +1599,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-015-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Chateau de Chambord ?",
     "choices": [
       "France",
@@ -1644,7 +1644,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-015-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Chateau de Chambord.",
     "choices": [
       "Stonehenge",
@@ -1679,7 +1679,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-016-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Pont du Gard",
@@ -1704,7 +1704,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-016-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Pont du Gard ?",
     "choices": [
       "Occitanie",
@@ -1727,7 +1727,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-016-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Pont du Gard ?",
     "choices": [
       "France",
@@ -1900,7 +1900,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-018-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Basilique du Sacre-Coeur",
@@ -1925,7 +1925,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-018-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Basilique du Sacre-Coeur ?",
     "choices": [
       "Paris",
@@ -1948,7 +1948,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-018-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Basilique du Sacre-Coeur ?",
     "choices": [
       "France",
@@ -2121,7 +2121,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-020-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Musee du Louvre",
@@ -2146,7 +2146,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-020-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Musee du Louvre ?",
     "choices": [
       "Paris",
@@ -2169,7 +2169,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-020-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Musee du Louvre ?",
     "choices": [
       "France",
@@ -2214,7 +2214,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-021-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Palais de Versailles",
@@ -2239,7 +2239,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-021-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Palais de Versailles ?",
     "choices": [
       "Versailles",
@@ -2262,7 +2262,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-021-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Palais de Versailles ?",
     "choices": [
       "France",
@@ -2307,7 +2307,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-021-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Palais de Versailles.",
     "choices": [
       "Palais de Versailles",
@@ -2342,7 +2342,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-022-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Alhambra",
@@ -2367,7 +2367,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-022-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Alhambra ?",
     "choices": [
       "Grenade",
@@ -2390,7 +2390,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-022-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Alhambra ?",
     "choices": [
       "Espagne",
@@ -2563,7 +2563,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-024-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Duomo de Milan",
@@ -2588,7 +2588,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-024-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Duomo de Milan ?",
     "choices": [
       "Milan",
@@ -2611,7 +2611,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-024-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Duomo de Milan ?",
     "choices": [
       "Italie",
@@ -2656,7 +2656,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-025-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Basilique Saint-Pierre",
@@ -2681,7 +2681,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-025-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Basilique Saint-Pierre ?",
     "choices": [
       "Vatican",
@@ -2704,7 +2704,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-025-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Basilique Saint-Pierre ?",
     "choices": [
       "Vatican",
@@ -2749,7 +2749,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-025-image-choice",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Selectionne l image de Basilique Saint-Pierre.",
     "choices": [
       "Basilique Saint-Pierre",
@@ -2784,7 +2784,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-026-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Tour de Pise",
@@ -2809,7 +2809,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-026-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Tour de Pise ?",
     "choices": [
       "Pise",
@@ -2832,7 +2832,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-026-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Tour de Pise ?",
     "choices": [
       "Italie",
@@ -2877,7 +2877,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-027-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Pantheon de Rome",
@@ -2902,7 +2902,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-027-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Pantheon de Rome ?",
     "choices": [
       "Rome",
@@ -2925,7 +2925,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-027-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Pantheon de Rome ?",
     "choices": [
       "Italie",
@@ -2970,7 +2970,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-027-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Pantheon de Rome.",
     "choices": [
       "Basilique Saint-Pierre",
@@ -3005,7 +3005,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-028-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Hagia Sophia",
@@ -3030,7 +3030,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-028-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Hagia Sophia ?",
     "choices": [
       "Istanbul",
@@ -3053,7 +3053,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-028-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Hagia Sophia ?",
     "choices": [
       "Turquie",
@@ -3226,7 +3226,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-030-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Acropole d Athenes",
@@ -3251,7 +3251,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-030-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Acropole d Athenes ?",
     "choices": [
       "Athenes",
@@ -3274,7 +3274,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-030-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Acropole d Athenes ?",
     "choices": [
       "Grece",
@@ -3319,7 +3319,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-031-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Meteores",
@@ -3344,7 +3344,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-031-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Meteores ?",
     "choices": [
       "Thessalie",
@@ -3367,7 +3367,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-031-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Meteores ?",
     "choices": [
       "Grece",
@@ -3412,7 +3412,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-031-image-choice",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Selectionne l image de Meteores.",
     "choices": [
       "Mosquee bleue",
@@ -3540,7 +3540,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-033-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Cathedrale Saint-Basile",
@@ -3565,7 +3565,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-033-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Cathedrale Saint-Basile ?",
     "choices": [
       "Moscou",
@@ -3588,7 +3588,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-033-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Cathedrale Saint-Basile ?",
     "choices": [
       "Russie",
@@ -3633,7 +3633,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-033-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Cathedrale Saint-Basile.",
     "choices": [
       "Cathedrale Saint-Basile",
@@ -3668,7 +3668,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-034-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Neuschwanstein",
@@ -3693,7 +3693,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-034-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Neuschwanstein ?",
     "choices": [
       "Baviere",
@@ -3716,7 +3716,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-034-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Neuschwanstein ?",
     "choices": [
       "Allemagne",
@@ -3761,7 +3761,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-035-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Porte de Brandebourg",
@@ -3786,7 +3786,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-035-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Porte de Brandebourg ?",
     "choices": [
       "Berlin",
@@ -3809,7 +3809,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-035-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Porte de Brandebourg ?",
     "choices": [
       "Allemagne",
@@ -3854,7 +3854,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-035-image-choice",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Porte de Brandebourg.",
     "choices": [
       "Cathedrale Saint-Basile",
@@ -3889,7 +3889,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-036-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Atomium",
@@ -3914,7 +3914,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-036-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Atomium ?",
     "choices": [
       "Bruxelles",
@@ -3937,7 +3937,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-036-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Atomium ?",
     "choices": [
       "Belgique",
@@ -3982,7 +3982,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-037-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Parlement de Budapest",
@@ -4007,7 +4007,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-037-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Parlement de Budapest ?",
     "choices": [
       "Budapest",
@@ -4030,7 +4030,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-037-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Parlement de Budapest ?",
     "choices": [
       "Hongrie",
@@ -4075,7 +4075,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-037-image-choice",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Selectionne l image de Parlement de Budapest.",
     "choices": [
       "Parlement de Budapest",
@@ -4110,7 +4110,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-038-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Sainte-Sophie de Kiev",
@@ -4135,7 +4135,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-038-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Sainte-Sophie de Kiev ?",
     "choices": [
       "Kiev",
@@ -4158,7 +4158,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-038-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Sainte-Sophie de Kiev ?",
     "choices": [
       "Ukraine",
@@ -4181,7 +4181,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-038-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Sainte-Sophie de Kiev ?",
     "choices": [
       "byzantin ukrainien",
@@ -4203,7 +4203,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-039-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Sagrada Familia",
@@ -4228,7 +4228,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-039-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Sagrada Familia ?",
     "choices": [
       "Barcelone",
@@ -4251,7 +4251,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-039-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Sagrada Familia ?",
     "choices": [
       "Espagne",
@@ -4296,7 +4296,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-039-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Sagrada Familia.",
     "choices": [
       "Parlement de Budapest",
@@ -4331,7 +4331,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-040-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Fallingwater",
@@ -4356,7 +4356,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-040-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Fallingwater ?",
     "choices": [
       "Pennsylvanie",
@@ -4379,7 +4379,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-040-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Fallingwater ?",
     "choices": [
       "Etats-Unis",
@@ -4402,7 +4402,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-040-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Fallingwater ?",
     "choices": [
       "organique",
@@ -4424,7 +4424,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-041-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Villa Rotonda",
@@ -4449,7 +4449,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-041-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Villa Rotonda ?",
     "choices": [
       "Vicence",
@@ -4472,7 +4472,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-041-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Villa Rotonda ?",
     "choices": [
       "Italie",
@@ -4495,7 +4495,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-041-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Villa Rotonda ?",
     "choices": [
       "Renaissance",
@@ -4517,7 +4517,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-041-image-choice",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Selectionne l image de Villa Rotonda.",
     "choices": [
       "Villa Rotonda",
@@ -4623,7 +4623,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-042-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Bauhaus Dessau ?",
     "choices": [
       "Bauhaus",
@@ -4773,7 +4773,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-044-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Bibliotheque Sainte-Genevieve",
@@ -4798,7 +4798,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-044-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Bibliotheque Sainte-Genevieve ?",
     "choices": [
       "Paris",
@@ -4821,7 +4821,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-044-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Bibliotheque Sainte-Genevieve ?",
     "choices": [
       "France",
@@ -4844,7 +4844,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-044-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Bibliotheque Sainte-Genevieve ?",
     "choices": [
       "eclectique",
@@ -4866,7 +4866,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-045-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Musee d Orsay",
@@ -4891,7 +4891,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-045-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Musee d Orsay ?",
     "choices": [
       "Paris",
@@ -4914,7 +4914,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-045-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Dans quel pays se trouve Musee d Orsay ?",
     "choices": [
       "France",
@@ -4959,7 +4959,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-045-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Selectionne l image de Musee d Orsay.",
     "choices": [
       "Musee d Orsay",
@@ -4994,7 +4994,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-046-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Louvre Abu Dhabi",
@@ -5019,7 +5019,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-046-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Louvre Abu Dhabi ?",
     "choices": [
       "Abu Dhabi",
@@ -5042,7 +5042,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-046-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Louvre Abu Dhabi ?",
     "choices": [
       "Emirats arabes unis",
@@ -5065,7 +5065,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-046-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Louvre Abu Dhabi ?",
     "choices": [
       "contemporain",
@@ -5286,7 +5286,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-048-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Gardens by the Bay ?",
     "choices": [
       "paysage contemporain",
@@ -5436,7 +5436,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-050-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Biosphere de Montreal",
@@ -5461,7 +5461,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-050-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Biosphere de Montreal ?",
     "choices": [
       "Montreal",
@@ -5484,7 +5484,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-050-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Biosphere de Montreal ?",
     "choices": [
       "Canada",
@@ -5507,7 +5507,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-050-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Biosphere de Montreal ?",
     "choices": [
       "geodesique",
@@ -5529,7 +5529,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-051-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Lotus Temple",
@@ -5554,7 +5554,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-051-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Lotus Temple ?",
     "choices": [
       "New Delhi",
@@ -5577,7 +5577,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-051-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Lotus Temple ?",
     "choices": [
       "Inde",
@@ -5622,7 +5622,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-051-image-choice",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Selectionne l image de Lotus Temple.",
     "choices": [
       "Tour CN",
@@ -5657,7 +5657,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-052-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Temple d Or",
@@ -5682,7 +5682,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-052-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Temple d Or ?",
     "choices": [
       "Amritsar",
@@ -5705,7 +5705,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-052-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Temple d Or ?",
     "choices": [
       "Inde",
@@ -5750,7 +5750,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-053-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Borobudur",
@@ -5775,7 +5775,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-053-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Borobudur ?",
     "choices": [
       "Java central",
@@ -5798,7 +5798,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-053-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Borobudur ?",
     "choices": [
       "Indonesie",
@@ -5821,7 +5821,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-053-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Borobudur ?",
     "choices": [
       "bouddhique",
@@ -5843,7 +5843,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-053-image-choice",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Selectionne l image de Borobudur.",
     "choices": [
       "Borobudur",
@@ -5878,7 +5878,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-054-identify",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Kinkaku-ji",
@@ -5903,7 +5903,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-054-city",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Kinkaku-ji ?",
     "choices": [
       "Kyoto",
@@ -5926,7 +5926,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-054-country",
     "topicId": "architecture",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Kinkaku-ji ?",
     "choices": [
       "Japon",
@@ -5971,7 +5971,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-055-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Chateau de Himeji",
@@ -5996,7 +5996,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-055-city",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Chateau de Himeji ?",
     "choices": [
       "Himeji",
@@ -6019,7 +6019,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-055-country",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Dans quel pays se trouve Chateau de Himeji ?",
     "choices": [
       "Japon",
@@ -6064,7 +6064,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-055-image-choice",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Selectionne l image de Chateau de Himeji.",
     "choices": [
       "Borobudur",
@@ -6099,7 +6099,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-056-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Gyeongbokgung",
@@ -6124,7 +6124,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-056-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Gyeongbokgung ?",
     "choices": [
       "Seoul",
@@ -6147,7 +6147,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-056-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Gyeongbokgung ?",
     "choices": [
       "Coree du Sud",
@@ -6170,7 +6170,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-056-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Gyeongbokgung ?",
     "choices": [
       "coreen",
@@ -6263,7 +6263,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-057-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Palais Potala ?",
     "choices": [
       "tibetain",
@@ -6413,7 +6413,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-059-identify",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel monument ou batiment est visible sur cette photo ?",
     "choices": [
       "Temple du Ciel",
@@ -6438,7 +6438,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-059-city",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Temple du Ciel ?",
     "choices": [
       "Pekin",
@@ -6461,7 +6461,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-059-country",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Dans quel pays se trouve Temple du Ciel ?",
     "choices": [
       "Chine",
@@ -6484,7 +6484,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-059-style",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel repere stylistique associer a Temple du Ciel ?",
     "choices": [
       "chinois",
@@ -6506,7 +6506,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-059-image-choice",
     "topicId": "architecture",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Selectionne l image de Temple du Ciel.",
     "choices": [
       "Palais Potala",

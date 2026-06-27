@@ -129,6 +129,25 @@ function rotate(values, answer) {
   return [answer, ...pool];
 }
 
+const easyLandmarks = new Set([
+  'Taj Mahal', 'Petra', 'Machu Picchu', 'Christ Redempteur', 'Opera de Sydney', 'Burj Khalifa', 'Empire State Building',
+  'Golden Gate Bridge', 'Tower Bridge', 'Big Ben', 'Stonehenge', 'Mont-Saint-Michel', 'Chateau de Chambord', 'Arc de triomphe',
+  'Musee du Louvre', 'Palais de Versailles', 'Tour de Pise', 'Pantheon de Rome', 'Acropole d Athenes', 'Cathedrale Saint-Basile',
+  'Porte de Brandebourg', 'Atomium', 'Sagrada Familia', 'Centre Pompidou', 'Musee d Orsay', 'Tour CN', 'Grande Muraille de Chine',
+]);
+
+const hardLandmarks = new Set([
+  'Maison dansante', 'Sainte-Sophie de Kiev', 'Fallingwater', 'Villa Rotonda', 'Bauhaus Dessau',
+  'Bibliotheque Sainte-Genevieve', 'Louvre Abu Dhabi', 'Gardens by the Bay', 'Biosphere de Montreal', 'Borobudur',
+  'Gyeongbokgung', 'Palais Potala', 'Temple du Ciel',
+]);
+
+function landmarkDifficulty(name) {
+  if (easyLandmarks.has(name)) return 1;
+  if (hardLandmarks.has(name)) return 3;
+  return 2;
+}
+
 function imageChoiceGroup(items, index) {
   const start = Math.floor(index / 4) * 4;
   const group = items.slice(start, start + 4);
@@ -168,7 +187,7 @@ async function main() {
   const questions = [];
   enriched.forEach((item, index) => {
     const id = `landmark-${String(index + 1).padStart(3, '0')}`;
-    const difficulty = 1 + (index % 3);
+    const difficulty = landmarkDifficulty(item.name);
     questions.push(q(`${id}-identify`, difficulty, 'Quel monument ou batiment est visible sur cette photo ?', rotate(names, item.name), 0, `${item.name} se reconnait notamment par ${item.clue}.`, ['architecture', 'image', 'monument', 'banque-visuelle-monuments', 'subtheme:architecture:buildings'], item.sourceUrl, { imageAsset: item.asset, imageAlt: `Photo de ${item.name}` }));
     questions.push(q(`${id}-city`, difficulty, `Dans quelle ville ou zone se trouve ${item.name} ?`, rotate(cities, item.city), 0, `${item.name} est rattache ici a ${item.city}.`, ['architecture', 'geographie', 'ville', 'banque-visuelle-monuments', 'subtheme:architecture:buildings'], item.sourceUrl));
     questions.push(q(`${id}-country`, difficulty, `Dans quel pays se trouve ${item.name} ?`, rotate(countries, item.country), 0, `${item.name} se trouve en ${item.country}.`, ['architecture', 'geographie', 'pays', 'banque-visuelle-monuments', 'subtheme:architecture:buildings'], item.sourceUrl));

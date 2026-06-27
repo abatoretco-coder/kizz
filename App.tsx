@@ -990,6 +990,7 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
   const mapGrade = gradeMapPoint(question, mapGuess);
   const allFieldsFilled = (question.answerFields ?? []).every((field) => fieldValues[field.id]?.trim());
   const hasQuestionMedia = !!imageSource || !!question.choiceImageAssets?.length;
+  const visualChoiceOnly = !!question.choiceImageAssets?.length;
   useEffect(() => {
     for (const item of [question, questions[index + 1]]) {
       if (!item) continue;
@@ -1015,11 +1016,12 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
             const wrong = answered && choiceIndex === selected && !correct;
             const choiceImageAsset = question.choiceImageAssets?.[choiceIndex];
             const choiceImageSource = choiceImageAsset ? QUESTION_IMAGES[choiceImageAsset] : undefined;
+            const visibleChoiceLabel = visualChoiceOnly ? `Image ${String.fromCharCode(65 + choiceIndex)}` : choice;
             return (
-              <Pressable key={choice} testID={`choice-${choiceIndex}`} accessibilityRole="button" accessibilityLabel={`Réponse ${String.fromCharCode(65 + choiceIndex)} : ${choice}`} accessibilityHint={choiceImageSource ? "Appui long pour agrandir l'image" : undefined} onLongPress={choiceImageSource ? () => setZoomMedia({ source: choiceImageSource, alt: question.choiceImageAlts?.[choiceIndex] ?? choice, title: choice }) : undefined} onPress={() => onSelect(choiceIndex)} style={({ pressed }) => [styles.choice, choiceImageSource ? styles.choiceWithImage : undefined, correct ? styles.choiceCorrect : undefined, wrong ? styles.choiceWrong : undefined, pressed && !answered ? styles.pressed : undefined]}>
+              <Pressable key={choice} testID={`choice-${choiceIndex}`} accessibilityRole="button" accessibilityLabel={`Reponse ${String.fromCharCode(65 + choiceIndex)} : ${visibleChoiceLabel}`} accessibilityHint={choiceImageSource ? "Appui long pour agrandir l'image" : undefined} onLongPress={choiceImageSource ? () => setZoomMedia({ source: choiceImageSource, alt: question.choiceImageAlts?.[choiceIndex] ?? visibleChoiceLabel, title: answered ? choice : visibleChoiceLabel }) : undefined} onPress={() => onSelect(choiceIndex)} style={({ pressed }) => [styles.choice, choiceImageSource ? styles.choiceWithImage : undefined, correct ? styles.choiceCorrect : undefined, wrong ? styles.choiceWrong : undefined, pressed && !answered ? styles.pressed : undefined]}>
                 <View style={[styles.choiceLetter, correct && styles.choiceLetterCorrect, wrong && styles.choiceLetterWrong]}><Text style={[styles.choiceLetterText, (correct || wrong) && styles.choiceLetterActive]}>{String.fromCharCode(65 + choiceIndex)}</Text></View>
-                {choiceImageSource && <Image source={choiceImageSource} style={styles.choiceImage} resizeMode="cover" accessibilityLabel={question.choiceImageAlts?.[choiceIndex] ?? choice} />}
-                <Text style={styles.choiceText}>{choice}</Text><Text style={styles.choiceMark}>{correct ? '✓' : wrong ? '×' : ''}</Text>
+                {choiceImageSource && <Image source={choiceImageSource} style={styles.choiceImage} resizeMode="cover" accessibilityLabel={visibleChoiceLabel} />}
+                <Text style={styles.choiceText}>{answered ? choice : visibleChoiceLabel}</Text><Text style={styles.choiceMark}>{correct ? '✓' : wrong ? '×' : ''}</Text>
               </Pressable>
             );
           })}

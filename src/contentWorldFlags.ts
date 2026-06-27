@@ -1000,12 +1000,37 @@ function choicesFrom<T>(rows: T[], index: number, selector: (row: T) => string):
   return choices as [string, string, string, string];
 }
 
-const difficulty = (index: number) => ((index % 3) + 1) as 1 | 2 | 3;
+const easyFlagCountries = new Set([
+  'Afrique du Sud', 'Allemagne', 'Argentine', 'Australie', 'Autriche', 'Belgique', 'Bresil', 'Canada', 'Chine',
+  'Coree du Sud', 'Danemark', 'Espagne', 'Etats-Unis', 'Finlande', 'France', 'Grece', 'Inde', 'Irlande', 'Italie',
+  'Japon', 'Maroc', 'Mexique', 'Norvege', 'Pays-Bas', 'Pologne', 'Portugal', 'Royaume-Uni', 'Russie', 'Suede',
+  'Suisse', 'Turquie',
+]);
+
+const mediumFlagCountries = new Set([
+  'Albanie', 'Algerie', 'Arabie saoudite', 'Armenie', 'Bahrein', 'Bangladesh', 'Benin', 'Bielorussie', 'Bolivie',
+  'Bosnie-Herzegovine', 'Bulgarie', 'Cameroun', 'Chili', 'Colombie', 'Cote d\'Ivoire', 'Croatie', 'Cuba',
+  'Egypte', 'Emirats arabes unis', 'Estonie', 'Ghana', 'Hongrie', 'Indonesie', 'Iran', 'Islande', 'Israel',
+  'Jordanie', 'Kazakhstan', 'Kenya', 'Liban', 'Lituanie', 'Luxembourg', 'Malaisie', 'Malte', 'Nigeria',
+  'Nouvelle-Zelande', 'Pakistan', 'Perou', 'Philippines', 'Republique tcheque', 'Roumanie', 'Senegal', 'Serbie',
+  'Singapour', 'Slovaquie', 'Slovenie', 'Thailande', 'Tunisie', 'Ukraine', 'Uruguay', 'Vietnam',
+]);
+
+function normalizeCountry(country: string) {
+  return country.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[?]/g, "'").replace(/Ã©/g, 'e').replace(/Ã´/g, 'o');
+}
+
+function flagDifficulty(country: string): 1 | 2 | 3 {
+  const normalized = normalizeCountry(country);
+  if (easyFlagCountries.has(normalized)) return 1;
+  if (mediumFlagCountries.has(normalized)) return 2;
+  return 3;
+}
 
 const flagToCountryTextQuestions: QuestionSeed[] = flagCountries.map((row, index) => ({
   id: `world-flag-text-${slug(row.country)}`,
   topicId: 'geography',
-  difficulty: difficulty(index),
+  difficulty: flagDifficulty(row.country),
   type: 'free-text',
   prompt: `Quel pays correspond a ce drapeau ? ${row.flag}`,
   acceptedAnswers: acceptedCountryNames(row.country),
@@ -1018,7 +1043,7 @@ const flagToCountryTextQuestions: QuestionSeed[] = flagCountries.map((row, index
 const flagToCountryChoiceQuestions: QuestionSeed[] = flagCountries.map((row, index) => ({
   id: `world-flag-choice-${slug(row.country)}`,
   topicId: 'geography',
-  difficulty: difficulty(index + 1),
+  difficulty: flagDifficulty(row.country),
   prompt: `A quel pays appartient ce drapeau ? ${row.flag}`,
   choices: choicesFrom(flagCountries, index, (item) => item.country),
   answerIndex: 0,
@@ -1031,7 +1056,7 @@ const flagToCountryChoiceQuestions: QuestionSeed[] = flagCountries.map((row, ind
 const countryToFlagChoiceQuestions: QuestionSeed[] = flagCountries.map((row, index) => ({
   id: `world-country-flag-${slug(row.country)}`,
   topicId: 'geography',
-  difficulty: difficulty(index + 2),
+  difficulty: flagDifficulty(row.country),
   prompt: `Selectionne le drapeau de ${row.country}.`,
   choices: choicesFrom(flagCountries, index, (item) => item.flag),
   answerIndex: 0,

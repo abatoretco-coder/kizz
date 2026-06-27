@@ -7,7 +7,7 @@
 - Donnees editoriales chargees depuis `src/content.ts` et modules satellites.
 - SQLite local via `src/database.ts`.
 - Moteurs testes dans `src/quizEngine.ts`, `src/sessionDraft.ts` et `src/quizPack.ts`.
-- Tests actuels: 36 tests unitaires/integrite.
+- Tests actuels: 39 tests unitaires/integrite.
 - Audit automatique de contenu: `npm run audit:content`.
 
 ## Forces
