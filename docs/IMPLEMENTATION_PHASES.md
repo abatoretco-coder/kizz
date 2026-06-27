@@ -1,6 +1,6 @@
 # Phases d'implementation Kizz
 
-Ce document sert de guide de travail pour les prochains lots. Il part de l'etat local actuel: Expo SDK 56, APK Android autonome, SQLite local, 13 themes, 2272 questions, 72+ questions carte, drapeaux du monde, sous-themes couverts par test, mode Endurance, mode Infini calme, import/export JSON, admin local, signalement local et parcours Langues.
+Ce document sert de guide de travail pour les prochains lots. Il part de l'etat local actuel: Expo SDK 56, APK Android autonome, SQLite local, 13 themes, 2448 questions, 72+ questions carte, drapeaux du monde, chimie/tableau periodique niveau ingenieur, sous-themes couverts par test, mode Endurance, mode Infini calme, import/export JSON, admin local, signalement local et parcours Langues.
 
 ## Phase 1 - Stabilisation mobile et carte
 

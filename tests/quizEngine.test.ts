@@ -183,6 +183,14 @@ test('la banque Arts/Histoire generee reste presente', () => {
   assert.ok(questions.filter((question) => question.imageAsset?.startsWith('generated/') && !question.imageAsset.startsWith('generated/art-')).length >= 45);
 });
 
+test('la banque sciences couvre la chimie niveau ingenieur', () => {
+  const chemistry = questions.filter((question) => question.topicId === 'science' && question.tags.includes('tableau-periodique'));
+  assert.ok(chemistry.length >= 170);
+  assert.ok(chemistry.filter((question) => question.tags.includes('numero-atomique')).length >= 30);
+  assert.ok(chemistry.filter((question) => question.tags.includes('formule')).length >= 12);
+  assert.ok(chemistry.filter((question) => question.tags.includes('raisonnement')).length >= 20);
+});
+
 test('l’audit automatique de banque ne remonte aucune erreur', () => {
   const report = auditContent(topics, questions);
   assert.deepEqual(report.issues.filter((issue) => issue.severity === 'error'), []);

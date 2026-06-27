@@ -6,7 +6,7 @@ L'interface utilise un thème sombre sobre et ouvre directement les quiz depuis 
 
 ## Fonctionnalités actuelles
 
-- 13 themes et 2272 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, reconnaissance visuelle, personnages historiques, mini-cours langues, economie et 72 placements geographiques sur carte satellite offline avec frontieres embarquees;
+- 13 themes et 2448 questions, dont jeux TV originaux, astronomie, chimie/tableau periodique niveau ingenieur, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, reconnaissance visuelle, personnages historiques, mini-cours langues, economie et 72 placements geographiques sur carte satellite offline avec frontieres embarquees;
 - accueil en trois panneaux: dashboard, quiz culture, parcours langues, avec rail pleine largeur synchronise au geste et aux onglets tactiles;
 - theme dedie Carte France: 51 questions, dont 30 placements tactiles et 9 numeros de departements en texte libre;
 - difficulté, tags, explication et provenance par question;
@@ -27,7 +27,7 @@ L'interface utilise un thème sombre sobre et ouvre directement les quiz depuis 
 - parcours Langues enrichi: mini-cours espagnol/allemand/italien, conjugaisons en texte libre et rituel "10 mots du jour";
 - progression Langues separee par langue et niveau CECRL;
 - audit automatique de banque avec `npm run audit:content`;
-- trente-deux tests automatises du moteur, des brouillons, des banques, des assets visuels, de l'encodage et de l'integrite editoriale;
+- trente-trois tests automatises du moteur, des brouillons, des banques, des assets visuels, de l'encodage et de l'integrite editoriale;
 - configuration Expo pour produire un APK Android autonome.
 
 ## Démarrer
