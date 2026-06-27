@@ -974,12 +974,12 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { que
         javaScriptEnabled
         domStorageEnabled
         onMessage={handleMapMessage}
-        scrollEnabled
-        nestedScrollEnabled
+        scrollEnabled={false}
+        nestedScrollEnabled={false}
         overScrollMode="never"
         style={styles.satelliteMap}
       />
-      <Text style={styles.mapHint}>{disabled ? 'Carte embarquee - point vert: ta reponse - cible rouge' : 'Carte embarquee: zoome avec +/-, glisse pour naviguer, touche pour placer ton point'}</Text>
+      <Text style={styles.mapHint}>{disabled ? 'Point vert: ta réponse - cible rouge' : 'Pince pour zoomer, glisse pour naviguer, touche pour placer ton point'}</Text>
     </View>
   );
 }
@@ -987,37 +987,32 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { que
 function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target: (GeoPoint & { toleranceKm?: number }) | undefined, disabled: boolean) {
   const isFranceMap = question.topicId === 'france-map' || question.tags.includes('carte-france') || question.tags.includes('carte-france-dediee');
   const bounds = isFranceMap
-    ? { minLon: -6.2, maxLon: 10.2, minLat: 41.0, maxLat: 51.4, width: 1000, height: 780 }
-    : { minLon: -180, maxLon: 180, minLat: -60, maxLat: 85, width: 1200, height: 640 };
+    ? { minLon: -5.8, maxLon: 10.0, minLat: 41.1, maxLat: 51.3 }
+    : { minLon: -180, maxLon: 180, minLat: -58, maxLat: 83 };
   const boundaryGeoJson = isFranceMap ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson;
-  const title = isFranceMap ? 'Carte France - departements' : 'Carte monde - frontieres pays';
+  const title = isFranceMap ? 'France' : 'Monde';
   return `<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=no" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <style>
-    html, body, #map { height: 100%; width: 100%; margin: 0; background: #0F1D23; overflow: hidden; touch-action: none; }
+    html, body, #map { height: 100%; width: 100%; margin: 0; background: #0B1519; overflow: hidden; overscroll-behavior: none; touch-action: none; user-select: none; }
     #map { position: relative; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
-    svg { width: 100%; height: 100%; display: block; background: #102128; touch-action: none; }
-    .badge { position: absolute; z-index: 4; top: 10px; left: 10px; padding: 6px 9px; border-radius: 999px; background: rgba(7,17,12,0.84); color: #dce6e1; font: 800 11px system-ui; pointer-events: none; }
-    .controls { position: absolute; z-index: 4; right: 10px; top: 10px; display: grid; gap: 8px; }
-    .controls button { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; background: rgba(10,14,13,0.9); color: #f3f7f5; font: 900 20px system-ui; }
-    .land { fill: rgba(42, 72, 60, 0.34); stroke: rgba(233, 241, 237, 0.72); stroke-width: ${isFranceMap ? '1.15' : '0.72'}; vector-effect: non-scaling-stroke; }
-    .graticule { stroke: rgba(255,255,255,0.08); stroke-width: 1; vector-effect: non-scaling-stroke; }
-    .target-zone { fill: rgba(228,125,112,0.16); stroke: #E47D70; stroke-width: 2; vector-effect: non-scaling-stroke; }
-    .marker-ring { stroke: #07110C; stroke-width: 3; vector-effect: non-scaling-stroke; }
-    .label { fill: #dce6e1; font: 700 12px system-ui; paint-order: stroke; stroke: rgba(7,17,12,0.9); stroke-width: 4; stroke-linejoin: round; }
+    canvas { width: 100%; height: 100%; display: block; background: #0F2028; touch-action: none; }
+    .badge { position: absolute; z-index: 4; top: 10px; left: 10px; padding: 7px 10px; border-radius: 999px; background: rgba(7,17,12,0.78); color: #dce6e1; font: 900 11px system-ui; pointer-events: none; backdrop-filter: blur(6px); }
+    .controls { position: absolute; z-index: 4; right: 10px; top: 10px; display: grid; overflow: hidden; border-radius: 14px; border: 1px solid rgba(255,255,255,0.18); background: rgba(10,14,13,0.86); }
+    .controls button { width: 42px; height: 42px; border: 0; border-bottom: 1px solid rgba(255,255,255,0.14); background: transparent; color: #f3f7f5; font: 900 22px system-ui; }
+    .controls button:last-child { border-bottom: 0; }
+    .scale { position: absolute; z-index: 4; left: 12px; bottom: 12px; width: 74px; height: 3px; border-radius: 999px; background: rgba(220,230,225,0.8); box-shadow: 0 0 0 1px rgba(7,17,12,0.7); pointer-events: none; }
   </style>
 </head>
 <body>
   <div id="map">
     <div class="badge">${title}</div>
     <div class="controls"><button id="zoom-in" type="button">+</button><button id="zoom-out" type="button">-</button></div>
-    <svg id="svg" viewBox="0 0 ${bounds.width} ${bounds.height}" preserveAspectRatio="xMidYMid meet" aria-label="${title}">
-      <rect x="0" y="0" width="${bounds.width}" height="${bounds.height}" fill="#102128" />
-      <g id="viewport"><g id="grid"></g><g id="boundaries"></g><g id="answers"></g></g>
-    </svg>
+    <canvas id="canvas" aria-label="${title}"></canvas>
+    <div class="scale"></div>
   </div>
   <script>
     (function () {
@@ -1026,132 +1021,271 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
       var guess = ${JSON.stringify(guess)};
       var target = ${JSON.stringify(target ?? null)};
       var disabled = ${disabled ? 'true' : 'false'};
-      var baseWidth = bounds.width;
-      var baseHeight = bounds.height;
-      var svg = document.getElementById('svg');
-      var viewport = document.getElementById('viewport');
-      var grid = document.getElementById('grid');
-      var boundaries = document.getElementById('boundaries');
-      var answers = document.getElementById('answers');
-      var scale = 1;
-      var tx = 0;
-      var ty = 0;
-      var pointer = null;
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d', { alpha: false });
+      var dpr = Math.max(1, Math.min(3, window.devicePixelRatio || 1));
+      var width = 0;
+      var height = 0;
+      var projectedBounds = null;
+      var baseScale = 1;
+      var zoom = 1;
+      var minZoom = 0.95;
+      var maxZoom = ${isFranceMap ? '36' : '48'};
+      var center = null;
+      var pointers = {};
+      var pointerCount = 0;
+      var dragStart = null;
+      var pinchStart = null;
       var moved = false;
+      var lastTap = 0;
+      var velocity = { x: 0, y: 0 };
+      var lastMove = null;
+      var inertiaFrame = 0;
       var pendingGuess = null;
+      var rings = [];
 
       function project(lon, lat) {
-        return { x: ((lon - bounds.minLon) / (bounds.maxLon - bounds.minLon)) * baseWidth, y: ((bounds.maxLat - lat) / (bounds.maxLat - bounds.minLat)) * baseHeight };
+        var sin = Math.sin(Math.max(-85.05112878, Math.min(85.05112878, lat)) * Math.PI / 180);
+        return { x: (lon + 180) / 360, y: 0.5 - Math.log((1 + sin) / (1 - sin)) / (4 * Math.PI) };
       }
       function unproject(x, y) {
-        return { lon: bounds.minLon + (x / baseWidth) * (bounds.maxLon - bounds.minLon), lat: bounds.maxLat - (y / baseHeight) * (bounds.maxLat - bounds.minLat) };
+        var lon = x * 360 - 180;
+        var lat = Math.atan(Math.sinh(Math.PI * (1 - 2 * y))) * 180 / Math.PI;
+        return { lon: lon, lat: lat };
       }
-      function screenToMap(event) {
-        var rect = svg.getBoundingClientRect();
-        var x = ((event.clientX - rect.left) / rect.width) * baseWidth;
-        var y = ((event.clientY - rect.top) / rect.height) * baseHeight;
-        return { x: (x - tx) / scale, y: (y - ty) / scale };
+      function screenToWorld(x, y) {
+        return { x: center.x + (x - width / 2) / (baseScale * zoom), y: center.y + (y - height / 2) / (baseScale * zoom) };
       }
-      function applyTransform() { viewport.setAttribute('transform', 'translate(' + tx + ' ' + ty + ') scale(' + scale + ')'); }
-      function setScale(nextScale) {
-        var cx = baseWidth / 2;
-        var cy = baseHeight / 2;
-        var old = scale;
-        scale = Math.max(1, Math.min(12, nextScale));
-        tx = cx - ((cx - tx) / old) * scale;
-        ty = cy - ((cy - ty) / old) * scale;
-        applyTransform();
+      function worldToScreen(point) {
+        return { x: (point.x - center.x) * baseScale * zoom + width / 2, y: (point.y - center.y) * baseScale * zoom + height / 2 };
       }
-      function svgNode(name, attributes) {
-        var node = document.createElementNS('http://www.w3.org/2000/svg', name);
-        Object.keys(attributes).forEach(function (key) { node.setAttribute(key, String(attributes[key])); });
-        return node;
+      function clampCamera() {
+        if (!projectedBounds || !center) return;
+        var padX = width / (baseScale * zoom) * 0.46;
+        var padY = height / (baseScale * zoom) * 0.46;
+        center.x = Math.max(projectedBounds.minX - padX, Math.min(projectedBounds.maxX + padX, center.x));
+        center.y = Math.max(projectedBounds.minY - padY, Math.min(projectedBounds.maxY + padY, center.y));
       }
-      function pathForRing(ring) {
-        var output = '';
-        for (var index = 0; index < ring.length; index += 1) {
-          var point = project(ring[index][0], ring[index][1]);
-          output += (index === 0 ? 'M' : 'L') + point.x.toFixed(2) + ' ' + point.y.toFixed(2);
-        }
-        return output + 'Z';
+      function zoomAround(nextZoom, sx, sy) {
+        var before = screenToWorld(sx, sy);
+        zoom = Math.max(minZoom, Math.min(maxZoom, nextZoom));
+        var after = screenToWorld(sx, sy);
+        center.x += before.x - after.x;
+        center.y += before.y - after.y;
+        clampCamera();
+        draw();
       }
-      function pathForGeometry(geometry) {
-        if (!geometry) return '';
-        if (geometry.type === 'Polygon') return geometry.coordinates.map(pathForRing).join(' ');
-        if (geometry.type === 'MultiPolygon') return geometry.coordinates.map(function (polygon) { return polygon.map(pathForRing).join(' '); }).join(' ');
-        return '';
+      function eachGeometryRing(geometry, callback) {
+        if (!geometry) return;
+        if (geometry.type === 'Polygon') geometry.coordinates.forEach(callback);
+        if (geometry.type === 'MultiPolygon') geometry.coordinates.forEach(function (polygon) { polygon.forEach(callback); });
+      }
+      function prepareRings() {
+        var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+        boundaryGeoJson.features.forEach(function (feature) {
+          eachGeometryRing(feature.geometry, function (ring) {
+            var projected = ring.map(function (coord) {
+              var point = project(coord[0], coord[1]);
+              minX = Math.min(minX, point.x); minY = Math.min(minY, point.y);
+              maxX = Math.max(maxX, point.x); maxY = Math.max(maxY, point.y);
+              return point;
+            });
+            if (projected.length > 1) rings.push(projected);
+          });
+        });
+        var sw = project(bounds.minLon, bounds.minLat);
+        var ne = project(bounds.maxLon, bounds.maxLat);
+        projectedBounds = { minX: Math.min(sw.x, ne.x, minX), maxX: Math.max(sw.x, ne.x, maxX), minY: Math.min(sw.y, ne.y, minY), maxY: Math.max(sw.y, ne.y, maxY) };
+        center = { x: (projectedBounds.minX + projectedBounds.maxX) / 2, y: (projectedBounds.minY + projectedBounds.maxY) / 2 };
+      }
+      function resize() {
+        var rect = canvas.getBoundingClientRect();
+        width = Math.max(1, rect.width);
+        height = Math.max(1, rect.height);
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        baseScale = Math.min(width / (projectedBounds.maxX - projectedBounds.minX), height / (projectedBounds.maxY - projectedBounds.minY)) * ${isFranceMap ? '0.92' : '0.96'};
+        clampCamera();
+        draw();
       }
       function drawGrid() {
         var lonStep = ${isFranceMap ? '2' : '30'};
         var latStep = ${isFranceMap ? '2' : '20'};
+        ctx.strokeStyle = 'rgba(255,255,255,0.055)';
+        ctx.lineWidth = 1;
         for (var lon = Math.ceil(bounds.minLon / lonStep) * lonStep; lon <= bounds.maxLon; lon += lonStep) {
-          var a = project(lon, bounds.minLat);
-          var b = project(lon, bounds.maxLat);
-          grid.appendChild(svgNode('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, class: 'graticule' }));
+          var a = worldToScreen(project(lon, bounds.minLat));
+          var b = worldToScreen(project(lon, bounds.maxLat));
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
         }
         for (var lat = Math.ceil(bounds.minLat / latStep) * latStep; lat <= bounds.maxLat; lat += latStep) {
-          var c = project(bounds.minLon, lat);
-          var d = project(bounds.maxLon, lat);
-          grid.appendChild(svgNode('line', { x1: c.x, y1: c.y, x2: d.x, y2: d.y, class: 'graticule' }));
+          var c = worldToScreen(project(bounds.minLon, lat));
+          var d = worldToScreen(project(bounds.maxLon, lat));
+          ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(d.x, d.y); ctx.stroke();
         }
       }
       function drawBoundaries() {
-        boundaryGeoJson.features.forEach(function (feature) {
-          var path = pathForGeometry(feature.geometry);
-          if (path) boundaries.appendChild(svgNode('path', { d: path, class: 'land' }));
+        ctx.fillStyle = 'rgba(56, 91, 75, 0.45)';
+        ctx.strokeStyle = 'rgba(232, 241, 237, 0.82)';
+        ctx.lineWidth = Math.max(0.55, Math.min(${isFranceMap ? '1.2' : '0.9'}, 1.4 / Math.sqrt(zoom)));
+        rings.forEach(function (ring) {
+          ctx.beginPath();
+          ring.forEach(function (point, index) {
+            var s = worldToScreen(point);
+            if (index === 0) ctx.moveTo(s.x, s.y);
+            else ctx.lineTo(s.x, s.y);
+          });
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
         });
       }
       function drawMarker(point, color, label) {
-        var projected = project(point.lon, point.lat);
-        answers.appendChild(svgNode('circle', { cx: projected.x, cy: projected.y, r: 8, fill: color, class: 'marker-ring' }));
-        answers.appendChild(svgNode('text', { x: projected.x + 11, y: projected.y - 10, class: 'label' })).textContent = label;
+        var s = worldToScreen(project(point.lon, point.lat));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, 8, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#07110C';
+        ctx.stroke();
+        ctx.font = '700 12px system-ui';
+        ctx.lineJoin = 'round';
+        ctx.strokeStyle = 'rgba(7,17,12,0.9)';
+        ctx.lineWidth = 4;
+        ctx.strokeText(label, s.x + 12, s.y - 10);
+        ctx.fillStyle = '#DCE6E1';
+        ctx.fillText(label, s.x + 12, s.y - 10);
       }
       function drawAnswers() {
-        answers.innerHTML = '';
-        if (pendingGuess) drawMarker(pendingGuess, '#68D7A2', 'Ta reponse');
-        else if (guess) drawMarker(guess, '#68D7A2', 'Ta reponse');
-        if (target) {
-          if (target.toleranceKm) {
-            var projected = project(target.lon, target.lat);
-            var lonRadius = target.toleranceKm / 111;
-            var radius = (lonRadius / (bounds.maxLon - bounds.minLon)) * baseWidth;
-            answers.appendChild(svgNode('circle', { cx: projected.x, cy: projected.y, r: Math.max(6, radius), class: 'target-zone' }));
-          }
-          drawMarker(target, '#E47D70', target.label || 'Cible');
+        var currentGuess = pendingGuess || guess;
+        if (target && target.toleranceKm) {
+          var p = worldToScreen(project(target.lon, target.lat));
+          var earthKm = 40075 * Math.cos(target.lat * Math.PI / 180);
+          var radius = (target.toleranceKm / Math.max(1, earthKm)) * baseScale * zoom;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, Math.max(8, radius), 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(228,125,112,0.16)';
+          ctx.fill();
+          ctx.strokeStyle = '#E47D70';
+          ctx.lineWidth = 2;
+          ctx.stroke();
         }
+        if (currentGuess) drawMarker(currentGuess, '#68D7A2', 'Ta réponse');
+        if (target) drawMarker(target, '#E47D70', target.label || 'Cible');
       }
-      document.getElementById('zoom-in').addEventListener('click', function () { setScale(scale * 1.45); });
-      document.getElementById('zoom-out').addEventListener('click', function () { setScale(scale / 1.45); });
-      svg.addEventListener('pointerdown', function (event) {
-        pointer = { id: event.pointerId, x: event.clientX, y: event.clientY, tx: tx, ty: ty };
+      function draw() {
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, width, height);
+        var gradient = ctx.createLinearGradient(0, 0, 0, height);
+        gradient.addColorStop(0, '#112A34');
+        gradient.addColorStop(1, '#0B1519');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+        drawGrid();
+        drawBoundaries();
+        drawAnswers();
+      }
+      function pointerMidpoint() {
+        var keys = Object.keys(pointers);
+        var a = pointers[keys[0]];
+        var b = pointers[keys[1]];
+        return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2, distance: Math.hypot(a.x - b.x, a.y - b.y) };
+      }
+      function startInertia() {
+        cancelAnimationFrame(inertiaFrame);
+        function step() {
+          center.x -= velocity.x / (baseScale * zoom);
+          center.y -= velocity.y / (baseScale * zoom);
+          velocity.x *= 0.92;
+          velocity.y *= 0.92;
+          clampCamera();
+          draw();
+          if (Math.abs(velocity.x) + Math.abs(velocity.y) > 0.18) inertiaFrame = requestAnimationFrame(step);
+        }
+        inertiaFrame = requestAnimationFrame(step);
+      }
+      document.getElementById('zoom-in').addEventListener('click', function () { zoomAround(zoom * 1.8, width / 2, height / 2); });
+      document.getElementById('zoom-out').addEventListener('click', function () { zoomAround(zoom / 1.8, width / 2, height / 2); });
+      canvas.addEventListener('pointerdown', function (event) {
+        cancelAnimationFrame(inertiaFrame);
+        var rect = canvas.getBoundingClientRect();
+        pointers[event.pointerId] = { x: event.clientX - rect.left, y: event.clientY - rect.top };
+        pointerCount = Object.keys(pointers).length;
         moved = false;
-        svg.setPointerCapture(event.pointerId);
+        lastMove = { x: pointers[event.pointerId].x, y: pointers[event.pointerId].y, time: performance.now() };
+        if (pointerCount === 1) dragStart = { x: pointers[event.pointerId].x, y: pointers[event.pointerId].y, centerX: center.x, centerY: center.y };
+        if (pointerCount === 2) {
+          var mid = pointerMidpoint();
+          pinchStart = { distance: mid.distance, zoom: zoom, world: screenToWorld(mid.x, mid.y), x: mid.x, y: mid.y };
+        }
+        canvas.setPointerCapture(event.pointerId);
       });
-      svg.addEventListener('pointermove', function (event) {
-        if (!pointer || pointer.id !== event.pointerId) return;
-        var dx = event.clientX - pointer.x;
-        var dy = event.clientY - pointer.y;
-        if (Math.abs(dx) + Math.abs(dy) > 6) moved = true;
-        tx = pointer.tx + dx;
-        ty = pointer.ty + dy;
-        applyTransform();
+      canvas.addEventListener('pointermove', function (event) {
+        if (!pointers[event.pointerId]) return;
+        var rect = canvas.getBoundingClientRect();
+        var point = pointers[event.pointerId];
+        var nx = event.clientX - rect.left;
+        var ny = event.clientY - rect.top;
+        var now = performance.now();
+        if (Math.abs(nx - point.x) + Math.abs(ny - point.y) > 1) moved = true;
+        point.x = nx; point.y = ny;
+        pointerCount = Object.keys(pointers).length;
+        if (pointerCount === 2 && pinchStart) {
+          var mid = pointerMidpoint();
+          zoom = Math.max(minZoom, Math.min(maxZoom, pinchStart.zoom * (mid.distance / Math.max(1, pinchStart.distance))));
+          var after = screenToWorld(mid.x, mid.y);
+          center.x += pinchStart.world.x - after.x;
+          center.y += pinchStart.world.y - after.y;
+        } else if (pointerCount === 1 && dragStart) {
+          var dx = nx - dragStart.x;
+          var dy = ny - dragStart.y;
+          center.x = dragStart.centerX - dx / (baseScale * zoom);
+          center.y = dragStart.centerY - dy / (baseScale * zoom);
+          if (lastMove) {
+            var dt = Math.max(8, now - lastMove.time);
+            velocity.x = (nx - lastMove.x) / dt * 16;
+            velocity.y = (ny - lastMove.y) / dt * 16;
+          }
+          lastMove = { x: nx, y: ny, time: now };
+        }
+        clampCamera();
+        draw();
       });
-      svg.addEventListener('pointerup', function (event) {
-        if (!pointer || pointer.id !== event.pointerId) return;
-        svg.releasePointerCapture(event.pointerId);
-        if (!moved && !disabled) {
-          var mapPoint = screenToMap(event);
-          var geo = unproject(mapPoint.x, mapPoint.y);
+      function endPointer(event) {
+        if (!pointers[event.pointerId]) return;
+        var ended = pointers[event.pointerId];
+        delete pointers[event.pointerId];
+        pointerCount = Object.keys(pointers).length;
+        canvas.releasePointerCapture(event.pointerId);
+        var now = performance.now();
+        var isDoubleTap = !moved && now - lastTap < 280;
+        if (isDoubleTap) {
+          zoomAround(zoom * 2, ended.x, ended.y);
+        } else if (!moved && !disabled) {
+          var world = screenToWorld(ended.x, ended.y);
+          var geo = unproject(world.x, world.y);
           pendingGuess = { lat: geo.lat, lon: geo.lon };
-          drawAnswers();
+          draw();
           window.ReactNativeWebView.postMessage(JSON.stringify(pendingGuess));
         }
-        pointer = null;
-      });
-      drawGrid();
-      drawBoundaries();
-      drawAnswers();
-      applyTransform();
+        if (!moved) lastTap = now;
+        else if (pointerCount === 0 && Math.abs(velocity.x) + Math.abs(velocity.y) > 1.2) {
+          startInertia();
+        }
+        if (pointerCount === 0) { dragStart = null; pinchStart = null; }
+      }
+      canvas.addEventListener('pointerup', endPointer);
+      canvas.addEventListener('pointercancel', endPointer);
+      canvas.addEventListener('wheel', function (event) {
+        event.preventDefault();
+        var rect = canvas.getBoundingClientRect();
+        zoomAround(zoom * (event.deltaY < 0 ? 1.25 : 0.8), event.clientX - rect.left, event.clientY - rect.top);
+      }, { passive: false });
+      prepareRings();
+      resize();
+      window.addEventListener('resize', resize);
     })();
   </script>
 </body>
@@ -1217,7 +1351,7 @@ const styles = StyleSheet.create({
   languagePage: { padding: 22, paddingBottom: 60, backgroundColor: '#0A0E0D' }, languageChoices: { gap: 9, marginBottom: 20 }, languageChoice: { minHeight: 67, borderRadius: 17, borderWidth: 1, borderColor: '#293631', backgroundColor: '#121815', paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center' }, languageChoiceActive: { borderColor: '#5FB8C9', backgroundColor: '#12252B' }, languageChoiceName: { color: '#DCE6E1', fontSize: 15, fontWeight: '800' }, languageChoiceNative: { color: '#70827A', fontSize: 12, marginLeft: 'auto' }, cefrRow: { flexDirection: 'row', gap: 7 }, cefrButton: { flex: 1, height: 48, borderRadius: 14, borderWidth: 1, borderColor: '#2A3530', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center' }, cefrText: { color: '#A1ACA6', fontWeight: '900' }, levelHelp: { color: '#718079', fontSize: 11, lineHeight: 17, marginTop: 9, marginBottom: 14 }, skillList: { gap: 9, marginBottom: 18 }, skillCard: { minHeight: 72, borderRadius: 17, borderWidth: 1, borderColor: '#29332F', backgroundColor: '#121815', padding: 13, flexDirection: 'row', alignItems: 'center' }, skillCardActive: { borderColor: '#417B86', backgroundColor: '#102126' }, skillCheck: { width: 29, height: 29, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', alignItems: 'center', justifyContent: 'center', marginRight: 12 }, skillCheckActive: { backgroundColor: '#5FB8C9', borderColor: '#5FB8C9' }, skillTitle: { color: '#E4ECE8', fontSize: 13, fontWeight: '800' }, skillDetail: { color: '#718079', fontSize: 10, marginTop: 4 }, languageMethod: { borderRadius: 17, backgroundColor: '#121A17', borderWidth: 1, borderColor: '#29352F', padding: 15, marginBottom: 18 }, languageMethodTitle: { color: '#8EDCB6', fontSize: 13, fontWeight: '900' }, languageMethodText: { color: '#7E8C85', fontSize: 11, lineHeight: 18, marginTop: 6 },
   topicGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 }, topicCard: { width: '48%', minHeight: 176, padding: 16, borderRadius: 22, backgroundColor: '#121815', borderWidth: 1, borderColor: '#26312C' }, pressed: { opacity: 0.72, transform: [{ scale: 0.985 }] }, topicIcon: { width: 44, height: 44, borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginBottom: 15 }, topicIconText: { fontSize: 17, fontWeight: '900' }, topicTitle: { color: '#ECF2EF', fontWeight: '900', fontSize: 16 }, topicSubtitle: { color: '#84918A', fontSize: 11.5, lineHeight: 17, marginTop: 4 }, go: { fontSize: 12, fontWeight: '900', marginTop: 'auto' }, privacy: { textAlign: 'center', color: '#66736D', fontSize: 11, marginTop: 28 },
   quizPage: { flex: 1, backgroundColor: '#0A0E0D' }, quizHeader: { height: 64, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 22, gap: 13 }, close: { fontSize: 32, color: '#829089', lineHeight: 34 }, progressTrack: { flex: 1, height: 7, borderRadius: 8, backgroundColor: '#202925', overflow: 'hidden' }, progressFill: { height: '100%', borderRadius: 8 }, counter: { color: '#78857F', fontWeight: '700', fontSize: 12 }, favoriteStar: { color: '#64716A', fontSize: 24 }, favoriteStarActive: { color: '#E6B759' }, quizBody: { padding: 22, paddingBottom: 32 }, metaRow: { flexDirection: 'row', alignItems: 'center' }, pill: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20, fontSize: 12, fontWeight: '800' }, difficulty: { marginLeft: 'auto', color: '#59655F', letterSpacing: 2, fontSize: 11 }, infiniteQuizHint: { color: '#9B8CB2', fontSize: 11, fontWeight: '800', marginTop: 12 }, questionImageWrap: { height: 190, overflow: 'hidden', borderRadius: 20, backgroundColor: '#17201C', marginTop: 20 }, questionImage: { width: '100%', height: '100%' }, question: { color: '#F1F6F3', fontSize: 28, lineHeight: 35, fontWeight: '800', marginTop: 22, marginBottom: 28 }, choices: { gap: 11 }, choice: { minHeight: 68, borderRadius: 17, borderWidth: 1.5, borderColor: '#2A3530', backgroundColor: '#131917', padding: 12, flexDirection: 'row', alignItems: 'center' }, choiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#13271F' }, choiceWrong: { borderColor: '#E47D70', backgroundColor: '#291816' }, choiceLetter: { width: 38, height: 38, borderRadius: 12, backgroundColor: '#222B27', alignItems: 'center', justifyContent: 'center', marginRight: 13 }, choiceLetterCorrect: { backgroundColor: '#4EBA88' }, choiceLetterWrong: { backgroundColor: '#C96358' }, choiceLetterText: { color: '#A0ACA6', fontWeight: '800' }, choiceLetterActive: { color: '#07110C' }, choiceText: { color: '#E3EAE6', flex: 1, fontSize: 15, fontWeight: '600' }, choiceMark: { color: '#68D7A2', fontSize: 21, fontWeight: '900', marginHorizontal: 6 }, freeInput: { minHeight: 62, borderWidth: 1.5, borderColor: '#303B36', backgroundColor: '#131917', borderRadius: 17, paddingHorizontal: 17, color: '#EDF4F0', fontSize: 16 }, checkButton: { minHeight: 50, backgroundColor: '#68D7A2', borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginTop: 12 }, checkButtonText: { color: '#07110C', fontSize: 15, fontWeight: '900' }, acceptedAnswer: { color: '#F09A8E', fontSize: 13, fontWeight: '700', marginTop: 10 }, explanation: { borderRadius: 17, padding: 17, marginTop: 20, borderLeftWidth: 4 }, explanationCorrect: { backgroundColor: '#13251E', borderLeftColor: '#68D7A2' }, explanationWrong: { backgroundColor: '#281917', borderLeftColor: '#E47D70' }, explanationTitle: { color: '#EDF4F0', fontWeight: '800', fontSize: 16, marginBottom: 6 }, explanationText: { color: '#A4B0AA', lineHeight: 21 }, explanationActions: { flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 13 }, learnMore: { alignSelf: 'flex-start', paddingVertical: 5 }, learnMoreText: { color: '#83E3B3', fontWeight: '800', fontSize: 13 }, reportQuestion: { paddingVertical: 5, paddingHorizontal: 2 }, reportQuestionText: { color: '#8A9791', fontWeight: '800', fontSize: 13 },
-  satelliteMapWrap: { height: 430, borderRadius: 22, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, satelliteMap: { flex: 1, backgroundColor: '#0F1D23' }, worldMap: { height: 255, borderRadius: 22, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, mapLineHorizontal: { position: 'absolute', left: 0, right: 0, height: 1, backgroundColor: '#27414A' }, mapLineVertical: { position: 'absolute', top: 0, bottom: 0, width: 1, backgroundColor: '#27414A' }, continentBlob: { position: 'absolute', backgroundColor: '#244A3A', opacity: 0.75 }, americaNorth: { left: '11%', top: '20%', width: '22%', height: '26%', borderRadius: 34, transform: [{ rotate: '-12deg' }] }, americaSouth: { left: '27%', top: '51%', width: '12%', height: '31%', borderRadius: 26, transform: [{ rotate: '16deg' }] }, europeAfrica: { left: '45%', top: '26%', width: '17%', height: '44%', borderRadius: 31, transform: [{ rotate: '8deg' }] }, asia: { left: '58%', top: '20%', width: '29%', height: '35%', borderRadius: 42, transform: [{ rotate: '-8deg' }] }, australia: { left: '76%', top: '62%', width: '12%', height: '14%', borderRadius: 25, transform: [{ rotate: '-8deg' }] }, mapToleranceRing: { position: 'absolute', borderWidth: 2, borderColor: '#E47D70AA', backgroundColor: '#E47D7022' }, mapMarker: { position: 'absolute', width: 24, height: 24, marginLeft: -12, marginTop: -12, borderRadius: 12, alignItems: 'center', justifyContent: 'center', borderWidth: 2 }, mapGuess: { backgroundColor: '#68D7A2', borderColor: '#D7FFE8' }, mapTarget: { backgroundColor: '#E47D70', borderColor: '#FFD8D3' }, mapMarkerText: { color: '#07110C', fontWeight: '900', fontSize: 15, lineHeight: 18 }, mapHint: { position: 'absolute', left: 14, right: 14, bottom: 12, color: '#A6B9B0', fontSize: 11, fontWeight: '800', textAlign: 'center', paddingHorizontal: 10, paddingVertical: 7, borderRadius: 999, backgroundColor: '#07110CCC', overflow: 'hidden' }, mapFeedback: { borderRadius: 16, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 14, marginTop: 10 }, mapFeedbackTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 6 }, mapFeedbackText: { color: '#8FA19A', fontSize: 12, lineHeight: 18 },
+  satelliteMapWrap: { height: 520, borderRadius: 14, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, satelliteMap: { flex: 1, backgroundColor: '#0F1D23' }, worldMap: { height: 255, borderRadius: 22, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, mapLineHorizontal: { position: 'absolute', left: 0, right: 0, height: 1, backgroundColor: '#27414A' }, mapLineVertical: { position: 'absolute', top: 0, bottom: 0, width: 1, backgroundColor: '#27414A' }, continentBlob: { position: 'absolute', backgroundColor: '#244A3A', opacity: 0.75 }, americaNorth: { left: '11%', top: '20%', width: '22%', height: '26%', borderRadius: 34, transform: [{ rotate: '-12deg' }] }, americaSouth: { left: '27%', top: '51%', width: '12%', height: '31%', borderRadius: 26, transform: [{ rotate: '16deg' }] }, europeAfrica: { left: '45%', top: '26%', width: '17%', height: '44%', borderRadius: 31, transform: [{ rotate: '8deg' }] }, asia: { left: '58%', top: '20%', width: '29%', height: '35%', borderRadius: 42, transform: [{ rotate: '-8deg' }] }, australia: { left: '76%', top: '62%', width: '12%', height: '14%', borderRadius: 25, transform: [{ rotate: '-8deg' }] }, mapToleranceRing: { position: 'absolute', borderWidth: 2, borderColor: '#E47D70AA', backgroundColor: '#E47D7022' }, mapMarker: { position: 'absolute', width: 24, height: 24, marginLeft: -12, marginTop: -12, borderRadius: 12, alignItems: 'center', justifyContent: 'center', borderWidth: 2 }, mapGuess: { backgroundColor: '#68D7A2', borderColor: '#D7FFE8' }, mapTarget: { backgroundColor: '#E47D70', borderColor: '#FFD8D3' }, mapMarkerText: { color: '#07110C', fontWeight: '900', fontSize: 15, lineHeight: 18 }, mapHint: { position: 'absolute', left: 12, right: 12, bottom: 10, color: '#D5E1DC', fontSize: 11, fontWeight: '800', textAlign: 'center', paddingHorizontal: 10, paddingVertical: 7, borderRadius: 999, backgroundColor: '#07110CCC', overflow: 'hidden' }, mapFeedback: { borderRadius: 16, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 14, marginTop: 10 }, mapFeedbackTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 6 }, mapFeedbackText: { color: '#8FA19A', fontSize: 12, lineHeight: 18 },
   multiFields: { gap: 14 }, multiFieldLabel: { color: '#AAB5AF', fontSize: 11, fontWeight: '800', marginBottom: 7, marginLeft: 3 }, explanationPartial: { backgroundColor: '#2A2414', borderLeftColor: '#E6B759' }, partialCredit: { color: '#E6B759', fontSize: 11, fontWeight: '800', marginBottom: 8 },
   confidenceCard: { borderRadius: 17, borderWidth: 1, borderColor: '#28342E', backgroundColor: '#111714', padding: 15, marginTop: 13 }, confidenceTitle: { color: '#DEE8E3', fontSize: 14, fontWeight: '800' }, confidenceHint: { color: '#65736C', fontSize: 10, marginTop: 3, marginBottom: 12 }, confidenceRow: { flexDirection: 'row', gap: 7 }, confidenceButton: { flex: 1, minHeight: 42, borderRadius: 12, borderWidth: 1, borderColor: '#303C36', alignItems: 'center', justifyContent: 'center' }, confidenceButtonActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, confidenceButtonText: { color: '#8D9A93', fontSize: 11, fontWeight: '800' }, confidenceButtonTextActive: { color: '#07110C' },
   quizFooter: { padding: 18, borderTopWidth: 1, borderTopColor: '#222B27', backgroundColor: '#0A0E0D' }, primaryButton: { backgroundColor: '#68D7A2', minHeight: 56, borderRadius: 17, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 28 }, primaryButtonText: { color: '#07110C', fontWeight: '900', fontSize: 16 }, disabled: { opacity: 0.32 },

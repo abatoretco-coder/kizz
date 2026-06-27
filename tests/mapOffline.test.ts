@@ -15,3 +15,12 @@ test('le rendu carte ne depend pas de scripts ou tuiles distants', () => {
     assert.equal(mapSection.includes(forbidden), false, `dependance carte distante detectee: ${forbidden}`);
   }
 });
+
+test('le rendu carte utilise une camera tactile fluide', () => {
+  const app = readFileSync('App.tsx', 'utf8');
+  const mapSection = app.slice(app.indexOf('function satelliteMapHtml'), app.indexOf('function Result'));
+  for (const expected of ['<canvas', 'pointerdown', 'pointermove', 'wheel', 'requestAnimationFrame', 'project(lon, lat)', 'zoomAround']) {
+    assert.equal(mapSection.includes(expected), true, `comportement carte manquant: ${expected}`);
+  }
+  assert.equal(mapSection.includes('<svg'), false, 'la carte ne doit plus utiliser le rendu SVG rigide');
+});

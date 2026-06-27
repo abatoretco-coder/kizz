@@ -7,7 +7,7 @@
 - Donnees editoriales chargees depuis `src/content.ts` et modules satellites.
 - SQLite local via `src/database.ts`.
 - Moteurs testes dans `src/quizEngine.ts`, `src/sessionDraft.ts` et `src/quizPack.ts`.
-- Tests actuels: 28 tests unitaires/integrite.
+- Tests actuels: 29 tests unitaires/integrite.
 - Audit automatique de contenu: `npm run audit:content`.
 
 ## Forces
@@ -17,7 +17,7 @@
 - Import/export JSON transactionnel et import CSV assiste.
 - Repetition espacee locale et confiance facultative.
 - Banque riche: 1829 questions, 13 themes, 72+ cartes, drapeaux du monde et couverture France/monde renforcee.
-- Carte vectorielle tactile hors ligne via WebView/SVG embarque.
+- Carte tactile hors ligne via WebView/canvas Mercator, pinch, double tap, pan inertiel et frontieres embarquees.
 - Accueil navigable au swipe et par onglets tactiles; retour Android intercepte dans l'app.
 - Garde-fou de test contre les textes mojibake visibles.
 
@@ -25,7 +25,7 @@
 
 1. `App.tsx` concentre navigation, ecrans, styles, logique de session et carte.
 2. Les textes visibles les plus exposes sont nettoyes; le risque restant porte sur des contenus importes externes non controles.
-3. Le rendu carte est hors ligne; le risque restant est surtout sa taille et son maintien dans App.tsx.
+3. Le rendu carte est hors ligne et plus fluide; le risque restant est surtout sa taille et son maintien dans App.tsx.
 4. Les tests couvrent bien les moteurs, mais pas encore les parcours UI Android.
 5. Les contenus grossissent dans le bundle TypeScript; a moyen terme, des packs JSON versionnes seront plus maintenables.
 
@@ -34,7 +34,7 @@
 1. Extraire les composants sans changer les comportements.
 2. Executer les smoke tests ADB documentes sur APK reel, dont retour Android et onglets d'accueil.
 3. Ajouter un editeur de packs plus confortable.
-4. Ajouter labels optionnels et silhouettes sans dependance reseau.
+4. Ajouter labels optionnels, silhouettes et niveaux de detail sans dependance reseau.
 5. Enrichir le bilan par theme; le bilan par type d'interaction est livre en premiere version.
 6. Surveiller la taille du bundle avec les GeoJSON embarques.
 

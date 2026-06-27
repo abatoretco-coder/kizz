@@ -25,6 +25,7 @@ Priorites actuelles:
 - import/export JSON compatible avec les questions de placement geographique;
 - correction carte enrichie: direction cardinale vers la cible et zone de tolerance visible;
 - frontieres des pays du monde et des departements francais embarquees en GeoJSON local;
+- moteur carte repris en canvas Mercator: pinch, double tap, deplacement inertiel et rendu non deforme;
 - prochaines etapes carte: silhouettes de pays, frontieres voisines, monuments, regions et correction visuelle plus fine.
 
 ## Mise a jour livree - Qualite UX
