@@ -22,7 +22,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
     "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Joconde",
-    "imageAsset": "mona-lisa",
+    "imageAsset": "generated/art-la-joconde",
     "imageAlt": "La Joconde"
   },
   {
@@ -134,7 +134,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
     "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Nuit%20%C3%A9toil%C3%A9e",
-    "imageAsset": "starry-night",
+    "imageAsset": "generated/art-la-nuit-etoilee",
     "imageAlt": "La Nuit étoilée"
   },
   {
@@ -246,7 +246,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
     "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Jeune%20Fille%20%C3%A0%20la%20perle",
-    "imageAsset": "girl-pearl-earring",
+    "imageAsset": "generated/art-la-jeune-fille-a-la-perle",
     "imageAlt": "La Jeune Fille à la perle"
   },
   {
@@ -358,7 +358,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
     "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Naissance%20de%20V%C3%A9nus",
-    "imageAsset": "birth-venus",
+    "imageAsset": "generated/art-la-naissance-de-venus",
     "imageAlt": "La Naissance de Vénus"
   },
   {
@@ -470,7 +470,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
     "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Libert%C3%A9%20guidant%20le%20peuple",
-    "imageAsset": "liberty-leading",
+    "imageAsset": "generated/art-la-liberte-guidant-le-peuple",
     "imageAlt": "La Liberté guidant le peuple"
   },
   {
@@ -582,7 +582,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
     "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Grande%20Vague%20de%20Kanagawa",
-    "imageAsset": "great-wave",
+    "imageAsset": "generated/art-la-grande-vague-de-kanagawa",
     "imageAlt": "La Grande Vague de Kanagawa"
   },
   {
@@ -693,7 +693,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:baroque"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20M%C3%A9nines"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20M%C3%A9nines",
+    "imageAsset": "generated/art-les-menines",
+    "imageAlt": "Les Ménines"
   },
   {
     "id": "paint-bank-007-work",
@@ -803,7 +805,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:cubisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Guernica"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Guernica",
+    "imageAsset": "generated/art-guernica",
+    "imageAlt": "Guernica"
   },
   {
     "id": "paint-bank-008-work",
@@ -913,7 +917,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:expressionnisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Cri"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Cri",
+    "imageAsset": "generated/art-le-cri",
+    "imageAlt": "Le Cri"
   },
   {
     "id": "paint-bank-009-work",
@@ -1023,7 +1029,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:impressionnisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Impression%2C%20soleil%20levant"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Impression%2C%20soleil%20levant",
+    "imageAsset": "generated/art-impression-soleil-levant",
+    "imageAlt": "Impression, soleil levant"
   },
   {
     "id": "paint-bank-010-work",
@@ -1133,7 +1141,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20C%C3%A8ne"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20C%C3%A8ne",
+    "imageAsset": "generated/art-la-cene",
+    "imageAlt": "La Cène"
   },
   {
     "id": "paint-bank-011-work",
@@ -1243,7 +1253,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Cr%C3%A9ation%20d%E2%80%99Adam"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Cr%C3%A9ation%20d%E2%80%99Adam",
+    "imageAsset": "generated/art-la-creation-d-adam",
+    "imageAlt": "La Création d’Adam"
   },
   {
     "id": "paint-bank-012-work",
@@ -1353,7 +1365,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:romantisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Radeau%20de%20La%20M%C3%A9duse"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Radeau%20de%20La%20M%C3%A9duse",
+    "imageAsset": "generated/art-le-radeau-de-la-meduse",
+    "imageAlt": "Le Radeau de La Méduse"
   },
   {
     "id": "paint-bank-013-work",
@@ -1463,7 +1477,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:realisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Olympia"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Olympia",
+    "imageAsset": "generated/art-olympia",
+    "imageAlt": "Olympia"
   },
   {
     "id": "paint-bank-014-work",
@@ -1573,7 +1589,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:pointillisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Un%20dimanche%20apr%C3%A8s-midi%20%C3%A0%20l%E2%80%99%C3%AEle%20de%20la%20Grande%20Jatte"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Un%20dimanche%20apr%C3%A8s-midi%20%C3%A0%20l%E2%80%99%C3%AEle%20de%20la%20Grande%20Jatte",
+    "imageAsset": "generated/art-un-dimanche-apres-midi-a-l-ile-de-la-grande-jatte",
+    "imageAlt": "Un dimanche après-midi à l’île de la Grande Jatte"
   },
   {
     "id": "paint-bank-015-work",
@@ -1683,7 +1701,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:postimpressionnisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Tournesols"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Tournesols",
+    "imageAsset": "generated/art-les-tournesols",
+    "imageAlt": "Les Tournesols"
   },
   {
     "id": "paint-bank-016-work",
@@ -1793,7 +1813,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:realisme-regional"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=American%20Gothic"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=American%20Gothic",
+    "imageAsset": "generated/art-american-gothic",
+    "imageAlt": "American Gothic"
   },
   {
     "id": "paint-bank-017-work",
@@ -1903,7 +1925,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:surrealisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Persistance%20de%20la%20m%C3%A9moire"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Persistance%20de%20la%20m%C3%A9moire",
+    "imageAsset": "generated/art-la-persistance-de-la-memoire",
+    "imageAlt": "La Persistance de la mémoire"
   },
   {
     "id": "paint-bank-018-work",
@@ -2013,7 +2037,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:realisme-americain"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Nighthawks"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Nighthawks",
+    "imageAsset": "generated/art-nighthawks",
+    "imageAlt": "Nighthawks"
   },
   {
     "id": "paint-bank-019-work",
@@ -2123,7 +2149,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:symbolisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Baiser"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Baiser",
+    "imageAsset": "generated/art-le-baiser",
+    "imageAlt": "Le Baiser"
   },
   {
     "id": "paint-bank-020-work",
@@ -2233,7 +2261,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:cubisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Demoiselles%20d%E2%80%99Avignon"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Demoiselles%20d%E2%80%99Avignon",
+    "imageAsset": "generated/art-les-demoiselles-d-avignon",
+    "imageAlt": "Les Demoiselles d’Avignon"
   },
   {
     "id": "paint-bank-021-work",
@@ -2343,7 +2373,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20V%C3%A9nus%20d%E2%80%99Urbino"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20V%C3%A9nus%20d%E2%80%99Urbino",
+    "imageAsset": "generated/art-la-venus-d-urbino",
+    "imageAlt": "La Vénus d’Urbino"
   },
   {
     "id": "paint-bank-022-work",
@@ -2453,7 +2485,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Temp%C3%AAte"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Temp%C3%AAte",
+    "imageAsset": "generated/art-la-tempete",
+    "imageAlt": "La Tempête"
   },
   {
     "id": "paint-bank-023-work",
@@ -2563,7 +2597,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Printemps"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Printemps",
+    "imageAsset": "generated/art-le-printemps",
+    "imageAlt": "Le Printemps"
   },
   {
     "id": "paint-bank-024-work",
@@ -2673,7 +2709,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:baroque"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Laiti%C3%A8re"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Laiti%C3%A8re",
+    "imageAsset": "generated/art-la-laitiere",
+    "imageAlt": "La Laitière"
   },
   {
     "id": "paint-bank-025-work",
@@ -2783,7 +2821,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance-nordique"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Jardin%20des%20d%C3%A9lices"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Jardin%20des%20d%C3%A9lices",
+    "imageAsset": "generated/art-le-jardin-des-delices",
+    "imageAlt": "Le Jardin des délices"
   },
   {
     "id": "paint-bank-026-work",
@@ -2871,7 +2911,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance-nordique"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Ambassadeurs"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Ambassadeurs",
+    "imageAsset": "generated/art-les-ambassadeurs",
+    "imageAlt": "Les Ambassadeurs"
   },
   {
     "id": "paint-bank-027-work",
@@ -2959,7 +3001,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:baroque"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Ronde%20de%20nuit"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Ronde%20de%20nuit",
+    "imageAsset": "generated/art-la-ronde-de-nuit",
+    "imageAlt": "La Ronde de nuit"
   },
   {
     "id": "paint-bank-028-work",
@@ -3047,7 +3091,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:romantisme-noir"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Saturne%20d%C3%A9vorant%20un%20de%20ses%20fils"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Saturne%20d%C3%A9vorant%20un%20de%20ses%20fils",
+    "imageAsset": "generated/art-saturne-devorant-un-de-ses-fils",
+    "imageAlt": "Saturne dévorant un de ses fils"
   },
   {
     "id": "paint-bank-029-work",
@@ -3135,7 +3181,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:realisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20D%C3%A9jeuner%20sur%20l%E2%80%99herbe"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20D%C3%A9jeuner%20sur%20l%E2%80%99herbe",
+    "imageAsset": "generated/art-le-dejeuner-sur-l-herbe",
+    "imageAlt": "Le Déjeuner sur l’herbe"
   },
   {
     "id": "paint-bank-030-work",
@@ -3223,7 +3271,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:impressionnisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Bal%20du%20moulin%20de%20la%20Galette"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Bal%20du%20moulin%20de%20la%20Galette",
+    "imageAsset": "generated/art-bal-du-moulin-de-la-galette",
+    "imageAlt": "Bal du moulin de la Galette"
   },
   {
     "id": "paint-bank-031-work",
@@ -3311,7 +3361,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:impressionnisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Classe%20de%20danse"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Classe%20de%20danse",
+    "imageAsset": "generated/art-la-classe-de-danse",
+    "imageAlt": "La Classe de danse"
   },
   {
     "id": "paint-bank-032-work",
@@ -3399,7 +3451,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:postimpressionnisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Joueurs%20de%20cartes"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Joueurs%20de%20cartes",
+    "imageAsset": "generated/art-les-joueurs-de-cartes",
+    "imageAlt": "Les Joueurs de cartes"
   },
   {
     "id": "paint-bank-033-work",
@@ -3487,7 +3541,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:postimpressionnisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mont%20Sainte-Victoire"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mont%20Sainte-Victoire",
+    "imageAsset": "generated/art-mont-sainte-victoire",
+    "imageAlt": "Mont Sainte-Victoire"
   },
   {
     "id": "paint-bank-034-work",
@@ -3575,7 +3631,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:naif"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Douanier%20Rousseau%2C%20Le%20R%C3%AAve"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Douanier%20Rousseau%2C%20Le%20R%C3%AAve",
+    "imageAsset": "generated/art-le-douanier-rousseau-le-reve",
+    "imageAlt": "Le Douanier Rousseau, Le Rêve"
   },
   {
     "id": "paint-bank-035-work",
@@ -3663,7 +3721,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:abstraction"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Composition%20VIII"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Composition%20VIII",
+    "imageAsset": "generated/art-composition-viii",
+    "imageAlt": "Composition VIII"
   },
   {
     "id": "paint-bank-036-work",
@@ -3751,7 +3811,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:suprematisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Carr%C3%A9%20noir"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Carr%C3%A9%20noir",
+    "imageAsset": "generated/art-carre-noir",
+    "imageAlt": "Carré noir"
   },
   {
     "id": "paint-bank-037-work",
@@ -3839,7 +3901,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:neoplasticisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Broadway%20Boogie-Woogie"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Broadway%20Boogie-Woogie",
+    "imageAsset": "generated/art-broadway-boogie-woogie",
+    "imageAlt": "Broadway Boogie-Woogie"
   },
   {
     "id": "paint-bank-038-work",
@@ -3927,7 +3991,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance-flamande"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20%C3%89poux%20Arnolfini"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20%C3%89poux%20Arnolfini",
+    "imageAsset": "generated/art-les-epoux-arnolfini",
+    "imageAlt": "Les Époux Arnolfini"
   },
   {
     "id": "paint-bank-039-work",
@@ -4015,7 +4081,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Bataille%20de%20San%20Romano"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Bataille%20de%20San%20Romano",
+    "imageAsset": "generated/art-la-bataille-de-san-romano",
+    "imageAlt": "La Bataille de San Romano"
   },
   {
     "id": "paint-bank-040-work",
@@ -4103,7 +4171,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Flagellation%20du%20Christ"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Flagellation%20du%20Christ",
+    "imageAsset": "generated/art-la-flagellation-du-christ",
+    "imageAlt": "La Flagellation du Christ"
   },
   {
     "id": "paint-bank-041-work",
@@ -4191,7 +4261,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:renaissance"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Madone%20Sixtine"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Madone%20Sixtine",
+    "imageAsset": "generated/art-la-madone-sixtine",
+    "imageAlt": "La Madone Sixtine"
   },
   {
     "id": "paint-bank-042-work",
@@ -4279,7 +4351,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:neoclassicisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Mort%20de%20Marat"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Mort%20de%20Marat",
+    "imageAsset": "generated/art-la-mort-de-marat",
+    "imageAlt": "La Mort de Marat"
   },
   {
     "id": "paint-bank-043-work",
@@ -4367,7 +4441,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:neoclassicisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Serment%20des%20Horaces"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Serment%20des%20Horaces",
+    "imageAsset": "generated/art-le-serment-des-horaces",
+    "imageAlt": "Le Serment des Horaces"
   },
   {
     "id": "paint-bank-044-work",
@@ -4455,7 +4531,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:neoclassicisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Grande%20Odalisque"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Grande%20Odalisque",
+    "imageAsset": "generated/art-la-grande-odalisque",
+    "imageAlt": "La Grande Odalisque"
   },
   {
     "id": "paint-bank-045-work",
@@ -4543,7 +4621,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:neoclassicisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Libert%C3%A9%20ou%20la%20Mort"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Libert%C3%A9%20ou%20la%20Mort",
+    "imageAsset": "generated/art-la-liberte-ou-la-mort",
+    "imageAlt": "La Liberté ou la Mort"
   },
   {
     "id": "paint-bank-046-work",
@@ -4631,7 +4711,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:romantisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Voyageur%20contemplant%20une%20mer%20de%20nuages"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Voyageur%20contemplant%20une%20mer%20de%20nuages",
+    "imageAsset": "generated/art-le-voyageur-contemplant-une-mer-de-nuages",
+    "imageAlt": "Le Voyageur contemplant une mer de nuages"
   },
   {
     "id": "paint-bank-047-work",
@@ -4719,7 +4801,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:romantisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Pluie%2C%20Vapeur%20et%20Vitesse"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Pluie%2C%20Vapeur%20et%20Vitesse",
+    "imageAsset": "generated/art-pluie-vapeur-et-vitesse",
+    "imageAlt": "Pluie, Vapeur et Vitesse"
   },
   {
     "id": "paint-bank-048-work",
@@ -4807,7 +4891,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:realisme-americain"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Monde%20de%20Christina"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Monde%20de%20Christina",
+    "imageAsset": "mona-lisa",
+    "imageAlt": "Le Monde de Christina"
   },
   {
     "id": "paint-bank-049-work",
@@ -4895,7 +4981,9 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "mouvement:surrealisme"
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
-    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Autoportrait%20au%20collier%20d%E2%80%99%C3%A9pines"
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Autoportrait%20au%20collier%20d%E2%80%99%C3%A9pines",
+    "imageAsset": "generated/art-autoportrait-au-collier-d-epines",
+    "imageAlt": "Autoportrait au collier d’épines"
   },
   {
     "id": "paint-bank-050-work",

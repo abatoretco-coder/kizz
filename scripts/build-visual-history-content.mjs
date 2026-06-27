@@ -4,9 +4,10 @@ import { basename, join } from 'node:path';
 const ROOT = process.cwd();
 const outDir = join(ROOT, 'assets', 'questions', 'generated');
 const outFile = join(ROOT, 'src', 'generated', 'contentVisualHistory.ts');
+const imageMapFile = join(ROOT, 'src', 'generated', 'questionImages.ts');
 const manifestFile = join(outDir, 'visual-history-manifest.json');
 const USER_AGENT = 'Kizz offline quiz content builder/1.0 (https://github.com/abatoretco-coder/kizz)';
-const MAX_IMAGES = 100;
+const MAX_IMAGES = 180;
 
 const fallbackImageAssets = ['mona-lisa', 'starry-night', 'girl-pearl-earring', 'birth-venus', 'liberty-leading', 'great-wave'];
 
@@ -120,6 +121,12 @@ function slug(value) {
   return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
+function selectJpegUrl(info) {
+  if (info.thumburl && /\.jpe?g(?:$|\?)/i.test(info.thumburl)) return info.thumburl;
+  if (info.mime === 'image/jpeg') return info.url;
+  return null;
+}
+
 function rotateChoices(values, answer) {
   const pool = [...new Set(values.filter((value) => value && value !== answer))].slice(0, 3);
   const choices = [answer, ...pool];
@@ -154,7 +161,7 @@ async function getCommonsImage(title) {
   const page = Object.values(json.query?.pages ?? {})[0];
   const info = page?.imageinfo?.[0];
   if (!info?.url || !String(info.mime).startsWith('image/')) return null;
-  const url = info.thumbmime === 'image/jpeg' && info.thumburl ? info.thumburl : info.mime === 'image/jpeg' ? info.url : null;
+  const url = selectJpegUrl(info);
   if (!url) return null;
   return {
     url,
@@ -187,7 +194,7 @@ async function searchCommonsImage(query) {
     const lower = title.toLowerCase();
     if (!info?.url || !String(info.mime).startsWith('image/')) continue;
     if (lower.includes('map') || lower.includes('signature') || lower.includes('grave') || lower.includes('statue')) continue;
-    const url = info.thumbmime === 'image/jpeg' && info.thumburl ? info.thumburl : info.mime === 'image/jpeg' ? info.url : null;
+    const url = selectJpegUrl(info);
     if (!url) continue;
     return {
       title,
@@ -233,17 +240,37 @@ async function main() {
 
   const manifest = [];
   const imageAssetByLabel = new Map();
+  const imageAssetByWork = new Map();
   const expectedFigureNames = new Set(figures.map(([name]) => name.toLowerCase()));
   try {
+    for (const [title, artist] of paintings) {
+      if (manifest.length >= MAX_IMAGES) break;
+      const info = await searchCommonsImage(`${title} ${artist}`);
+      if (!info) continue;
+      const asset = `generated/art-${slug(title)}`;
+      const filename = join(outDir, `${asset.replace('generated/', '')}.jpg`);
+      try {
+        await downloadImage(info.url, filename);
+      } catch {
+        continue;
+      }
+      imageAssetByWork.set(title.toLowerCase(), asset);
+      manifest.push({ label: title, asset, wikidata: null, sourceUrl: `https://commons.wikimedia.org/wiki/${encodeURIComponent(info.title.replace(/ /g, '_'))}`, license: info.license, artist: info.artist, credit: info.credit, kind: 'artwork' });
+      await new Promise((resolve) => setTimeout(resolve, 250));
+    }
     const seeds = await fetchImageSeeds();
     for (const seed of seeds.filter((seed) => expectedFigureNames.has(seed.label.toLowerCase())).slice(0, MAX_IMAGES)) {
       const info = await getCommonsImage(seed.commonsTitle);
       if (!info) continue;
       const asset = `generated/${slug(seed.label)}`;
       const filename = join(outDir, `${slug(seed.label)}.jpg`);
-      await downloadImage(info.url, filename);
+      try {
+        await downloadImage(info.url, filename);
+      } catch {
+        continue;
+      }
       imageAssetByLabel.set(seed.label.toLowerCase(), asset);
-      manifest.push({ label: seed.label, asset, wikidata: seed.wikidata, sourceUrl: `https://commons.wikimedia.org/wiki/File:${seed.commonsTitle}`, license: info.license, artist: info.artist, credit: info.credit });
+      manifest.push({ label: seed.label, asset, wikidata: seed.wikidata, sourceUrl: `https://commons.wikimedia.org/wiki/File:${seed.commonsTitle}`, license: info.license, artist: info.artist, credit: info.credit, kind: 'historical-figure' });
       await new Promise((resolve) => setTimeout(resolve, 250));
     }
     for (const [name] of figures) {
@@ -252,9 +279,13 @@ async function main() {
       if (!info) continue;
       const asset = `generated/${slug(name)}`;
       const filename = join(outDir, `${slug(name)}.jpg`);
-      await downloadImage(info.url, filename);
+      try {
+        await downloadImage(info.url, filename);
+      } catch {
+        continue;
+      }
       imageAssetByLabel.set(name.toLowerCase(), asset);
-      manifest.push({ label: name, asset, wikidata: null, sourceUrl: `https://commons.wikimedia.org/wiki/${encodeURIComponent(info.title.replace(/ /g, '_'))}`, license: info.license, artist: info.artist, credit: info.credit });
+      manifest.push({ label: name, asset, wikidata: null, sourceUrl: `https://commons.wikimedia.org/wiki/${encodeURIComponent(info.title.replace(/ /g, '_'))}`, license: info.license, artist: info.artist, credit: info.credit, kind: 'historical-figure' });
       await new Promise((resolve) => setTimeout(resolve, 250));
     }
   } catch (error) {
@@ -268,8 +299,8 @@ async function main() {
   const countries = paintings.map((row) => row[3]);
   paintings.forEach(([title, artist, movement, country, subject], index) => {
     const id = `paint-bank-${String(index + 1).padStart(3, '0')}`;
-    const asset = fallbackImageAssets[index % fallbackImageAssets.length];
-    questions.push(q(`${id}-artist`, 'arts', 1 + (index % 3), `Qui a peint ${title} ?`, rotateChoices(artists, artist), 0, `${title} est associé à ${artist}.`, ['arts', 'peinture', 'banque-visuelle', `mouvement:${slug(movement)}`], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(title)}`, index < fallbackImageAssets.length ? { imageAsset: asset, imageAlt: title } : {}));
+    const asset = imageAssetByWork.get(title.toLowerCase()) ?? fallbackImageAssets[index % fallbackImageAssets.length];
+    questions.push(q(`${id}-artist`, 'arts', 1 + (index % 3), `Qui a peint ${title} ?`, rotateChoices(artists, artist), 0, `${title} est associé à ${artist}.`, ['arts', 'peinture', 'banque-visuelle', `mouvement:${slug(movement)}`], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(title)}`, { imageAsset: asset, imageAlt: title }));
     questions.push(q(`${id}-work`, 'arts', 1 + ((index + 1) % 3), `Quelle œuvre est associée à ${artist} ?`, rotateChoices(titles, title), 0, `${artist} est notamment associé à ${title}.`, ['arts', 'peinture', 'artiste', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(artist)}`));
     questions.push(q(`${id}-movement`, 'arts', 2, `À quel mouvement rattache-t-on surtout ${title} ?`, rotateChoices(movements, movement), 0, `${title} est rangé ici dans le repère ${movement}.`, ['arts', 'peinture', 'mouvement', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`${title} ${movement}`)}`));
     questions.push(q(`${id}-country`, 'arts', 1 + ((index + 2) % 3), `Quel pays sert de repère culturel principal pour ${artist} ?`, rotateChoices(countries, country), 0, `${artist} est ici rattaché au repère ${country}.`, ['arts', 'peinture', 'pays', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(artist)}`));
@@ -300,8 +331,13 @@ async function main() {
 
   await writeFile(manifestFile, JSON.stringify({ generatedAt: new Date().toISOString(), imageCount: uniqueManifest.length, sources: uniqueManifest }, null, 2), 'utf8');
   const file = `import { QuestionSeed } from '../domain';\n\nexport const visualHistoryQuestions: QuestionSeed[] = ${JSON.stringify(questions, null, 2)};\n`;
+  const imageMapEntries = uniqueManifest
+    .map((item) => `  '${item.asset}': require('../../assets/questions/generated/${item.asset.replace('generated/', '')}.jpg'),`)
+    .join('\n');
+  const imageMap = `import { ImageSourcePropType } from 'react-native';\n\nexport const generatedQuestionImages: Record<string, ImageSourcePropType> = {\n${imageMapEntries}\n};\n`;
   await writeFile(outFile, file, 'utf8');
-  console.log(JSON.stringify({ questions: questions.length, images: uniqueManifest.length, outFile, manifestFile }, null, 2));
+  await writeFile(imageMapFile, imageMap, 'utf8');
+  console.log(JSON.stringify({ questions: questions.length, images: uniqueManifest.length, outFile, imageMapFile, manifestFile }, null, 2));
 }
 
 main().catch((error) => {

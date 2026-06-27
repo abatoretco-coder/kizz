@@ -40,7 +40,7 @@ Les médias Art et Architecture sont embarqués dans `assets/questions` pour res
 
 Le lot visuel du 27 juin 2026 ajoute 15 fichiers issus de Wikimedia Commons: tableaux en domaine public, sculptures et monuments sous licences CC compatibles ou CC0 selon les fichiers. Les crédits, URLs et licences observées sont conservés dans `assets/questions/visual-manifest.json`.
 
-Le lot Arts/Histoire du 27 juin 2026 ajoute 425 questions simples sur peintures, mouvements, artistes et personnages historiques. Les portraits embarques viennent de Wikidata/Wikimedia Commons quand une image exploitable existe; la generation est centralisee dans `scripts/build-visual-history-content.mjs` et la provenance dans `assets/questions/generated/visual-history-manifest.json`.
+Le lot Arts/Histoire du 27 juin 2026 ajoute 425 questions simples sur peintures, mouvements, artistes et personnages historiques. Le corpus embarque 99 images generees: 49 oeuvres d'art et 50 personnages historiques issus de Wikidata/Wikimedia Commons quand une image JPEG exploitable existe. La generation est centralisee dans `scripts/build-visual-history-content.mjs`, la table Expo/Metro dans `src/generated/questionImages.ts` et la provenance dans `assets/questions/generated/visual-history-manifest.json`.
 
 ## Provenance carte satellite
 

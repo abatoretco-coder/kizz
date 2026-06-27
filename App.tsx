@@ -13,6 +13,7 @@ import { palette } from './src/theme';
 import { summarizeByInteraction } from './src/sessionSummary';
 import { subthemesForTopics } from './src/subthemes';
 import { franceDepartmentBoundaryGeoJson, worldBoundaryGeoJson } from './src/mapBoundaries';
+import { generatedQuestionImages } from './src/generated/questionImages';
 
 type Screen = 'home' | 'configure' | 'languages' | 'quiz' | 'result' | 'library' | 'search' | 'admin';
 const emptyStats: DashboardStats = { answered: 0, correct: 0, sessions: 0, streakDays: 0, dueReview: 0 };
@@ -83,6 +84,7 @@ const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
   'generated/socrate': require('./assets/questions/generated/socrate.jpg'),
   'generated/voltaire': require('./assets/questions/generated/voltaire.jpg'),
   'generated/winston-churchill': require('./assets/questions/generated/winston-churchill.jpg'),
+  ...generatedQuestionImages,
 };
 const OFFLINE_SATELLITE_URI = Image.resolveAssetSource(require('./assets/maps/blue-marble-world.jpg')).uri;
 export default function App() {

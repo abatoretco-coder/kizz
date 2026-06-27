@@ -18,7 +18,7 @@ L'interface utilise un thème sombre sobre et ouvre directement les quiz depuis 
 - mode admin local pour filtrer les questions, masquer une question, ajuster sa difficulte et voir les signalements;
 - favoris, recherche, sessions personnalisées et révision des dernières erreurs;
 - sous-themes selectionnables pour travailler un axe precis: drapeaux, capitales, cartes, histoire par pays/epoque, sciences, sports, arts, cinema, architecture, nature, technologie, economie et astronomie;
-- questions visuelles embarquees pour tableaux, sculptures, monuments, architecture et personnages historiques, avec QCM image -> reponse et reponse -> choix d'image;
+- questions visuelles embarquees pour tableaux, sculptures, monuments, architecture et personnages historiques, dont 99 images generees pour Arts/Histoire, avec QCM image -> reponse et reponse -> choix d'image;
 - composition de sessions par thèmes, difficultés et longueur;
 - réponses multi-champs avec crédit partiel et répétition espacée locale;
 - bilan de session par calibration memoire et type d'interaction;

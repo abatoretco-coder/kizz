@@ -179,7 +179,8 @@ test('les questions visuelles embarquent des assets complets', () => {
 test('la banque Arts/Histoire generee reste presente', () => {
   assert.ok(questions.filter((question) => question.tags.includes('banque-visuelle')).length >= 225);
   assert.ok(questions.filter((question) => question.tags.includes('banque-personnages')).length >= 200);
-  assert.ok(questions.filter((question) => question.imageAsset?.startsWith('generated/')).length >= 45);
+  assert.ok(questions.filter((question) => question.imageAsset?.startsWith('generated/art-')).length >= 45);
+  assert.ok(questions.filter((question) => question.imageAsset?.startsWith('generated/') && !question.imageAsset.startsWith('generated/art-')).length >= 45);
 });
 
 test('l’audit automatique de banque ne remonte aucune erreur', () => {

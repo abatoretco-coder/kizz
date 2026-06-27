@@ -12,7 +12,7 @@
 - Extension jeux TV originale: 36 questions inspirees des formats TTMC, Trivial, reponse rapide et Question pour un champion, sans copie de questions proprietaires.
 - Extension editoriale par grand theme: histoire, sciences, sport, arts, nature, technologie, cinema, architecture et economie.
 - Reconnaissance visuelle: tableaux, sculptures, monuments et architecture en medias embarques, avec questions image -> reponse et reponse -> choix d'image.
-- Banque Arts/Histoire augmentee: 425 questions simples sur peintures, mouvements, artistes et personnages historiques, avec portraits embarques quand disponibles.
+- Banque Arts/Histoire augmentee: 425 questions simples sur peintures, mouvements, artistes et personnages historiques, avec 99 images embarquees generees (oeuvres + portraits).
 - Signalement local d'une question apres correction: ambigue, trop facile, trop dure ou a reformuler.
 - Export JSON des signalements depuis l'ecran Banques.
 - Audit automatique de banque disponible avec `npm run audit:content`.
