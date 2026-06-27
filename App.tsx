@@ -401,7 +401,7 @@ function HomeV2({ stats, topics, progress, recentSessions, draft, onResume, onSt
   };
   return (
     <View style={styles.homeRoot}>
-      <View style={styles.brandRow}><Image source={require('./assets/kizz-logo-v2.png')} style={styles.logoImage} /><Text style={styles.brand}>Kizz</Text><Pressable onPress={onLibrary} style={styles.libraryShortcut}><Text style={styles.libraryShortcutText}>Banques</Text></Pressable></View>
+      <View style={styles.brandRow}><Image source={require('./assets/kizz-logo-v3.png')} style={styles.logoImage} /><Text style={styles.brand}>Kizz</Text><Pressable onPress={onLibrary} style={styles.libraryShortcut}><Text style={styles.libraryShortcutText}>Banques</Text></Pressable></View>
       <View style={styles.homeTabs}>
         <View style={[styles.homeTabIndicator, { transform: [{ translateX: ((width - 44) / 3) * homePageProgress }] }]} />
         {['Dashboard', 'Culture', 'Langues'].map((label, index) => <Text key={label} style={[styles.homeTab, homePage === index && styles.homeTabActive]}>{label}</Text>)}

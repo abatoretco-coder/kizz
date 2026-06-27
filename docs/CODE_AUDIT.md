@@ -16,7 +16,7 @@
 - Schema de question deja extensible: QCM, texte libre, multi-champs, carte.
 - Import/export JSON transactionnel et import CSV assiste.
 - Repetition espacee locale et confiance facultative.
-- Banque riche: 1816 questions, 13 themes, 72+ cartes, drapeaux du monde et couverture France/monde renforcee.
+- Banque riche: 1829 questions, 13 themes, 72+ cartes, drapeaux du monde et couverture France/monde renforcee.
 - Carte satellite tactile via WebView/Leaflet.
 
 ## Risques techniques

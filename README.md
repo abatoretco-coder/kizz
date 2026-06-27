@@ -6,7 +6,7 @@ L'interface utilise un thÃ¨me sombre sobre et ouvre directement les quiz depui
 
 ## FonctionnalitÃ©s actuelles
 
-- 13 themes et 1816 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, mini-cours langues, economie et 72 placements geographiques sur vraie carte satellite;
+- 13 themes et 1829 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, mini-cours langues, economie et 72 placements geographiques sur vraie carte satellite;
 - accueil en trois panneaux: dashboard, quiz culture, parcours langues, avec rail pleine largeur synchronise au geste;
 - theme dedie Carte France: 51 questions, dont 30 placements tactiles et 9 numeros de departements en texte libre;
 - difficultÃ©, tags, explication et provenance par question;
@@ -17,7 +17,7 @@ L'interface utilise un thÃ¨me sombre sobre et ouvre directement les quiz depui
 - import JSON transactionnel, dÃ©doublonnage et export partageable;
 - mode admin local pour filtrer les questions, masquer une question, ajuster sa difficulte et voir les signalements;
 - favoris, recherche, sessions personnalisÃ©es et rÃ©vision des derniÃ¨res erreurs;
-- sous-themes selectionnables pour travailler un axe precis: drapeaux, capitales, cartes, periodes historiques, sports, arts, cinema, architecture, economie et astronomie;
+- sous-themes selectionnables pour travailler un axe precis: drapeaux, capitales, cartes, histoire par pays/epoque, sciences, sports, arts, cinema, architecture, nature, technologie, economie et astronomie;
 - composition de sessions par thÃ¨mes, difficultÃ©s et longueur;
 - rÃ©ponses multi-champs avec crÃ©dit partiel et rÃ©pÃ©tition espacÃ©e locale;
 - bilan de session par calibration memoire et type d'interaction;

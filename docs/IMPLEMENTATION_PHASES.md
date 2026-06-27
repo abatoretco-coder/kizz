@@ -1,6 +1,6 @@
 # Phases d'implementation Kizz
 
-Ce document sert de guide de travail pour les prochains lots. Il part de l'etat local actuel: Expo SDK 56, APK Android autonome, SQLite local, 13 themes, 1816 questions, 72+ questions carte, drapeaux du monde, mode Endurance, mode Infini calme, import/export JSON, admin local, signalement local et parcours Langues.
+Ce document sert de guide de travail pour les prochains lots. Il part de l'etat local actuel: Expo SDK 56, APK Android autonome, SQLite local, 13 themes, 1829 questions, 72+ questions carte, drapeaux du monde, sous-themes couverts par test, mode Endurance, mode Infini calme, import/export JSON, admin local, signalement local et parcours Langues.
 
 ## Phase 1 - Stabilisation mobile et carte
 
@@ -65,7 +65,7 @@ Livrables:
 - import CSV assiste avec preview livre pour QCM et texte libre;
 - validation automatique des doublons, URLs, coordonnees et reponses;
 - packs editoriaux prioritaires: Carte France avancee, capitales monde, art visuel, architecture, cinema scenes.
-- etat actuel: Carte France enrichie avec regions, departements, chefs-lieux, numeros de departements et 30+ placements tactiles; geographie monde enrichie avec capitales et 585 questions drapeaux.
+- etat actuel: Carte France enrichie avec regions, departements, chefs-lieux, numeros de departements et 30+ placements tactiles; geographie monde enrichie avec capitales et 585 questions drapeaux; histoire enrichie par pays et epoque.
 
 Definition of done:
 - chaque pack a un test de couverture;

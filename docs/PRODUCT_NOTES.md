@@ -2,9 +2,9 @@
 
 ## Livre maintenant
 
-- Banque enrichie: 1816 questions locales au total.
+- Banque enrichie: 1829 questions locales au total.
 - Nouveau theme Astronomie: systeme solaire, observation, galaxie et histoire spatiale.
-- Sous-themes dans le constructeur: geographie, histoire, sport, arts, cinema, architecture, economie et astronomie.
+- Sous-themes dans le constructeur: geographie, histoire par pays/epoque, sciences, sport, arts, cinema, architecture, nature, technologie, langues, economie et astronomie.
 - Drapeaux du monde: 585 questions, soit 195 pays en texte libre, 195 QCM drapeau -> pays et 195 QCM pays -> drapeau.
 - Nouveau theme Carte France: 51 questions, dont 30 placements tactiles sur carte.
 - Couverture geographie: pays/capitales du monde, drapeaux, regions francaises, departements et chefs-lieux.
@@ -25,6 +25,7 @@
 - Parcours langues renforces: mini-cours espagnol, allemand et italien avec exercices de rappel ecrit.
 - Progression Langues: grille locale separee par langue et niveau CECRL.
 - Accueil: retrait du libelle swipe et rail Dashboard/Culture/Langues pleine largeur synchronise au geste.
+- Logo Kizz v3 livre dans `assets/kizz-logo-v3.png` et branche comme icone Expo/adaptive icon.
 
 ## Decisions produit
 
@@ -44,4 +45,4 @@
 6. Mode salon: quiz local a plusieurs joueurs sur le meme telephone, style plateau TV, sans compte.
 7. Reglage cognitif: option "moins de hasard" pour prioriser la repetition espacee, option "surprise" pour varier.
 8. Assistant d'import: analyser une banque JSON/CSV et proposer automatiquement theme, difficulte et tags.
-9. Logo: remplacer l'icone actuelle par le vrai logo Kizz des qu'un fichier source est fourni.
+9. Cartes offline: embarquer des GeoJSON simplifies et des tuiles par zone pour supprimer la dependance reseau des cartes.

@@ -29,10 +29,10 @@ Priorites actuelles:
 
 ## MVP actuel
 
-- banque enrichie a 1816 questions, avec formats jeux TV originaux, astronomie, couverture pays/capitales du monde, drapeaux, regions/departements/chefs-lieux de France et mini-cours langues;
+- banque enrichie a 1829 questions, avec formats jeux TV originaux, astronomie, couverture pays/capitales du monde, drapeaux, regions/departements/chefs-lieux de France et mini-cours langues;
 - 72 questions `map-point`, dont 30 dans le theme dedie `Carte France`;
 - accueil refondu en trois panneaux: tableau de bord, quiz culture, langues, avec rail pleine largeur synchronise au geste;
-- sous-themes de session pour geographie, histoire, sport, arts, cinema, architecture, economie et astronomie;
+- sous-themes de session pour geographie, histoire par pays/epoque, sciences, sport, arts, cinema, architecture, nature, technologie, langues, economie et astronomie;
 - formats non-QCM renforces: texte libre, multi-champs, placement carte, numeros de departements et conjugaison saisie;
 - mode Infini calme avec theme aleatoire et difficulte constante;
 - reprise des brouillons infinis avec conservation du niveau choisi;
@@ -42,7 +42,7 @@ Priorites actuelles:
 - historique local des dernieres sessions dans le dashboard;
 - bilan de session par type d'interaction quand une session melange QCM, texte, multi-champs ou carte;
 - dashboard sombre avec sessions, réponses, précision et jours actifs;
-- 13 themes et 1816 questions locales, dont jeux TV originaux, economie, astronomie, langues, art visuel, geographie monde, drapeaux et carte de France;
+- 13 themes et 1829 questions locales, dont jeux TV originaux, economie, astronomie, langues, art visuel, geographie monde, drapeaux et carte de France;
 - Architecture comme thème autonome;
 - correction immédiate, explication et lien d'approfondissement;
 - favoris, recherche, sessions personnalisées et révision des erreurs;

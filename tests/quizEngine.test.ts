@@ -4,6 +4,7 @@ import { questions, topics } from '../src/content';
 import { countryCapitalData } from '../src/contentWorldCountries';
 import { franceDepartmentData, franceRegionData } from '../src/contentFranceAdmin';
 import { auditContent } from '../src/contentAudit';
+import { subthemes } from '../src/subthemes';
 import { parseCsvQuizPack } from '../src/csvQuizPack';
 import { bearingDegrees, cardinalDirection, distanceKm, gradeMapPoint, gradeMultiText, isFreeTextCorrect, nextReviewState, normalizeAnswer, sessionScore, shuffleQuestions } from '../src/quizEngine';
 import { summarizeByInteraction } from '../src/sessionSummary';
@@ -237,4 +238,10 @@ test('la banque couvre tous les pays, régions et départements demandés', () =
   assert.equal(questions.filter((question) => question.tags.includes('coverage:france-regions')).length, 18);
   assert.equal(questions.filter((question) => question.tags.includes('coverage:france-departements-cheflieux')).length, 101);
   assert.equal(questions.filter((question) => question.tags.includes('coverage:france-departements')).length, 101);
+});
+
+test('chaque sous-theme affiche correspond a du contenu', () => {
+  for (const subtheme of subthemes) {
+    assert.ok(questions.some((question) => question.topicId === subtheme.topicId && question.tags.includes(subtheme.tag)), `${subtheme.id}: aucun contenu`);
+  }
 });

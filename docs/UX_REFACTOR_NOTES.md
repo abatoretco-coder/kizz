@@ -6,6 +6,7 @@
 - Navigation d'accueil pleine largeur: Dashboard, Culture et Langues occupent tout le rail, sans texte "swipe".
 - Indicateur visuel du rail synchronise au deplacement horizontal.
 - Constructeur de session enrichi avec sous-themes selectionnables.
+- Logo Kizz v3 branche sur l'accueil et l'icone Expo.
 - Mode Infini calme: difficulte constante, themes aleatoires, sortie explicite par la croix avec sauvegarde des reponses.
 - Reprise du mode infini: le brouillon conserve son niveau et restaure le contexte.
 - Mode Endurance conserve comme session finie de 10 questions.
@@ -24,6 +25,5 @@
 
 1. Extraire `Home`, `Quiz` et `SessionConfigurator` hors de `App.tsx`.
 2. Etendre `src/theme.ts` aux espacements, rayons, tailles tactiles et variantes de boutons.
-3. Remplacer le logo quand le fichier source final est disponible.
-4. Ajouter un etat "session terminee" specifique au mode infini avec bilan sans relancer automatiquement.
-5. Ajouter un audit accessibilite: tailles tactiles, labels, contraste et ordre de lecture.
+3. Ajouter un etat "session terminee" specifique au mode infini avec bilan sans relancer automatiquement.
+4. Ajouter un audit accessibilite: tailles tactiles, labels, contraste et ordre de lecture.
