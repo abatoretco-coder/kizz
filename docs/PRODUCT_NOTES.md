@@ -2,7 +2,7 @@
 
 ## Livre maintenant
 
-- Banque enrichie: 2541 questions locales au total.
+- Banque enrichie: 2807 questions locales au total.
 - Nouveau theme Astronomie: systeme solaire, observation, galaxie et histoire spatiale.
 - Sous-themes dans le constructeur: geographie, histoire par pays/epoque, sciences, sport, arts, cinema, architecture, nature, technologie, langues, economie et astronomie.
 - Drapeaux du monde: 585 questions, soit 195 pays en texte libre, 195 QCM drapeau -> pays et 195 QCM pays -> drapeau.
@@ -14,6 +14,7 @@
 - Reconnaissance visuelle: tableaux, sculptures, monuments et architecture en medias embarques, avec questions image -> reponse et reponse -> choix d'image.
 - Banque Arts/Histoire augmentee: 425 questions simples sur peintures, mouvements, artistes et personnages historiques, avec 99 images embarquees generees (oeuvres + portraits).
 - Banque Nature visuelle ajoutee: 93 questions simples sur animaux, arbres, arbustes, fleurs, fougeres et mousses, avec 31 photos embarquees et provenance locale.
+- Banque Monuments visuelle ajoutee: 266 questions simples sur monuments, villes, pays et styles architecturaux, avec 59 photos embarquees et provenance locale.
 - Banque Science renforcee: 176 questions de chimie/tableau periodique sur elements, numeros atomiques, familles, formules, ions, pH, redox, VSEPR et stoechiometrie.
 - Signalement local d'une question apres correction: ambigue, trop facile, trop dure ou a reformuler.
 - Export JSON des signalements depuis l'ecran Banques.

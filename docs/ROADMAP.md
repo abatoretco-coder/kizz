@@ -7,13 +7,14 @@ Kizz est une application mobile de culture générale hors ligne, centrée sur l
 ## Accompli
 
 - APK Android autonome avec Expo SDK 56, SQLite local et banque embarquée.
-- 13 thèmes et 2541 questions locales.
+- 13 thèmes et 2807 questions locales.
 - Géographie complète: pays/capitales, 585 questions drapeaux, régions françaises, départements, chefs-lieux et numéros de départements.
 - Carte hors ligne: fond satellite Blue Marble, frontières pays et départements en GeoJSON local, canvas Mercator, zoom, double tap et déplacement inertiel.
 - Thème dédié Carte France avec 51 questions, dont 30 placements tactiles.
 - Sous-thèmes sélectionnables pour géographie, histoire, sciences, sport, arts, cinéma, architecture, nature, technologie, langues, économie et astronomie.
 - Banque visuelle Arts/Histoire: 425 questions sur œuvres, mouvements, artistes et personnages historiques, avec 99 images embarquées et manifeste de provenance.
 - Banque Nature visuelle: 93 questions sur animaux, arbres, arbustes, fleurs, fougères et mousses, avec 31 photos embarquées.
+- Banque Monuments visuelle: 266 questions sur monuments, villes, pays et styles, avec 59 photos embarquées.
 - Banque Science renforcée: 176 questions de chimie/tableau périodique niveau ingénieur.
 - Thème Astronomie: système solaire, observation, galaxies et histoire spatiale.
 - Parcours Langues: espagnol, allemand, italien, niveaux CECRL, mini-cours, conjugaisons et rituel de vocabulaire.
@@ -23,7 +24,7 @@ Kizz est une application mobile de culture générale hors ligne, centrée sur l
 - Import/export JSON, import CSV avec prévisualisation, mode admin local et signalement de questions.
 - Accueil refondu: Dashboard, Culture, Langues accessibles au tap et au swipe.
 - Retour Android intercepté dans l'application depuis les écrans internes.
-- Tests et audits: 35 tests automatisés, audit de contenu, tests d'encodage visible et vérification des assets.
+- Tests et audits: 36 tests automatisés, audit de contenu, tests d'encodage visible et vérification des assets.
 
 ## Priorités Maintenant
 

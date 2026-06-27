@@ -7,7 +7,7 @@
 - Donnees editoriales chargees depuis `src/content.ts` et modules satellites.
 - SQLite local via `src/database.ts`.
 - Moteurs testes dans `src/quizEngine.ts`, `src/sessionDraft.ts` et `src/quizPack.ts`.
-- Tests actuels: 35 tests unitaires/integrite.
+- Tests actuels: 36 tests unitaires/integrite.
 - Audit automatique de contenu: `npm run audit:content`.
 
 ## Forces
@@ -16,9 +16,9 @@
 - Schema de question deja extensible: QCM, texte libre, multi-champs, carte.
 - Import/export JSON transactionnel et import CSV assiste.
 - Repetition espacee locale et confiance facultative.
-- Banque riche: 2541 questions, 13 themes, 72+ cartes, drapeaux du monde, chimie/tableau periodique niveau ingenieur, reconnaissance visuelle, personnages historiques, nature visuelle et couverture France/monde renforcee.
+- Banque riche: 2807 questions, 13 themes, 72+ cartes, drapeaux du monde, chimie/tableau periodique niveau ingenieur, reconnaissance visuelle, personnages historiques, nature visuelle, monuments visuels et couverture France/monde renforcee.
 - Carte tactile hors ligne via WebView/canvas Mercator, fond satellite embarque, pinch, double tap, pan inertiel et frontieres embarquees.
-- Medias visuels embarques pour tableaux, sculptures, monuments, architecture, personnages historiques et nature, avec manifeste de provenance, zoom plein ecran et prechargement local des medias de quiz.
+- Medias visuels embarques pour tableaux, sculptures, monuments, architecture, personnages historiques et nature, avec manifeste de provenance, zoom plein ecran, attribution visible et prechargement local des medias de quiz.
 - Accueil navigable au swipe et par onglets tactiles; retour Android intercepte dans l'app.
 - Garde-fou de test contre les textes mojibake visibles.
 

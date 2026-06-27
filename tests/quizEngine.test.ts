@@ -202,6 +202,15 @@ test('la banque Nature propose des identifications visuelles', () => {
   assert.ok(natureVisual.filter((question) => question.tags.includes('image-choice')).length >= 30);
 });
 
+test('la banque Monuments enrichit fortement les questions visuelles', () => {
+  const landmarks = questions.filter((question) => question.topicId === 'architecture' && question.tags.includes('banque-visuelle-monuments'));
+  assert.ok(landmarks.length >= 250);
+  assert.ok(landmarks.filter((question) => question.imageAsset?.startsWith('landmarks/')).length >= 55);
+  assert.ok(landmarks.filter((question) => question.tags.includes('image-choice')).length >= 25);
+  assert.ok(landmarks.filter((question) => question.tags.includes('style')).length >= 55);
+  assert.ok(landmarks.filter((question) => question.tags.includes('geographie')).length >= 110);
+});
+
 test('la banque sciences couvre la chimie niveau ingenieur', () => {
   const chemistry = questions.filter((question) => question.topicId === 'science' && question.tags.includes('tableau-periodique'));
   assert.ok(chemistry.length >= 170);

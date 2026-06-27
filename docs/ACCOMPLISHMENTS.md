@@ -10,7 +10,7 @@
 ## Contenu
 
 - 13 thèmes.
-- 2541 questions locales.
+- 2807 questions locales.
 - Pays et capitales du monde.
 - Drapeaux: 585 questions sur 195 pays.
 - France: régions, départements, chefs-lieux, numéros de départements et carte dédiée.
@@ -25,6 +25,7 @@
 - Images embarquées pour œuvres, sculptures, monuments, architecture et personnages historiques.
 - 99 images générées Arts/Histoire avec manifeste de provenance.
 - 31 photos Nature avec manifeste de provenance.
+- 59 photos Monuments avec manifeste de provenance.
 - Questions image vers réponse et réponse vers choix d'image.
 - Zoom plein écran sur les images de question et appui long sur les images de choix.
 - Préchargement local des médias de la question courante et de la suivante.
@@ -50,7 +51,7 @@
 - Signalement local et export des signalements.
 - Audit contenu automatisé.
 - Générateurs de banques visuelles Arts/Histoire et Nature.
-- 35 tests automatisés.
+- 36 tests automatisés.
 
 ## Dernier État Vérifié
 
