@@ -8,7 +8,7 @@ import { franceDepartmentData, franceRegionData } from '../src/contentFranceAdmi
 import { auditContent } from '../src/contentAudit';
 import { subthemes } from '../src/subthemes';
 import { parseCsvQuizPack } from '../src/csvQuizPack';
-import { bearingDegrees, cardinalDirection, distanceKm, gradeMapPoint, gradeMultiText, isFreeTextCorrect, nextReviewState, normalizeAnswer, sessionScore, shuffleQuestions } from '../src/quizEngine';
+import { bearingDegrees, cardinalDirection, distanceKm, gradeMapPoint, gradeMultiText, isFreeTextCorrect, nextReviewState, normalizeAnswer, sessionScore, shouldStayInReview, shuffleQuestions } from '../src/quizEngine';
 import { summarizeByInteraction } from '../src/sessionSummary';
 import { summarizeLanguageProgress } from '../src/languageProgress';
 
@@ -116,6 +116,14 @@ test('la confiance ajuste la révision sans modifier le crédit', () => {
   assert.ok(confidentError.ease < nextReviewState(undefined, 0, now, 2).ease);
 });
 
+test('la révision garde les questions faibles jusqu’à maîtrise stable', () => {
+  assert.equal(shouldStayInReview({ answeredCount: 0, accuracy: 0, recentFailureCount: 0, solidRepetitions: 0 }), false);
+  assert.equal(shouldStayInReview({ answeredCount: 5, accuracy: 0.6, recentFailureCount: 1, solidRepetitions: 0 }), true);
+  assert.equal(shouldStayInReview({ answeredCount: 10, accuracy: 0.9, recentFailureCount: 1, solidRepetitions: 4 }), true);
+  assert.equal(shouldStayInReview({ answeredCount: 10, accuracy: 0.7, recentFailureCount: 0, solidRepetitions: 5 }), true);
+  assert.equal(shouldStayInReview({ answeredCount: 10, accuracy: 0.8, recentFailureCount: 0, solidRepetitions: 5 }), false);
+});
+
 test('mélange sans modifier la liste source', () => {
   const source = [1, 2, 3, 4];
   const shuffled = shuffleQuestions(source, () => 0);
@@ -166,6 +174,12 @@ test('les questions visuelles embarquent des assets complets', () => {
       for (const asset of question.choiceImageAssets) assert.ok(existsSync(join(assetsDir, `${asset}.jpg`)), `${question.id}: choix image introuvable ${asset}`);
     }
   }
+});
+
+test('la banque Arts/Histoire generee reste presente', () => {
+  assert.ok(questions.filter((question) => question.tags.includes('banque-visuelle')).length >= 225);
+  assert.ok(questions.filter((question) => question.tags.includes('banque-personnages')).length >= 200);
+  assert.ok(questions.filter((question) => question.imageAsset?.startsWith('generated/')).length >= 45);
 });
 
 test('l’audit automatique de banque ne remonte aucune erreur', () => {

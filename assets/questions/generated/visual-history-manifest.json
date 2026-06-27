@@ -1,0 +1,456 @@
+{
+  "generatedAt": "2026-06-27T12:25:07.314Z",
+  "imageCount": 50,
+  "sources": [
+    {
+      "label": "Léonard de Vinci",
+      "asset": "generated/leonard-de-vinci",
+      "wikidata": "http://www.wikidata.org/entity/Q762",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francesco Melzi - Portrait of Leonardo.png",
+      "license": "Public domain",
+      "artist": "Attributed to Francesco Melzi",
+      "credit": "File:Francesco_Molzi_-_Portrait_of_Leonardo_-_WGA14795.jpg"
+    },
+    {
+      "label": "Platon",
+      "asset": "generated/platon",
+      "wikidata": "http://www.wikidata.org/entity/Q859",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plato Silanion Musei Capitolini MC1377.jpg",
+      "license": "CC BY 2.5",
+      "artist": "Marie-Lan Nguyen\n",
+      "credit": "Own work"
+    },
+    {
+      "label": "Aristote",
+      "asset": "generated/aristote",
+      "wikidata": "http://www.wikidata.org/entity/Q868",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aristotle Altemps Inv8575.jpg",
+      "license": "Public domain",
+      "artist": "After Lysippos",
+      "credit": "Jastrow (2006)"
+    },
+    {
+      "label": "Isaac Newton",
+      "asset": "generated/isaac-newton",
+      "wikidata": "http://www.wikidata.org/entity/Q935",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:GodfreyKneller-IsaacNewton-1689.jpg",
+      "license": "Public domain",
+      "artist": "\nJames Thronill after Sir Godfrey Kneller",
+      "credit": "http://www.newton.cam.ac.uk/art/portrait.html"
+    },
+    {
+      "label": "Albert Einstein",
+      "asset": "generated/albert-einstein",
+      "wikidata": "http://www.wikidata.org/entity/Q937",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albert Einstein Head cleaned.jpg",
+      "license": "Public domain",
+      "artist": "Orren Jack Turner",
+      "credit": "This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3b46036.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing."
+    },
+    {
+      "label": "Jules César",
+      "asset": "generated/jules-cesar",
+      "wikidata": "http://www.wikidata.org/entity/Q1048",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Retrato de Julio César (26724093101) (cropped).jpg",
+      "license": "Public domain",
+      "artist": "Ángel M. Felicísimo from Mérida, España",
+      "credit": "Retrato de Julio César"
+    },
+    {
+      "label": "Marie Curie",
+      "asset": "generated/marie-curie",
+      "wikidata": "http://www.wikidata.org/entity/Q7186",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie Curie (1900) (cropped).jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "http://jasminkellner.com/wp-content/uploads/2015/03/Marie-Curie.jpg"
+    },
+    {
+      "label": "Ada Lovelace",
+      "asset": "generated/ada-lovelace",
+      "wikidata": "http://www.wikidata.org/entity/Q7259",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ada Byron daguerreotype by Antoine Claudet 1843 or 1850 - cropped.png",
+      "license": "Public domain",
+      "artist": "Antoine Claudet",
+      "credit": "File:Ada Byron daguerreotype by Antoine Claudet 1843 or 1850.jpg, Own work"
+    },
+    {
+      "label": "Winston Churchill",
+      "asset": "generated/winston-churchill",
+      "wikidata": "http://www.wikidata.org/entity/Q8016",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir Winston Churchill - 19086236948 (restored).jpg",
+      "license": "Public domain",
+      "artist": "Yousuf Karsh",
+      "credit": "Flickr: Sir Winston Churchill"
+    },
+    {
+      "label": "Nelson Mandela",
+      "asset": "generated/nelson-mandela",
+      "wikidata": "http://www.wikidata.org/entity/Q8023",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nelson Mandela 1994.jpg",
+      "license": "CC BY-SA 2.0",
+      "artist": "Kingkongphoto &amp; www.celebrity-photos.com from Laurel",
+      "credit": "Flickr: NELSON MANDELA"
+    },
+    {
+      "label": "Cléopâtre VII",
+      "asset": "generated/cleopatre-vii",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMSR-Ra80-b-MSR.jpg",
+      "license": "Public domain",
+      "artist": "Musée Saint-Raymond",
+      "credit": "Photothèque du Musée Saint-Raymond, musée des Antiques de Toulouse"
+    },
+    {
+      "label": "Auguste",
+      "asset": "generated/auguste",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APierre-Auguste_Renoir%2C_Portrait_of_Madame_Renoir_(c._1885%2C_small).jpg",
+      "license": "Public domain",
+      "artist": "Pierre-Auguste Renoir",
+      "credit": "[2]."
+    },
+    {
+      "label": "Périclès",
+      "asset": "generated/pericles",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AP%C3%A9ricl%C3%A8s_Grimanelli_by_Nadar%2C_1895.jpg",
+      "license": "Public domain",
+      "artist": "Nadar",
+      "credit": "http://www.acgart.gr/ACG-COLLECTION/ARTISTS/N/Nada/Nada1895grim.htm"
+    },
+    {
+      "label": "Hannibal Barca",
+      "asset": "generated/hannibal-barca",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APortrait_Hannibal_Barca.jpg",
+      "license": "Public domain",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Alexandre le Grand",
+      "asset": "generated/alexandre-le-grand",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APortrait_du_baron_Alexandre_Legros_en_costume_de_polytechnicien%2C_par_Pierre_Duval_Le_Camus.jpg",
+      "license": "Public domain",
+      "artist": "Pierre Duval Le Camus",
+      "credit": "La Nouvelle Athènes"
+    },
+    {
+      "label": "Socrate",
+      "asset": "generated/socrate",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASocrates_Massimo_Inv1236.jpg",
+      "license": "Public domain",
+      "artist": "",
+      "credit": "Jastrow (2006)"
+    },
+    {
+      "label": "Charlemagne",
+      "asset": "generated/charlemagne",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlbrecht_D%C3%BCrer_-_Emperor_Charlemagne.jpg",
+      "license": "Public domain",
+      "artist": "Albrecht Dürer",
+      "credit": "The Yorck Project (2002)       10.000 Meisterwerke der Malerei (DVD-ROM), distributed by DIRECTMEDIA Publishing GmbH.  ISBN:  3936122202. "
+    },
+    {
+      "label": "Aliénor d’Aquitaine",
+      "asset": "generated/alienor-d-aquitaine",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADonor_portrait_-_A_noble_lady_kneeling_-_Psalter_of_Eleanor_of_Aquitaine_(ca._1185)_-_KB_76_F_13%2C_folium_028v.jpg",
+      "license": "Public domain",
+      "artist": "\nJane Dieulafoy",
+      "credit": "This digital media file - and/or the physical objects depicted on it - originates from the digital and/or physical collections of the Koninklijke Bibliotheek, national library of the Netherlands."
+    },
+    {
+      "label": "Jeanne d’Arc",
+      "asset": "generated/jeanne-d-arc",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJanna-Dark_(12).jpg",
+      "license": "Public domain",
+      "artist": "AnonymousUnknown author",
+      "credit": "Lady from shamaxi"
+    },
+    {
+      "label": "Saladin",
+      "asset": "generated/saladin",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASaladin_the_Victorious.jpg",
+      "license": "Public domain",
+      "artist": "Gustave Doré",
+      "credit": "http://pages.usherbrooke.ca/croisades/big_images/_images_en.htm"
+    },
+    {
+      "label": "Gengis Khan",
+      "asset": "generated/gengis-khan",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABrooklyn_Museum_-_Portrait_of_Genghis_Khan.jpg",
+      "license": "No restrictions",
+      "artist": "",
+      "credit": "Online Collection of Brooklyn Museum; Photo: Brooklyn Museum, 2005, TL2004.125.8.jpg"
+    },
+    {
+      "label": "Marco Polo",
+      "asset": "generated/marco-polo",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMarco_Polo_portrait.jpg",
+      "license": "Public domain",
+      "artist": "",
+      "credit": "[1], but also many other copies online."
+    },
+    {
+      "label": "Mehmed II",
+      "asset": "generated/mehmed-ii",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABellini%2C_Gentile_-_Sultan_Mehmet_II.jpg",
+      "license": "Public domain",
+      "artist": "Gentile Bellini",
+      "credit": "The Yorck Project (2002)       10.000 Meisterwerke der Malerei (DVD-ROM), distributed by DIRECTMEDIA Publishing GmbH.  ISBN:  3936122202. "
+    },
+    {
+      "label": "Michel-Ange",
+      "asset": "generated/michel-ange",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMichel-Ange_Buonarotti.jpg",
+      "license": "Public domain",
+      "artist": "Nicolas de Larmessin and Esme de Boulonais",
+      "credit": "Isaac Bullart. Académie Des Sciences Et Des Arts. Amsterdam: Elzevier, 1682."
+    },
+    {
+      "label": "Raphaël",
+      "asset": "generated/raphael",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALorenzo_de_Medici_door_Rafael.jpg",
+      "license": "Public domain",
+      "artist": "Raphael",
+      "credit": "NRC -Handelsblad, my own scan."
+    },
+    {
+      "label": "Nicolas Copernic",
+      "asset": "generated/nicolas-copernic",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANikolaus_Kopernikus.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "http://www.frombork.art.pl/Ang10.htm\nhttps://www.welt.de/img/kultur/mobile152954235/1212503297-ci102l-w1024/Kopernikus-Gemaelde-in-Krakau.jpg"
+    },
+    {
+      "label": "Galilée",
+      "asset": "generated/galilee",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGalileo-sustermans2.jpg",
+      "license": "Public domain",
+      "artist": "Justus Sustermans",
+      "credit": "scan of 2D image as in notes below"
+    },
+    {
+      "label": "René Descartes",
+      "asset": "generated/rene-descartes",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFrans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg",
+      "license": "Public domain",
+      "artist": "After Frans Hals",
+      "credit": "André Hatala [e.a.] (1997) De eeuw van Rembrandt, Bruxelles: Crédit communal de Belgique, ISBN 2-908388-32-4."
+    },
+    {
+      "label": "Élisabeth Ire",
+      "asset": "generated/elisabeth-ire",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGeorge_Gower_Elizabeth_Sieve_Portrait.jpg",
+      "license": "Public domain",
+      "artist": "George Gower",
+      "credit": "http://www.folger.edu/html/exhibitions/elizabeth_I/sieve.asp"
+    },
+    {
+      "label": "Louis XIV",
+      "asset": "generated/louis-xiv",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARigaud_Louis_XIV_1701.jpg",
+      "license": "Public domain",
+      "artist": "Hyacinthe Rigaud",
+      "credit": "scan by User:Manfred Heyde"
+    },
+    {
+      "label": "Pierre le Grand",
+      "asset": "generated/pierre-le-grand",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACharles_Le_Brun_-_Bust_Portrait_of_Pierre_Seguier.jpg",
+      "license": "Public domain",
+      "artist": "Charles Le Brun",
+      "credit": "Thierry Cantalupo/20094501225NUC2A"
+    },
+    {
+      "label": "Catherine II",
+      "asset": "generated/catherine-ii",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AProfile_portrait_of_Catherine_II_by_Fedor_Rokotov_(1763%2C_Tretyakov_gallery).jpg",
+      "license": "Public domain",
+      "artist": "Fyodor Rokotov",
+      "credit": "http://www.art-catalog.ru/index.php"
+    },
+    {
+      "label": "Voltaire",
+      "asset": "generated/voltaire",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMaurice_Quentin_de_La_Tour%2C_portrait_de_Voltaire_(1735)_avec_agrandissement.jpg",
+      "license": "Public domain",
+      "artist": "Maurice Quentin de La Tour",
+      "credit": "[1]; photographer: Gérard Blot"
+    },
+    {
+      "label": "Montesquieu",
+      "asset": "generated/montesquieu",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMontesquieu_1.png",
+      "license": "Public domain",
+      "artist": "After Jacques-Antoine Dassier",
+      "credit": "Collection Chateau Versailles"
+    },
+    {
+      "label": "Jean-Jacques Rousseau",
+      "asset": "generated/jean-jacques-rousseau",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJean-Jacques_Rousseau_(painted_portrait).jpg",
+      "license": "Public domain",
+      "artist": "Maurice Quentin de La Tour",
+      "credit": "Unknown sourceUnknown source"
+    },
+    {
+      "label": "George Washington",
+      "asset": "generated/george-washington",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGeorge_Washington_by_John_Trumbull_(1780).jpg",
+      "license": "Public domain",
+      "artist": "John Trumbull",
+      "credit": "The Metropolitan Museum of Art"
+    },
+    {
+      "label": "Napoléon Bonaparte",
+      "asset": "generated/napoleon-bonaparte",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANapoleon_I_of_France_by_Andrea_Appiani.jpg",
+      "license": "Public domain",
+      "artist": "Andrea Appiani",
+      "credit": "The Yorck Project (2002)       10.000 Meisterwerke der Malerei (DVD-ROM), distributed by DIRECTMEDIA Publishing GmbH.  ISBN:  3936122202. "
+    },
+    {
+      "label": "Simón Bolívar",
+      "asset": "generated/simon-bolivar",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASim%C3%B3n_Bol%C3%ADvar_by_Ricardo_Acevedo_Bernal.jpg",
+      "license": "Public domain",
+      "artist": "Ricardo Acevedo Bernal",
+      "credit": "Flickr: Ricardo Acevedo Bernal. El Libertador Simón Bolívar (Óleo) Casa de Nariño"
+    },
+    {
+      "label": "Abraham Lincoln",
+      "asset": "generated/abraham-lincoln",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAbraham_Lincoln_head_on_shoulders_photo_portrait.jpg",
+      "license": "Public domain",
+      "artist": "Alexander Gardner",
+      "credit": "This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3a53289.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing."
+    },
+    {
+      "label": "Giuseppe Garibaldi",
+      "asset": "generated/giuseppe-garibaldi",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGiuseppe_Garibaldi_portrait.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "Library of Congress[1]"
+    },
+    {
+      "label": "Otto von Bismarck",
+      "asset": "generated/otto-von-bismarck",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOtto_von_Bismarck_portrait_by_Lwoff-Parlaghy.jpg",
+      "license": "Public domain",
+      "artist": "Vilma Lwoff-Parlaghy",
+      "credit": "Nordsee Museum Husum"
+    },
+    {
+      "label": "Charles Darwin",
+      "asset": "generated/charles-darwin",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACharles_Darwin_01.jpg",
+      "license": "Public domain",
+      "artist": "Julia Margaret Cameron",
+      "credit": "Unknown sourceUnknown source"
+    },
+    {
+      "label": "Florence Nightingale",
+      "asset": "generated/florence-nightingale",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFlorence_Nightingale_by_Henry_Hering%2C_1858.jpg",
+      "license": "Public domain",
+      "artist": "Hering",
+      "credit": "The life of Florence Nightingale (1913) by Edward Cook"
+    },
+    {
+      "label": "Mahatma Gandhi",
+      "asset": "generated/mahatma-gandhi",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahatma-Gandhi,_studio,_1931.jpg",
+      "license": "Public domain",
+      "artist": "Unknown photographer",
+      "credit": "Wikimedia Commons"
+    },
+    {
+      "label": "Martin Luther King Jr.",
+      "asset": "generated/martin-luther-king-jr",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMartin_Luther_King_Jr_NYWTS.jpg",
+      "license": "Public domain",
+      "artist": "Dick DeMarsico",
+      "credit": "This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3c26559.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing."
+    },
+    {
+      "label": "Rosa Parks",
+      "asset": "generated/rosa-parks",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnderson_McCauley%2C_Rosa_Parks'_paternal_grandfather_LCCN2015650606.jpg",
+      "license": "Public domain",
+      "artist": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+      "credit": "Library of Congress\n\nCatalog: https://lccn.loc.gov/2015650606\nImage download: https://cdn.loc.gov/service/pnp/ppmsca/48300/48318v.jpg\nOriginal url: https://www.loc.gov/pictures/item/2015650606/"
+    },
+    {
+      "label": "Charles de Gaulle",
+      "asset": "generated/charles-de-gaulle",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACharles_de_Gaulle_1943_Tunisia.jpg",
+      "license": "Public domain",
+      "artist": "Marjory Collins",
+      "credit": "This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID fsa.8d32425.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing."
+    },
+    {
+      "label": "Simone Veil",
+      "asset": "generated/simone-veil",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJean_Veil.jpg",
+      "license": "CC BY-SA 4.0",
+      "artist": "Rémi",
+      "credit": "Own work"
+    },
+    {
+      "label": "Frida Kahlo",
+      "asset": "generated/frida-kahlo",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGuillermo_Kahlo_-_Frida_Kahlo%2C_June_15%2C_1919_-_Google_Art_Project.jpg",
+      "license": "Public domain",
+      "artist": "\nGuillermo Kahlo (October 26, 1871 - April 14, 1941) – Photographer  Born in Baden, Germany. Died in Mexico City, Mexico. Details on Google Art Project",
+      "credit": "LAFCEMyPtSOnZw at Google Cultural Institute maximum zoom level"
+    },
+    {
+      "label": "Pablo Picasso",
+      "asset": "generated/pablo-picasso",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABildnis_pablo_picasso.jpg",
+      "license": "Public domain",
+      "artist": "Amedeo Modigliani",
+      "credit": "http://www.zeno.org/Kunstwerke/B/Modigliani,+Amadeo%3A+Bildnis+Pablo+Picasso"
+    }
+  ]
+}

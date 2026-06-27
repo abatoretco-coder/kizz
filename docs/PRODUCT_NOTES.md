@@ -2,7 +2,7 @@
 
 ## Livre maintenant
 
-- Banque enrichie: 1847 questions locales au total.
+- Banque enrichie: 2272 questions locales au total.
 - Nouveau theme Astronomie: systeme solaire, observation, galaxie et histoire spatiale.
 - Sous-themes dans le constructeur: geographie, histoire par pays/epoque, sciences, sport, arts, cinema, architecture, nature, technologie, langues, economie et astronomie.
 - Drapeaux du monde: 585 questions, soit 195 pays en texte libre, 195 QCM drapeau -> pays et 195 QCM pays -> drapeau.
@@ -12,6 +12,7 @@
 - Extension jeux TV originale: 36 questions inspirees des formats TTMC, Trivial, reponse rapide et Question pour un champion, sans copie de questions proprietaires.
 - Extension editoriale par grand theme: histoire, sciences, sport, arts, nature, technologie, cinema, architecture et economie.
 - Reconnaissance visuelle: tableaux, sculptures, monuments et architecture en medias embarques, avec questions image -> reponse et reponse -> choix d'image.
+- Banque Arts/Histoire augmentee: 425 questions simples sur peintures, mouvements, artistes et personnages historiques, avec portraits embarques quand disponibles.
 - Signalement local d'une question apres correction: ambigue, trop facile, trop dure ou a reformuler.
 - Export JSON des signalements depuis l'ecran Banques.
 - Audit automatique de banque disponible avec `npm run audit:content`.
@@ -32,6 +33,7 @@
 
 - L'infini reste un mode volontaire, jamais la recommandation par defaut.
 - Les recommandations privilegient la reprise, la revision espacee et les sessions finies.
+- La revision garde les questions faibles tant que la reussite globale est sous 80%, qu'une erreur apparait dans les 5 dernieres tentatives ou que 5 consolidations reussies ne sont pas atteintes.
 - Les sessions gardent une promesse cognitive claire: choisir, repondre, comprendre, sortir.
 - Les phases suivantes sont pilotees par `docs/IMPLEMENTATION_PHASES.md`.
 - La carte est un mode d'apprentissage spatial hors ligne; les frontieres et la camera tactile sont embarquees dans l'application.

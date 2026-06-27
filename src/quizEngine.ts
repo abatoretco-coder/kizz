@@ -70,6 +70,13 @@ export function sessionScore(correct: boolean[]): number {
 }
 
 export type ReviewState = { repetitions: number; intervalDays: number; ease: number };
+export type ReviewPracticeSnapshot = { answeredCount: number; accuracy: number; recentFailureCount: number; solidRepetitions: number };
+
+export function shouldStayInReview(snapshot: ReviewPracticeSnapshot) {
+  if (snapshot.answeredCount <= 0) return false;
+  const mastered = snapshot.accuracy >= 0.8 && snapshot.recentFailureCount === 0 && snapshot.solidRepetitions >= 5;
+  return !mastered && (snapshot.accuracy < 0.8 || snapshot.recentFailureCount > 0);
+}
 
 export function nextReviewState(current: ReviewState | undefined, credit: number, now = new Date(), confidence?: 1 | 2 | 3) {
   const previous = current ?? { repetitions: 0, intervalDays: 0, ease: 2.3 };

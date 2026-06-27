@@ -6,7 +6,7 @@ L'interface utilise un thème sombre sobre et ouvre directement les quiz depuis 
 
 ## Fonctionnalités actuelles
 
-- 13 themes et 1847 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, reconnaissance visuelle, mini-cours langues, economie et 72 placements geographiques sur carte satellite offline avec frontieres embarquees;
+- 13 themes et 2272 questions, dont jeux TV originaux, astronomie, pays/capitales du monde, 585 questions drapeaux, regions/departements/chefs-lieux de France, reconnaissance visuelle, personnages historiques, mini-cours langues, economie et 72 placements geographiques sur carte satellite offline avec frontieres embarquees;
 - accueil en trois panneaux: dashboard, quiz culture, parcours langues, avec rail pleine largeur synchronise au geste et aux onglets tactiles;
 - theme dedie Carte France: 51 questions, dont 30 placements tactiles et 9 numeros de departements en texte libre;
 - difficulté, tags, explication et provenance par question;
@@ -18,7 +18,7 @@ L'interface utilise un thème sombre sobre et ouvre directement les quiz depuis 
 - mode admin local pour filtrer les questions, masquer une question, ajuster sa difficulte et voir les signalements;
 - favoris, recherche, sessions personnalisées et révision des dernières erreurs;
 - sous-themes selectionnables pour travailler un axe precis: drapeaux, capitales, cartes, histoire par pays/epoque, sciences, sports, arts, cinema, architecture, nature, technologie, economie et astronomie;
-- questions visuelles embarquees pour tableaux, sculptures, monuments et architecture, avec QCM image -> reponse et reponse -> choix d'image;
+- questions visuelles embarquees pour tableaux, sculptures, monuments, architecture et personnages historiques, avec QCM image -> reponse et reponse -> choix d'image;
 - composition de sessions par thèmes, difficultés et longueur;
 - réponses multi-champs avec crédit partiel et répétition espacée locale;
 - bilan de session par calibration memoire et type d'interaction;
@@ -27,7 +27,7 @@ L'interface utilise un thème sombre sobre et ouvre directement les quiz depuis 
 - parcours Langues enrichi: mini-cours espagnol/allemand/italien, conjugaisons en texte libre et rituel "10 mots du jour";
 - progression Langues separee par langue et niveau CECRL;
 - audit automatique de banque avec `npm run audit:content`;
-- trente tests automatises du moteur, des brouillons, des banques, des assets visuels, de l'encodage et de l'integrite editoriale;
+- trente-deux tests automatises du moteur, des brouillons, des banques, des assets visuels, de l'encodage et de l'integrite editoriale;
 - configuration Expo pour produire un APK Android autonome.
 
 ## Démarrer
@@ -94,6 +94,8 @@ Le fichier `examples/sample-import.csv` donne un exemple QCM + texte libre.
 Les questions acceptent `type: "multiple-choice"` avec quatre choix, `type: "free-text"` avec une liste `acceptedAnswers`, `type: "multi-text"` avec plusieurs champs, ou `type: "map-point"` avec `geoTarget` (`lat`, `lon`, `label`, `toleranceKm`). `imageAsset`/`imageAlt` ajoutent une illustration locale; `choiceImageAssets`/`choiceImageAlts` ajoutent quatre images de réponse pour les QCM visuels. `imageUrl` reste réservé aux packs externes; la banque initiale utilise des médias embarqués pour fonctionner hors ligne. `learnMoreUrl` ouvre la ressource proposée après la correction. Sans lien fourni, Kizz génère une recherche Wikipédia en français.
 
 Le bilan de session croise maintenant score et confiance déclarée: les réponses sont regroupées en `A revoir`, `A consolider` et `Solide`, sans mécanique de récompense supplémentaire.
+
+La session de révision priorise les questions dont la réussite globale reste sous 80% ou qui ont une erreur dans les 5 dernières tentatives. Une question sort de ce mode quand elle atteint au moins 80%, sans erreur récente, avec 5 bonnes réponses de consolidation.
 
 Créer rapidement un nouveau squelette de banque:
 

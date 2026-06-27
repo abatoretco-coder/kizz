@@ -536,8 +536,34 @@ export async function getReviewQuestions(limit = 10): Promise<QuizQuestion[]> {
   const rows = await db.getAllAsync<QuestionRow>(
     `SELECT q.*, EXISTS(SELECT 1 FROM favorites f WHERE f.question_id = q.id) AS is_favorite
      FROM questions q LEFT JOIN review_state r ON r.question_id = q.id
-     WHERE r.due_at <= ? OR (SELECT a.correct FROM answers a WHERE a.question_id = q.id ORDER BY a.id DESC LIMIT 1) = 0
-     ORDER BY COALESCE(r.due_at, '9999-12-31') ASC, RANDOM() LIMIT ?`, new Date().toISOString(), limit,
+     WHERE r.due_at <= ?
+        OR (
+          (SELECT COUNT(*) FROM answers a WHERE a.question_id = q.id) > 0
+          AND (
+            (SELECT AVG(COALESCE(a.credit, a.correct)) FROM answers a WHERE a.question_id = q.id) < 0.8
+            OR (
+              SELECT COALESCE(SUM(CASE WHEN COALESCE(recent.credit, recent.correct) < 0.99 THEN 1 ELSE 0 END), 0)
+              FROM (SELECT a.correct, a.credit FROM answers a WHERE a.question_id = q.id ORDER BY a.id DESC LIMIT 5) recent
+            ) > 0
+          )
+          AND NOT (
+            (SELECT AVG(COALESCE(a.credit, a.correct)) FROM answers a WHERE a.question_id = q.id) >= 0.8
+            AND COALESCE(r.repetitions, 0) >= 5
+            AND (
+              SELECT COALESCE(SUM(CASE WHEN COALESCE(recent.credit, recent.correct) < 0.99 THEN 1 ELSE 0 END), 0)
+              FROM (SELECT a.correct, a.credit FROM answers a WHERE a.question_id = q.id ORDER BY a.id DESC LIMIT 5) recent
+            ) = 0
+          )
+        )
+     ORDER BY
+       CASE
+         WHEN (SELECT AVG(COALESCE(a.credit, a.correct)) FROM answers a WHERE a.question_id = q.id) < 0.8 THEN 0
+         WHEN r.due_at <= ? THEN 1
+         ELSE 2
+       END,
+       COALESCE(r.due_at, '9999-12-31') ASC,
+       RANDOM()
+     LIMIT ?`, new Date().toISOString(), new Date().toISOString(), limit,
   );
   return rows.map(mapQuestionRow);
 }
@@ -614,7 +640,31 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     'SELECT COUNT(*) AS answered, COALESCE(SUM(COALESCE(credit, correct)), 0) AS correct FROM answers',
   );
   const sessions = await db.getFirstAsync<{ count: number }>('SELECT COUNT(*) AS count FROM sessions');
-  const due = await db.getFirstAsync<{ count: number }>('SELECT COUNT(*) AS count FROM review_state WHERE due_at <= ?', new Date().toISOString());
+  const now = new Date().toISOString();
+  const due = await db.getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) AS count
+     FROM questions q LEFT JOIN review_state r ON r.question_id = q.id
+     WHERE r.due_at <= ?
+        OR (
+          (SELECT COUNT(*) FROM answers a WHERE a.question_id = q.id) > 0
+          AND (
+            (SELECT AVG(COALESCE(a.credit, a.correct)) FROM answers a WHERE a.question_id = q.id) < 0.8
+            OR (
+              SELECT COALESCE(SUM(CASE WHEN COALESCE(recent.credit, recent.correct) < 0.99 THEN 1 ELSE 0 END), 0)
+              FROM (SELECT a.correct, a.credit FROM answers a WHERE a.question_id = q.id ORDER BY a.id DESC LIMIT 5) recent
+            ) > 0
+          )
+          AND NOT (
+            (SELECT AVG(COALESCE(a.credit, a.correct)) FROM answers a WHERE a.question_id = q.id) >= 0.8
+            AND COALESCE(r.repetitions, 0) >= 5
+            AND (
+              SELECT COALESCE(SUM(CASE WHEN COALESCE(recent.credit, recent.correct) < 0.99 THEN 1 ELSE 0 END), 0)
+              FROM (SELECT a.correct, a.credit FROM answers a WHERE a.question_id = q.id ORDER BY a.id DESC LIMIT 5) recent
+            ) = 0
+          )
+        )`,
+    now,
+  );
   const days = await db.getAllAsync<{ day: string }>(
     "SELECT DISTINCT substr(completed_at, 1, 10) AS day FROM sessions ORDER BY day DESC",
   );

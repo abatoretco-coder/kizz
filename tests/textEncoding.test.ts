@@ -11,6 +11,7 @@ const filesToScan = [
   'docs/RESEARCH.md',
   'src/content.ts',
   'src/contentVisualRecognition.ts',
+  'src/generated/contentVisualHistory.ts',
   'src/quizPack.ts',
 ];
 
