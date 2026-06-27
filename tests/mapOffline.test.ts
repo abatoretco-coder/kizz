@@ -29,6 +29,9 @@ test('le rendu carte utilise une camera tactile fluide', () => {
   assert.equal(mapSection.includes('drawSatelliteBase'), true, 'la carte doit dessiner un fond cartographique embarque');
   assert.equal(app.includes('natural-earth-world.jpg'), true, 'le fond monde offline doit etre reference par l app');
   assert.equal(app.includes('natural-earth-france.jpg'), true, 'le fond France offline doit etre reference par l app');
+  assert.equal(app.includes("import { Asset } from 'expo-asset';"), true, 'les fonds doivent etre resolus en fichiers locaux');
+  assert.equal(app.includes('Asset.fromModule(OFFLINE_WORLD_MAP_ASSET).downloadAsync()'), true, 'le fond monde doit etre telecharge en URI locale pour le WebView');
+  assert.equal(app.includes('Asset.fromModule(OFFLINE_FRANCE_MAP_ASSET).downloadAsync()'), true, 'le fond France doit etre telecharge en URI locale pour le WebView');
   assert.equal(mapSection.includes('satelliteBounds'), true, 'chaque raster doit declarer ses bornes geographiques');
   assert.equal(mapSection.includes('<svg'), false, 'la carte ne doit plus utiliser le rendu SVG rigide');
 });

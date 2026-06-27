@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
+import { Asset } from 'expo-asset';
 import { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator, Alert, BackHandler, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
@@ -90,8 +91,8 @@ const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
   ...natureQuestionImages,
   ...landmarkQuestionImages,
 };
-const OFFLINE_WORLD_MAP_URI = Image.resolveAssetSource(require('./assets/maps/natural-earth-world.jpg')).uri;
-const OFFLINE_FRANCE_MAP_URI = Image.resolveAssetSource(require('./assets/maps/natural-earth-france.jpg')).uri;
+const OFFLINE_WORLD_MAP_ASSET = require('./assets/maps/natural-earth-world.jpg');
+const OFFLINE_FRANCE_MAP_ASSET = require('./assets/maps/natural-earth-france.jpg');
 
 function questionImageSource(question?: QuizQuestion) {
   if (!question) return undefined;
@@ -1079,6 +1080,21 @@ function MediaZoomModal({ media, onClose }: { media: { source: ImageSourcePropTy
 }
 
 function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { question: QuizQuestion; guess: GeoPoint | null; target?: GeoPoint & { toleranceKm?: number }; disabled: boolean; onPick: (point: GeoPoint) => void }) {
+  const [mapAssetUris, setMapAssetUris] = useState<{ world?: string; france?: string }>({});
+
+  useEffect(() => {
+    let cancelled = false;
+    async function loadMapAssets() {
+      const [world, france] = await Promise.all([
+        Asset.fromModule(OFFLINE_WORLD_MAP_ASSET).downloadAsync(),
+        Asset.fromModule(OFFLINE_FRANCE_MAP_ASSET).downloadAsync(),
+      ]);
+      if (!cancelled) setMapAssetUris({ world: world.localUri ?? world.uri, france: france.localUri ?? france.uri });
+    }
+    void loadMapAssets().catch(() => undefined);
+    return () => { cancelled = true; };
+  }, []);
+
   function handleMapMessage(event: WebViewMessageEvent) {
     if (disabled) return;
     try {
@@ -1099,7 +1115,7 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { que
       <WebView
         testID="world-map-picker"
         originWhitelist={['*']}
-        source={{ html: satelliteMapHtml(question, guess, target, disabled) }}
+        source={{ html: satelliteMapHtml(question, guess, target, disabled, mapAssetUris) }}
         javaScriptEnabled
         domStorageEnabled
         allowFileAccess
@@ -1116,14 +1132,15 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { que
   );
 }
 
-function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target: (GeoPoint & { toleranceKm?: number }) | undefined, disabled: boolean) {
+function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target: (GeoPoint & { toleranceKm?: number }) | undefined, disabled: boolean, mapAssetUris: { world?: string; france?: string }) {
   const isFranceMap = question.topicId === 'france-map' || question.tags.includes('carte-france') || question.tags.includes('carte-france-dediee');
   const bounds = isFranceMap
     ? { minLon: -5.8, maxLon: 10.0, minLat: 41.1, maxLat: 51.3 }
     : { minLon: -180, maxLon: 180, minLat: -58, maxLat: 83 };
   const boundaryGeoJson = isFranceMap ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson;
   const title = isFranceMap ? 'France' : 'Monde';
-  const satelliteUri = isFranceMap ? OFFLINE_FRANCE_MAP_URI : OFFLINE_WORLD_MAP_URI;
+  const fallbackSatelliteUri = Image.resolveAssetSource(isFranceMap ? OFFLINE_FRANCE_MAP_ASSET : OFFLINE_WORLD_MAP_ASSET).uri;
+  const satelliteUri = isFranceMap ? mapAssetUris.france ?? fallbackSatelliteUri : mapAssetUris.world ?? fallbackSatelliteUri;
   const satelliteBounds = isFranceMap
     ? { minLon: -6.8, maxLon: 10.2, minLat: 41.0, maxLat: 51.8 }
     : { minLon: -180, maxLon: 180, minLat: -90, maxLat: 90 };
@@ -1321,6 +1338,18 @@ function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, width, height);
         if (!satelliteReady) return;
+        if (!(satelliteBounds.minLon === -180 && satelliteBounds.maxLon === 180)) {
+          var topLeft = worldToScreen(project(satelliteBounds.minLon, satelliteBounds.maxLat));
+          var bottomRight = worldToScreen(project(satelliteBounds.maxLon, satelliteBounds.minLat));
+          ctx.globalAlpha = 0.98;
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+          ctx.drawImage(satellite, topLeft.x, topLeft.y, bottomRight.x - topLeft.x, bottomRight.y - topLeft.y);
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = 'rgba(0,0,0,0.08)';
+          ctx.fillRect(0, 0, width, height);
+          return;
+        }
         var rowHeight = zoom > 12 ? 1 : 2;
         for (var y = 0; y < height; y += rowHeight) {
           var leftWorld = screenToWorld(0, y + rowHeight / 2);
