@@ -26,7 +26,9 @@ import { visualImageExpansionQuestions } from './contentVisualImageExpansion';
 const retiredTopicIds = new Set(['daily']);
 
 function isRetiredQuestionId(id: string) {
-  return /^paint-bank-\d+-movement$/.test(id) || /^landmark-\d+-style$/.test(id);
+  return /^paint-bank-\d+-movement$/.test(id)
+    || /^landmark-\d+-style$/.test(id)
+    || /^hist-figure-\d+-(role|region|era)$/.test(id);
 }
 
 const rawTopics: Topic[] = [
@@ -157,6 +159,9 @@ function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
     .replace('Quel repere stylistique associer a', 'Quel repère stylistique associer à')
     .replace('En observant ce monument, quel repere stylistique associer a', 'En observant ce monument, quel repère stylistique associer à')
     .replace('En observant cette œuvre, à quel mouvement rattacher', 'En observant cette œuvre, à quel mouvement rattache-t-on')
+    .replace('Quel rôle décrit le mieux', 'En observant ce portrait, quel rôle décrit le mieux')
+    .replace('À quel espace historique rattache-t-on', 'En observant ce portrait, à quel espace historique rattache-t-on')
+    .replace('Dans quelle période place-t-on surtout', 'En observant ce portrait, dans quelle période place-t-on surtout')
     .replace(/\bl image\b/g, 'l’image')
     .replace(/\brepere\b/g, 'repère')
     .replace(/\boeuvre\b/g, 'œuvre')
@@ -167,6 +172,7 @@ function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
       'L’image renvoie à $2; elle sert de repère visuel pour relier œuvre et auteur.',
     )
     .replace('est rangé ici dans le repère', 'sert ici de repère pour le mouvement')
+    .replace('est rattache ici a', 'est rattaché ici à')
     .replace(/\bl image\b/g, 'l’image')
     .replace(/\brepere\b/g, 'repère')
     .replace(/\boeuvre\b/g, 'œuvre')
