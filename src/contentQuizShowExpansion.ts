@@ -1,6 +1,6 @@
 import { Difficulty, QuestionSeed } from './domain';
 
-const sourceLabel = 'Contenu original Kizz (inspire des formats TTMC, Trivial et jeux TV)';
+const sourceLabel = 'Contenu original Kizz (inspiré des formats TTMC, Trivial et jeux TV)';
 
 type ChoiceEntry = [
   id: string,
@@ -15,7 +15,7 @@ type ChoiceEntry = [
 ];
 
 function choice([id, topicId, difficulty, prompt, choices, answerIndex, explanation, tags, learnMoreUrl]: ChoiceEntry): QuestionSeed {
-  const anchoredExplanation = explanation.length < 38 ? `${explanation} Ce repere court sert surtout a automatiser le rappel en session rapide.` : explanation;
+  const anchoredExplanation = explanation.length < 38 ? `${explanation} Ce repère court sert surtout à automatiser le rappel en session rapide.` : explanation;
   return { id, topicId, difficulty, prompt, choices, answerIndex, explanation: anchoredExplanation, tags: ['quiz-show', ...tags], sourceLabel, learnMoreUrl };
 }
 
@@ -24,13 +24,13 @@ export const quizShowExpansionQuestions: QuestionSeed[] = [
   choice(['show-geo-cap-002', 'geography', 1, 'Trivial express : quelle est la capitale de la Grece ?', ['Athenes', 'Sparte', 'Thessalonique', 'Patras'], 0, 'Athenes est la capitale de la Grece.', ['capitales', 'europe'], 'https://fr.wikipedia.org/wiki/Ath%C3%A8nes']),
   choice(['show-geo-cap-003', 'geography', 1, 'Pays et capitales : quelle est la capitale de l Irlande ?', ['Cork', 'Dublin', 'Galway', 'Belfast'], 1, 'Dublin est la capitale de la Republique d Irlande.', ['capitales', 'europe'], 'https://fr.wikipedia.org/wiki/Dublin']),
   choice(['show-geo-cap-004', 'geography', 1, 'Reponse rapide : quelle est la capitale du Senegal ?', ['Dakar', 'Bamako', 'Conakry', 'Abidjan'], 0, 'Dakar est la capitale du Senegal.', ['capitales', 'afrique'], 'https://fr.wikipedia.org/wiki/Dakar']),
-  choice(['show-geo-cap-005', 'geography', 2, 'Format TTMC niveau 5 : quelle est la capitale de la Croatie ?', ['Split', 'Zagreb', 'Dubrovnik', 'Rijeka'], 1, 'Zagreb est la capitale de la Croatie.', ['capitales', 'europe'], 'https://fr.wikipedia.org/wiki/Zagreb']),
+  choice(['show-geo-cap-005', 'geography', 2, 'Format TTMC intermédiaire : quelle est la capitale de la Croatie ?', ['Split', 'Zagreb', 'Dubrovnik', 'Rijeka'], 1, 'Zagreb est la capitale de la Croatie.', ['capitales', 'europe'], 'https://fr.wikipedia.org/wiki/Zagreb']),
   choice(['show-geo-cap-006', 'geography', 2, 'Question pour un champion : capitale de la Coree du Sud ?', ['Busan', 'Seoul', 'Incheon', 'Daegu'], 1, 'Seoul est la capitale de la Coree du Sud.', ['capitales', 'asie'], 'https://fr.wikipedia.org/wiki/S%C3%A9oul']),
   choice(['show-geo-cap-007', 'geography', 2, 'Pays et capitales : quelle est la capitale du Chili ?', ['Santiago', 'Valparaiso', 'Lima', 'Quito'], 0, 'Santiago est la capitale du Chili.', ['capitales', 'amerique'], 'https://fr.wikipedia.org/wiki/Santiago']),
   choice(['show-geo-cap-008', 'geography', 2, 'Jeu TV : quelle capitale est sur le Danube ?', ['Madrid', 'Budapest', 'Lisbonne', 'Oslo'], 1, 'Budapest est traversee par le Danube.', ['capitales', 'fleuves'], 'https://fr.wikipedia.org/wiki/Budapest']),
-  choice(['show-geo-cap-009', 'geography', 2, 'Format TTMC niveau 5 : quelle est la capitale de la Georgie ?', ['Erevan', 'Bakou', 'Tbilissi', 'Kichinev'], 2, 'Tbilissi est la capitale de la Georgie.', ['capitales', 'caucase'], 'https://fr.wikipedia.org/wiki/Tbilissi']),
+  choice(['show-geo-cap-009', 'geography', 2, 'Format TTMC intermédiaire : quelle est la capitale de la Géorgie ?', ['Erevan', 'Bakou', 'Tbilissi', 'Kichinev'], 2, 'Tbilissi est la capitale de la Géorgie.', ['capitales', 'caucase'], 'https://fr.wikipedia.org/wiki/Tbilissi']),
   choice(['show-geo-cap-010', 'geography', 3, 'Question pour un champion : capitale du Kazakhstan ?', ['Almaty', 'Astana', 'Bichkek', 'Tachkent'], 1, 'Astana est la capitale du Kazakhstan.', ['capitales', 'asie-centrale'], 'https://fr.wikipedia.org/wiki/Astana']),
-  choice(['show-geo-cap-011', 'geography', 2, 'Trivial expert : quelle est la capitale de l Uruguay ?', ['Montevideo', 'Asuncion', 'Cordoba', 'Rosario'], 0, 'Montevideo est la capitale de l Uruguay.', ['capitales', 'amerique'], 'https://fr.wikipedia.org/wiki/Montevideo']),
+  choice(['show-geo-cap-011', 'geography', 2, 'Trivial capitales : quelle est la capitale de l’Uruguay ?', ['Montevideo', 'Asuncion', 'Cordoba', 'Rosario'], 0, 'Montevideo est la capitale de l’Uruguay.', ['capitales', 'amerique'], 'https://fr.wikipedia.org/wiki/Montevideo']),
   choice(['show-geo-cap-012', 'geography', 3, 'Pays et capitales : quelle est la capitale d Oman ?', ['Doha', 'Mascate', 'Manama', 'Koweit'], 1, 'Mascate est la capitale d Oman.', ['capitales', 'moyen-orient'], 'https://fr.wikipedia.org/wiki/Mascate']),
 
   choice(['show-geo-pos-001', 'geography', 1, 'Placement de pays : lequel est au sud de la France ?', ['Belgique', 'Espagne', 'Pays-Bas', 'Danemark'], 1, 'L Espagne borde la France au sud-ouest.', ['placement-pays', 'europe'], 'https://fr.wikipedia.org/wiki/Espagne']),
@@ -41,15 +41,15 @@ export const quizShowExpansionQuestions: QuestionSeed[] = [
   choice(['show-geo-pos-006', 'geography', 2, 'Carte mentale : quel pays touche la mer Caspienne ?', ['Suisse', 'Azerbaidjan', 'Belgique', 'Slovenie'], 1, 'L Azerbaidjan a une facade sur la mer Caspienne.', ['placement-pays', 'asie'], 'https://fr.wikipedia.org/wiki/Azerba%C3%AFdjan']),
   choice(['show-geo-pos-007', 'geography', 2, 'Placement de pays : lequel est dans la peninsule scandinave ?', ['Norvege', 'Grece', 'Roumanie', 'Portugal'], 0, 'La Norvege occupe l ouest de la peninsule scandinave.', ['placement-pays', 'europe'], 'https://fr.wikipedia.org/wiki/Norv%C3%A8ge']),
   choice(['show-geo-pos-008', 'geography', 2, 'Trivial geo : quel pays a une frontiere avec le Mexique ?', ['Canada', 'Etats-Unis', 'Bresil', 'Argentine'], 1, 'Les Etats-Unis partagent une frontiere avec le Mexique.', ['placement-pays', 'amerique'], 'https://fr.wikipedia.org/wiki/Fronti%C3%A8re_entre_les_%C3%89tats-Unis_et_le_Mexique']),
-  choice(['show-geo-pos-009', 'geography', 2, 'Placement expert : quel pays est enclave dans l Afrique du Sud ?', ['Lesotho', 'Zimbabwe', 'Mozambique', 'Zambie'], 0, 'Le Lesotho est entierement entoure par l Afrique du Sud.', ['placement-pays', 'afrique'], 'https://fr.wikipedia.org/wiki/Lesotho']),
+  choice(['show-geo-pos-009', 'geography', 2, 'Placement de pays : quel pays est enclavé dans l’Afrique du Sud ?', ['Lesotho', 'Zimbabwe', 'Mozambique', 'Zambie'], 0, 'Le Lesotho est entièrement entouré par l’Afrique du Sud.', ['placement-pays', 'afrique'], 'https://fr.wikipedia.org/wiki/Lesotho']),
   choice(['show-geo-pos-010', 'geography', 2, 'Carte mentale : quel pays se situe entre l Inde et la Chine ?', ['Nepal', 'Laos', 'Qatar', 'Liban'], 0, 'Le Nepal se trouve dans l Himalaya, entre l Inde et la Chine.', ['placement-pays', 'asie'], 'https://fr.wikipedia.org/wiki/N%C3%A9pal']),
-  choice(['show-geo-pos-011', 'geography', 2, 'Format TTMC niveau 6 : quel pays controle l archipel des Feroe ?', ['Norvege', 'Danemark', 'Islande', 'Suede'], 1, 'Les iles Feroe sont un territoire autonome du royaume du Danemark.', ['placement-pays', 'europe'], 'https://fr.wikipedia.org/wiki/%C3%8Eles_F%C3%A9ro%C3%A9']),
-  choice(['show-geo-pos-012', 'geography', 3, 'Trivial expert : quel pays est au sud immediat du Mali ?', ['Algerie', 'Cote d Ivoire', 'Libye', 'Egypte'], 1, 'La Cote d Ivoire est au sud du Mali.', ['placement-pays', 'afrique'], 'https://fr.wikipedia.org/wiki/Mali']),
+  choice(['show-geo-pos-011', 'geography', 2, 'Format TTMC intermédiaire : quel pays contrôle l’archipel des Féroé ?', ['Norvège', 'Danemark', 'Islande', 'Suède'], 1, 'Les îles Féroé sont un territoire autonome du royaume du Danemark.', ['placement-pays', 'europe'], 'https://fr.wikipedia.org/wiki/%C3%8Eles_F%C3%A9ro%C3%A9']),
+  choice(['show-geo-pos-012', 'geography', 3, 'Trivial placement : quel pays est au sud immédiat du Mali ?', ['Algérie', 'Côte d’Ivoire', 'Libye', 'Égypte'], 1, 'La Côte d’Ivoire est au sud du Mali.', ['placement-pays', 'afrique'], 'https://fr.wikipedia.org/wiki/Mali']),
 
   choice(['show-his-001', 'history', 1, 'Jeu TV : en quelle annee commence la Seconde Guerre mondiale en Europe ?', ['1914', '1939', '1945', '1957'], 1, 'La guerre commence en Europe avec l invasion de la Pologne en 1939.', ['histoire', 'xxe'], 'https://fr.wikipedia.org/wiki/Seconde_Guerre_mondiale']),
   choice(['show-his-002', 'history', 2, 'Trivial : quel roi est associe a Versailles ?', ['Henri IV', 'Louis XIV', 'Louis XVI', 'Francois Ier'], 1, 'Louis XIV transforme Versailles en centre du pouvoir royal.', ['france', 'monarchie'], 'https://fr.wikipedia.org/wiki/Louis_XIV']),
   choice(['show-his-003', 'history', 2, 'Question pour un champion : quel empire avait Rome pour capitale ?', ['Empire inca', 'Empire romain', 'Empire ottoman', 'Empire perse'], 1, 'Rome est la capitale historique de l Empire romain.', ['antiquite'], 'https://fr.wikipedia.org/wiki/Empire_romain']),
-  choice(['show-his-004', 'history', 2, 'Format TTMC niveau 5 : quel traite cree la CEE en 1957 ?', ['Traite de Rome', 'Traite de Versailles', 'Traite de Nice', 'Traite de Lisbonne'], 0, 'Le traite de Rome fonde la Communaute economique europeenne.', ['europe', 'traites'], 'https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Rome']),
+  choice(['show-his-004', 'history', 2, 'Format TTMC intermédiaire : quel traité crée la CEE en 1957 ?', ['Traité de Rome', 'Traité de Versailles', 'Traité de Nice', 'Traité de Lisbonne'], 0, 'Le traité de Rome fonde la Communauté économique européenne.', ['europe', 'traites'], 'https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Rome']),
 
   choice(['show-sci-001', 'science', 1, 'Reponse rapide : quelle planete est surnommee la planete rouge ?', ['Mars', 'Venus', 'Jupiter', 'Mercure'], 0, 'Mars est surnommee la planete rouge a cause de ses oxydes de fer.', ['astronomie'], 'https://fr.wikipedia.org/wiki/Mars_(plan%C3%A8te)']),
   choice(['show-sci-002', 'science', 2, 'Trivial sciences : quel organe filtre le sang et produit l urine ?', ['Poumon', 'Rein', 'Foie', 'Estomac'], 1, 'Les reins filtrent le sang et produisent l urine.', ['biologie'], 'https://fr.wikipedia.org/wiki/Rein']),
