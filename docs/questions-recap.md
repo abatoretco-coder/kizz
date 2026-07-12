@@ -21,13 +21,13 @@ G?n?r? le 2026-07-12 depuis `src/content.ts`.
 | Sport | 25 | 0 | 25 | 11 | 8 | 6 | multiple-choice: 22, free-text: 3 | 5 |
 | Arts | 267 | 238 | 29 | 98 | 130 | 39 | multiple-choice: 258, free-text: 8, multi-text: 1 | 4 |
 | Langues | 246 | 0 | 246 | 122 | 82 | 42 | free-text: 97, multiple-choice: 149 | 5 |
-| Architecture | 303 | 273 | 30 | 101 | 153 | 49 | multiple-choice: 293, free-text: 10 | 4 |
+| Économie | 28 | 0 | 28 | 9 | 10 | 9 | multiple-choice: 25, free-text: 2, multi-text: 1 | 4 |
+| Astronomie | 19 | 0 | 19 | 9 | 6 | 4 | multiple-choice: 16, free-text: 3 | 2 |
+| Carte France | 271 | 0 | 271 | 50 | 121 | 100 | map-point: 30, multiple-choice: 232, free-text: 9 | 4 |
 | Nature | 118 | 93 | 25 | 55 | 50 | 13 | multiple-choice: 113, free-text: 5 | 5 |
 | Technologie | 23 | 0 | 23 | 8 | 9 | 6 | multiple-choice: 20, free-text: 3 | 4 |
 | Cinéma | 23 | 0 | 23 | 8 | 9 | 6 | multiple-choice: 20, free-text: 3 | 5 |
-| Économie | 28 | 0 | 28 | 9 | 10 | 9 | multiple-choice: 25, free-text: 2, multi-text: 1 | 4 |
-| Carte France | 271 | 0 | 271 | 50 | 121 | 100 | map-point: 30, multiple-choice: 232, free-text: 9 | 4 |
-| Astronomie | 19 | 0 | 19 | 9 | 6 | 4 | multiple-choice: 16, free-text: 3 | 2 |
+| Architecture | 303 | 273 | 30 | 101 | 153 | 49 | multiple-choice: 293, free-text: 10 | 4 |
 
 ## Colonnes du CSV
 
