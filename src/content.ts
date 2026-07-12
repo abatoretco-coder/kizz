@@ -21,8 +21,13 @@ import { natureVisualQuestions } from './generated/contentNatureVisual';
 import { landmarkVisualQuestions } from './generated/contentLandmarkVisual';
 import { scienceChemistryQuestions } from './contentScienceChemistry';
 import { formatBalanceQuestions } from './contentFormatBalance';
+import { visualImageExpansionQuestions } from './contentVisualImageExpansion';
 
 const retiredTopicIds = new Set(['daily']);
+
+function isRetiredQuestionId(id: string) {
+  return /^paint-bank-\d+-movement$/.test(id) || /^landmark-\d+-style$/.test(id);
+}
 
 const rawTopics: Topic[] = [
   { id: 'history', title: 'Histoire', subtitle: 'Dates, peuples et idées', icon: 'H', color: '#E96D4B' },
@@ -89,6 +94,7 @@ const rawQuestions: QuestionSeed[] = [
   ...landmarkVisualQuestions,
   ...scienceChemistryQuestions,
   ...formatBalanceQuestions,
+  ...visualImageExpansionQuestions,
 ];
 
 function hashQuestionId(id: string) {
@@ -135,6 +141,43 @@ function hasPrefix(tags: Set<string>, prefix: string) {
 
 function normalizedText(value: string) {
   return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+}
+
+const difficultyOverrides: Partial<Record<string, QuestionSeed['difficulty']>> = {
+  'paint-bank-036-work': 2,
+  'paint-bank-037-artist': 3,
+};
+
+function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
+  const difficulty = difficultyOverrides[question.id] ?? question.difficulty;
+  const prompt = question.prompt
+    .replace(/^Selectionne l image de (.+)\.$/, 'Sélectionne l’image de $1.')
+    .replace(/^Quelle ville ou zone Grece est associee a ce repere architectural \?$/, 'Quelle ville ou zone de Grèce est associée à ce repère architectural ?')
+    .replace(/^Quelle ville ou zone Russie est associee a ce repere architectural \?$/, 'Quelle ville ou zone de Russie est associée à ce repère architectural ?')
+    .replace('Quel repere stylistique associer a', 'Quel repère stylistique associer à')
+    .replace('En observant ce monument, quel repere stylistique associer a', 'En observant ce monument, quel repère stylistique associer à')
+    .replace('En observant cette œuvre, à quel mouvement rattacher', 'En observant cette œuvre, à quel mouvement rattache-t-on')
+    .replace(/\bl image\b/g, 'l’image')
+    .replace(/\brepere\b/g, 'repère')
+    .replace(/\boeuvre\b/g, 'œuvre')
+    .replace(/\bassociee a\b/g, 'associée à');
+  const explanation = question.explanation
+    .replace(
+      /^(.+) est associee a ([^;]+); l image sert de repere visuel pour relier oeuvre et auteur\.$/,
+      'L’image renvoie à $2; elle sert de repère visuel pour relier œuvre et auteur.',
+    )
+    .replace('est rangé ici dans le repère', 'sert ici de repère pour le mouvement')
+    .replace(/\bl image\b/g, 'l’image')
+    .replace(/\brepere\b/g, 'repère')
+    .replace(/\boeuvre\b/g, 'œuvre')
+    .replace(/\bassociee a\b/g, 'associée à');
+  if (prompt === question.prompt && explanation === question.explanation && difficulty === question.difficulty) return question;
+  return {
+    ...question,
+    difficulty,
+    prompt,
+    explanation,
+  };
 }
 
 function enrichSubthemeTags(question: QuestionSeed): QuestionSeed {
@@ -234,5 +277,10 @@ function enrichSubthemeTags(question: QuestionSeed): QuestionSeed {
   }
   return { ...question, tags: [...tags] };
 }
-export const questions: QuestionSeed[] = balancedAnswerOrder(rawQuestions.filter((question) => !retiredTopicIds.has(question.topicId)).map(enrichSubthemeTags));
+export const questions: QuestionSeed[] = balancedAnswerOrder(
+  rawQuestions
+    .filter((question) => !retiredTopicIds.has(question.topicId) && !isRetiredQuestionId(question.id))
+    .map(cleanGeneratedText)
+    .map(enrichSubthemeTags),
+);
 

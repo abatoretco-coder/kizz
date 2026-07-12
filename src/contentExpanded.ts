@@ -91,7 +91,7 @@ export const expandedQuestions: QuestionSeed[] = [
     ['Dans quelle discipline trouve-t-on un ippon ?', ['Judo', 'Boxe anglaise', 'Lutte libre', 'Taekwondo uniquement'], 0, 'Au judo, un ippon donne immédiatement la victoire.'],
     ['Quelle distance mesure un tour de piste d’athlétisme standard ?', ['200 m', '300 m', '400 m', '500 m'], 2, 'La piste extérieure standard mesure 400 mètres à la corde.'],
     ['Quel trophée oppose historiquement les équipes masculines de golf des États-Unis et d’Europe ?', ['Ryder Cup', 'Davis Cup', 'Stanley Cup', 'America’s Cup'], 0, 'La Ryder Cup est une compétition biennale de golf par équipes.'],
-    ['Dans quel sport le terme « scrum » désigne-t-il une mêlée ?', ['Cricket', 'Rugby', 'Baseball', 'Hockey'], 1, 'Scrum est le terme anglais employé pour la mêlée au rugby.'],
+    ['Au rugby à XV, quel terme anglais désigne la remise en jeu ordonnée après un en-avant ?', ['Scrum', 'Ruck', 'Maul', 'Line-out'], 0, 'Le scrum correspond à la mêlée ordonnée, notamment après certains en-avants.'],
   ]),
 
   ...build('arts', 'art', 1, [

@@ -241,7 +241,7 @@ function choicesFrom<T extends CountryCapital>(rows: T[], index: number, selecto
 }
 
 function explanationFor(row: CountryCapital) {
-  return row.note ?? `${row.capital} est la capitale de ${row.country}; c est le repere politique principal a associer a ce pays dans les atlas usuels.`;
+  return row.note ?? `${row.capital} est la capitale associée au pays ${row.country}; c est le repère politique principal à relier à ce pays dans les atlas usuels.`;
 }
 
 function sameNameCapital(row: CountryCapital) {
@@ -257,8 +257,12 @@ function maskedCapital(row: CountryCapital) {
   return row.capital.replace(countryPattern, '...');
 }
 
-function continentLabel(continent: CountryCapital['continent']) {
+function countryContinentLabel(continent: CountryCapital['continent']) {
   return continent === 'europe' ? 'européen' : continent === 'afrique' ? 'africain' : continent === 'amerique' ? 'américain' : continent === 'asie' ? 'asiatique' : 'océanien';
+}
+
+function capitalContinentLabel(continent: CountryCapital['continent']) {
+  return continent === 'europe' ? 'européenne' : continent === 'afrique' ? 'africaine' : continent === 'amerique' ? 'américaine' : continent === 'asie' ? 'asiatique' : 'océanienne';
 }
 
 function choicesExcludingHomonyms(selector: (row: CountryCapital) => string, row: CountryCapital, index: number) {
@@ -277,7 +281,7 @@ const capitalQuestions: QuestionSeed[] = countryCapitalData.map((row, index) => 
   id: `world-capital-${slug(row.country)}`,
   topicId: 'geography',
   difficulty: capitalDifficulty(row),
-  prompt: sameNameCapital(row) ? `Pays du monde : quelle capitale ${continentLabel(row.continent)} porte exactement le nom de son pays ?` : capitalNamePartOfCountry(row) ? `Pays du monde : quelle capitale ${continentLabel(row.continent)} reprend une partie du nom de son pays ?` : `Pays du monde : quelle est la capitale de ${row.country} ?`,
+  prompt: sameNameCapital(row) ? `Pays du monde : quelle capitale ${capitalContinentLabel(row.continent)} porte exactement le nom de son pays ?` : capitalNamePartOfCountry(row) ? `Pays du monde : quelle capitale ${capitalContinentLabel(row.continent)} reprend une partie du nom de son pays ?` : `Pays du monde : pour ${row.country}, quelle ville est la capitale ?`,
   choices: sameNameCapital(row) || capitalNamePartOfCountry(row) ? choicesExcludingHomonyms((item) => item.capital, row, index) : choicesFrom(countryCapitalData, index, (item) => item.capital),
   answerIndex: 0,
   explanation: explanationFor(row),
@@ -290,7 +294,7 @@ const countryQuestions: QuestionSeed[] = countryCapitalData.map((row, index) => 
   id: `world-country-${slug(row.country)}`,
   topicId: 'geography',
   difficulty: capitalDifficulty(row),
-  prompt: sameNameCapital(row) ? `Pays du monde : quel pays ${continentLabel(row.continent)} a une capitale homonyme ?` : slug(row.capital).includes(slug(row.country)) ? `Pays du monde : ${maskedCapital(row)} est la capitale de quel pays ?` : `Pays du monde : ${row.capital} est la capitale de quel pays ?`,
+  prompt: sameNameCapital(row) ? `Pays du monde : quel pays ${countryContinentLabel(row.continent)} a une capitale homonyme ?` : slug(row.capital).includes(slug(row.country)) ? `Pays du monde : ${maskedCapital(row)} est la capitale de quel pays ?` : `Pays du monde : ${row.capital} est la capitale de quel pays ?`,
   choices: sameNameCapital(row) ? choicesExcludingHomonyms((item) => item.country, row, index) : choicesFrom(countryCapitalData, index, (item) => item.country),
   answerIndex: 0,
   explanation: explanationFor(row),
