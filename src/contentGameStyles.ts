@@ -39,8 +39,8 @@ const rawGameStyleQuestions: QuestionSeed[] = [
   {
     id: 'style-ttmc-004',
     topicId: 'history',
-    difficulty: 3,
-    prompt: 'Format TTMC niveau 7 : en quelle année tombe le mur de Berlin ?',
+    difficulty: 1,
+    prompt: 'Format TTMC niveau 2 : en quelle année tombe le mur de Berlin ?',
     choices: ['1987', '1988', '1989', '1991'],
     answerIndex: 2,
     explanation: 'Le mur de Berlin tombe en novembre 1989.',

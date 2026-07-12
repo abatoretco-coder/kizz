@@ -65,7 +65,7 @@ const rawQuestions: QuestionSeed[] = [
   { id: 'spo-01', topicId: 'sport', difficulty: 1, prompt: 'Combien de joueurs une équipe de football aligne-t-elle au coup d’envoi ?', choices: ['9', '10', '11', '12'], answerIndex: 2, explanation: 'Une équipe aligne onze joueurs, gardien compris.', tags: ['football'], sourceLabel: 'Contenu original Kizz' },
   { id: 'spo-02', topicId: 'sport', difficulty: 1, prompt: 'Dans quel sport marque-t-on un « essai » ?', choices: ['Le rugby', 'Le tennis', 'Le handball', 'Le hockey'], answerIndex: 0, explanation: 'Au rugby, aplatir le ballon dans l’en-but adverse permet de marquer un essai.', tags: ['rugby'], sourceLabel: 'Contenu original Kizz' },
   { id: 'spo-03', topicId: 'sport', difficulty: 2, prompt: 'Quelle est la distance officielle d’un marathon ?', choices: ['40 km', '41,195 km', '42,195 km', '43 km'], answerIndex: 2, explanation: 'La distance officielle du marathon est de 42,195 kilomètres.', tags: ['athlétisme'], sourceLabel: 'Contenu original Kizz' },
-  { id: 'spo-04', topicId: 'sport', difficulty: 3, prompt: 'Quelle surface du Grand Chelem de Roland-Garros est utilisée ?', choices: ['Gazon', 'Dur extérieur', 'Terre battue', 'Moquette'], answerIndex: 2, explanation: 'Roland-Garros se joue sur terre battue, une surface plus lente et sensible aux effets.', tags: ['tennis'], sourceLabel: 'Contenu original Kizz' },
+  { id: 'spo-04', topicId: 'sport', difficulty: 1, prompt: 'Quelle surface du Grand Chelem de Roland-Garros est utilisée ?', choices: ['Gazon', 'Dur extérieur', 'Terre battue', 'Moquette'], answerIndex: 2, explanation: 'Roland-Garros se joue sur terre battue, une surface plus lente et sensible aux effets.', tags: ['tennis'], sourceLabel: 'Contenu original Kizz' },
   { id: 'art-01', topicId: 'arts', difficulty: 1, prompt: 'Qui a peint La Nuit étoilée ?', choices: ['Claude Monet', 'Vincent van Gogh', 'Paul Cézanne', 'Gustav Klimt'], answerIndex: 1, explanation: 'Vincent van Gogh peint La Nuit étoilée en 1889, durant son séjour à Saint-Rémy-de-Provence.', tags: ['peinture'], sourceLabel: 'Contenu original Kizz' },
   { id: 'art-02', topicId: 'arts', difficulty: 2, prompt: 'À quel mouvement artistique Claude Monet est-il associé ?', choices: ['Cubisme', 'Surréalisme', 'Impressionnisme', 'Fauvisme'], answerIndex: 2, explanation: 'Le tableau Impression, soleil levant de Monet a donné son nom à l’impressionnisme.', tags: ['peinture', 'mouvements'], sourceLabel: 'Contenu original Kizz' },
   { id: 'art-03', topicId: 'arts', difficulty: 2, prompt: 'Qui a composé Les Quatre Saisons ?', choices: ['Mozart', 'Vivaldi', 'Bach', 'Chopin'], answerIndex: 1, explanation: 'Antonio Vivaldi publie les quatre concertos pour violon vers 1725.', tags: ['musique'], sourceLabel: 'Contenu original Kizz' },
@@ -151,6 +151,7 @@ function normalizedText(value: string) {
 const difficultyOverrides: Partial<Record<string, QuestionSeed['difficulty']>> = {
   'paint-bank-036-work': 2,
   'paint-bank-037-artist': 3,
+  'paint-bank-009-artist': 2,
 };
 
 function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
