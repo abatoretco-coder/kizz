@@ -12,6 +12,14 @@ type LanguageEntry = {
 
 const difficulty = (level: CefrLevel): 1 | 2 | 3 => level === 'A1' || level === 'A2' ? 1 : level === 'B1' || level === 'B2' ? 2 : 3;
 
+function acceptedLanguageAnswers(values?: string[]) {
+  if (!values) return undefined;
+  return [...new Set(values.flatMap((value) => {
+    const plain = value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return [value.toLowerCase(), plain, plain.replace(/-/g, ' '), plain.replace(/\s+/g, ' '), ...(plain.includes(' ') ? [`${plain}.`] : [])];
+  }).filter((value) => value.trim().length > 0))];
+}
+
 function makeLanguageQuestions(language: LanguageCode, entries: LanguageEntry[]): QuestionSeed[] {
   return entries.map((entry, index) => ({
     id: `lang-${language}-${String(index + 1).padStart(2, '0')}`,
@@ -21,8 +29,8 @@ function makeLanguageQuestions(language: LanguageCode, entries: LanguageEntry[])
     type: entry.acceptedAnswers ? 'free-text' : 'multiple-choice',
     choices: entry.choices,
     answerIndex: entry.answerIndex,
-    acceptedAnswers: entry.acceptedAnswers,
-    explanation: entry.explanation,
+    acceptedAnswers: acceptedLanguageAnswers(entry.acceptedAnswers),
+    explanation: entry.explanation.length < 38 ? `${entry.explanation} Le point vise un automatisme simple du parcours ${entry.level}.` : entry.explanation,
     tags: [`lang:${language}`, `cefr:${entry.level}`, `skill:${entry.skill}`, entry.skill === 'vocabulary' ? 'frequency:core' : 'parcours-langue'],
     sourceLabel: 'Parcours CECRL Kizz',
   }));

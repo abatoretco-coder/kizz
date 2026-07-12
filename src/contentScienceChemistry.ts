@@ -127,14 +127,14 @@ export const scienceChemistryQuestions: QuestionSeed[] = [
   ...elements.flatMap((element, index) => {
     const difficulty = (index % 4 === 0 ? 1 : index % 4 === 1 ? 2 : 3) as 1 | 2 | 3;
     return [
-      q(`sci-chem-el-${element.symbol.toLowerCase()}-symbol`, difficulty, `Quel est le symbole chimique de ${element.name} ?`, rotate(symbols, element.symbol), `${element.name} a pour symbole ${element.symbol}.`, ['element', 'symbole']),
+      q(`sci-chem-el-${element.symbol.toLowerCase()}-symbol`, difficulty, `Quel est le symbole chimique de ${element.name} ?`, rotate(symbols, element.symbol), `${element.name} a pour symbole ${element.symbol}; c est l abreviation normalisee utilisee dans le tableau periodique.`, ['element', 'symbole']),
       q(`sci-chem-el-${element.symbol.toLowerCase()}-z`, difficulty, `Quel est le numero atomique de ${element.name} ?`, nearbyNumberChoices(element.atomicNumber), `Le numero atomique Z de ${element.name} est ${element.atomicNumber}: c est le nombre de protons du noyau.`, ['element', 'numero-atomique']),
-      q(`sci-chem-el-${element.symbol.toLowerCase()}-family`, difficulty, `A quelle famille rattache-t-on surtout ${element.name} ?`, rotate(families, element.family), `${element.name} est classe ici comme ${element.family}.`, ['element', 'famille']),
-      q(`sci-chem-el-${element.symbol.toLowerCase()}-clue`, difficulty, `Quel element correspond a cet indice : ${element.clue} ?`, rotate(names, element.name), `L indice renvoie a ${element.name}, symbole ${element.symbol}, Z=${element.atomicNumber}.`, ['element', 'indice']),
+      q(`sci-chem-el-${element.symbol.toLowerCase()}-family`, difficulty, `A quelle famille rattache-t-on surtout ${element.name} ?`, rotate(families, element.family), `${element.name} est classe ici comme ${element.family}; cette famille donne un repere sur ses proprietes chimiques usuelles.`, ['element', 'famille']),
+      q(`sci-chem-el-${element.symbol.toLowerCase()}-clue`, difficulty, `Quel element correspond a cet indice : ${element.clue} ?`, rotate(names, element.name), `L indice renvoie a ${element.name}, symbole ${element.symbol}, Z=${element.atomicNumber}; il combine usage, propriete ou famille chimique.`, ['element', 'indice']),
     ];
   }),
   ...formulas.flatMap(([name, formula, composition, note], index) => [
-    q(`sci-chem-formula-${index + 1}-formula`, formulaDifficulty(index), `Quelle est la formule de ${name} ?`, rotate(formulas.map((row) => row[1]), formula), `${name} s ecrit ${formula}: ${composition}.`, ['formule', 'composition']),
+    q(`sci-chem-formula-${index + 1}-formula`, formulaDifficulty(index), `Quelle est la formule de ${name} ?`, rotate(formulas.map((row) => row[1]), formula), `${name} s ecrit ${formula}: ${composition}; ce format oblige a relier nom usuel et composition atomique.`, ['formule', 'composition']),
     q(`sci-chem-formula-${index + 1}-composition`, 2, `Quelle composition correspond a ${formula} ?`, rotate(formulas.map((row) => row[2]), composition), `${formula} correspond a ${composition}; ${note}.`, ['formule', 'composition']),
   ]),
   ...advancedEntries.map(([prompt, choices, answerIndex, explanation, tags], index) => ({

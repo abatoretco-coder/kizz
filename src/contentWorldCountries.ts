@@ -209,9 +209,22 @@ function slug(value: string) {
   return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-function difficulty(index: number): Difficulty {
-  if (index % 3 === 0) return 1;
-  if (index % 3 === 1) return 2;
+const easyCapitalCountries = new Set([
+  'allemagne', 'belgique', 'bresil', 'canada', 'chine', 'espagne', 'etats-unis', 'france', 'grece', 'italie',
+  'japon', 'maroc', 'portugal', 'royaume-uni', 'russie', 'senegal', 'suisse',
+]);
+
+const mediumCapitalCountries = new Set([
+  'afrique-du-sud', 'algerie', 'argentine', 'australie', 'autriche', 'chili', 'coree-du-sud', 'croatie',
+  'danemark', 'egypte', 'emirats-arabes-unis', 'finlande', 'inde', 'indonesie', 'irlande', 'islande',
+  'mexique', 'norvege', 'nouvelle-zelande', 'pays-bas', 'perou', 'pologne', 'republique-tcheque',
+  'suede', 'thailande', 'tunisie', 'turquie', 'ukraine',
+]);
+
+function capitalDifficulty(row: CountryCapital): Difficulty {
+  const key = slug(row.country);
+  if (easyCapitalCountries.has(key)) return 1;
+  if (mediumCapitalCountries.has(key)) return 2;
   return 3;
 }
 
@@ -228,15 +241,44 @@ function choicesFrom<T extends CountryCapital>(rows: T[], index: number, selecto
 }
 
 function explanationFor(row: CountryCapital) {
-  return row.note ?? `${row.capital} est la capitale de ${row.country}.`;
+  return row.note ?? `${row.capital} est la capitale de ${row.country}; c est le repere politique principal a associer a ce pays dans les atlas usuels.`;
+}
+
+function sameNameCapital(row: CountryCapital) {
+  return slug(row.capital) === slug(row.country);
+}
+
+function capitalNamePartOfCountry(row: CountryCapital) {
+  return slug(row.country).includes(slug(row.capital));
+}
+
+function maskedCapital(row: CountryCapital) {
+  const countryPattern = new RegExp(row.country.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+  return row.capital.replace(countryPattern, '...');
+}
+
+function continentLabel(continent: CountryCapital['continent']) {
+  return continent === 'europe' ? 'européen' : continent === 'afrique' ? 'africain' : continent === 'amerique' ? 'américain' : continent === 'asie' ? 'asiatique' : 'océanien';
+}
+
+function choicesExcludingHomonyms(selector: (row: CountryCapital) => string, row: CountryCapital, index: number) {
+  const choices = [selector(row)];
+  let offset = 5;
+  while (choices.length < 4) {
+    const candidateRow = countryCapitalData[(index + offset) % countryCapitalData.length];
+    const candidate = selector(candidateRow);
+    if (!sameNameCapital(candidateRow) && !choices.includes(candidate)) choices.push(candidate);
+    offset += 9;
+  }
+  return choices as [string, string, string, string];
 }
 
 const capitalQuestions: QuestionSeed[] = countryCapitalData.map((row, index) => ({
   id: `world-capital-${slug(row.country)}`,
   topicId: 'geography',
-  difficulty: difficulty(index),
-  prompt: `Pays du monde : quelle est la capitale de ${row.country} ?`,
-  choices: choicesFrom(countryCapitalData, index, (item) => item.capital),
+  difficulty: capitalDifficulty(row),
+  prompt: sameNameCapital(row) ? `Pays du monde : quelle capitale ${continentLabel(row.continent)} porte exactement le nom de son pays ?` : capitalNamePartOfCountry(row) ? `Pays du monde : quelle capitale ${continentLabel(row.continent)} reprend une partie du nom de son pays ?` : `Pays du monde : quelle est la capitale de ${row.country} ?`,
+  choices: sameNameCapital(row) || capitalNamePartOfCountry(row) ? choicesExcludingHomonyms((item) => item.capital, row, index) : choicesFrom(countryCapitalData, index, (item) => item.capital),
   answerIndex: 0,
   explanation: explanationFor(row),
   tags: ['geography', 'capitales', 'pays-du-monde', 'coverage:world-countries', `continent:${row.continent}`],
@@ -247,9 +289,9 @@ const capitalQuestions: QuestionSeed[] = countryCapitalData.map((row, index) => 
 const countryQuestions: QuestionSeed[] = countryCapitalData.map((row, index) => ({
   id: `world-country-${slug(row.country)}`,
   topicId: 'geography',
-  difficulty: difficulty(index + 1),
-  prompt: `Pays du monde : ${row.capital} est la capitale de quel pays ?`,
-  choices: choicesFrom(countryCapitalData, index, (item) => item.country),
+  difficulty: capitalDifficulty(row),
+  prompt: sameNameCapital(row) ? `Pays du monde : quel pays ${continentLabel(row.continent)} a une capitale homonyme ?` : slug(row.capital).includes(slug(row.country)) ? `Pays du monde : ${maskedCapital(row)} est la capitale de quel pays ?` : `Pays du monde : ${row.capital} est la capitale de quel pays ?`,
+  choices: sameNameCapital(row) ? choicesExcludingHomonyms((item) => item.country, row, index) : choicesFrom(countryCapitalData, index, (item) => item.country),
   answerIndex: 0,
   explanation: explanationFor(row),
   tags: ['geography', 'capitales', 'pays-du-monde', 'coverage:world-countries', `continent:${row.continent}`],

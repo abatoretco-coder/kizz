@@ -28,7 +28,8 @@
     "plugins": [
       "expo-sqlite",
       "expo-status-bar",
-      "expo-sharing"
+      "expo-sharing",
+      "@maplibre/maplibre-react-native"
     ]
   }
 }

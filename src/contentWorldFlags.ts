@@ -986,7 +986,17 @@ function slug(value: string) {
 
 function acceptedCountryNames(country: string) {
   const plain = country.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[?]/g, "'").toLowerCase();
-  return [...new Set([country.toLowerCase(), plain, plain.replace(/^le /, ''), plain.replace(/^la /, ''), plain.replace(/^les /, '')])];
+  const withoutArticles = plain.replace(/^le /, '').replace(/^la /, '').replace(/^les /, '');
+  return [...new Set([
+    country.toLowerCase(),
+    plain,
+    withoutArticles,
+    withoutArticles.replace(/-/g, ' '),
+    withoutArticles.replace(/\s+et\s+/g, ' '),
+    withoutArticles.replace(/\s+d[' ]/g, ' '),
+    withoutArticles.replace(/\s+du\s+/g, ' '),
+    withoutArticles.replace(/\s+de\s+/g, ' '),
+  ].filter((value) => value.trim().length > 1))];
 }
 
 function choicesFrom<T>(rows: T[], index: number, selector: (row: T) => string): [string, string, string, string] {
@@ -1027,6 +1037,10 @@ function flagDifficulty(country: string): 1 | 2 | 3 {
   return 3;
 }
 
+function flagExplanation(row: FlagCountry) {
+  return `${row.flag} est le drapeau de ${row.country}; le code ${row.code} sert aussi de repere ISO/Unicode pour ce pays.`;
+}
+
 const flagToCountryTextQuestions: QuestionSeed[] = flagCountries.map((row, index) => ({
   id: `world-flag-text-${slug(row.country)}`,
   topicId: 'geography',
@@ -1034,7 +1048,7 @@ const flagToCountryTextQuestions: QuestionSeed[] = flagCountries.map((row, index
   type: 'free-text',
   prompt: `Quel pays correspond a ce drapeau ? ${row.flag}`,
   acceptedAnswers: acceptedCountryNames(row.country),
-  explanation: `${row.flag} est le drapeau de ${row.country}.`,
+  explanation: flagExplanation(row),
   tags: ['geography', 'drapeaux', 'pays-du-monde', 'coverage:world-flags', 'subtheme:geo:flags'],
   sourceLabel: 'Codes ISO 3166-1 / Unicode Regional Indicator Symbols',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`drapeau ${row.country}`)}`,
@@ -1047,7 +1061,7 @@ const flagToCountryChoiceQuestions: QuestionSeed[] = flagCountries.map((row, ind
   prompt: `A quel pays appartient ce drapeau ? ${row.flag}`,
   choices: choicesFrom(flagCountries, index, (item) => item.country),
   answerIndex: 0,
-  explanation: `${row.flag} est le drapeau de ${row.country}.`,
+  explanation: flagExplanation(row),
   tags: ['geography', 'drapeaux', 'pays-du-monde', 'coverage:world-flags', 'subtheme:geo:flags'],
   sourceLabel: 'Codes ISO 3166-1 / Unicode Regional Indicator Symbols',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`drapeau ${row.country}`)}`,
@@ -1060,7 +1074,7 @@ const countryToFlagChoiceQuestions: QuestionSeed[] = flagCountries.map((row, ind
   prompt: `Selectionne le drapeau de ${row.country}.`,
   choices: choicesFrom(flagCountries, index, (item) => item.flag),
   answerIndex: 0,
-  explanation: `${row.flag} est le drapeau de ${row.country}.`,
+  explanation: flagExplanation(row),
   tags: ['geography', 'drapeaux', 'pays-du-monde', 'coverage:world-flags', 'subtheme:geo:flags'],
   sourceLabel: 'Codes ISO 3166-1 / Unicode Regional Indicator Symbols',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`drapeau ${row.country}`)}`,

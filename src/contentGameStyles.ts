@@ -2,7 +2,7 @@ import { QuestionSeed } from './domain';
 
 const sourceLabel = 'Contenu original Kizz (inspiré de formats de quiz populaires)';
 
-export const gameStyleQuestions: QuestionSeed[] = [
+const rawGameStyleQuestions: QuestionSeed[] = [
   {
     id: 'style-ttmc-001',
     topicId: 'geography',
@@ -82,8 +82,8 @@ export const gameStyleQuestions: QuestionSeed[] = [
   },
   {
     id: 'style-trivial-004',
-    topicId: 'science',
-    difficulty: 3,
+    topicId: 'geography',
+    difficulty: 1,
     prompt: 'Style Trivial Poursuite : quel est le plus grand océan du monde ?',
     choices: ['Atlantique', 'Pacifique', 'Indien', 'Arctique'],
     answerIndex: 1,
@@ -127,7 +127,7 @@ export const gameStyleQuestions: QuestionSeed[] = [
   {
     id: 'style-jeutv-004',
     topicId: 'history',
-    difficulty: 3,
+    difficulty: 2,
     prompt: 'Style jeu télé : quelle capitale a été divisée par un mur jusqu’en 1989 ?',
     choices: ['Prague', 'Varsovie', 'Berlin', 'Vienne'],
     answerIndex: 2,
@@ -171,7 +171,7 @@ export const gameStyleQuestions: QuestionSeed[] = [
   {
     id: 'style-qpc-004',
     topicId: 'geography',
-    difficulty: 3,
+    difficulty: 2,
     type: 'free-text',
     prompt: 'Question pour un champion : capitale de l’Argentine ?',
     acceptedAnswers: ['buenos aires'],
@@ -259,7 +259,7 @@ export const gameStyleQuestions: QuestionSeed[] = [
   {
     id: 'style-cap-008',
     topicId: 'geography',
-    difficulty: 3,
+    difficulty: 2,
     prompt: 'Pays & capitales : quelle est la capitale de la Nouvelle-Zélande ?',
     choices: ['Auckland', 'Christchurch', 'Wellington', 'Dunedin'],
     answerIndex: 2,
@@ -268,3 +268,8 @@ export const gameStyleQuestions: QuestionSeed[] = [
     sourceLabel,
   },
 ];
+
+export const gameStyleQuestions: QuestionSeed[] = rawGameStyleQuestions.map((question) => ({
+  ...question,
+  explanation: question.explanation.length < 38 ? `${question.explanation} Ce repere reste volontairement court pour un format de reponse rapide.` : question.explanation,
+}));

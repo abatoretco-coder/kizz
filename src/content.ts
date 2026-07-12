@@ -20,6 +20,7 @@ import { visualHistoryQuestions } from './generated/contentVisualHistory';
 import { natureVisualQuestions } from './generated/contentNatureVisual';
 import { landmarkVisualQuestions } from './generated/contentLandmarkVisual';
 import { scienceChemistryQuestions } from './contentScienceChemistry';
+import { formatBalanceQuestions } from './contentFormatBalance';
 
 const retiredTopicIds = new Set(['daily']);
 
@@ -87,6 +88,7 @@ const rawQuestions: QuestionSeed[] = [
   ...natureVisualQuestions,
   ...landmarkVisualQuestions,
   ...scienceChemistryQuestions,
+  ...formatBalanceQuestions,
 ];
 
 function hashQuestionId(id: string) {
@@ -131,8 +133,13 @@ function hasPrefix(tags: Set<string>, prefix: string) {
   return [...tags].some((tag) => tag.startsWith(prefix));
 }
 
+function normalizedText(value: string) {
+  return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+}
+
 function enrichSubthemeTags(question: QuestionSeed): QuestionSeed {
   const tags = new Set(question.tags);
+  const prompt = normalizedText(question.prompt);
   if (question.topicId === 'geography') {
     if (tags.has('drapeaux') || tags.has('coverage:world-flags')) tags.add('subtheme:geo:flags');
     else if (question.type === 'map-point') tags.add('subtheme:geo:map-world');
@@ -141,6 +148,8 @@ function enrichSubthemeTags(question: QuestionSeed): QuestionSeed {
   }
   if (question.topicId === 'france-map') {
     if (question.type === 'map-point') tags.add('subtheme:france:map');
+    else if (hasAny(tags, ['region', 'coverage:france-regions'])) tags.add('subtheme:france:regions');
+    else if (hasAny(tags, ['departement', 'chef-lieu', 'code-departement', 'coverage:france-departements', 'coverage:france-departements-cheflieux'])) tags.add('subtheme:france:departments');
     else tags.add('subtheme:france:admin');
   }
   if (question.topicId === 'history') {
@@ -204,9 +213,24 @@ function enrichSubthemeTags(question: QuestionSeed): QuestionSeed {
     else tags.add('subtheme:technology:software');
   }
   if (question.topicId === 'language') {
-    if (hasAny(tags, ['lang:es', 'espagnol'])) tags.add('subtheme:language:spanish');
+    if (!hasPrefix(tags, 'lang:')) {
+      if (hasAny(tags, ['espagnol']) || prompt.includes('espagnol')) tags.add('lang:es');
+      else if (hasAny(tags, ['allemand']) || prompt.includes('allemand')) tags.add('lang:de');
+      else if (hasAny(tags, ['italien']) || prompt.includes('italien')) tags.add('lang:it');
+      else if (hasAny(tags, ['anglais']) || prompt.includes('anglais') || prompt.includes('english') || prompt.includes('thank you')) tags.add('lang:en');
+      else if (prompt.includes('japonais') || prompt.includes('kanji') || prompt.includes('kana')) tags.add('lang:ja');
+    }
+    if (!hasPrefix(tags, 'cefr:')) tags.add(question.difficulty === 1 ? 'cefr:A1' : question.difficulty === 2 ? 'cefr:B1' : 'cefr:B2');
+    if (!hasPrefix(tags, 'skill:')) {
+      if (prompt.includes('pluriel') || prompt.includes('article') || prompt.includes('cas ') || prompt.includes('temps ') || prompt.includes('conditionnel')) tags.add('skill:writing');
+      else if (prompt.includes('signifie') || prompt.includes('comment dit') || prompt.includes('mot ')) tags.add('skill:vocabulary');
+      else tags.add('skill:culture');
+    }
+    if (hasAny(tags, ['lang:en', 'anglais'])) tags.add('subtheme:language:english');
+    else if (hasAny(tags, ['lang:es', 'espagnol'])) tags.add('subtheme:language:spanish');
     else if (hasAny(tags, ['lang:de', 'allemand'])) tags.add('subtheme:language:german');
     else if (hasAny(tags, ['lang:it', 'italien'])) tags.add('subtheme:language:italian');
+    else if (hasAny(tags, ['lang:ja', 'japonais'])) tags.add('subtheme:language:japanese');
   }
   return { ...question, tags: [...tags] };
 }

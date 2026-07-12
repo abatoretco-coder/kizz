@@ -246,12 +246,19 @@ test('les choix image ne revelent pas leur reponse avant correction', () => {
   assert.ok(app.includes('const visualChoiceOnly = !!question.choiceImageAssets?.length;'));
   assert.ok(app.includes('visibleChoiceLabel = visualChoiceOnly ? `Image ${String.fromCharCode(65 + choiceIndex)}` : choice'));
   assert.ok(app.includes('{answered ? choice : visibleChoiceLabel}'));
+  assert.ok(app.includes("const safeQuestionImageLabel = answered ? question.imageAlt ?? 'Image de la question' : 'Image de la question';"));
+  assert.equal(app.includes('accessibilityLabel={question.imageAlt ??'), false);
 });
 
 test('l’audit automatique de banque ne remonte aucune erreur', () => {
   const report = auditContent(topics, questions);
   assert.deepEqual(report.issues.filter((issue) => issue.severity === 'error'), []);
   assert.ok(Math.max(...report.answerIndexCounts) - Math.min(...report.answerIndexCounts) <= 1);
+  assert.equal(report.topicSummaries.length, topics.length);
+  const geography = report.topicSummaries.find((summary) => summary.topicId === 'geography');
+  assert.ok(geography);
+  assert.ok((geography!.byType['map-point'] ?? 0) >= 20);
+  assert.equal(geography!.answerIndexCounts.slice(0, 4).reduce((sum, count) => sum + count, 0), geography!.byType['multiple-choice']);
 });
 
 test('le pack étendu couvre tous les thèmes et toutes les difficultés', () => {

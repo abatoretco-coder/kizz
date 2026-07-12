@@ -38,7 +38,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Cusco"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal est rattache ici a Agra.",
+    "explanation": "Taj Mahal est rattache ici a Agra; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -61,7 +61,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Perou"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal se trouve en Inde.",
+    "explanation": "Taj Mahal se trouve en Inde; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -84,7 +84,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "inca"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal est classe ici dans le repere moghol.",
+    "explanation": "Taj Mahal est classe ici dans le repere moghol; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -166,7 +166,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Cusco"
     ],
     "answerIndex": 0,
-    "explanation": "Angkor Vat est rattache ici a Siem Reap.",
+    "explanation": "Angkor Vat est rattache ici a Siem Reap; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -189,7 +189,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Perou"
     ],
     "answerIndex": 0,
-    "explanation": "Angkor Vat se trouve en Cambodge.",
+    "explanation": "Angkor Vat se trouve en Cambodge; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -212,7 +212,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "inca"
     ],
     "answerIndex": 0,
-    "explanation": "Angkor Vat est classe ici dans le repere khmer.",
+    "explanation": "Angkor Vat est classe ici dans le repere khmer; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -259,7 +259,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Cusco"
     ],
     "answerIndex": 0,
-    "explanation": "Petra est rattache ici a Wadi Musa.",
+    "explanation": "Petra est rattache ici a Wadi Musa; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -282,7 +282,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Perou"
     ],
     "answerIndex": 0,
-    "explanation": "Petra se trouve en Jordanie.",
+    "explanation": "Petra se trouve en Jordanie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -305,7 +305,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "inca"
     ],
     "answerIndex": 0,
-    "explanation": "Petra est classe ici dans le repere nabateen.",
+    "explanation": "Petra est classe ici dans le repere nabateen; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -387,7 +387,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Machu Picchu est rattache ici a Cusco.",
+    "explanation": "Machu Picchu est rattache ici a Cusco; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -410,7 +410,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Machu Picchu se trouve en Perou.",
+    "explanation": "Machu Picchu se trouve en Perou; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -433,7 +433,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Machu Picchu est classe ici dans le repere inca.",
+    "explanation": "Machu Picchu est classe ici dans le repere inca; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -480,7 +480,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza est rattache ici a Yucatan.",
+    "explanation": "Chichen Itza est rattache ici a Yucatan; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -503,7 +503,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza se trouve en Mexique.",
+    "explanation": "Chichen Itza se trouve en Mexique; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -526,7 +526,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza est classe ici dans le repere maya.",
+    "explanation": "Chichen Itza est classe ici dans le repere maya; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -608,7 +608,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Christ Redempteur est rattache ici a Rio de Janeiro.",
+    "explanation": "Christ Redempteur est rattache ici a Rio de Janeiro; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -631,7 +631,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Christ Redempteur se trouve en Bresil.",
+    "explanation": "Christ Redempteur se trouve en Bresil; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -654,7 +654,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Christ Redempteur est classe ici dans le repere art deco.",
+    "explanation": "Christ Redempteur est classe ici dans le repere art deco; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -693,7 +693,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-007-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Opera de Sydney ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : toitures en coques blanches ?",
     "choices": [
       "Sydney",
       "Agra",
@@ -701,7 +701,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Opera de Sydney est rattache ici a Sydney.",
+    "explanation": "Opera de Sydney est rattache ici a Sydney; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -724,7 +724,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Opera de Sydney se trouve en Australie.",
+    "explanation": "Opera de Sydney se trouve en Australie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -747,7 +747,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Opera de Sydney est classe ici dans le repere expressionniste.",
+    "explanation": "Opera de Sydney est classe ici dans le repere expressionniste; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -829,7 +829,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Burj Khalifa est rattache ici a Dubai.",
+    "explanation": "Burj Khalifa est rattache ici a Dubai; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -852,7 +852,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Burj Khalifa se trouve en Emirats arabes unis.",
+    "explanation": "Burj Khalifa se trouve en Emirats arabes unis; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -875,7 +875,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Burj Khalifa est classe ici dans le repere gratte-ciel contemporain.",
+    "explanation": "Burj Khalifa est classe ici dans le repere gratte-ciel contemporain; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -922,7 +922,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building est rattache ici a New York.",
+    "explanation": "Empire State Building est rattache ici a New York; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -945,7 +945,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building se trouve en Etats-Unis.",
+    "explanation": "Empire State Building se trouve en Etats-Unis; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -968,7 +968,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building est classe ici dans le repere art deco.",
+    "explanation": "Empire State Building est classe ici dans le repere art deco; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1050,7 +1050,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge est rattache ici a San Francisco.",
+    "explanation": "Golden Gate Bridge est rattache ici a San Francisco; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1073,7 +1073,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge se trouve en Etats-Unis.",
+    "explanation": "Golden Gate Bridge se trouve en Etats-Unis; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1096,7 +1096,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge est classe ici dans le repere pont suspendu.",
+    "explanation": "Golden Gate Bridge est classe ici dans le repere pont suspendu; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1143,7 +1143,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Tower Bridge est rattache ici a Londres.",
+    "explanation": "Tower Bridge est rattache ici a Londres; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1166,7 +1166,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Tower Bridge se trouve en Royaume-Uni.",
+    "explanation": "Tower Bridge se trouve en Royaume-Uni; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1189,7 +1189,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Tower Bridge est classe ici dans le repere neogothique.",
+    "explanation": "Tower Bridge est classe ici dans le repere neogothique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1271,7 +1271,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Big Ben est rattache ici a Londres.",
+    "explanation": "Big Ben est rattache ici a Londres; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1294,7 +1294,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Big Ben se trouve en Royaume-Uni.",
+    "explanation": "Big Ben se trouve en Royaume-Uni; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1317,7 +1317,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Big Ben est classe ici dans le repere neogothique.",
+    "explanation": "Big Ben est classe ici dans le repere neogothique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1364,7 +1364,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge est rattache ici a Wiltshire.",
+    "explanation": "Stonehenge est rattache ici a Wiltshire; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1387,7 +1387,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge se trouve en Royaume-Uni.",
+    "explanation": "Stonehenge se trouve en Royaume-Uni; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1410,7 +1410,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge est classe ici dans le repere megalithique.",
+    "explanation": "Stonehenge est classe ici dans le repere megalithique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1492,7 +1492,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Mont-Saint-Michel est rattache ici a Normandie.",
+    "explanation": "Mont-Saint-Michel est rattache ici a Normandie; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1515,7 +1515,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Mont-Saint-Michel se trouve en France.",
+    "explanation": "Mont-Saint-Michel se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1538,7 +1538,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Mont-Saint-Michel est classe ici dans le repere medieval.",
+    "explanation": "Mont-Saint-Michel est classe ici dans le repere medieval; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1585,7 +1585,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Chambord est rattache ici a Loir-et-Cher.",
+    "explanation": "Chateau de Chambord est rattache ici a Loir-et-Cher; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1608,7 +1608,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Chambord se trouve en France.",
+    "explanation": "Chateau de Chambord se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1631,7 +1631,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Chambord est classe ici dans le repere Renaissance.",
+    "explanation": "Chateau de Chambord est classe ici dans le repere Renaissance; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1713,7 +1713,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Pont du Gard est rattache ici a Occitanie.",
+    "explanation": "Pont du Gard est rattache ici a Occitanie; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1736,7 +1736,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Pont du Gard se trouve en France.",
+    "explanation": "Pont du Gard se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1759,7 +1759,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Pont du Gard est classe ici dans le repere romain.",
+    "explanation": "Pont du Gard est classe ici dans le repere romain; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1798,7 +1798,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-017-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Cathedrale de Chartres ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : cathedrale aux vitraux celebres ?",
     "choices": [
       "Chartres",
       "Agra",
@@ -1806,7 +1806,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale de Chartres est rattache ici a Chartres.",
+    "explanation": "Cathedrale de Chartres est rattache ici a Chartres; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1829,7 +1829,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale de Chartres se trouve en France.",
+    "explanation": "Cathedrale de Chartres se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1852,7 +1852,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale de Chartres est classe ici dans le repere gothique.",
+    "explanation": "Cathedrale de Chartres est classe ici dans le repere gothique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1934,7 +1934,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique du Sacre-Coeur est rattache ici a Paris.",
+    "explanation": "Basilique du Sacre-Coeur est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1957,7 +1957,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique du Sacre-Coeur se trouve en France.",
+    "explanation": "Basilique du Sacre-Coeur se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1980,7 +1980,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique du Sacre-Coeur est classe ici dans le repere romano-byzantin.",
+    "explanation": "Basilique du Sacre-Coeur est classe ici dans le repere romano-byzantin; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2027,7 +2027,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Arc de triomphe est rattache ici a Paris.",
+    "explanation": "Arc de triomphe est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2050,7 +2050,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Arc de triomphe se trouve en France.",
+    "explanation": "Arc de triomphe se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2073,7 +2073,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Arc de triomphe est classe ici dans le repere neoclassique.",
+    "explanation": "Arc de triomphe est classe ici dans le repere neoclassique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2155,7 +2155,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Musee du Louvre est rattache ici a Paris.",
+    "explanation": "Musee du Louvre est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2178,7 +2178,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Musee du Louvre se trouve en France.",
+    "explanation": "Musee du Louvre se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2201,7 +2201,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Musee du Louvre est classe ici dans le repere palais classique.",
+    "explanation": "Musee du Louvre est classe ici dans le repere palais classique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2240,7 +2240,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-021-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Palais de Versailles ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : residence royale de Louis XIV ?",
     "choices": [
       "Versailles",
       "Agra",
@@ -2248,7 +2248,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles est rattache ici a Versailles.",
+    "explanation": "Palais de Versailles est rattache ici a Versailles; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2271,7 +2271,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles se trouve en France.",
+    "explanation": "Palais de Versailles se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2294,7 +2294,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles est classe ici dans le repere classique francais.",
+    "explanation": "Palais de Versailles est classe ici dans le repere classique francais; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2376,7 +2376,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Alhambra est rattache ici a Grenade.",
+    "explanation": "Alhambra est rattache ici a Grenade; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2399,7 +2399,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Alhambra se trouve en Espagne.",
+    "explanation": "Alhambra se trouve en Espagne; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2422,7 +2422,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Alhambra est classe ici dans le repere nasride.",
+    "explanation": "Alhambra est classe ici dans le repere nasride; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2461,7 +2461,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-023-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Guggenheim Bilbao ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : musee aux volumes de titane ?",
     "choices": [
       "Bilbao",
       "Agra",
@@ -2469,7 +2469,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Guggenheim Bilbao est rattache ici a Bilbao.",
+    "explanation": "Guggenheim Bilbao est rattache ici a Bilbao; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2492,7 +2492,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Guggenheim Bilbao se trouve en Espagne.",
+    "explanation": "Guggenheim Bilbao se trouve en Espagne; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2515,7 +2515,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Guggenheim Bilbao est classe ici dans le repere deconstructivisme.",
+    "explanation": "Guggenheim Bilbao est classe ici dans le repere deconstructivisme; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2589,7 +2589,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-024-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Duomo de Milan ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : cathedrale aux nombreuses fleches ?",
     "choices": [
       "Milan",
       "Agra",
@@ -2597,7 +2597,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Duomo de Milan est rattache ici a Milan.",
+    "explanation": "Duomo de Milan est rattache ici a Milan; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2620,7 +2620,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Duomo de Milan se trouve en Italie.",
+    "explanation": "Duomo de Milan se trouve en Italie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2643,7 +2643,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Duomo de Milan est classe ici dans le repere gothique.",
+    "explanation": "Duomo de Milan est classe ici dans le repere gothique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2690,7 +2690,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre est rattache ici a Vatican.",
+    "explanation": "Basilique Saint-Pierre est rattache ici a Vatican; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2713,7 +2713,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre se trouve en Vatican.",
+    "explanation": "Basilique Saint-Pierre se trouve en Vatican; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2736,7 +2736,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre est classe ici dans le repere Renaissance.",
+    "explanation": "Basilique Saint-Pierre est classe ici dans le repere Renaissance; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2818,7 +2818,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Tour de Pise est rattache ici a Pise.",
+    "explanation": "Tour de Pise est rattache ici a Pise; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2841,7 +2841,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Tour de Pise se trouve en Italie.",
+    "explanation": "Tour de Pise se trouve en Italie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2864,7 +2864,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Tour de Pise est classe ici dans le repere roman.",
+    "explanation": "Tour de Pise est classe ici dans le repere roman; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2911,7 +2911,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Pantheon de Rome est rattache ici a Rome.",
+    "explanation": "Pantheon de Rome est rattache ici a Rome; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2934,7 +2934,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Pantheon de Rome se trouve en Italie.",
+    "explanation": "Pantheon de Rome se trouve en Italie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2957,7 +2957,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Pantheon de Rome est classe ici dans le repere romain.",
+    "explanation": "Pantheon de Rome est classe ici dans le repere romain; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3039,7 +3039,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Hagia Sophia est rattache ici a Istanbul.",
+    "explanation": "Hagia Sophia est rattache ici a Istanbul; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3062,7 +3062,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Hagia Sophia se trouve en Turquie.",
+    "explanation": "Hagia Sophia se trouve en Turquie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3085,7 +3085,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Hagia Sophia est classe ici dans le repere byzantin.",
+    "explanation": "Hagia Sophia est classe ici dans le repere byzantin; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3132,7 +3132,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquee bleue est rattache ici a Istanbul.",
+    "explanation": "Mosquee bleue est rattache ici a Istanbul; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3155,7 +3155,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquee bleue se trouve en Turquie.",
+    "explanation": "Mosquee bleue se trouve en Turquie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3178,7 +3178,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquee bleue est classe ici dans le repere ottoman.",
+    "explanation": "Mosquee bleue est classe ici dans le repere ottoman; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3252,7 +3252,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-030-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Acropole d Athenes ?",
+    "prompt": "Quelle ville ou zone Grece est associee a ce repere architectural ?",
     "choices": [
       "Athenes",
       "Agra",
@@ -3260,7 +3260,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Acropole d Athenes est rattache ici a Athenes.",
+    "explanation": "Acropole d Athenes est rattache ici a Athenes; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3283,7 +3283,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Acropole d Athenes se trouve en Grece.",
+    "explanation": "Acropole d Athenes se trouve en Grece; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3306,7 +3306,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Acropole d Athenes est classe ici dans le repere antique grec.",
+    "explanation": "Acropole d Athenes est classe ici dans le repere antique grec; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3353,7 +3353,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Meteores est rattache ici a Thessalie.",
+    "explanation": "Meteores est rattache ici a Thessalie; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3376,7 +3376,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Meteores se trouve en Grece.",
+    "explanation": "Meteores se trouve en Grece; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3399,7 +3399,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Meteores est classe ici dans le repere monastere.",
+    "explanation": "Meteores est classe ici dans le repere monastere; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3473,7 +3473,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-032-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Kremlin de Moscou ?",
+    "prompt": "Quelle ville ou zone Russie est associee a ce repere architectural ?",
     "choices": [
       "Moscou",
       "Agra",
@@ -3481,7 +3481,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Kremlin de Moscou est rattache ici a Moscou.",
+    "explanation": "Kremlin de Moscou est rattache ici a Moscou; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3504,7 +3504,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Kremlin de Moscou se trouve en Russie.",
+    "explanation": "Kremlin de Moscou se trouve en Russie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3527,7 +3527,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Kremlin de Moscou est classe ici dans le repere forteresse.",
+    "explanation": "Kremlin de Moscou est classe ici dans le repere forteresse; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3574,7 +3574,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale Saint-Basile est rattache ici a Moscou.",
+    "explanation": "Cathedrale Saint-Basile est rattache ici a Moscou; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3597,7 +3597,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale Saint-Basile se trouve en Russie.",
+    "explanation": "Cathedrale Saint-Basile se trouve en Russie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3620,7 +3620,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale Saint-Basile est classe ici dans le repere russe.",
+    "explanation": "Cathedrale Saint-Basile est classe ici dans le repere russe; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3702,7 +3702,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Neuschwanstein est rattache ici a Baviere.",
+    "explanation": "Neuschwanstein est rattache ici a Baviere; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3725,7 +3725,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Neuschwanstein se trouve en Allemagne.",
+    "explanation": "Neuschwanstein se trouve en Allemagne; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3748,7 +3748,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Neuschwanstein est classe ici dans le repere historicisme.",
+    "explanation": "Neuschwanstein est classe ici dans le repere historicisme; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3795,7 +3795,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Porte de Brandebourg est rattache ici a Berlin.",
+    "explanation": "Porte de Brandebourg est rattache ici a Berlin; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3818,7 +3818,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Porte de Brandebourg se trouve en Allemagne.",
+    "explanation": "Porte de Brandebourg se trouve en Allemagne; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3841,7 +3841,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Porte de Brandebourg est classe ici dans le repere neoclassique.",
+    "explanation": "Porte de Brandebourg est classe ici dans le repere neoclassique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3923,7 +3923,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Atomium est rattache ici a Bruxelles.",
+    "explanation": "Atomium est rattache ici a Bruxelles; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3946,7 +3946,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Atomium se trouve en Belgique.",
+    "explanation": "Atomium se trouve en Belgique; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3969,7 +3969,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Atomium est classe ici dans le repere modernisme.",
+    "explanation": "Atomium est classe ici dans le repere modernisme; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4008,7 +4008,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-037-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Parlement de Budapest ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : grand batiment au bord du Danube ?",
     "choices": [
       "Budapest",
       "Agra",
@@ -4016,7 +4016,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest est rattache ici a Budapest.",
+    "explanation": "Parlement de Budapest est rattache ici a Budapest; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4039,7 +4039,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest se trouve en Hongrie.",
+    "explanation": "Parlement de Budapest se trouve en Hongrie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4062,7 +4062,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest est classe ici dans le repere neogothique.",
+    "explanation": "Parlement de Budapest est classe ici dans le repere neogothique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4144,7 +4144,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Sainte-Sophie de Kiev est rattache ici a Kiev.",
+    "explanation": "Sainte-Sophie de Kiev est rattache ici a Kiev; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4167,7 +4167,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Sainte-Sophie de Kiev se trouve en Ukraine.",
+    "explanation": "Sainte-Sophie de Kiev se trouve en Ukraine; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4190,7 +4190,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Sainte-Sophie de Kiev est classe ici dans le repere byzantin ukrainien.",
+    "explanation": "Sainte-Sophie de Kiev est classe ici dans le repere byzantin ukrainien; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4237,7 +4237,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Sagrada Familia est rattache ici a Barcelone.",
+    "explanation": "Sagrada Familia est rattache ici a Barcelone; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4260,7 +4260,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Sagrada Familia se trouve en Espagne.",
+    "explanation": "Sagrada Familia se trouve en Espagne; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4283,7 +4283,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Sagrada Familia est classe ici dans le repere modernisme catalan.",
+    "explanation": "Sagrada Familia est classe ici dans le repere modernisme catalan; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4365,7 +4365,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater est rattache ici a Pennsylvanie.",
+    "explanation": "Fallingwater est rattache ici a Pennsylvanie; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4388,7 +4388,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater se trouve en Etats-Unis.",
+    "explanation": "Fallingwater se trouve en Etats-Unis; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4411,7 +4411,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater est classe ici dans le repere organique.",
+    "explanation": "Fallingwater est classe ici dans le repere organique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4458,7 +4458,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda est rattache ici a Vicence.",
+    "explanation": "Villa Rotonda est rattache ici a Vicence; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4481,7 +4481,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda se trouve en Italie.",
+    "explanation": "Villa Rotonda se trouve en Italie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4504,7 +4504,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda est classe ici dans le repere Renaissance.",
+    "explanation": "Villa Rotonda est classe ici dans le repere Renaissance; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4578,7 +4578,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-042-city",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Dans quelle ville ou zone se trouve Bauhaus Dessau ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : ecole moderniste aux facades vitrees ?",
     "choices": [
       "Dessau",
       "Agra",
@@ -4586,7 +4586,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Bauhaus Dessau est rattache ici a Dessau.",
+    "explanation": "Bauhaus Dessau est rattache ici a Dessau; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4609,7 +4609,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Bauhaus Dessau se trouve en Allemagne.",
+    "explanation": "Bauhaus Dessau se trouve en Allemagne; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4624,7 +4624,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-042-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Bauhaus Dessau ?",
+    "prompt": "Quel repere stylistique correspond a cet indice : ecole moderniste aux facades vitrees ?",
     "choices": [
       "Bauhaus",
       "moghol",
@@ -4632,7 +4632,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Bauhaus Dessau est classe ici dans le repere Bauhaus.",
+    "explanation": "Bauhaus Dessau est classe ici dans le repere Bauhaus; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4679,7 +4679,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Centre Pompidou est rattache ici a Paris.",
+    "explanation": "Centre Pompidou est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4702,7 +4702,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Centre Pompidou se trouve en France.",
+    "explanation": "Centre Pompidou se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4725,7 +4725,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Centre Pompidou est classe ici dans le repere high-tech.",
+    "explanation": "Centre Pompidou est classe ici dans le repere high-tech; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4807,7 +4807,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Bibliotheque Sainte-Genevieve est rattache ici a Paris.",
+    "explanation": "Bibliotheque Sainte-Genevieve est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4830,7 +4830,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Bibliotheque Sainte-Genevieve se trouve en France.",
+    "explanation": "Bibliotheque Sainte-Genevieve se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4853,7 +4853,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Bibliotheque Sainte-Genevieve est classe ici dans le repere eclectique.",
+    "explanation": "Bibliotheque Sainte-Genevieve est classe ici dans le repere eclectique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4900,7 +4900,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Musee d Orsay est rattache ici a Paris.",
+    "explanation": "Musee d Orsay est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4923,7 +4923,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Musee d Orsay se trouve en France.",
+    "explanation": "Musee d Orsay se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4946,7 +4946,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Musee d Orsay est classe ici dans le repere beaux-arts.",
+    "explanation": "Musee d Orsay est classe ici dans le repere beaux-arts; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5020,7 +5020,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-046-city",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Dans quelle ville ou zone se trouve Louvre Abu Dhabi ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : musee sous un dome ajoure ?",
     "choices": [
       "Abu Dhabi",
       "Agra",
@@ -5028,7 +5028,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Louvre Abu Dhabi est rattache ici a Abu Dhabi.",
+    "explanation": "Louvre Abu Dhabi est rattache ici a Abu Dhabi; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5051,7 +5051,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Louvre Abu Dhabi se trouve en Emirats arabes unis.",
+    "explanation": "Louvre Abu Dhabi se trouve en Emirats arabes unis; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5074,7 +5074,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Louvre Abu Dhabi est classe ici dans le repere contemporain.",
+    "explanation": "Louvre Abu Dhabi est classe ici dans le repere contemporain; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5121,7 +5121,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Marina Bay Sands est rattache ici a Singapour.",
+    "explanation": "Marina Bay Sands est rattache ici a Singapour; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5144,7 +5144,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Marina Bay Sands se trouve en Singapour.",
+    "explanation": "Marina Bay Sands se trouve en Singapour; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5167,7 +5167,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Marina Bay Sands est classe ici dans le repere contemporain.",
+    "explanation": "Marina Bay Sands est classe ici dans le repere contemporain; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5249,7 +5249,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Gardens by the Bay est rattache ici a Singapour.",
+    "explanation": "Gardens by the Bay est rattache ici a Singapour; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5272,7 +5272,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Gardens by the Bay se trouve en Singapour.",
+    "explanation": "Gardens by the Bay se trouve en Singapour; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5295,7 +5295,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Gardens by the Bay est classe ici dans le repere paysage contemporain.",
+    "explanation": "Gardens by the Bay est classe ici dans le repere paysage contemporain; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5342,7 +5342,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN est rattache ici a Toronto.",
+    "explanation": "Tour CN est rattache ici a Toronto; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5365,7 +5365,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN se trouve en Canada.",
+    "explanation": "Tour CN se trouve en Canada; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5388,7 +5388,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN est classe ici dans le repere tour de communication.",
+    "explanation": "Tour CN est classe ici dans le repere tour de communication; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5462,7 +5462,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-050-city",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Dans quelle ville ou zone se trouve Biosphere de Montreal ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : dome geodesique de Buckminster Fuller ?",
     "choices": [
       "Montreal",
       "Agra",
@@ -5470,7 +5470,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Biosphere de Montreal est rattache ici a Montreal.",
+    "explanation": "Biosphere de Montreal est rattache ici a Montreal; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5493,7 +5493,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Biosphere de Montreal se trouve en Canada.",
+    "explanation": "Biosphere de Montreal se trouve en Canada; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5516,7 +5516,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Biosphere de Montreal est classe ici dans le repere geodesique.",
+    "explanation": "Biosphere de Montreal est classe ici dans le repere geodesique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5563,7 +5563,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Lotus Temple est rattache ici a New Delhi.",
+    "explanation": "Lotus Temple est rattache ici a New Delhi; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5586,7 +5586,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Perou"
     ],
     "answerIndex": 0,
-    "explanation": "Lotus Temple se trouve en Inde.",
+    "explanation": "Lotus Temple se trouve en Inde; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5609,7 +5609,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Lotus Temple est classe ici dans le repere expressionniste.",
+    "explanation": "Lotus Temple est classe ici dans le repere expressionniste; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5691,7 +5691,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Temple d Or est rattache ici a Amritsar.",
+    "explanation": "Temple d Or est rattache ici a Amritsar; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5714,7 +5714,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Perou"
     ],
     "answerIndex": 0,
-    "explanation": "Temple d Or se trouve en Inde.",
+    "explanation": "Temple d Or se trouve en Inde; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5737,7 +5737,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Temple d Or est classe ici dans le repere sikh.",
+    "explanation": "Temple d Or est classe ici dans le repere sikh; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5784,7 +5784,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur est rattache ici a Java central.",
+    "explanation": "Borobudur est rattache ici a Java central; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5807,7 +5807,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur se trouve en Indonesie.",
+    "explanation": "Borobudur se trouve en Indonesie; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5830,7 +5830,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur est classe ici dans le repere bouddhique.",
+    "explanation": "Borobudur est classe ici dans le repere bouddhique; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5912,7 +5912,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Kinkaku-ji est rattache ici a Kyoto.",
+    "explanation": "Kinkaku-ji est rattache ici a Kyoto; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5935,7 +5935,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Kinkaku-ji se trouve en Japon.",
+    "explanation": "Kinkaku-ji se trouve en Japon; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5958,7 +5958,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Kinkaku-ji est classe ici dans le repere japonais.",
+    "explanation": "Kinkaku-ji est classe ici dans le repere japonais; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5997,7 +5997,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-055-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Chateau de Himeji ?",
+    "prompt": "Quelle ville ou zone correspond a ce repere architectural : chateau blanc surnomme heron blanc ?",
     "choices": [
       "Himeji",
       "Agra",
@@ -6005,7 +6005,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Himeji est rattache ici a Himeji.",
+    "explanation": "Chateau de Himeji est rattache ici a Himeji; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6028,7 +6028,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Himeji se trouve en Japon.",
+    "explanation": "Chateau de Himeji se trouve en Japon; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6051,7 +6051,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Himeji est classe ici dans le repere japonais.",
+    "explanation": "Chateau de Himeji est classe ici dans le repere japonais; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6133,7 +6133,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung est rattache ici a Seoul.",
+    "explanation": "Gyeongbokgung est rattache ici a Seoul; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6156,7 +6156,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung se trouve en Coree du Sud.",
+    "explanation": "Gyeongbokgung se trouve en Coree du Sud; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6179,7 +6179,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung est classe ici dans le repere coreen.",
+    "explanation": "Gyeongbokgung est classe ici dans le repere coreen; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6226,7 +6226,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala est rattache ici a Lhassa.",
+    "explanation": "Palais Potala est rattache ici a Lhassa; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6249,7 +6249,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala se trouve en Chine.",
+    "explanation": "Palais Potala se trouve en Chine; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6272,7 +6272,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala est classe ici dans le repere tibetain.",
+    "explanation": "Palais Potala est classe ici dans le repere tibetain; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6354,7 +6354,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Grande Muraille de Chine est rattache ici a Chine du Nord.",
+    "explanation": "Grande Muraille de Chine est rattache ici a Chine du Nord; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6369,7 +6369,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-058-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Grande Muraille de Chine ?",
+    "prompt": "Dans quel pays se trouve ce repere architectural : longue muraille defensive ?",
     "choices": [
       "Chine",
       "Inde",
@@ -6377,7 +6377,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Grande Muraille de Chine se trouve en Chine.",
+    "explanation": "Grande Muraille de Chine se trouve en Chine; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6400,7 +6400,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Grande Muraille de Chine est classe ici dans le repere fortification.",
+    "explanation": "Grande Muraille de Chine est classe ici dans le repere fortification; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6447,7 +6447,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Temple du Ciel est rattache ici a Pekin.",
+    "explanation": "Temple du Ciel est rattache ici a Pekin; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6470,7 +6470,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Temple du Ciel se trouve en Chine.",
+    "explanation": "Temple du Ciel se trouve en Chine; retenir le pays connecte architecture et geographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6493,7 +6493,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Temple du Ciel est classe ici dans le repere chinois.",
+    "explanation": "Temple du Ciel est classe ici dans le repere chinois; ce style sert d indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",

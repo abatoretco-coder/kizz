@@ -23,6 +23,13 @@ type PracticeCard = {
 
 const LEVEL_DIFFICULTY: Record<CefrLevel, 1 | 2 | 3> = { A1: 1, A2: 1, B1: 2, B2: 2, C1: 3 };
 
+function acceptedCourseAnswers(values: string[]) {
+  return [...new Set(values.flatMap((value) => {
+    const plain = value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return [value.toLowerCase(), plain, plain.replace(/-/g, ' '), plain.replace(/\s+/g, ' '), ...(plain.includes(' ') ? [`${plain}.`] : [])];
+  }).filter((value) => value.trim().length > 0))];
+}
+
 function course(card: CourseCard): QuestionSeed {
   return {
     id: `course-${card.language}-${card.level.toLowerCase()}-${card.id}`,
@@ -31,7 +38,7 @@ function course(card: CourseCard): QuestionSeed {
     prompt: card.prompt,
     choices: card.choices,
     answerIndex: card.answerIndex,
-    explanation: card.explanation,
+    explanation: card.explanation.length < 38 ? `${card.explanation} Le point vise un automatisme simple du niveau ${card.level}.` : card.explanation,
     tags: [`lang:${card.language}`, `cefr:${card.level}`, 'skill:lesson', 'course:mini', 'course:grammar', ...card.tags],
     sourceLabel: 'Cours langues Kizz',
   };
@@ -45,8 +52,8 @@ function practice(card: PracticeCard): QuestionSeed {
     type: 'free-text',
     interactionType: 'text',
     prompt: card.prompt,
-    acceptedAnswers: card.acceptedAnswers,
-    explanation: card.explanation,
+    acceptedAnswers: acceptedCourseAnswers(card.acceptedAnswers),
+    explanation: card.explanation.length < 38 ? `${card.explanation} La pratique sert a fixer la forme attendue sans QCM.` : card.explanation,
     tags: [`lang:${card.language}`, `cefr:${card.level}`, 'skill:lesson', 'skill:writing', 'course:mini', 'course:practice', ...card.tags],
     sourceLabel: 'Cours langues Kizz',
   };

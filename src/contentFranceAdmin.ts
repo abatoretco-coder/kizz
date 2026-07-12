@@ -168,7 +168,7 @@ const departmentChiefTownQuestions: QuestionSeed[] = franceDepartmentData.map((d
   id: `fr-dept-cheflieu-${department.code.toLowerCase()}`,
   topicId: franceMapTopic.id,
   difficulty: difficulty(index + 1),
-  prompt: `Départements de France : quel est le chef-lieu du département ${department.name} (${department.code}) ?`,
+  prompt: department.name.includes(department.chiefTown) ? `Départements de France : quel est le chef-lieu du département ${department.code} ?` : `Départements de France : quel est le chef-lieu du département ${department.name} (${department.code}) ?`,
   choices: choicesFrom(franceDepartmentData, index, (item) => item.chiefTown),
   answerIndex: 0,
   explanation: `${department.chiefTown} est le chef-lieu du département ${department.name}, dans la région ${department.region}.`,

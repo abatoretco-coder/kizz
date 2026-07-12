@@ -148,6 +148,33 @@ function landmarkDifficulty(name) {
   return 2;
 }
 
+function normalizedWords(value) {
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().match(/[a-z0-9]+/g) ?? [];
+}
+
+function containsAnswer(text, answer) {
+  const textWords = new Set(normalizedWords(text));
+  return normalizedWords(answer).filter((word) => !['de', 'du', 'des', 'la', 'le', 'les', 'd', 'l'].includes(word)).every((word) => textWords.has(word));
+}
+
+function cityPrompt(item) {
+  return containsAnswer(item.name, item.city) || containsAnswer(item.clue, item.city)
+    ? `Quelle ville ou zone ${item.country} est associee a ce repere architectural ?`
+    : `Dans quelle ville ou zone se trouve ${item.name} ?`;
+}
+
+function countryPrompt(item) {
+  return containsAnswer(item.name, item.country)
+    ? `Dans quel pays se trouve ce repere architectural : ${item.clue} ?`
+    : `Dans quel pays se trouve ${item.name} ?`;
+}
+
+function stylePrompt(item) {
+  return containsAnswer(item.name, item.style)
+    ? `Quel repere stylistique correspond a cet indice : ${item.clue} ?`
+    : `Quel repere stylistique associer a ${item.name} ?`;
+}
+
 function imageChoiceGroup(items, index) {
   const start = Math.floor(index / 4) * 4;
   const group = items.slice(start, start + 4);
@@ -189,9 +216,9 @@ async function main() {
     const id = `landmark-${String(index + 1).padStart(3, '0')}`;
     const difficulty = landmarkDifficulty(item.name);
     questions.push(q(`${id}-identify`, difficulty, 'Quel monument ou batiment est visible sur cette photo ?', rotate(names, item.name), 0, `${item.name} se reconnait notamment par ${item.clue}.`, ['architecture', 'image', 'monument', 'banque-visuelle-monuments', 'subtheme:architecture:buildings'], item.sourceUrl, { imageAsset: item.asset, imageAlt: `Photo de ${item.name}` }));
-    questions.push(q(`${id}-city`, difficulty, `Dans quelle ville ou zone se trouve ${item.name} ?`, rotate(cities, item.city), 0, `${item.name} est rattache ici a ${item.city}.`, ['architecture', 'geographie', 'ville', 'banque-visuelle-monuments', 'subtheme:architecture:buildings'], item.sourceUrl));
-    questions.push(q(`${id}-country`, difficulty, `Dans quel pays se trouve ${item.name} ?`, rotate(countries, item.country), 0, `${item.name} se trouve en ${item.country}.`, ['architecture', 'geographie', 'pays', 'banque-visuelle-monuments', 'subtheme:architecture:buildings'], item.sourceUrl));
-    questions.push(q(`${id}-style`, 2, `Quel repere stylistique associer a ${item.name} ?`, rotate(styles, item.style), 0, `${item.name} est classe ici dans le repere ${item.style}.`, ['architecture', 'style', 'banque-visuelle-monuments', 'subtheme:architecture:styles'], item.sourceUrl));
+    questions.push(q(`${id}-city`, difficulty, cityPrompt(item), rotate(cities, item.city), 0, `${item.name} est rattache ici a ${item.city}; ce repere aide a situer le monument avant de le reconnaitre sur carte.`, ['architecture', 'geographie', 'ville', 'banque-visuelle-monuments', 'subtheme:architecture:buildings'], item.sourceUrl));
+    questions.push(q(`${id}-country`, difficulty, countryPrompt(item), rotate(countries, item.country), 0, `${item.name} se trouve en ${item.country}; retenir le pays connecte architecture et geographie culturelle.`, ['architecture', 'geographie', 'pays', 'banque-visuelle-monuments', 'subtheme:architecture:buildings'], item.sourceUrl));
+    questions.push(q(`${id}-style`, 2, stylePrompt(item), rotate(styles, item.style), 0, `${item.name} est classe ici dans le repere ${item.style}; ce style sert d indice pour comparer les formes architecturales.`, ['architecture', 'style', 'banque-visuelle-monuments', 'subtheme:architecture:styles'], item.sourceUrl));
     if (index % 2 === 0) {
       const group = imageChoiceGroup(enriched, index);
       const answerIndex = group.findIndex((candidate) => candidate.name === item.name);

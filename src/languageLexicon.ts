@@ -4,6 +4,16 @@ type Lexeme = [level: CefrLevel, target: string, french: string, distractors: [s
 
 const LEVEL_DIFFICULTY: Record<CefrLevel, 1 | 2 | 3> = { A1: 1, A2: 1, B1: 2, B2: 2, C1: 3 };
 
+function acceptedLexemeAnswers(target: string) {
+  const plain = target.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  return [...new Set([
+    target.toLowerCase(),
+    plain,
+    plain.replace(/-/g, ' '),
+    plain.replace(/\s*\/\s*/g, ' '),
+  ].filter((value) => value.trim().length > 1))];
+}
+
 function buildLexicon(language: LanguageCode, languageName: string, lexemes: Lexeme[]): QuestionSeed[] {
   return lexemes.flatMap(([level, target, french, distractors], index) => {
     const rank = index + 1;
@@ -20,7 +30,7 @@ function buildLexicon(language: LanguageCode, languageName: string, lexemes: Lex
       {
         id: `lex-${language}-${String(rank).padStart(4, '0')}-recall`,
         topicId: 'language', difficulty: LEVEL_DIFFICULTY[level], type: 'free-text' as const,
-        prompt: `Écris « ${french} » en ${languageName}.`, acceptedAnswers: [target],
+        prompt: `Écris « ${french} » en ${languageName}.`, acceptedAnswers: acceptedLexemeAnswers(target),
         explanation: `La forme attendue est « ${target} ». Le rappel écrit est plus exigeant que la simple reconnaissance.`,
         tags: [...tags, 'skill:writing', 'mode:recall'], sourceLabel: 'Lexique fréquentiel progressif Kizz',
       },

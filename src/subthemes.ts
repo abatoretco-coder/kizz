@@ -57,8 +57,10 @@ export const subthemes: Subtheme[] = [
   { id: 'technology-software', topicId: 'technology', title: 'Logiciel', tag: 'subtheme:technology:software' },
   { id: 'technology-security', topicId: 'technology', title: 'Securite', tag: 'subtheme:technology:security' },
   { id: 'language-spanish', topicId: 'language', title: 'Espagnol', tag: 'subtheme:language:spanish' },
+  { id: 'language-english', topicId: 'language', title: 'Anglais', tag: 'subtheme:language:english' },
   { id: 'language-german', topicId: 'language', title: 'Allemand', tag: 'subtheme:language:german' },
   { id: 'language-italian', topicId: 'language', title: 'Italien', tag: 'subtheme:language:italian' },
+  { id: 'language-japanese', topicId: 'language', title: 'Japonais', tag: 'subtheme:language:japanese' },
   { id: 'astronomy-solar-system', topicId: 'astronomy', title: 'Systeme solaire', tag: 'subtheme:astronomy:solar-system' },
   { id: 'astronomy-observation', topicId: 'astronomy', title: 'Observation', tag: 'subtheme:astronomy:observation' },
 ];

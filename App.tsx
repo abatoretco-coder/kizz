@@ -1,24 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator, Alert, BackHandler, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
 } from 'react-native';
-import { WebView, WebViewMessageEvent } from 'react-native-webview';
+import { Camera, GeoJSONSource, Layer, Map as MapLibreMap, NetworkManager, type PressEvent } from '@maplibre/maplibre-react-native';
+import type { FeatureCollection } from 'geojson';
 import { AdminQuestion, QuestionReportReason, adminDeleteQuestion, adminUpdateQuestionDifficulty, clearSessionDraft, getAdminQuestions, getDailyVocabularyQuestions, getDashboardStats, getFavoriteQuestions, getFilteredQuestions, getLanguageProgress, getLanguageQuestions, getLibraryStats, getMapPointQuestions, getRandomQuestionByDifficulty, getRandomTopicQuestionsByDifficulty, getRecentSessions, getReviewQuestions, getSessionDraft, getTaggedQuestions, getTopicProgress, getTopics, initializeDatabase, reportQuestion, saveSession, saveSessionDraft, searchQuestions, toggleFavorite } from './src/database';
-import { CefrLevel, DashboardStats, Difficulty, GeoPoint, LanguageCode, LanguageProgressCell, LanguageSessionFilters, LanguageSkill, LibraryStats, QuizQuestion, RecentSession, SessionAnswer, SessionDraft, SessionFilters, Topic, TopicProgress } from './src/domain';
+import { CefrLevel, DashboardStats, Difficulty, GeoPoint, GeoTarget, LanguageCode, LanguageProgressCell, LanguageSessionFilters, LanguageSkill, LibraryStats, QuizQuestion, RecentSession, SessionAnswer, SessionDraft, SessionFilters, Topic, TopicProgress } from './src/domain';
 import { createAndShareQuestionReports, createAndShareQuizPack, importCsvQuizPackDraft, pickAndImportQuizPack, pickCsvQuizPackDraft } from './src/quizPack';
 import { gradeMapPoint, gradeMultiText, isFreeTextCorrect, shuffleQuestions } from './src/quizEngine';
 import { palette } from './src/theme';
 import { summarizeByInteraction } from './src/sessionSummary';
 import { subthemesForTopics } from './src/subthemes';
+import { QuestionReviewSeverity, countReviewStatus, reviewQuestionQuality } from './src/questionReview';
 import { franceDepartmentBoundaryGeoJson, worldBoundaryGeoJson } from './src/mapBoundaries';
 import { generatedQuestionImages } from './src/generated/questionImages';
 import { natureQuestionImages } from './src/generated/natureQuestionImages';
 import { landmarkQuestionImages } from './src/generated/landmarkQuestionImages';
-import { offlineMapDataUris } from './src/generated/offlineMapData';
 
-type Screen = 'home' | 'configure' | 'languages' | 'quiz' | 'result' | 'library' | 'search' | 'admin';
+type Screen = 'home' | 'configure' | 'languages' | 'quiz' | 'result' | 'library' | 'search' | 'admin' | 'question-review';
 const emptyStats: DashboardStats = { answered: 0, correct: 0, sessions: 0, streakDays: 0, dueReview: 0 };
 const QUESTION_IMAGES: Record<string, ImageSourcePropType> = {
   'mona-lisa': require('./assets/questions/mona-lisa.jpg'),
@@ -469,7 +470,7 @@ export default function App() {
         void closeQuiz();
         return true;
       }
-      if (screen === 'admin') {
+      if (screen === 'admin' || screen === 'question-review') {
         void Promise.all([refreshTopics(), refreshStats(), refreshProgress()]).then(() => navigateTo('library', { replace: true }));
         return true;
       }
@@ -503,16 +504,17 @@ export default function App() {
       {screen === 'result' && topic && (
         <Result topic={topic} questions={quiz} answers={answers} onAgain={() => prepareSession(topic, quiz)} onHome={() => navigateTo('home', { replace: true })} />
       )}
-      {screen === 'library' && <Library onClose={async () => { await refreshTopics(); navigateTo('home', { replace: true }); }} onAdmin={() => navigateTo('admin')} />}
+      {screen === 'library' && <Library onClose={async () => { await refreshTopics(); navigateTo('home', { replace: true }); }} onAdmin={() => navigateTo('admin')} onQuestionReview={() => navigateTo('question-review')} />}
       {screen === 'search' && <Search onClose={() => navigateTo('home', { replace: true })} onStart={(questions) => prepareSession({ id: 'search', title: 'Recherche', subtitle: 'Sélection personnelle', icon: '?', color: '#68D7A2' }, questions)} />}
       {screen === 'admin' && <AdminPanel topics={availableTopics} onClose={async () => { await Promise.all([refreshTopics(), refreshStats(), refreshProgress()]); navigateTo('library', { replace: true }); }} />}
+      {screen === 'question-review' && <QuestionReview topics={availableTopics} onClose={async () => { await Promise.all([refreshTopics(), refreshStats(), refreshProgress()]); navigateTo('library', { replace: true }); }} />}
     </View>
   );
 }
 
 function getHomeRecommendation(stats: DashboardStats, draft: SessionDraft | null): { action: 'resume' | 'review' | 'compose' | 'endurance'; title: string; text: string; label: string; color: string } {
   if (draft) {
-    const infiniteText = draft.mode?.kind === 'infinite' ? `Mode infini niveau ${draft.mode.difficulty}, ${draft.answers.length} reponses deja posees.` : `Question ${draft.questionIndex + 1} sur ${draft.questions.length}.`;
+    const infiniteText = draft.mode?.kind === 'infinite' ? `Mode infini niveau ${draft.mode.difficulty}, ${draft.answers.length} réponses déjà posées.` : `Question ${draft.questionIndex + 1} sur ${draft.questions.length}.`;
     return { action: 'resume', title: 'Reprendre sans friction', text: infiniteText, label: 'Reprendre', color: draft.topic.color };
   }
   if (stats.dueReview > 0) {
@@ -567,9 +569,9 @@ function HomeV2({ stats, topics, progress, recentSessions, draft, onResume, onSt
           <View style={styles.dashboardHeader}><Text style={styles.dashboardTitle}>Tableau de bord</Text><Text style={styles.dashboardCaption}>Progression locale</Text></View>
           <View style={styles.kpiGrid}>
             <Kpi value={String(stats.sessions)} label="Sessions" accent="#68D7A2" />
-            <Kpi value={String(stats.answered)} label="Reponses" accent="#75A7FF" />
-            <Kpi value={`${accuracy}%`} label="Precision" accent="#E6B759" />
-            <Kpi value={String(stats.dueReview)} label="A reviser" accent="#D982AD" />
+            <Kpi value={String(stats.answered)} label="Réponses" accent="#75A7FF" />
+            <Kpi value={`${accuracy}%`} label="Précision" accent="#E6B759" />
+            <Kpi value={String(stats.dueReview)} label="À réviser" accent="#D982AD" />
           </View>
           <ProgressMatrix progress={progress} onCompose={onCompose} onStartCell={onProgressCell} />
           <RecentSessions sessions={recentSessions} />
@@ -586,7 +588,7 @@ function HomeV2({ stats, topics, progress, recentSessions, draft, onResume, onSt
             <Pressable testID="map-session" accessibilityRole="button" onPress={onMaps} style={styles.quickAction}><Text style={styles.quickIcon}>+</Text><Text style={styles.quickText}>Cartes</Text></Pressable>
             <Pressable testID="search" accessibilityRole="button" onPress={onSearch} style={styles.quickAction}><Text style={styles.quickIcon}>?</Text><Text style={styles.quickText}>Rechercher</Text></Pressable>
           </View>
-          <Text style={styles.privacy}>Tes reponses restent sur ce telephone. Aucun compte requis.</Text>
+          <Text style={styles.privacy}>Tes réponses restent sur ce téléphone. Aucun compte requis.</Text>
         </ScrollView>
 
         <ScrollView style={{ width }} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
@@ -700,7 +702,7 @@ function Search({ onClose, onStart }: { onClose: () => void; onStart: (questions
   );
 }
 
-function Library({ onClose, onAdmin }: { onClose: () => void; onAdmin: () => void }) {
+function Library({ onClose, onAdmin, onQuestionReview }: { onClose: () => void; onAdmin: () => void; onQuestionReview: () => void }) {
   const [stats, setStats] = useState<LibraryStats>({ topics: 0, questions: 0, imports: 0 });
   const [busy, setBusy] = useState(false);
   const [lastReport, setLastReport] = useState<string | null>(null);
@@ -799,6 +801,10 @@ function Library({ onClose, onAdmin }: { onClose: () => void; onAdmin: () => voi
         <View style={[styles.actionIcon, { backgroundColor: '#241821' }]}><Text style={[styles.actionIconText, { color: '#D982AD' }]}>!</Text></View>
         <View style={styles.actionCopy}><Text style={styles.actionTitle}>Exporter les signalements</Text><Text style={styles.actionText}>Partager les retours locaux sur les questions</Text></View><Text style={styles.actionArrow}>›</Text>
       </Pressable>
+      <Pressable onPress={onQuestionReview} style={styles.actionCard}>
+        <View style={[styles.actionIcon, { backgroundColor: '#12231C' }]}><Text style={[styles.actionIconText, { color: '#68D7A2' }]}>?</Text></View>
+        <View style={styles.actionCopy}><Text style={styles.actionTitle}>Revue qualité questions</Text><Text style={styles.actionText}>Valider propositions, difficultés, médias et cartes</Text></View><Text style={styles.actionArrow}>›</Text>
+      </Pressable>
       <Pressable onPress={onAdmin} style={styles.actionCard}>
         <View style={[styles.actionIcon, { backgroundColor: '#241D13' }]}><Text style={[styles.actionIconText, { color: '#E6B759' }]}>A</Text></View>
         <View style={styles.actionCopy}><Text style={styles.actionTitle}>Mode admin questions</Text><Text style={styles.actionText}>Consulter, filtrer, masquer et ajuster la difficulté</Text></View><Text style={styles.actionArrow}>›</Text>
@@ -808,6 +814,114 @@ function Library({ onClose, onAdmin }: { onClose: () => void; onAdmin: () => voi
       <View style={styles.formatCard}><Text style={styles.formatTitle}>Format Kizz v1</Text><Text style={styles.formatText}>Chaque pack contient ses thèmes, questions, 4 choix, bonne réponse, explications, difficulté, tags et provenance. Taille maximale: 50 Mo et 100 000 questions par fichier.</Text></View>
     </ScrollView>
   );
+}
+
+function QuestionReview({ topics, onClose }: { topics: Topic[]; onClose: () => void }) {
+  const [query, setQuery] = useState('');
+  const [difficulty, setDifficulty] = useState<Difficulty | 'all'>('all');
+  const [topicId, setTopicId] = useState('all');
+  const [status, setStatus] = useState<QuestionReviewSeverity | 'all'>('all');
+  const [kind, setKind] = useState<'all' | 'choice' | 'text' | 'visual' | 'map'>('all');
+  const [questions, setQuestions] = useState<AdminQuestion[]>([]);
+  const [busy, setBusy] = useState(false);
+
+  async function load() {
+    setBusy(true);
+    try {
+      setQuestions(await getAdminQuestions({ query, difficulty, topicId, limit: 160 }));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  useEffect(() => { void load(); }, [difficulty, topicId]);
+
+  async function changeDifficulty(questionId: string, nextDifficulty: Difficulty) {
+    await adminUpdateQuestionDifficulty(questionId, nextDifficulty);
+    await load();
+  }
+
+  const visibleQuestions = questions.filter((question) => {
+    const review = reviewQuestionQuality(question);
+    if (status !== 'all' && review.status !== status) return false;
+    if (kind === 'choice') return (question.type ?? 'multiple-choice') === 'multiple-choice';
+    if (kind === 'text') return question.type === 'free-text' || question.type === 'multi-text';
+    if (kind === 'visual') return !!question.imageAsset || !!question.imageUrl || !!question.choiceImageAssets?.length;
+    if (kind === 'map') return question.type === 'map-point' || question.interactionType === 'map-point';
+    return true;
+  });
+  const counts = countReviewStatus(questions);
+  const typeCounts = {
+    choice: questions.filter((question) => (question.type ?? 'multiple-choice') === 'multiple-choice').length,
+    text: questions.filter((question) => question.type === 'free-text' || question.type === 'multi-text').length,
+    visual: questions.filter((question) => !!question.imageAsset || !!question.imageUrl || !!question.choiceImageAssets?.length).length,
+    map: questions.filter((question) => question.type === 'map-point' || question.interactionType === 'map-point').length,
+  };
+
+  return (
+    <ScrollView contentContainerStyle={styles.adminPage} keyboardShouldPersistTaps="handled">
+      <View style={styles.libraryHeader}><Pressable onPress={onClose} hitSlop={16}><Text style={styles.back}>‹</Text></Pressable><Text style={styles.libraryTitle}>Revue questions</Text></View>
+      <Text style={styles.configTitle}>Qualité de la banque</Text><Text style={styles.configLead}>Contrôle rapide des propositions, niveaux, médias, cartes et corrections prioritaires.</Text>
+      <View style={styles.reviewStats}>
+        <ReviewStat label="OK" value={counts.ok} tone="ok" />
+        <ReviewStat label="À revoir" value={counts.warning} tone="warning" />
+        <ReviewStat label="Erreur" value={counts.error} tone="error" />
+      </View>
+      <View style={styles.adminSearchRow}>
+        <TextInput value={query} onChangeText={setQuery} placeholder="Question, tag ou identifiant" placeholderTextColor="#68746E" style={styles.adminSearchInput} returnKeyType="search" onSubmitEditing={load} />
+        <Pressable testID="question-review-search" onPress={load} style={styles.adminSearchButton}><Text style={styles.adminSearchButtonText}>OK</Text></Pressable>
+      </View>
+      <Text style={styles.configSection}>QUALITÉ</Text>
+      <View style={styles.chipWrap}>
+        {(['all', 'ok', 'warning', 'error'] as Array<QuestionReviewSeverity | 'all'>).map((item) => <Pressable key={item} onPress={() => setStatus(item)} style={[styles.filterChip, status === item && styles.filterChipActive]}><Text style={[styles.filterChipText, status === item && styles.filterChipTextActive]}>{item === 'all' ? 'Toutes' : item === 'ok' ? 'OK' : item === 'warning' ? 'À revoir' : 'Erreur'}</Text></Pressable>)}
+      </View>
+      <Text style={styles.configSection}>FORMAT</Text>
+      <View style={styles.chipWrap}>
+        {(['all', 'choice', 'text', 'visual', 'map'] as const).map((item) => <Pressable key={item} onPress={() => setKind(item)} style={[styles.filterChip, kind === item && styles.filterChipActive]}><Text style={[styles.filterChipText, kind === item && styles.filterChipTextActive]}>{item === 'all' ? 'Tous' : item === 'choice' ? `QCM ${typeCounts.choice}` : item === 'text' ? `Texte ${typeCounts.text}` : item === 'visual' ? `Image ${typeCounts.visual}` : `Carte ${typeCounts.map}`}</Text></Pressable>)}
+      </View>
+      <Text style={styles.configSection}>DIFFICULTÉ</Text>
+      <View style={styles.chipWrap}>
+        <Pressable onPress={() => setDifficulty('all')} style={[styles.filterChip, difficulty === 'all' && styles.filterChipActive]}><Text style={[styles.filterChipText, difficulty === 'all' && styles.filterChipTextActive]}>Toutes</Text></Pressable>
+        {([1, 2, 3] as Difficulty[]).map((item) => <Pressable key={item} onPress={() => setDifficulty(item)} style={[styles.filterChip, difficulty === item && styles.filterChipActive]}><Text style={[styles.filterChipText, difficulty === item && styles.filterChipTextActive]}>Niveau {item}</Text></Pressable>)}
+      </View>
+      <Text style={styles.configSection}>THÈME</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.adminTopicRow}>
+        <Pressable onPress={() => setTopicId('all')} style={[styles.filterChip, topicId === 'all' && styles.filterChipActive]}><Text style={[styles.filterChipText, topicId === 'all' && styles.filterChipTextActive]}>Tous</Text></Pressable>
+        {topics.map((topic) => <Pressable key={topic.id} onPress={() => setTopicId(topic.id)} style={[styles.filterChip, topicId === topic.id && styles.filterChipActive]}><Text style={[styles.filterChipText, topicId === topic.id && styles.filterChipTextActive]}>{topic.title}</Text></Pressable>)}
+      </ScrollView>
+      <View style={styles.adminSummary}><Text style={styles.adminSummaryText}>{visibleQuestions.length} question(s) sur {questions.length}</Text>{busy && <ActivityIndicator color="#68D7A2" />}</View>
+      <View style={styles.adminList}>
+        {visibleQuestions.map((question) => {
+          const review = reviewQuestionQuality(question);
+          const choices = question.choices ?? [];
+          return (
+            <View key={question.id} style={[styles.reviewQuestionCard, review.status === 'error' ? styles.reviewCardError : review.status === 'warning' ? styles.reviewCardWarning : styles.reviewCardOk]}>
+              <View style={styles.adminQuestionHeader}><Text style={styles.adminTopic}>{question.topicTitle}</Text><Text style={styles.adminId}>{question.id}</Text></View>
+              <Text style={styles.adminPrompt}>{question.prompt}</Text>
+              <View style={styles.reviewMetaRow}>
+                <Text style={styles.reviewStatus}>{review.status === 'ok' ? 'OK' : review.status === 'warning' ? 'À revoir' : 'Erreur'}</Text>
+                <Text style={styles.adminMeta}>Niveau {question.difficulty} · {review.difficultyLabel} · {question.type ?? 'multiple-choice'}{question.reportCount ? ` · ${question.reportCount} signalement(s)` : ''}</Text>
+              </View>
+              {choices.length > 0 && <View style={styles.reviewChoiceList}>{choices.map((choice, index) => <View key={`${question.id}-${index}`} style={[styles.reviewChoice, question.answerIndex === index && styles.reviewChoiceCorrect]}><Text style={[styles.reviewChoiceLetter, question.answerIndex === index && styles.reviewChoiceLetterCorrect]}>{String.fromCharCode(65 + index)}</Text><Text style={styles.reviewChoiceText}>{choice}</Text></View>)}</View>}
+              {question.acceptedAnswers?.length ? <Text style={styles.reviewAnswerText}>Réponses acceptées: {question.acceptedAnswers.slice(0, 4).join(', ')}</Text> : null}
+              {question.answerFields?.length ? <Text style={styles.reviewAnswerText}>Champs: {question.answerFields.map((field) => field.label).join(', ')}</Text> : null}
+              {question.geoTarget && <Text style={styles.reviewAnswerText}>Carte: {question.geoTarget.label} · tolérance {question.geoTarget.toleranceKm} km</Text>}
+              {!!(question.imageAsset || question.imageUrl || question.choiceImageAssets?.length) && <Text style={styles.reviewAnswerText}>Média: {question.imageAsset ?? question.imageUrl ?? `${question.choiceImageAssets?.length ?? 0} images de choix`}</Text>}
+              <View style={styles.reviewChecks}>{review.checks.slice(0, 6).map((check, index) => <Text key={`${question.id}-check-${index}`} style={[styles.reviewCheck, check.severity === 'error' ? styles.reviewCheckError : check.severity === 'warning' ? styles.reviewCheckWarning : styles.reviewCheckOk]}>{check.label}</Text>)}</View>
+              <Text style={styles.reviewExplanation}>{question.explanation}</Text>
+              <View style={styles.adminActions}>
+                {([1, 2, 3] as Difficulty[]).map((item) => <Pressable key={item} onPress={() => changeDifficulty(question.id, item)} style={[styles.adminDifficultyButton, question.difficulty === item && styles.adminDifficultyActive]}><Text style={[styles.adminDifficultyText, question.difficulty === item && styles.adminDifficultyTextActive]}>{item}</Text></Pressable>)}
+              </View>
+            </View>
+          );
+        })}
+      </View>
+    </ScrollView>
+  );
+}
+
+function ReviewStat({ label, value, tone }: { label: string; value: number; tone: QuestionReviewSeverity }) {
+  return <View style={[styles.reviewStat, tone === 'error' ? styles.reviewStatError : tone === 'warning' ? styles.reviewStatWarning : styles.reviewStatOk]}><Text style={styles.reviewStatValue}>{value}</Text><Text style={styles.reviewStatLabel}>{label}</Text></View>;
 }
 
 function AdminPanel({ topics, onClose }: { topics: Topic[]; onClose: () => void }) {
@@ -1012,6 +1126,7 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
   const allFieldsFilled = (question.answerFields ?? []).every((field) => fieldValues[field.id]?.trim());
   const hasQuestionMedia = !!imageSource || !!question.choiceImageAssets?.length;
   const visualChoiceOnly = !!question.choiceImageAssets?.length;
+  const safeQuestionImageLabel = answered ? question.imageAlt ?? 'Image de la question' : 'Image de la question';
   useEffect(() => {
     for (const item of [question, questions[index + 1]]) {
       if (!item) continue;
@@ -1019,6 +1134,47 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
       for (let choiceIndex = 0; choiceIndex < 4; choiceIndex += 1) preloadMediaSource(choiceImageSource(item, choiceIndex));
     }
   }, [index, question, questions]);
+  if (question.type === 'map-point') {
+    return (
+      <View style={styles.mapQuizPage}>
+        <View style={styles.quizHeader}>
+          <Pressable onPress={onClose} hitSlop={16}><Text style={styles.close}>X</Text></Pressable>
+          <View style={styles.progressTrack}><View style={[styles.progressFill, { width: infinite ? '100%' : `${((index + (answered ? 1 : 0)) / questions.length) * 100}%`, backgroundColor: topic.color }]} /></View>
+          <Text style={styles.counter}>{infinite ? `inf ${index + 1}` : `${index + 1}/${questions.length}`}</Text>
+          <Pressable onPress={onToggleFavorite} hitSlop={12}><Text style={[styles.favoriteStar, question.favorite && styles.favoriteStarActive]}>{question.favorite ? '*' : '-'}</Text></Pressable>
+        </View>
+        <View style={styles.mapQuestionPanel}>
+          <View style={styles.metaRow}>
+            <Text style={[styles.pill, { color: topic.color, backgroundColor: `${topic.color}16` }]}>{topic.title}</Text>
+            <Text style={styles.difficulty}>{'*'.repeat(question.difficulty)}{'-'.repeat(3 - question.difficulty)}</Text>
+          </View>
+          <Text style={styles.mapQuestionText}>{question.prompt}</Text>
+        </View>
+        <View style={styles.mapStage}>
+          <SatelliteMapPicker question={question} guess={mapGuess} target={answered ? question.geoTarget : undefined} disabled={answered} onPick={onMapGuess} fullScreen />
+        </View>
+        <View style={styles.mapActionBar}>
+          {answered && question.geoTarget && (
+            <View style={styles.mapResultCard}>
+              <Text style={styles.mapFeedbackTitle}>Correction spatiale</Text>
+              <Text style={styles.mapFeedbackText}>Distance : {mapGrade.distanceKm ?? '?'} km{mapGrade.direction && !mapGrade.correct ? ` - vise ${mapGrade.direction}` : ''}</Text>
+              <Text style={styles.mapFeedbackText}>Tolérance : {question.geoTarget.toleranceKm} km autour de {question.geoTarget.label}.</Text>
+            </View>
+          )}
+          {!answered ? (
+            <Pressable testID="check-map-answer" accessibilityRole="button" disabled={!mapGuess} onPress={onSubmitMapPoint} style={[styles.primaryButton, !mapGuess && styles.disabled]}>
+              <Text style={styles.primaryButtonText}>Valider le point</Text>
+            </Pressable>
+          ) : (
+            <Pressable testID="continue-quiz" accessibilityRole="button" onPress={onContinue} style={styles.primaryButton}>
+              <Text style={styles.primaryButtonText}>{infinite ? 'Question suivante' : index === questions.length - 1 ? 'Voir mon bilan' : 'Continuer'}</Text>
+            </Pressable>
+          )}
+        </View>
+        <MediaZoomModal media={zoomMedia} onClose={() => setZoomMedia(null)} />
+      </View>
+    );
+  }
   return (
     <KeyboardAvoidingView style={styles.quizPage} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={8}>
       <View style={styles.quizHeader}>
@@ -1029,7 +1185,7 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
       <ScrollView contentContainerStyle={styles.quizBody} keyboardShouldPersistTaps="handled">
         <View style={styles.metaRow}><Text style={[styles.pill, { color: topic.color, backgroundColor: `${topic.color}16` }]}>{topic.title}</Text><Text style={styles.difficulty}>{'●'.repeat(question.difficulty)}{'○'.repeat(3 - question.difficulty)}</Text></View>
         {infinite && <Text style={styles.infiniteQuizHint}>Mode infini - niveau {infiniteDifficulty} - touche × pour arrêter et sauvegarder</Text>}
-        {imageSource && <Pressable accessibilityRole="imagebutton" accessibilityLabel={question.imageAlt ?? 'Image de la question'} accessibilityHint="Ouvre l'image en plein ecran" onPress={() => setZoomMedia({ source: imageSource, alt: question.imageAlt, title: question.imageAlt ?? question.prompt })} style={styles.questionImageWrap}><Image source={imageSource} style={styles.questionImage} resizeMode="cover" accessibilityLabel={question.imageAlt} /></Pressable>}
+        {imageSource && <Pressable accessibilityRole="imagebutton" accessibilityLabel={safeQuestionImageLabel} accessibilityHint="Ouvre l'image en plein ecran" onPress={() => setZoomMedia({ source: imageSource, alt: safeQuestionImageLabel, title: safeQuestionImageLabel })} style={styles.questionImageWrap}><Image source={imageSource} style={styles.questionImage} resizeMode="cover" accessibilityLabel={safeQuestionImageLabel} /></Pressable>}
         <Text style={styles.question}>{question.prompt}</Text>
         {(question.type ?? 'multiple-choice') === 'multiple-choice' ? <View style={styles.choices}>
           {(question.choices ?? []).map((choice, choiceIndex) => {
@@ -1046,10 +1202,6 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
               </Pressable>
             );
           })}
-        </View> : question.type === 'map-point' ? <View>
-          <SatelliteMapPicker question={question} guess={mapGuess} target={answered ? question.geoTarget : undefined} disabled={answered} onPick={onMapGuess} />
-          {!answered && <Pressable testID="check-map-answer" accessibilityRole="button" disabled={!mapGuess} onPress={onSubmitMapPoint} style={[styles.checkButton, !mapGuess && styles.disabled]}><Text style={styles.checkButtonText}>Valider le point</Text></Pressable>}
-          {answered && question.geoTarget && <View style={styles.mapFeedback}><Text style={styles.mapFeedbackTitle}>Correction spatiale</Text><Text style={styles.mapFeedbackText}>Distance : {mapGrade.distanceKm ?? '?'} km{mapGrade.direction && !mapGrade.correct ? ` - vise ${mapGrade.direction}` : ''}</Text><Text style={styles.mapFeedbackText}>Tolerance : {question.geoTarget.toleranceKm} km autour de {question.geoTarget.label}.</Text></View>}
         </View> : question.type === 'multi-text' ? <View style={styles.multiFields}>
           {(question.answerFields ?? []).map((field) => <View key={field.id}><Text style={styles.multiFieldLabel}>{field.label}</Text><TextInput testID={`multi-field-${field.id}`} accessibilityLabel={field.label} value={fieldValues[field.id] ?? ''} onChangeText={(value) => onFieldChange(field.id, value)} editable={!answered} placeholder="Ta réponse…" placeholderTextColor="#758079" style={[styles.freeInput, answered && (multiGrade.fieldResults[field.id] ? styles.choiceCorrect : styles.choiceWrong)]} />{answered && !multiGrade.fieldResults[field.id] && <Text style={styles.acceptedAnswer}>Attendu : {field.acceptedAnswers[0]}</Text>}</View>)}
           {!answered && <Pressable testID="check-multi-answer" accessibilityRole="button" disabled={!allFieldsFilled} onPress={onSubmitMultiText} style={[styles.checkButton, !allFieldsFilled && styles.disabled]}><Text style={styles.checkButtonText}>Vérifier les réponses</Text></Pressable>}
@@ -1098,385 +1250,94 @@ function MediaZoomModal({ media, onClose }: { media: { source: ImageSourcePropTy
   );
 }
 
-function SatelliteMapPicker({ question, guess, target, disabled, onPick }: { question: QuizQuestion; guess: GeoPoint | null; target?: GeoPoint & { toleranceKm?: number }; disabled: boolean; onPick: (point: GeoPoint) => void }) {
-  const mapKind = isFranceMapQuestion(question) ? 'france' : 'world';
-  const mapAssetUris = mapKind === 'france'
-    ? { france: offlineMapDataUris.france }
-    : { world: offlineMapDataUris.world };
+const EMPTY_FEATURE_COLLECTION: FeatureCollection = { type: 'FeatureCollection', features: [] };
+const MAPLIBRE_EMPTY_STYLE = {
+  version: 8 as const,
+  sources: {},
+  layers: [{ id: 'background', type: 'background' as const, paint: { 'background-color': '#0B1519' } }],
+};
 
-  function handleMapMessage(event: WebViewMessageEvent) {
-    if (disabled) return;
-    try {
-      const payload = JSON.parse(event.nativeEvent.data) as Partial<GeoPoint>;
-      if (typeof payload.lat === 'number' && typeof payload.lon === 'number') {
-        onPick({
-          lat: Math.max(-90, Math.min(90, payload.lat)),
-          lon: Math.max(-180, Math.min(180, payload.lon)),
-        });
-      }
-    } catch {
-      // Ignore malformed messages from the embedded map.
+function mapPointFeatureCollection(points: Array<{ id: string; point?: GeoPoint | null; label?: string }>): FeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: points
+      .filter((item) => !!item.point)
+      .map((item) => ({
+        type: 'Feature' as const,
+        id: item.id,
+        properties: { id: item.id, label: item.label ?? item.id },
+        geometry: { type: 'Point' as const, coordinates: [item.point!.lon, item.point!.lat] },
+      })),
+  };
+}
+
+function SatelliteMapPicker({ question, guess, target, disabled, onPick, fullScreen = false }: { question: QuizQuestion; guess: GeoPoint | null; target?: GeoTarget; disabled: boolean; onPick: (point: GeoPoint) => void; fullScreen?: boolean }) {
+  const mapKind = isFranceMapQuestion(question) ? 'france' : 'world';
+  const isFrance = mapKind === 'france';
+  const camera = isFrance
+    ? { initialViewState: { bounds: [-6.8, 41.0, 10.2, 51.8] as [number, number, number, number], padding: { top: 24, right: 24, bottom: 24, left: 24 } }, minZoom: 4, maxZoom: 14, maxBounds: [-8.5, 40.2, 12.0, 52.8] as [number, number, number, number] }
+    : { initialViewState: { center: [8, 18] as [number, number], zoom: 0.6 }, minZoom: 0, maxZoom: 8, maxBounds: [-180, -66, 180, 85] as [number, number, number, number] };
+  const targetData = useMemo(() => target ? mapPointFeatureCollection([{ id: 'target', point: target, label: target.label }]) : EMPTY_FEATURE_COLLECTION, [target]);
+  const boundaryData = (isFrance ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson) as unknown as FeatureCollection;
+  const guessData = useMemo(() => guess ? mapPointFeatureCollection([{ id: 'guess', point: guess, label: 'Ta réponse' }]) : EMPTY_FEATURE_COLLECTION, [guess]);
+
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      NetworkManager.setConnected(false);
     }
+  }, []);
+
+  function handleMapPress(event: { nativeEvent: PressEvent }) {
+    if (disabled) return;
+    const [lon, lat] = event.nativeEvent.lngLat;
+    onPick({
+      lat: Math.max(-90, Math.min(90, lat)),
+      lon: Math.max(-180, Math.min(180, lon)),
+    });
   }
 
   return (
-    <View style={styles.satelliteMapWrap}>
-      <WebView
+    <View style={[styles.satelliteMapWrap, fullScreen && styles.satelliteMapFullScreen]}>
+      <MapLibreMap
         key={`${question.id}-${mapKind}`}
         testID="world-map-picker"
-        originWhitelist={['*']}
-        source={{ html: satelliteMapHtml(question, guess, target, disabled, mapAssetUris) }}
-        javaScriptEnabled
-        domStorageEnabled
-        allowFileAccess
-        allowFileAccessFromFileURLs
-        allowUniversalAccessFromFileURLs={false}
-        onMessage={handleMapMessage}
-        scrollEnabled={false}
-        nestedScrollEnabled={false}
-        overScrollMode="never"
+        mapStyle={MAPLIBRE_EMPTY_STYLE}
+        onPress={handleMapPress}
+        attribution={false}
+        logo={false}
+        compass
+        scaleBar
+        dragPan
+        touchZoom
+        doubleTapZoom
+        touchRotate={false}
+        touchPitch={false}
+        preferredFramesPerSecond={60}
+        androidView="surface"
         style={styles.satelliteMap}
-      />
+      >
+        <Camera {...camera} />
+        <GeoJSONSource id="kizz-boundaries" data={boundaryData}>
+          <Layer id="kizz-land-fill" type="fill" paint={{ 'fill-color': isFrance ? '#C9DDA2' : '#B9D19A', 'fill-opacity': 1 }} />
+          <Layer id="kizz-land-depth" type="fill" paint={{ 'fill-color': isFrance ? '#7FA46D' : '#7AA377', 'fill-opacity': isFrance ? 0.14 : 0.18 }} />
+          <Layer id="kizz-boundary-shadow" type="line" layout={{ 'line-join': 'round', 'line-cap': 'round' }} paint={{ 'line-color': 'rgba(8,22,24,0.82)', 'line-width': isFrance ? 2.2 : 1.6 }} />
+          <Layer id="kizz-boundary-line" type="line" layout={{ 'line-join': 'round', 'line-cap': 'round' }} paint={{ 'line-color': isFrance ? '#F7F0CB' : '#EAF1E8', 'line-width': isFrance ? 1.15 : 0.8 }} />
+          <Layer id="kizz-boundary-hairline" type="line" layout={{ 'line-join': 'round', 'line-cap': 'round' }} paint={{ 'line-color': isFrance ? 'rgba(67,93,70,0.74)' : 'rgba(70,92,91,0.74)', 'line-width': isFrance ? 0.45 : 0.35 }} />
+        </GeoJSONSource>
+        <GeoJSONSource id="kizz-target" data={targetData}>
+          <Layer id="kizz-target-radius" type="circle" paint={{ 'circle-color': 'rgba(228,125,112,0.20)', 'circle-radius': 20, 'circle-stroke-color': '#E47D70', 'circle-stroke-width': 2 }} />
+          <Layer id="kizz-target-dot" type="circle" paint={{ 'circle-color': '#E47D70', 'circle-radius': 7, 'circle-stroke-color': '#07110C', 'circle-stroke-width': 2 }} />
+        </GeoJSONSource>
+        <GeoJSONSource id="kizz-guess" data={guessData}>
+          <Layer id="kizz-guess-dot" type="circle" paint={{ 'circle-color': '#68D7A2', 'circle-radius': 8, 'circle-stroke-color': '#07110C', 'circle-stroke-width': 2 }} />
+        </GeoJSONSource>
+      </MapLibreMap>
       <Text style={styles.mapHint}>{disabled ? 'Point vert: ta réponse - cible rouge' : 'Pince pour zoomer, glisse pour naviguer, touche pour placer ton point'}</Text>
     </View>
   );
 }
 
-function satelliteMapHtml(question: QuizQuestion, guess: GeoPoint | null, target: (GeoPoint & { toleranceKm?: number }) | undefined, disabled: boolean, mapAssetUris: { world?: string; france?: string }) {
-  const isFranceMap = isFranceMapQuestion(question);
-  const bounds = isFranceMap
-    ? { minLon: -5.8, maxLon: 10.0, minLat: 41.1, maxLat: 51.3 }
-    : { minLon: -180, maxLon: 180, minLat: -58, maxLat: 83 };
-  const boundaryGeoJson = isFranceMap ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson;
-  const title = isFranceMap ? 'France' : 'Monde';
-  const satelliteUri = isFranceMap ? mapAssetUris.france ?? '' : mapAssetUris.world ?? '';
-  const satelliteBounds = isFranceMap
-    ? { minLon: -6.8, maxLon: 10.2, minLat: 41.0, maxLat: 51.8 }
-    : { minLon: -180, maxLon: 180, minLat: -90, maxLat: 90 };
-  return `<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <style>
-    html, body, #map { height: 100%; width: 100%; margin: 0; background: #0B1519; overflow: hidden; overscroll-behavior: none; touch-action: none; user-select: none; }
-    #map { position: relative; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
-    canvas { width: 100%; height: 100%; display: block; background: #0F2028; touch-action: none; }
-    .badge { position: absolute; z-index: 4; top: 10px; left: 10px; padding: 7px 10px; border-radius: 999px; background: rgba(7,17,12,0.78); color: #dce6e1; font: 900 11px system-ui; pointer-events: none; backdrop-filter: blur(6px); }
-    .controls { position: absolute; z-index: 4; right: 10px; top: 10px; display: grid; overflow: hidden; border-radius: 14px; border: 1px solid rgba(255,255,255,0.18); background: rgba(10,14,13,0.86); }
-    .controls button { width: 42px; height: 42px; border: 0; border-bottom: 1px solid rgba(255,255,255,0.14); background: transparent; color: #f3f7f5; font: 900 22px system-ui; }
-    .controls button:last-child { border-bottom: 0; }
-    .scale { position: absolute; z-index: 4; left: 12px; bottom: 12px; width: 74px; height: 3px; border-radius: 999px; background: rgba(220,230,225,0.8); box-shadow: 0 0 0 1px rgba(7,17,12,0.7); pointer-events: none; }
-  </style>
-</head>
-<body>
-  <div id="map">
-    <div class="badge">${title}</div>
-    <div class="controls"><button id="zoom-in" type="button">+</button><button id="zoom-out" type="button">-</button></div>
-    <canvas id="canvas" aria-label="${title}"></canvas>
-    <div class="scale"></div>
-  </div>
-  <script>
-    (function () {
-      var bounds = ${JSON.stringify(bounds)};
-      var boundaryGeoJson = ${JSON.stringify(boundaryGeoJson)};
-      var guess = ${JSON.stringify(guess)};
-      var target = ${JSON.stringify(target ?? null)};
-      var disabled = ${disabled ? 'true' : 'false'};
-      var satelliteUri = ${JSON.stringify(satelliteUri)};
-      var satelliteBounds = ${JSON.stringify(satelliteBounds)};
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d', { alpha: false });
-      var satellite = new Image();
-      var satelliteReady = false;
-      var dpr = Math.max(1, Math.min(3, window.devicePixelRatio || 1));
-      var width = 0;
-      var height = 0;
-      var projectedBounds = null;
-      var baseScale = 1;
-      var zoom = 1;
-      var minZoom = 0.95;
-      var maxZoom = ${isFranceMap ? '36' : '48'};
-      var center = null;
-      var pointers = {};
-      var pointerCount = 0;
-      var dragStart = null;
-      var pinchStart = null;
-      var moved = false;
-      var lastTap = 0;
-      var velocity = { x: 0, y: 0 };
-      var lastMove = null;
-      var inertiaFrame = 0;
-      var pendingGuess = null;
-      var rings = [];
-      satellite.onload = function () { satelliteReady = true; draw(); };
-      satellite.src = satelliteUri;
 
-      function project(lon, lat) {
-        var sin = Math.sin(Math.max(-85.05112878, Math.min(85.05112878, lat)) * Math.PI / 180);
-        return { x: (lon + 180) / 360, y: 0.5 - Math.log((1 + sin) / (1 - sin)) / (4 * Math.PI) };
-      }
-      function unproject(x, y) {
-        var lon = x * 360 - 180;
-        var lat = Math.atan(Math.sinh(Math.PI * (1 - 2 * y))) * 180 / Math.PI;
-        return { lon: lon, lat: lat };
-      }
-      function screenToWorld(x, y) {
-        return { x: center.x + (x - width / 2) / (baseScale * zoom), y: center.y + (y - height / 2) / (baseScale * zoom) };
-      }
-      function worldToScreen(point) {
-        return { x: (point.x - center.x) * baseScale * zoom + width / 2, y: (point.y - center.y) * baseScale * zoom + height / 2 };
-      }
-      function clampCamera() {
-        if (!projectedBounds || !center) return;
-        var padX = width / (baseScale * zoom) * 0.46;
-        var padY = height / (baseScale * zoom) * 0.46;
-        center.x = Math.max(projectedBounds.minX - padX, Math.min(projectedBounds.maxX + padX, center.x));
-        center.y = Math.max(projectedBounds.minY - padY, Math.min(projectedBounds.maxY + padY, center.y));
-      }
-      function zoomAround(nextZoom, sx, sy) {
-        var before = screenToWorld(sx, sy);
-        zoom = Math.max(minZoom, Math.min(maxZoom, nextZoom));
-        var after = screenToWorld(sx, sy);
-        center.x += before.x - after.x;
-        center.y += before.y - after.y;
-        clampCamera();
-        draw();
-      }
-      function eachGeometryRing(geometry, callback) {
-        if (!geometry) return;
-        if (geometry.type === 'Polygon') geometry.coordinates.forEach(callback);
-        if (geometry.type === 'MultiPolygon') geometry.coordinates.forEach(function (polygon) { polygon.forEach(callback); });
-      }
-      function prepareRings() {
-        var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-        boundaryGeoJson.features.forEach(function (feature) {
-          eachGeometryRing(feature.geometry, function (ring) {
-            var projected = ring.map(function (coord) {
-              var point = project(coord[0], coord[1]);
-              minX = Math.min(minX, point.x); minY = Math.min(minY, point.y);
-              maxX = Math.max(maxX, point.x); maxY = Math.max(maxY, point.y);
-              return point;
-            });
-            if (projected.length > 1) rings.push(projected);
-          });
-        });
-        var sw = project(bounds.minLon, bounds.minLat);
-        var ne = project(bounds.maxLon, bounds.maxLat);
-        projectedBounds = { minX: Math.min(sw.x, ne.x, minX), maxX: Math.max(sw.x, ne.x, maxX), minY: Math.min(sw.y, ne.y, minY), maxY: Math.max(sw.y, ne.y, maxY) };
-        center = { x: (projectedBounds.minX + projectedBounds.maxX) / 2, y: (projectedBounds.minY + projectedBounds.maxY) / 2 };
-      }
-      function resize() {
-        var rect = canvas.getBoundingClientRect();
-        width = Math.max(1, rect.width);
-        height = Math.max(1, rect.height);
-        canvas.width = Math.round(width * dpr);
-        canvas.height = Math.round(height * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        baseScale = Math.min(width / (projectedBounds.maxX - projectedBounds.minX), height / (projectedBounds.maxY - projectedBounds.minY)) * ${isFranceMap ? '0.92' : '0.96'};
-        clampCamera();
-        draw();
-      }
-      function drawGrid() {
-        var lonStep = ${isFranceMap ? '2' : '30'};
-        var latStep = ${isFranceMap ? '2' : '20'};
-        ctx.strokeStyle = 'rgba(255,255,255,0.055)';
-        ctx.lineWidth = 1;
-        for (var lon = Math.ceil(bounds.minLon / lonStep) * lonStep; lon <= bounds.maxLon; lon += lonStep) {
-          var a = worldToScreen(project(lon, bounds.minLat));
-          var b = worldToScreen(project(lon, bounds.maxLat));
-          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-        }
-        for (var lat = Math.ceil(bounds.minLat / latStep) * latStep; lat <= bounds.maxLat; lat += latStep) {
-          var c = worldToScreen(project(bounds.minLon, lat));
-          var d = worldToScreen(project(bounds.maxLon, lat));
-          ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(d.x, d.y); ctx.stroke();
-        }
-      }
-      function drawSatelliteBase() {
-        var gradient = ctx.createLinearGradient(0, 0, 0, height);
-        gradient.addColorStop(0, '#0B1B24');
-        gradient.addColorStop(1, '#071116');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, width, height);
-        if (!satelliteReady) return;
-        var topLeft = worldToScreen(project(satelliteBounds.minLon, satelliteBounds.maxLat));
-        var bottomRight = worldToScreen(project(satelliteBounds.maxLon, satelliteBounds.minLat));
-        ctx.globalAlpha = 0.98;
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = 'high';
-        ctx.drawImage(satellite, topLeft.x, topLeft.y, bottomRight.x - topLeft.x, bottomRight.y - topLeft.y);
-        ctx.globalAlpha = 1;
-        ctx.fillStyle = 'rgba(0,0,0,0.10)';
-        ctx.fillRect(0, 0, width, height);
-      }
-      function drawBoundaries() {
-        function stroke(style, widthValue) {
-          ctx.strokeStyle = style;
-          ctx.lineWidth = widthValue;
-          ctx.lineJoin = 'round';
-          ctx.lineCap = 'round';
-          rings.forEach(function (ring) {
-            ctx.beginPath();
-            ring.forEach(function (point, index) {
-              var s = worldToScreen(point);
-              if (index === 0) ctx.moveTo(s.x, s.y);
-              else ctx.lineTo(s.x, s.y);
-            });
-            ctx.closePath();
-            ctx.stroke();
-          });
-        }
-        var baseWidth = Math.max(0.65, Math.min(${isFranceMap ? '1.55' : '1.15'}, 1.65 / Math.sqrt(zoom)));
-        stroke('rgba(3,8,7,0.88)', baseWidth + 1.8);
-        stroke(${isFranceMap ? "'rgba(255,246,210,0.92)'" : "'rgba(228,241,236,0.88)'"}, baseWidth);
-      }
-      function drawMarker(point, color, label) {
-        var s = worldToScreen(project(point.lon, point.lat));
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, 8, 0, Math.PI * 2);
-        ctx.fillStyle = color;
-        ctx.fill();
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = '#07110C';
-        ctx.stroke();
-        ctx.font = '700 12px system-ui';
-        ctx.lineJoin = 'round';
-        ctx.strokeStyle = 'rgba(7,17,12,0.9)';
-        ctx.lineWidth = 4;
-        ctx.strokeText(label, s.x + 12, s.y - 10);
-        ctx.fillStyle = '#DCE6E1';
-        ctx.fillText(label, s.x + 12, s.y - 10);
-      }
-      function drawAnswers() {
-        var currentGuess = pendingGuess || guess;
-        if (target && target.toleranceKm) {
-          var p = worldToScreen(project(target.lon, target.lat));
-          var earthKm = 40075 * Math.cos(target.lat * Math.PI / 180);
-          var radius = (target.toleranceKm / Math.max(1, earthKm)) * baseScale * zoom;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, Math.max(8, radius), 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(228,125,112,0.16)';
-          ctx.fill();
-          ctx.strokeStyle = '#E47D70';
-          ctx.lineWidth = 2;
-          ctx.stroke();
-        }
-        if (currentGuess) drawMarker(currentGuess, '#68D7A2', 'Ta réponse');
-        if (target) drawMarker(target, '#E47D70', target.label || 'Cible');
-      }
-      function draw() {
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        ctx.clearRect(0, 0, width, height);
-        drawSatelliteBase();
-        drawGrid();
-        drawBoundaries();
-        drawAnswers();
-      }
-      function pointerMidpoint() {
-        var keys = Object.keys(pointers);
-        var a = pointers[keys[0]];
-        var b = pointers[keys[1]];
-        return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2, distance: Math.hypot(a.x - b.x, a.y - b.y) };
-      }
-      function startInertia() {
-        cancelAnimationFrame(inertiaFrame);
-        function step() {
-          center.x -= velocity.x / (baseScale * zoom);
-          center.y -= velocity.y / (baseScale * zoom);
-          velocity.x *= 0.92;
-          velocity.y *= 0.92;
-          clampCamera();
-          draw();
-          if (Math.abs(velocity.x) + Math.abs(velocity.y) > 0.18) inertiaFrame = requestAnimationFrame(step);
-        }
-        inertiaFrame = requestAnimationFrame(step);
-      }
-      document.getElementById('zoom-in').addEventListener('click', function () { zoomAround(zoom * 1.8, width / 2, height / 2); });
-      document.getElementById('zoom-out').addEventListener('click', function () { zoomAround(zoom / 1.8, width / 2, height / 2); });
-      canvas.addEventListener('pointerdown', function (event) {
-        cancelAnimationFrame(inertiaFrame);
-        var rect = canvas.getBoundingClientRect();
-        pointers[event.pointerId] = { x: event.clientX - rect.left, y: event.clientY - rect.top };
-        pointerCount = Object.keys(pointers).length;
-        moved = false;
-        lastMove = { x: pointers[event.pointerId].x, y: pointers[event.pointerId].y, time: performance.now() };
-        if (pointerCount === 1) dragStart = { x: pointers[event.pointerId].x, y: pointers[event.pointerId].y, centerX: center.x, centerY: center.y };
-        if (pointerCount === 2) {
-          var mid = pointerMidpoint();
-          pinchStart = { distance: mid.distance, zoom: zoom, world: screenToWorld(mid.x, mid.y), x: mid.x, y: mid.y };
-        }
-        canvas.setPointerCapture(event.pointerId);
-      });
-      canvas.addEventListener('pointermove', function (event) {
-        if (!pointers[event.pointerId]) return;
-        var rect = canvas.getBoundingClientRect();
-        var point = pointers[event.pointerId];
-        var nx = event.clientX - rect.left;
-        var ny = event.clientY - rect.top;
-        var now = performance.now();
-        if (Math.abs(nx - point.x) + Math.abs(ny - point.y) > 1) moved = true;
-        point.x = nx; point.y = ny;
-        pointerCount = Object.keys(pointers).length;
-        if (pointerCount === 2 && pinchStart) {
-          var mid = pointerMidpoint();
-          zoom = Math.max(minZoom, Math.min(maxZoom, pinchStart.zoom * (mid.distance / Math.max(1, pinchStart.distance))));
-          var after = screenToWorld(mid.x, mid.y);
-          center.x += pinchStart.world.x - after.x;
-          center.y += pinchStart.world.y - after.y;
-        } else if (pointerCount === 1 && dragStart) {
-          var dx = nx - dragStart.x;
-          var dy = ny - dragStart.y;
-          center.x = dragStart.centerX - dx / (baseScale * zoom);
-          center.y = dragStart.centerY - dy / (baseScale * zoom);
-          if (lastMove) {
-            var dt = Math.max(8, now - lastMove.time);
-            velocity.x = (nx - lastMove.x) / dt * 16;
-            velocity.y = (ny - lastMove.y) / dt * 16;
-          }
-          lastMove = { x: nx, y: ny, time: now };
-        }
-        clampCamera();
-        draw();
-      });
-      function endPointer(event) {
-        if (!pointers[event.pointerId]) return;
-        var ended = pointers[event.pointerId];
-        delete pointers[event.pointerId];
-        pointerCount = Object.keys(pointers).length;
-        canvas.releasePointerCapture(event.pointerId);
-        var now = performance.now();
-        var isDoubleTap = !moved && now - lastTap < 280;
-        if (isDoubleTap) {
-          zoomAround(zoom * 2, ended.x, ended.y);
-        } else if (!moved && !disabled) {
-          var world = screenToWorld(ended.x, ended.y);
-          var geo = unproject(world.x, world.y);
-          pendingGuess = { lat: geo.lat, lon: geo.lon };
-          draw();
-          window.ReactNativeWebView.postMessage(JSON.stringify(pendingGuess));
-        }
-        if (!moved) lastTap = now;
-        else if (pointerCount === 0 && Math.abs(velocity.x) + Math.abs(velocity.y) > 1.2) {
-          startInertia();
-        }
-        if (pointerCount === 0) { dragStart = null; pinchStart = null; }
-      }
-      canvas.addEventListener('pointerup', endPointer);
-      canvas.addEventListener('pointercancel', endPointer);
-      canvas.addEventListener('wheel', function (event) {
-        event.preventDefault();
-        var rect = canvas.getBoundingClientRect();
-        zoomAround(zoom * (event.deltaY < 0 ? 1.25 : 0.8), event.clientX - rect.left, event.clientY - rect.top);
-      }, { passive: false });
-      prepareRings();
-      resize();
-      window.addEventListener('resize', resize);
-    })();
-  </script>
-</body>
-</html>`;
-}
 function Result({ topic, questions, answers, onAgain, onHome }: { topic: Topic; questions: QuizQuestion[]; answers: SessionAnswer[]; onAgain: () => void; onHome: () => void }) {
   const score = answers.reduce((total, answer) => total + (answer.credit ?? (answer.correct ? 1 : 0)), 0);
   const percent = Math.round((score / answers.length) * 100);
@@ -1537,7 +1398,8 @@ const styles = StyleSheet.create({
   languagePage: { padding: 22, paddingBottom: 60, backgroundColor: '#0A0E0D' }, languageChoices: { gap: 9, marginBottom: 20 }, languageChoice: { minHeight: 67, borderRadius: 17, borderWidth: 1, borderColor: '#293631', backgroundColor: '#121815', paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center' }, languageChoiceActive: { borderColor: '#5FB8C9', backgroundColor: '#12252B' }, languageChoiceName: { color: '#DCE6E1', fontSize: 15, fontWeight: '800' }, languageChoiceNative: { color: '#70827A', fontSize: 12, marginLeft: 'auto' }, cefrRow: { flexDirection: 'row', gap: 7 }, cefrButton: { flex: 1, height: 48, borderRadius: 14, borderWidth: 1, borderColor: '#2A3530', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center' }, cefrText: { color: '#A1ACA6', fontWeight: '900' }, levelHelp: { color: '#718079', fontSize: 11, lineHeight: 17, marginTop: 9, marginBottom: 14 }, skillList: { gap: 9, marginBottom: 18 }, skillCard: { minHeight: 72, borderRadius: 17, borderWidth: 1, borderColor: '#29332F', backgroundColor: '#121815', padding: 13, flexDirection: 'row', alignItems: 'center' }, skillCardActive: { borderColor: '#417B86', backgroundColor: '#102126' }, skillCheck: { width: 29, height: 29, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', alignItems: 'center', justifyContent: 'center', marginRight: 12 }, skillCheckActive: { backgroundColor: '#5FB8C9', borderColor: '#5FB8C9' }, skillTitle: { color: '#E4ECE8', fontSize: 13, fontWeight: '800' }, skillDetail: { color: '#718079', fontSize: 10, marginTop: 4 }, languageMethod: { borderRadius: 17, backgroundColor: '#121A17', borderWidth: 1, borderColor: '#29352F', padding: 15, marginBottom: 18 }, languageMethodTitle: { color: '#8EDCB6', fontSize: 13, fontWeight: '900' }, languageMethodText: { color: '#7E8C85', fontSize: 11, lineHeight: 18, marginTop: 6 },
   topicGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 }, topicCard: { width: '48%', minHeight: 176, padding: 16, borderRadius: 22, backgroundColor: '#121815', borderWidth: 1, borderColor: '#26312C' }, pressed: { opacity: 0.72, transform: [{ scale: 0.985 }] }, topicIcon: { width: 44, height: 44, borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginBottom: 15 }, topicIconText: { fontSize: 17, fontWeight: '900' }, topicTitle: { color: '#ECF2EF', fontWeight: '900', fontSize: 16 }, topicSubtitle: { color: '#84918A', fontSize: 11.5, lineHeight: 17, marginTop: 4 }, go: { fontSize: 12, fontWeight: '900', marginTop: 'auto' }, privacy: { textAlign: 'center', color: '#66736D', fontSize: 11, marginTop: 28 },
   quizPage: { flex: 1, backgroundColor: '#0A0E0D' }, quizHeader: { height: 64, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 22, gap: 13 }, close: { fontSize: 32, color: '#829089', lineHeight: 34 }, progressTrack: { flex: 1, height: 7, borderRadius: 8, backgroundColor: '#202925', overflow: 'hidden' }, progressFill: { height: '100%', borderRadius: 8 }, counter: { color: '#78857F', fontWeight: '700', fontSize: 12 }, favoriteStar: { color: '#64716A', fontSize: 24 }, favoriteStarActive: { color: '#E6B759' }, quizBody: { padding: 22, paddingBottom: 32 }, metaRow: { flexDirection: 'row', alignItems: 'center' }, pill: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20, fontSize: 12, fontWeight: '800' }, difficulty: { marginLeft: 'auto', color: '#59655F', letterSpacing: 2, fontSize: 11 }, infiniteQuizHint: { color: '#9B8CB2', fontSize: 11, fontWeight: '800', marginTop: 12 }, questionImageWrap: { height: 190, overflow: 'hidden', borderRadius: 20, backgroundColor: '#17201C', marginTop: 20 }, questionImage: { width: '100%', height: '100%' }, question: { color: '#F1F6F3', fontSize: 28, lineHeight: 35, fontWeight: '800', marginTop: 22, marginBottom: 28 }, choices: { gap: 11 }, choice: { minHeight: 68, borderRadius: 17, borderWidth: 1.5, borderColor: '#2A3530', backgroundColor: '#131917', padding: 12, flexDirection: 'row', alignItems: 'center' }, choiceWithImage: { minHeight: 102 }, choiceImage: { width: 78, height: 78, borderRadius: 12, backgroundColor: '#0B100E', marginRight: 12 }, choiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#13271F' }, choiceWrong: { borderColor: '#E47D70', backgroundColor: '#291816' }, choiceLetter: { width: 38, height: 38, borderRadius: 12, backgroundColor: '#222B27', alignItems: 'center', justifyContent: 'center', marginRight: 13 }, choiceLetterCorrect: { backgroundColor: '#4EBA88' }, choiceLetterWrong: { backgroundColor: '#C96358' }, choiceLetterText: { color: '#A0ACA6', fontWeight: '800' }, choiceLetterActive: { color: '#07110C' }, choiceText: { color: '#E3EAE6', flex: 1, fontSize: 15, fontWeight: '600' }, choiceMark: { color: '#68D7A2', fontSize: 21, fontWeight: '900', marginHorizontal: 6 }, freeInput: { minHeight: 62, borderWidth: 1.5, borderColor: '#303B36', backgroundColor: '#131917', borderRadius: 17, paddingHorizontal: 17, color: '#EDF4F0', fontSize: 16 }, checkButton: { minHeight: 50, backgroundColor: '#68D7A2', borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginTop: 12 }, checkButtonText: { color: '#07110C', fontSize: 15, fontWeight: '900' }, acceptedAnswer: { color: '#F09A8E', fontSize: 13, fontWeight: '700', marginTop: 10 }, explanation: { borderRadius: 17, padding: 17, marginTop: 20, borderLeftWidth: 4 }, explanationCorrect: { backgroundColor: '#13251E', borderLeftColor: '#68D7A2' }, explanationWrong: { backgroundColor: '#281917', borderLeftColor: '#E47D70' }, explanationTitle: { color: '#EDF4F0', fontWeight: '800', fontSize: 16, marginBottom: 6 }, explanationText: { color: '#A4B0AA', lineHeight: 21 }, mediaCredit: { alignSelf: 'flex-start', marginTop: 12, paddingVertical: 6, paddingHorizontal: 9, borderRadius: 10, backgroundColor: '#0E1512', borderWidth: 1, borderColor: '#26342E' }, mediaCreditText: { color: '#8FA19A', fontSize: 11, fontWeight: '800' }, explanationActions: { flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 13 }, learnMore: { alignSelf: 'flex-start', paddingVertical: 5 }, learnMoreText: { color: '#83E3B3', fontWeight: '800', fontSize: 13 }, reportQuestion: { paddingVertical: 5, paddingHorizontal: 2 }, reportQuestionText: { color: '#8A9791', fontWeight: '800', fontSize: 13 },
-  satelliteMapWrap: { height: 520, borderRadius: 14, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 12 }, satelliteMap: { flex: 1, backgroundColor: '#0F1D23' }, mapHint: { position: 'absolute', left: 12, right: 12, bottom: 10, color: '#D5E1DC', fontSize: 11, fontWeight: '800', textAlign: 'center', paddingHorizontal: 10, paddingVertical: 7, borderRadius: 999, backgroundColor: '#07110CCC', overflow: 'hidden' }, mapFeedback: { borderRadius: 16, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 14, marginTop: 10 }, mapFeedbackTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 6 }, mapFeedbackText: { color: '#8FA19A', fontSize: 12, lineHeight: 18 },
+  mapQuizPage: { flex: 1, backgroundColor: '#0A0E0D' }, mapQuestionPanel: { paddingHorizontal: 16, paddingTop: 4, paddingBottom: 10 }, mapQuestionText: { color: '#F1F6F3', fontSize: 20, lineHeight: 25, fontWeight: '900', marginTop: 10 }, mapStage: { flex: 1, marginHorizontal: 10, marginBottom: 8, borderRadius: 18, overflow: 'hidden', borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23' }, mapActionBar: { paddingHorizontal: 14, paddingTop: 10, paddingBottom: Platform.OS === 'android' ? 16 : 20, borderTopWidth: 1, borderTopColor: '#1F2925', backgroundColor: '#0A0E0D' }, mapResultCard: { borderRadius: 15, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 12, marginBottom: 10 },
+  satelliteMapWrap: { height: 430, borderRadius: 14, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 10 }, satelliteMapFullScreen: { flex: 1, height: undefined, marginBottom: 0, borderWidth: 0, borderRadius: 0 }, satelliteMap: { flex: 1, backgroundColor: '#0F1D23' }, mapHint: { position: 'absolute', left: 12, right: 12, bottom: 10, color: '#D5E1DC', fontSize: 11, fontWeight: '800', textAlign: 'center', paddingHorizontal: 10, paddingVertical: 7, borderRadius: 999, backgroundColor: '#07110CCC', overflow: 'hidden' }, mapFeedback: { borderRadius: 16, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 14, marginTop: 10 }, mapFeedbackTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 6 }, mapFeedbackText: { color: '#8FA19A', fontSize: 12, lineHeight: 18 },
   multiFields: { gap: 14 }, multiFieldLabel: { color: '#AAB5AF', fontSize: 11, fontWeight: '800', marginBottom: 7, marginLeft: 3 }, explanationPartial: { backgroundColor: '#2A2414', borderLeftColor: '#E6B759' }, partialCredit: { color: '#E6B759', fontSize: 11, fontWeight: '800', marginBottom: 8 },
   confidenceCard: { borderRadius: 17, borderWidth: 1, borderColor: '#28342E', backgroundColor: '#111714', padding: 15, marginTop: 13 }, confidenceTitle: { color: '#DEE8E3', fontSize: 14, fontWeight: '800' }, confidenceHint: { color: '#65736C', fontSize: 10, marginTop: 3, marginBottom: 12 }, confidenceRow: { flexDirection: 'row', gap: 7 }, confidenceButton: { flex: 1, minHeight: 42, borderRadius: 12, borderWidth: 1, borderColor: '#303C36', alignItems: 'center', justifyContent: 'center' }, confidenceButtonActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, confidenceButtonText: { color: '#8D9A93', fontSize: 11, fontWeight: '800' }, confidenceButtonTextActive: { color: '#07110C' },
   quizFooter: { padding: 18, borderTopWidth: 1, borderTopColor: '#222B27', backgroundColor: '#0A0E0D' }, primaryButton: { backgroundColor: '#68D7A2', minHeight: 56, borderRadius: 17, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 28 }, primaryButtonText: { color: '#07110C', fontWeight: '900', fontSize: 16 }, disabled: { opacity: 0.32 },
@@ -1547,6 +1409,7 @@ const styles = StyleSheet.create({
   searchPage: { flex: 1, paddingTop: 20, backgroundColor: '#0A0E0D' }, searchInput: { marginHorizontal: 22, height: 58, borderRadius: 17, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 16, paddingHorizontal: 17 }, searchHint: { color: '#748079', fontSize: 11, marginHorizontal: 24, marginTop: 9 }, searchResults: { padding: 22, gap: 10, paddingBottom: 120 }, searchResult: { minHeight: 74, borderRadius: 17, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 13, flexDirection: 'row', alignItems: 'center' }, searchResultActive: { borderColor: '#68D7A2', backgroundColor: '#12231C' }, searchCheck: { width: 28, height: 28, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', marginRight: 12, alignItems: 'center', justifyContent: 'center' }, searchCheckActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, searchCheckText: { color: '#07110C', fontWeight: '900' }, searchQuestion: { color: '#E5ECE8', fontSize: 14, fontWeight: '700', lineHeight: 19 }, searchTags: { color: '#6F7C75', fontSize: 10, marginTop: 4 }, searchFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, padding: 18, backgroundColor: '#0A0E0DEE', borderTopWidth: 1, borderTopColor: '#222B27' },
   dailyVocabCard: { minHeight: 104, borderRadius: 20, backgroundColor: '#211A0F', borderWidth: 1, borderColor: '#4A3518', padding: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }, dailyVocabEyebrow: { color: '#E6B759', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, dailyVocabTitle: { color: '#FFF3D7', fontSize: 16, fontWeight: '900', marginTop: 5 }, dailyVocabText: { color: '#A99570', fontSize: 11, lineHeight: 16, marginTop: 5, maxWidth: 260 },
   adminPage: { padding: 22, paddingBottom: 54, backgroundColor: '#0A0E0D' }, adminSearchRow: { flexDirection: 'row', gap: 8, marginBottom: 16 }, adminSearchInput: { flex: 1, minHeight: 52, borderRadius: 15, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 14, paddingHorizontal: 14 }, adminSearchButton: { width: 58, borderRadius: 15, backgroundColor: '#68D7A2', alignItems: 'center', justifyContent: 'center' }, adminSearchButtonText: { color: '#07110C', fontWeight: '900' }, adminTopicRow: { gap: 8, paddingRight: 20, paddingBottom: 16 }, adminSummary: { minHeight: 42, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }, adminSummaryText: { color: '#8A9791', fontSize: 12, fontWeight: '800' }, adminList: { gap: 11 }, adminQuestionCard: { borderRadius: 18, borderWidth: 1, borderColor: '#25302B', backgroundColor: '#121815', padding: 14 }, adminQuestionHeader: { flexDirection: 'row', gap: 8, alignItems: 'center', marginBottom: 8 }, adminTopic: { color: '#68D7A2', fontSize: 11, fontWeight: '900' }, adminId: { color: '#5D6963', fontSize: 10, marginLeft: 'auto' }, adminPrompt: { color: '#EAF0ED', fontSize: 14, fontWeight: '800', lineHeight: 20 }, adminMeta: { color: '#78857F', fontSize: 11, marginTop: 8 }, adminActions: { flexDirection: 'row', alignItems: 'center', gap: 7, marginTop: 12 }, adminDifficultyButton: { width: 36, height: 34, borderRadius: 11, borderWidth: 1, borderColor: '#334039', alignItems: 'center', justifyContent: 'center' }, adminDifficultyActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, adminDifficultyText: { color: '#AAB5AF', fontWeight: '900' }, adminDifficultyTextActive: { color: '#07110C' }, adminDeleteButton: { marginLeft: 'auto', minHeight: 34, borderRadius: 11, borderWidth: 1, borderColor: '#70413B', paddingHorizontal: 12, alignItems: 'center', justifyContent: 'center' }, adminDeleteText: { color: '#F09A8E', fontSize: 12, fontWeight: '900' },
+  reviewStats: { flexDirection: 'row', gap: 8, marginBottom: 18 }, reviewStat: { flex: 1, minHeight: 70, borderRadius: 16, borderWidth: 1, padding: 12, justifyContent: 'center' }, reviewStatOk: { backgroundColor: '#102018', borderColor: '#2D6B4D' }, reviewStatWarning: { backgroundColor: '#211A0F', borderColor: '#6B4E20' }, reviewStatError: { backgroundColor: '#251513', borderColor: '#70413B' }, reviewStatValue: { color: '#F0F7F3', fontSize: 22, fontWeight: '900' }, reviewStatLabel: { color: '#8C9992', fontSize: 10, fontWeight: '900', marginTop: 3 }, reviewQuestionCard: { borderRadius: 18, borderWidth: 1, backgroundColor: '#121815', padding: 14 }, reviewCardOk: { borderColor: '#284D3A' }, reviewCardWarning: { borderColor: '#68501F' }, reviewCardError: { borderColor: '#70413B' }, reviewMetaRow: { flexDirection: 'row', alignItems: 'baseline', gap: 8, marginTop: 3 }, reviewStatus: { color: '#EAF3EE', fontSize: 11, fontWeight: '900' }, reviewChoiceList: { gap: 7, marginTop: 12 }, reviewChoice: { minHeight: 38, borderRadius: 12, borderWidth: 1, borderColor: '#28342F', backgroundColor: '#101512', flexDirection: 'row', alignItems: 'center', paddingHorizontal: 10, paddingVertical: 7 }, reviewChoiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#14251E' }, reviewChoiceLetter: { width: 24, color: '#7F8B85', fontSize: 11, fontWeight: '900' }, reviewChoiceLetterCorrect: { color: '#68D7A2' }, reviewChoiceText: { flex: 1, color: '#DDE6E1', fontSize: 12, fontWeight: '700', lineHeight: 17 }, reviewAnswerText: { color: '#91A098', fontSize: 11, fontWeight: '700', marginTop: 9, lineHeight: 16 }, reviewChecks: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 12 }, reviewCheck: { borderRadius: 999, overflow: 'hidden', paddingHorizontal: 9, paddingVertical: 5, fontSize: 10, fontWeight: '900' }, reviewCheckOk: { color: '#8EE0B5', backgroundColor: '#10231A' }, reviewCheckWarning: { color: '#E6B759', backgroundColor: '#241D13' }, reviewCheckError: { color: '#F09A8E', backgroundColor: '#291816' }, reviewExplanation: { color: '#7F8C86', fontSize: 11, lineHeight: 17, marginTop: 11 },
   mediaModal: { flex: 1, backgroundColor: '#050807F5', paddingTop: Platform.OS === 'android' ? 24 : 0, paddingHorizontal: 14, paddingBottom: 18 },
   mediaModalHeader: { minHeight: 56, flexDirection: 'row', alignItems: 'center', gap: 12 },
   mediaModalTitle: { flex: 1, color: '#F2F7F4', fontSize: 14, fontWeight: '900' },

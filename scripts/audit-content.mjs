@@ -10,11 +10,21 @@ console.log(JSON.stringify({
   questions: report.questions,
   multipleChoice: report.multipleChoice,
   answerIndexCounts: report.answerIndexCounts,
+  topicSummaries: report.topicSummaries.map((summary) => ({
+    topicId: summary.topicId,
+    total: summary.total,
+    byDifficulty: summary.byDifficulty,
+    byType: summary.byType,
+    subthemeCount: summary.subthemeCount,
+    answerIndexCounts: summary.answerIndexCounts,
+    dominantType: summary.dominantType,
+    dominantTypeRatio: Number(summary.dominantTypeRatio.toFixed(2)),
+  })),
   errors: errors.length,
   warnings: warnings.length,
 }, null, 2));
 
-for (const issue of report.issues.slice(0, 50)) {
+for (const issue of report.issues.slice(0, 120)) {
   console.log(`${issue.severity.toUpperCase()} ${issue.id}: ${issue.message}`);
 }
 
