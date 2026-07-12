@@ -115,12 +115,19 @@ const symbols = elements.map((element) => element.symbol);
 const names = elements.map((element) => element.name);
 const families = [...new Set(elements.map((element) => element.family))];
 
-function formulaDifficulty(index: number): 1 | 2 | 3 {
-  return (1 + (index % 3)) as 1 | 2 | 3;
+const easyFormulaNames = new Set(['eau', 'dioxyde de carbone', 'methane', 'chlorure de sodium']);
+const mediumFormulaNames = new Set(['ammoniac', 'acide sulfurique', 'hydroxyde de sodium', 'carbonate de calcium']);
+
+function formulaDifficulty(name: string): 1 | 2 | 3 {
+  if (easyFormulaNames.has(name)) return 1;
+  if (mediumFormulaNames.has(name)) return 2;
+  return 3;
 }
 
+const mediumAdvancedQuestionIndexes = new Set([0, 1, 2, 6, 7, 10, 13, 15, 16, 17, 18, 19, 22, 23]);
+
 function advancedDifficulty(index: number): 2 | 3 {
-  return index < 6 ? 2 : 3;
+  return mediumAdvancedQuestionIndexes.has(index) ? 2 : 3;
 }
 
 const easyElementSymbols = new Set(['H', 'He', 'C', 'N', 'O', 'Na', 'Mg', 'Fe', 'Cu', 'Ag', 'Au']);
@@ -155,7 +162,7 @@ export const scienceChemistryQuestions: QuestionSeed[] = [
     q(`sci-chem-el-${element.symbol.toLowerCase()}-clue`, elementDifficulty(element, 'clue'), `Quel element correspond a cet indice : ${element.clue} ?`, rotate(names, element.name), `L indice renvoie a ${element.name}, symbole ${element.symbol}, Z=${element.atomicNumber}; il combine usage, propriete ou famille chimique.`, ['element', 'indice']),
   ]),
   ...formulas.flatMap(([name, formula, composition, note], index) => [
-    q(`sci-chem-formula-${index + 1}-formula`, formulaDifficulty(index), `Quelle est la formule de ${name} ?`, rotate(formulas.map((row) => row[1]), formula), `${name} s ecrit ${formula}: ${composition}; ce format oblige a relier nom usuel et composition atomique.`, ['formule', 'composition']),
+    q(`sci-chem-formula-${index + 1}-formula`, formulaDifficulty(name), `Quelle est la formule de ${name} ?`, rotate(formulas.map((row) => row[1]), formula), `${name} s ecrit ${formula}: ${composition}; ce format oblige a relier nom usuel et composition atomique.`, ['formule', 'composition']),
     q(`sci-chem-formula-${index + 1}-composition`, 2, `Quelle composition correspond a ${formula} ?`, rotate(formulas.map((row) => row[2]), composition), `${formula} correspond a ${composition}; ${note}.`, ['formule', 'composition']),
   ]),
   ...advancedEntries.map(([prompt, choices, answerIndex, explanation, tags], index) => ({

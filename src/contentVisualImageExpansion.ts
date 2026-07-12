@@ -3,6 +3,73 @@ import { visualHistoryQuestions } from './generated/contentVisualHistory';
 import { landmarkVisualQuestions } from './generated/contentLandmarkVisual';
 import { natureVisualQuestions } from './generated/contentNatureVisual';
 
+const easyCulturalCountries = new Set(['espagne', 'france', 'italie', 'pays-bas']);
+const mediumCulturalCountries = new Set([
+  'allemagne', 'australie', 'autriche', 'belgique', 'bresil', 'canada', 'chine', 'coree du sud',
+  'cambodge', 'emirats arabes unis', 'etats-unis', 'grece', 'hongrie', 'inde', 'indonesie', 'japon', 'jordanie',
+  'mexique', 'norvege', 'perou', 'royaume-uni', 'russie', 'singapour', 'suisse', 'turquie', 'ukraine', 'vatican',
+]);
+
+const easyHistoricalRegions = new Set(['angleterre', 'egypte antique', 'etats-unis', 'france', 'grece', 'grece antique', 'rome antique', 'royaume-uni']);
+const mediumHistoricalRegions = new Set([
+  'afrique du sud', 'allemagne', 'allemagne et etats-unis', 'amerique du sud', 'athenes', 'carthage',
+  'empire carolingien', 'empire ottoman', 'espagne et france', 'france et angleterre', 'france et pologne',
+  'geneve', 'inde', 'italie', 'macedoine', 'mexique', 'monde arabo-musulman', 'monde musulman', 'monde germanique',
+  'monde mongol', 'mongolie', 'pays-bas', 'pologne', 'renaissance italienne', 'russie', 'venise',
+]);
+
+const easyHistoricalEras = new Set(['antiquite', 'epoque contemporaine', 'renaissance']);
+const mediumHistoricalEras = new Set(['epoque moderne', 'lumieres', 'moyen age', 'xixe siecle']);
+
+const easyArtworkTitles = new Set(['La Joconde', 'La Nuit etoilee', 'La Nuit étoilée', 'La Naissance de Venus', 'La Naissance de Vénus', 'Le Cri', 'Guernica']);
+
+function answerOf(question: QuestionSeed) {
+  return question.choices?.[question.answerIndex ?? 0] ?? '';
+}
+
+function normalizedAnswer(question: QuestionSeed) {
+  return answerOf(question).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+function visualArtworkDifficulty(question: QuestionSeed): 1 | 2 | 3 {
+  const answer = normalizedAnswer(question);
+  if (question.id.endsWith('-country')) {
+    if (easyCulturalCountries.has(answer)) return 1;
+    if (mediumCulturalCountries.has(answer)) return 2;
+    return 3;
+  }
+  if (question.id.endsWith('-work')) {
+    if (easyArtworkTitles.has(answer)) return 1;
+    return question.difficulty === 3 ? 3 : 2;
+  }
+  return question.difficulty;
+}
+
+function visualLandmarkDifficulty(question: QuestionSeed): 1 | 2 | 3 {
+  const answer = normalizedAnswer(question);
+  if (question.id.endsWith('-country')) {
+    if (easyCulturalCountries.has(answer)) return 1;
+    if (mediumCulturalCountries.has(answer)) return 2;
+    return 3;
+  }
+  return question.difficulty;
+}
+
+function visualHistoryDifficulty(question: QuestionSeed): 1 | 2 | 3 {
+  const answer = normalizedAnswer(question);
+  if (question.id.endsWith('-region')) {
+    if (easyHistoricalRegions.has(answer)) return 1;
+    if (mediumHistoricalRegions.has(answer)) return 2;
+    return 3;
+  }
+  if (question.id.endsWith('-era')) {
+    if (easyHistoricalEras.has(answer)) return 1;
+    if (mediumHistoricalEras.has(answer)) return 2;
+    return 3;
+  }
+  return question.difficulty;
+}
+
 function visualMovementQuestions(): QuestionSeed[] {
   const imageByKey = new Map(
     visualHistoryQuestions
@@ -48,6 +115,7 @@ function visualArtworkContextQuestions(): QuestionSeed[] {
       return [{
         ...question,
         id: `${question.id}-visual`,
+        difficulty: visualArtworkDifficulty(question),
         prompt: question.prompt
           .replace('Quelle œuvre est associée à', 'En observant cette œuvre, quel titre est associé à')
           .replace('Quel pays sert de repère culturel principal pour', 'En observant cette œuvre, quel pays sert de repère culturel principal pour')
@@ -102,6 +170,7 @@ function visualLandmarkLocationQuestions(): QuestionSeed[] {
       return [{
         ...question,
         id: `${question.id}-visual`,
+        difficulty: visualLandmarkDifficulty(question),
         prompt: question.prompt
           .replace('Dans quelle ville ou zone se trouve', 'En observant ce monument, dans quelle ville ou zone se trouve')
           .replace('Dans quel pays se trouve', 'En observant ce monument, dans quel pays se trouve')
@@ -129,6 +198,7 @@ function visualHistoryContextQuestions(): QuestionSeed[] {
       return [{
         ...question,
         id: `${question.id}-visual`,
+        difficulty: visualHistoryDifficulty(question),
         prompt: question.prompt
           .replace('Quel rôle décrit le mieux', 'En observant ce portrait, quel rôle décrit le mieux')
           .replace('À quel espace historique rattache-t-on', 'En observant ce portrait, à quel espace historique rattache-t-on')

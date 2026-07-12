@@ -292,6 +292,22 @@ async function main() {
     console.warn(`Image fetch skipped: ${error.message}`);
   }
 
+  const easyCountries = new Set(['espagne', 'france', 'italie', 'pays-bas']);
+  const mediumCountries = new Set(['allemagne', 'autriche', 'belgique', 'etats-unis', 'japon', 'mexique', 'norvege', 'royaume-uni', 'russie', 'suisse']);
+  const easyRegions = new Set(['angleterre', 'egypte antique', 'etats-unis', 'france', 'grece', 'rome antique', 'royaume-uni']);
+  const mediumRegions = new Set(['afrique du sud', 'allemagne', 'amerique du sud', 'athenes', 'carthage', 'empire carolingien', 'empire ottoman', 'inde', 'italie', 'macedoine', 'mexique', 'monde musulman', 'mongolie', 'pologne', 'russie', 'venise']);
+  const easyEras = new Set(['antiquite', 'epoque contemporaine', 'renaissance']);
+  const mediumEras = new Set(['epoque moderne', 'lumieres', 'moyen age', 'xixe siecle']);
+  const normalize = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const knownSetDifficulty = (value, easy, medium) => {
+    const key = normalize(value);
+    if (easy.has(key)) return 1;
+    if (medium.has(key)) return 2;
+    return 3;
+  };
+  const titleDifficulty = (index) => index < 20 ? 1 : index < 40 ? 2 : 3;
+  const personDifficulty = (index) => index < 20 ? 1 : index < 40 ? 2 : 3;
+
   const questions = [];
   const artists = paintings.map((row) => row[1]);
   const titles = paintings.map((row) => row[0]);
@@ -300,10 +316,10 @@ async function main() {
   paintings.forEach(([title, artist, movement, country, subject], index) => {
     const id = `paint-bank-${String(index + 1).padStart(3, '0')}`;
     const asset = imageAssetByWork.get(title.toLowerCase()) ?? fallbackImageAssets[index % fallbackImageAssets.length];
-    questions.push(q(`${id}-artist`, 'arts', 1 + (index % 3), `Qui a peint ${title} ?`, rotateChoices(artists, artist), 0, `${title} est associée à ${artist}; l image sert de repère visuel pour relier œuvre et auteur.`, ['arts', 'peinture', 'banque-visuelle', `mouvement:${slug(movement)}`], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(title)}`, { imageAsset: asset, imageAlt: title }));
-    questions.push(q(`${id}-work`, 'arts', 1 + ((index + 1) % 3), `Quelle œuvre est associée à ${artist} ?`, rotateChoices(titles, title), 0, `${artist} est notamment associé à ${title}.`, ['arts', 'peinture', 'artiste', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(artist)}`));
+    questions.push(q(`${id}-artist`, 'arts', titleDifficulty(index), `Qui a peint ${title} ?`, rotateChoices(artists, artist), 0, `${title} est associée à ${artist}; l image sert de repère visuel pour relier œuvre et auteur.`, ['arts', 'peinture', 'banque-visuelle', `mouvement:${slug(movement)}`], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(title)}`, { imageAsset: asset, imageAlt: title }));
+    questions.push(q(`${id}-work`, 'arts', titleDifficulty(index), `Quelle œuvre est associée à ${artist} ?`, rotateChoices(titles, title), 0, `${artist} est notamment associé à ${title}.`, ['arts', 'peinture', 'artiste', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(artist)}`));
     questions.push(q(`${id}-movement`, 'arts', 2, `À quel mouvement rattache-t-on surtout ${title} ?`, rotateChoices(movements, movement), 0, `${title} est rangé ici dans le repère ${movement}.`, ['arts', 'peinture', 'mouvement', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`${title} ${movement}`)}`));
-    questions.push(q(`${id}-country`, 'arts', 1 + ((index + 2) % 3), `Quel pays sert de repère culturel principal pour ${artist} ?`, rotateChoices(countries, country), 0, `${artist} est ici rattaché au repère ${country}.`, ['arts', 'peinture', 'pays', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(artist)}`));
+    questions.push(q(`${id}-country`, 'arts', knownSetDifficulty(country, easyCountries, mediumCountries), `Quel pays sert de repère culturel principal pour ${artist} ?`, rotateChoices(countries, country), 0, `${artist} est ici rattaché au repère ${country}.`, ['arts', 'peinture', 'pays', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(artist)}`));
     if (index < 25) questions.push(q(`${id}-subject`, 'arts', 1, `Quel type de sujet décrit le mieux ${title} ?`, rotateChoices(['portrait', 'paysage', 'histoire', 'religion', 'mythologie', 'scène', 'abstrait', 'estampe', 'ville'], subject), 0, `${title} est utile à reconnaître comme repère de ${subject}.`, ['arts', 'peinture', 'observation', 'banque-visuelle'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(title)}`));
   });
 
@@ -315,10 +331,10 @@ async function main() {
     const id = `hist-figure-${String(index + 1).padStart(3, '0')}`;
     const asset = imageAssetByLabel.get(name.toLowerCase());
     const extra = asset ? { imageAsset: asset, imageAlt: `Portrait ou représentation de ${name}` } : {};
-    questions.push(q(`${id}-identity`, 'history', 1 + (index % 3), `Quel personnage correspond à cet indice : ${clue} ?`, rotateChoices(names, name), 0, `${name} est retenu ici pour ce repère : ${clue}.`, ['histoire', 'personnage-historique', 'banque-personnages', `periode:${slug(era)}`], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`, extra));
-    questions.push(q(`${id}-role`, 'history', 1 + ((index + 1) % 3), `Quel rôle décrit le mieux ${name} ?`, rotateChoices(roles, role), 0, `${name} est principalement présenté ici comme ${role}.`, ['histoire', 'personnage-historique', 'role', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
-    questions.push(q(`${id}-region`, 'history', 1 + ((index + 2) % 3), `À quel espace historique rattache-t-on ${name} ?`, rotateChoices(regions, region), 0, `${name} est rattaché ici à ${region}; ce cadre géographique aide à replacer le personnage dans son histoire.`, ['histoire', 'personnage-historique', 'geographie', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
-    questions.push(q(`${id}-era`, 'history', 2, `Dans quelle période place-t-on surtout ${name} ?`, rotateChoices(eras, era), 0, `${name} appartient au repère ${era}.`, ['histoire', 'personnage-historique', 'periode', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
+    questions.push(q(`${id}-identity`, 'history', personDifficulty(index), `Quel personnage correspond à cet indice : ${clue} ?`, rotateChoices(names, name), 0, `${name} est retenu ici pour ce repère : ${clue}.`, ['histoire', 'personnage-historique', 'banque-personnages', `periode:${slug(era)}`], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`, extra));
+    questions.push(q(`${id}-role`, 'history', personDifficulty(index), `Quel rôle décrit le mieux ${name} ?`, rotateChoices(roles, role), 0, `${name} est principalement présenté ici comme ${role}.`, ['histoire', 'personnage-historique', 'role', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
+    questions.push(q(`${id}-region`, 'history', knownSetDifficulty(region, easyRegions, mediumRegions), `À quel espace historique rattache-t-on ${name} ?`, rotateChoices(regions, region), 0, `${name} est rattaché ici à ${region}; ce cadre géographique aide à replacer le personnage dans son histoire.`, ['histoire', 'personnage-historique', 'geographie', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
+    questions.push(q(`${id}-era`, 'history', knownSetDifficulty(era, easyEras, mediumEras), `Dans quelle période place-t-on surtout ${name} ?`, rotateChoices(eras, era), 0, `${name} appartient au repère ${era}.`, ['histoire', 'personnage-historique', 'periode', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
   });
 
   const uniqueManifest = [];
