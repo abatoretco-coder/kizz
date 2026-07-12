@@ -15,7 +15,7 @@ G?n?r? le 2026-07-12 depuis `src/content.ts`.
 
 | Th?me | Total | Avec image | Sans image | Diff. 1 | Diff. 2 | Diff. 3 | Types | Sous-th?mes |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: |
-| Histoire | 255 | 200 | 55 | 106 | 99 | 50 | multiple-choice: 229, free-text: 26 | 9 |
+| Histoire | 255 | 200 | 55 | 96 | 142 | 17 | multiple-choice: 229, free-text: 26 | 9 |
 | Géographie | 1080 | 1 | 1079 | 162 | 379 | 539 | multiple-choice: 839, map-point: 42, free-text: 199 | 4 |
 | Sciences | 224 | 0 | 224 | 35 | 104 | 85 | multiple-choice: 201, free-text: 23 | 4 |
 | Sport | 25 | 0 | 25 | 11 | 8 | 6 | multiple-choice: 22, free-text: 3 | 5 |

@@ -298,6 +298,20 @@ async function main() {
   const mediumRegions = new Set(['afrique du sud', 'allemagne', 'amerique du sud', 'athenes', 'carthage', 'empire carolingien', 'empire ottoman', 'inde', 'italie', 'macedoine', 'mexique', 'monde musulman', 'mongolie', 'pologne', 'russie', 'venise']);
   const easyEras = new Set(['antiquite', 'epoque contemporaine', 'renaissance']);
   const mediumEras = new Set(['epoque moderne', 'lumieres', 'moyen age', 'xixe siecle']);
+  const easyPeople = new Set([
+    'cleopatre vii', 'alexandre le grand', 'socrate', 'aristote', 'charlemagne', 'jeanne d\'arc',
+    'leonard de vinci', 'michel-ange', 'galilee', 'isaac newton', 'louis xiv', 'voltaire',
+    'george washington', 'napoleon bonaparte', 'abraham lincoln', 'marie curie', 'albert einstein',
+    'charles darwin', 'mahatma gandhi', 'nelson mandela', 'martin luther king jr.', 'winston churchill',
+    'charles de gaulle', 'pablo picasso',
+  ]);
+  const mediumPeople = new Set([
+    'jules cesar', 'auguste', 'pericles', 'hannibal barca', 'platon', 'alienor d\'aquitaine',
+    'saladin', 'gengis khan', 'marco polo', 'mehmed ii', 'raphael', 'nicolas copernic',
+    'rene descartes', 'elisabeth ire', 'pierre le grand', 'catherine ii', 'montesquieu',
+    'jean-jacques rousseau', 'simon bolivar', 'giuseppe garibaldi', 'otto von bismarck',
+    'ada lovelace', 'florence nightingale', 'rosa parks', 'simone veil', 'frida kahlo',
+  ]);
   const normalize = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const knownSetDifficulty = (value, easy, medium) => {
     const key = normalize(value);
@@ -306,7 +320,7 @@ async function main() {
     return 3;
   };
   const titleDifficulty = (index) => index < 20 ? 1 : index < 40 ? 2 : 3;
-  const personDifficulty = (index) => index < 20 ? 1 : index < 40 ? 2 : 3;
+  const personDifficulty = (name) => knownSetDifficulty(name, easyPeople, mediumPeople);
 
   const questions = [];
   const artists = paintings.map((row) => row[1]);
@@ -331,8 +345,8 @@ async function main() {
     const id = `hist-figure-${String(index + 1).padStart(3, '0')}`;
     const asset = imageAssetByLabel.get(name.toLowerCase());
     const extra = asset ? { imageAsset: asset, imageAlt: `Portrait ou représentation de ${name}` } : {};
-    questions.push(q(`${id}-identity`, 'history', personDifficulty(index), `Quel personnage correspond à cet indice : ${clue} ?`, rotateChoices(names, name), 0, `${name} est retenu ici pour ce repère : ${clue}.`, ['histoire', 'personnage-historique', 'banque-personnages', `periode:${slug(era)}`], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`, extra));
-    questions.push(q(`${id}-role`, 'history', personDifficulty(index), `Quel rôle décrit le mieux ${name} ?`, rotateChoices(roles, role), 0, `${name} est principalement présenté ici comme ${role}.`, ['histoire', 'personnage-historique', 'role', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
+    questions.push(q(`${id}-identity`, 'history', personDifficulty(name), `Quel personnage correspond à cet indice : ${clue} ?`, rotateChoices(names, name), 0, `${name} est retenu ici pour ce repère : ${clue}.`, ['histoire', 'personnage-historique', 'banque-personnages', `periode:${slug(era)}`], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`, extra));
+    questions.push(q(`${id}-role`, 'history', 2, `Quel rôle décrit le mieux ${name} ?`, rotateChoices(roles, role), 0, `${name} est principalement présenté ici comme ${role}.`, ['histoire', 'personnage-historique', 'role', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
     questions.push(q(`${id}-region`, 'history', knownSetDifficulty(region, easyRegions, mediumRegions), `À quel espace historique rattache-t-on ${name} ?`, rotateChoices(regions, region), 0, `${name} est rattaché ici à ${region}; ce cadre géographique aide à replacer le personnage dans son histoire.`, ['histoire', 'personnage-historique', 'geographie', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
     questions.push(q(`${id}-era`, 'history', knownSetDifficulty(era, easyEras, mediumEras), `Dans quelle période place-t-on surtout ${name} ?`, rotateChoices(eras, era), 0, `${name} appartient au repère ${era}.`, ['histoire', 'personnage-historique', 'periode', 'banque-personnages'], `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(name)}`));
   });

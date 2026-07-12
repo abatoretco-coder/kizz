@@ -152,6 +152,22 @@ const difficultyOverrides: Partial<Record<string, QuestionSeed['difficulty']>> =
   'paint-bank-036-work': 2,
   'paint-bank-037-artist': 3,
   'paint-bank-009-artist': 2,
+  'hist-figure-003-identity': 2,
+  'hist-figure-006-identity': 1,
+  'hist-figure-009-identity': 1,
+  'hist-figure-012-identity': 1,
+  'hist-figure-015-identity': 2,
+  'hist-figure-018-identity': 1,
+  'hist-figure-021-identity': 1,
+  'hist-figure-024-identity': 2,
+  'hist-figure-027-identity': 2,
+  'hist-figure-030-identity': 2,
+  'hist-figure-033-identity': 2,
+  'hist-figure-036-identity': 2,
+  'hist-figure-039-identity': 2,
+  'hist-figure-042-identity': 1,
+  'hist-figure-045-identity': 2,
+  'hist-figure-048-identity': 2,
 };
 
 function cleanGeneratedText(question: QuestionSeed): QuestionSeed {

@@ -57,6 +57,7 @@ function visualLandmarkDifficulty(question: QuestionSeed): 1 | 2 | 3 {
 
 function visualHistoryDifficulty(question: QuestionSeed): 1 | 2 | 3 {
   const answer = normalizedAnswer(question);
+  if (question.id.endsWith('-role')) return 2;
   if (question.id.endsWith('-region')) {
     if (easyHistoricalRegions.has(answer)) return 1;
     if (mediumHistoricalRegions.has(answer)) return 2;
