@@ -1,6 +1,7 @@
 import { QuestionSeed } from './domain';
 import { visualHistoryQuestions } from './generated/contentVisualHistory';
 import { landmarkVisualQuestions } from './generated/contentLandmarkVisual';
+import { natureVisualQuestions } from './generated/contentNatureVisual';
 
 function visualMovementQuestions(): QuestionSeed[] {
   const imageByKey = new Map(
@@ -26,6 +27,39 @@ function visualMovementQuestions(): QuestionSeed[] {
     });
 }
 
+function visualArtworkContextQuestions(): QuestionSeed[] {
+  const imageByKey = new Map(
+    visualHistoryQuestions
+      .filter((question) => /^paint-bank-\d+-artist$/.test(question.id) && question.imageAsset)
+      .map((question) => [question.id.replace('-artist', ''), question]),
+  );
+
+  return visualHistoryQuestions
+    .filter((question) => /^paint-bank-\d+-(work|country|subject)$/.test(question.id))
+    .flatMap((question) => {
+      const imageQuestion = imageByKey.get(question.id.replace(/-(work|country|subject)$/, ''));
+      if (!imageQuestion?.imageAsset) return [];
+      const answer = question.choices?.[question.answerIndex ?? 0] ?? '';
+      const explanation = question.id.endsWith('-work')
+        ? `L’image renvoie au titre ${answer}; elle sert de repère visuel pour relier œuvre et artiste.`
+        : question.id.endsWith('-country')
+          ? `Cette œuvre est rattachée ici au repère culturel ${answer}.`
+          : `Cette image sert de repère visuel pour reconnaître le sujet ${answer}.`;
+      return [{
+        ...question,
+        id: `${question.id}-visual`,
+        prompt: question.prompt
+          .replace('Quelle œuvre est associée à', 'En observant cette œuvre, quel titre est associé à')
+          .replace('Quel pays sert de repère culturel principal pour', 'En observant cette œuvre, quel pays sert de repère culturel principal pour')
+          .replace('Quel type de sujet décrit le mieux', 'En observant cette œuvre, quel type de sujet décrit le mieux'),
+        explanation,
+        imageAsset: imageQuestion.imageAsset,
+        imageAlt: imageQuestion.imageAlt,
+        tags: [...new Set([...question.tags, 'image', 'relecture-visuelle'])],
+      }];
+    });
+}
+
 function visualLandmarkStyleQuestions(): QuestionSeed[] {
   const imageByKey = new Map(
     landmarkVisualQuestions
@@ -42,6 +76,37 @@ function visualLandmarkStyleQuestions(): QuestionSeed[] {
         ...question,
         id: `${question.id}-visual`,
         prompt: question.prompt.replace('Quel repere stylistique associer a', 'En observant ce monument, quel repère stylistique associer à'),
+        imageAsset: imageQuestion.imageAsset,
+        imageAlt: imageQuestion.imageAlt,
+        tags: [...new Set([...question.tags, 'image', 'relecture-visuelle'])],
+      }];
+    });
+}
+
+function visualLandmarkLocationQuestions(): QuestionSeed[] {
+  const imageByKey = new Map(
+    landmarkVisualQuestions
+      .filter((question) => /^landmark-\d+-identify$/.test(question.id) && question.imageAsset)
+      .map((question) => [question.id.replace('-identify', ''), question]),
+  );
+
+  return landmarkVisualQuestions
+    .filter((question) => /^landmark-\d+-(city|country)$/.test(question.id))
+    .flatMap((question) => {
+      const imageQuestion = imageByKey.get(question.id.replace(/-(city|country)$/, ''));
+      if (!imageQuestion?.imageAsset) return [];
+      const answer = question.choices?.[question.answerIndex ?? 0] ?? '';
+      const explanation = question.id.endsWith('-country')
+        ? `Ce monument est associé au pays ${answer}; l’image sert de repère visuel pour relier architecture et géographie.`
+        : `Ce monument est associé à ${answer}; l’image sert de repère visuel pour le situer.`;
+      return [{
+        ...question,
+        id: `${question.id}-visual`,
+        prompt: question.prompt
+          .replace('Dans quelle ville ou zone se trouve', 'En observant ce monument, dans quelle ville ou zone se trouve')
+          .replace('Dans quel pays se trouve', 'En observant ce monument, dans quel pays se trouve')
+          .replace('Quelle ville ou zone correspond a ce repere architectural', 'En observant ce monument, quelle ville ou zone correspond à ce repère architectural'),
+        explanation,
         imageAsset: imageQuestion.imageAsset,
         imageAlt: imageQuestion.imageAlt,
         tags: [...new Set([...question.tags, 'image', 'relecture-visuelle'])],
@@ -76,8 +141,35 @@ function visualHistoryContextQuestions(): QuestionSeed[] {
     });
 }
 
+function visualNatureClueQuestions(): QuestionSeed[] {
+  const imageByKey = new Map(
+    natureVisualQuestions
+      .filter((question) => /^nature-(animals|plants)-\d+-identify$/.test(question.id) && question.imageAsset)
+      .map((question) => [question.id.replace('-identify', ''), question]),
+  );
+
+  return natureVisualQuestions
+    .filter((question) => /^nature-(animals|plants)-\d+-clue$/.test(question.id))
+    .flatMap((question) => {
+      const imageQuestion = imageByKey.get(question.id.replace('-clue', ''));
+      if (!imageQuestion?.imageAsset) return [];
+      return [{
+        ...question,
+        id: `${question.id}-visual`,
+        prompt: question.prompt.replace('Quelle espece correspond a cet indice', 'En observant cette image, quelle espèce correspond aussi à cet indice'),
+        explanation: question.explanation.replace(/\bLa reponse attendue\b/g, 'La réponse attendue'),
+        imageAsset: imageQuestion.imageAsset,
+        imageAlt: imageQuestion.imageAlt,
+        tags: [...new Set([...question.tags, 'image', 'relecture-visuelle'])],
+      }];
+    });
+}
+
 export const visualImageExpansionQuestions: QuestionSeed[] = [
   ...visualMovementQuestions(),
+  ...visualArtworkContextQuestions(),
   ...visualLandmarkStyleQuestions(),
+  ...visualLandmarkLocationQuestions(),
   ...visualHistoryContextQuestions(),
+  ...visualNatureClueQuestions(),
 ];

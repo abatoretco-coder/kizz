@@ -27,8 +27,11 @@ const retiredTopicIds = new Set(['daily']);
 
 function isRetiredQuestionId(id: string) {
   return /^paint-bank-\d+-movement$/.test(id)
+    || /^paint-bank-\d+-(work|country|subject)$/.test(id)
     || /^landmark-\d+-style$/.test(id)
-    || /^hist-figure-\d+-(role|region|era)$/.test(id);
+    || /^landmark-\d+-(city|country)$/.test(id)
+    || /^hist-figure-\d+-(role|region|era)$/.test(id)
+    || /^nature-(animals|plants)-\d+-clue$/.test(id);
 }
 
 const rawTopics: Topic[] = [
@@ -162,9 +165,17 @@ function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
     .replace('Quel rôle décrit le mieux', 'En observant ce portrait, quel rôle décrit le mieux')
     .replace('À quel espace historique rattache-t-on', 'En observant ce portrait, à quel espace historique rattache-t-on')
     .replace('Dans quelle période place-t-on surtout', 'En observant ce portrait, dans quelle période place-t-on surtout')
+    .replace('Dans quelle ville ou zone se trouve', 'En observant ce monument, dans quelle ville ou zone se trouve')
+    .replace('Dans quel pays se trouve', 'En observant ce monument, dans quel pays se trouve')
+    .replace('Quelle ville ou zone correspond a ce repere architectural', 'En observant ce monument, quelle ville ou zone correspond à ce repère architectural')
+    .replace('Quelle espece correspond a cet indice', 'En observant cette image, quelle espèce correspond aussi à cet indice')
+    .replace('Quelle œuvre est associée à', 'En observant cette œuvre, quel titre est associé à')
+    .replace('Quel pays sert de repère culturel principal pour', 'En observant cette œuvre, quel pays sert de repère culturel principal pour')
+    .replace('Quel type de sujet décrit le mieux', 'En observant cette œuvre, quel type de sujet décrit le mieux')
     .replace(/\bl image\b/g, 'l’image')
     .replace(/\brepere\b/g, 'repère')
     .replace(/\boeuvre\b/g, 'œuvre')
+    .replace(/\bespece\b/g, 'espèce')
     .replace(/\bassociee a\b/g, 'associée à');
   const explanation = question.explanation
     .replace(
@@ -176,6 +187,9 @@ function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
     .replace(/\bl image\b/g, 'l’image')
     .replace(/\brepere\b/g, 'repère')
     .replace(/\boeuvre\b/g, 'œuvre')
+    .replace(/\breponse\b/g, 'réponse')
+    .replace(/\bespece\b/g, 'espèce')
+    .replace(/\bgeographie\b/g, 'géographie')
     .replace(/\bassociee a\b/g, 'associée à');
   if (prompt === question.prompt && explanation === question.explanation && difficulty === question.difficulty) return question;
   return {
