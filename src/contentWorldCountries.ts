@@ -215,10 +215,17 @@ const easyCapitalCountries = new Set([
 ]);
 
 const mediumCapitalCountries = new Set([
-  'afrique-du-sud', 'algerie', 'argentine', 'australie', 'autriche', 'chili', 'coree-du-sud', 'croatie',
-  'danemark', 'egypte', 'emirats-arabes-unis', 'finlande', 'inde', 'indonesie', 'irlande', 'islande',
-  'mexique', 'norvege', 'nouvelle-zelande', 'pays-bas', 'perou', 'pologne', 'republique-tcheque',
-  'suede', 'thailande', 'tunisie', 'turquie', 'ukraine',
+  'afghanistan', 'afrique-du-sud', 'albanie', 'algerie', 'arabie-saoudite', 'argentine', 'armenie',
+  'australie', 'autriche', 'azerbaidjan', 'bahrein', 'bangladesh', 'bielorussie', 'bolivie',
+  'bosnie-herzegovine', 'bulgarie', 'cambodge', 'cameroun', 'chili', 'chypre', 'colombie',
+  'coree-du-sud', 'costa-rica', 'croatie', 'cuba', 'danemark', 'egypte', 'emirats-arabes-unis',
+  'equateur', 'estonie', 'finlande', 'georgie', 'ghana', 'hongrie', 'inde', 'indonesie', 'irak',
+  'iran', 'irlande', 'islande', 'israel', 'jamaique', 'jordanie', 'kazakhstan', 'kenya',
+  'lettonie', 'liban', 'lituanie', 'luxembourg', 'malaisie', 'mali', 'malte', 'mexique',
+  'moldavie', 'monaco', 'montenegro', 'nepal', 'nigeria', 'norvege', 'nouvelle-zelande',
+  'oman', 'pakistan', 'panama', 'paraguay', 'pays-bas', 'perou', 'philippines', 'pologne',
+  'qatar', 'republique-tcheque', 'roumanie', 'serbie', 'singapour', 'slovaquie', 'slovenie',
+  'suede', 'thailande', 'tunisie', 'turquie', 'ukraine', 'uruguay', 'venezuela', 'vietnam',
 ]);
 
 function capitalDifficulty(row: CountryCapital): Difficulty {

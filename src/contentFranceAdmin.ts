@@ -133,9 +133,165 @@ function slug(value: string) {
   return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-function difficulty(index: number): Difficulty {
-  if (index % 3 === 0) return 1;
-  if (index % 3 === 1) return 2;
+const easyRegionChiefTownNames = new Set([
+  'Bretagne',
+  'Hauts-de-France',
+  'Ile-de-France',
+  'Nouvelle-Aquitaine',
+  'Occitanie',
+  'Pays de la Loire',
+  "Provence-Alpes-Cote d'Azur",
+]);
+
+const mediumRegionChiefTownNames = new Set([
+  'Auvergne-Rhone-Alpes',
+  'Bourgogne-Franche-Comte',
+  'Centre-Val de Loire',
+  'Corse',
+  'Grand Est',
+  'Normandie',
+]);
+
+const easyDepartmentChiefTownCodes = new Set([
+  '06',
+  '13',
+  '14',
+  '31',
+  '33',
+  '34',
+  '35',
+  '38',
+  '44',
+  '59',
+  '63',
+  '67',
+  '69',
+  '75',
+  '76',
+  '83',
+  '87',
+]);
+
+const mediumDepartmentChiefTownCodes = new Set([
+  '2A',
+  '2B',
+  '10',
+  '11',
+  '16',
+  '17',
+  '18',
+  '21',
+  '22',
+  '24',
+  '25',
+  '26',
+  '27',
+  '28',
+  '29',
+  '30',
+  '36',
+  '37',
+  '42',
+  '44',
+  '45',
+  '49',
+  '51',
+  '53',
+  '54',
+  '56',
+  '57',
+  '58',
+  '60',
+  '61',
+  '62',
+  '64',
+  '65',
+  '66',
+  '68',
+  '72',
+  '73',
+  '74',
+  '78',
+  '79',
+  '80',
+  '81',
+  '82',
+  '84',
+  '86',
+  '88',
+  '89',
+  '90',
+  '91',
+  '92',
+  '93',
+  '94',
+  '95',
+  '971',
+  '972',
+  '973',
+  '974',
+  '976',
+]);
+
+const easyDepartmentCodeCodes = new Set(['06', '13', '31', '33', '44', '59', '69', '75']);
+
+const mediumDepartmentCodeCodes = new Set([
+  '2A',
+  '2B',
+  '14',
+  '17',
+  '29',
+  '34',
+  '35',
+  '38',
+  '42',
+  '45',
+  '49',
+  '56',
+  '57',
+  '62',
+  '63',
+  '64',
+  '67',
+  '68',
+  '73',
+  '74',
+  '76',
+  '78',
+  '83',
+  '84',
+  '85',
+  '92',
+  '93',
+  '94',
+  '95',
+  '971',
+  '972',
+  '973',
+  '974',
+  '976',
+]);
+
+function normalizedName(value: string) {
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function regionChiefTownDifficulty(region: FranceRegion): Difficulty {
+  const name = normalizedName(region.name);
+  if (easyRegionChiefTownNames.has(name)) return 1;
+  if (mediumRegionChiefTownNames.has(name)) return 2;
+  return 3;
+}
+
+function departmentChiefTownDifficulty(department: FranceDepartment): Difficulty {
+  if (easyDepartmentChiefTownCodes.has(department.code)) return 1;
+  if (mediumDepartmentChiefTownCodes.has(department.code)) return 2;
+  return 3;
+}
+
+function departmentCodeDifficulty(department: FranceDepartment): Difficulty {
+  if (easyDepartmentCodeCodes.has(department.code)) return 1;
+  if (mediumDepartmentCodeCodes.has(department.code)) return 2;
   return 3;
 }
 
@@ -154,7 +310,7 @@ function choicesFrom<T>(rows: T[], index: number, selector: (row: T) => string) 
 const regionQuestions: QuestionSeed[] = franceRegionData.map((region, index) => ({
   id: `fr-region-cheflieu-${slug(region.name)}`,
   topicId: franceMapTopic.id,
-  difficulty: difficulty(index),
+  difficulty: regionChiefTownDifficulty(region),
   prompt: `Régions de France : quel est le chef-lieu de la région ${region.name} ?`,
   choices: choicesFrom(franceRegionData, index, (item) => item.chiefTown),
   answerIndex: 0,
@@ -167,7 +323,7 @@ const regionQuestions: QuestionSeed[] = franceRegionData.map((region, index) => 
 const departmentChiefTownQuestions: QuestionSeed[] = franceDepartmentData.map((department, index) => ({
   id: `fr-dept-cheflieu-${department.code.toLowerCase()}`,
   topicId: franceMapTopic.id,
-  difficulty: difficulty(index + 1),
+  difficulty: departmentChiefTownDifficulty(department),
   prompt: department.name.includes(department.chiefTown) ? `Départements de France : quel est le chef-lieu du département ${department.code} ?` : `Départements de France : quel est le chef-lieu du département ${department.name} (${department.code}) ?`,
   choices: choicesFrom(franceDepartmentData, index, (item) => item.chiefTown),
   answerIndex: 0,
@@ -180,7 +336,7 @@ const departmentChiefTownQuestions: QuestionSeed[] = franceDepartmentData.map((d
 const departmentCodeQuestions: QuestionSeed[] = franceDepartmentData.map((department, index) => ({
   id: `fr-dept-code-${department.code.toLowerCase()}`,
   topicId: franceMapTopic.id,
-  difficulty: difficulty(index + 2),
+  difficulty: departmentCodeDifficulty(department),
   prompt: `Départements de France : quel département porte le code ${department.code} ?`,
   choices: choicesFrom(franceDepartmentData, index, (item) => item.name),
   answerIndex: 0,

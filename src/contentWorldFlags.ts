@@ -1021,9 +1021,10 @@ const mediumFlagCountries = new Set([
   'Albanie', 'Algerie', 'Arabie saoudite', 'Armenie', 'Bahrein', 'Bangladesh', 'Benin', 'Bielorussie', 'Bolivie',
   'Bosnie-Herzegovine', 'Bulgarie', 'Cameroun', 'Chili', 'Colombie', 'Cote d\'Ivoire', 'Croatie', 'Cuba',
   'Egypte', 'Emirats arabes unis', 'Estonie', 'Ghana', 'Hongrie', 'Indonesie', 'Iran', 'Islande', 'Israel',
-  'Jordanie', 'Kazakhstan', 'Kenya', 'Liban', 'Lituanie', 'Luxembourg', 'Malaisie', 'Malte', 'Nigeria',
-  'Nouvelle-Zelande', 'Pakistan', 'Perou', 'Philippines', 'Republique tcheque', 'Roumanie', 'Senegal', 'Serbie',
-  'Singapour', 'Slovaquie', 'Slovenie', 'Thailande', 'Tunisie', 'Ukraine', 'Uruguay', 'Vietnam',
+  'Jamaique', 'Jordanie', 'Kazakhstan', 'Kenya', 'Liban', 'Lituanie', 'Luxembourg', 'Malaisie', 'Malte',
+  'Nigeria', 'Nouvelle-Zelande', 'Pakistan', 'Panama', 'Perou', 'Philippines', 'Qatar', 'Republique tcheque',
+  'Roumanie', 'Senegal', 'Serbie', 'Singapour', 'Slovaquie', 'Slovenie', 'Thailande', 'Tunisie', 'Ukraine',
+  'Uruguay', 'Venezuela', 'Vietnam',
 ]);
 
 function normalizeCountry(country: string) {
