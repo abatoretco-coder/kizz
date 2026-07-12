@@ -248,7 +248,7 @@ const rawGameStyleQuestions: QuestionSeed[] = [
   {
     id: 'style-cap-007',
     topicId: 'geography',
-    difficulty: 3,
+    difficulty: 2,
     prompt: 'Placement de pays : lequel est enclavé entre la France, la Belgique et l’Allemagne ?',
     choices: ['Suisse', 'Luxembourg', 'Liechtenstein', 'Autriche'],
     answerIndex: 1,

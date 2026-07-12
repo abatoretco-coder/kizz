@@ -21,7 +21,7 @@ const mediumHistoricalRegions = new Set([
 const easyHistoricalEras = new Set(['antiquite', 'epoque contemporaine', 'renaissance']);
 const mediumHistoricalEras = new Set(['epoque moderne', 'lumieres', 'moyen age', 'xixe siecle']);
 
-const easyArtworkTitles = new Set(['La Joconde', 'La Nuit etoilee', 'La Nuit étoilée', 'La Naissance de Venus', 'La Naissance de Vénus', 'Le Cri', 'Guernica']);
+const easyArtworkTitles = new Set(['guernica', 'la joconde', 'la naissance de venus', 'la nuit etoilee', 'le cri']);
 
 function answerOf(question: QuestionSeed) {
   return question.choices?.[question.answerIndex ?? 0] ?? '';
