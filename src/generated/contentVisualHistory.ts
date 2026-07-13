@@ -13,7 +13,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Léonard de Vinci ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Léonard de Vinci ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -37,7 +37,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Naissance de Vénus"
     ],
     "answerIndex": 0,
-    "explanation": "Léonard de Vinci est notamment associé à La Joconde.",
+    "explanation": "L’œuvre repère pour « Léonard de Vinci » est « La Joconde ».",
     "tags": [
       "arts",
       "peinture",
@@ -59,7 +59,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Joconde est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Joconde » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -81,7 +81,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Léonard de Vinci est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Léonard de Vinci » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -125,7 +125,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Vincent van Gogh ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Vincent van Gogh ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -149,7 +149,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Naissance de Vénus"
     ],
     "answerIndex": 0,
-    "explanation": "Vincent van Gogh est notamment associé à La Nuit étoilée.",
+    "explanation": "L’œuvre repère pour « Vincent van Gogh » est « La Nuit étoilée ».",
     "tags": [
       "arts",
       "peinture",
@@ -171,7 +171,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Nuit étoilée est rangé ici dans le repère postimpressionnisme.",
+    "explanation": "Le repère retenu pour « La Nuit étoilée » est « postimpressionnisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -193,7 +193,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Vincent van Gogh est ici rattaché au repère Pays-Bas.",
+    "explanation": "Le repère géographique retenu pour « Vincent van Gogh » est « Pays-Bas ».",
     "tags": [
       "arts",
       "peinture",
@@ -237,7 +237,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Johannes Vermeer ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Johannes Vermeer ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -261,7 +261,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Naissance de Vénus"
     ],
     "answerIndex": 0,
-    "explanation": "Johannes Vermeer est notamment associé à La Jeune Fille à la perle.",
+    "explanation": "L’œuvre repère pour « Johannes Vermeer » est « La Jeune Fille à la perle ».",
     "tags": [
       "arts",
       "peinture",
@@ -283,7 +283,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Jeune Fille à la perle est rangé ici dans le repère baroque.",
+    "explanation": "Le repère retenu pour « La Jeune Fille à la perle » est « baroque ».",
     "tags": [
       "arts",
       "peinture",
@@ -305,7 +305,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Johannes Vermeer est ici rattaché au repère Pays-Bas.",
+    "explanation": "Le repère géographique retenu pour « Johannes Vermeer » est « Pays-Bas ».",
     "tags": [
       "arts",
       "peinture",
@@ -349,7 +349,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Sandro Botticelli ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Sandro Botticelli ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -373,7 +373,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Sandro Botticelli est notamment associé à La Naissance de Vénus.",
+    "explanation": "L’œuvre repère pour « Sandro Botticelli » est « La Naissance de Vénus ».",
     "tags": [
       "arts",
       "peinture",
@@ -395,7 +395,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Naissance de Vénus est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Naissance de Vénus » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -417,7 +417,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Sandro Botticelli est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Sandro Botticelli » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -461,7 +461,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Eugène Delacroix ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Eugène Delacroix ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -485,7 +485,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Eugène Delacroix est notamment associé à La Liberté guidant le peuple.",
+    "explanation": "L’œuvre repère pour « Eugène Delacroix » est « La Liberté guidant le peuple ».",
     "tags": [
       "arts",
       "peinture",
@@ -507,7 +507,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "La Liberté guidant le peuple est rangé ici dans le repère romantisme.",
+    "explanation": "Le repère retenu pour « La Liberté guidant le peuple » est « romantisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -529,7 +529,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Eugène Delacroix est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Eugène Delacroix » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -573,7 +573,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Hokusai ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Hokusai ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -597,7 +597,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Hokusai est notamment associé à La Grande Vague de Kanagawa.",
+    "explanation": "L’œuvre repère pour « Hokusai » est « La Grande Vague de Kanagawa ».",
     "tags": [
       "arts",
       "peinture",
@@ -619,7 +619,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "La Grande Vague de Kanagawa est rangé ici dans le repère ukiyo-e.",
+    "explanation": "Le repère retenu pour « La Grande Vague de Kanagawa » est « ukiyo-e ».",
     "tags": [
       "arts",
       "peinture",
@@ -641,7 +641,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Hokusai est ici rattaché au repère Japon.",
+    "explanation": "Le repère géographique retenu pour « Hokusai » est « Japon ».",
     "tags": [
       "arts",
       "peinture",
@@ -685,7 +685,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Diego Vélasquez ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Diego Vélasquez ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -709,7 +709,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Diego Vélasquez est notamment associé à Les Ménines.",
+    "explanation": "L’œuvre repère pour « Diego Vélasquez » est « Les Ménines ».",
     "tags": [
       "arts",
       "peinture",
@@ -731,7 +731,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Les Ménines est rangé ici dans le repère baroque.",
+    "explanation": "Le repère retenu pour « Les Ménines » est « baroque ».",
     "tags": [
       "arts",
       "peinture",
@@ -753,7 +753,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Diego Vélasquez est ici rattaché au repère Espagne.",
+    "explanation": "Le repère géographique retenu pour « Diego Vélasquez » est « Espagne ».",
     "tags": [
       "arts",
       "peinture",
@@ -797,7 +797,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Pablo Picasso ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Pablo Picasso ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -821,7 +821,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Pablo Picasso est notamment associé à Guernica.",
+    "explanation": "L’œuvre repère pour « Pablo Picasso » est « Guernica ».",
     "tags": [
       "arts",
       "peinture",
@@ -843,7 +843,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Guernica est rangé ici dans le repère cubisme.",
+    "explanation": "Le repère retenu pour « Guernica » est « cubisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -865,7 +865,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Pablo Picasso est ici rattaché au repère Espagne.",
+    "explanation": "Le repère géographique retenu pour « Pablo Picasso » est « Espagne ».",
     "tags": [
       "arts",
       "peinture",
@@ -909,7 +909,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Edvard Munch ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Edvard Munch ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -933,7 +933,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Edvard Munch est notamment associé à Le Cri.",
+    "explanation": "L’œuvre repère pour « Edvard Munch » est « Le Cri ».",
     "tags": [
       "arts",
       "peinture",
@@ -955,7 +955,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Cri est rangé ici dans le repère expressionnisme.",
+    "explanation": "Le repère retenu pour « Le Cri » est « expressionnisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -977,7 +977,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Edvard Munch est ici rattaché au repère Norvège.",
+    "explanation": "Le repère géographique retenu pour « Edvard Munch » est « Norvège ».",
     "tags": [
       "arts",
       "peinture",
@@ -1021,7 +1021,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Claude Monet ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Claude Monet ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1045,7 +1045,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Claude Monet est notamment associé à Impression, soleil levant.",
+    "explanation": "L’œuvre repère pour « Claude Monet » est « Impression, soleil levant ».",
     "tags": [
       "arts",
       "peinture",
@@ -1067,7 +1067,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Impression, soleil levant est rangé ici dans le repère impressionnisme.",
+    "explanation": "Le repère retenu pour « Impression, soleil levant » est « impressionnisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -1089,7 +1089,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Claude Monet est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Claude Monet » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -1133,7 +1133,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Léonard de Vinci ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Léonard de Vinci ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1157,7 +1157,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Léonard de Vinci est notamment associé à La Cène.",
+    "explanation": "L’œuvre repère pour « Léonard de Vinci » est « La Cène ».",
     "tags": [
       "arts",
       "peinture",
@@ -1179,7 +1179,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Cène est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Cène » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -1201,7 +1201,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Léonard de Vinci est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Léonard de Vinci » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -1245,7 +1245,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Michel-Ange ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Michel-Ange ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1269,7 +1269,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Michel-Ange est notamment associé à La Création d’Adam.",
+    "explanation": "L’œuvre repère pour « Michel-Ange » est « La Création d’Adam ».",
     "tags": [
       "arts",
       "peinture",
@@ -1291,7 +1291,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Création d’Adam est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Création d’Adam » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -1313,7 +1313,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Michel-Ange est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Michel-Ange » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -1357,7 +1357,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Théodore Géricault ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Théodore Géricault ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1381,7 +1381,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Théodore Géricault est notamment associé à Le Radeau de La Méduse.",
+    "explanation": "L’œuvre repère pour « Théodore Géricault » est « Le Radeau de La Méduse ».",
     "tags": [
       "arts",
       "peinture",
@@ -1403,7 +1403,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Radeau de La Méduse est rangé ici dans le repère romantisme.",
+    "explanation": "Le repère retenu pour « Le Radeau de La Méduse » est « romantisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -1425,7 +1425,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Théodore Géricault est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Théodore Géricault » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -1469,7 +1469,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Édouard Manet ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Édouard Manet ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1493,7 +1493,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Édouard Manet est notamment associé à Olympia.",
+    "explanation": "L’œuvre repère pour « Édouard Manet » est « Olympia ».",
     "tags": [
       "arts",
       "peinture",
@@ -1515,7 +1515,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Olympia est rangé ici dans le repère réalisme.",
+    "explanation": "Le repère retenu pour « Olympia » est « réalisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -1537,7 +1537,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Édouard Manet est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Édouard Manet » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -1581,7 +1581,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Georges Seurat ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Georges Seurat ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1605,7 +1605,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Georges Seurat est notamment associé à Un dimanche après-midi à l’île de la Grande Jatte.",
+    "explanation": "L’œuvre repère pour « Georges Seurat » est « Un dimanche après-midi à l’île de la Grande Jatte ».",
     "tags": [
       "arts",
       "peinture",
@@ -1627,7 +1627,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Un dimanche après-midi à l’île de la Grande Jatte est rangé ici dans le repère pointillisme.",
+    "explanation": "Le repère retenu pour « Un dimanche après-midi à l’île de la Grande Jatte » est « pointillisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -1649,7 +1649,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Georges Seurat est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Georges Seurat » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -1693,7 +1693,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Vincent van Gogh ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Vincent van Gogh ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1717,7 +1717,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Vincent van Gogh est notamment associé à Les Tournesols.",
+    "explanation": "L’œuvre repère pour « Vincent van Gogh » est « Les Tournesols ».",
     "tags": [
       "arts",
       "peinture",
@@ -1739,7 +1739,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Les Tournesols est rangé ici dans le repère postimpressionnisme.",
+    "explanation": "Le repère retenu pour « Les Tournesols » est « postimpressionnisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -1761,7 +1761,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Vincent van Gogh est ici rattaché au repère Pays-Bas.",
+    "explanation": "Le repère géographique retenu pour « Vincent van Gogh » est « Pays-Bas ».",
     "tags": [
       "arts",
       "peinture",
@@ -1805,7 +1805,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Grant Wood ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Grant Wood ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1829,7 +1829,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Grant Wood est notamment associé à American Gothic.",
+    "explanation": "L’œuvre repère pour « Grant Wood » est « American Gothic ».",
     "tags": [
       "arts",
       "peinture",
@@ -1851,7 +1851,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "American Gothic est rangé ici dans le repère réalisme régional.",
+    "explanation": "Le repère retenu pour « American Gothic » est « réalisme régional ».",
     "tags": [
       "arts",
       "peinture",
@@ -1873,7 +1873,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Grant Wood est ici rattaché au repère États-Unis.",
+    "explanation": "Le repère géographique retenu pour « Grant Wood » est « États-Unis ».",
     "tags": [
       "arts",
       "peinture",
@@ -1917,7 +1917,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Salvador Dalí ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Salvador Dalí ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1941,7 +1941,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Salvador Dalí est notamment associé à La Persistance de la mémoire.",
+    "explanation": "L’œuvre repère pour « Salvador Dalí » est « La Persistance de la mémoire ».",
     "tags": [
       "arts",
       "peinture",
@@ -1963,7 +1963,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "La Persistance de la mémoire est rangé ici dans le repère surréalisme.",
+    "explanation": "Le repère retenu pour « La Persistance de la mémoire » est « surréalisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -1985,7 +1985,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Salvador Dalí est ici rattaché au repère Espagne.",
+    "explanation": "Le repère géographique retenu pour « Salvador Dalí » est « Espagne ».",
     "tags": [
       "arts",
       "peinture",
@@ -2029,7 +2029,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Edward Hopper ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Edward Hopper ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2053,7 +2053,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Edward Hopper est notamment associé à Nighthawks.",
+    "explanation": "L’œuvre repère pour « Edward Hopper » est « Nighthawks ».",
     "tags": [
       "arts",
       "peinture",
@@ -2075,7 +2075,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Nighthawks est rangé ici dans le repère réalisme américain.",
+    "explanation": "Le repère retenu pour « Nighthawks » est « réalisme américain ».",
     "tags": [
       "arts",
       "peinture",
@@ -2097,7 +2097,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Edward Hopper est ici rattaché au repère États-Unis.",
+    "explanation": "Le repère géographique retenu pour « Edward Hopper » est « États-Unis ».",
     "tags": [
       "arts",
       "peinture",
@@ -2141,7 +2141,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Gustav Klimt ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Gustav Klimt ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2165,7 +2165,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Gustav Klimt est notamment associé à Le Baiser.",
+    "explanation": "L’œuvre repère pour « Gustav Klimt » est « Le Baiser ».",
     "tags": [
       "arts",
       "peinture",
@@ -2187,7 +2187,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Baiser est rangé ici dans le repère symbolisme.",
+    "explanation": "Le repère retenu pour « Le Baiser » est « symbolisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -2209,7 +2209,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Gustav Klimt est ici rattaché au repère Autriche.",
+    "explanation": "Le repère géographique retenu pour « Gustav Klimt » est « Autriche ».",
     "tags": [
       "arts",
       "peinture",
@@ -2253,7 +2253,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Pablo Picasso ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Pablo Picasso ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2277,7 +2277,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Pablo Picasso est notamment associé à Les Demoiselles d’Avignon.",
+    "explanation": "L’œuvre repère pour « Pablo Picasso » est « Les Demoiselles d’Avignon ».",
     "tags": [
       "arts",
       "peinture",
@@ -2299,7 +2299,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Les Demoiselles d’Avignon est rangé ici dans le repère cubisme.",
+    "explanation": "Le repère retenu pour « Les Demoiselles d’Avignon » est « cubisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -2321,7 +2321,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Pablo Picasso est ici rattaché au repère Espagne.",
+    "explanation": "Le repère géographique retenu pour « Pablo Picasso » est « Espagne ».",
     "tags": [
       "arts",
       "peinture",
@@ -2365,7 +2365,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Titien ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Titien ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2389,7 +2389,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Titien est notamment associé à La Vénus d’Urbino.",
+    "explanation": "L’œuvre repère pour « Titien » est « La Vénus d’Urbino ».",
     "tags": [
       "arts",
       "peinture",
@@ -2411,7 +2411,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Vénus d’Urbino est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Vénus d’Urbino » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -2433,7 +2433,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Titien est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Titien » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -2477,7 +2477,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Giorgione ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Giorgione ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2501,7 +2501,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Giorgione est notamment associé à La Tempête.",
+    "explanation": "L’œuvre repère pour « Giorgione » est « La Tempête ».",
     "tags": [
       "arts",
       "peinture",
@@ -2523,7 +2523,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Tempête est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Tempête » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -2545,7 +2545,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Giorgione est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Giorgione » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -2589,7 +2589,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Sandro Botticelli ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Sandro Botticelli ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2613,7 +2613,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Sandro Botticelli est notamment associé à Le Printemps.",
+    "explanation": "L’œuvre repère pour « Sandro Botticelli » est « Le Printemps ».",
     "tags": [
       "arts",
       "peinture",
@@ -2635,7 +2635,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le Printemps est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « Le Printemps » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -2657,7 +2657,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Sandro Botticelli est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Sandro Botticelli » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -2701,7 +2701,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Johannes Vermeer ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Johannes Vermeer ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2725,7 +2725,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Johannes Vermeer est notamment associé à La Laitière.",
+    "explanation": "L’œuvre repère pour « Johannes Vermeer » est « La Laitière ».",
     "tags": [
       "arts",
       "peinture",
@@ -2747,7 +2747,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Laitière est rangé ici dans le repère baroque.",
+    "explanation": "Le repère retenu pour « La Laitière » est « baroque ».",
     "tags": [
       "arts",
       "peinture",
@@ -2769,7 +2769,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Johannes Vermeer est ici rattaché au repère Pays-Bas.",
+    "explanation": "Le repère géographique retenu pour « Johannes Vermeer » est « Pays-Bas ».",
     "tags": [
       "arts",
       "peinture",
@@ -2813,7 +2813,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Jérôme Bosch ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Jérôme Bosch ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2837,7 +2837,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Jérôme Bosch est notamment associé à Le Jardin des délices.",
+    "explanation": "L’œuvre repère pour « Jérôme Bosch » est « Le Jardin des délices ».",
     "tags": [
       "arts",
       "peinture",
@@ -2859,7 +2859,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Jardin des délices est rangé ici dans le repère Renaissance nordique.",
+    "explanation": "Le repère retenu pour « Le Jardin des délices » est « Renaissance nordique ».",
     "tags": [
       "arts",
       "peinture",
@@ -2881,7 +2881,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Jérôme Bosch est ici rattaché au repère Pays-Bas.",
+    "explanation": "Le repère géographique retenu pour « Jérôme Bosch » est « Pays-Bas ».",
     "tags": [
       "arts",
       "peinture",
@@ -2903,7 +2903,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Hans Holbein le Jeune ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Hans Holbein le Jeune ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2927,7 +2927,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Hans Holbein le Jeune est notamment associé à Les Ambassadeurs.",
+    "explanation": "L’œuvre repère pour « Hans Holbein le Jeune » est « Les Ambassadeurs ».",
     "tags": [
       "arts",
       "peinture",
@@ -2949,7 +2949,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Les Ambassadeurs est rangé ici dans le repère Renaissance nordique.",
+    "explanation": "Le repère retenu pour « Les Ambassadeurs » est « Renaissance nordique ».",
     "tags": [
       "arts",
       "peinture",
@@ -2971,7 +2971,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Hans Holbein le Jeune est ici rattaché au repère Allemagne.",
+    "explanation": "Le repère géographique retenu pour « Hans Holbein le Jeune » est « Allemagne ».",
     "tags": [
       "arts",
       "peinture",
@@ -2993,7 +2993,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Rembrandt ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Rembrandt ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3017,7 +3017,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Rembrandt est notamment associé à La Ronde de nuit.",
+    "explanation": "L’œuvre repère pour « Rembrandt » est « La Ronde de nuit ».",
     "tags": [
       "arts",
       "peinture",
@@ -3039,7 +3039,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Ronde de nuit est rangé ici dans le repère baroque.",
+    "explanation": "Le repère retenu pour « La Ronde de nuit » est « baroque ».",
     "tags": [
       "arts",
       "peinture",
@@ -3061,7 +3061,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Rembrandt est ici rattaché au repère Pays-Bas.",
+    "explanation": "Le repère géographique retenu pour « Rembrandt » est « Pays-Bas ».",
     "tags": [
       "arts",
       "peinture",
@@ -3083,7 +3083,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Francisco de Goya ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Francisco de Goya ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3107,7 +3107,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Francisco de Goya est notamment associé à Saturne dévorant un de ses fils.",
+    "explanation": "L’œuvre repère pour « Francisco de Goya » est « Saturne dévorant un de ses fils ».",
     "tags": [
       "arts",
       "peinture",
@@ -3129,7 +3129,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Saturne dévorant un de ses fils est rangé ici dans le repère romantisme noir.",
+    "explanation": "Le repère retenu pour « Saturne dévorant un de ses fils » est « romantisme noir ».",
     "tags": [
       "arts",
       "peinture",
@@ -3151,7 +3151,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Francisco de Goya est ici rattaché au repère Espagne.",
+    "explanation": "Le repère géographique retenu pour « Francisco de Goya » est « Espagne ».",
     "tags": [
       "arts",
       "peinture",
@@ -3173,7 +3173,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Édouard Manet ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Édouard Manet ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3197,7 +3197,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Édouard Manet est notamment associé à Le Déjeuner sur l’herbe.",
+    "explanation": "L’œuvre repère pour « Édouard Manet » est « Le Déjeuner sur l’herbe ».",
     "tags": [
       "arts",
       "peinture",
@@ -3219,7 +3219,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Déjeuner sur l’herbe est rangé ici dans le repère réalisme.",
+    "explanation": "Le repère retenu pour « Le Déjeuner sur l’herbe » est « réalisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -3241,7 +3241,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Édouard Manet est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Édouard Manet » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -3263,7 +3263,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Auguste Renoir ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Auguste Renoir ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3287,7 +3287,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Auguste Renoir est notamment associé à Bal du moulin de la Galette.",
+    "explanation": "L’œuvre repère pour « Auguste Renoir » est « Bal du moulin de la Galette ».",
     "tags": [
       "arts",
       "peinture",
@@ -3309,7 +3309,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Bal du moulin de la Galette est rangé ici dans le repère impressionnisme.",
+    "explanation": "Le repère retenu pour « Bal du moulin de la Galette » est « impressionnisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -3331,7 +3331,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Auguste Renoir est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Auguste Renoir » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -3353,7 +3353,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Edgar Degas ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Edgar Degas ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3377,7 +3377,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Edgar Degas est notamment associé à La Classe de danse.",
+    "explanation": "L’œuvre repère pour « Edgar Degas » est « La Classe de danse ».",
     "tags": [
       "arts",
       "peinture",
@@ -3399,7 +3399,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "La Classe de danse est rangé ici dans le repère impressionnisme.",
+    "explanation": "Le repère retenu pour « La Classe de danse » est « impressionnisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -3421,7 +3421,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Edgar Degas est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Edgar Degas » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -3443,7 +3443,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Paul Cézanne ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Paul Cézanne ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3467,7 +3467,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Paul Cézanne est notamment associé à Les Joueurs de cartes.",
+    "explanation": "L’œuvre repère pour « Paul Cézanne » est « Les Joueurs de cartes ».",
     "tags": [
       "arts",
       "peinture",
@@ -3489,7 +3489,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Les Joueurs de cartes est rangé ici dans le repère postimpressionnisme.",
+    "explanation": "Le repère retenu pour « Les Joueurs de cartes » est « postimpressionnisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -3511,7 +3511,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Paul Cézanne est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Paul Cézanne » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -3533,7 +3533,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Paul Cézanne ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Paul Cézanne ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3557,7 +3557,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Paul Cézanne est notamment associé à Mont Sainte-Victoire.",
+    "explanation": "L’œuvre repère pour « Paul Cézanne » est « Mont Sainte-Victoire ».",
     "tags": [
       "arts",
       "peinture",
@@ -3579,7 +3579,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Mont Sainte-Victoire est rangé ici dans le repère postimpressionnisme.",
+    "explanation": "Le repère retenu pour « Mont Sainte-Victoire » est « postimpressionnisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -3601,7 +3601,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Paul Cézanne est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Paul Cézanne » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -3623,7 +3623,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Henri Rousseau ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Henri Rousseau ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3647,7 +3647,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Henri Rousseau est notamment associé à Le Douanier Rousseau, Le Rêve.",
+    "explanation": "L’œuvre repère pour « Henri Rousseau » est « Le Douanier Rousseau, Le Rêve ».",
     "tags": [
       "arts",
       "peinture",
@@ -3669,7 +3669,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Douanier Rousseau, Le Rêve est rangé ici dans le repère naïf.",
+    "explanation": "Le repère retenu pour « Le Douanier Rousseau, Le Rêve » est « naïf ».",
     "tags": [
       "arts",
       "peinture",
@@ -3691,7 +3691,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Henri Rousseau est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Henri Rousseau » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -3713,7 +3713,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Vassily Kandinsky ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Vassily Kandinsky ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3737,7 +3737,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Vassily Kandinsky est notamment associé à Composition VIII.",
+    "explanation": "L’œuvre repère pour « Vassily Kandinsky » est « Composition VIII ».",
     "tags": [
       "arts",
       "peinture",
@@ -3759,7 +3759,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Composition VIII est rangé ici dans le repère abstraction.",
+    "explanation": "Le repère retenu pour « Composition VIII » est « abstraction ».",
     "tags": [
       "arts",
       "peinture",
@@ -3781,7 +3781,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Vassily Kandinsky est ici rattaché au repère Russie.",
+    "explanation": "Le repère géographique retenu pour « Vassily Kandinsky » est « Russie ».",
     "tags": [
       "arts",
       "peinture",
@@ -3803,7 +3803,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Kasimir Malevitch ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Kasimir Malevitch ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3827,7 +3827,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Kasimir Malevitch est notamment associé à Carré noir.",
+    "explanation": "L’œuvre repère pour « Kasimir Malevitch » est « Carré noir ».",
     "tags": [
       "arts",
       "peinture",
@@ -3849,7 +3849,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Carré noir est rangé ici dans le repère suprématisme.",
+    "explanation": "Le repère retenu pour « Carré noir » est « suprématisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -3871,7 +3871,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Kasimir Malevitch est ici rattaché au repère Russie.",
+    "explanation": "Le repère géographique retenu pour « Kasimir Malevitch » est « Russie ».",
     "tags": [
       "arts",
       "peinture",
@@ -3893,7 +3893,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Piet Mondrian ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Piet Mondrian ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3917,7 +3917,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Piet Mondrian est notamment associé à Broadway Boogie-Woogie.",
+    "explanation": "L’œuvre repère pour « Piet Mondrian » est « Broadway Boogie-Woogie ».",
     "tags": [
       "arts",
       "peinture",
@@ -3939,7 +3939,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Broadway Boogie-Woogie est rangé ici dans le repère néoplasticisme.",
+    "explanation": "Le repère retenu pour « Broadway Boogie-Woogie » est « néoplasticisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -3961,7 +3961,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Piet Mondrian est ici rattaché au repère Pays-Bas.",
+    "explanation": "Le repère géographique retenu pour « Piet Mondrian » est « Pays-Bas ».",
     "tags": [
       "arts",
       "peinture",
@@ -3983,7 +3983,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Jan van Eyck ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Jan van Eyck ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4007,7 +4007,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Jan van Eyck est notamment associé à Les Époux Arnolfini.",
+    "explanation": "L’œuvre repère pour « Jan van Eyck » est « Les Époux Arnolfini ».",
     "tags": [
       "arts",
       "peinture",
@@ -4029,7 +4029,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Les Époux Arnolfini est rangé ici dans le repère Renaissance flamande.",
+    "explanation": "Le repère retenu pour « Les Époux Arnolfini » est « Renaissance flamande ».",
     "tags": [
       "arts",
       "peinture",
@@ -4051,7 +4051,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Jan van Eyck est ici rattaché au repère Pays-Bas.",
+    "explanation": "Le repère géographique retenu pour « Jan van Eyck » est « Pays-Bas ».",
     "tags": [
       "arts",
       "peinture",
@@ -4073,7 +4073,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Paolo Uccello ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Paolo Uccello ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4097,7 +4097,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Paolo Uccello est notamment associé à La Bataille de San Romano.",
+    "explanation": "L’œuvre repère pour « Paolo Uccello » est « La Bataille de San Romano ».",
     "tags": [
       "arts",
       "peinture",
@@ -4119,7 +4119,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Bataille de San Romano est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Bataille de San Romano » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -4141,7 +4141,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Paolo Uccello est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Paolo Uccello » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -4163,7 +4163,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Piero della Francesca ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Piero della Francesca ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4187,7 +4187,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Piero della Francesca est notamment associé à La Flagellation du Christ.",
+    "explanation": "L’œuvre repère pour « Piero della Francesca » est « La Flagellation du Christ ».",
     "tags": [
       "arts",
       "peinture",
@@ -4209,7 +4209,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Flagellation du Christ est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Flagellation du Christ » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -4231,7 +4231,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Piero della Francesca est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Piero della Francesca » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -4253,7 +4253,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Raphaël ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Raphaël ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4277,7 +4277,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Raphaël est notamment associé à La Madone Sixtine.",
+    "explanation": "L’œuvre repère pour « Raphaël » est « La Madone Sixtine ».",
     "tags": [
       "arts",
       "peinture",
@@ -4299,7 +4299,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "La Madone Sixtine est rangé ici dans le repère Renaissance.",
+    "explanation": "Le repère retenu pour « La Madone Sixtine » est « Renaissance ».",
     "tags": [
       "arts",
       "peinture",
@@ -4321,7 +4321,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Raphaël est ici rattaché au repère Italie.",
+    "explanation": "Le repère géographique retenu pour « Raphaël » est « Italie ».",
     "tags": [
       "arts",
       "peinture",
@@ -4343,7 +4343,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Jacques-Louis David ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Jacques-Louis David ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4367,7 +4367,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Jacques-Louis David est notamment associé à La Mort de Marat.",
+    "explanation": "L’œuvre repère pour « Jacques-Louis David » est « La Mort de Marat ».",
     "tags": [
       "arts",
       "peinture",
@@ -4389,7 +4389,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "La Mort de Marat est rangé ici dans le repère néoclassicisme.",
+    "explanation": "Le repère retenu pour « La Mort de Marat » est « néoclassicisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -4411,7 +4411,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Jacques-Louis David est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Jacques-Louis David » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -4433,7 +4433,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Jacques-Louis David ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Jacques-Louis David ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4457,7 +4457,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Jacques-Louis David est notamment associé à Le Serment des Horaces.",
+    "explanation": "L’œuvre repère pour « Jacques-Louis David » est « Le Serment des Horaces ».",
     "tags": [
       "arts",
       "peinture",
@@ -4479,7 +4479,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Serment des Horaces est rangé ici dans le repère néoclassicisme.",
+    "explanation": "Le repère retenu pour « Le Serment des Horaces » est « néoclassicisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -4501,7 +4501,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Jacques-Louis David est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Jacques-Louis David » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -4523,7 +4523,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Jean-Auguste-Dominique Ingres ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Jean-Auguste-Dominique Ingres ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4547,7 +4547,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Jean-Auguste-Dominique Ingres est notamment associé à La Grande Odalisque.",
+    "explanation": "L’œuvre repère pour « Jean-Auguste-Dominique Ingres » est « La Grande Odalisque ».",
     "tags": [
       "arts",
       "peinture",
@@ -4569,7 +4569,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "La Grande Odalisque est rangé ici dans le repère néoclassicisme.",
+    "explanation": "Le repère retenu pour « La Grande Odalisque » est « néoclassicisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -4591,7 +4591,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Jean-Auguste-Dominique Ingres est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Jean-Auguste-Dominique Ingres » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -4613,7 +4613,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Jean-Baptiste Regnault ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Jean-Baptiste Regnault ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4637,7 +4637,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Jean-Baptiste Regnault est notamment associé à La Liberté ou la Mort.",
+    "explanation": "L’œuvre repère pour « Jean-Baptiste Regnault » est « La Liberté ou la Mort ».",
     "tags": [
       "arts",
       "peinture",
@@ -4659,7 +4659,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "La Liberté ou la Mort est rangé ici dans le repère néoclassicisme.",
+    "explanation": "Le repère retenu pour « La Liberté ou la Mort » est « néoclassicisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -4681,7 +4681,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Jean-Baptiste Regnault est ici rattaché au repère France.",
+    "explanation": "Le repère géographique retenu pour « Jean-Baptiste Regnault » est « France ».",
     "tags": [
       "arts",
       "peinture",
@@ -4703,7 +4703,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Caspar David Friedrich ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Caspar David Friedrich ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4727,7 +4727,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Caspar David Friedrich est notamment associé à Le Voyageur contemplant une mer de nuages.",
+    "explanation": "L’œuvre repère pour « Caspar David Friedrich » est « Le Voyageur contemplant une mer de nuages ».",
     "tags": [
       "arts",
       "peinture",
@@ -4749,7 +4749,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Voyageur contemplant une mer de nuages est rangé ici dans le repère romantisme.",
+    "explanation": "Le repère retenu pour « Le Voyageur contemplant une mer de nuages » est « romantisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -4771,7 +4771,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Caspar David Friedrich est ici rattaché au repère Allemagne.",
+    "explanation": "Le repère géographique retenu pour « Caspar David Friedrich » est « Allemagne ».",
     "tags": [
       "arts",
       "peinture",
@@ -4793,7 +4793,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? William Turner ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à William Turner ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4817,7 +4817,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "William Turner est notamment associé à Pluie, Vapeur et Vitesse.",
+    "explanation": "L’œuvre repère pour « William Turner » est « Pluie, Vapeur et Vitesse ».",
     "tags": [
       "arts",
       "peinture",
@@ -4839,7 +4839,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Pluie, Vapeur et Vitesse est rangé ici dans le repère romantisme.",
+    "explanation": "Le repère retenu pour « Pluie, Vapeur et Vitesse » est « romantisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -4861,7 +4861,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "William Turner est ici rattaché au repère Royaume-Uni.",
+    "explanation": "Le repère géographique retenu pour « William Turner » est « Royaume-Uni ».",
     "tags": [
       "arts",
       "peinture",
@@ -4883,7 +4883,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Andrew Wyeth ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Andrew Wyeth ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4907,7 +4907,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Andrew Wyeth est notamment associé à Le Monde de Christina.",
+    "explanation": "L’œuvre repère pour « Andrew Wyeth » est « Le Monde de Christina ».",
     "tags": [
       "arts",
       "peinture",
@@ -4929,7 +4929,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le Monde de Christina est rangé ici dans le repère réalisme américain.",
+    "explanation": "Le repère retenu pour « Le Monde de Christina » est « réalisme américain ».",
     "tags": [
       "arts",
       "peinture",
@@ -4951,7 +4951,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Andrew Wyeth est ici rattaché au repère États-Unis.",
+    "explanation": "Le repère géographique retenu pour « Andrew Wyeth » est « États-Unis ».",
     "tags": [
       "arts",
       "peinture",
@@ -4973,7 +4973,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette ?uvre est associ?e ? Frida Kahlo ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
+    "explanation": "Cette œuvre est associée à Frida Kahlo ; l’image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4997,7 +4997,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "Frida Kahlo est notamment associé à Autoportrait au collier d’épines.",
+    "explanation": "L’œuvre repère pour « Frida Kahlo » est « Autoportrait au collier d’épines ».",
     "tags": [
       "arts",
       "peinture",
@@ -5019,7 +5019,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Autoportrait au collier d’épines est rangé ici dans le repère surréalisme.",
+    "explanation": "Le repère retenu pour « Autoportrait au collier d’épines » est « surréalisme ».",
     "tags": [
       "arts",
       "peinture",
@@ -5041,7 +5041,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Frida Kahlo est ici rattaché au repère Mexique.",
+    "explanation": "Le repère géographique retenu pour « Frida Kahlo » est « Mexique ».",
     "tags": [
       "arts",
       "peinture",
@@ -5109,7 +5109,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Cléopâtre VII est rattach? au rep?re g?ographique ? Égypte antique ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Cléopâtre VII » est « Égypte antique » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5199,7 +5199,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Jules César est rattach? au rep?re g?ographique ? Rome antique ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Jules César » est « Rome antique » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5289,7 +5289,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Auguste est rattach? au rep?re g?ographique ? Rome antique ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Auguste » est « Rome antique » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5379,7 +5379,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Périclès est rattach? au rep?re g?ographique ? Athènes ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Périclès » est « Athènes » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5469,7 +5469,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Hannibal Barca est rattach? au rep?re g?ographique ? Carthage ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Hannibal Barca » est « Carthage » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5559,7 +5559,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Alexandre le Grand est rattach? au rep?re g?ographique ? Macédoine ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Alexandre le Grand » est « Macédoine » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5649,7 +5649,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Socrate est rattach? au rep?re g?ographique ? Grèce ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Socrate » est « Grèce » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5739,7 +5739,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Platon est rattach? au rep?re g?ographique ? Grèce ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Platon » est « Grèce » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5829,7 +5829,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Aristote est rattach? au rep?re g?ographique ? Grèce ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Aristote » est « Grèce » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5919,7 +5919,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Charlemagne est rattach? au rep?re g?ographique ? Empire carolingien ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Charlemagne » est « Empire carolingien » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6009,7 +6009,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Aliénor d’Aquitaine est rattach? au rep?re g?ographique ? France et Angleterre ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Aliénor d’Aquitaine » est « France et Angleterre » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6099,7 +6099,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Jeanne d’Arc est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Jeanne d’Arc » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6189,7 +6189,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Saladin est rattach? au rep?re g?ographique ? monde musulman ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Saladin » est « monde musulman » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6279,7 +6279,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Gengis Khan est rattach? au rep?re g?ographique ? Mongolie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Gengis Khan » est « Mongolie » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6369,7 +6369,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Marco Polo est rattach? au rep?re g?ographique ? Venise ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Marco Polo » est « Venise » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6459,7 +6459,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Mehmed II est rattach? au rep?re g?ographique ? Empire ottoman ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Mehmed II » est « Empire ottoman » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6549,7 +6549,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Léonard de Vinci est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Léonard de Vinci » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6639,7 +6639,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Michel-Ange est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Michel-Ange » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6729,7 +6729,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Raphaël est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Raphaël » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6819,7 +6819,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Nicolas Copernic est rattach? au rep?re g?ographique ? Pologne ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Nicolas Copernic » est « Pologne » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6909,7 +6909,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Galilée est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Galilée » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6999,7 +6999,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Isaac Newton est rattach? au rep?re g?ographique ? Angleterre ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Isaac Newton » est « Angleterre » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7089,7 +7089,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "René Descartes est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « René Descartes » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7179,7 +7179,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Élisabeth Ire est rattach? au rep?re g?ographique ? Angleterre ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Élisabeth Ire » est « Angleterre » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7269,7 +7269,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Louis XIV est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Louis XIV » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7359,7 +7359,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Pierre le Grand est rattach? au rep?re g?ographique ? Russie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Pierre le Grand » est « Russie » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7449,7 +7449,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Catherine II est rattach? au rep?re g?ographique ? Russie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Catherine II » est « Russie » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7539,7 +7539,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Voltaire est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Voltaire » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7629,7 +7629,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Montesquieu est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Montesquieu » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7719,7 +7719,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Jean-Jacques Rousseau est rattach? au rep?re g?ographique ? Genève ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Jean-Jacques Rousseau » est « Genève » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7809,7 +7809,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "George Washington est rattach? au rep?re g?ographique ? États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « George Washington » est « États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7899,7 +7899,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Napoléon Bonaparte est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Napoléon Bonaparte » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7989,7 +7989,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Simón Bolívar est rattach? au rep?re g?ographique ? Amérique du Sud ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Simón Bolívar » est « Amérique du Sud » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8079,7 +8079,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Abraham Lincoln est rattach? au rep?re g?ographique ? États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Abraham Lincoln » est « États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8169,7 +8169,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Giuseppe Garibaldi est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Giuseppe Garibaldi » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8259,7 +8259,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Otto von Bismarck est rattach? au rep?re g?ographique ? Allemagne ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Otto von Bismarck » est « Allemagne » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8349,7 +8349,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Marie Curie est rattach? au rep?re g?ographique ? France et Pologne ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Marie Curie » est « France et Pologne » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8439,7 +8439,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Albert Einstein est rattach? au rep?re g?ographique ? Allemagne et États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Albert Einstein » est « Allemagne et États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8529,7 +8529,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Ada Lovelace est rattach? au rep?re g?ographique ? Royaume-Uni ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Ada Lovelace » est « Royaume-Uni » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8619,7 +8619,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Charles Darwin est rattach? au rep?re g?ographique ? Royaume-Uni ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Charles Darwin » est « Royaume-Uni » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8709,7 +8709,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Florence Nightingale est rattach? au rep?re g?ographique ? Royaume-Uni ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Florence Nightingale » est « Royaume-Uni » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8799,7 +8799,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Mahatma Gandhi est rattach? au rep?re g?ographique ? Inde ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Mahatma Gandhi » est « Inde » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8889,7 +8889,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Nelson Mandela est rattach? au rep?re g?ographique ? Afrique du Sud ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Nelson Mandela » est « Afrique du Sud » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8979,7 +8979,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Martin Luther King Jr. est rattach? au rep?re g?ographique ? États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Martin Luther King Jr. » est « États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9069,7 +9069,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Rosa Parks est rattach? au rep?re g?ographique ? États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Rosa Parks » est « États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9159,7 +9159,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Winston Churchill est rattach? au rep?re g?ographique ? Royaume-Uni ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Winston Churchill » est « Royaume-Uni » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9249,7 +9249,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Charles de Gaulle est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Charles de Gaulle » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9339,7 +9339,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Simone Veil est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Simone Veil » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9429,7 +9429,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Frida Kahlo est rattach? au rep?re g?ographique ? Mexique ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Frida Kahlo » est « Mexique » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9519,7 +9519,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Pablo Picasso est rattach? au rep?re g?ographique ? Espagne et France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
+    "explanation": "Le repère géographique retenu pour « Pablo Picasso » est « Espagne et France » ; ce cadre aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
