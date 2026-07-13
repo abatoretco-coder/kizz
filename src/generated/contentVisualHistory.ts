@@ -13,7 +13,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "La Joconde est associee a Léonard de Vinci; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Léonard de Vinci ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -125,7 +125,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "La Nuit étoilée est associee a Vincent van Gogh; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Vincent van Gogh ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -237,7 +237,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "La Jeune Fille à la perle est associee a Johannes Vermeer; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Johannes Vermeer ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -349,7 +349,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Naissance de Vénus est associee a Sandro Botticelli; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Sandro Botticelli ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -461,7 +461,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Liberté guidant le peuple est associee a Eugène Delacroix; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Eugène Delacroix ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -573,7 +573,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Grande Vague de Kanagawa est associee a Hokusai; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Hokusai ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -685,7 +685,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Les Ménines est associee a Diego Vélasquez; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Diego Vélasquez ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -797,7 +797,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Guernica est associee a Pablo Picasso; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Pablo Picasso ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -909,7 +909,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Cri est associee a Edvard Munch; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Edvard Munch ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1021,7 +1021,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Impression, soleil levant est associee a Claude Monet; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Claude Monet ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1133,7 +1133,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "La Cène est associee a Léonard de Vinci; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Léonard de Vinci ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1245,7 +1245,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Création d’Adam est associee a Michel-Ange; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Michel-Ange ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1357,7 +1357,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Radeau de La Méduse est associee a Théodore Géricault; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Théodore Géricault ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1469,7 +1469,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Olympia est associee a Édouard Manet; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Édouard Manet ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1581,7 +1581,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Un dimanche après-midi à l’île de la Grande Jatte est associee a Georges Seurat; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Georges Seurat ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1693,7 +1693,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Les Tournesols est associee a Vincent van Gogh; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Vincent van Gogh ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1805,7 +1805,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "American Gothic est associee a Grant Wood; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Grant Wood ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1917,7 +1917,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Persistance de la mémoire est associee a Salvador Dalí; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Salvador Dalí ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2029,7 +2029,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Nighthawks est associee a Edward Hopper; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Edward Hopper ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2141,7 +2141,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Baiser est associee a Gustav Klimt; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Gustav Klimt ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2253,7 +2253,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Les Demoiselles d’Avignon est associee a Pablo Picasso; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Pablo Picasso ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2365,7 +2365,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Vénus d’Urbino est associee a Titien; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Titien ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2477,7 +2477,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Tempête est associee a Giorgione; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Giorgione ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2589,7 +2589,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Printemps est associee a Sandro Botticelli; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Sandro Botticelli ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2701,7 +2701,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "La Laitière est associee a Johannes Vermeer; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Johannes Vermeer ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2813,7 +2813,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Jardin des délices est associee a Jérôme Bosch; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Jérôme Bosch ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2903,7 +2903,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Les Ambassadeurs est associee a Hans Holbein le Jeune; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Hans Holbein le Jeune ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2993,7 +2993,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Ronde de nuit est associee a Rembrandt; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Rembrandt ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3083,7 +3083,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Saturne dévorant un de ses fils est associee a Francisco de Goya; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Francisco de Goya ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3173,7 +3173,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Déjeuner sur l’herbe est associee a Édouard Manet; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Édouard Manet ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3263,7 +3263,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Bal du moulin de la Galette est associee a Auguste Renoir; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Auguste Renoir ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3353,7 +3353,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Classe de danse est associee a Edgar Degas; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Edgar Degas ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3443,7 +3443,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Les Joueurs de cartes est associee a Paul Cézanne; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Paul Cézanne ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3533,7 +3533,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Mont Sainte-Victoire est associee a Paul Cézanne; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Paul Cézanne ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3623,7 +3623,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Douanier Rousseau, Le Rêve est associee a Henri Rousseau; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Henri Rousseau ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3713,7 +3713,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Composition VIII est associee a Vassily Kandinsky; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Vassily Kandinsky ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3803,7 +3803,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Carré noir est associee a Kasimir Malevitch; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Kasimir Malevitch ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3893,7 +3893,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Broadway Boogie-Woogie est associee a Piet Mondrian; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Piet Mondrian ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3983,7 +3983,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Les Époux Arnolfini est associee a Jan van Eyck; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Jan van Eyck ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4073,7 +4073,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Bataille de San Romano est associee a Paolo Uccello; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Paolo Uccello ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4163,7 +4163,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Flagellation du Christ est associee a Piero della Francesca; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Piero della Francesca ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4253,7 +4253,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Madone Sixtine est associee a Raphaël; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Raphaël ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4343,7 +4343,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Mort de Marat est associee a Jacques-Louis David; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Jacques-Louis David ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4433,7 +4433,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Serment des Horaces est associee a Jacques-Louis David; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Jacques-Louis David ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4523,7 +4523,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Grande Odalisque est associee a Jean-Auguste-Dominique Ingres; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Jean-Auguste-Dominique Ingres ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4613,7 +4613,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "La Liberté ou la Mort est associee a Jean-Baptiste Regnault; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Jean-Baptiste Regnault ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4703,7 +4703,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Voyageur contemplant une mer de nuages est associee a Caspar David Friedrich; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Caspar David Friedrich ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4793,7 +4793,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Pluie, Vapeur et Vitesse est associee a William Turner; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? William Turner ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4883,7 +4883,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Le Monde de Christina est associee a Andrew Wyeth; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Andrew Wyeth ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4973,7 +4973,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Autoportrait au collier d’épines est associee a Frida Kahlo; l image sert de repere visuel pour relier oeuvre et auteur.",
+    "explanation": "Cette ?uvre est associ?e ? Frida Kahlo ; l?image sert de rep?re visuel pour relier ?uvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -5109,7 +5109,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Cléopâtre VII est rattache ici a Égypte antique; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Cléopâtre VII est rattach? au rep?re g?ographique ? Égypte antique ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5199,7 +5199,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Jules César est rattache ici a Rome antique; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Jules César est rattach? au rep?re g?ographique ? Rome antique ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5289,7 +5289,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Auguste est rattache ici a Rome antique; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Auguste est rattach? au rep?re g?ographique ? Rome antique ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5379,7 +5379,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Périclès est rattache ici a Athènes; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Périclès est rattach? au rep?re g?ographique ? Athènes ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5469,7 +5469,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Hannibal Barca est rattache ici a Carthage; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Hannibal Barca est rattach? au rep?re g?ographique ? Carthage ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5559,7 +5559,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Alexandre le Grand est rattache ici a Macédoine; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Alexandre le Grand est rattach? au rep?re g?ographique ? Macédoine ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5649,7 +5649,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Socrate est rattache ici a Grèce; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Socrate est rattach? au rep?re g?ographique ? Grèce ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5739,7 +5739,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Platon est rattache ici a Grèce; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Platon est rattach? au rep?re g?ographique ? Grèce ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5829,7 +5829,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Aristote est rattache ici a Grèce; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Aristote est rattach? au rep?re g?ographique ? Grèce ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5919,7 +5919,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Charlemagne est rattache ici a Empire carolingien; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Charlemagne est rattach? au rep?re g?ographique ? Empire carolingien ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6009,7 +6009,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Aliénor d’Aquitaine est rattache ici a France et Angleterre; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Aliénor d’Aquitaine est rattach? au rep?re g?ographique ? France et Angleterre ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6099,7 +6099,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Jeanne d’Arc est rattache ici a France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Jeanne d’Arc est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6189,7 +6189,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Saladin est rattache ici a monde musulman; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Saladin est rattach? au rep?re g?ographique ? monde musulman ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6279,7 +6279,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Gengis Khan est rattache ici a Mongolie; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Gengis Khan est rattach? au rep?re g?ographique ? Mongolie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6369,7 +6369,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Marco Polo est rattache ici a Venise; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Marco Polo est rattach? au rep?re g?ographique ? Venise ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6459,7 +6459,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Mehmed II est rattache ici a Empire ottoman; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Mehmed II est rattach? au rep?re g?ographique ? Empire ottoman ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6549,7 +6549,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Léonard de Vinci est rattache ici a Italie; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Léonard de Vinci est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6639,7 +6639,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Michel-Ange est rattache ici a Italie; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Michel-Ange est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6729,7 +6729,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Raphaël est rattache ici a Italie; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Raphaël est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6819,7 +6819,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Nicolas Copernic est rattache ici a Pologne; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Nicolas Copernic est rattach? au rep?re g?ographique ? Pologne ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6909,7 +6909,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Galilée est rattache ici a Italie; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Galilée est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6999,7 +6999,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Isaac Newton est rattache ici a Angleterre; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Isaac Newton est rattach? au rep?re g?ographique ? Angleterre ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7089,7 +7089,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "René Descartes est rattache ici a France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "René Descartes est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7179,7 +7179,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Élisabeth Ire est rattache ici a Angleterre; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Élisabeth Ire est rattach? au rep?re g?ographique ? Angleterre ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7269,7 +7269,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Louis XIV est rattache ici a France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Louis XIV est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7359,7 +7359,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Pierre le Grand est rattache ici a Russie; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Pierre le Grand est rattach? au rep?re g?ographique ? Russie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7449,7 +7449,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Catherine II est rattache ici a Russie; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Catherine II est rattach? au rep?re g?ographique ? Russie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7539,7 +7539,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Voltaire est rattache ici a France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Voltaire est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7629,7 +7629,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Montesquieu est rattache ici a France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Montesquieu est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7719,7 +7719,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Jean-Jacques Rousseau est rattache ici a Genève; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Jean-Jacques Rousseau est rattach? au rep?re g?ographique ? Genève ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7809,7 +7809,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "George Washington est rattache ici a États-Unis; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "George Washington est rattach? au rep?re g?ographique ? États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7899,7 +7899,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Napoléon Bonaparte est rattache ici a France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Napoléon Bonaparte est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7989,7 +7989,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Simón Bolívar est rattache ici a Amérique du Sud; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Simón Bolívar est rattach? au rep?re g?ographique ? Amérique du Sud ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8079,7 +8079,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Abraham Lincoln est rattache ici a États-Unis; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Abraham Lincoln est rattach? au rep?re g?ographique ? États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8169,7 +8169,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Giuseppe Garibaldi est rattache ici a Italie; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Giuseppe Garibaldi est rattach? au rep?re g?ographique ? Italie ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8259,7 +8259,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Otto von Bismarck est rattache ici a Allemagne; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Otto von Bismarck est rattach? au rep?re g?ographique ? Allemagne ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8349,7 +8349,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Marie Curie est rattache ici a France et Pologne; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Marie Curie est rattach? au rep?re g?ographique ? France et Pologne ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8439,7 +8439,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Albert Einstein est rattache ici a Allemagne et États-Unis; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Albert Einstein est rattach? au rep?re g?ographique ? Allemagne et États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8529,7 +8529,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Ada Lovelace est rattache ici a Royaume-Uni; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Ada Lovelace est rattach? au rep?re g?ographique ? Royaume-Uni ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8619,7 +8619,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Charles Darwin est rattache ici a Royaume-Uni; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Charles Darwin est rattach? au rep?re g?ographique ? Royaume-Uni ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8709,7 +8709,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Florence Nightingale est rattache ici a Royaume-Uni; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Florence Nightingale est rattach? au rep?re g?ographique ? Royaume-Uni ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8799,7 +8799,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Mahatma Gandhi est rattache ici a Inde; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Mahatma Gandhi est rattach? au rep?re g?ographique ? Inde ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8889,7 +8889,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Nelson Mandela est rattache ici a Afrique du Sud; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Nelson Mandela est rattach? au rep?re g?ographique ? Afrique du Sud ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8979,7 +8979,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Martin Luther King Jr. est rattache ici a États-Unis; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Martin Luther King Jr. est rattach? au rep?re g?ographique ? États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9069,7 +9069,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Rosa Parks est rattache ici a États-Unis; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Rosa Parks est rattach? au rep?re g?ographique ? États-Unis ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9159,7 +9159,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Winston Churchill est rattache ici a Royaume-Uni; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Winston Churchill est rattach? au rep?re g?ographique ? Royaume-Uni ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9249,7 +9249,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Charles de Gaulle est rattache ici a France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Charles de Gaulle est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9339,7 +9339,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Simone Veil est rattache ici a France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Simone Veil est rattach? au rep?re g?ographique ? France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9429,7 +9429,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Frida Kahlo est rattache ici a Mexique; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Frida Kahlo est rattach? au rep?re g?ographique ? Mexique ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9519,7 +9519,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Pablo Picasso est rattache ici a Espagne et France; ce cadre geographique aide a replacer le personnage dans son histoire.",
+    "explanation": "Pablo Picasso est rattach? au rep?re g?ographique ? Espagne et France ? ; ce cadre aide ? replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
