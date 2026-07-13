@@ -179,7 +179,7 @@ export const visualRecognitionQuestions: QuestionSeed[] = [
     topicId: 'architecture',
     difficulty: 1,
     prompt: 'Quel bâtiment reconnais-tu sur cette image ?',
-    choices: ['Notre-Dame de Paris', 'La cathédrale de Chartres', 'Le Panthéon', 'Le Sacré-Coeur'],
+    choices: ['Notre-Dame de Paris', 'La cathédrale de Chartres', 'Le Panthéon', 'Le Sacré-Cœur'],
     answerIndex: 0,
     explanation: 'La façade à deux tours est l’un des repères visuels de Notre-Dame de Paris.',
     tags: ['architecture', 'édifice', 'france', 'image', 'subtheme:architecture:buildings'],

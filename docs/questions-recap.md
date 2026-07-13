@@ -8,7 +8,7 @@ G?n?r? le 2026-07-13 depuis `src/content.ts`.
 - Questions avec image: 805
 - Questions sans image: 6027
 - Questions OpenTDB int?gr?es: 3950
-- R?partition des bonnes r?ponses QCM A/B/C/D: 1592 / 1592 / 1592 / 1591
+- R?partition des bonnes r?ponses QCM A/B/C/D: 1592 / 1591 / 1592 / 1592
 - Revue qualit?: 6811 sans signalement, 21 avertissement(s), 0 erreur(s)
 - D?tail complet: `docs/questions-recap.csv`
 
@@ -46,34 +46,14 @@ G?n?r? le 2026-07-13 depuis `src/content.ts`.
 | OpenTDB - Anime et manga | 148 | 0 | 148 | 39 | 74 | 35 | multiple-choice: 148 | 4 |
 | OpenTDB - Animation | 49 | 0 | 49 | 13 | 22 | 14 | multiple-choice: 49 | 4 |
 | Carte France | 271 | 0 | 271 | 50 | 121 | 100 | map-point: 30, multiple-choice: 232, free-text: 9 | 4 |
-| Nature | 118 | 93 | 25 | 55 | 50 | 13 | multiple-choice: 113, free-text: 5 | 5 |
+| Nature | 118 | 93 | 25 | 55 | 32 | 31 | multiple-choice: 113, free-text: 5 | 5 |
 | Technologie | 23 | 0 | 23 | 8 | 9 | 6 | multiple-choice: 20, free-text: 3 | 4 |
 | Cinéma | 23 | 0 | 23 | 8 | 9 | 6 | multiple-choice: 20, free-text: 3 | 5 |
-| Architecture | 303 | 273 | 30 | 101 | 153 | 49 | multiple-choice: 293, free-text: 10 | 4 |
+| Architecture | 303 | 273 | 30 | 96 | 158 | 49 | multiple-choice: 293, free-text: 10 | 4 |
 
 ## Avertissements restants
 
-- OpenTDB - Animaux: 1
-- OpenTDB - Animation: 1
-- OpenTDB - Anime et manga: 1
-- OpenTDB - Arts: 1
-- OpenTDB - Jeux de société: 1
-- OpenTDB - Livres: 1
-- OpenTDB - Comics: 1
-- OpenTDB - Informatique: 1
-- OpenTDB - Cinéma: 1
-- OpenTDB - Jeux vidéo: 1
-- OpenTDB - Culture générale: 1
-- OpenTDB - Géographie: 1
-- OpenTDB - Histoire: 1
-- OpenTDB - Mathématiques: 1
-- OpenTDB - Musique: 1
-- OpenTDB - Mythologie: 1
-- OpenTDB - Politique: 1
-- OpenTDB - Sciences et nature: 1
-- OpenTDB - Sport: 1
-- OpenTDB - Télévision: 1
-- OpenTDB - Véhicules: 1
+- undefined: 21
 
 ## Colonnes du CSV
 

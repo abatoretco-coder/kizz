@@ -309,7 +309,7 @@ export const openTdbQuestions = [
     "prompt": "Le foie gras est un mets français typiquement fabriqué à partir de quelle partie d'un canard ou d'une oie ?",
     "choices": [
       "Foie",
-      "Coeur",
+      "Cœur",
       "Estomac",
       "Intestins"
     ],
@@ -7420,11 +7420,11 @@ export const openTdbQuestions = [
     "choices": [
       "Pique",
       "Diamants",
-      "Coeurs",
+      "Cœurs",
       "Clubs"
     ],
     "answerIndex": 2,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Coeurs ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Cœurs ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -22241,7 +22241,7 @@ export const openTdbQuestions = [
       "Je ne peux m'empêcher de tomber amoureux",
       "Rocher de la prison",
       "Dans le ghetto",
-      "Coeur en bois"
+      "Cœur en bois"
     ],
     "answerIndex": 0,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « Je ne peux m'empêcher de tomber amoureux ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -22841,7 +22841,7 @@ export const openTdbQuestions = [
       "La Révolution",
       "Les pauvres",
       "Les pleurnichards",
-      "Les briseurs de coeur"
+      "Les briseurs de cœur"
     ],
     "answerIndex": 0,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « La Révolution ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -23649,12 +23649,12 @@ export const openTdbQuestions = [
     "prompt": "Laquelle des chansons suivantes n’a pas été initialement publiée par Sir Elton John ?",
     "choices": [
       "Rocher aux crocodiles",
-      "Tu seras dans mon coeur",
+      "Tu seras dans mon cœur",
       "Bougie dans le vent",
       "Je ne veux pas continuer avec toi comme ça"
     ],
     "answerIndex": 1,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Tu seras dans mon coeur ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Tu seras dans mon cœur ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -24971,7 +24971,7 @@ export const openTdbQuestions = [
       "Ummagumma",
       "Plus",
       "Le joueur de cornemuse aux portes de l'aube",
-      "Mère Coeur Atome"
+      "Mère Cœur Atome"
     ],
     "answerIndex": 2,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « Le joueur de cornemuse aux portes de l'aube ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -28241,7 +28241,7 @@ export const openTdbQuestions = [
       "Bienvenue à Heartbreak",
       "Lampadaires",
       "Dis que tu le feras",
-      "Sans coeur"
+      "Sans cœur"
     ],
     "answerIndex": 2,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « Dis que tu le feras ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -40058,7 +40058,7 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Quelle est la chanson thème principale de « Sonic Adventure 2 » ?",
     "choices": [
-      "Ouvre ton coeur",
+      "Ouvre ton cœur",
       "Pouvez-vous sentir le soleil ?",
       "Son monde",
       "Vivre et apprendre"
@@ -45819,12 +45819,12 @@ export const openTdbQuestions = [
     "prompt": "À quel genre le Touhou Project est-il associé ?",
     "choices": [
       "Stratégie au tour par tour",
-      "Tirez-les (bullet-hell) et combats",
+      "Shoot ’em up (bullet hell) et combat",
       "MMORPG",
       "Bâtiment"
     ],
     "answerIndex": 1,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Tirez-les (bullet-hell) et combats ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Shoot ’em up (bullet hell) et combat ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -50376,9 +50376,9 @@ export const openTdbQuestions = [
     "topicId": "opentdb-games",
     "difficulty": 1,
     "type": "multiple-choice",
-    "prompt": "Dans \"A Hat in Time\", que doit collecter Hat Kid pour terminer un niveau",
+    "prompt": "Dans \"A Hat in Time\", que doit collecter Hat Kid pour terminer un niveau ?",
     "choices": [
-      "Un fragment de coeur",
+      "Un fragment de cœur",
       "Une pièce d'horlogerie",
       "Un fragment de relique",
       "Un chapeau"
@@ -55716,15 +55716,15 @@ export const openTdbQuestions = [
     "topicId": "opentdb-games",
     "difficulty": 2,
     "type": "multiple-choice",
-    "prompt": "Dans WarioWare : Smooth Moves, lequel de ces éléments n'est PAS un formulaire ?",
+    "prompt": "Dans WarioWare : Smooth Moves, lequel de ces éléments n'est PAS une forme ?",
     "choices": [
       "Le rejet",
       "L'éléphant",
       "Le Mohawk",
-      "Le coup de coeur"
+      "Le coup de cœur"
     ],
     "answerIndex": 3,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Le coup de coeur ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Le coup de cœur ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -56288,13 +56288,13 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "À quel genre la série de jeux Touhou Project est-elle souvent associée ?",
     "choices": [
-      "Tirez-les dessus",
+      "Shoot ’em up",
       "Stratégie",
       "FPS",
       "Décontracté"
     ],
     "answerIndex": 0,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Tirez-les dessus ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Shoot ’em up ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -61570,11 +61570,11 @@ export const openTdbQuestions = [
     "choices": [
       "Pointer et cliquer",
       "MMORPG",
-      "Tirez-les dessus",
+      "Shoot ’em up",
       "Simulations"
     ],
     "answerIndex": 2,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Tirez-les dessus ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Shoot ’em up ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -64178,7 +64178,7 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Le premier jeu du Touhou Project, \"Highly Responsive to Prayers\", appartient à quel genre ?",
     "choices": [
-      "Tirez-les dessus",
+      "Shoot ’em up",
       "Casse-tête",
       "Évasion/Arkanoïde",
       "Combattant"
@@ -66009,12 +66009,12 @@ export const openTdbQuestions = [
     "prompt": "Quelle forme de lecteur a été ajoutée dans Kingdom Hearts II Final Mix ?",
     "choices": [
       "Forme de valeur",
-      "Formulaire de limite",
+      "Forme Limite",
       "Forme de sagesse",
       "Anti-forme"
     ],
     "answerIndex": 1,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Formulaire de limite ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Forme Limite ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -71321,7 +71321,7 @@ export const openTdbQuestions = [
       "Peau",
       "Os",
       "Cerveau",
-      "Coeur"
+      "Cœur"
     ],
     "answerIndex": 1,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « Os ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -71439,7 +71439,7 @@ export const openTdbQuestions = [
     "prompt": "Qu’est-ce qui provoque le bruit d’un battement de cœur ?",
     "choices": [
       "Contraction des cavités cardiaques",
-      "Sang sortant du coeur",
+      "Sang sortant du cœur",
       "Relaxation des cavités cardiaques",
       "Fermeture des valvules cardiaques"
     ],
@@ -72641,7 +72641,7 @@ export const openTdbQuestions = [
       "Cerveau",
       "Poumons",
       "Peau",
-      "Coeur"
+      "Cœur"
     ],
     "answerIndex": 0,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « Cerveau ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -108606,7 +108606,7 @@ export const openTdbQuestions = [
     "topicId": "opentdb-animals",
     "difficulty": 2,
     "type": "multiple-choice",
-    "prompt": "Les « décapodes » sont un ordre de crustacés à dix pattes.  Lesquels de ces éléments ne sont PAS des décapodes ?",
+    "prompt": "Les « décapodes » sont un ordre de crustacés à dix pattes. Lesquels de ces éléments ne sont PAS des décapodes ?",
     "choices": [
       "Homards",
       "Crevette",

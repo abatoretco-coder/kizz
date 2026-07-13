@@ -13,7 +13,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal se reconnaît notamment par mausolée de marbre blanc.",
+    "explanation": "Le Taj Mahal se reconnaît notamment à son mausolée de marbre blanc.",
     "tags": [
       "architecture",
       "image",
@@ -141,7 +141,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 0,
-    "explanation": "Angkor Vat se reconnaît notamment par temple monumental khmer.",
+    "explanation": "Angkor Vat se reconnaît notamment à son temple monumental khmer.",
     "tags": [
       "architecture",
       "image",
@@ -234,7 +234,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 0,
-    "explanation": "Petra se reconnaît notamment par façades taillées dans la roche.",
+    "explanation": "Petra se reconnaît notamment à ses façades taillées dans la roche.",
     "tags": [
       "architecture",
       "image",
@@ -362,7 +362,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Machu Picchu se reconnaît notamment par cité andine en terrasses.",
+    "explanation": "Machu Picchu se reconnaît notamment à sa cité andine en terrasses.",
     "tags": [
       "architecture",
       "image",
@@ -455,7 +455,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza se reconnaît notamment par pyramide a degrés mésoaméricaine.",
+    "explanation": "Chichen Itza se reconnaît notamment à sa pyramide à degrés mésoaméricaine.",
     "tags": [
       "architecture",
       "image",
@@ -583,7 +583,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Christ Rédempteur se reconnaît notamment par statue dominant la baie de Rio.",
+    "explanation": "Le Christ Rédempteur se reconnaît notamment à sa statue dominant la baie de Rio.",
     "tags": [
       "architecture",
       "image",
@@ -676,7 +676,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Opéra de Sydney se reconnaît notamment par toitures en coques blanches.",
+    "explanation": "L’Opéra de Sydney se reconnaît notamment à ses toitures en coques blanches.",
     "tags": [
       "architecture",
       "image",
@@ -804,7 +804,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Burj Khalifa se reconnaît notamment par plus haute tour du monde.",
+    "explanation": "Burj Khalifa se reconnaît notamment à sa silhouette de très haute tour.",
     "tags": [
       "architecture",
       "image",
@@ -897,7 +897,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building se reconnaît notamment par gratte-ciel new-yorkais des années 1930.",
+    "explanation": "L’Empire State Building se reconnaît notamment à son profil de gratte-ciel new-yorkais des années 1930.",
     "tags": [
       "architecture",
       "image",
@@ -1025,7 +1025,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge se reconnaît notamment par pont orange sur le detroit.",
+    "explanation": "Le Golden Gate Bridge se reconnaît notamment à son pont orange sur le détroit.",
     "tags": [
       "architecture",
       "image",
@@ -1118,7 +1118,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Tower Bridge se reconnaît notamment par pont basculant a deux tours.",
+    "explanation": "Tower Bridge se reconnaît notamment à son pont basculant à deux tours.",
     "tags": [
       "architecture",
       "image",
@@ -1246,7 +1246,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Big Ben se reconnaît notamment par tour horloge du palais de Westminster.",
+    "explanation": "Big Ben se reconnaît notamment à sa tour horloge du palais de Westminster.",
     "tags": [
       "architecture",
       "image",
@@ -1339,7 +1339,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge se reconnaît notamment par cercle de pierres préhistoriques.",
+    "explanation": "Stonehenge se reconnaît notamment à son cercle de pierres préhistoriques.",
     "tags": [
       "architecture",
       "image",
@@ -1467,7 +1467,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Mont-Saint-Michel se reconnaît notamment par abbaye sur ilot rocheux.",
+    "explanation": "Le Mont-Saint-Michel se reconnaît notamment à son abbaye sur îlot rocheux.",
     "tags": [
       "architecture",
       "image",
@@ -1560,7 +1560,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Château de Chambord se reconnaît notamment par château royal aux toits complexes.",
+    "explanation": "Le château de Chambord se reconnaît notamment à ses toits complexes de résidence royale.",
     "tags": [
       "architecture",
       "image",
@@ -1688,7 +1688,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Pont du Gard se reconnaît notamment par aqueduc antique a trois niveaux.",
+    "explanation": "Le Pont du Gard se reconnaît notamment à son aqueduc antique à trois niveaux.",
     "tags": [
       "architecture",
       "image",
@@ -1781,7 +1781,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Cathédrale de Chartres se reconnaît notamment par cathédrale aux vitraux célèbres.",
+    "explanation": "La cathédrale de Chartres se reconnaît notamment à ses vitraux célèbres.",
     "tags": [
       "architecture",
       "image",
@@ -1909,7 +1909,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique du Sacré-Cœur se reconnaît notamment par basilique blanche de Montmartre.",
+    "explanation": "La basilique du Sacré-Cœur se reconnaît notamment à sa silhouette blanche sur Montmartre.",
     "tags": [
       "architecture",
       "image",
@@ -2002,7 +2002,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Arc de triomphe se reconnaît notamment par monument au centre de l Etoile.",
+    "explanation": "L’Arc de triomphe se reconnaît notamment à son monument au centre de l’Étoile.",
     "tags": [
       "architecture",
       "image",
@@ -2130,7 +2130,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Musée du Louvre se reconnaît notamment par ancien palais royal devenu musée.",
+    "explanation": "Le musée du Louvre se reconnaît notamment à son ancien palais royal devenu musée.",
     "tags": [
       "architecture",
       "image",
@@ -2223,7 +2223,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles se reconnaît notamment par résidence royale de Louis XIV.",
+    "explanation": "Le palais de Versailles se reconnaît notamment à son rôle de résidence royale de Louis XIV.",
     "tags": [
       "architecture",
       "image",
@@ -2351,7 +2351,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Alhambra se reconnaît notamment par palais fortifie andalou.",
+    "explanation": "L’Alhambra se reconnaît notamment à son palais fortifié andalou.",
     "tags": [
       "architecture",
       "image",
@@ -2444,7 +2444,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Guggenheim Bilbao se reconnaît notamment par musée aux volumes de titane.",
+    "explanation": "Le Guggenheim Bilbao se reconnaît notamment à ses volumes de titane.",
     "tags": [
       "architecture",
       "image",
@@ -2572,7 +2572,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Duomo de Milan se reconnaît notamment par cathédrale aux nombreuses fleches.",
+    "explanation": "Le Duomo de Milan se reconnaît notamment à ses nombreuses flèches.",
     "tags": [
       "architecture",
       "image",
@@ -2589,7 +2589,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-024-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quelle ville ou zone correspond à ce repère architectural : cathédrale aux nombreuses fleches ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : cathédrale aux nombreuses flèches ?",
     "choices": [
       "Milan",
       "Agra",
@@ -2665,7 +2665,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre se reconnaît notamment par grande basilique de la cité du Vatican.",
+    "explanation": "La basilique Saint-Pierre se reconnaît notamment à sa grande nef de la cité du Vatican.",
     "tags": [
       "architecture",
       "image",
@@ -2793,7 +2793,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Tour de Pise se reconnaît notamment par campanile penche.",
+    "explanation": "La tour de Pise se reconnaît notamment à son campanile penché.",
     "tags": [
       "architecture",
       "image",
@@ -2877,7 +2877,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-027-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Panthéon de Rome",
@@ -2886,7 +2886,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Panthéon de Rome se reconnaît notamment par coupole antique à oculus.",
+    "explanation": "Le Panthéon de Rome se reconnaît notamment à sa coupole antique à oculus.",
     "tags": [
       "architecture",
       "image",
@@ -3014,7 +3014,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Hagia Sophia se reconnaît notamment par ancienne basilique à grande coupole.",
+    "explanation": "Hagia Sophia se reconnaît notamment à son ancienne basilique à grande coupole.",
     "tags": [
       "architecture",
       "image",
@@ -3107,7 +3107,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquée bleue se reconnaît notamment par mosquée aux six minarets.",
+    "explanation": "La Mosquée bleue se reconnaît notamment à ses six minarets.",
     "tags": [
       "architecture",
       "image",
@@ -3235,7 +3235,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Acropole d’Athènes se reconnaît notamment par plateau monumental dominant Athènes.",
+    "explanation": "L’Acropole d’Athènes se reconnaît notamment à son plateau monumental dominant Athènes.",
     "tags": [
       "architecture",
       "image",
@@ -3328,7 +3328,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Météores se reconnaît notamment par monasteres poses sur des pitons rocheux.",
+    "explanation": "Les Météores se reconnaissent notamment à leurs monastères posés sur des pitons rocheux.",
     "tags": [
       "architecture",
       "image",
@@ -3421,7 +3421,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Kremlin de Moscou"
     ],
     "answerIndex": 2,
-    "explanation": "Météores correspond au repère visuel : monasteres poses sur des pitons rocheux.",
+    "explanation": "Météores correspond au repère visuel : monastères posés sur des pitons rocheux.",
     "tags": [
       "architecture",
       "image-choice",
@@ -3456,7 +3456,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Kremlin de Moscou se reconnaît notamment par enceinte historique au coeur de Moscou.",
+    "explanation": "Le Kremlin de Moscou se reconnaît notamment à son enceinte historique au cœur de Moscou.",
     "tags": [
       "architecture",
       "image",
@@ -3549,7 +3549,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Cathédrale Saint-Basile se reconnaît notamment par coupoles colorees sur la place Rouge.",
+    "explanation": "La cathédrale Saint-Basile se reconnaît notamment à ses coupoles colorées sur la place Rouge.",
     "tags": [
       "architecture",
       "image",
@@ -3642,7 +3642,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Atomium"
     ],
     "answerIndex": 0,
-    "explanation": "Cathédrale Saint-Basile correspond au repère visuel : coupoles colorees sur la place Rouge.",
+    "explanation": "Cathédrale Saint-Basile correspond au repère visuel : coupoles colorées sur la place Rouge.",
     "tags": [
       "architecture",
       "image-choice",
@@ -3677,7 +3677,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Neuschwanstein se reconnaît notamment par château romantique bavarois.",
+    "explanation": "Neuschwanstein se reconnaît notamment à son château romantique bavarois.",
     "tags": [
       "architecture",
       "image",
@@ -3761,7 +3761,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-035-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Porte de Brandebourg",
@@ -3770,7 +3770,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Porte de Brandebourg se reconnaît notamment par porte monumentale berlinoise.",
+    "explanation": "La porte de Brandebourg se reconnaît notamment à sa porte monumentale berlinoise.",
     "tags": [
       "architecture",
       "image",
@@ -3889,7 +3889,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-036-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Atomium",
@@ -3898,7 +3898,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Atomium se reconnaît notamment par structure metallique en forme de maille cristalline.",
+    "explanation": "L’Atomium se reconnaît notamment à sa structure métallique en forme de maille cristalline.",
     "tags": [
       "architecture",
       "image",
@@ -3991,7 +3991,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest se reconnaît notamment par grand bâtiment au bord du Danube.",
+    "explanation": "Le Parlement de Budapest se reconnaît notamment à son grand bâtiment au bord du Danube.",
     "tags": [
       "architecture",
       "image",
@@ -4119,7 +4119,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Sainte-Sophie de Kiev se reconnaît notamment par cathédrale historique à coupoles.",
+    "explanation": "Sainte-Sophie de Kiev se reconnaît notamment à sa cathédrale historique à coupoles.",
     "tags": [
       "architecture",
       "image",
@@ -4212,7 +4212,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Sagrada Familia se reconnaît notamment par basilique aux tours organiques de Gaudi.",
+    "explanation": "La Sagrada Família se reconnaît notamment à ses tours organiques de Gaudí.",
     "tags": [
       "architecture",
       "image",
@@ -4340,7 +4340,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater se reconnaît notamment par maison construite au-dessus d une cascade.",
+    "explanation": "Fallingwater se reconnaît notamment à sa maison construite au-dessus d’une cascade.",
     "tags": [
       "architecture",
       "image",
@@ -4433,7 +4433,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda se reconnaît notamment par villa palladienne à plan central.",
+    "explanation": "La Villa Rotonda se reconnaît notamment à son plan central palladien.",
     "tags": [
       "architecture",
       "image",
@@ -4561,7 +4561,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Bauhaus Dessau se reconnaît notamment par école moderniste aux façades vitrées.",
+    "explanation": "Le Bauhaus Dessau se reconnaît notamment à son école moderniste aux façades vitrées.",
     "tags": [
       "architecture",
       "image",
@@ -4645,7 +4645,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-043-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Centre Pompidou",
@@ -4654,7 +4654,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Centre Pompidou se reconnaît notamment par bâtiment aux tuyaux et structures apparents.",
+    "explanation": "Le Centre Pompidou se reconnaît notamment à ses tuyaux et structures apparents.",
     "tags": [
       "architecture",
       "image",
@@ -4782,7 +4782,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Bibliothèque Sainte-Geneviève se reconnaît notamment par bibliothèque parisienne à grande salle de lecture.",
+    "explanation": "La bibliothèque Sainte-Geneviève se reconnaît notamment à sa grande salle de lecture parisienne.",
     "tags": [
       "architecture",
       "image",
@@ -4875,7 +4875,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Musée d’Orsay se reconnaît notamment par ancienne gare transformee en musée.",
+    "explanation": "Le musée d’Orsay se reconnaît notamment à son ancienne gare transformée en musée.",
     "tags": [
       "architecture",
       "image",
@@ -4968,7 +4968,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Gardens by the Bay"
     ],
     "answerIndex": 0,
-    "explanation": "Musée d’Orsay correspond au repère visuel : ancienne gare transformee en musée.",
+    "explanation": "Musée d’Orsay correspond au repère visuel : ancienne gare transformée en musée.",
     "tags": [
       "architecture",
       "image-choice",
@@ -5003,7 +5003,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Louvre Abu Dhabi se reconnaît notamment par musée sous un dôme ajouré.",
+    "explanation": "Le Louvre Abu Dhabi se reconnaît notamment à son dôme ajouré.",
     "tags": [
       "architecture",
       "image",
@@ -5096,7 +5096,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Marina Bay Sands se reconnaît notamment par trois tours reliees par une terrasse.",
+    "explanation": "Marina Bay Sands se reconnaît notamment à ses trois tours reliées par une terrasse.",
     "tags": [
       "architecture",
       "image",
@@ -5189,7 +5189,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Gardens by the Bay"
     ],
     "answerIndex": 2,
-    "explanation": "Marina Bay Sands correspond au repère visuel : trois tours reliees par une terrasse.",
+    "explanation": "Marina Bay Sands correspond au repère visuel : trois tours reliées par une terrasse.",
     "tags": [
       "architecture",
       "image-choice",
@@ -5224,7 +5224,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Gardens by the Bay se reconnaît notamment par supertrees lumineux et serres geantes.",
+    "explanation": "Gardens by the Bay se reconnaît notamment à ses supertrees lumineux et ses serres géantes.",
     "tags": [
       "architecture",
       "image",
@@ -5308,7 +5308,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
   {
     "id": "landmark-049-identify",
     "topicId": "architecture",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Tour CN",
@@ -5317,7 +5317,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN se reconnaît notamment par tour fine dominant Toronto.",
+    "explanation": "La tour CN se reconnaît notamment à sa silhouette fine dominant Toronto.",
     "tags": [
       "architecture",
       "image",
@@ -5445,7 +5445,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Biosphère de Montréal se reconnaît notamment par dôme géodésique de Buckminster Fuller.",
+    "explanation": "La Biosphère de Montréal se reconnaît notamment à son dôme géodésique de Buckminster Fuller.",
     "tags": [
       "architecture",
       "image",
@@ -5538,7 +5538,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Lotus Temple se reconnaît notamment par temple en forme de fleur de lotus.",
+    "explanation": "Le Lotus Temple se reconnaît notamment à sa forme de fleur de lotus.",
     "tags": [
       "architecture",
       "image",
@@ -5666,7 +5666,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Temple d’Or se reconnaît notamment par sanctuaire dore entoure d eau.",
+    "explanation": "Le Temple d’Or se reconnaît notamment à son sanctuaire doré entouré d’eau.",
     "tags": [
       "architecture",
       "image",
@@ -5759,7 +5759,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur se reconnaît notamment par temple en terrasses avec stupas.",
+    "explanation": "Borobudur se reconnaît notamment à son temple en terrasses avec stupas.",
     "tags": [
       "architecture",
       "image",
@@ -5887,7 +5887,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Kinkaku-ji se reconnaît notamment par pavillon dore au bord d un etang.",
+    "explanation": "Kinkaku-ji se reconnaît notamment à son pavillon doré au bord d’un étang.",
     "tags": [
       "architecture",
       "image",
@@ -5980,7 +5980,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Château de Himeji se reconnaît notamment par château blanc surnommé héron blanc.",
+    "explanation": "Le château de Himeji se reconnaît notamment à son château blanc surnommé héron blanc.",
     "tags": [
       "architecture",
       "image",
@@ -6108,7 +6108,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung se reconnaît notamment par palais royal de la dynastie Joseon.",
+    "explanation": "Gyeongbokgung se reconnaît notamment à son palais royal de la dynastie Joseon.",
     "tags": [
       "architecture",
       "image",
@@ -6201,7 +6201,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala se reconnaît notamment par palais monumental sur colline.",
+    "explanation": "Le palais du Potala se reconnaît notamment à son palais monumental sur colline.",
     "tags": [
       "architecture",
       "image",
@@ -6329,7 +6329,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Grande Muraille de Chine se reconnaît notamment par longue muraille défensive.",
+    "explanation": "La Grande Muraille de Chine se reconnaît notamment à sa longue muraille défensive.",
     "tags": [
       "architecture",
       "image",
@@ -6422,7 +6422,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Temple du Ciel se reconnaît notamment par complexe rituel impérial circulaire.",
+    "explanation": "Le Temple du Ciel se reconnaît notamment à son complexe rituel impérial circulaire.",
     "tags": [
       "architecture",
       "image",

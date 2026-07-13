@@ -1038,8 +1038,19 @@ function flagDifficulty(country: string): 1 | 2 | 3 {
   return 3;
 }
 
+function flagCountryArticle(country: string) {
+  const normalized = normalizeCountry(country);
+  if (normalized === 'Etats-Unis') return `des ${country}`;
+  if (normalized === 'Emirats arabes unis') return `des ${country}`;
+  if (normalized === 'Pays-Bas') return `des ${country}`;
+  if (normalized === 'Perou') return `du ${country}`;
+  if (normalized === 'Royaume-Uni') return `du ${country}`;
+  if (normalized === 'Vatican') return `du ${country}`;
+  return `de ${country}`;
+}
+
 function flagExplanation(row: FlagCountry) {
-  return `${row.flag} est le drapeau de ${row.country} ; le code ${row.code} sert aussi de repère ISO/Unicode pour ce pays.`;
+  return `${row.flag} est le drapeau ${flagCountryArticle(row.country)} ; le code ${row.code} sert aussi de repère ISO/Unicode pour ce pays.`;
 }
 
 const flagToCountryTextQuestions: QuestionSeed[] = flagCountries.map((row, index) => ({
@@ -1072,7 +1083,7 @@ const countryToFlagChoiceQuestions: QuestionSeed[] = flagCountries.map((row, ind
   id: `world-country-flag-${slug(row.country)}`,
   topicId: 'geography',
   difficulty: flagDifficulty(row.country),
-  prompt: `Sélectionne le drapeau de ${row.country}.`,
+  prompt: `Sélectionne le drapeau ${flagCountryArticle(row.country)}.`,
   choices: choicesFrom(flagCountries, index, (item) => item.flag),
   answerIndex: 0,
   explanation: flagExplanation(row),

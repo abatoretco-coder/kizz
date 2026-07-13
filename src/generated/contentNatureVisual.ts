@@ -1012,7 +1012,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-animals-013-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Couleuvre à collier",
@@ -1038,7 +1038,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-animals-013-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de Couleuvre à collier.",
     "choices": [
       "Couleuvre à collier",
@@ -1096,7 +1096,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-animals-014-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Machaon",
@@ -1122,7 +1122,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-animals-014-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de Machaon.",
     "choices": [
       "Couleuvre à collier",
@@ -1432,7 +1432,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-018-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Érable sycomore",
@@ -1458,7 +1458,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-018-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de Érable sycomore.",
     "choices": [
       "Chêne pédonculé",
@@ -1684,7 +1684,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-021-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "If commun",
@@ -1710,7 +1710,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-021-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de If commun.",
     "choices": [
       "Pin sylvestre",
@@ -2020,7 +2020,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-025-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Iris des marais",
@@ -2046,7 +2046,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-025-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de Iris des marais.",
     "choices": [
       "Tournesol",
@@ -2188,7 +2188,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-027-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Églantier",
@@ -2214,7 +2214,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-027-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de Églantier.",
     "choices": [
       "Tournesol",
@@ -2272,7 +2272,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-028-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Aubépine monogyne",
@@ -2298,7 +2298,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-028-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de Aubépine monogyne.",
     "choices": [
       "Aubépine monogyne",
@@ -2356,7 +2356,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-029-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Sureau noir",
@@ -2382,7 +2382,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-029-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de Sureau noir.",
     "choices": [
       "Aubépine monogyne",
@@ -2440,7 +2440,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-030-identify",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Fougère aigle",
@@ -2466,7 +2466,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
   {
     "id": "nature-plants-030-image-choice",
     "topicId": "nature",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Sélectionne l’image de Fougère aigle.",
     "choices": [
       "Aubépine monogyne",
