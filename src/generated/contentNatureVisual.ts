@@ -5,15 +5,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-001-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Renard roux",
       "Loup gris",
-      "Lynx boreal",
+      "Lynx boréal",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 0,
-    "explanation": "Renard roux (Vulpes vulpes) se reconnait notamment par pelage roux, museau fin et queue touffue.",
+    "explanation": "Renard roux (Vulpes vulpes) se reconnaît notamment par pelage roux, museau fin et queue touffue.",
     "tags": [
       "nature",
       "animaux",
@@ -31,15 +31,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-001-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Renard roux.",
+    "prompt": "Sélectionne l’image de Renard roux.",
     "choices": [
       "Renard roux",
       "Loup gris",
-      "Lynx boreal",
+      "Lynx boréal",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 0,
-    "explanation": "Renard roux est le choix qui correspond au repere visuel : pelage roux, museau fin et queue touffue.",
+    "explanation": "Renard roux est le choix qui correspond au repère visuel : pelage roux, museau fin et queue touffue.",
     "tags": [
       "nature",
       "animaux",
@@ -59,7 +59,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Renard roux",
       "Photo de Loup gris",
-      "Photo de Lynx boreal",
+      "Photo de Lynx boréal",
       "Photo de Bouquetin des Alpes"
     ]
   },
@@ -67,15 +67,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-001-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : pelage roux, museau fin et queue touffue ?",
+    "prompt": "Quelle espèce correspond a cet indice : pelage roux, museau fin et queue touffue ?",
     "choices": [
       "Renard roux",
       "Loup gris",
-      "Lynx boreal",
+      "Lynx boréal",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Renard roux, nom scientifique Vulpes vulpes.",
+    "explanation": "La réponse attendue est Renard roux, nom scientifique Vulpes vulpes.",
     "tags": [
       "nature",
       "animaux",
@@ -89,15 +89,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-002-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Loup gris",
       "Renard roux",
-      "Lynx boreal",
+      "Lynx boréal",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 0,
-    "explanation": "Loup gris (Canis lupus) se reconnait notamment par canide social vivant souvent en meute.",
+    "explanation": "Loup gris (Canis lupus) se reconnaît notamment par canide social vivant souvent en meute.",
     "tags": [
       "nature",
       "animaux",
@@ -115,15 +115,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-002-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Loup gris.",
+    "prompt": "Sélectionne l’image de Loup gris.",
     "choices": [
       "Renard roux",
       "Loup gris",
-      "Lynx boreal",
+      "Lynx boréal",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 1,
-    "explanation": "Loup gris est le choix qui correspond au repere visuel : canide social vivant souvent en meute.",
+    "explanation": "Loup gris est le choix qui correspond au repère visuel : canide social vivant souvent en meute.",
     "tags": [
       "nature",
       "animaux",
@@ -143,7 +143,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Renard roux",
       "Photo de Loup gris",
-      "Photo de Lynx boreal",
+      "Photo de Lynx boréal",
       "Photo de Bouquetin des Alpes"
     ]
   },
@@ -151,15 +151,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-002-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : canide social vivant souvent en meute ?",
+    "prompt": "Quelle espèce correspond a cet indice : canide social vivant souvent en meute ?",
     "choices": [
       "Loup gris",
       "Renard roux",
-      "Lynx boreal",
+      "Lynx boréal",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Loup gris, nom scientifique Canis lupus.",
+    "explanation": "La réponse attendue est Loup gris, nom scientifique Canis lupus.",
     "tags": [
       "nature",
       "animaux",
@@ -173,15 +173,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-003-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Lynx boreal",
+      "Lynx boréal",
       "Renard roux",
       "Loup gris",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 0,
-    "explanation": "Lynx boreal (Lynx lynx) se reconnait notamment par oreilles terminees par des pinceaux noirs.",
+    "explanation": "Lynx boréal (Lynx lynx) se reconnaît notamment par oreilles terminées par des pinceaux noirs.",
     "tags": [
       "nature",
       "animaux",
@@ -193,21 +193,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALynx_lynx_poing.jpg",
     "imageAsset": "nature/lynx-boreal",
-    "imageAlt": "Photo de Lynx boreal"
+    "imageAlt": "Photo de Lynx boréal"
   },
   {
     "id": "nature-animals-003-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Lynx boreal.",
+    "prompt": "Sélectionne l’image de Lynx boréal.",
     "choices": [
       "Renard roux",
       "Loup gris",
-      "Lynx boreal",
+      "Lynx boréal",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 2,
-    "explanation": "Lynx boreal est le choix qui correspond au repere visuel : oreilles terminees par des pinceaux noirs.",
+    "explanation": "Lynx boréal est le choix qui correspond au repère visuel : oreilles terminées par des pinceaux noirs.",
     "tags": [
       "nature",
       "animaux",
@@ -227,7 +227,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Renard roux",
       "Photo de Loup gris",
-      "Photo de Lynx boreal",
+      "Photo de Lynx boréal",
       "Photo de Bouquetin des Alpes"
     ]
   },
@@ -235,15 +235,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-003-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : oreilles terminees par des pinceaux noirs ?",
+    "prompt": "Quelle espèce correspond a cet indice : oreilles terminées par des pinceaux noirs ?",
     "choices": [
-      "Lynx boreal",
+      "Lynx boréal",
       "Renard roux",
       "Loup gris",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Lynx boreal, nom scientifique Lynx lynx.",
+    "explanation": "La réponse attendue est Lynx boréal, nom scientifique Lynx lynx.",
     "tags": [
       "nature",
       "animaux",
@@ -257,15 +257,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-004-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Bouquetin des Alpes",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Bouquetin des Alpes (Capra ibex) se reconnait notamment par grandes cornes arquees et habitat de haute montagne.",
+    "explanation": "Bouquetin des Alpes (Capra ibex) se reconnaît notamment par grandes cornes arquées et habitat de haute montagne.",
     "tags": [
       "nature",
       "animaux",
@@ -283,15 +283,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-004-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Bouquetin des Alpes.",
+    "prompt": "Sélectionne l’image de Bouquetin des Alpes.",
     "choices": [
       "Renard roux",
       "Loup gris",
-      "Lynx boreal",
+      "Lynx boréal",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 3,
-    "explanation": "Bouquetin des Alpes est le choix qui correspond au repere visuel : grandes cornes arquees et habitat de haute montagne.",
+    "explanation": "Bouquetin des Alpes est le choix qui correspond au repère visuel : grandes cornes arquées et habitat de haute montagne.",
     "tags": [
       "nature",
       "animaux",
@@ -311,7 +311,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Renard roux",
       "Photo de Loup gris",
-      "Photo de Lynx boreal",
+      "Photo de Lynx boréal",
       "Photo de Bouquetin des Alpes"
     ]
   },
@@ -319,15 +319,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-004-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : grandes cornes arquees et habitat de haute montagne ?",
+    "prompt": "Quelle espèce correspond a cet indice : grandes cornes arquées et habitat de haute montagne ?",
     "choices": [
       "Bouquetin des Alpes",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Bouquetin des Alpes, nom scientifique Capra ibex.",
+    "explanation": "La réponse attendue est Bouquetin des Alpes, nom scientifique Capra ibex.",
     "tags": [
       "nature",
       "animaux",
@@ -341,15 +341,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-005-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Cerf elaphe",
+      "Cerf élaphe",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Cerf elaphe (Cervus elaphus) se reconnait notamment par grand cervide dont le male porte des bois ramifies.",
+    "explanation": "Cerf élaphe (Cervus elaphus) se reconnaît notamment par grand cervidé dont le mâle porte des bois ramifiés.",
     "tags": [
       "nature",
       "animaux",
@@ -361,21 +361,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARedDeerStag.jpg",
     "imageAsset": "nature/cerf-elaphe",
-    "imageAlt": "Photo de Cerf elaphe"
+    "imageAlt": "Photo de Cerf élaphe"
   },
   {
     "id": "nature-animals-005-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Cerf elaphe.",
+    "prompt": "Sélectionne l’image de Cerf élaphe.",
     "choices": [
-      "Cerf elaphe",
-      "Herisson commun",
+      "Cerf élaphe",
+      "Hérisson commun",
       "Flamant rose",
-      "Martin-pecheur d Europe"
+      "Martin-pêcheur d’Europe"
     ],
     "answerIndex": 0,
-    "explanation": "Cerf elaphe est le choix qui correspond au repere visuel : grand cervide dont le male porte des bois ramifies.",
+    "explanation": "Cerf élaphe est le choix qui correspond au repère visuel : grand cervidé dont le mâle porte des bois ramifiés.",
     "tags": [
       "nature",
       "animaux",
@@ -393,25 +393,25 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/martin-pecheur-d-europe"
     ],
     "choiceImageAlts": [
-      "Photo de Cerf elaphe",
-      "Photo de Herisson commun",
+      "Photo de Cerf élaphe",
+      "Photo de Hérisson commun",
       "Photo de Flamant rose",
-      "Photo de Martin-pecheur d Europe"
+      "Photo de Martin-pêcheur d’Europe"
     ]
   },
   {
     "id": "nature-animals-005-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : grand cervide dont le male porte des bois ramifies ?",
+    "prompt": "Quelle espèce correspond a cet indice : grand cervidé dont le mâle porte des bois ramifiés ?",
     "choices": [
-      "Cerf elaphe",
+      "Cerf élaphe",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Cerf elaphe, nom scientifique Cervus elaphus.",
+    "explanation": "La réponse attendue est Cerf élaphe, nom scientifique Cervus elaphus.",
     "tags": [
       "nature",
       "animaux",
@@ -425,15 +425,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-006-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Herisson commun",
+      "Hérisson commun",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Herisson commun (Erinaceus europaeus) se reconnait notamment par petit mammifere couvert de piquants.",
+    "explanation": "Hérisson commun (Erinaceus europaeus) se reconnaît notamment par petit mammifère couvert de piquants.",
     "tags": [
       "nature",
       "animaux",
@@ -445,21 +445,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AErinaceus_europaeus_(Marek_Szczepanek).jpg",
     "imageAsset": "nature/herisson-commun",
-    "imageAlt": "Photo de Herisson commun"
+    "imageAlt": "Photo de Hérisson commun"
   },
   {
     "id": "nature-animals-006-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Herisson commun.",
+    "prompt": "Sélectionne l’image de Hérisson commun.",
     "choices": [
-      "Cerf elaphe",
-      "Herisson commun",
+      "Cerf élaphe",
+      "Hérisson commun",
       "Flamant rose",
-      "Martin-pecheur d Europe"
+      "Martin-pêcheur d’Europe"
     ],
     "answerIndex": 1,
-    "explanation": "Herisson commun est le choix qui correspond au repere visuel : petit mammifere couvert de piquants.",
+    "explanation": "Hérisson commun est le choix qui correspond au repère visuel : petit mammifère couvert de piquants.",
     "tags": [
       "nature",
       "animaux",
@@ -477,25 +477,25 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/martin-pecheur-d-europe"
     ],
     "choiceImageAlts": [
-      "Photo de Cerf elaphe",
-      "Photo de Herisson commun",
+      "Photo de Cerf élaphe",
+      "Photo de Hérisson commun",
       "Photo de Flamant rose",
-      "Photo de Martin-pecheur d Europe"
+      "Photo de Martin-pêcheur d’Europe"
     ]
   },
   {
     "id": "nature-animals-006-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : petit mammifere couvert de piquants ?",
+    "prompt": "Quelle espèce correspond a cet indice : petit mammifère couvert de piquants ?",
     "choices": [
-      "Herisson commun",
+      "Hérisson commun",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Herisson commun, nom scientifique Erinaceus europaeus.",
+    "explanation": "La réponse attendue est Hérisson commun, nom scientifique Erinaceus europaeus.",
     "tags": [
       "nature",
       "animaux",
@@ -509,15 +509,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-007-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Flamant rose",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Flamant rose (Phoenicopterus roseus) se reconnait notamment par oiseau rose aux longues pattes vivant dans les lagunes.",
+    "explanation": "Flamant rose (Phoenicopterus roseus) se reconnaît notamment par oiseau rose aux longues pattes vivant dans les lagunes.",
     "tags": [
       "nature",
       "animaux",
@@ -535,15 +535,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-007-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Flamant rose.",
+    "prompt": "Sélectionne l’image de Flamant rose.",
     "choices": [
-      "Cerf elaphe",
-      "Herisson commun",
+      "Cerf élaphe",
+      "Hérisson commun",
       "Flamant rose",
-      "Martin-pecheur d Europe"
+      "Martin-pêcheur d’Europe"
     ],
     "answerIndex": 2,
-    "explanation": "Flamant rose est le choix qui correspond au repere visuel : oiseau rose aux longues pattes vivant dans les lagunes.",
+    "explanation": "Flamant rose est le choix qui correspond au repère visuel : oiseau rose aux longues pattes vivant dans les lagunes.",
     "tags": [
       "nature",
       "animaux",
@@ -561,25 +561,25 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/martin-pecheur-d-europe"
     ],
     "choiceImageAlts": [
-      "Photo de Cerf elaphe",
-      "Photo de Herisson commun",
+      "Photo de Cerf élaphe",
+      "Photo de Hérisson commun",
       "Photo de Flamant rose",
-      "Photo de Martin-pecheur d Europe"
+      "Photo de Martin-pêcheur d’Europe"
     ]
   },
   {
     "id": "nature-animals-007-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : oiseau rose aux longues pattes vivant dans les lagunes ?",
+    "prompt": "Quelle espèce correspond a cet indice : oiseau rose aux longues pattes vivant dans les lagunes ?",
     "choices": [
       "Flamant rose",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Flamant rose, nom scientifique Phoenicopterus roseus.",
+    "explanation": "La réponse attendue est Flamant rose, nom scientifique Phoenicopterus roseus.",
     "tags": [
       "nature",
       "animaux",
@@ -593,15 +593,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-008-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Martin-pecheur d Europe",
+      "Martin-pêcheur d’Europe",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Martin-pecheur d Europe (Alcedo atthis) se reconnait notamment par petit oiseau bleu et orange qui plonge pour pecher.",
+    "explanation": "Martin-pêcheur d’Europe (Alcedo atthis) se reconnaît notamment par petit oiseau bleu et orange qui plonge pour pêcher.",
     "tags": [
       "nature",
       "animaux",
@@ -613,21 +613,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlcedo_atthis_eating_a_tadpole.jpg",
     "imageAsset": "nature/martin-pecheur-d-europe",
-    "imageAlt": "Photo de Martin-pecheur d Europe"
+    "imageAlt": "Photo de Martin-pêcheur d’Europe"
   },
   {
     "id": "nature-animals-008-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Martin-pecheur d Europe.",
+    "prompt": "Sélectionne l’image de Martin-pêcheur d’Europe.",
     "choices": [
-      "Cerf elaphe",
-      "Herisson commun",
+      "Cerf élaphe",
+      "Hérisson commun",
       "Flamant rose",
-      "Martin-pecheur d Europe"
+      "Martin-pêcheur d’Europe"
     ],
     "answerIndex": 3,
-    "explanation": "Martin-pecheur d Europe est le choix qui correspond au repere visuel : petit oiseau bleu et orange qui plonge pour pecher.",
+    "explanation": "Martin-pêcheur d’Europe est le choix qui correspond au repère visuel : petit oiseau bleu et orange qui plonge pour pêcher.",
     "tags": [
       "nature",
       "animaux",
@@ -645,25 +645,25 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/martin-pecheur-d-europe"
     ],
     "choiceImageAlts": [
-      "Photo de Cerf elaphe",
-      "Photo de Herisson commun",
+      "Photo de Cerf élaphe",
+      "Photo de Hérisson commun",
       "Photo de Flamant rose",
-      "Photo de Martin-pecheur d Europe"
+      "Photo de Martin-pêcheur d’Europe"
     ]
   },
   {
     "id": "nature-animals-008-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : petit oiseau bleu et orange qui plonge pour pecher ?",
+    "prompt": "Quelle espèce correspond a cet indice : petit oiseau bleu et orange qui plonge pour pêcher ?",
     "choices": [
-      "Martin-pecheur d Europe",
+      "Martin-pêcheur d’Europe",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Martin-pecheur d Europe, nom scientifique Alcedo atthis.",
+    "explanation": "La réponse attendue est Martin-pêcheur d’Europe, nom scientifique Alcedo atthis.",
     "tags": [
       "nature",
       "animaux",
@@ -677,15 +677,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-009-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Chouette hulotte",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Chouette hulotte (Strix aluco) se reconnait notamment par rapace nocturne frequent dans les forets europeennes.",
+    "explanation": "Chouette hulotte (Strix aluco) se reconnaît notamment par rapace nocturne fréquent dans les forêts européennes.",
     "tags": [
       "nature",
       "animaux",
@@ -703,15 +703,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-009-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Chouette hulotte.",
+    "prompt": "Sélectionne l’image de Chouette hulotte.",
     "choices": [
       "Chouette hulotte",
       "Aigle royal",
-      "Salamandre tachetee",
+      "Salamandre tachetée",
       "Grenouille verte"
     ],
     "answerIndex": 0,
-    "explanation": "Chouette hulotte est le choix qui correspond au repere visuel : rapace nocturne frequent dans les forets europeennes.",
+    "explanation": "Chouette hulotte est le choix qui correspond au repère visuel : rapace nocturne fréquent dans les forêts européennes.",
     "tags": [
       "nature",
       "animaux",
@@ -731,7 +731,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Chouette hulotte",
       "Photo de Aigle royal",
-      "Photo de Salamandre tachetee",
+      "Photo de Salamandre tachetée",
       "Photo de Grenouille verte"
     ]
   },
@@ -739,15 +739,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-009-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : rapace nocturne frequent dans les forets europeennes ?",
+    "prompt": "Quelle espèce correspond a cet indice : rapace nocturne fréquent dans les forêts européennes ?",
     "choices": [
       "Chouette hulotte",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Chouette hulotte, nom scientifique Strix aluco.",
+    "explanation": "La réponse attendue est Chouette hulotte, nom scientifique Strix aluco.",
     "tags": [
       "nature",
       "animaux",
@@ -761,15 +761,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-010-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Aigle royal",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Aigle royal (Aquila chrysaetos) se reconnait notamment par grand rapace de montagne a l envergure imposante.",
+    "explanation": "Aigle royal (Aquila chrysaetos) se reconnaît notamment par grand rapace de montagne à l’envergure imposante.",
     "tags": [
       "nature",
       "animaux",
@@ -787,15 +787,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-010-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Aigle royal.",
+    "prompt": "Sélectionne l’image de Aigle royal.",
     "choices": [
       "Chouette hulotte",
       "Aigle royal",
-      "Salamandre tachetee",
+      "Salamandre tachetée",
       "Grenouille verte"
     ],
     "answerIndex": 1,
-    "explanation": "Aigle royal est le choix qui correspond au repere visuel : grand rapace de montagne a l envergure imposante.",
+    "explanation": "Aigle royal est le choix qui correspond au repère visuel : grand rapace de montagne à l’envergure imposante.",
     "tags": [
       "nature",
       "animaux",
@@ -815,7 +815,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Chouette hulotte",
       "Photo de Aigle royal",
-      "Photo de Salamandre tachetee",
+      "Photo de Salamandre tachetée",
       "Photo de Grenouille verte"
     ]
   },
@@ -823,15 +823,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-010-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : grand rapace de montagne a l envergure imposante ?",
+    "prompt": "Quelle espèce correspond a cet indice : grand rapace de montagne à l’envergure imposante ?",
     "choices": [
       "Aigle royal",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Aigle royal, nom scientifique Aquila chrysaetos.",
+    "explanation": "La réponse attendue est Aigle royal, nom scientifique Aquila chrysaetos.",
     "tags": [
       "nature",
       "animaux",
@@ -845,15 +845,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-011-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Salamandre tachetee",
+      "Salamandre tachetée",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Salamandre tachetee (Salamandra salamandra) se reconnait notamment par amphibien noir marque de taches jaunes.",
+    "explanation": "Salamandre tachetée (Salamandra salamandra) se reconnaît notamment par amphibien noir marqué de taches jaunes.",
     "tags": [
       "nature",
       "animaux",
@@ -865,21 +865,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFeuersalamander-salamandra-salamandra.jpg",
     "imageAsset": "nature/salamandre-tachetee",
-    "imageAlt": "Photo de Salamandre tachetee"
+    "imageAlt": "Photo de Salamandre tachetée"
   },
   {
     "id": "nature-animals-011-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Salamandre tachetee.",
+    "prompt": "Sélectionne l’image de Salamandre tachetée.",
     "choices": [
       "Chouette hulotte",
       "Aigle royal",
-      "Salamandre tachetee",
+      "Salamandre tachetée",
       "Grenouille verte"
     ],
     "answerIndex": 2,
-    "explanation": "Salamandre tachetee est le choix qui correspond au repere visuel : amphibien noir marque de taches jaunes.",
+    "explanation": "Salamandre tachetée est le choix qui correspond au repère visuel : amphibien noir marqué de taches jaunes.",
     "tags": [
       "nature",
       "animaux",
@@ -899,7 +899,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Chouette hulotte",
       "Photo de Aigle royal",
-      "Photo de Salamandre tachetee",
+      "Photo de Salamandre tachetée",
       "Photo de Grenouille verte"
     ]
   },
@@ -907,15 +907,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-011-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : amphibien noir marque de taches jaunes ?",
+    "prompt": "Quelle espèce correspond a cet indice : amphibien noir marqué de taches jaunes ?",
     "choices": [
-      "Salamandre tachetee",
+      "Salamandre tachetée",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Salamandre tachetee, nom scientifique Salamandra salamandra.",
+    "explanation": "La réponse attendue est Salamandre tachetée, nom scientifique Salamandra salamandra.",
     "tags": [
       "nature",
       "animaux",
@@ -929,15 +929,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-012-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Grenouille verte",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Grenouille verte (Pelophylax kl. esculentus) se reconnait notamment par amphibien des mares au chant sonore.",
+    "explanation": "Grenouille verte (Pelophylax kl. esculentus) se reconnaît notamment par amphibien des mares au chant sonore.",
     "tags": [
       "nature",
       "animaux",
@@ -955,15 +955,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-012-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Grenouille verte.",
+    "prompt": "Sélectionne l’image de Grenouille verte.",
     "choices": [
       "Chouette hulotte",
       "Aigle royal",
-      "Salamandre tachetee",
+      "Salamandre tachetée",
       "Grenouille verte"
     ],
     "answerIndex": 3,
-    "explanation": "Grenouille verte est le choix qui correspond au repere visuel : amphibien des mares au chant sonore.",
+    "explanation": "Grenouille verte est le choix qui correspond au repère visuel : amphibien des mares au chant sonore.",
     "tags": [
       "nature",
       "animaux",
@@ -983,7 +983,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Chouette hulotte",
       "Photo de Aigle royal",
-      "Photo de Salamandre tachetee",
+      "Photo de Salamandre tachetée",
       "Photo de Grenouille verte"
     ]
   },
@@ -991,15 +991,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-012-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : amphibien des mares au chant sonore ?",
+    "prompt": "Quelle espèce correspond a cet indice : amphibien des mares au chant sonore ?",
     "choices": [
       "Grenouille verte",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Grenouille verte, nom scientifique Pelophylax kl. esculentus.",
+    "explanation": "La réponse attendue est Grenouille verte, nom scientifique Pelophylax kl. esculentus.",
     "tags": [
       "nature",
       "animaux",
@@ -1013,15 +1013,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-013-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Couleuvre a collier",
+      "Couleuvre à collier",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Couleuvre a collier (Natrix natrix) se reconnait notamment par serpent non venimeux souvent proche des zones humides.",
+    "explanation": "Couleuvre à collier (Natrix natrix) se reconnaît notamment par serpent non venimeux souvent proche des zones humides.",
     "tags": [
       "nature",
       "animaux",
@@ -1033,21 +1033,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANatrix_natrix.jpg",
     "imageAsset": "nature/couleuvre-a-collier",
-    "imageAlt": "Photo de Couleuvre a collier"
+    "imageAlt": "Photo de Couleuvre à collier"
   },
   {
     "id": "nature-animals-013-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Couleuvre a collier.",
+    "prompt": "Sélectionne l’image de Couleuvre à collier.",
     "choices": [
-      "Couleuvre a collier",
+      "Couleuvre à collier",
       "Machaon",
       "Abeille domestique",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 0,
-    "explanation": "Couleuvre a collier est le choix qui correspond au repere visuel : serpent non venimeux souvent proche des zones humides.",
+    "explanation": "Couleuvre à collier est le choix qui correspond au repère visuel : serpent non venimeux souvent proche des zones humides.",
     "tags": [
       "nature",
       "animaux",
@@ -1065,7 +1065,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/bouquetin-des-alpes"
     ],
     "choiceImageAlts": [
-      "Photo de Couleuvre a collier",
+      "Photo de Couleuvre à collier",
       "Photo de Machaon",
       "Photo de Abeille domestique",
       "Photo de Bouquetin des Alpes"
@@ -1075,15 +1075,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-013-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : serpent non venimeux souvent proche des zones humides ?",
+    "prompt": "Quelle espèce correspond a cet indice : serpent non venimeux souvent proche des zones humides ?",
     "choices": [
-      "Couleuvre a collier",
+      "Couleuvre à collier",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Couleuvre a collier, nom scientifique Natrix natrix.",
+    "explanation": "La réponse attendue est Couleuvre à collier, nom scientifique Natrix natrix.",
     "tags": [
       "nature",
       "animaux",
@@ -1097,15 +1097,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-014-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Machaon",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Machaon (Papilio machaon) se reconnait notamment par grand papillon jaune avec des queues aux ailes posterieures.",
+    "explanation": "Machaon (Papilio machaon) se reconnaît notamment par grand papillon jaune avec des queues aux ailes postérieures.",
     "tags": [
       "nature",
       "animaux",
@@ -1123,15 +1123,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-014-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Machaon.",
+    "prompt": "Sélectionne l’image de Machaon.",
     "choices": [
-      "Couleuvre a collier",
+      "Couleuvre à collier",
       "Machaon",
       "Abeille domestique",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 1,
-    "explanation": "Machaon est le choix qui correspond au repere visuel : grand papillon jaune avec des queues aux ailes posterieures.",
+    "explanation": "Machaon est le choix qui correspond au repère visuel : grand papillon jaune avec des queues aux ailes postérieures.",
     "tags": [
       "nature",
       "animaux",
@@ -1149,7 +1149,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/bouquetin-des-alpes"
     ],
     "choiceImageAlts": [
-      "Photo de Couleuvre a collier",
+      "Photo de Couleuvre à collier",
       "Photo de Machaon",
       "Photo de Abeille domestique",
       "Photo de Bouquetin des Alpes"
@@ -1159,15 +1159,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-014-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : grand papillon jaune avec des queues aux ailes posterieures ?",
+    "prompt": "Quelle espèce correspond a cet indice : grand papillon jaune avec des queues aux ailes postérieures ?",
     "choices": [
       "Machaon",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Machaon, nom scientifique Papilio machaon.",
+    "explanation": "La réponse attendue est Machaon, nom scientifique Papilio machaon.",
     "tags": [
       "nature",
       "animaux",
@@ -1181,15 +1181,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-015-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Abeille domestique",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "Abeille domestique (Apis mellifera) se reconnait notamment par insecte pollinisateur eleve en ruches.",
+    "explanation": "Abeille domestique (Apis mellifera) se reconnaît notamment par insecte pollinisateur élevé en ruches.",
     "tags": [
       "nature",
       "animaux",
@@ -1207,15 +1207,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-015-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Abeille domestique.",
+    "prompt": "Sélectionne l’image de Abeille domestique.",
     "choices": [
-      "Couleuvre a collier",
+      "Couleuvre à collier",
       "Machaon",
       "Abeille domestique",
       "Bouquetin des Alpes"
     ],
     "answerIndex": 2,
-    "explanation": "Abeille domestique est le choix qui correspond au repere visuel : insecte pollinisateur eleve en ruches.",
+    "explanation": "Abeille domestique est le choix qui correspond au repère visuel : insecte pollinisateur élevé en ruches.",
     "tags": [
       "nature",
       "animaux",
@@ -1233,7 +1233,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/bouquetin-des-alpes"
     ],
     "choiceImageAlts": [
-      "Photo de Couleuvre a collier",
+      "Photo de Couleuvre à collier",
       "Photo de Machaon",
       "Photo de Abeille domestique",
       "Photo de Bouquetin des Alpes"
@@ -1243,15 +1243,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-015-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : insecte pollinisateur eleve en ruches ?",
+    "prompt": "Quelle espèce correspond a cet indice : insecte pollinisateur élevé en ruches ?",
     "choices": [
       "Abeille domestique",
       "Renard roux",
       "Loup gris",
-      "Lynx boreal"
+      "Lynx boréal"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Abeille domestique, nom scientifique Apis mellifera.",
+    "explanation": "La réponse attendue est Abeille domestique, nom scientifique Apis mellifera.",
     "tags": [
       "nature",
       "animaux",
@@ -1265,15 +1265,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-016-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore",
       "Bouleau verruqueux"
     ],
     "answerIndex": 0,
-    "explanation": "Chene pedoncule (Quercus robur) se reconnait notamment par grand arbre europeen portant des glands sur pedoncule.",
+    "explanation": "Chêne pédonculé (Quercus robur) se reconnaît notamment par grand arbre européen portant des glands sur pédoncule.",
     "tags": [
       "nature",
       "botanique",
@@ -1285,21 +1285,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALangaa_egeskov_rimfrost.jpg",
     "imageAsset": "nature/chene-pedoncule",
-    "imageAlt": "Photo de Chene pedoncule"
+    "imageAlt": "Photo de Chêne pédonculé"
   },
   {
     "id": "nature-plants-016-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Chene pedoncule.",
+    "prompt": "Sélectionne l’image de Chêne pédonculé.",
     "choices": [
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore",
       "Bouleau verruqueux"
     ],
     "answerIndex": 0,
-    "explanation": "Chene pedoncule est le choix qui correspond au repere visuel : grand arbre europeen portant des glands sur pedoncule.",
+    "explanation": "Chêne pédonculé est le choix qui correspond au repère visuel : grand arbre européen portant des glands sur pédoncule.",
     "tags": [
       "nature",
       "botanique",
@@ -1317,9 +1317,9 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/bouleau-verruqueux"
     ],
     "choiceImageAlts": [
-      "Photo de Chene pedoncule",
-      "Photo de Hetre commun",
-      "Photo de Erable sycomore",
+      "Photo de Chêne pédonculé",
+      "Photo de Hêtre commun",
+      "Photo de Érable sycomore",
       "Photo de Bouleau verruqueux"
     ]
   },
@@ -1327,15 +1327,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-016-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : grand arbre europeen portant des glands sur pedoncule ?",
+    "prompt": "Quelle espèce correspond a cet indice : grand arbre européen portant des glands sur pédoncule ?",
     "choices": [
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore",
       "Bouleau verruqueux"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Chene pedoncule, nom scientifique Quercus robur.",
+    "explanation": "La réponse attendue est Chêne pédonculé, nom scientifique Quercus robur.",
     "tags": [
       "nature",
       "botanique",
@@ -1349,15 +1349,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-017-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Hetre commun",
-      "Chene pedoncule",
-      "Erable sycomore",
+      "Hêtre commun",
+      "Chêne pédonculé",
+      "Érable sycomore",
       "Bouleau verruqueux"
     ],
     "answerIndex": 0,
-    "explanation": "Hetre commun (Fagus sylvatica) se reconnait notamment par arbre a ecorce grise lisse et feuilles ovales.",
+    "explanation": "Hêtre commun (Fagus sylvatica) se reconnaît notamment par arbre à écorce grise lisse et feuilles ovales.",
     "tags": [
       "nature",
       "botanique",
@@ -1369,21 +1369,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACopper_Beech_Fagus_sylvatica_f._purpurea_Autumn_Leaves_Closeup_3008px.jpg",
     "imageAsset": "nature/hetre-commun",
-    "imageAlt": "Photo de Hetre commun"
+    "imageAlt": "Photo de Hêtre commun"
   },
   {
     "id": "nature-plants-017-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Hetre commun.",
+    "prompt": "Sélectionne l’image de Hêtre commun.",
     "choices": [
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore",
       "Bouleau verruqueux"
     ],
     "answerIndex": 1,
-    "explanation": "Hetre commun est le choix qui correspond au repere visuel : arbre a ecorce grise lisse et feuilles ovales.",
+    "explanation": "Hêtre commun est le choix qui correspond au repère visuel : arbre à écorce grise lisse et feuilles ovales.",
     "tags": [
       "nature",
       "botanique",
@@ -1401,9 +1401,9 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/bouleau-verruqueux"
     ],
     "choiceImageAlts": [
-      "Photo de Chene pedoncule",
-      "Photo de Hetre commun",
-      "Photo de Erable sycomore",
+      "Photo de Chêne pédonculé",
+      "Photo de Hêtre commun",
+      "Photo de Érable sycomore",
       "Photo de Bouleau verruqueux"
     ]
   },
@@ -1411,15 +1411,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-017-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : arbre a ecorce grise lisse et feuilles ovales ?",
+    "prompt": "Quelle espèce correspond a cet indice : arbre à écorce grise lisse et feuilles ovales ?",
     "choices": [
-      "Hetre commun",
-      "Chene pedoncule",
-      "Erable sycomore",
+      "Hêtre commun",
+      "Chêne pédonculé",
+      "Érable sycomore",
       "Bouleau verruqueux"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Hetre commun, nom scientifique Fagus sylvatica.",
+    "explanation": "La réponse attendue est Hêtre commun, nom scientifique Fagus sylvatica.",
     "tags": [
       "nature",
       "botanique",
@@ -1433,15 +1433,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-018-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Erable sycomore",
-      "Chene pedoncule",
-      "Hetre commun",
+      "Érable sycomore",
+      "Chêne pédonculé",
+      "Hêtre commun",
       "Bouleau verruqueux"
     ],
     "answerIndex": 0,
-    "explanation": "Erable sycomore (Acer pseudoplatanus) se reconnait notamment par feuilles palmees et samares en helicopteres.",
+    "explanation": "Érable sycomore (Acer pseudoplatanus) se reconnaît notamment par feuilles palmées et samares en hélicoptères.",
     "tags": [
       "nature",
       "botanique",
@@ -1453,21 +1453,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AErable-sycomore_(acer_pseudoplatanus).jpg",
     "imageAsset": "nature/erable-sycomore",
-    "imageAlt": "Photo de Erable sycomore"
+    "imageAlt": "Photo de Érable sycomore"
   },
   {
     "id": "nature-plants-018-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Erable sycomore.",
+    "prompt": "Sélectionne l’image de Érable sycomore.",
     "choices": [
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore",
       "Bouleau verruqueux"
     ],
     "answerIndex": 2,
-    "explanation": "Erable sycomore est le choix qui correspond au repere visuel : feuilles palmees et samares en helicopteres.",
+    "explanation": "Érable sycomore est le choix qui correspond au repère visuel : feuilles palmées et samares en hélicoptères.",
     "tags": [
       "nature",
       "botanique",
@@ -1485,9 +1485,9 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/bouleau-verruqueux"
     ],
     "choiceImageAlts": [
-      "Photo de Chene pedoncule",
-      "Photo de Hetre commun",
-      "Photo de Erable sycomore",
+      "Photo de Chêne pédonculé",
+      "Photo de Hêtre commun",
+      "Photo de Érable sycomore",
       "Photo de Bouleau verruqueux"
     ]
   },
@@ -1495,15 +1495,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-018-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : feuilles palmees et samares en helicopteres ?",
+    "prompt": "Quelle espèce correspond a cet indice : feuilles palmées et samares en hélicoptères ?",
     "choices": [
-      "Erable sycomore",
-      "Chene pedoncule",
-      "Hetre commun",
+      "Érable sycomore",
+      "Chêne pédonculé",
+      "Hêtre commun",
       "Bouleau verruqueux"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Erable sycomore, nom scientifique Acer pseudoplatanus.",
+    "explanation": "La réponse attendue est Érable sycomore, nom scientifique Acer pseudoplatanus.",
     "tags": [
       "nature",
       "botanique",
@@ -1517,15 +1517,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-019-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Bouleau verruqueux",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Bouleau verruqueux (Betula pendula) se reconnait notamment par tronc blanc et rameaux souples pendants.",
+    "explanation": "Bouleau verruqueux (Betula pendula) se reconnaît notamment par tronc blanc et rameaux souples pendants.",
     "tags": [
       "nature",
       "botanique",
@@ -1543,15 +1543,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-019-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Bouleau verruqueux.",
+    "prompt": "Sélectionne l’image de Bouleau verruqueux.",
     "choices": [
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore",
       "Bouleau verruqueux"
     ],
     "answerIndex": 3,
-    "explanation": "Bouleau verruqueux est le choix qui correspond au repere visuel : tronc blanc et rameaux souples pendants.",
+    "explanation": "Bouleau verruqueux est le choix qui correspond au repère visuel : tronc blanc et rameaux souples pendants.",
     "tags": [
       "nature",
       "botanique",
@@ -1569,9 +1569,9 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/bouleau-verruqueux"
     ],
     "choiceImageAlts": [
-      "Photo de Chene pedoncule",
-      "Photo de Hetre commun",
-      "Photo de Erable sycomore",
+      "Photo de Chêne pédonculé",
+      "Photo de Hêtre commun",
+      "Photo de Érable sycomore",
       "Photo de Bouleau verruqueux"
     ]
   },
@@ -1579,15 +1579,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-019-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : tronc blanc et rameaux souples pendants ?",
+    "prompt": "Quelle espèce correspond a cet indice : tronc blanc et rameaux souples pendants ?",
     "choices": [
       "Bouleau verruqueux",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Bouleau verruqueux, nom scientifique Betula pendula.",
+    "explanation": "La réponse attendue est Bouleau verruqueux, nom scientifique Betula pendula.",
     "tags": [
       "nature",
       "botanique",
@@ -1601,15 +1601,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-020-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Pin sylvestre",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Pin sylvestre (Pinus sylvestris) se reconnait notamment par conifere a ecorce orangee et aiguilles par deux.",
+    "explanation": "Pin sylvestre (Pinus sylvestris) se reconnaît notamment par conifère à écorce orangée et aiguilles par deux.",
     "tags": [
       "nature",
       "botanique",
@@ -1627,7 +1627,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-020-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Pin sylvestre.",
+    "prompt": "Sélectionne l’image de Pin sylvestre.",
     "choices": [
       "Pin sylvestre",
       "If commun",
@@ -1635,7 +1635,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "Coquelicot"
     ],
     "answerIndex": 0,
-    "explanation": "Pin sylvestre est le choix qui correspond au repere visuel : conifere a ecorce orangee et aiguilles par deux.",
+    "explanation": "Pin sylvestre est le choix qui correspond au repère visuel : conifère à écorce orangée et aiguilles par deux.",
     "tags": [
       "nature",
       "botanique",
@@ -1663,15 +1663,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-020-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : conifere a ecorce orangee et aiguilles par deux ?",
+    "prompt": "Quelle espèce correspond a cet indice : conifère à écorce orangée et aiguilles par deux ?",
     "choices": [
       "Pin sylvestre",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Pin sylvestre, nom scientifique Pinus sylvestris.",
+    "explanation": "La réponse attendue est Pin sylvestre, nom scientifique Pinus sylvestris.",
     "tags": [
       "nature",
       "botanique",
@@ -1685,15 +1685,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-021-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "If commun",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "If commun (Taxus baccata) se reconnait notamment par conifere sombre aux arilles rouges toxiques hors pulpe.",
+    "explanation": "If commun (Taxus baccata) se reconnaît notamment par conifère sombre aux arilles rouges toxiques hors pulpe.",
     "tags": [
       "nature",
       "botanique",
@@ -1711,7 +1711,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-021-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de If commun.",
+    "prompt": "Sélectionne l’image de If commun.",
     "choices": [
       "Pin sylvestre",
       "If commun",
@@ -1719,7 +1719,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "Coquelicot"
     ],
     "answerIndex": 1,
-    "explanation": "If commun est le choix qui correspond au repere visuel : conifere sombre aux arilles rouges toxiques hors pulpe.",
+    "explanation": "If commun est le choix qui correspond au repère visuel : conifère sombre aux arilles rouges toxiques hors pulpe.",
     "tags": [
       "nature",
       "botanique",
@@ -1747,15 +1747,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-021-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : conifere sombre aux arilles rouges toxiques hors pulpe ?",
+    "prompt": "Quelle espèce correspond a cet indice : conifère sombre aux arilles rouges toxiques hors pulpe ?",
     "choices": [
       "If commun",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est If commun, nom scientifique Taxus baccata.",
+    "explanation": "La réponse attendue est If commun, nom scientifique Taxus baccata.",
     "tags": [
       "nature",
       "botanique",
@@ -1769,15 +1769,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-022-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Lavande vraie",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Lavande vraie (Lavandula angustifolia) se reconnait notamment par plante aromatique violette typique des milieux mediterraneens.",
+    "explanation": "Lavande vraie (Lavandula angustifolia) se reconnaît notamment par plante aromatique violette typique des milieux méditerranéens.",
     "tags": [
       "nature",
       "botanique",
@@ -1795,7 +1795,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-022-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Lavande vraie.",
+    "prompt": "Sélectionne l’image de Lavande vraie.",
     "choices": [
       "Pin sylvestre",
       "If commun",
@@ -1803,7 +1803,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "Coquelicot"
     ],
     "answerIndex": 2,
-    "explanation": "Lavande vraie est le choix qui correspond au repere visuel : plante aromatique violette typique des milieux mediterraneens.",
+    "explanation": "Lavande vraie est le choix qui correspond au repère visuel : plante aromatique violette typique des milieux méditerranéens.",
     "tags": [
       "nature",
       "botanique",
@@ -1831,15 +1831,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-022-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : plante aromatique violette typique des milieux mediterraneens ?",
+    "prompt": "Quelle espèce correspond a cet indice : plante aromatique violette typique des milieux méditerranéens ?",
     "choices": [
       "Lavande vraie",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Lavande vraie, nom scientifique Lavandula angustifolia.",
+    "explanation": "La réponse attendue est Lavande vraie, nom scientifique Lavandula angustifolia.",
     "tags": [
       "nature",
       "botanique",
@@ -1853,15 +1853,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-023-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Coquelicot",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Coquelicot (Papaver rhoeas) se reconnait notamment par fleur rouge frequente dans les champs et bords de route.",
+    "explanation": "Coquelicot (Papaver rhoeas) se reconnaît notamment par fleur rouge fréquente dans les champs et bords de route.",
     "tags": [
       "nature",
       "botanique",
@@ -1879,7 +1879,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-023-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Coquelicot.",
+    "prompt": "Sélectionne l’image de Coquelicot.",
     "choices": [
       "Pin sylvestre",
       "If commun",
@@ -1887,7 +1887,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "Coquelicot"
     ],
     "answerIndex": 3,
-    "explanation": "Coquelicot est le choix qui correspond au repere visuel : fleur rouge frequente dans les champs et bords de route.",
+    "explanation": "Coquelicot est le choix qui correspond au repère visuel : fleur rouge fréquente dans les champs et bords de route.",
     "tags": [
       "nature",
       "botanique",
@@ -1915,15 +1915,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-023-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : fleur rouge frequente dans les champs et bords de route ?",
+    "prompt": "Quelle espèce correspond a cet indice : fleur rouge fréquente dans les champs et bords de route ?",
     "choices": [
       "Coquelicot",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Coquelicot, nom scientifique Papaver rhoeas.",
+    "explanation": "La réponse attendue est Coquelicot, nom scientifique Papaver rhoeas.",
     "tags": [
       "nature",
       "botanique",
@@ -1937,15 +1937,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-024-identify",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Tournesol",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Tournesol (Helianthus annuus) se reconnait notamment par grande fleur jaune cultivee pour ses graines huileuses.",
+    "explanation": "Tournesol (Helianthus annuus) se reconnaît notamment par grande fleur jaune cultivée pour ses graines huileuses.",
     "tags": [
       "nature",
       "botanique",
@@ -1963,15 +1963,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-024-image-choice",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Tournesol.",
+    "prompt": "Sélectionne l’image de Tournesol.",
     "choices": [
       "Tournesol",
       "Iris des marais",
-      "Orchidee abeille",
-      "Eglantier"
+      "Orchidée abeille",
+      "Églantier"
     ],
     "answerIndex": 0,
-    "explanation": "Tournesol est le choix qui correspond au repere visuel : grande fleur jaune cultivee pour ses graines huileuses.",
+    "explanation": "Tournesol est le choix qui correspond au repère visuel : grande fleur jaune cultivée pour ses graines huileuses.",
     "tags": [
       "nature",
       "botanique",
@@ -1991,23 +1991,23 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Tournesol",
       "Photo de Iris des marais",
-      "Photo de Orchidee abeille",
-      "Photo de Eglantier"
+      "Photo de Orchidée abeille",
+      "Photo de Églantier"
     ]
   },
   {
     "id": "nature-plants-024-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espece correspond a cet indice : grande fleur jaune cultivee pour ses graines huileuses ?",
+    "prompt": "Quelle espèce correspond a cet indice : grande fleur jaune cultivée pour ses graines huileuses ?",
     "choices": [
       "Tournesol",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Tournesol, nom scientifique Helianthus annuus.",
+    "explanation": "La réponse attendue est Tournesol, nom scientifique Helianthus annuus.",
     "tags": [
       "nature",
       "botanique",
@@ -2021,15 +2021,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-025-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Iris des marais",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Iris des marais (Iris pseudacorus) se reconnait notamment par iris jaune des zones humides.",
+    "explanation": "Iris des marais (Iris pseudacorus) se reconnaît notamment par iris jaune des zones humides.",
     "tags": [
       "nature",
       "botanique",
@@ -2047,15 +2047,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-025-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Iris des marais.",
+    "prompt": "Sélectionne l’image de Iris des marais.",
     "choices": [
       "Tournesol",
       "Iris des marais",
-      "Orchidee abeille",
-      "Eglantier"
+      "Orchidée abeille",
+      "Églantier"
     ],
     "answerIndex": 1,
-    "explanation": "Iris des marais est le choix qui correspond au repere visuel : iris jaune des zones humides.",
+    "explanation": "Iris des marais est le choix qui correspond au repère visuel : iris jaune des zones humides.",
     "tags": [
       "nature",
       "botanique",
@@ -2075,23 +2075,23 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Tournesol",
       "Photo de Iris des marais",
-      "Photo de Orchidee abeille",
-      "Photo de Eglantier"
+      "Photo de Orchidée abeille",
+      "Photo de Églantier"
     ]
   },
   {
     "id": "nature-plants-025-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : iris jaune des zones humides ?",
+    "prompt": "Quelle espèce correspond a cet indice : iris jaune des zones humides ?",
     "choices": [
       "Iris des marais",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Iris des marais, nom scientifique Iris pseudacorus.",
+    "explanation": "La réponse attendue est Iris des marais, nom scientifique Iris pseudacorus.",
     "tags": [
       "nature",
       "botanique",
@@ -2105,15 +2105,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-026-identify",
     "topicId": "nature",
     "difficulty": 3,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Orchidee abeille",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Orchidée abeille",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Orchidee abeille (Ophrys apifera) se reconnait notamment par orchidee dont la fleur imite un insecte pollinisateur.",
+    "explanation": "Orchidée abeille (Ophrys apifera) se reconnaît notamment par orchidée dont la fleur imite un insecte pollinisateur.",
     "tags": [
       "nature",
       "botanique",
@@ -2125,21 +2125,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOphrys_apifera_(pale_form).jpg",
     "imageAsset": "nature/orchidee-abeille",
-    "imageAlt": "Photo de Orchidee abeille"
+    "imageAlt": "Photo de Orchidée abeille"
   },
   {
     "id": "nature-plants-026-image-choice",
     "topicId": "nature",
     "difficulty": 3,
-    "prompt": "Selectionne l image de Orchidee abeille.",
+    "prompt": "Sélectionne l’image de Orchidée abeille.",
     "choices": [
       "Tournesol",
       "Iris des marais",
-      "Orchidee abeille",
-      "Eglantier"
+      "Orchidée abeille",
+      "Églantier"
     ],
     "answerIndex": 2,
-    "explanation": "Orchidee abeille est le choix qui correspond au repere visuel : orchidee dont la fleur imite un insecte pollinisateur.",
+    "explanation": "Orchidée abeille est le choix qui correspond au repère visuel : orchidée dont la fleur imite un insecte pollinisateur.",
     "tags": [
       "nature",
       "botanique",
@@ -2159,23 +2159,23 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Tournesol",
       "Photo de Iris des marais",
-      "Photo de Orchidee abeille",
-      "Photo de Eglantier"
+      "Photo de Orchidée abeille",
+      "Photo de Églantier"
     ]
   },
   {
     "id": "nature-plants-026-clue",
     "topicId": "nature",
     "difficulty": 3,
-    "prompt": "Quelle espece correspond a cet indice : orchidee dont la fleur imite un insecte pollinisateur ?",
+    "prompt": "Quelle espèce correspond a cet indice : orchidée dont la fleur imite un insecte pollinisateur ?",
     "choices": [
-      "Orchidee abeille",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Orchidée abeille",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Orchidee abeille, nom scientifique Ophrys apifera.",
+    "explanation": "La réponse attendue est Orchidée abeille, nom scientifique Ophrys apifera.",
     "tags": [
       "nature",
       "botanique",
@@ -2189,15 +2189,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-027-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Eglantier",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Églantier",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Eglantier (Rosa canina) se reconnait notamment par rosier sauvage produisant des cynorrhodons.",
+    "explanation": "Églantier (Rosa canina) se reconnaît notamment par rosier sauvage produisant des cynorrhodons.",
     "tags": [
       "nature",
       "botanique",
@@ -2209,21 +2209,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHunds-Rose_Rosa_canina_Nationalpark_Donau-Auen_Lobau_Mai_2016_03.jpg",
     "imageAsset": "nature/eglantier",
-    "imageAlt": "Photo de Eglantier"
+    "imageAlt": "Photo de Églantier"
   },
   {
     "id": "nature-plants-027-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Eglantier.",
+    "prompt": "Sélectionne l’image de Églantier.",
     "choices": [
       "Tournesol",
       "Iris des marais",
-      "Orchidee abeille",
-      "Eglantier"
+      "Orchidée abeille",
+      "Églantier"
     ],
     "answerIndex": 3,
-    "explanation": "Eglantier est le choix qui correspond au repere visuel : rosier sauvage produisant des cynorrhodons.",
+    "explanation": "Églantier est le choix qui correspond au repère visuel : rosier sauvage produisant des cynorrhodons.",
     "tags": [
       "nature",
       "botanique",
@@ -2243,23 +2243,23 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Tournesol",
       "Photo de Iris des marais",
-      "Photo de Orchidee abeille",
-      "Photo de Eglantier"
+      "Photo de Orchidée abeille",
+      "Photo de Églantier"
     ]
   },
   {
     "id": "nature-plants-027-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : rosier sauvage produisant des cynorrhodons ?",
+    "prompt": "Quelle espèce correspond a cet indice : rosier sauvage produisant des cynorrhodons ?",
     "choices": [
-      "Eglantier",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Églantier",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Eglantier, nom scientifique Rosa canina.",
+    "explanation": "La réponse attendue est Églantier, nom scientifique Rosa canina.",
     "tags": [
       "nature",
       "botanique",
@@ -2273,15 +2273,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-028-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Aubepine monogyne",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Aubépine monogyne",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Aubepine monogyne (Crataegus monogyna) se reconnait notamment par arbuste epineux a fleurs blanches et petits fruits rouges.",
+    "explanation": "Aubépine monogyne (Crataegus monogyna) se reconnaît notamment par arbuste épineux à fleurs blanches et petits fruits rouges.",
     "tags": [
       "nature",
       "botanique",
@@ -2293,21 +2293,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACrataegus_monogyna_2.jpg",
     "imageAsset": "nature/aubepine-monogyne",
-    "imageAlt": "Photo de Aubepine monogyne"
+    "imageAlt": "Photo de Aubépine monogyne"
   },
   {
     "id": "nature-plants-028-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Aubepine monogyne.",
+    "prompt": "Sélectionne l’image de Aubépine monogyne.",
     "choices": [
-      "Aubepine monogyne",
+      "Aubépine monogyne",
       "Sureau noir",
-      "Fougere aigle",
+      "Fougère aigle",
       "Sphaigne"
     ],
     "answerIndex": 0,
-    "explanation": "Aubepine monogyne est le choix qui correspond au repere visuel : arbuste epineux a fleurs blanches et petits fruits rouges.",
+    "explanation": "Aubépine monogyne est le choix qui correspond au repère visuel : arbuste épineux à fleurs blanches et petits fruits rouges.",
     "tags": [
       "nature",
       "botanique",
@@ -2325,9 +2325,9 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/sphaigne"
     ],
     "choiceImageAlts": [
-      "Photo de Aubepine monogyne",
+      "Photo de Aubépine monogyne",
       "Photo de Sureau noir",
-      "Photo de Fougere aigle",
+      "Photo de Fougère aigle",
       "Photo de Sphaigne"
     ]
   },
@@ -2335,15 +2335,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-028-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : arbuste epineux a fleurs blanches et petits fruits rouges ?",
+    "prompt": "Quelle espèce correspond a cet indice : arbuste épineux à fleurs blanches et petits fruits rouges ?",
     "choices": [
-      "Aubepine monogyne",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Aubépine monogyne",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Aubepine monogyne, nom scientifique Crataegus monogyna.",
+    "explanation": "La réponse attendue est Aubépine monogyne, nom scientifique Crataegus monogyna.",
     "tags": [
       "nature",
       "botanique",
@@ -2357,15 +2357,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-029-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Sureau noir",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Sureau noir (Sambucus nigra) se reconnait notamment par arbuste a ombelles blanches puis baies noires.",
+    "explanation": "Sureau noir (Sambucus nigra) se reconnaît notamment par arbuste à ombelles blanches puis baies noires.",
     "tags": [
       "nature",
       "botanique",
@@ -2383,15 +2383,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-029-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Sureau noir.",
+    "prompt": "Sélectionne l’image de Sureau noir.",
     "choices": [
-      "Aubepine monogyne",
+      "Aubépine monogyne",
       "Sureau noir",
-      "Fougere aigle",
+      "Fougère aigle",
       "Sphaigne"
     ],
     "answerIndex": 1,
-    "explanation": "Sureau noir est le choix qui correspond au repere visuel : arbuste a ombelles blanches puis baies noires.",
+    "explanation": "Sureau noir est le choix qui correspond au repère visuel : arbuste à ombelles blanches puis baies noires.",
     "tags": [
       "nature",
       "botanique",
@@ -2409,9 +2409,9 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/sphaigne"
     ],
     "choiceImageAlts": [
-      "Photo de Aubepine monogyne",
+      "Photo de Aubépine monogyne",
       "Photo de Sureau noir",
-      "Photo de Fougere aigle",
+      "Photo de Fougère aigle",
       "Photo de Sphaigne"
     ]
   },
@@ -2419,15 +2419,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-029-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : arbuste a ombelles blanches puis baies noires ?",
+    "prompt": "Quelle espèce correspond a cet indice : arbuste à ombelles blanches puis baies noires ?",
     "choices": [
       "Sureau noir",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Sureau noir, nom scientifique Sambucus nigra.",
+    "explanation": "La réponse attendue est Sureau noir, nom scientifique Sambucus nigra.",
     "tags": [
       "nature",
       "botanique",
@@ -2441,15 +2441,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-030-identify",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
-      "Fougere aigle",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Fougère aigle",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Fougere aigle (Pteridium aquilinum) se reconnait notamment par grande fougere formant de vastes tapis en sous-bois.",
+    "explanation": "Fougère aigle (Pteridium aquilinum) se reconnaît notamment par grande fougère formant de vastes tapis en sous-bois.",
     "tags": [
       "nature",
       "botanique",
@@ -2461,21 +2461,21 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz nature - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%D0%9F%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B9_%D0%BF%D1%83%D1%87%D0%BE%D0%BA_Pteridium_aquilinum.JPG",
     "imageAsset": "nature/fougere-aigle",
-    "imageAlt": "Photo de Fougere aigle"
+    "imageAlt": "Photo de Fougère aigle"
   },
   {
     "id": "nature-plants-030-image-choice",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Fougere aigle.",
+    "prompt": "Sélectionne l’image de Fougère aigle.",
     "choices": [
-      "Aubepine monogyne",
+      "Aubépine monogyne",
       "Sureau noir",
-      "Fougere aigle",
+      "Fougère aigle",
       "Sphaigne"
     ],
     "answerIndex": 2,
-    "explanation": "Fougere aigle est le choix qui correspond au repere visuel : grande fougere formant de vastes tapis en sous-bois.",
+    "explanation": "Fougère aigle est le choix qui correspond au repère visuel : grande fougère formant de vastes tapis en sous-bois.",
     "tags": [
       "nature",
       "botanique",
@@ -2493,9 +2493,9 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/sphaigne"
     ],
     "choiceImageAlts": [
-      "Photo de Aubepine monogyne",
+      "Photo de Aubépine monogyne",
       "Photo de Sureau noir",
-      "Photo de Fougere aigle",
+      "Photo de Fougère aigle",
       "Photo de Sphaigne"
     ]
   },
@@ -2503,15 +2503,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-030-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espece correspond a cet indice : grande fougere formant de vastes tapis en sous-bois ?",
+    "prompt": "Quelle espèce correspond a cet indice : grande fougère formant de vastes tapis en sous-bois ?",
     "choices": [
-      "Fougere aigle",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Fougère aigle",
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Fougere aigle, nom scientifique Pteridium aquilinum.",
+    "explanation": "La réponse attendue est Fougère aigle, nom scientifique Pteridium aquilinum.",
     "tags": [
       "nature",
       "botanique",
@@ -2525,15 +2525,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-031-identify",
     "topicId": "nature",
     "difficulty": 3,
-    "prompt": "Quelle espece est visible sur cette photo ?",
+    "prompt": "Quelle espèce est visible sur cette photo ?",
     "choices": [
       "Sphaigne",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "Sphaigne (Sphagnum) se reconnait notamment par mousse des tourbieres capable de retenir beaucoup d eau.",
+    "explanation": "Sphaigne (Sphagnum) se reconnaît notamment par mousse des tourbières capable de retenir beaucoup d’eau.",
     "tags": [
       "nature",
       "botanique",
@@ -2551,15 +2551,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-031-image-choice",
     "topicId": "nature",
     "difficulty": 3,
-    "prompt": "Selectionne l image de Sphaigne.",
+    "prompt": "Sélectionne l’image de Sphaigne.",
     "choices": [
-      "Aubepine monogyne",
+      "Aubépine monogyne",
       "Sureau noir",
-      "Fougere aigle",
+      "Fougère aigle",
       "Sphaigne"
     ],
     "answerIndex": 3,
-    "explanation": "Sphaigne est le choix qui correspond au repere visuel : mousse des tourbieres capable de retenir beaucoup d eau.",
+    "explanation": "Sphaigne est le choix qui correspond au repère visuel : mousse des tourbières capable de retenir beaucoup d’eau.",
     "tags": [
       "nature",
       "botanique",
@@ -2577,9 +2577,9 @@ export const natureVisualQuestions: QuestionSeed[] = [
       "nature/sphaigne"
     ],
     "choiceImageAlts": [
-      "Photo de Aubepine monogyne",
+      "Photo de Aubépine monogyne",
       "Photo de Sureau noir",
-      "Photo de Fougere aigle",
+      "Photo de Fougère aigle",
       "Photo de Sphaigne"
     ]
   },
@@ -2587,15 +2587,15 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-031-clue",
     "topicId": "nature",
     "difficulty": 3,
-    "prompt": "Quelle espece correspond a cet indice : mousse des tourbieres capable de retenir beaucoup d eau ?",
+    "prompt": "Quelle espèce correspond a cet indice : mousse des tourbières capable de retenir beaucoup d’eau ?",
     "choices": [
       "Sphaigne",
-      "Chene pedoncule",
-      "Hetre commun",
-      "Erable sycomore"
+      "Chêne pédonculé",
+      "Hêtre commun",
+      "Érable sycomore"
     ],
     "answerIndex": 0,
-    "explanation": "La reponse attendue est Sphaigne, nom scientifique Sphagnum.",
+    "explanation": "La réponse attendue est Sphaigne, nom scientifique Sphagnum.",
     "tags": [
       "nature",
       "botanique",
