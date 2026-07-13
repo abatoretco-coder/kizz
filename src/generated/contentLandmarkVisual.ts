@@ -939,13 +939,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 1,
     "prompt": "Dans quel pays se trouve Empire State Building ?",
     "choices": [
-      "Etats-Unis",
+      "États-Unis",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building se trouve en Etats-Unis ; ce pays relie architecture et géographie culturelle.",
+    "explanation": "Empire State Building se trouve aux États-Unis ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1067,13 +1067,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 1,
     "prompt": "Dans quel pays se trouve Golden Gate Bridge ?",
     "choices": [
-      "Etats-Unis",
+      "États-Unis",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge se trouve en Etats-Unis ; ce pays relie architecture et géographie culturelle.",
+    "explanation": "Golden Gate Bridge se trouve aux États-Unis ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4382,13 +4382,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 3,
     "prompt": "Dans quel pays se trouve Fallingwater ?",
     "choices": [
-      "Etats-Unis",
+      "États-Unis",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater se trouve en Etats-Unis ; ce pays relie architecture et géographie culturelle.",
+    "explanation": "Fallingwater se trouve aux États-Unis ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6150,13 +6150,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 3,
     "prompt": "Dans quel pays se trouve Gyeongbokgung ?",
     "choices": [
-      "Coree du Sud",
+      "Corée du Sud",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung se trouve en Coree du Sud ; ce pays relie architecture et géographie culturelle.",
+    "explanation": "Gyeongbokgung se trouve en Corée du Sud ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",

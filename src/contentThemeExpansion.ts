@@ -57,7 +57,7 @@ export const thematicExpansionQuestions: QuestionSeed[] = entries.map((entry, in
   prompt: entry.prompt,
   choices: entry.choices,
   answerIndex: entry.answerIndex,
-  explanation: entry.explanation.length < 38 ? `${entry.explanation} Ce repere donne le minimum utile pour fixer la notion.` : entry.explanation,
+  explanation: entry.explanation.length < 38 ? `${entry.explanation} Ce repère donne le minimum utile pour fixer la notion.` : entry.explanation,
   tags: ['theme-expansion', ...entry.tags],
   sourceLabel,
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(entry.prompt)}`,

@@ -1028,7 +1028,7 @@ const mediumFlagCountries = new Set([
 ]);
 
 function normalizeCountry(country: string) {
-  return country.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[?]/g, "'").replace(/Ã©/g, 'e').replace(/Ã´/g, 'o');
+  return country.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[?]/g, "'").replace(/\u00c3\u00a9/g, 'e').replace(/\u00c3\u00b4/g, 'o');
 }
 
 function flagDifficulty(country: string): 1 | 2 | 3 {
@@ -1039,7 +1039,7 @@ function flagDifficulty(country: string): 1 | 2 | 3 {
 }
 
 function flagExplanation(row: FlagCountry) {
-  return `${row.flag} est le drapeau de ${row.country}; le code ${row.code} sert aussi de repere ISO/Unicode pour ce pays.`;
+  return `${row.flag} est le drapeau de ${row.country} ; le code ${row.code} sert aussi de repère ISO/Unicode pour ce pays.`;
 }
 
 const flagToCountryTextQuestions: QuestionSeed[] = flagCountries.map((row, index) => ({
@@ -1047,7 +1047,7 @@ const flagToCountryTextQuestions: QuestionSeed[] = flagCountries.map((row, index
   topicId: 'geography',
   difficulty: flagDifficulty(row.country),
   type: 'free-text',
-  prompt: `Quel pays correspond a ce drapeau ? ${row.flag}`,
+  prompt: `Quel pays correspond à ce drapeau ? ${row.flag}`,
   acceptedAnswers: acceptedCountryNames(row.country),
   explanation: flagExplanation(row),
   tags: ['geography', 'drapeaux', 'pays-du-monde', 'coverage:world-flags', 'subtheme:geo:flags'],
@@ -1059,7 +1059,7 @@ const flagToCountryChoiceQuestions: QuestionSeed[] = flagCountries.map((row, ind
   id: `world-flag-choice-${slug(row.country)}`,
   topicId: 'geography',
   difficulty: flagDifficulty(row.country),
-  prompt: `A quel pays appartient ce drapeau ? ${row.flag}`,
+  prompt: `À quel pays appartient ce drapeau ? ${row.flag}`,
   choices: choicesFrom(flagCountries, index, (item) => item.country),
   answerIndex: 0,
   explanation: flagExplanation(row),
@@ -1072,7 +1072,7 @@ const countryToFlagChoiceQuestions: QuestionSeed[] = flagCountries.map((row, ind
   id: `world-country-flag-${slug(row.country)}`,
   topicId: 'geography',
   difficulty: flagDifficulty(row.country),
-  prompt: `Selectionne le drapeau de ${row.country}.`,
+  prompt: `Sélectionne le drapeau de ${row.country}.`,
   choices: choicesFrom(flagCountries, index, (item) => item.flag),
   answerIndex: 0,
   explanation: flagExplanation(row),

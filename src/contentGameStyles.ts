@@ -271,5 +271,5 @@ const rawGameStyleQuestions: QuestionSeed[] = [
 
 export const gameStyleQuestions: QuestionSeed[] = rawGameStyleQuestions.map((question) => ({
   ...question,
-  explanation: question.explanation.length < 38 ? `${question.explanation} Ce repere reste volontairement court pour un format de reponse rapide.` : question.explanation,
+  explanation: question.explanation.length < 38 ? `${question.explanation} Ce repère reste volontairement court pour un format de réponse rapide.` : question.explanation,
 }));

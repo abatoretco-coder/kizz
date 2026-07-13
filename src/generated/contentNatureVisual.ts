@@ -67,7 +67,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-001-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : pelage roux, museau fin et queue touffue ?",
+    "prompt": "Quelle espèce correspond à cet indice : pelage roux, museau fin et queue touffue ?",
     "choices": [
       "Renard roux",
       "Loup gris",
@@ -151,7 +151,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-002-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : canide social vivant souvent en meute ?",
+    "prompt": "Quelle espèce correspond à cet indice : canide social vivant souvent en meute ?",
     "choices": [
       "Loup gris",
       "Renard roux",
@@ -235,7 +235,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-003-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : oreilles terminées par des pinceaux noirs ?",
+    "prompt": "Quelle espèce correspond à cet indice : oreilles terminées par des pinceaux noirs ?",
     "choices": [
       "Lynx boréal",
       "Renard roux",
@@ -319,7 +319,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-004-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : grandes cornes arquées et habitat de haute montagne ?",
+    "prompt": "Quelle espèce correspond à cet indice : grandes cornes arquées et habitat de haute montagne ?",
     "choices": [
       "Bouquetin des Alpes",
       "Renard roux",
@@ -403,7 +403,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-005-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : grand cervidé dont le mâle porte des bois ramifiés ?",
+    "prompt": "Quelle espèce correspond à cet indice : grand cervidé dont le mâle porte des bois ramifiés ?",
     "choices": [
       "Cerf élaphe",
       "Renard roux",
@@ -487,7 +487,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-006-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : petit mammifère couvert de piquants ?",
+    "prompt": "Quelle espèce correspond à cet indice : petit mammifère couvert de piquants ?",
     "choices": [
       "Hérisson commun",
       "Renard roux",
@@ -571,7 +571,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-007-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : oiseau rose aux longues pattes vivant dans les lagunes ?",
+    "prompt": "Quelle espèce correspond à cet indice : oiseau rose aux longues pattes vivant dans les lagunes ?",
     "choices": [
       "Flamant rose",
       "Renard roux",
@@ -655,7 +655,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-008-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : petit oiseau bleu et orange qui plonge pour pêcher ?",
+    "prompt": "Quelle espèce correspond à cet indice : petit oiseau bleu et orange qui plonge pour pêcher ?",
     "choices": [
       "Martin-pêcheur d’Europe",
       "Renard roux",
@@ -739,7 +739,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-009-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : rapace nocturne fréquent dans les forêts européennes ?",
+    "prompt": "Quelle espèce correspond à cet indice : rapace nocturne fréquent dans les forêts européennes ?",
     "choices": [
       "Chouette hulotte",
       "Renard roux",
@@ -823,7 +823,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-010-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : grand rapace de montagne à l’envergure imposante ?",
+    "prompt": "Quelle espèce correspond à cet indice : grand rapace de montagne à l’envergure imposante ?",
     "choices": [
       "Aigle royal",
       "Renard roux",
@@ -907,7 +907,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-011-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : amphibien noir marqué de taches jaunes ?",
+    "prompt": "Quelle espèce correspond à cet indice : amphibien noir marqué de taches jaunes ?",
     "choices": [
       "Salamandre tachetée",
       "Renard roux",
@@ -991,7 +991,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-012-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : amphibien des mares au chant sonore ?",
+    "prompt": "Quelle espèce correspond à cet indice : amphibien des mares au chant sonore ?",
     "choices": [
       "Grenouille verte",
       "Renard roux",
@@ -1075,7 +1075,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-013-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : serpent non venimeux souvent proche des zones humides ?",
+    "prompt": "Quelle espèce correspond à cet indice : serpent non venimeux souvent proche des zones humides ?",
     "choices": [
       "Couleuvre à collier",
       "Renard roux",
@@ -1159,7 +1159,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-014-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : grand papillon jaune avec des queues aux ailes postérieures ?",
+    "prompt": "Quelle espèce correspond à cet indice : grand papillon jaune avec des queues aux ailes postérieures ?",
     "choices": [
       "Machaon",
       "Renard roux",
@@ -1243,7 +1243,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-animals-015-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : insecte pollinisateur élevé en ruches ?",
+    "prompt": "Quelle espèce correspond à cet indice : insecte pollinisateur élevé en ruches ?",
     "choices": [
       "Abeille domestique",
       "Renard roux",
@@ -1327,7 +1327,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-016-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : grand arbre européen portant des glands sur pédoncule ?",
+    "prompt": "Quelle espèce correspond à cet indice : grand arbre européen portant des glands sur pédoncule ?",
     "choices": [
       "Chêne pédonculé",
       "Hêtre commun",
@@ -1411,7 +1411,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-017-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : arbre à écorce grise lisse et feuilles ovales ?",
+    "prompt": "Quelle espèce correspond à cet indice : arbre à écorce grise lisse et feuilles ovales ?",
     "choices": [
       "Hêtre commun",
       "Chêne pédonculé",
@@ -1495,7 +1495,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-018-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : feuilles palmées et samares en hélicoptères ?",
+    "prompt": "Quelle espèce correspond à cet indice : feuilles palmées et samares en hélicoptères ?",
     "choices": [
       "Érable sycomore",
       "Chêne pédonculé",
@@ -1579,7 +1579,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-019-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : tronc blanc et rameaux souples pendants ?",
+    "prompt": "Quelle espèce correspond à cet indice : tronc blanc et rameaux souples pendants ?",
     "choices": [
       "Bouleau verruqueux",
       "Chêne pédonculé",
@@ -1663,7 +1663,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-020-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : conifère à écorce orangée et aiguilles par deux ?",
+    "prompt": "Quelle espèce correspond à cet indice : conifère à écorce orangée et aiguilles par deux ?",
     "choices": [
       "Pin sylvestre",
       "Chêne pédonculé",
@@ -1747,7 +1747,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-021-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : conifère sombre aux arilles rouges toxiques hors pulpe ?",
+    "prompt": "Quelle espèce correspond à cet indice : conifère sombre aux arilles rouges toxiques hors pulpe ?",
     "choices": [
       "If commun",
       "Chêne pédonculé",
@@ -1831,7 +1831,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-022-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : plante aromatique violette typique des milieux méditerranéens ?",
+    "prompt": "Quelle espèce correspond à cet indice : plante aromatique violette typique des milieux méditerranéens ?",
     "choices": [
       "Lavande vraie",
       "Chêne pédonculé",
@@ -1915,7 +1915,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-023-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : fleur rouge fréquente dans les champs et bords de route ?",
+    "prompt": "Quelle espèce correspond à cet indice : fleur rouge fréquente dans les champs et bords de route ?",
     "choices": [
       "Coquelicot",
       "Chêne pédonculé",
@@ -1999,7 +1999,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-024-clue",
     "topicId": "nature",
     "difficulty": 1,
-    "prompt": "Quelle espèce correspond a cet indice : grande fleur jaune cultivée pour ses graines huileuses ?",
+    "prompt": "Quelle espèce correspond à cet indice : grande fleur jaune cultivée pour ses graines huileuses ?",
     "choices": [
       "Tournesol",
       "Chêne pédonculé",
@@ -2083,7 +2083,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-025-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : iris jaune des zones humides ?",
+    "prompt": "Quelle espèce correspond à cet indice : iris jaune des zones humides ?",
     "choices": [
       "Iris des marais",
       "Chêne pédonculé",
@@ -2167,7 +2167,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-026-clue",
     "topicId": "nature",
     "difficulty": 3,
-    "prompt": "Quelle espèce correspond a cet indice : orchidée dont la fleur imite un insecte pollinisateur ?",
+    "prompt": "Quelle espèce correspond à cet indice : orchidée dont la fleur imite un insecte pollinisateur ?",
     "choices": [
       "Orchidée abeille",
       "Chêne pédonculé",
@@ -2251,7 +2251,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-027-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : rosier sauvage produisant des cynorrhodons ?",
+    "prompt": "Quelle espèce correspond à cet indice : rosier sauvage produisant des cynorrhodons ?",
     "choices": [
       "Églantier",
       "Chêne pédonculé",
@@ -2335,7 +2335,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-028-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : arbuste épineux à fleurs blanches et petits fruits rouges ?",
+    "prompt": "Quelle espèce correspond à cet indice : arbuste épineux à fleurs blanches et petits fruits rouges ?",
     "choices": [
       "Aubépine monogyne",
       "Chêne pédonculé",
@@ -2419,7 +2419,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-029-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : arbuste à ombelles blanches puis baies noires ?",
+    "prompt": "Quelle espèce correspond à cet indice : arbuste à ombelles blanches puis baies noires ?",
     "choices": [
       "Sureau noir",
       "Chêne pédonculé",
@@ -2503,7 +2503,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-030-clue",
     "topicId": "nature",
     "difficulty": 2,
-    "prompt": "Quelle espèce correspond a cet indice : grande fougère formant de vastes tapis en sous-bois ?",
+    "prompt": "Quelle espèce correspond à cet indice : grande fougère formant de vastes tapis en sous-bois ?",
     "choices": [
       "Fougère aigle",
       "Chêne pédonculé",
@@ -2587,7 +2587,7 @@ export const natureVisualQuestions: QuestionSeed[] = [
     "id": "nature-plants-031-clue",
     "topicId": "nature",
     "difficulty": 3,
-    "prompt": "Quelle espèce correspond a cet indice : mousse des tourbières capable de retenir beaucoup d’eau ?",
+    "prompt": "Quelle espèce correspond à cet indice : mousse des tourbières capable de retenir beaucoup d’eau ?",
     "choices": [
       "Sphaigne",
       "Chêne pédonculé",

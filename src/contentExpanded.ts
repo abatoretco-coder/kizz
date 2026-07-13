@@ -10,7 +10,7 @@ function build(topicId: string, prefix: string, difficulty: Difficulty, entries:
     prompt,
     choices,
     answerIndex,
-    explanation: explanation.length < 38 ? `${explanation} Ce repere court aide a automatiser la reconnaissance dans le theme.` : explanation,
+    explanation: explanation.length < 38 ? `${explanation} Ce repère court aide à automatiser la reconnaissance dans le thème.` : explanation,
     tags: ['pack-etendu', topicId],
     sourceLabel: 'Sélection éditoriale Kizz',
     learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(prompt)}`,
