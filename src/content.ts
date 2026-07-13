@@ -19,6 +19,7 @@ import { visualRecognitionQuestions } from './contentVisualRecognition';
 import { visualHistoryQuestions } from './generated/contentVisualHistory';
 import { natureVisualQuestions } from './generated/contentNatureVisual';
 import { landmarkVisualQuestions } from './generated/contentLandmarkVisual';
+import { openTdbQuestions, openTdbTopics } from './generated/contentOpenTdb';
 import { scienceChemistryQuestions } from './contentScienceChemistry';
 import { formatBalanceQuestions } from './contentFormatBalance';
 import { visualImageExpansionQuestions } from './contentVisualImageExpansion';
@@ -43,6 +44,7 @@ const rawTopics: Topic[] = [
   { id: 'language', title: 'Langues', subtitle: 'Premiers pas multilingues', icon: 'L', color: '#2E7E9C' },
   economyTopic,
   astronomyTopic,
+  ...openTdbTopics,
   franceMapTopic,
   ...mvpTopics,
 ];
@@ -97,6 +99,7 @@ const rawQuestions: QuestionSeed[] = [
   ...visualHistoryQuestions,
   ...natureVisualQuestions,
   ...landmarkVisualQuestions,
+  ...openTdbQuestions,
   ...scienceChemistryQuestions,
   ...formatBalanceQuestions,
   ...visualImageExpansionQuestions,
@@ -109,9 +112,12 @@ function hashQuestionId(id: string) {
 }
 
 function balancedAnswerOrder(seed: QuestionSeed[]) {
-  const answerCounts = [0, 0, 0, 0];
+  const answerCountsByGroup = new Map<string, [number, number, number, number]>();
+  const globalAnswerCounts: [number, number, number, number] = [0, 0, 0, 0];
   return seed.map((question) => {
     if (!question.choices || question.choices.length !== 4 || question.answerIndex === undefined) return question;
+    const groupKey = `${question.topicId}:${question.difficulty}`;
+    const answerCounts = answerCountsByGroup.get(groupKey) ?? [0, 0, 0, 0];
     const rows = question.choices.map((choice, index) => ({
       choice,
       choiceImageAsset: question.choiceImageAssets?.[index],
@@ -120,10 +126,17 @@ function balancedAnswerOrder(seed: QuestionSeed[]) {
     const correctRow = rows[question.answerIndex];
     const distractors = rows.filter((_, index) => index !== question.answerIndex);
     const tieBreaker = hashQuestionId(question.id);
-    const targetIndex = [0, 1, 2, 3].sort((left, right) => (
-      answerCounts[left] - answerCounts[right] || ((left + tieBreaker) % 4) - ((right + tieBreaker) % 4)
-    ))[0];
+    const groupMin = Math.min(...answerCounts);
+    const targetIndex = [0, 1, 2, 3]
+      .filter((index) => answerCounts[index] <= groupMin + 1)
+      .sort((left, right) => (
+        globalAnswerCounts[left] - globalAnswerCounts[right]
+        || answerCounts[left] - answerCounts[right]
+        || ((left + tieBreaker) % 4) - ((right + tieBreaker) % 4)
+      ))[0];
     answerCounts[targetIndex] += 1;
+    globalAnswerCounts[targetIndex] += 1;
+    answerCountsByGroup.set(groupKey, answerCounts);
     const orderedRows = [...distractors];
     orderedRows.splice(targetIndex, 0, correctRow);
     return {
