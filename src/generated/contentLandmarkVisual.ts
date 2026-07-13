@@ -5,7 +5,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-001-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Taj Mahal",
       "Angkor Vat",
@@ -13,7 +13,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal se reconnait notamment par mausolee de marbre blanc.",
+    "explanation": "Taj Mahal se reconnaît notamment par mausolée de marbre blanc.",
     "tags": [
       "architecture",
       "image",
@@ -38,7 +38,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Cusco"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal est rattache ici a Agra; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Taj Mahal est rattaché ici à Agra ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -58,10 +58,10 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Inde",
       "Cambodge",
       "Jordanie",
-      "Perou"
+      "Pérou"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal se trouve en Inde; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Taj Mahal se trouve en Inde ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -76,7 +76,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-001-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Taj Mahal ?",
+    "prompt": "Quel repère stylistique associer à Taj Mahal ?",
     "choices": [
       "moghol",
       "khmer",
@@ -84,7 +84,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "inca"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal est classe ici dans le repere moghol; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Taj Mahal est classé ici dans le repère moghol ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -98,7 +98,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-001-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Taj Mahal.",
+    "prompt": "Sélectionne l’image de Taj Mahal.",
     "choices": [
       "Taj Mahal",
       "Angkor Vat",
@@ -106,7 +106,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 0,
-    "explanation": "Taj Mahal correspond au repere visuel : mausolee de marbre blanc.",
+    "explanation": "Taj Mahal correspond au repère visuel : mausolée de marbre blanc.",
     "tags": [
       "architecture",
       "image-choice",
@@ -133,7 +133,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-002-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Angkor Vat",
       "Taj Mahal",
@@ -141,7 +141,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 0,
-    "explanation": "Angkor Vat se reconnait notamment par temple monumental khmer.",
+    "explanation": "Angkor Vat se reconnaît notamment par temple monumental khmer.",
     "tags": [
       "architecture",
       "image",
@@ -166,7 +166,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Cusco"
     ],
     "answerIndex": 0,
-    "explanation": "Angkor Vat est rattache ici a Siem Reap; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Angkor Vat est rattaché ici à Siem Reap ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -186,10 +186,10 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Cambodge",
       "Inde",
       "Jordanie",
-      "Perou"
+      "Pérou"
     ],
     "answerIndex": 0,
-    "explanation": "Angkor Vat se trouve en Cambodge; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Angkor Vat se trouve au Cambodge ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -204,7 +204,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-002-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Angkor Vat ?",
+    "prompt": "Quel repère stylistique associer à Angkor Vat ?",
     "choices": [
       "khmer",
       "moghol",
@@ -212,7 +212,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "inca"
     ],
     "answerIndex": 0,
-    "explanation": "Angkor Vat est classe ici dans le repere khmer; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Angkor Vat est classé ici dans le repère khmer ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -226,7 +226,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-003-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Petra",
       "Taj Mahal",
@@ -234,7 +234,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 0,
-    "explanation": "Petra se reconnait notamment par facades taillees dans la roche.",
+    "explanation": "Petra se reconnaît notamment par façades taillées dans la roche.",
     "tags": [
       "architecture",
       "image",
@@ -259,7 +259,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Cusco"
     ],
     "answerIndex": 0,
-    "explanation": "Petra est rattache ici a Wadi Musa; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Petra est rattaché ici à Wadi Musa ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -279,10 +279,10 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie",
       "Inde",
       "Cambodge",
-      "Perou"
+      "Pérou"
     ],
     "answerIndex": 0,
-    "explanation": "Petra se trouve en Jordanie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Petra se trouve en Jordanie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -297,7 +297,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-003-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Petra ?",
+    "prompt": "Quel repère stylistique associer à Petra ?",
     "choices": [
       "nabateen",
       "moghol",
@@ -305,7 +305,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "inca"
     ],
     "answerIndex": 0,
-    "explanation": "Petra est classe ici dans le repere nabateen; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Petra est classé ici dans le repère nabateen ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -319,7 +319,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-003-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Petra.",
+    "prompt": "Sélectionne l’image de Petra.",
     "choices": [
       "Taj Mahal",
       "Angkor Vat",
@@ -327,7 +327,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 2,
-    "explanation": "Petra correspond au repere visuel : facades taillees dans la roche.",
+    "explanation": "Petra correspond au repère visuel : façades taillées dans la roche.",
     "tags": [
       "architecture",
       "image-choice",
@@ -354,7 +354,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-004-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Machu Picchu",
       "Taj Mahal",
@@ -362,7 +362,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Machu Picchu se reconnait notamment par cite andine en terrasses.",
+    "explanation": "Machu Picchu se reconnaît notamment par cité andine en terrasses.",
     "tags": [
       "architecture",
       "image",
@@ -387,7 +387,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Machu Picchu est rattache ici a Cusco; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Machu Picchu est rattaché ici à Cusco ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -404,13 +404,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 1,
     "prompt": "Dans quel pays se trouve Machu Picchu ?",
     "choices": [
-      "Perou",
+      "Pérou",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Machu Picchu se trouve en Perou; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Machu Picchu se trouve en Pérou ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -425,7 +425,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-004-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Machu Picchu ?",
+    "prompt": "Quel repère stylistique associer à Machu Picchu ?",
     "choices": [
       "inca",
       "moghol",
@@ -433,7 +433,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Machu Picchu est classe ici dans le repere inca; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Machu Picchu est classé ici dans le repère inca ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -447,7 +447,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-005-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Chichen Itza",
       "Taj Mahal",
@@ -455,7 +455,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza se reconnait notamment par pyramide a degres mesoamericaine.",
+    "explanation": "Chichen Itza se reconnaît notamment par pyramide a degrés mésoaméricaine.",
     "tags": [
       "architecture",
       "image",
@@ -474,13 +474,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 2,
     "prompt": "Dans quelle ville ou zone se trouve Chichen Itza ?",
     "choices": [
-      "Yucatan",
+      "Yucatán",
       "Agra",
       "Siem Reap",
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza est rattache ici a Yucatan; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Chichen Itza est rattaché ici à Yucatán ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -503,7 +503,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza se trouve en Mexique; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Chichen Itza se trouve en Mexique ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -518,7 +518,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-005-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Chichen Itza ?",
+    "prompt": "Quel repère stylistique associer à Chichen Itza ?",
     "choices": [
       "maya",
       "moghol",
@@ -526,7 +526,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza est classe ici dans le repere maya; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Chichen Itza est classé ici dans le repère maya ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -540,15 +540,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-005-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Chichen Itza.",
+    "prompt": "Sélectionne l’image de Chichen Itza.",
     "choices": [
       "Chichen Itza",
-      "Christ Redempteur",
-      "Opera de Sydney",
+      "Christ Rédempteur",
+      "Opéra de Sydney",
       "Burj Khalifa"
     ],
     "answerIndex": 0,
-    "explanation": "Chichen Itza correspond au repere visuel : pyramide a degres mesoamericaine.",
+    "explanation": "Chichen Itza correspond au repère visuel : pyramide a degrés mésoaméricaine.",
     "tags": [
       "architecture",
       "image-choice",
@@ -566,8 +566,8 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     ],
     "choiceImageAlts": [
       "Photo de Chichen Itza",
-      "Photo de Christ Redempteur",
-      "Photo de Opera de Sydney",
+      "Photo de Christ Rédempteur",
+      "Photo de Opéra de Sydney",
       "Photo de Burj Khalifa"
     ]
   },
@@ -575,15 +575,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-006-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Christ Redempteur",
+      "Christ Rédempteur",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Christ Redempteur se reconnait notamment par statue dominant la baie de Rio.",
+    "explanation": "Christ Rédempteur se reconnaît notamment par statue dominant la baie de Rio.",
     "tags": [
       "architecture",
       "image",
@@ -594,13 +594,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AObama_family_in_mist_in_Rio_de_Janeiro.jpg",
     "imageAsset": "landmarks/christ-redempteur",
-    "imageAlt": "Photo de Christ Redempteur"
+    "imageAlt": "Photo de Christ Rédempteur"
   },
   {
     "id": "landmark-006-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Christ Redempteur ?",
+    "prompt": "Dans quelle ville ou zone se trouve Christ Rédempteur ?",
     "choices": [
       "Rio de Janeiro",
       "Agra",
@@ -608,7 +608,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Christ Redempteur est rattache ici a Rio de Janeiro; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Christ Rédempteur est rattaché ici à Rio de Janeiro ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -623,7 +623,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-006-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Christ Redempteur ?",
+    "prompt": "Dans quel pays se trouve Christ Rédempteur ?",
     "choices": [
       "Bresil",
       "Inde",
@@ -631,7 +631,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Christ Redempteur se trouve en Bresil; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Christ Rédempteur se trouve en Bresil ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -646,7 +646,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-006-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Christ Redempteur ?",
+    "prompt": "Quel repère stylistique associer à Christ Rédempteur ?",
     "choices": [
       "art deco",
       "moghol",
@@ -654,7 +654,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Christ Redempteur est classe ici dans le repere art deco; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Christ Rédempteur est classé ici dans le repère art deco ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -668,15 +668,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-007-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Opera de Sydney",
+      "Opéra de Sydney",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Opera de Sydney se reconnait notamment par toitures en coques blanches.",
+    "explanation": "Opéra de Sydney se reconnaît notamment par toitures en coques blanches.",
     "tags": [
       "architecture",
       "image",
@@ -687,13 +687,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASydney_Harbour_Bridge_night.jpg",
     "imageAsset": "landmarks/opera-de-sydney",
-    "imageAlt": "Photo de Opera de Sydney"
+    "imageAlt": "Photo de Opéra de Sydney"
   },
   {
     "id": "landmark-007-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : toitures en coques blanches ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : toitures en coques blanches ?",
     "choices": [
       "Sydney",
       "Agra",
@@ -701,7 +701,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Opera de Sydney est rattache ici a Sydney; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Opéra de Sydney est rattaché ici à Sydney ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -716,7 +716,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-007-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Opera de Sydney ?",
+    "prompt": "Dans quel pays se trouve Opéra de Sydney ?",
     "choices": [
       "Australie",
       "Inde",
@@ -724,7 +724,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Opera de Sydney se trouve en Australie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Opéra de Sydney se trouve en Australie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -739,7 +739,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-007-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Opera de Sydney ?",
+    "prompt": "Quel repère stylistique associer à Opéra de Sydney ?",
     "choices": [
       "expressionniste",
       "moghol",
@@ -747,7 +747,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Opera de Sydney est classe ici dans le repere expressionniste; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Opéra de Sydney est classé ici dans le repère expressionniste ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -761,15 +761,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-007-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Opera de Sydney.",
+    "prompt": "Sélectionne l’image de Opéra de Sydney.",
     "choices": [
       "Chichen Itza",
-      "Christ Redempteur",
-      "Opera de Sydney",
+      "Christ Rédempteur",
+      "Opéra de Sydney",
       "Burj Khalifa"
     ],
     "answerIndex": 2,
-    "explanation": "Opera de Sydney correspond au repere visuel : toitures en coques blanches.",
+    "explanation": "Opéra de Sydney correspond au repère visuel : toitures en coques blanches.",
     "tags": [
       "architecture",
       "image-choice",
@@ -787,8 +787,8 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     ],
     "choiceImageAlts": [
       "Photo de Chichen Itza",
-      "Photo de Christ Redempteur",
-      "Photo de Opera de Sydney",
+      "Photo de Christ Rédempteur",
+      "Photo de Opéra de Sydney",
       "Photo de Burj Khalifa"
     ]
   },
@@ -796,7 +796,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-008-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Burj Khalifa",
       "Taj Mahal",
@@ -804,7 +804,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Burj Khalifa se reconnait notamment par plus haute tour du monde.",
+    "explanation": "Burj Khalifa se reconnaît notamment par plus haute tour du monde.",
     "tags": [
       "architecture",
       "image",
@@ -823,13 +823,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 1,
     "prompt": "Dans quelle ville ou zone se trouve Burj Khalifa ?",
     "choices": [
-      "Dubai",
+      "Dubaï",
       "Agra",
       "Siem Reap",
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Burj Khalifa est rattache ici a Dubai; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Burj Khalifa est rattaché ici à Dubaï ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -846,13 +846,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 1,
     "prompt": "Dans quel pays se trouve Burj Khalifa ?",
     "choices": [
-      "Emirats arabes unis",
+      "Émirats arabes unis",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Burj Khalifa se trouve en Emirats arabes unis; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Burj Khalifa se trouve en Émirats arabes unis ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -867,7 +867,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-008-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Burj Khalifa ?",
+    "prompt": "Quel repère stylistique associer à Burj Khalifa ?",
     "choices": [
       "gratte-ciel contemporain",
       "moghol",
@@ -875,7 +875,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Burj Khalifa est classe ici dans le repere gratte-ciel contemporain; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Burj Khalifa est classé ici dans le repère gratte-ciel contemporain ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -889,7 +889,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-009-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Empire State Building",
       "Taj Mahal",
@@ -897,7 +897,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building se reconnait notamment par gratte-ciel new-yorkais des annees 1930.",
+    "explanation": "Empire State Building se reconnaît notamment par gratte-ciel new-yorkais des années 1930.",
     "tags": [
       "architecture",
       "image",
@@ -922,7 +922,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building est rattache ici a New York; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Empire State Building est rattaché ici à New York ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -945,7 +945,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building se trouve en Etats-Unis; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Empire State Building se trouve en Etats-Unis ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -960,7 +960,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-009-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Empire State Building ?",
+    "prompt": "Quel repère stylistique associer à Empire State Building ?",
     "choices": [
       "art deco",
       "moghol",
@@ -968,7 +968,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building est classe ici dans le repere art deco; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Empire State Building est classé ici dans le repère art deco ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -982,7 +982,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-009-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Empire State Building.",
+    "prompt": "Sélectionne l’image de Empire State Building.",
     "choices": [
       "Empire State Building",
       "Golden Gate Bridge",
@@ -990,7 +990,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Big Ben"
     ],
     "answerIndex": 0,
-    "explanation": "Empire State Building correspond au repere visuel : gratte-ciel new-yorkais des annees 1930.",
+    "explanation": "Empire State Building correspond au repère visuel : gratte-ciel new-yorkais des années 1930.",
     "tags": [
       "architecture",
       "image-choice",
@@ -1017,7 +1017,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-010-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Golden Gate Bridge",
       "Taj Mahal",
@@ -1025,7 +1025,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge se reconnait notamment par pont orange sur le detroit.",
+    "explanation": "Golden Gate Bridge se reconnaît notamment par pont orange sur le detroit.",
     "tags": [
       "architecture",
       "image",
@@ -1050,7 +1050,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge est rattache ici a San Francisco; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Golden Gate Bridge est rattaché ici à San Francisco ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1073,7 +1073,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge se trouve en Etats-Unis; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Golden Gate Bridge se trouve en Etats-Unis ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1088,7 +1088,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-010-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Golden Gate Bridge ?",
+    "prompt": "Quel repère stylistique associer à Golden Gate Bridge ?",
     "choices": [
       "pont suspendu",
       "moghol",
@@ -1096,7 +1096,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Golden Gate Bridge est classe ici dans le repere pont suspendu; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Golden Gate Bridge est classé ici dans le repère pont suspendu ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1110,7 +1110,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-011-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Tower Bridge",
       "Taj Mahal",
@@ -1118,7 +1118,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Tower Bridge se reconnait notamment par pont basculant a deux tours.",
+    "explanation": "Tower Bridge se reconnaît notamment par pont basculant a deux tours.",
     "tags": [
       "architecture",
       "image",
@@ -1143,7 +1143,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Tower Bridge est rattache ici a Londres; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Tower Bridge est rattaché ici à Londres ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1166,7 +1166,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Tower Bridge se trouve en Royaume-Uni; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Tower Bridge se trouve en Royaume-Uni ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1181,15 +1181,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-011-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Tower Bridge ?",
+    "prompt": "Quel repère stylistique associer à Tower Bridge ?",
     "choices": [
-      "neogothique",
+      "néogothique",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Tower Bridge est classe ici dans le repere neogothique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Tower Bridge est classé ici dans le repère néogothique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1203,7 +1203,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-011-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Tower Bridge.",
+    "prompt": "Sélectionne l’image de Tower Bridge.",
     "choices": [
       "Empire State Building",
       "Golden Gate Bridge",
@@ -1211,7 +1211,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Big Ben"
     ],
     "answerIndex": 2,
-    "explanation": "Tower Bridge correspond au repere visuel : pont basculant a deux tours.",
+    "explanation": "Tower Bridge correspond au repère visuel : pont basculant a deux tours.",
     "tags": [
       "architecture",
       "image-choice",
@@ -1238,7 +1238,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-012-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Big Ben",
       "Taj Mahal",
@@ -1246,7 +1246,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Big Ben se reconnait notamment par tour horloge du palais de Westminster.",
+    "explanation": "Big Ben se reconnaît notamment par tour horloge du palais de Westminster.",
     "tags": [
       "architecture",
       "image",
@@ -1271,7 +1271,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Big Ben est rattache ici a Londres; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Big Ben est rattaché ici à Londres ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1294,7 +1294,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Big Ben se trouve en Royaume-Uni; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Big Ben se trouve en Royaume-Uni ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1309,15 +1309,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-012-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Big Ben ?",
+    "prompt": "Quel repère stylistique associer à Big Ben ?",
     "choices": [
-      "neogothique",
+      "néogothique",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Big Ben est classe ici dans le repere neogothique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Big Ben est classé ici dans le repère néogothique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1331,7 +1331,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-013-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Stonehenge",
       "Taj Mahal",
@@ -1339,7 +1339,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge se reconnait notamment par cercle de pierres prehistoriques.",
+    "explanation": "Stonehenge se reconnaît notamment par cercle de pierres préhistoriques.",
     "tags": [
       "architecture",
       "image",
@@ -1364,7 +1364,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge est rattache ici a Wiltshire; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Stonehenge est rattaché ici à Wiltshire ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1387,7 +1387,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge se trouve en Royaume-Uni; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Stonehenge se trouve en Royaume-Uni ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1402,7 +1402,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-013-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Stonehenge ?",
+    "prompt": "Quel repère stylistique associer à Stonehenge ?",
     "choices": [
       "megalithique",
       "moghol",
@@ -1410,7 +1410,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge est classe ici dans le repere megalithique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Stonehenge est classé ici dans le repère megalithique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1424,15 +1424,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-013-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Stonehenge.",
+    "prompt": "Sélectionne l’image de Stonehenge.",
     "choices": [
       "Stonehenge",
       "Mont-Saint-Michel",
-      "Chateau de Chambord",
+      "Château de Chambord",
       "Pont du Gard"
     ],
     "answerIndex": 0,
-    "explanation": "Stonehenge correspond au repere visuel : cercle de pierres prehistoriques.",
+    "explanation": "Stonehenge correspond au repère visuel : cercle de pierres préhistoriques.",
     "tags": [
       "architecture",
       "image-choice",
@@ -1451,7 +1451,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Stonehenge",
       "Photo de Mont-Saint-Michel",
-      "Photo de Chateau de Chambord",
+      "Photo de Château de Chambord",
       "Photo de Pont du Gard"
     ]
   },
@@ -1459,7 +1459,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-014-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Mont-Saint-Michel",
       "Taj Mahal",
@@ -1467,7 +1467,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Mont-Saint-Michel se reconnait notamment par abbaye sur ilot rocheux.",
+    "explanation": "Mont-Saint-Michel se reconnaît notamment par abbaye sur ilot rocheux.",
     "tags": [
       "architecture",
       "image",
@@ -1492,7 +1492,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Mont-Saint-Michel est rattache ici a Normandie; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Mont-Saint-Michel est rattaché ici à Normandie ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1515,7 +1515,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Mont-Saint-Michel se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Mont-Saint-Michel se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1530,15 +1530,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-014-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Mont-Saint-Michel ?",
+    "prompt": "Quel repère stylistique associer à Mont-Saint-Michel ?",
     "choices": [
-      "medieval",
+      "médiéval",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Mont-Saint-Michel est classe ici dans le repere medieval; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Mont-Saint-Michel est classé ici dans le repère médiéval ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1552,15 +1552,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-015-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Chateau de Chambord",
+      "Château de Chambord",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Chambord se reconnait notamment par chateau royal aux toits complexes.",
+    "explanation": "Château de Chambord se reconnaît notamment par château royal aux toits complexes.",
     "tags": [
       "architecture",
       "image",
@@ -1571,13 +1571,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChambord_-_monogramme_d'Henri_II.jpg",
     "imageAsset": "landmarks/chateau-de-chambord",
-    "imageAlt": "Photo de Chateau de Chambord"
+    "imageAlt": "Photo de Château de Chambord"
   },
   {
     "id": "landmark-015-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Chateau de Chambord ?",
+    "prompt": "Dans quelle ville ou zone se trouve Château de Chambord ?",
     "choices": [
       "Loir-et-Cher",
       "Agra",
@@ -1585,7 +1585,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Chambord est rattache ici a Loir-et-Cher; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Château de Chambord est rattaché ici à Loir-et-Cher ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1600,7 +1600,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-015-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Chateau de Chambord ?",
+    "prompt": "Dans quel pays se trouve Château de Chambord ?",
     "choices": [
       "France",
       "Inde",
@@ -1608,7 +1608,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Chambord se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Château de Chambord se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1623,7 +1623,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-015-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Chateau de Chambord ?",
+    "prompt": "Quel repère stylistique associer à Château de Chambord ?",
     "choices": [
       "Renaissance",
       "moghol",
@@ -1631,7 +1631,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Chambord est classe ici dans le repere Renaissance; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Château de Chambord est classé ici dans le repère Renaissance ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1645,15 +1645,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-015-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Chateau de Chambord.",
+    "prompt": "Sélectionne l’image de Château de Chambord.",
     "choices": [
       "Stonehenge",
       "Mont-Saint-Michel",
-      "Chateau de Chambord",
+      "Château de Chambord",
       "Pont du Gard"
     ],
     "answerIndex": 2,
-    "explanation": "Chateau de Chambord correspond au repere visuel : chateau royal aux toits complexes.",
+    "explanation": "Château de Chambord correspond au repère visuel : château royal aux toits complexes.",
     "tags": [
       "architecture",
       "image-choice",
@@ -1672,7 +1672,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Stonehenge",
       "Photo de Mont-Saint-Michel",
-      "Photo de Chateau de Chambord",
+      "Photo de Château de Chambord",
       "Photo de Pont du Gard"
     ]
   },
@@ -1680,7 +1680,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-016-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Pont du Gard",
       "Taj Mahal",
@@ -1688,7 +1688,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Pont du Gard se reconnait notamment par aqueduc antique a trois niveaux.",
+    "explanation": "Pont du Gard se reconnaît notamment par aqueduc antique a trois niveaux.",
     "tags": [
       "architecture",
       "image",
@@ -1713,7 +1713,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Pont du Gard est rattache ici a Occitanie; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Pont du Gard est rattaché ici à Occitanie ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1736,7 +1736,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Pont du Gard se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Pont du Gard se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1751,7 +1751,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-016-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Pont du Gard ?",
+    "prompt": "Quel repère stylistique associer à Pont du Gard ?",
     "choices": [
       "romain",
       "moghol",
@@ -1759,7 +1759,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Pont du Gard est classe ici dans le repere romain; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Pont du Gard est classé ici dans le repère romain ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1773,15 +1773,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-017-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Cathedrale de Chartres",
+      "Cathédrale de Chartres",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale de Chartres se reconnait notamment par cathedrale aux vitraux celebres.",
+    "explanation": "Cathédrale de Chartres se reconnaît notamment par cathédrale aux vitraux célèbres.",
     "tags": [
       "architecture",
       "image",
@@ -1792,13 +1792,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChartres_-_cath%C3%A9drale_-_rosace_nord.jpg",
     "imageAsset": "landmarks/cathedrale-de-chartres",
-    "imageAlt": "Photo de Cathedrale de Chartres"
+    "imageAlt": "Photo de Cathédrale de Chartres"
   },
   {
     "id": "landmark-017-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : cathedrale aux vitraux celebres ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : cathédrale aux vitraux célèbres ?",
     "choices": [
       "Chartres",
       "Agra",
@@ -1806,7 +1806,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale de Chartres est rattache ici a Chartres; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Cathédrale de Chartres est rattaché ici à Chartres ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1821,7 +1821,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-017-country",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quel pays se trouve Cathedrale de Chartres ?",
+    "prompt": "Dans quel pays se trouve Cathédrale de Chartres ?",
     "choices": [
       "France",
       "Inde",
@@ -1829,7 +1829,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale de Chartres se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Cathédrale de Chartres se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1844,7 +1844,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-017-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Cathedrale de Chartres ?",
+    "prompt": "Quel repère stylistique associer à Cathédrale de Chartres ?",
     "choices": [
       "gothique",
       "moghol",
@@ -1852,7 +1852,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale de Chartres est classe ici dans le repere gothique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Cathédrale de Chartres est classé ici dans le repère gothique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1866,15 +1866,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-017-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Cathedrale de Chartres.",
+    "prompt": "Sélectionne l’image de Cathédrale de Chartres.",
     "choices": [
-      "Cathedrale de Chartres",
-      "Basilique du Sacre-Coeur",
+      "Cathédrale de Chartres",
+      "Basilique du Sacré-Cœur",
       "Arc de triomphe",
-      "Musee du Louvre"
+      "Musée du Louvre"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale de Chartres correspond au repere visuel : cathedrale aux vitraux celebres.",
+    "explanation": "Cathédrale de Chartres correspond au repère visuel : cathédrale aux vitraux célèbres.",
     "tags": [
       "architecture",
       "image-choice",
@@ -1891,25 +1891,25 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "landmarks/musee-du-louvre"
     ],
     "choiceImageAlts": [
-      "Photo de Cathedrale de Chartres",
-      "Photo de Basilique du Sacre-Coeur",
+      "Photo de Cathédrale de Chartres",
+      "Photo de Basilique du Sacré-Cœur",
       "Photo de Arc de triomphe",
-      "Photo de Musee du Louvre"
+      "Photo de Musée du Louvre"
     ]
   },
   {
     "id": "landmark-018-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Basilique du Sacre-Coeur",
+      "Basilique du Sacré-Cœur",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique du Sacre-Coeur se reconnait notamment par basilique blanche de Montmartre.",
+    "explanation": "Basilique du Sacré-Cœur se reconnaît notamment par basilique blanche de Montmartre.",
     "tags": [
       "architecture",
       "image",
@@ -1920,13 +1920,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AParis_75018_Basilique_du_Sacr%C3%A9-C%C5%93ur_south_facade_stairs_20041107_(1).jpg",
     "imageAsset": "landmarks/basilique-du-sacre-coeur",
-    "imageAlt": "Photo de Basilique du Sacre-Coeur"
+    "imageAlt": "Photo de Basilique du Sacré-Cœur"
   },
   {
     "id": "landmark-018-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Basilique du Sacre-Coeur ?",
+    "prompt": "Dans quelle ville ou zone se trouve Basilique du Sacré-Cœur ?",
     "choices": [
       "Paris",
       "Agra",
@@ -1934,7 +1934,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique du Sacre-Coeur est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Basilique du Sacré-Cœur est rattaché ici à Paris ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -1949,7 +1949,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-018-country",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quel pays se trouve Basilique du Sacre-Coeur ?",
+    "prompt": "Dans quel pays se trouve Basilique du Sacré-Cœur ?",
     "choices": [
       "France",
       "Inde",
@@ -1957,7 +1957,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique du Sacre-Coeur se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Basilique du Sacré-Cœur se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -1972,7 +1972,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-018-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Basilique du Sacre-Coeur ?",
+    "prompt": "Quel repère stylistique associer à Basilique du Sacré-Cœur ?",
     "choices": [
       "romano-byzantin",
       "moghol",
@@ -1980,7 +1980,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique du Sacre-Coeur est classe ici dans le repere romano-byzantin; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Basilique du Sacré-Cœur est classé ici dans le repère romano-byzantin ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -1994,7 +1994,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-019-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Arc de triomphe",
       "Taj Mahal",
@@ -2002,7 +2002,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Arc de triomphe se reconnait notamment par monument au centre de l Etoile.",
+    "explanation": "Arc de triomphe se reconnaît notamment par monument au centre de l Etoile.",
     "tags": [
       "architecture",
       "image",
@@ -2027,7 +2027,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Arc de triomphe est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Arc de triomphe est rattaché ici à Paris ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2050,7 +2050,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Arc de triomphe se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Arc de triomphe se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2065,15 +2065,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-019-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Arc de triomphe ?",
+    "prompt": "Quel repère stylistique associer à Arc de triomphe ?",
     "choices": [
-      "neoclassique",
+      "néoclassique",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Arc de triomphe est classe ici dans le repere neoclassique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Arc de triomphe est classé ici dans le repère néoclassique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2087,15 +2087,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-019-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Arc de triomphe.",
+    "prompt": "Sélectionne l’image de Arc de triomphe.",
     "choices": [
-      "Cathedrale de Chartres",
-      "Basilique du Sacre-Coeur",
+      "Cathédrale de Chartres",
+      "Basilique du Sacré-Cœur",
       "Arc de triomphe",
-      "Musee du Louvre"
+      "Musée du Louvre"
     ],
     "answerIndex": 2,
-    "explanation": "Arc de triomphe correspond au repere visuel : monument au centre de l Etoile.",
+    "explanation": "Arc de triomphe correspond au repère visuel : monument au centre de l Etoile.",
     "tags": [
       "architecture",
       "image-choice",
@@ -2112,25 +2112,25 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "landmarks/musee-du-louvre"
     ],
     "choiceImageAlts": [
-      "Photo de Cathedrale de Chartres",
-      "Photo de Basilique du Sacre-Coeur",
+      "Photo de Cathédrale de Chartres",
+      "Photo de Basilique du Sacré-Cœur",
       "Photo de Arc de triomphe",
-      "Photo de Musee du Louvre"
+      "Photo de Musée du Louvre"
     ]
   },
   {
     "id": "landmark-020-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Musee du Louvre",
+      "Musée du Louvre",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Musee du Louvre se reconnait notamment par ancien palais royal devenu musee.",
+    "explanation": "Musée du Louvre se reconnaît notamment par ancien palais royal devenu musée.",
     "tags": [
       "architecture",
       "image",
@@ -2141,13 +2141,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALe_Louvre_-_Aile_Richelieu.jpg",
     "imageAsset": "landmarks/musee-du-louvre",
-    "imageAlt": "Photo de Musee du Louvre"
+    "imageAlt": "Photo de Musée du Louvre"
   },
   {
     "id": "landmark-020-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Musee du Louvre ?",
+    "prompt": "Dans quelle ville ou zone se trouve Musée du Louvre ?",
     "choices": [
       "Paris",
       "Agra",
@@ -2155,7 +2155,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Musee du Louvre est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Musée du Louvre est rattaché ici à Paris ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2170,7 +2170,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-020-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Musee du Louvre ?",
+    "prompt": "Dans quel pays se trouve Musée du Louvre ?",
     "choices": [
       "France",
       "Inde",
@@ -2178,7 +2178,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Musee du Louvre se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Musée du Louvre se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2193,7 +2193,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-020-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Musee du Louvre ?",
+    "prompt": "Quel repère stylistique associer à Musée du Louvre ?",
     "choices": [
       "palais classique",
       "moghol",
@@ -2201,7 +2201,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Musee du Louvre est classe ici dans le repere palais classique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Musée du Louvre est classé ici dans le repère palais classique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2215,7 +2215,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-021-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Palais de Versailles",
       "Taj Mahal",
@@ -2223,7 +2223,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles se reconnait notamment par residence royale de Louis XIV.",
+    "explanation": "Palais de Versailles se reconnaît notamment par résidence royale de Louis XIV.",
     "tags": [
       "architecture",
       "image",
@@ -2240,7 +2240,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-021-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : residence royale de Louis XIV ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : résidence royale de Louis XIV ?",
     "choices": [
       "Versailles",
       "Agra",
@@ -2248,7 +2248,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles est rattache ici a Versailles; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Palais de Versailles est rattaché ici à Versailles ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2271,7 +2271,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Palais de Versailles se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2286,15 +2286,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-021-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Palais de Versailles ?",
+    "prompt": "Quel repère stylistique associer à Palais de Versailles ?",
     "choices": [
-      "classique francais",
+      "classique français",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles est classe ici dans le repere classique francais; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Palais de Versailles est classé ici dans le repère classique français ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2308,7 +2308,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-021-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Palais de Versailles.",
+    "prompt": "Sélectionne l’image de Palais de Versailles.",
     "choices": [
       "Palais de Versailles",
       "Alhambra",
@@ -2316,7 +2316,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Duomo de Milan"
     ],
     "answerIndex": 0,
-    "explanation": "Palais de Versailles correspond au repere visuel : residence royale de Louis XIV.",
+    "explanation": "Palais de Versailles correspond au repère visuel : résidence royale de Louis XIV.",
     "tags": [
       "architecture",
       "image-choice",
@@ -2343,7 +2343,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-022-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Alhambra",
       "Taj Mahal",
@@ -2351,7 +2351,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Alhambra se reconnait notamment par palais fortifie andalou.",
+    "explanation": "Alhambra se reconnaît notamment par palais fortifie andalou.",
     "tags": [
       "architecture",
       "image",
@@ -2376,7 +2376,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Alhambra est rattache ici a Grenade; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Alhambra est rattaché ici à Grenade ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2399,7 +2399,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Alhambra se trouve en Espagne; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Alhambra se trouve en Espagne ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2414,7 +2414,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-022-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Alhambra ?",
+    "prompt": "Quel repère stylistique associer à Alhambra ?",
     "choices": [
       "nasride",
       "moghol",
@@ -2422,7 +2422,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Alhambra est classe ici dans le repere nasride; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Alhambra est classé ici dans le repère nasride ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2436,7 +2436,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-023-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Guggenheim Bilbao",
       "Taj Mahal",
@@ -2444,7 +2444,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Guggenheim Bilbao se reconnait notamment par musee aux volumes de titane.",
+    "explanation": "Guggenheim Bilbao se reconnaît notamment par musée aux volumes de titane.",
     "tags": [
       "architecture",
       "image",
@@ -2461,7 +2461,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-023-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : musee aux volumes de titane ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : musée aux volumes de titane ?",
     "choices": [
       "Bilbao",
       "Agra",
@@ -2469,7 +2469,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Guggenheim Bilbao est rattache ici a Bilbao; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Guggenheim Bilbao est rattaché ici à Bilbao ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2492,7 +2492,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Guggenheim Bilbao se trouve en Espagne; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Guggenheim Bilbao se trouve en Espagne ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2507,15 +2507,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-023-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Guggenheim Bilbao ?",
+    "prompt": "Quel repère stylistique associer à Guggenheim Bilbao ?",
     "choices": [
-      "deconstructivisme",
+      "déconstructivisme",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Guggenheim Bilbao est classe ici dans le repere deconstructivisme; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Guggenheim Bilbao est classé ici dans le repère déconstructivisme ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2529,7 +2529,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-023-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Guggenheim Bilbao.",
+    "prompt": "Sélectionne l’image de Guggenheim Bilbao.",
     "choices": [
       "Palais de Versailles",
       "Alhambra",
@@ -2537,7 +2537,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Duomo de Milan"
     ],
     "answerIndex": 2,
-    "explanation": "Guggenheim Bilbao correspond au repere visuel : musee aux volumes de titane.",
+    "explanation": "Guggenheim Bilbao correspond au repère visuel : musée aux volumes de titane.",
     "tags": [
       "architecture",
       "image-choice",
@@ -2564,7 +2564,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-024-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Duomo de Milan",
       "Taj Mahal",
@@ -2572,7 +2572,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Duomo de Milan se reconnait notamment par cathedrale aux nombreuses fleches.",
+    "explanation": "Duomo de Milan se reconnaît notamment par cathédrale aux nombreuses fleches.",
     "tags": [
       "architecture",
       "image",
@@ -2589,7 +2589,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-024-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : cathedrale aux nombreuses fleches ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : cathédrale aux nombreuses fleches ?",
     "choices": [
       "Milan",
       "Agra",
@@ -2597,7 +2597,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Duomo de Milan est rattache ici a Milan; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Duomo de Milan est rattaché ici à Milan ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2620,7 +2620,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Duomo de Milan se trouve en Italie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Duomo de Milan se trouve en Italie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2635,7 +2635,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-024-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Duomo de Milan ?",
+    "prompt": "Quel repère stylistique associer à Duomo de Milan ?",
     "choices": [
       "gothique",
       "moghol",
@@ -2643,7 +2643,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Duomo de Milan est classe ici dans le repere gothique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Duomo de Milan est classé ici dans le repère gothique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2657,7 +2657,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-025-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Basilique Saint-Pierre",
       "Taj Mahal",
@@ -2665,7 +2665,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre se reconnait notamment par grande basilique de la cite du Vatican.",
+    "explanation": "Basilique Saint-Pierre se reconnaît notamment par grande basilique de la cité du Vatican.",
     "tags": [
       "architecture",
       "image",
@@ -2690,7 +2690,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre est rattache ici a Vatican; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Basilique Saint-Pierre est rattaché ici à Vatican ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2713,7 +2713,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre se trouve en Vatican; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Basilique Saint-Pierre se trouve au Vatican ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2728,7 +2728,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-025-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Basilique Saint-Pierre ?",
+    "prompt": "Quel repère stylistique associer à Basilique Saint-Pierre ?",
     "choices": [
       "Renaissance",
       "moghol",
@@ -2736,7 +2736,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre est classe ici dans le repere Renaissance; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Basilique Saint-Pierre est classé ici dans le repère Renaissance ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2750,15 +2750,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-025-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Basilique Saint-Pierre.",
+    "prompt": "Sélectionne l’image de Basilique Saint-Pierre.",
     "choices": [
       "Basilique Saint-Pierre",
       "Tour de Pise",
-      "Pantheon de Rome",
+      "Panthéon de Rome",
       "Hagia Sophia"
     ],
     "answerIndex": 0,
-    "explanation": "Basilique Saint-Pierre correspond au repere visuel : grande basilique de la cite du Vatican.",
+    "explanation": "Basilique Saint-Pierre correspond au repère visuel : grande basilique de la cité du Vatican.",
     "tags": [
       "architecture",
       "image-choice",
@@ -2777,7 +2777,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Basilique Saint-Pierre",
       "Photo de Tour de Pise",
-      "Photo de Pantheon de Rome",
+      "Photo de Panthéon de Rome",
       "Photo de Hagia Sophia"
     ]
   },
@@ -2785,7 +2785,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-026-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Tour de Pise",
       "Taj Mahal",
@@ -2793,7 +2793,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Tour de Pise se reconnait notamment par campanile penche.",
+    "explanation": "Tour de Pise se reconnaît notamment par campanile penche.",
     "tags": [
       "architecture",
       "image",
@@ -2818,7 +2818,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Tour de Pise est rattache ici a Pise; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Tour de Pise est rattaché ici à Pise ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2841,7 +2841,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Tour de Pise se trouve en Italie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Tour de Pise se trouve en Italie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2856,7 +2856,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-026-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Tour de Pise ?",
+    "prompt": "Quel repère stylistique associer à Tour de Pise ?",
     "choices": [
       "roman",
       "moghol",
@@ -2864,7 +2864,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Tour de Pise est classe ici dans le repere roman; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Tour de Pise est classé ici dans le repère roman ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2878,15 +2878,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-027-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Pantheon de Rome",
+      "Panthéon de Rome",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Pantheon de Rome se reconnait notamment par coupole antique a oculus.",
+    "explanation": "Panthéon de Rome se reconnaît notamment par coupole antique à oculus.",
     "tags": [
       "architecture",
       "image",
@@ -2897,13 +2897,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APantheon_wider_centered.jpg",
     "imageAsset": "landmarks/pantheon-de-rome",
-    "imageAlt": "Photo de Pantheon de Rome"
+    "imageAlt": "Photo de Panthéon de Rome"
   },
   {
     "id": "landmark-027-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Pantheon de Rome ?",
+    "prompt": "Dans quelle ville ou zone se trouve Panthéon de Rome ?",
     "choices": [
       "Rome",
       "Agra",
@@ -2911,7 +2911,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Pantheon de Rome est rattache ici a Rome; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Panthéon de Rome est rattaché ici à Rome ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -2926,7 +2926,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-027-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Pantheon de Rome ?",
+    "prompt": "Dans quel pays se trouve Panthéon de Rome ?",
     "choices": [
       "Italie",
       "Inde",
@@ -2934,7 +2934,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Pantheon de Rome se trouve en Italie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Panthéon de Rome se trouve en Italie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -2949,7 +2949,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-027-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Pantheon de Rome ?",
+    "prompt": "Quel repère stylistique associer à Panthéon de Rome ?",
     "choices": [
       "romain",
       "moghol",
@@ -2957,7 +2957,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Pantheon de Rome est classe ici dans le repere romain; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Panthéon de Rome est classé ici dans le repère romain ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -2971,15 +2971,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-027-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Pantheon de Rome.",
+    "prompt": "Sélectionne l’image de Panthéon de Rome.",
     "choices": [
       "Basilique Saint-Pierre",
       "Tour de Pise",
-      "Pantheon de Rome",
+      "Panthéon de Rome",
       "Hagia Sophia"
     ],
     "answerIndex": 2,
-    "explanation": "Pantheon de Rome correspond au repere visuel : coupole antique a oculus.",
+    "explanation": "Panthéon de Rome correspond au repère visuel : coupole antique à oculus.",
     "tags": [
       "architecture",
       "image-choice",
@@ -2998,7 +2998,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Basilique Saint-Pierre",
       "Photo de Tour de Pise",
-      "Photo de Pantheon de Rome",
+      "Photo de Panthéon de Rome",
       "Photo de Hagia Sophia"
     ]
   },
@@ -3006,7 +3006,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-028-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Hagia Sophia",
       "Taj Mahal",
@@ -3014,7 +3014,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Hagia Sophia se reconnait notamment par ancienne basilique a grande coupole.",
+    "explanation": "Hagia Sophia se reconnaît notamment par ancienne basilique à grande coupole.",
     "tags": [
       "architecture",
       "image",
@@ -3039,7 +3039,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Hagia Sophia est rattache ici a Istanbul; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Hagia Sophia est rattaché ici à Istanbul ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3062,7 +3062,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Hagia Sophia se trouve en Turquie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Hagia Sophia se trouve en Turquie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3077,7 +3077,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-028-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Hagia Sophia ?",
+    "prompt": "Quel repère stylistique associer à Hagia Sophia ?",
     "choices": [
       "byzantin",
       "moghol",
@@ -3085,7 +3085,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Hagia Sophia est classe ici dans le repere byzantin; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Hagia Sophia est classé ici dans le repère byzantin ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3099,15 +3099,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-029-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Mosquee bleue",
+      "Mosquée bleue",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquee bleue se reconnait notamment par mosquee aux six minarets.",
+    "explanation": "Mosquée bleue se reconnaît notamment par mosquée aux six minarets.",
     "tags": [
       "architecture",
       "image",
@@ -3118,13 +3118,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMosqu%C3%A9e_Bleue_Istanbul_1.jpg",
     "imageAsset": "landmarks/mosquee-bleue",
-    "imageAlt": "Photo de Mosquee bleue"
+    "imageAlt": "Photo de Mosquée bleue"
   },
   {
     "id": "landmark-029-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Mosquee bleue ?",
+    "prompt": "Dans quelle ville ou zone se trouve Mosquée bleue ?",
     "choices": [
       "Istanbul",
       "Agra",
@@ -3132,7 +3132,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquee bleue est rattache ici a Istanbul; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Mosquée bleue est rattaché ici à Istanbul ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3147,7 +3147,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-029-country",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quel pays se trouve Mosquee bleue ?",
+    "prompt": "Dans quel pays se trouve Mosquée bleue ?",
     "choices": [
       "Turquie",
       "Inde",
@@ -3155,7 +3155,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquee bleue se trouve en Turquie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Mosquée bleue se trouve en Turquie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3170,7 +3170,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-029-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Mosquee bleue ?",
+    "prompt": "Quel repère stylistique associer à Mosquée bleue ?",
     "choices": [
       "ottoman",
       "moghol",
@@ -3178,7 +3178,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquee bleue est classe ici dans le repere ottoman; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Mosquée bleue est classé ici dans le repère ottoman ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3192,15 +3192,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-029-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Mosquee bleue.",
+    "prompt": "Sélectionne l’image de Mosquée bleue.",
     "choices": [
-      "Mosquee bleue",
-      "Acropole d Athenes",
-      "Meteores",
+      "Mosquée bleue",
+      "Acropole d’Athènes",
+      "Météores",
       "Kremlin de Moscou"
     ],
     "answerIndex": 0,
-    "explanation": "Mosquee bleue correspond au repere visuel : mosquee aux six minarets.",
+    "explanation": "Mosquée bleue correspond au repère visuel : mosquée aux six minarets.",
     "tags": [
       "architecture",
       "image-choice",
@@ -3217,9 +3217,9 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "landmarks/kremlin-de-moscou"
     ],
     "choiceImageAlts": [
-      "Photo de Mosquee bleue",
-      "Photo de Acropole d Athenes",
-      "Photo de Meteores",
+      "Photo de Mosquée bleue",
+      "Photo de Acropole d’Athènes",
+      "Photo de Météores",
       "Photo de Kremlin de Moscou"
     ]
   },
@@ -3227,15 +3227,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-030-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Acropole d Athenes",
+      "Acropole d’Athènes",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Acropole d Athenes se reconnait notamment par plateau monumental dominant Athenes.",
+    "explanation": "Acropole d’Athènes se reconnaît notamment par plateau monumental dominant Athènes.",
     "tags": [
       "architecture",
       "image",
@@ -3246,21 +3246,21 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A20101024_Acropolis_panoramic_view_from_Areopagus_hill_Athens_Greece.jpg",
     "imageAsset": "landmarks/acropole-d-athenes",
-    "imageAlt": "Photo de Acropole d Athenes"
+    "imageAlt": "Photo de Acropole d’Athènes"
   },
   {
     "id": "landmark-030-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quelle ville ou zone Grece est associee a ce repere architectural ?",
+    "prompt": "Quelle ville ou zone de Grèce est associée à ce repère architectural ?",
     "choices": [
-      "Athenes",
+      "Athènes",
       "Agra",
       "Siem Reap",
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Acropole d Athenes est rattache ici a Athenes; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Acropole d’Athènes est rattaché ici à Athènes ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3275,15 +3275,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-030-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Acropole d Athenes ?",
+    "prompt": "Dans quel pays se trouve Acropole d’Athènes ?",
     "choices": [
-      "Grece",
+      "Grèce",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Acropole d Athenes se trouve en Grece; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Acropole d’Athènes se trouve en Grèce ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3298,7 +3298,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-030-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Acropole d Athenes ?",
+    "prompt": "Quel repère stylistique associer à Acropole d’Athènes ?",
     "choices": [
       "antique grec",
       "moghol",
@@ -3306,7 +3306,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Acropole d Athenes est classe ici dans le repere antique grec; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Acropole d’Athènes est classé ici dans le repère antique grec ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3320,15 +3320,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-031-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Meteores",
+      "Météores",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Meteores se reconnait notamment par monasteres poses sur des pitons rocheux.",
+    "explanation": "Météores se reconnaît notamment par monasteres poses sur des pitons rocheux.",
     "tags": [
       "architecture",
       "image",
@@ -3339,13 +3339,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMeteora_Agios_Triadas_IMG_7632.jpg",
     "imageAsset": "landmarks/meteores",
-    "imageAlt": "Photo de Meteores"
+    "imageAlt": "Photo de Météores"
   },
   {
     "id": "landmark-031-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Meteores ?",
+    "prompt": "Dans quelle ville ou zone se trouve Météores ?",
     "choices": [
       "Thessalie",
       "Agra",
@@ -3353,7 +3353,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Meteores est rattache ici a Thessalie; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Météores est rattaché ici à Thessalie ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3368,15 +3368,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-031-country",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quel pays se trouve Meteores ?",
+    "prompt": "Dans quel pays se trouve Météores ?",
     "choices": [
-      "Grece",
+      "Grèce",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Meteores se trouve en Grece; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Météores se trouve en Grèce ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3391,7 +3391,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-031-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Meteores ?",
+    "prompt": "Quel repère stylistique associer à Météores ?",
     "choices": [
       "monastere",
       "moghol",
@@ -3399,7 +3399,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Meteores est classe ici dans le repere monastere; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Météores est classé ici dans le repère monastere ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3413,15 +3413,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-031-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Meteores.",
+    "prompt": "Sélectionne l’image de Météores.",
     "choices": [
-      "Mosquee bleue",
-      "Acropole d Athenes",
-      "Meteores",
+      "Mosquée bleue",
+      "Acropole d’Athènes",
+      "Météores",
       "Kremlin de Moscou"
     ],
     "answerIndex": 2,
-    "explanation": "Meteores correspond au repere visuel : monasteres poses sur des pitons rocheux.",
+    "explanation": "Météores correspond au repère visuel : monasteres poses sur des pitons rocheux.",
     "tags": [
       "architecture",
       "image-choice",
@@ -3438,9 +3438,9 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "landmarks/kremlin-de-moscou"
     ],
     "choiceImageAlts": [
-      "Photo de Mosquee bleue",
-      "Photo de Acropole d Athenes",
-      "Photo de Meteores",
+      "Photo de Mosquée bleue",
+      "Photo de Acropole d’Athènes",
+      "Photo de Météores",
       "Photo de Kremlin de Moscou"
     ]
   },
@@ -3448,7 +3448,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-032-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Kremlin de Moscou",
       "Taj Mahal",
@@ -3456,7 +3456,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Kremlin de Moscou se reconnait notamment par enceinte historique au coeur de Moscou.",
+    "explanation": "Kremlin de Moscou se reconnaît notamment par enceinte historique au coeur de Moscou.",
     "tags": [
       "architecture",
       "image",
@@ -3473,7 +3473,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-032-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quelle ville ou zone Russie est associee a ce repere architectural ?",
+    "prompt": "Quelle ville ou zone de Russie est associée à ce repère architectural ?",
     "choices": [
       "Moscou",
       "Agra",
@@ -3481,7 +3481,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Kremlin de Moscou est rattache ici a Moscou; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Kremlin de Moscou est rattaché ici à Moscou ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3504,7 +3504,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Kremlin de Moscou se trouve en Russie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Kremlin de Moscou se trouve en Russie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3519,7 +3519,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-032-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Kremlin de Moscou ?",
+    "prompt": "Quel repère stylistique associer à Kremlin de Moscou ?",
     "choices": [
       "forteresse",
       "moghol",
@@ -3527,7 +3527,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Kremlin de Moscou est classe ici dans le repere forteresse; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Kremlin de Moscou est classé ici dans le repère forteresse ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3541,15 +3541,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-033-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Cathedrale Saint-Basile",
+      "Cathédrale Saint-Basile",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale Saint-Basile se reconnait notamment par coupoles colorees sur la place Rouge.",
+    "explanation": "Cathédrale Saint-Basile se reconnaît notamment par coupoles colorees sur la place Rouge.",
     "tags": [
       "architecture",
       "image",
@@ -3560,13 +3560,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARussie_-_Moscou_-_place_rouge_saint_basile.jpg",
     "imageAsset": "landmarks/cathedrale-saint-basile",
-    "imageAlt": "Photo de Cathedrale Saint-Basile"
+    "imageAlt": "Photo de Cathédrale Saint-Basile"
   },
   {
     "id": "landmark-033-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Cathedrale Saint-Basile ?",
+    "prompt": "Dans quelle ville ou zone se trouve Cathédrale Saint-Basile ?",
     "choices": [
       "Moscou",
       "Agra",
@@ -3574,7 +3574,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale Saint-Basile est rattache ici a Moscou; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Cathédrale Saint-Basile est rattaché ici à Moscou ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3589,7 +3589,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-033-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Cathedrale Saint-Basile ?",
+    "prompt": "Dans quel pays se trouve Cathédrale Saint-Basile ?",
     "choices": [
       "Russie",
       "Inde",
@@ -3597,7 +3597,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale Saint-Basile se trouve en Russie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Cathédrale Saint-Basile se trouve en Russie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3612,7 +3612,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-033-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Cathedrale Saint-Basile ?",
+    "prompt": "Quel repère stylistique associer à Cathédrale Saint-Basile ?",
     "choices": [
       "russe",
       "moghol",
@@ -3620,7 +3620,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale Saint-Basile est classe ici dans le repere russe; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Cathédrale Saint-Basile est classé ici dans le repère russe ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3634,15 +3634,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-033-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Cathedrale Saint-Basile.",
+    "prompt": "Sélectionne l’image de Cathédrale Saint-Basile.",
     "choices": [
-      "Cathedrale Saint-Basile",
+      "Cathédrale Saint-Basile",
       "Neuschwanstein",
       "Porte de Brandebourg",
       "Atomium"
     ],
     "answerIndex": 0,
-    "explanation": "Cathedrale Saint-Basile correspond au repere visuel : coupoles colorees sur la place Rouge.",
+    "explanation": "Cathédrale Saint-Basile correspond au repère visuel : coupoles colorees sur la place Rouge.",
     "tags": [
       "architecture",
       "image-choice",
@@ -3659,7 +3659,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "landmarks/atomium"
     ],
     "choiceImageAlts": [
-      "Photo de Cathedrale Saint-Basile",
+      "Photo de Cathédrale Saint-Basile",
       "Photo de Neuschwanstein",
       "Photo de Porte de Brandebourg",
       "Photo de Atomium"
@@ -3669,7 +3669,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-034-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Neuschwanstein",
       "Taj Mahal",
@@ -3677,7 +3677,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Neuschwanstein se reconnait notamment par chateau romantique bavarois.",
+    "explanation": "Neuschwanstein se reconnaît notamment par château romantique bavarois.",
     "tags": [
       "architecture",
       "image",
@@ -3702,7 +3702,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Neuschwanstein est rattache ici a Baviere; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Neuschwanstein est rattaché ici à Baviere ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3725,7 +3725,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Neuschwanstein se trouve en Allemagne; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Neuschwanstein se trouve en Allemagne ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3740,7 +3740,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-034-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Neuschwanstein ?",
+    "prompt": "Quel repère stylistique associer à Neuschwanstein ?",
     "choices": [
       "historicisme",
       "moghol",
@@ -3748,7 +3748,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Neuschwanstein est classe ici dans le repere historicisme; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Neuschwanstein est classé ici dans le repère historicisme ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3762,7 +3762,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-035-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Porte de Brandebourg",
       "Taj Mahal",
@@ -3770,7 +3770,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Porte de Brandebourg se reconnait notamment par porte monumentale berlinoise.",
+    "explanation": "Porte de Brandebourg se reconnaît notamment par porte monumentale berlinoise.",
     "tags": [
       "architecture",
       "image",
@@ -3795,7 +3795,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Porte de Brandebourg est rattache ici a Berlin; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Porte de Brandebourg est rattaché ici à Berlin ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3818,7 +3818,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Porte de Brandebourg se trouve en Allemagne; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Porte de Brandebourg se trouve en Allemagne ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3833,15 +3833,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-035-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Porte de Brandebourg ?",
+    "prompt": "Quel repère stylistique associer à Porte de Brandebourg ?",
     "choices": [
-      "neoclassique",
+      "néoclassique",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Porte de Brandebourg est classe ici dans le repere neoclassique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Porte de Brandebourg est classé ici dans le repère néoclassique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3855,15 +3855,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-035-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Porte de Brandebourg.",
+    "prompt": "Sélectionne l’image de Porte de Brandebourg.",
     "choices": [
-      "Cathedrale Saint-Basile",
+      "Cathédrale Saint-Basile",
       "Neuschwanstein",
       "Porte de Brandebourg",
       "Atomium"
     ],
     "answerIndex": 2,
-    "explanation": "Porte de Brandebourg correspond au repere visuel : porte monumentale berlinoise.",
+    "explanation": "Porte de Brandebourg correspond au repère visuel : porte monumentale berlinoise.",
     "tags": [
       "architecture",
       "image-choice",
@@ -3880,7 +3880,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "landmarks/atomium"
     ],
     "choiceImageAlts": [
-      "Photo de Cathedrale Saint-Basile",
+      "Photo de Cathédrale Saint-Basile",
       "Photo de Neuschwanstein",
       "Photo de Porte de Brandebourg",
       "Photo de Atomium"
@@ -3890,7 +3890,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-036-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Atomium",
       "Taj Mahal",
@@ -3898,7 +3898,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Atomium se reconnait notamment par structure metallique en forme de maille cristalline.",
+    "explanation": "Atomium se reconnaît notamment par structure metallique en forme de maille cristalline.",
     "tags": [
       "architecture",
       "image",
@@ -3923,7 +3923,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Atomium est rattache ici a Bruxelles; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Atomium est rattaché ici à Bruxelles ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -3946,7 +3946,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Atomium se trouve en Belgique; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Atomium se trouve en Belgique ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -3961,7 +3961,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-036-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Atomium ?",
+    "prompt": "Quel repère stylistique associer à Atomium ?",
     "choices": [
       "modernisme",
       "moghol",
@@ -3969,7 +3969,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Atomium est classe ici dans le repere modernisme; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Atomium est classé ici dans le repère modernisme ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -3983,7 +3983,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-037-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Parlement de Budapest",
       "Taj Mahal",
@@ -3991,7 +3991,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest se reconnait notamment par grand batiment au bord du Danube.",
+    "explanation": "Parlement de Budapest se reconnaît notamment par grand bâtiment au bord du Danube.",
     "tags": [
       "architecture",
       "image",
@@ -4008,7 +4008,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-037-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : grand batiment au bord du Danube ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : grand bâtiment au bord du Danube ?",
     "choices": [
       "Budapest",
       "Agra",
@@ -4016,7 +4016,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest est rattache ici a Budapest; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Parlement de Budapest est rattaché ici à Budapest ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4039,7 +4039,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest se trouve en Hongrie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Parlement de Budapest se trouve en Hongrie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4054,15 +4054,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-037-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Parlement de Budapest ?",
+    "prompt": "Quel repère stylistique associer à Parlement de Budapest ?",
     "choices": [
-      "neogothique",
+      "néogothique",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest est classe ici dans le repere neogothique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Parlement de Budapest est classé ici dans le repère néogothique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4076,7 +4076,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-037-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Parlement de Budapest.",
+    "prompt": "Sélectionne l’image de Parlement de Budapest.",
     "choices": [
       "Parlement de Budapest",
       "Sainte-Sophie de Kiev",
@@ -4084,7 +4084,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Fallingwater"
     ],
     "answerIndex": 0,
-    "explanation": "Parlement de Budapest correspond au repere visuel : grand batiment au bord du Danube.",
+    "explanation": "Parlement de Budapest correspond au repère visuel : grand bâtiment au bord du Danube.",
     "tags": [
       "architecture",
       "image-choice",
@@ -4111,7 +4111,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-038-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Sainte-Sophie de Kiev",
       "Taj Mahal",
@@ -4119,7 +4119,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Sainte-Sophie de Kiev se reconnait notamment par cathedrale historique a coupoles.",
+    "explanation": "Sainte-Sophie de Kiev se reconnaît notamment par cathédrale historique à coupoles.",
     "tags": [
       "architecture",
       "image",
@@ -4144,7 +4144,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Sainte-Sophie de Kiev est rattache ici a Kiev; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Sainte-Sophie de Kiev est rattaché ici à Kiev ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4167,7 +4167,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Sainte-Sophie de Kiev se trouve en Ukraine; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Sainte-Sophie de Kiev se trouve en Ukraine ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4182,7 +4182,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-038-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Sainte-Sophie de Kiev ?",
+    "prompt": "Quel repère stylistique associer à Sainte-Sophie de Kiev ?",
     "choices": [
       "byzantin ukrainien",
       "moghol",
@@ -4190,7 +4190,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Sainte-Sophie de Kiev est classe ici dans le repere byzantin ukrainien; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Sainte-Sophie de Kiev est classé ici dans le repère byzantin ukrainien ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4204,7 +4204,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-039-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Sagrada Familia",
       "Taj Mahal",
@@ -4212,7 +4212,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Sagrada Familia se reconnait notamment par basilique aux tours organiques de Gaudi.",
+    "explanation": "Sagrada Familia se reconnaît notamment par basilique aux tours organiques de Gaudi.",
     "tags": [
       "architecture",
       "image",
@@ -4237,7 +4237,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Sagrada Familia est rattache ici a Barcelone; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Sagrada Familia est rattaché ici à Barcelone ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4260,7 +4260,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Sagrada Familia se trouve en Espagne; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Sagrada Familia se trouve en Espagne ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4275,7 +4275,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-039-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Sagrada Familia ?",
+    "prompt": "Quel repère stylistique associer à Sagrada Familia ?",
     "choices": [
       "modernisme catalan",
       "moghol",
@@ -4283,7 +4283,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Sagrada Familia est classe ici dans le repere modernisme catalan; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Sagrada Familia est classé ici dans le repère modernisme catalan ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4297,7 +4297,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-039-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Sagrada Familia.",
+    "prompt": "Sélectionne l’image de Sagrada Familia.",
     "choices": [
       "Parlement de Budapest",
       "Sainte-Sophie de Kiev",
@@ -4305,7 +4305,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Fallingwater"
     ],
     "answerIndex": 2,
-    "explanation": "Sagrada Familia correspond au repere visuel : basilique aux tours organiques de Gaudi.",
+    "explanation": "Sagrada Familia correspond au repère visuel : basilique aux tours organiques de Gaudi.",
     "tags": [
       "architecture",
       "image-choice",
@@ -4332,7 +4332,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-040-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Fallingwater",
       "Taj Mahal",
@@ -4340,7 +4340,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater se reconnait notamment par maison construite au-dessus d une cascade.",
+    "explanation": "Fallingwater se reconnaît notamment par maison construite au-dessus d une cascade.",
     "tags": [
       "architecture",
       "image",
@@ -4365,7 +4365,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater est rattache ici a Pennsylvanie; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Fallingwater est rattaché ici à Pennsylvanie ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4388,7 +4388,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater se trouve en Etats-Unis; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Fallingwater se trouve en Etats-Unis ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4403,7 +4403,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-040-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Fallingwater ?",
+    "prompt": "Quel repère stylistique associer à Fallingwater ?",
     "choices": [
       "organique",
       "moghol",
@@ -4411,7 +4411,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Fallingwater est classe ici dans le repere organique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Fallingwater est classé ici dans le repère organique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4425,7 +4425,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-041-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Villa Rotonda",
       "Taj Mahal",
@@ -4433,7 +4433,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda se reconnait notamment par villa palladienne a plan central.",
+    "explanation": "Villa Rotonda se reconnaît notamment par villa palladienne à plan central.",
     "tags": [
       "architecture",
       "image",
@@ -4458,7 +4458,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda est rattache ici a Vicence; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Villa Rotonda est rattaché ici à Vicence ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4481,7 +4481,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda se trouve en Italie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Villa Rotonda se trouve en Italie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4496,7 +4496,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-041-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Villa Rotonda ?",
+    "prompt": "Quel repère stylistique associer à Villa Rotonda ?",
     "choices": [
       "Renaissance",
       "moghol",
@@ -4504,7 +4504,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda est classe ici dans le repere Renaissance; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Villa Rotonda est classé ici dans le repère Renaissance ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4518,15 +4518,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-041-image-choice",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Selectionne l image de Villa Rotonda.",
+    "prompt": "Sélectionne l’image de Villa Rotonda.",
     "choices": [
       "Villa Rotonda",
       "Bauhaus Dessau",
       "Centre Pompidou",
-      "Bibliotheque Sainte-Genevieve"
+      "Bibliothèque Sainte-Geneviève"
     ],
     "answerIndex": 0,
-    "explanation": "Villa Rotonda correspond au repere visuel : villa palladienne a plan central.",
+    "explanation": "Villa Rotonda correspond au repère visuel : villa palladienne à plan central.",
     "tags": [
       "architecture",
       "image-choice",
@@ -4546,14 +4546,14 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Photo de Villa Rotonda",
       "Photo de Bauhaus Dessau",
       "Photo de Centre Pompidou",
-      "Photo de Bibliotheque Sainte-Genevieve"
+      "Photo de Bibliothèque Sainte-Geneviève"
     ]
   },
   {
     "id": "landmark-042-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Bauhaus Dessau",
       "Taj Mahal",
@@ -4561,7 +4561,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Bauhaus Dessau se reconnait notamment par ecole moderniste aux facades vitrees.",
+    "explanation": "Bauhaus Dessau se reconnaît notamment par école moderniste aux façades vitrées.",
     "tags": [
       "architecture",
       "image",
@@ -4578,7 +4578,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-042-city",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : ecole moderniste aux facades vitrees ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : école moderniste aux façades vitrées ?",
     "choices": [
       "Dessau",
       "Agra",
@@ -4586,7 +4586,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Bauhaus Dessau est rattache ici a Dessau; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Bauhaus Dessau est rattaché ici à Dessau ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4609,7 +4609,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Bauhaus Dessau se trouve en Allemagne; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Bauhaus Dessau se trouve en Allemagne ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4624,7 +4624,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-042-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique correspond a cet indice : ecole moderniste aux facades vitrees ?",
+    "prompt": "Quel repère stylistique correspond à cet indice : école moderniste aux façades vitrées ?",
     "choices": [
       "Bauhaus",
       "moghol",
@@ -4632,7 +4632,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Bauhaus Dessau est classe ici dans le repere Bauhaus; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Bauhaus Dessau est classé ici dans le repère Bauhaus ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4646,7 +4646,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-043-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Centre Pompidou",
       "Taj Mahal",
@@ -4654,7 +4654,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Centre Pompidou se reconnait notamment par batiment aux tuyaux et structures apparents.",
+    "explanation": "Centre Pompidou se reconnaît notamment par bâtiment aux tuyaux et structures apparents.",
     "tags": [
       "architecture",
       "image",
@@ -4679,7 +4679,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Centre Pompidou est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Centre Pompidou est rattaché ici à Paris ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4702,7 +4702,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Centre Pompidou se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Centre Pompidou se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4717,7 +4717,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-043-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Centre Pompidou ?",
+    "prompt": "Quel repère stylistique associer à Centre Pompidou ?",
     "choices": [
       "high-tech",
       "moghol",
@@ -4725,7 +4725,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Centre Pompidou est classe ici dans le repere high-tech; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Centre Pompidou est classé ici dans le repère high-tech ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4739,15 +4739,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-043-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Centre Pompidou.",
+    "prompt": "Sélectionne l’image de Centre Pompidou.",
     "choices": [
       "Villa Rotonda",
       "Bauhaus Dessau",
       "Centre Pompidou",
-      "Bibliotheque Sainte-Genevieve"
+      "Bibliothèque Sainte-Geneviève"
     ],
     "answerIndex": 2,
-    "explanation": "Centre Pompidou correspond au repere visuel : batiment aux tuyaux et structures apparents.",
+    "explanation": "Centre Pompidou correspond au repère visuel : bâtiment aux tuyaux et structures apparents.",
     "tags": [
       "architecture",
       "image-choice",
@@ -4767,22 +4767,22 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Photo de Villa Rotonda",
       "Photo de Bauhaus Dessau",
       "Photo de Centre Pompidou",
-      "Photo de Bibliotheque Sainte-Genevieve"
+      "Photo de Bibliothèque Sainte-Geneviève"
     ]
   },
   {
     "id": "landmark-044-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Bibliotheque Sainte-Genevieve",
+      "Bibliothèque Sainte-Geneviève",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Bibliotheque Sainte-Genevieve se reconnait notamment par bibliotheque parisienne a grande salle de lecture.",
+    "explanation": "Bibliothèque Sainte-Geneviève se reconnaît notamment par bibliothèque parisienne à grande salle de lecture.",
     "tags": [
       "architecture",
       "image",
@@ -4793,13 +4793,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABiblioth%C3%A8que_Sainte_Genevi%C3%A8ve_Paris.jpg",
     "imageAsset": "landmarks/bibliotheque-sainte-genevieve",
-    "imageAlt": "Photo de Bibliotheque Sainte-Genevieve"
+    "imageAlt": "Photo de Bibliothèque Sainte-Geneviève"
   },
   {
     "id": "landmark-044-city",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Dans quelle ville ou zone se trouve Bibliotheque Sainte-Genevieve ?",
+    "prompt": "Dans quelle ville ou zone se trouve Bibliothèque Sainte-Geneviève ?",
     "choices": [
       "Paris",
       "Agra",
@@ -4807,7 +4807,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Bibliotheque Sainte-Genevieve est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Bibliothèque Sainte-Geneviève est rattaché ici à Paris ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4822,7 +4822,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-044-country",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Dans quel pays se trouve Bibliotheque Sainte-Genevieve ?",
+    "prompt": "Dans quel pays se trouve Bibliothèque Sainte-Geneviève ?",
     "choices": [
       "France",
       "Inde",
@@ -4830,7 +4830,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Bibliotheque Sainte-Genevieve se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Bibliothèque Sainte-Geneviève se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4845,15 +4845,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-044-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Bibliotheque Sainte-Genevieve ?",
+    "prompt": "Quel repère stylistique associer à Bibliothèque Sainte-Geneviève ?",
     "choices": [
-      "eclectique",
+      "éclectique",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Bibliotheque Sainte-Genevieve est classe ici dans le repere eclectique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Bibliothèque Sainte-Geneviève est classé ici dans le repère éclectique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4867,15 +4867,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-045-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Musee d Orsay",
+      "Musée d’Orsay",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Musee d Orsay se reconnait notamment par ancienne gare transformee en musee.",
+    "explanation": "Musée d’Orsay se reconnaît notamment par ancienne gare transformee en musée.",
     "tags": [
       "architecture",
       "image",
@@ -4886,13 +4886,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMuseeOrsay_20070324.jpg",
     "imageAsset": "landmarks/musee-d-orsay",
-    "imageAlt": "Photo de Musee d Orsay"
+    "imageAlt": "Photo de Musée d’Orsay"
   },
   {
     "id": "landmark-045-city",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quelle ville ou zone se trouve Musee d Orsay ?",
+    "prompt": "Dans quelle ville ou zone se trouve Musée d’Orsay ?",
     "choices": [
       "Paris",
       "Agra",
@@ -4900,7 +4900,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Musee d Orsay est rattache ici a Paris; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Musée d’Orsay est rattaché ici à Paris ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -4915,7 +4915,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-045-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve Musee d Orsay ?",
+    "prompt": "Dans quel pays se trouve Musée d’Orsay ?",
     "choices": [
       "France",
       "Inde",
@@ -4923,7 +4923,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Musee d Orsay se trouve en France; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Musée d’Orsay se trouve en France ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -4938,7 +4938,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-045-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Musee d Orsay ?",
+    "prompt": "Quel repère stylistique associer à Musée d’Orsay ?",
     "choices": [
       "beaux-arts",
       "moghol",
@@ -4946,7 +4946,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Musee d Orsay est classe ici dans le repere beaux-arts; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Musée d’Orsay est classé ici dans le repère beaux-arts ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -4960,15 +4960,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-045-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Musee d Orsay.",
+    "prompt": "Sélectionne l’image de Musée d’Orsay.",
     "choices": [
-      "Musee d Orsay",
+      "Musée d’Orsay",
       "Louvre Abu Dhabi",
       "Marina Bay Sands",
       "Gardens by the Bay"
     ],
     "answerIndex": 0,
-    "explanation": "Musee d Orsay correspond au repere visuel : ancienne gare transformee en musee.",
+    "explanation": "Musée d’Orsay correspond au repère visuel : ancienne gare transformee en musée.",
     "tags": [
       "architecture",
       "image-choice",
@@ -4985,7 +4985,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "landmarks/gardens-by-the-bay"
     ],
     "choiceImageAlts": [
-      "Photo de Musee d Orsay",
+      "Photo de Musée d’Orsay",
       "Photo de Louvre Abu Dhabi",
       "Photo de Marina Bay Sands",
       "Photo de Gardens by the Bay"
@@ -4995,7 +4995,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-046-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Louvre Abu Dhabi",
       "Taj Mahal",
@@ -5003,7 +5003,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Louvre Abu Dhabi se reconnait notamment par musee sous un dome ajoure.",
+    "explanation": "Louvre Abu Dhabi se reconnaît notamment par musée sous un dôme ajouré.",
     "tags": [
       "architecture",
       "image",
@@ -5020,7 +5020,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-046-city",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : musee sous un dome ajoure ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : musée sous un dôme ajouré ?",
     "choices": [
       "Abu Dhabi",
       "Agra",
@@ -5028,7 +5028,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Louvre Abu Dhabi est rattache ici a Abu Dhabi; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Louvre Abu Dhabi est rattaché ici à Abu Dhabi ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5045,13 +5045,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 3,
     "prompt": "Dans quel pays se trouve Louvre Abu Dhabi ?",
     "choices": [
-      "Emirats arabes unis",
+      "Émirats arabes unis",
       "Inde",
       "Cambodge",
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Louvre Abu Dhabi se trouve en Emirats arabes unis; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Louvre Abu Dhabi se trouve aux Émirats arabes unis ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5066,7 +5066,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-046-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Louvre Abu Dhabi ?",
+    "prompt": "Quel repère stylistique associer à Louvre Abu Dhabi ?",
     "choices": [
       "contemporain",
       "moghol",
@@ -5074,7 +5074,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Louvre Abu Dhabi est classe ici dans le repere contemporain; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Louvre Abu Dhabi est classé ici dans le repère contemporain ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5088,7 +5088,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-047-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Marina Bay Sands",
       "Taj Mahal",
@@ -5096,7 +5096,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Marina Bay Sands se reconnait notamment par trois tours reliees par une terrasse.",
+    "explanation": "Marina Bay Sands se reconnaît notamment par trois tours reliees par une terrasse.",
     "tags": [
       "architecture",
       "image",
@@ -5121,7 +5121,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Marina Bay Sands est rattache ici a Singapour; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Marina Bay Sands est rattaché ici à Singapour ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5144,7 +5144,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Marina Bay Sands se trouve en Singapour; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Marina Bay Sands se trouve en Singapour ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5159,7 +5159,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-047-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Marina Bay Sands ?",
+    "prompt": "Quel repère stylistique associer à Marina Bay Sands ?",
     "choices": [
       "contemporain",
       "moghol",
@@ -5167,7 +5167,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Marina Bay Sands est classe ici dans le repere contemporain; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Marina Bay Sands est classé ici dans le repère contemporain ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5181,15 +5181,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-047-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Marina Bay Sands.",
+    "prompt": "Sélectionne l’image de Marina Bay Sands.",
     "choices": [
-      "Musee d Orsay",
+      "Musée d’Orsay",
       "Louvre Abu Dhabi",
       "Marina Bay Sands",
       "Gardens by the Bay"
     ],
     "answerIndex": 2,
-    "explanation": "Marina Bay Sands correspond au repere visuel : trois tours reliees par une terrasse.",
+    "explanation": "Marina Bay Sands correspond au repère visuel : trois tours reliees par une terrasse.",
     "tags": [
       "architecture",
       "image-choice",
@@ -5206,7 +5206,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "landmarks/gardens-by-the-bay"
     ],
     "choiceImageAlts": [
-      "Photo de Musee d Orsay",
+      "Photo de Musée d’Orsay",
       "Photo de Louvre Abu Dhabi",
       "Photo de Marina Bay Sands",
       "Photo de Gardens by the Bay"
@@ -5216,7 +5216,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-048-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Gardens by the Bay",
       "Taj Mahal",
@@ -5224,7 +5224,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Gardens by the Bay se reconnait notamment par supertrees lumineux et serres geantes.",
+    "explanation": "Gardens by the Bay se reconnaît notamment par supertrees lumineux et serres geantes.",
     "tags": [
       "architecture",
       "image",
@@ -5249,7 +5249,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Gardens by the Bay est rattache ici a Singapour; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Gardens by the Bay est rattaché ici à Singapour ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5272,7 +5272,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Gardens by the Bay se trouve en Singapour; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Gardens by the Bay se trouve en Singapour ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5287,7 +5287,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-048-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Gardens by the Bay ?",
+    "prompt": "Quel repère stylistique associer à Gardens by the Bay ?",
     "choices": [
       "paysage contemporain",
       "moghol",
@@ -5295,7 +5295,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Gardens by the Bay est classe ici dans le repere paysage contemporain; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Gardens by the Bay est classé ici dans le repère paysage contemporain ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5309,7 +5309,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-049-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Tour CN",
       "Taj Mahal",
@@ -5317,7 +5317,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN se reconnait notamment par tour fine dominant Toronto.",
+    "explanation": "Tour CN se reconnaît notamment par tour fine dominant Toronto.",
     "tags": [
       "architecture",
       "image",
@@ -5342,7 +5342,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN est rattache ici a Toronto; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Tour CN est rattaché ici à Toronto ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5365,7 +5365,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN se trouve en Canada; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Tour CN se trouve en Canada ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5380,7 +5380,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-049-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Tour CN ?",
+    "prompt": "Quel repère stylistique associer à Tour CN ?",
     "choices": [
       "tour de communication",
       "moghol",
@@ -5388,7 +5388,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN est classe ici dans le repere tour de communication; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Tour CN est classé ici dans le repère tour de communication ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5402,15 +5402,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-049-image-choice",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Selectionne l image de Tour CN.",
+    "prompt": "Sélectionne l’image de Tour CN.",
     "choices": [
       "Tour CN",
-      "Biosphere de Montreal",
+      "Biosphère de Montréal",
       "Lotus Temple",
-      "Temple d Or"
+      "Temple d’Or"
     ],
     "answerIndex": 0,
-    "explanation": "Tour CN correspond au repere visuel : tour fine dominant Toronto.",
+    "explanation": "Tour CN correspond au repère visuel : tour fine dominant Toronto.",
     "tags": [
       "architecture",
       "image-choice",
@@ -5428,24 +5428,24 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     ],
     "choiceImageAlts": [
       "Photo de Tour CN",
-      "Photo de Biosphere de Montreal",
+      "Photo de Biosphère de Montréal",
       "Photo de Lotus Temple",
-      "Photo de Temple d Or"
+      "Photo de Temple d’Or"
     ]
   },
   {
     "id": "landmark-050-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Biosphere de Montreal",
+      "Biosphère de Montréal",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Biosphere de Montreal se reconnait notamment par dome geodesique de Buckminster Fuller.",
+    "explanation": "Biosphère de Montréal se reconnaît notamment par dôme géodésique de Buckminster Fuller.",
     "tags": [
       "architecture",
       "image",
@@ -5456,21 +5456,21 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABiosph%C3%A8re_Montr%C3%A9al_CA.jpg",
     "imageAsset": "landmarks/biosphere-de-montreal",
-    "imageAlt": "Photo de Biosphere de Montreal"
+    "imageAlt": "Photo de Biosphère de Montréal"
   },
   {
     "id": "landmark-050-city",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : dome geodesique de Buckminster Fuller ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : dôme géodésique de Buckminster Fuller ?",
     "choices": [
-      "Montreal",
+      "Montréal",
       "Agra",
       "Siem Reap",
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Biosphere de Montreal est rattache ici a Montreal; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Biosphère de Montréal est rattaché ici à Montréal ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5485,7 +5485,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-050-country",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Dans quel pays se trouve Biosphere de Montreal ?",
+    "prompt": "Dans quel pays se trouve Biosphère de Montréal ?",
     "choices": [
       "Canada",
       "Inde",
@@ -5493,7 +5493,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Biosphere de Montreal se trouve en Canada; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Biosphère de Montréal se trouve en Canada ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5508,15 +5508,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-050-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Biosphere de Montreal ?",
+    "prompt": "Quel repère stylistique associer à Biosphère de Montréal ?",
     "choices": [
-      "geodesique",
+      "géodésique",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Biosphere de Montreal est classe ici dans le repere geodesique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Biosphère de Montréal est classé ici dans le repère géodésique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5530,7 +5530,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-051-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Lotus Temple",
       "Taj Mahal",
@@ -5538,7 +5538,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Lotus Temple se reconnait notamment par temple en forme de fleur de lotus.",
+    "explanation": "Lotus Temple se reconnaît notamment par temple en forme de fleur de lotus.",
     "tags": [
       "architecture",
       "image",
@@ -5563,7 +5563,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Lotus Temple est rattache ici a New Delhi; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Lotus Temple est rattaché ici à New Delhi ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5583,10 +5583,10 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Inde",
       "Cambodge",
       "Jordanie",
-      "Perou"
+      "Pérou"
     ],
     "answerIndex": 0,
-    "explanation": "Lotus Temple se trouve en Inde; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Lotus Temple se trouve en Inde ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5601,7 +5601,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-051-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Lotus Temple ?",
+    "prompt": "Quel repère stylistique associer à Lotus Temple ?",
     "choices": [
       "expressionniste",
       "moghol",
@@ -5609,7 +5609,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Lotus Temple est classe ici dans le repere expressionniste; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Lotus Temple est classé ici dans le repère expressionniste ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5623,15 +5623,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-051-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Lotus Temple.",
+    "prompt": "Sélectionne l’image de Lotus Temple.",
     "choices": [
       "Tour CN",
-      "Biosphere de Montreal",
+      "Biosphère de Montréal",
       "Lotus Temple",
-      "Temple d Or"
+      "Temple d’Or"
     ],
     "answerIndex": 2,
-    "explanation": "Lotus Temple correspond au repere visuel : temple en forme de fleur de lotus.",
+    "explanation": "Lotus Temple correspond au repère visuel : temple en forme de fleur de lotus.",
     "tags": [
       "architecture",
       "image-choice",
@@ -5649,24 +5649,24 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     ],
     "choiceImageAlts": [
       "Photo de Tour CN",
-      "Photo de Biosphere de Montreal",
+      "Photo de Biosphère de Montréal",
       "Photo de Lotus Temple",
-      "Photo de Temple d Or"
+      "Photo de Temple d’Or"
     ]
   },
   {
     "id": "landmark-052-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Temple d Or",
+      "Temple d’Or",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Temple d Or se reconnait notamment par sanctuaire dore entoure d eau.",
+    "explanation": "Temple d’Or se reconnaît notamment par sanctuaire dore entoure d eau.",
     "tags": [
       "architecture",
       "image",
@@ -5677,13 +5677,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASikh_pilgrim_at_the_Golden_Temple_(Harmandir_Sahib)_in_Amritsar%2C_India.jpg",
     "imageAsset": "landmarks/temple-d-or",
-    "imageAlt": "Photo de Temple d Or"
+    "imageAlt": "Photo de Temple d’Or"
   },
   {
     "id": "landmark-052-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quelle ville ou zone se trouve Temple d Or ?",
+    "prompt": "Dans quelle ville ou zone se trouve Temple d’Or ?",
     "choices": [
       "Amritsar",
       "Agra",
@@ -5691,7 +5691,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Temple d Or est rattache ici a Amritsar; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Temple d’Or est rattaché ici à Amritsar ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5706,15 +5706,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-052-country",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quel pays se trouve Temple d Or ?",
+    "prompt": "Dans quel pays se trouve Temple d’Or ?",
     "choices": [
       "Inde",
       "Cambodge",
       "Jordanie",
-      "Perou"
+      "Pérou"
     ],
     "answerIndex": 0,
-    "explanation": "Temple d Or se trouve en Inde; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Temple d’Or se trouve en Inde ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5729,7 +5729,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-052-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Temple d Or ?",
+    "prompt": "Quel repère stylistique associer à Temple d’Or ?",
     "choices": [
       "sikh",
       "moghol",
@@ -5737,7 +5737,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Temple d Or est classe ici dans le repere sikh; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Temple d’Or est classé ici dans le repère sikh ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5751,7 +5751,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-053-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Borobudur",
       "Taj Mahal",
@@ -5759,7 +5759,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur se reconnait notamment par temple en terrasses avec stupas.",
+    "explanation": "Borobudur se reconnaît notamment par temple en terrasses avec stupas.",
     "tags": [
       "architecture",
       "image",
@@ -5784,7 +5784,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur est rattache ici a Java central; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Borobudur est rattaché ici à Java central ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5807,7 +5807,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur se trouve en Indonesie; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Borobudur se trouve en Indonesie ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5822,7 +5822,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-053-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Borobudur ?",
+    "prompt": "Quel repère stylistique associer à Borobudur ?",
     "choices": [
       "bouddhique",
       "moghol",
@@ -5830,7 +5830,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur est classe ici dans le repere bouddhique; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Borobudur est classé ici dans le repère bouddhique ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5844,15 +5844,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-053-image-choice",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Selectionne l image de Borobudur.",
+    "prompt": "Sélectionne l’image de Borobudur.",
     "choices": [
       "Borobudur",
       "Kinkaku-ji",
-      "Chateau de Himeji",
+      "Château de Himeji",
       "Gyeongbokgung"
     ],
     "answerIndex": 0,
-    "explanation": "Borobudur correspond au repere visuel : temple en terrasses avec stupas.",
+    "explanation": "Borobudur correspond au repère visuel : temple en terrasses avec stupas.",
     "tags": [
       "architecture",
       "image-choice",
@@ -5871,7 +5871,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Borobudur",
       "Photo de Kinkaku-ji",
-      "Photo de Chateau de Himeji",
+      "Photo de Château de Himeji",
       "Photo de Gyeongbokgung"
     ]
   },
@@ -5879,7 +5879,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-054-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Kinkaku-ji",
       "Taj Mahal",
@@ -5887,7 +5887,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Kinkaku-ji se reconnait notamment par pavillon dore au bord d un etang.",
+    "explanation": "Kinkaku-ji se reconnaît notamment par pavillon dore au bord d un etang.",
     "tags": [
       "architecture",
       "image",
@@ -5912,7 +5912,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Kinkaku-ji est rattache ici a Kyoto; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Kinkaku-ji est rattaché ici à Kyoto ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -5935,7 +5935,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Kinkaku-ji se trouve en Japon; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Kinkaku-ji se trouve en Japon ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -5950,7 +5950,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-054-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Kinkaku-ji ?",
+    "prompt": "Quel repère stylistique associer à Kinkaku-ji ?",
     "choices": [
       "japonais",
       "moghol",
@@ -5958,7 +5958,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Kinkaku-ji est classe ici dans le repere japonais; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Kinkaku-ji est classé ici dans le repère japonais ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -5972,15 +5972,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-055-identify",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
-      "Chateau de Himeji",
+      "Château de Himeji",
       "Taj Mahal",
       "Angkor Vat",
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Himeji se reconnait notamment par chateau blanc surnomme heron blanc.",
+    "explanation": "Château de Himeji se reconnaît notamment par château blanc surnommé héron blanc.",
     "tags": [
       "architecture",
       "image",
@@ -5991,13 +5991,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "sourceLabel": "Banque Kizz monuments - Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHimeji_Castle_0804_1.jpg",
     "imageAsset": "landmarks/chateau-de-himeji",
-    "imageAlt": "Photo de Chateau de Himeji"
+    "imageAlt": "Photo de Château de Himeji"
   },
   {
     "id": "landmark-055-city",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quelle ville ou zone correspond a ce repere architectural : chateau blanc surnomme heron blanc ?",
+    "prompt": "Quelle ville ou zone correspond à ce repère architectural : château blanc surnommé héron blanc ?",
     "choices": [
       "Himeji",
       "Agra",
@@ -6005,7 +6005,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Himeji est rattache ici a Himeji; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Château de Himeji est rattaché ici à Himeji ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6020,7 +6020,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-055-country",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Dans quel pays se trouve Chateau de Himeji ?",
+    "prompt": "Dans quel pays se trouve Château de Himeji ?",
     "choices": [
       "Japon",
       "Inde",
@@ -6028,7 +6028,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Himeji se trouve en Japon; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Château de Himeji se trouve au Japon ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6043,7 +6043,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-055-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Chateau de Himeji ?",
+    "prompt": "Quel repère stylistique associer à Château de Himeji ?",
     "choices": [
       "japonais",
       "moghol",
@@ -6051,7 +6051,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Chateau de Himeji est classe ici dans le repere japonais; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Château de Himeji est classé ici dans le repère japonais ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6065,15 +6065,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-055-image-choice",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Selectionne l image de Chateau de Himeji.",
+    "prompt": "Sélectionne l’image de Château de Himeji.",
     "choices": [
       "Borobudur",
       "Kinkaku-ji",
-      "Chateau de Himeji",
+      "Château de Himeji",
       "Gyeongbokgung"
     ],
     "answerIndex": 2,
-    "explanation": "Chateau de Himeji correspond au repere visuel : chateau blanc surnomme heron blanc.",
+    "explanation": "Château de Himeji correspond au repère visuel : château blanc surnommé héron blanc.",
     "tags": [
       "architecture",
       "image-choice",
@@ -6092,7 +6092,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "choiceImageAlts": [
       "Photo de Borobudur",
       "Photo de Kinkaku-ji",
-      "Photo de Chateau de Himeji",
+      "Photo de Château de Himeji",
       "Photo de Gyeongbokgung"
     ]
   },
@@ -6100,7 +6100,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-056-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Gyeongbokgung",
       "Taj Mahal",
@@ -6108,7 +6108,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung se reconnait notamment par palais royal de la dynastie Joseon.",
+    "explanation": "Gyeongbokgung se reconnaît notamment par palais royal de la dynastie Joseon.",
     "tags": [
       "architecture",
       "image",
@@ -6127,13 +6127,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Gyeongbokgung ?",
     "choices": [
-      "Seoul",
+      "Séoul",
       "Agra",
       "Siem Reap",
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung est rattache ici a Seoul; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Gyeongbokgung est rattaché ici à Séoul ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6156,7 +6156,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung se trouve en Coree du Sud; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Gyeongbokgung se trouve en Coree du Sud ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6171,15 +6171,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-056-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Gyeongbokgung ?",
+    "prompt": "Quel repère stylistique associer à Gyeongbokgung ?",
     "choices": [
-      "coreen",
+      "coréen",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Gyeongbokgung est classe ici dans le repere coreen; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Gyeongbokgung est classé ici dans le repère coréen ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6193,7 +6193,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-057-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Palais Potala",
       "Taj Mahal",
@@ -6201,7 +6201,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala se reconnait notamment par palais monumental sur colline.",
+    "explanation": "Palais Potala se reconnaît notamment par palais monumental sur colline.",
     "tags": [
       "architecture",
       "image",
@@ -6226,7 +6226,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala est rattache ici a Lhassa; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Palais Potala est rattaché ici à Lhassa ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6249,7 +6249,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala se trouve en Chine; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Palais Potala se trouve en Chine ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6264,15 +6264,15 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-057-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Palais Potala ?",
+    "prompt": "Quel repère stylistique associer à Palais Potala ?",
     "choices": [
-      "tibetain",
+      "tibétain",
       "moghol",
       "khmer",
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala est classe ici dans le repere tibetain; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Palais Potala est classé ici dans le repère tibétain ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6286,7 +6286,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-057-image-choice",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Selectionne l image de Palais Potala.",
+    "prompt": "Sélectionne l’image de Palais Potala.",
     "choices": [
       "Palais Potala",
       "Grande Muraille de Chine",
@@ -6294,7 +6294,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 0,
-    "explanation": "Palais Potala correspond au repere visuel : palais monumental sur colline.",
+    "explanation": "Palais Potala correspond au repère visuel : palais monumental sur colline.",
     "tags": [
       "architecture",
       "image-choice",
@@ -6321,7 +6321,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-058-identify",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Grande Muraille de Chine",
       "Taj Mahal",
@@ -6329,7 +6329,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Grande Muraille de Chine se reconnait notamment par longue muraille defensive.",
+    "explanation": "Grande Muraille de Chine se reconnaît notamment par longue muraille défensive.",
     "tags": [
       "architecture",
       "image",
@@ -6354,7 +6354,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Grande Muraille de Chine est rattache ici a Chine du Nord; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Grande Muraille de Chine est rattaché ici à Chine du Nord ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6369,7 +6369,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-058-country",
     "topicId": "architecture",
     "difficulty": 1,
-    "prompt": "Dans quel pays se trouve ce repere architectural : longue muraille defensive ?",
+    "prompt": "Dans quel pays se trouve ce repère architectural : longue muraille défensive ?",
     "choices": [
       "Chine",
       "Inde",
@@ -6377,7 +6377,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Grande Muraille de Chine se trouve en Chine; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Grande Muraille de Chine se trouve en Chine ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6392,7 +6392,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-058-style",
     "topicId": "architecture",
     "difficulty": 2,
-    "prompt": "Quel repere stylistique associer a Grande Muraille de Chine ?",
+    "prompt": "Quel repère stylistique associer à Grande Muraille de Chine ?",
     "choices": [
       "fortification",
       "moghol",
@@ -6400,7 +6400,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Grande Muraille de Chine est classe ici dans le repere fortification; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Grande Muraille de Chine est classé ici dans le repère fortification ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6414,7 +6414,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-059-identify",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel monument ou batiment est visible sur cette photo ?",
+    "prompt": "Quel monument ou bâtiment est visible sur cette photo ?",
     "choices": [
       "Temple du Ciel",
       "Taj Mahal",
@@ -6422,7 +6422,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Petra"
     ],
     "answerIndex": 0,
-    "explanation": "Temple du Ciel se reconnait notamment par complexe rituel imperial circulaire.",
+    "explanation": "Temple du Ciel se reconnaît notamment par complexe rituel impérial circulaire.",
     "tags": [
       "architecture",
       "image",
@@ -6441,13 +6441,13 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "difficulty": 3,
     "prompt": "Dans quelle ville ou zone se trouve Temple du Ciel ?",
     "choices": [
-      "Pekin",
+      "Pékin",
       "Agra",
       "Siem Reap",
       "Wadi Musa"
     ],
     "answerIndex": 0,
-    "explanation": "Temple du Ciel est rattache ici a Pekin; ce repere aide a situer le monument avant de le reconnaitre sur carte.",
+    "explanation": "Temple du Ciel est rattaché ici à Pékin ; ce repère aide à situer le monument avant de le reconnaître sur carte.",
     "tags": [
       "architecture",
       "geographie",
@@ -6470,7 +6470,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Jordanie"
     ],
     "answerIndex": 0,
-    "explanation": "Temple du Ciel se trouve en Chine; retenir le pays connecte architecture et geographie culturelle.",
+    "explanation": "Temple du Ciel se trouve en Chine ; ce pays relie architecture et géographie culturelle.",
     "tags": [
       "architecture",
       "geographie",
@@ -6485,7 +6485,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-059-style",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Quel repere stylistique associer a Temple du Ciel ?",
+    "prompt": "Quel repère stylistique associer à Temple du Ciel ?",
     "choices": [
       "chinois",
       "moghol",
@@ -6493,7 +6493,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "nabateen"
     ],
     "answerIndex": 0,
-    "explanation": "Temple du Ciel est classe ici dans le repere chinois; ce style sert d indice pour comparer les formes architecturales.",
+    "explanation": "Temple du Ciel est classé ici dans le repère chinois ; ce style sert d’indice pour comparer les formes architecturales.",
     "tags": [
       "architecture",
       "style",
@@ -6507,7 +6507,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
     "id": "landmark-059-image-choice",
     "topicId": "architecture",
     "difficulty": 3,
-    "prompt": "Selectionne l image de Temple du Ciel.",
+    "prompt": "Sélectionne l’image de Temple du Ciel.",
     "choices": [
       "Palais Potala",
       "Grande Muraille de Chine",
@@ -6515,7 +6515,7 @@ export const landmarkVisualQuestions: QuestionSeed[] = [
       "Machu Picchu"
     ],
     "answerIndex": 2,
-    "explanation": "Temple du Ciel correspond au repere visuel : complexe rituel imperial circulaire.",
+    "explanation": "Temple du Ciel correspond au repère visuel : complexe rituel impérial circulaire.",
     "tags": [
       "architecture",
       "image-choice",
