@@ -154,7 +154,8 @@ function elementDifficulty(element: ElementRow, kind: 'symbol' | 'z' | 'family' 
   return 3;
 }
 
-const vowelSoundElementNames = new Set(['hydrogène', 'hélium', 'azote', 'oxygène', 'aluminium', 'argent', 'iode', 'or', 'uranium']);
+const vowelSoundElementNames = new Set(['hydrogène', 'hélium', 'azote', 'oxygène', 'aluminium', 'argon', 'argent', 'iode', 'or', 'uranium']);
+const vowelSoundFormulaNames = new Set(['eau', 'acide sulfurique', 'ammoniac', 'hydroxyde de sodium']);
 
 function elementWithArticle(name: string) {
   if (vowelSoundElementNames.has(name)) return `l’${name}`;
@@ -171,19 +172,19 @@ function capitalized(value: string) {
 }
 
 function formulaWithDe(name: string) {
-  if (name === 'eau' || name === 'acide sulfurique' || name === 'hydroxyde de sodium') return `de l’${name}`;
+  if (vowelSoundFormulaNames.has(name)) return `de l’${name}`;
   return `du ${name}`;
 }
 
 function formulaSubject(name: string) {
-  if (name === 'eau' || name === 'acide sulfurique' || name === 'hydroxyde de sodium') return `L’${name}`;
+  if (vowelSoundFormulaNames.has(name)) return `L’${name}`;
   return capitalized(name);
 }
 
 export const scienceChemistryQuestions: QuestionSeed[] = [
   ...elements.flatMap((element) => [
     q(`sci-chem-el-${element.symbol.toLowerCase()}-symbol`, elementDifficulty(element, 'symbol'), `Quel est le symbole chimique ${elementWithDe(element.name)} ?`, rotate(symbols, element.symbol), `${capitalized(elementWithArticle(element.name))} a pour symbole ${element.symbol} ; c’est l’abréviation normalisée utilisée dans le tableau périodique.`, ['element', 'symbole']),
-    q(`sci-chem-el-${element.symbol.toLowerCase()}-z`, elementDifficulty(element, 'z'), `Quel est le numéro atomique ${elementWithDe(element.name)} ?`, nearbyNumberChoices(element.atomicNumber), `Le numéro atomique Z ${elementWithDe(element.name)} est ${element.atomicNumber}: c’est le nombre de protons du noyau.`, ['element', 'numero-atomique']),
+    q(`sci-chem-el-${element.symbol.toLowerCase()}-z`, elementDifficulty(element, 'z'), `Quel est le numéro atomique ${elementWithDe(element.name)} ?`, nearbyNumberChoices(element.atomicNumber), `Le numéro atomique Z ${elementWithDe(element.name)} est ${element.atomicNumber} : c’est le nombre de protons du noyau.`, ['element', 'numero-atomique']),
     q(`sci-chem-el-${element.symbol.toLowerCase()}-family`, elementDifficulty(element, 'family'), `À quelle famille rattache-t-on surtout ${elementWithArticle(element.name)} ?`, rotate(families, element.family), `${capitalized(elementWithArticle(element.name))} est classé ici comme ${element.family} ; cette famille donne un repère sur ses propriétés chimiques usuelles.`, ['element', 'famille']),
     q(`sci-chem-el-${element.symbol.toLowerCase()}-clue`, elementDifficulty(element, 'clue'), `Quel élément correspond à cet indice : ${element.clue} ?`, rotate(names, element.name), `L’indice renvoie à ${elementWithArticle(element.name)}, symbole ${element.symbol}, Z=${element.atomicNumber} ; il combine usage, propriété ou famille chimique.`, ['element', 'indice']),
   ]),

@@ -56378,13 +56378,13 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Quel jeu ne fait PAS partie de la série Science Adventure par 5pb. et Nitroplus ?",
     "choices": [
-      "Steins; Porte",
-      "Robotique ; Remarques",
-      "Chaos ; Enfant",
-      "Occultique ; Neuf"
+      "Steins;Gate",
+      "Robotics;Notes",
+      "Chaos;Child",
+      "Occultic;Nine"
     ],
     "answerIndex": 3,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Occultique ; Neuf ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Occultic;Nine ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -65646,7 +65646,7 @@ export const openTdbQuestions = [
     "topicId": "opentdb-games",
     "difficulty": 1,
     "type": "multiple-choice",
-    "prompt": "Quel objet ménager fait voyager les personnages de \"Steins; Gate\" dans le temps ?",
+    "prompt": "Quel objet ménager fait voyager les personnages de \"Steins;Gate\" dans le temps ?",
     "choices": [
       "Micro-ondes",
       "Ordinateur",

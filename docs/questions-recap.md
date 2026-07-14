@@ -53,7 +53,7 @@ G?n?r? le 2026-07-14 depuis `src/content.ts`.
 
 ## Avertissements restants
 
-- undefined: 21
+- warning: theme trop concentre sur le format multiple-choice: 21
 
 ## Colonnes du CSV
 
