@@ -109,7 +109,7 @@ function visualArtworkContextQuestions(): QuestionSeed[] {
       if (!imageQuestion?.imageAsset) return [];
       const answer = question.choices?.[question.answerIndex ?? 0] ?? '';
       const explanation = question.id.endsWith('-work')
-        ? `L’image renvoie au titre ${answer}; elle sert de repère visuel pour relier œuvre et artiste.`
+        ? `L’image renvoie au titre ${answer} ; elle sert de repère visuel pour relier œuvre et artiste.`
         : question.id.endsWith('-country')
           ? `Cette œuvre est rattachée ici au repère culturel ${answer}.`
           : `Cette image sert de repère visuel pour reconnaître le sujet ${answer}.`;

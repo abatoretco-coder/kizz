@@ -209,7 +209,7 @@ export const expandedQuestions: QuestionSeed[] = [
   ]),
 
   ...build('architecture', 'arc', 1, [
-    ['Dans quelle ville se trouve la tour Eiffel ?', ['Lyon', 'Paris', 'Bruxelles', 'Londres'], 1, 'La tour Eiffel est construite à Paris pour l’Exposition universelle de 1889.'],
+    ['Quelle capitale accueille la tour Eiffel depuis l’Exposition universelle de 1889 ?', ['Lyon', 'Paris', 'Bruxelles', 'Londres'], 1, 'La tour Eiffel est construite à Paris pour l’Exposition universelle de 1889.'],
     ['Quel matériau compose principalement le Panthéon de Rome ?', ['Béton romain', 'Bois', 'Acier', 'Verre'], 0, 'La coupole du Panthéon utilise un béton romain allégé vers son sommet.'],
     ['Comment appelle-t-on la partie supérieure triangulaire d’un temple grec ?', ['Fronton', 'Nef', 'Transept', 'Minaret'], 0, 'Le fronton couronne la façade et encadre souvent un décor sculpté.'],
     ['Quel édifice religieux possède généralement une nef ?', ['Église', 'Stade', 'Aqueduc', 'Phare'], 0, 'La nef est l’espace longitudinal principal de nombreuses églises.'],

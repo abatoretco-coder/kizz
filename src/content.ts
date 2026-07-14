@@ -76,8 +76,8 @@ const rawQuestions: QuestionSeed[] = [
   { id: 'art-06', topicId: 'arts', difficulty: 2, type: 'free-text', prompt: 'Quel est le nom de cette sculpture ?', acceptedAnswers: ['le penseur', 'penseur', 'the thinker'], explanation: 'Le Penseur est une sculpture d’Auguste Rodin conçue à l’origine pour La Porte de l’Enfer.', tags: ['sculpture', 'rodin', 'image'], sourceLabel: 'Didier Descouens / Wikimedia Commons — CC BY-SA 4.0', imageAsset: 'the-thinker', imageAlt: 'Le Penseur d’Auguste Rodin', learnMoreUrl: 'https://fr.wikipedia.org/wiki/Le_Penseur' },
   { id: 'art-07', topicId: 'arts', difficulty: 2, type: 'multi-text', prompt: 'Identifie cette œuvre et son artiste.', answerFields: [{ id: 'work', label: 'Nom de l’œuvre', acceptedAnswers: ['la joconde', 'joconde', 'mona lisa'] }, { id: 'artist', label: 'Artiste', acceptedAnswers: ['léonard de vinci', 'leonard de vinci', 'leonardo da vinci', 'de vinci'] }], explanation: 'La Joconde est un portrait de Léonard de Vinci conservé au musée du Louvre.', tags: ['peinture', 'renaissance', 'multi-champs'], sourceLabel: 'Wikimedia Commons — domaine public', imageAsset: 'mona-lisa', imageAlt: 'La Joconde de Léonard de Vinci', learnMoreUrl: 'https://fr.wikipedia.org/wiki/La_Joconde' },
   { id: 'lan-01', topicId: 'language', difficulty: 1, type: 'free-text', prompt: 'Comment dit-on « bonjour » en espagnol ?', acceptedAnswers: ['hola'], explanation: '« Hola » est la salutation courante en espagnol.', tags: ['espagnol', 'salutations'], sourceLabel: 'Contenu original Kizz', learnMoreUrl: 'https://fr.wikipedia.org/wiki/Espagnol' },
-  { id: 'lan-02', topicId: 'language', difficulty: 1, prompt: 'Quel mot anglais signifie « bibliothèque » ?', choices: ['Bookshop', 'Library', 'Bakery', 'School'], answerIndex: 1, explanation: '« Library » signifie bibliothèque; « bookshop » désigne une librairie.', tags: ['anglais', 'faux-amis'], sourceLabel: 'Contenu original Kizz' },
-  { id: 'lan-03', topicId: 'language', difficulty: 2, prompt: 'Quel est le pluriel anglais de « child » ?', choices: ['Childs', 'Childes', 'Children', 'Childrens'], answerIndex: 2, explanation: '« Children » est un pluriel irrégulier; il ne prend pas de s supplémentaire.', tags: ['anglais', 'grammaire'], sourceLabel: 'Contenu original Kizz' },
+  { id: 'lan-02', topicId: 'language', difficulty: 1, prompt: 'Quel mot anglais signifie « bibliothèque » ?', choices: ['Bookshop', 'Library', 'Bakery', 'School'], answerIndex: 1, explanation: '« Library » signifie bibliothèque ; « bookshop » désigne une librairie.', tags: ['anglais', 'faux-amis'], sourceLabel: 'Contenu original Kizz' },
+  { id: 'lan-03', topicId: 'language', difficulty: 2, prompt: 'Quel est le pluriel anglais de « child » ?', choices: ['Childs', 'Childes', 'Children', 'Childrens'], answerIndex: 2, explanation: '« Children » est un pluriel irrégulier ; il ne prend pas de s supplémentaire.', tags: ['anglais', 'grammaire'], sourceLabel: 'Contenu original Kizz' },
   { id: 'lan-04', topicId: 'language', difficulty: 2, prompt: 'Que signifie le mot espagnol « mañana » ?', choices: ['Hier', 'Aujourd’hui', 'Demain', 'Toujours'], answerIndex: 2, explanation: '« Mañana » signifie demain, ou matin selon le contexte et l’article employé.', tags: ['espagnol', 'vocabulaire'], sourceLabel: 'Contenu original Kizz' },
   ...mvpQuestions,
   ...expandedQuestions,
@@ -210,7 +210,7 @@ function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
   const explanation = question.explanation
     .replace(
       /^(.+) est associee a ([^;]+); l image sert de repere visuel pour relier oeuvre et auteur\.$/,
-      'L’image renvoie à $2; elle sert de repère visuel pour relier œuvre et auteur.',
+      'L’image renvoie à $2 ; elle sert de repère visuel pour relier œuvre et auteur.',
     )
     .replace('est rangé ici dans le repère', 'sert ici de repère pour le mouvement')
     .replace('est rattache ici a', 'est rattaché ici à')

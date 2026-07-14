@@ -13,7 +13,7 @@ export const astronomyQuestions: QuestionSeed[] = [
     id: 'astro-001',
     topicId: 'astronomy',
     difficulty: 1,
-    prompt: 'Quelle planète est la plus proche du Soleil ?',
+    prompt: 'Quelle planète du Système solaire orbite avant Vénus ?',
     choices: ['Vénus', 'Mercure', 'Mars', 'Terre'],
     answerIndex: 1,
     explanation: 'Mercure est la planète la plus proche du Soleil.',

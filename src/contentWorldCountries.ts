@@ -9,7 +9,7 @@ export type CountryCapital = {
 
 export const countryCapitalData: CountryCapital[] = [
   { country: 'Afghanistan', capital: 'Kaboul', continent: 'asie' },
-  { country: 'Afrique du Sud', capital: 'Pretoria', continent: 'afrique', note: 'Pretoria est la capitale administrative; Le Cap et Bloemfontein ont aussi des rôles institutionnels.' },
+  { country: 'Afrique du Sud', capital: 'Pretoria', continent: 'afrique', note: 'Pretoria est la capitale administrative ; Le Cap et Bloemfontein ont aussi des rôles institutionnels.' },
   { country: 'Albanie', capital: 'Tirana', continent: 'europe' },
   { country: 'Algérie', capital: 'Alger', continent: 'afrique' },
   { country: 'Allemagne', capital: 'Berlin', continent: 'europe' },
@@ -28,11 +28,11 @@ export const countryCapitalData: CountryCapital[] = [
   { country: 'Barbade', capital: 'Bridgetown', continent: 'amerique' },
   { country: 'Belgique', capital: 'Bruxelles', continent: 'europe' },
   { country: 'Belize', capital: 'Belmopan', continent: 'amerique' },
-  { country: 'Bénin', capital: 'Porto-Novo', continent: 'afrique', note: 'Porto-Novo est la capitale officielle; Cotonou concentre une grande partie des fonctions gouvernementales.' },
+  { country: 'Bénin', capital: 'Porto-Novo', continent: 'afrique', note: 'Porto-Novo est la capitale officielle ; Cotonou concentre une grande partie des fonctions gouvernementales.' },
   { country: 'Bhoutan', capital: 'Thimphou', continent: 'asie' },
   { country: 'Biélorussie', capital: 'Minsk', continent: 'europe' },
   { country: 'Birmanie', capital: 'Naypyidaw', continent: 'asie' },
-  { country: 'Bolivie', capital: 'Sucre', continent: 'amerique', note: 'Sucre est la capitale constitutionnelle; La Paz est le siège du gouvernement.' },
+  { country: 'Bolivie', capital: 'Sucre', continent: 'amerique', note: 'Sucre est la capitale constitutionnelle ; La Paz est le siège du gouvernement.' },
   { country: 'Bosnie-Herzégovine', capital: 'Sarajevo', continent: 'europe' },
   { country: 'Botswana', capital: 'Gaborone', continent: 'afrique' },
   { country: 'Brésil', capital: 'Brasília', continent: 'amerique' },
@@ -65,7 +65,7 @@ export const countryCapitalData: CountryCapital[] = [
   { country: 'Érythrée', capital: 'Asmara', continent: 'afrique' },
   { country: 'Espagne', capital: 'Madrid', continent: 'europe' },
   { country: 'Estonie', capital: 'Tallinn', continent: 'europe' },
-  { country: 'Eswatini', capital: 'Mbabane', continent: 'afrique', note: 'Mbabane est la capitale administrative; Lobamba porte les fonctions royale et législative.' },
+  { country: 'Eswatini', capital: 'Mbabane', continent: 'afrique', note: 'Mbabane est la capitale administrative ; Lobamba porte les fonctions royale et législative.' },
   { country: 'États-Unis', capital: 'Washington', continent: 'amerique' },
   { country: 'Éthiopie', capital: 'Addis-Abeba', continent: 'afrique' },
   { country: 'Fidji', capital: 'Suva', continent: 'oceanie' },
@@ -93,7 +93,7 @@ export const countryCapitalData: CountryCapital[] = [
   { country: 'Iran', capital: 'Téhéran', continent: 'asie' },
   { country: 'Irlande', capital: 'Dublin', continent: 'europe' },
   { country: 'Islande', capital: 'Reykjavik', continent: 'europe' },
-  { country: 'Israël', capital: 'Jérusalem', continent: 'asie', note: 'Le statut de Jérusalem est politiquement disputé; beaucoup d’États maintiennent leurs ambassades à Tel-Aviv.' },
+  { country: 'Israël', capital: 'Jérusalem', continent: 'asie', note: 'Le statut de Jérusalem est politiquement disputé ; beaucoup d’États maintiennent leurs ambassades à Tel-Aviv.' },
   { country: 'Italie', capital: 'Rome', continent: 'europe' },
   { country: 'Jamaïque', capital: 'Kingston', continent: 'amerique' },
   { country: 'Japon', capital: 'Tokyo', continent: 'asie' },
@@ -114,7 +114,7 @@ export const countryCapitalData: CountryCapital[] = [
   { country: 'Luxembourg', capital: 'Luxembourg', continent: 'europe' },
   { country: 'Macédoine du Nord', capital: 'Skopje', continent: 'europe' },
   { country: 'Madagascar', capital: 'Antananarivo', continent: 'afrique' },
-  { country: 'Malaisie', capital: 'Kuala Lumpur', continent: 'asie', note: 'Kuala Lumpur est la capitale; Putrajaya est le centre administratif fédéral.' },
+  { country: 'Malaisie', capital: 'Kuala Lumpur', continent: 'asie', note: 'Kuala Lumpur est la capitale ; Putrajaya est le centre administratif fédéral.' },
   { country: 'Malawi', capital: 'Lilongwe', continent: 'afrique' },
   { country: 'Maldives', capital: 'Malé', continent: 'asie' },
   { country: 'Mali', capital: 'Bamako', continent: 'afrique' },
@@ -130,7 +130,7 @@ export const countryCapitalData: CountryCapital[] = [
   { country: 'Monténégro', capital: 'Podgorica', continent: 'europe' },
   { country: 'Mozambique', capital: 'Maputo', continent: 'afrique' },
   { country: 'Namibie', capital: 'Windhoek', continent: 'afrique' },
-  { country: 'Nauru', capital: 'Yaren', continent: 'oceanie', note: 'Nauru n’a pas de capitale officielle; Yaren accueille les principales institutions.' },
+  { country: 'Nauru', capital: 'Yaren', continent: 'oceanie', note: 'Nauru n’a pas de capitale officielle ; Yaren accueille les principales institutions.' },
   { country: 'Népal', capital: 'Katmandou', continent: 'asie' },
   { country: 'Nicaragua', capital: 'Managua', continent: 'amerique' },
   { country: 'Niger', capital: 'Niamey', continent: 'afrique' },
@@ -142,11 +142,11 @@ export const countryCapitalData: CountryCapital[] = [
   { country: 'Ouzbékistan', capital: 'Tachkent', continent: 'asie' },
   { country: 'Pakistan', capital: 'Islamabad', continent: 'asie' },
   { country: 'Palaos', capital: 'Ngerulmud', continent: 'oceanie' },
-  { country: 'Palestine', capital: 'Jérusalem-Est', continent: 'asie', note: 'La Palestine est État observateur à l’ONU; Ramallah accueille de nombreuses institutions administratives.' },
+  { country: 'Palestine', capital: 'Jérusalem-Est', continent: 'asie', note: 'La Palestine est État observateur à l’ONU ; Ramallah accueille de nombreuses institutions administratives.' },
   { country: 'Panama', capital: 'Panama', continent: 'amerique' },
   { country: 'Papouasie-Nouvelle-Guinée', capital: 'Port Moresby', continent: 'oceanie' },
   { country: 'Paraguay', capital: 'Asuncion', continent: 'amerique' },
-  { country: 'Pays-Bas', capital: 'Amsterdam', continent: 'europe', note: 'Amsterdam est la capitale; La Haye accueille le gouvernement et la monarchie.' },
+  { country: 'Pays-Bas', capital: 'Amsterdam', continent: 'europe', note: 'Amsterdam est la capitale ; La Haye accueille le gouvernement et la monarchie.' },
   { country: 'Pérou', capital: 'Lima', continent: 'amerique' },
   { country: 'Philippines', capital: 'Manille', continent: 'asie' },
   { country: 'Pologne', capital: 'Varsovie', continent: 'europe' },
@@ -248,7 +248,7 @@ function choicesFrom<T extends CountryCapital>(rows: T[], index: number, selecto
 }
 
 function explanationFor(row: CountryCapital) {
-  return row.note ?? `${row.capital} est la capitale associée au pays ${row.country}; c est le repère politique principal à relier à ce pays dans les atlas usuels.`;
+  return row.note ?? `${row.capital} est la capitale associée au pays ${row.country} ; c’est le repère politique principal à relier à ce pays dans les atlas usuels.`;
 }
 
 function sameNameCapital(row: CountryCapital) {

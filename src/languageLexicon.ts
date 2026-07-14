@@ -22,7 +22,7 @@ function buildLexicon(language: LanguageCode, languageName: string, lexemes: Lex
       {
         id: `lex-${language}-${String(rank).padStart(4, '0')}-recognition`,
         topicId: 'language', difficulty: LEVEL_DIFFICULTY[level],
-        prompt: `Que signifie « ${target} » en français ?`,
+        prompt: `En ${languageName}, que signifie « ${target} » en français ?`,
         choices: [french, ...distractors] as [string, string, string, string], answerIndex: 0,
         explanation: `« ${target} » signifie « ${french} ». Ce lemme appartient au noyau fréquentiel ${level}.`,
         tags: [...tags, 'skill:vocabulary', 'mode:recognition'], sourceLabel: 'Lexique fréquentiel progressif Kizz',

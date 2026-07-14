@@ -340,7 +340,7 @@ const departmentCodeQuestions: QuestionSeed[] = franceDepartmentData.map((depart
   prompt: `Départements de France : quel département porte le code ${department.code} ?`,
   choices: choicesFrom(franceDepartmentData, index, (item) => item.name),
   answerIndex: 0,
-  explanation: `Le code ${department.code} correspond au département ${department.name}; son chef-lieu est ${department.chiefTown}.`,
+  explanation: `Le code ${department.code} correspond au département ${department.name} ; son chef-lieu est ${department.chiefTown}.`,
   tags: ['france', 'departement', 'code-departement', 'coverage:france-departements'],
   sourceLabel: 'Code officiel géographique / contenu original Kizz',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`département ${department.name}`)}`,
