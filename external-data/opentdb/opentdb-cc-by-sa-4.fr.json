@@ -685,7 +685,7 @@
       "choices": [
         "Sodium",
         "Carbone",
-        "Diriger",
+        "Plomb",
         "Azote"
       ],
       "answerIndex": 0,
@@ -840,7 +840,7 @@
       "prompt": "La pièce de 1 $ canadienne est familièrement connue sous le nom de quoi ?",
       "choices": [
         "Huard",
-        "Boolie",
+        "Doubloon",
         "Fou",
         "Mauvaise humeur"
       ],
@@ -1204,7 +1204,7 @@
       "prompt": "Lequel de ces jeux Marvel est sorti sur Playstation 2 ?",
       "choices": [
         "Spider-Man 2",
-        "Surfeur d'argent",
+        "Silver Surfer",
         "Howard le canard",
         "Wolverine : Adamantium Rage"
       ],
@@ -1489,13 +1489,13 @@
       "type": "multiple-choice",
       "prompt": "Parmi les codes suivants, lequel est le code IATA de l'aéroport de Manchester ?",
       "choices": [
-        "HOMME",
+        "MAN",
         "EGLL",
         "LHR",
         "GECT"
       ],
       "answerIndex": 0,
-      "explanation": "D'après Open Trivia DB, la bonne réponse est \"HOMME\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
+      "explanation": "D'après Open Trivia DB, la bonne réponse est \"MAN\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
       "tags": [
         "opentdb",
         "cc-by-sa-4.0",
@@ -1518,7 +1518,7 @@
         "McDonald's",
         "Whataburger",
         "Burger King",
-        "Sonique"
+        "Sonic"
       ],
       "answerIndex": 0,
       "explanation": "D'après Open Trivia DB, la bonne réponse est \"McDonald's\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
@@ -1567,7 +1567,7 @@
       "type": "multiple-choice",
       "prompt": "Le slogan du New York Times est « Toutes les nouvelles qui conviennent à… »",
       "choices": [
-        "Imprimer",
+        "publier",
         "Résumé",
         "Regardez",
         "Lire"
@@ -1855,7 +1855,7 @@
       "choices": [
         "Thomas Jefferson",
         "Martin Van Buren",
-        "Bourse Ulysse",
+        "Ulysses S. Grant",
         "John Quincy Adams"
       ],
       "answerIndex": 0,
@@ -2635,7 +2635,7 @@
       "choices": [
         "Ben Shapiro",
         "Terry Gross",
-        "Verre Ira",
+        "Ira Glass",
         "Pierre Sagal"
       ],
       "answerIndex": 0,
@@ -5103,13 +5103,13 @@
       "type": "multiple-choice",
       "prompt": "Quel bonbon n'est PAS fabriqué par Mars ?",
       "choices": [
-        "La joie des amandes",
+        "Almond Joy",
         "M&M's",
         "Twix",
-        "Des ricanements"
+        "Snickers"
       ],
       "answerIndex": 0,
-      "explanation": "D'après Open Trivia DB, la bonne réponse est \"La joie des amandes\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
+      "explanation": "D'après Open Trivia DB, la bonne réponse est \"Almond Joy\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
       "tags": [
         "opentdb",
         "cc-by-sa-4.0",
@@ -27385,7 +27385,7 @@
       "type": "multiple-choice",
       "prompt": "Une chanson classique de 1976 de Blue Oyster Cult contient le conseil « Don't Fear The » quoi ?",
       "choices": [
-        "Faucheuse",
+        "Reaper",
         "Sombre",
         "Silence",
         "Clowns"
@@ -31597,13 +31597,13 @@
       "type": "multiple-choice",
       "prompt": "Dans quel épisode de « Mr. Bean » l'a vu essayer d'empêcher les gens de le voir nu ?",
       "choices": [
-        "M. Bean dans la chambre 426",
+        "Mr. Bean in Room 426",
         "M. Bean va en ville",
         "Le problème avec M. Bean",
         "Retour à l'école M. Bean"
       ],
       "answerIndex": 0,
-      "explanation": "D'après Open Trivia DB, la bonne réponse est \"M. Bean dans la chambre 426\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
+      "explanation": "D'après Open Trivia DB, la bonne réponse est \"Mr. Bean in Room 426\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
       "tags": [
         "opentdb",
         "cc-by-sa-4.0",
@@ -35836,7 +35836,7 @@
       "prompt": "Lequel de ces personnages n'est PAS un personnage du jeu vidéo Overwatch",
       "choices": [
         "Garen",
-        "Faucheuse",
+        "Reaper",
         "Chanson de Hana",
         "Traceur"
       ],
@@ -36096,7 +36096,7 @@
       "prompt": "Dans le jeu Sonic Forces, lequel des éléments suivants ne provient pas d'un jeu précédent ?",
       "choices": [
         "Infini",
-        "Métal Sonique",
+        "Metal Sonic",
         "Zavoc",
         "Chaos"
       ],
@@ -37369,13 +37369,13 @@
       "type": "multiple-choice",
       "prompt": "Quel jeu Sonic the Hedgehog était initialement censé être fourni avec Sonic 3, mais a été réduit de moitié en raison de contraintes de temps ?",
       "choices": [
-        "Sonic et Knuckles",
-        "Sonique 2",
-        "CD Sonique",
-        "Explosion Sonique 3D"
+        "Sonic & Knuckles",
+        "Sonic 2",
+        "Sonic CD",
+        "Sonic 3D Blast"
       ],
       "answerIndex": 0,
-      "explanation": "D'après Open Trivia DB, la bonne réponse est \"Sonic et Knuckles\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
+      "explanation": "D'après Open Trivia DB, la bonne réponse est \"Sonic & Knuckles\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
       "tags": [
         "opentdb",
         "cc-by-sa-4.0",
@@ -38097,13 +38097,13 @@
       "type": "multiple-choice",
       "prompt": "Quel personnage d'Overwatch prononce la phrase « Les héros ne meurent jamais ! » ?",
       "choices": [
-        "Miséricorde",
-        "Faucheuse",
-        "Sonique",
+        "Mercy",
+        "Reaper",
+        "Sonic",
         "Ana"
       ],
       "answerIndex": 0,
-      "explanation": "D'après Open Trivia DB, la bonne réponse est \"Miséricorde\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
+      "explanation": "D'après Open Trivia DB, la bonne réponse est \"Mercy\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
       "tags": [
         "opentdb",
         "cc-by-sa-4.0",
@@ -42000,7 +42000,7 @@
         "Lucio",
         "Reinhardt",
         "Sombra",
-        "Miséricorde"
+        "Mercy"
       ],
       "answerIndex": 0,
       "explanation": "D'après Open Trivia DB, la bonne réponse est \"Lucio\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
@@ -48577,7 +48577,7 @@
       "choices": [
         "Plus de questions",
         "Nouvelle voiture",
-        "Miséricorde",
+        "Mercy",
         "Argent"
       ],
       "answerIndex": 0,
@@ -52659,7 +52659,7 @@
       "choices": [
         "Sonic le hérisson 3",
         "Sonic le hérisson 2",
-        "Sonic et Knuckles",
+        "Sonic & Knuckles",
         "Aventure sonique"
       ],
       "answerIndex": 0,
@@ -58586,7 +58586,7 @@
       "prompt": "Lequel de ces personnages n'est PAS un personnage jouable dans le jeu vidéo Overwatch de 2016 ?",
       "choices": [
         "Invoquant",
-        "Miséricorde",
+        "Mercy",
         "Winston",
         "Zenyatta"
       ],
@@ -64724,7 +64724,7 @@
         "Magnésium",
         "Cuivre",
         "Lithium",
-        "Diriger"
+        "Plomb"
       ],
       "answerIndex": 0,
       "explanation": "D'après Open Trivia DB, la bonne réponse est \"Magnésium\". Cette question provient d'une banque anglophone sous licence CC BY-SA 4.0 et a été traduite automatiquement en français.",
@@ -100863,7 +100863,7 @@
       "choices": [
         "Saitama",
         "Génos",
-        "Sonique",
+        "Sonic",
         "Roi"
       ],
       "answerIndex": 0,

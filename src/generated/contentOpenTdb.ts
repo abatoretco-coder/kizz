@@ -759,7 +759,7 @@ export const openTdbQuestions = [
     "prompt": "Quel élément chimique, numéro 11 dans le tableau périodique, porte le symbole Na ?",
     "choices": [
       "Carbone",
-      "Diriger",
+      "Plomb",
       "Azote",
       "Sodium"
     ],
@@ -938,7 +938,7 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "La pièce de 1 $ canadienne est familièrement connue sous le nom de quoi ?",
     "choices": [
-      "Boolie",
+      "Doubloon",
       "Fou",
       "Mauvaise humeur",
       "Huard"
@@ -1359,7 +1359,7 @@ export const openTdbQuestions = [
     "prompt": "Lequel de ces jeux Marvel est sorti sur Playstation 2 ?",
     "choices": [
       "Spider-Man 2",
-      "Surfeur d'argent",
+      "Silver Surfer",
       "Howard le canard",
       "Wolverine : Adamantium Rage"
     ],
@@ -1629,12 +1629,12 @@ export const openTdbQuestions = [
     "prompt": "Parmi les codes suivants, lequel est le code IATA de l'aéroport de Manchester ?",
     "choices": [
       "EGLL",
-      "HOMME",
+      "MAN",
       "LHR",
       "GECT"
     ],
     "answerIndex": 1,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « HOMME ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « MAN ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -1661,7 +1661,7 @@ export const openTdbQuestions = [
       "Whataburger",
       "Burger King",
       "McDonald's",
-      "Sonique"
+      "Sonic"
     ],
     "answerIndex": 2,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « McDonald's ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -1718,7 +1718,7 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Le slogan du New York Times est « Toutes les nouvelles qui conviennent à… »",
     "choices": [
-      "Imprimer",
+      "publier",
       "Résumé",
       "Regardez",
       "Lire"
@@ -2050,7 +2050,7 @@ export const openTdbQuestions = [
     "choices": [
       "Martin Van Buren",
       "Thomas Jefferson",
-      "Bourse Ulysse",
+      "Ulysses S. Grant",
       "John Quincy Adams"
     ],
     "answerIndex": 1,
@@ -2949,7 +2949,7 @@ export const openTdbQuestions = [
     "prompt": "Lequel des éléments suivants n’est pas l’animateur d’une émission sur NPR ?",
     "choices": [
       "Terry Gross",
-      "Verre Ira",
+      "Ira Glass",
       "Pierre Sagal",
       "Ben Shapiro"
     ],
@@ -5708,13 +5708,13 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Quel bonbon n'est PAS fabriqué par Mars ?",
     "choices": [
-      "La joie des amandes",
+      "Almond Joy",
       "M&M's",
       "Twix",
-      "Des ricanements"
+      "Snickers"
     ],
     "answerIndex": 0,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « La joie des amandes ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Almond Joy ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -31179,7 +31179,7 @@ export const openTdbQuestions = [
     "prompt": "Une chanson classique de 1976 de Blue Oyster Cult contient le conseil « Don't Fear The » quoi ?",
     "choices": [
       "Sombre",
-      "Faucheuse",
+      "Reaper",
       "Silence",
       "Clowns"
     ],
@@ -36038,13 +36038,13 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Dans quel épisode de « Mr. Bean » l'a vu essayer d'empêcher les gens de le voir nu ?",
     "choices": [
-      "M. Bean dans la chambre 426",
+      "Mr. Bean in Room 426",
       "M. Bean va en ville",
       "Le problème avec M. Bean",
       "Retour à l'école M. Bean"
     ],
     "answerIndex": 0,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « M. Bean dans la chambre 426 ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Mr. Bean in Room 426 ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -40868,7 +40868,7 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Lequel de ces personnages n'est PAS un personnage du jeu vidéo Overwatch",
     "choices": [
-      "Faucheuse",
+      "Reaper",
       "Chanson de Hana",
       "Traceur",
       "Garen"
@@ -41168,7 +41168,7 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Dans le jeu Sonic Forces, lequel des éléments suivants ne provient pas d'un jeu précédent ?",
     "choices": [
-      "Métal Sonique",
+      "Metal Sonic",
       "Zavoc",
       "Chaos",
       "Infini"
@@ -42638,13 +42638,13 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Quel jeu Sonic the Hedgehog était initialement censé être fourni avec Sonic 3, mais a été réduit de moitié en raison de contraintes de temps ?",
     "choices": [
-      "Sonique 2",
-      "CD Sonique",
-      "Sonic et Knuckles",
-      "Explosion Sonique 3D"
+      "Sonic 2",
+      "Sonic CD",
+      "Sonic & Knuckles",
+      "Sonic 3D Blast"
     ],
     "answerIndex": 2,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Sonic et Knuckles ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Sonic & Knuckles ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -43478,13 +43478,13 @@ export const openTdbQuestions = [
     "type": "multiple-choice",
     "prompt": "Quel personnage d'Overwatch prononce la phrase « Les héros ne meurent jamais ! » ?",
     "choices": [
-      "Faucheuse",
-      "Sonique",
+      "Reaper",
+      "Sonic",
       "Ana",
-      "Miséricorde"
+      "Mercy"
     ],
     "answerIndex": 3,
-    "explanation": "D’après Open Trivia DB, la bonne réponse est « Miséricorde ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
+    "explanation": "D’après Open Trivia DB, la bonne réponse est « Mercy ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
     "tags": [
       "opentdb",
       "cc-by-sa-4.0",
@@ -47951,7 +47951,7 @@ export const openTdbQuestions = [
       "Lucio",
       "Reinhardt",
       "Sombra",
-      "Miséricorde"
+      "Mercy"
     ],
     "answerIndex": 0,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « Lucio ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -55480,7 +55480,7 @@ export const openTdbQuestions = [
     "choices": [
       "Plus de questions",
       "Nouvelle voiture",
-      "Miséricorde",
+      "Mercy",
       "Argent"
     ],
     "answerIndex": 0,
@@ -60129,7 +60129,7 @@ export const openTdbQuestions = [
     "prompt": "Quel jeu Sonic the Hedgehog a introduit Knuckles the Echidna ?",
     "choices": [
       "Sonic le hérisson 2",
-      "Sonic et Knuckles",
+      "Sonic & Knuckles",
       "Sonic le hérisson 3",
       "Aventure sonique"
     ],
@@ -66939,7 +66939,7 @@ export const openTdbQuestions = [
     "prompt": "Lequel de ces personnages n'est PAS un personnage jouable dans le jeu vidéo Overwatch de 2016 ?",
     "choices": [
       "Invoquant",
-      "Miséricorde",
+      "Mercy",
       "Winston",
       "Zenyatta"
     ],
@@ -73901,7 +73901,7 @@ export const openTdbQuestions = [
       "Cuivre",
       "Magnésium",
       "Lithium",
-      "Diriger"
+      "Plomb"
     ],
     "answerIndex": 1,
     "explanation": "D’après Open Trivia DB, la bonne réponse est « Magnésium ». Cette question provient d’une banque anglophone traduite automatiquement en français et intégrée avec attribution CC BY-SA 4.0.",
@@ -114880,7 +114880,7 @@ export const openTdbQuestions = [
     "choices": [
       "Saitama",
       "Génos",
-      "Sonique",
+      "Sonic",
       "Roi"
     ],
     "answerIndex": 0,
