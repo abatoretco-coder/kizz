@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-27T13:02:21.879Z",
-  "imageCount": 31,
-  "questionCount": 93,
+  "generatedAt": "2026-07-26T09:10:51.614Z",
+  "imageCount": 56,
+  "questionCount": 168,
   "sources": [
     {
       "label": "Renard roux",
@@ -9,10 +9,10 @@
       "asset": "nature/renard-roux",
       "kind": "animals",
       "family": "mammifere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AVulpes_vulpes_laying_in_snow.jpg",
-      "license": "Attribution",
-      "artist": "Shiretoko-Shari Tourist Association",
-      "credit": "https://web.archive.org/web/20040831070853/http://www.all-hokkaido.net/marugoto/photo/07.htm"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Vulpes%20vulpes",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Loup gris",
@@ -20,10 +20,10 @@
       "asset": "nature/loup-gris",
       "kind": "animals",
       "family": "mammifere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFront_view_of_a_resting_Canis_lupus_ssp.jpg",
-      "license": "Public domain",
-      "artist": "Gary Kramer",
-      "credit": "\n\n\n\n\nThis image originates from the National Digital Library of the United States Fish and Wildlife Service at this page\nThis tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.See Category:Images from the United States Fish and Wildlife Service.\n\n"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Canis%20lupus",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Lynx boreal",
@@ -31,10 +31,10 @@
       "asset": "nature/lynx-boreal",
       "kind": "animals",
       "family": "mammifere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALynx_lynx_poing.jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "Bernard Landgraf (User:Baerni)",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Lynx%20lynx",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Bouquetin des Alpes",
@@ -42,10 +42,10 @@
       "asset": "nature/bouquetin-des-alpes",
       "kind": "animals",
       "family": "mammifere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlpine_Ibex_in_Gornergrat.JPG",
-      "license": "GFDL",
-      "artist": "Ximonic, Simo Räsänen",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Capra%20ibex",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Cerf elaphe",
@@ -53,10 +53,10 @@
       "asset": "nature/cerf-elaphe",
       "kind": "animals",
       "family": "mammifere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARedDeerStag.jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "derivative work: Massimo Catarinella (talk)\nRed_deer_stag.jpg: Mehmet Karatay",
-      "credit": "Red_deer_stag.jpg "
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Cervus%20elaphus",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Herisson commun",
@@ -64,10 +64,10 @@
       "asset": "nature/herisson-commun",
       "kind": "animals",
       "family": "mammifere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AErinaceus_europaeus_(Marek_Szczepanek).jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "\n\n\n\nThis illustration was made by Marek Szczepanek.\nIf you are interested in high resolution pictures, please contact author in order to negotiate condition of use.  More pictures can be found on here and in the gallery www.naturephotos.com.pl\n info@naturephotos.com.pl      marek458@wp.pl\n\nJeśli jesteś zainteresowany zdjęciami w wysokiej rozdzielczości, skontaktuj się z autorem w celu negocjacji warunków używania lub zakupu.  Więcej zdjęć autora dostępnych jest tutaj oraz na stronie www.naturephotos.com.pl\n",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Erinaceus%20europaeus",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Flamant rose",
@@ -75,10 +75,10 @@
       "asset": "nature/flamant-rose",
       "kind": "animals",
       "family": "oiseau",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABristol.zoo.greater.flamingo.arp.jpg",
-      "license": "Public domain",
-      "artist": "Arpingstone",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Phoenicopterus%20roseus",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Martin-pecheur d Europe",
@@ -86,10 +86,10 @@
       "asset": "nature/martin-pecheur-d-europe",
       "kind": "animals",
       "family": "oiseau",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlcedo_atthis_eating_a_tadpole.jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "\nPierre Dalous",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Alcedo%20atthis",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Chouette hulotte",
@@ -97,10 +97,10 @@
       "asset": "nature/chouette-hulotte",
       "kind": "animals",
       "family": "oiseau",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATawny_wiki_edit1.jpg",
-      "license": "CC BY-SA 2.5",
-      "artist": "K.-M. Hansche - Edited by: Arad",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Strix%20aluco",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Aigle royal",
@@ -108,10 +108,10 @@
       "asset": "nature/aigle-royal",
       "kind": "animals",
       "family": "oiseau",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASteinadler_Aquila_chrysaetos_closeup2_Richard_Bartz.jpg",
-      "license": "CC BY-SA 2.5",
-      "artist": "Richard Bartz, Munich aka Makro Freak ",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Aquila%20chrysaetos",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Salamandre tachetee",
@@ -119,10 +119,10 @@
       "asset": "nature/salamandre-tachetee",
       "kind": "animals",
       "family": "amphibien",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFeuersalamander-salamandra-salamandra.jpg",
-      "license": "CC BY 3.0",
-      "artist": "Holger Krisp",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Salamandra%20salamandra",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Grenouille verte",
@@ -130,10 +130,21 @@
       "asset": "nature/grenouille-verte",
       "kind": "animals",
       "family": "amphibien",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGreen_Frog_Rana_clamitans_Facing_Left_3008px.jpg",
-      "license": "GFDL 1.2",
-      "artist": "Photo by and (c)2007 Derek Ramsey (Ram-Man)",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Pelophylax%20kl.%20esculentus",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Tortue d Hermann",
+      "scientific": "Testudo hermanni",
+      "asset": "nature/tortue-d-hermann",
+      "kind": "animals",
+      "family": "reptile",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATestudo_hermanni_hermanni_Mallorca_02.jpg",
+      "license": "CC BY-SA 3.0",
+      "artist": "\nOrchi",
+      "credit": "Self-photographed"
     },
     {
       "label": "Couleuvre a collier",
@@ -141,10 +152,10 @@
       "asset": "nature/couleuvre-a-collier",
       "kind": "animals",
       "family": "reptile",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANatrix_natrix.jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "User Dixi on pl.wikipedia",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Natrix%20natrix",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Machaon",
@@ -152,10 +163,10 @@
       "asset": "nature/machaon",
       "kind": "animals",
       "family": "insecte",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APapilio_machaon_caterpillar.jpg",
-      "license": "Copyrighted free use",
-      "artist": "Miroslava Serova",
-      "credit": "Original material"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Papilio%20machaon",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Abeille domestique",
@@ -163,10 +174,10 @@
       "asset": "nature/abeille-domestique",
       "kind": "animals",
       "family": "insecte",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEuropean_honey_bee_extracts_nectar.jpg",
-      "license": "Public domain",
-      "artist": "John Severns (Severnjc)",
-      "credit": "Photo by John Severns."
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Apis%20mellifera",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Chene pedoncule",
@@ -174,10 +185,10 @@
       "asset": "nature/chene-pedoncule",
       "kind": "plants",
       "family": "arbre",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALangaa_egeskov_rimfrost.jpg",
-      "license": "CC BY 2.5",
-      "artist": "\nMalene Thyssen",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Quercus%20robur",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Hetre commun",
@@ -185,10 +196,10 @@
       "asset": "nature/hetre-commun",
       "kind": "plants",
       "family": "arbre",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACopper_Beech_Fagus_sylvatica_f._purpurea_Autumn_Leaves_Closeup_3008px.jpg",
-      "license": "GFDL 1.2",
-      "artist": "Photo (c)2007 Derek Ramsey (Ram-Man)",
-      "credit": "Self-photographed"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Fagus%20sylvatica",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Erable sycomore",
@@ -196,10 +207,10 @@
       "asset": "nature/erable-sycomore",
       "kind": "plants",
       "family": "arbre",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AErable-sycomore_(acer_pseudoplatanus).jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "Lionel Colin",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Acer%20pseudoplatanus",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Bouleau verruqueux",
@@ -207,8 +218,8 @@
       "asset": "nature/bouleau-verruqueux",
       "kind": "plants",
       "family": "arbre",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AIllustration_Betula_pendula0.jpg",
-      "license": "Public domain",
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Betula%20pendula",
+      "license": "fichier local deja telecharge",
       "artist": "",
       "credit": ""
     },
@@ -218,10 +229,10 @@
       "asset": "nature/pin-sylvestre",
       "kind": "plants",
       "family": "conifere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APinus_sylvestris_penjing_JB.jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "Cephas",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Pinus%20sylvestris",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "If commun",
@@ -229,10 +240,10 @@
       "asset": "nature/if-commun",
       "kind": "plants",
       "family": "conifere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATaxus_baccata_MHNT.jpg",
-      "license": "CC BY-SA 4.0",
-      "artist": "\nDidier Descouens",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Taxus%20baccata",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Lavande vraie",
@@ -240,10 +251,10 @@
       "asset": "nature/lavande-vraie",
       "kind": "plants",
       "family": "fleur",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEnglish_Lavender_(Portelli_sculpture).jpg",
-      "license": "Public domain",
-      "artist": "Own work by",
-      "credit": "originally uploaded to the English language Wikipedia (file log)."
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Lavandula%20angustifolia",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Coquelicot",
@@ -251,10 +262,10 @@
       "asset": "nature/coquelicot",
       "kind": "plants",
       "family": "fleur",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APapaver_rhoeas_LC0050.jpg",
-      "license": "CC BY-SA 2.5",
-      "artist": "Jörg Hempel",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Papaver%20rhoeas",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Tournesol",
@@ -262,10 +273,10 @@
       "asset": "nature/tournesol",
       "kind": "plants",
       "family": "fleur",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASunflower_l.jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "Roberta F.",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Helianthus%20annuus",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Iris des marais",
@@ -273,10 +284,10 @@
       "asset": "nature/iris-des-marais",
       "kind": "plants",
       "family": "fleur",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AYellow_Iris_Iris_pseudacorus_Flower_1469px.jpg",
-      "license": "GFDL 1.2",
-      "artist": "Photo by and (c)2007 Derek Ramsey (Ram-Man)",
-      "credit": "Self-photographed"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Iris%20pseudacorus",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Orchidee abeille",
@@ -284,10 +295,10 @@
       "asset": "nature/orchidee-abeille",
       "kind": "plants",
       "family": "fleur",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOphrys_apifera_(pale_form).jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "(Hans Hillewaert)",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ophrys%20apifera",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Eglantier",
@@ -295,10 +306,10 @@
       "asset": "nature/eglantier",
       "kind": "plants",
       "family": "arbuste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHunds-Rose_Rosa_canina_Nationalpark_Donau-Auen_Lobau_Mai_2016_03.jpg",
-      "license": "CC BY-SA 4.0",
-      "artist": "Manfred Werner - Tsui",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Rosa%20canina",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Aubepine monogyne",
@@ -306,10 +317,10 @@
       "asset": "nature/aubepine-monogyne",
       "kind": "plants",
       "family": "arbuste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACrataegus_monogyna_2.jpg",
-      "license": "CC BY-SA 3.0",
-      "artist": "Andrey Butko",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Crataegus%20monogyna",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Sureau noir",
@@ -317,10 +328,10 @@
       "asset": "nature/sureau-noir",
       "kind": "plants",
       "family": "arbuste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASambucus_nigra_004.jpg",
-      "license": "CC BY 2.5",
-      "artist": "Willow",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Sambucus%20nigra",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Fougere aigle",
@@ -328,10 +339,10 @@
       "asset": "nature/fougere-aigle",
       "kind": "plants",
       "family": "fougere",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%D0%9F%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B9_%D0%BF%D1%83%D1%87%D0%BE%D0%BA_Pteridium_aquilinum.JPG",
-      "license": "CC BY-SA 4.0",
-      "artist": "Anatoly Mikhaltsov",
-      "credit": "Own work"
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Pteridium%20aquilinum",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
     },
     {
       "label": "Sphaigne",
@@ -339,10 +350,274 @@
       "asset": "nature/sphaigne",
       "kind": "plants",
       "family": "mousse",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASphagnumFallax.jpg",
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Sphagnum",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Blaireau europeen",
+      "scientific": "Meles meles",
+      "asset": "nature/blaireau-europeen",
+      "kind": "animals",
+      "family": "mammifere",
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Meles%20meles",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Chamois",
+      "scientific": "Rupicapra rupicapra",
+      "asset": "nature/chamois",
+      "kind": "animals",
+      "family": "mammifere",
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Rupicapra%20rupicapra",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Marmotte des Alpes",
+      "scientific": "Marmota marmota",
+      "asset": "nature/marmotte-des-alpes",
+      "kind": "animals",
+      "family": "mammifere",
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Marmota%20marmota",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Castor d Europe",
+      "scientific": "Castor fiber",
+      "asset": "nature/castor-d-europe",
+      "kind": "animals",
+      "family": "mammifere",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AThe_age_of_mammals_in_Europe%2C_Asia_and_North_America_(1910)_(17918972716).jpg",
+      "license": "No restrictions",
+      "artist": "Internet Archive Book Images",
+      "credit": "https://www.flickr.com/photos/internetarchivebookimages/17918972716/\n\nSource book page: https://archive.org/stream/ageofmammalsineu00osbo/#page/n516/mode/1up"
+    },
+    {
+      "label": "Ecureuil roux",
+      "scientific": "Sciurus vulgaris",
+      "asset": "nature/ecureuil-roux",
+      "kind": "animals",
+      "family": "mammifere",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASciurus_vulgaris_bearn_2004.jpg",
+      "license": "CC BY-SA 3.0",
+      "artist": "Marando-fr",
+      "credit": "photo taken by Marando-fr"
+    },
+    {
+      "label": "Phoque veau-marin",
+      "scientific": "Phoca vitulina",
+      "asset": "nature/phoque-veau-marin",
+      "kind": "animals",
+      "family": "mammifere marin",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASeehund.jpg",
+      "license": "CC BY-SA 2.0 de",
+      "artist": "Marcel Burkhard",
+      "credit": "Fotografiert von Marcel Burkhard"
+    },
+    {
+      "label": "Macareux moine",
+      "scientific": "Fratercula arctica",
+      "asset": "nature/macareux-moine",
+      "kind": "animals",
+      "family": "oiseau",
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Fratercula%20arctica",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Heron cendre",
+      "scientific": "Ardea cinerea",
+      "asset": "nature/heron-cendre",
+      "kind": "animals",
+      "family": "oiseau",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AArdea_cinerea_Luc_Viatour.jpg",
+      "license": "CC BY-SA 3.0",
+      "artist": "Luc Viatour",
+      "credit": "Own work www.lucnix.be"
+    },
+    {
+      "label": "Cigogne blanche",
+      "scientific": "Ciconia ciconia",
+      "asset": "nature/cigogne-blanche",
+      "kind": "animals",
+      "family": "oiseau",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWhite_Stork_Wei%C3%9Fstorch_Ciconia_ciconia.jpg",
+      "license": "CC BY-SA 2.5",
+      "artist": "Richard Bartz",
+      "credit": "Own work"
+    },
+    {
+      "label": "Rougegorge familier",
+      "scientific": "Erithacus rubecula",
+      "asset": "nature/rougegorge-familier",
+      "kind": "animals",
+      "family": "oiseau",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AErithacus_rubecula_-Netherlands-8.jpg",
+      "license": "CC BY 2.0",
+      "artist": "Arjan Haverkamp",
+      "credit": "originally posted to Flickr as 2009-03-29-11h21m26.IMG_7189l"
+    },
+    {
+      "label": "Libellule deprimee",
+      "scientific": "Libellula depressa",
+      "asset": "nature/libellule-deprimee",
+      "kind": "animals",
+      "family": "insecte",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALibellula_depressa.jpg",
+      "license": "Public domain",
+      "artist": "Tim Bekaert",
+      "credit": "Uploaded by Tbc"
+    },
+    {
+      "label": "Coccinelle a sept points",
+      "scientific": "Coccinella septempunctata",
+      "asset": "nature/coccinelle-a-sept-points",
+      "kind": "animals",
+      "family": "insecte",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACoccinella_septempunctata_couple_(aka).jpg",
+      "license": "CC BY-SA 2.5",
+      "artist": "André Karwath aka Aka\n",
+      "credit": "Own work\n"
+    },
+    {
+      "label": "Scarabee rhinoceros",
+      "scientific": "Oryctes nasicornis",
+      "asset": "nature/scarabee-rhinoceros",
+      "kind": "animals",
+      "family": "insecte",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOryctes_nasicornis_male_2011_G1.jpg",
+      "license": "Public domain",
+      "artist": "George Chernilevsky",
+      "credit": "Own work"
+    },
+    {
+      "label": "Triton palme",
+      "scientific": "Lissotriton helveticus",
+      "asset": "nature/triton-palme",
+      "kind": "animals",
+      "family": "amphibien",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATriturus_helveticus(male).jpg",
       "license": "CC BY-SA 3.0",
       "artist": "Christian Fischer",
-      "credit": "Own work. Location: North-eastern Lower Saxony, Germany."
+      "credit": "Own work. Location: Southern Lower Saxony, Germany."
+    },
+    {
+      "label": "Lezard des murailles",
+      "scientific": "Podarcis muralis",
+      "asset": "nature/lezard-des-murailles",
+      "kind": "animals",
+      "family": "reptile",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APodarcis_muralis_on_branch.jpg",
+      "license": "CC BY-SA 3.0",
+      "artist": "Florian Prischl",
+      "credit": "Own work"
+    },
+    {
+      "label": "Vipere aspic",
+      "scientific": "Vipera aspis",
+      "asset": "nature/vipere-aspic",
+      "kind": "animals",
+      "family": "reptile",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AVipere_aspic_55.JPG",
+      "license": "Copyrighted free use",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Nymphea blanc",
+      "scientific": "Nymphaea alba",
+      "asset": "nature/nymphea-blanc",
+      "kind": "plants",
+      "family": "fleur aquatique",
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Nymphaea%20alba",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Gentiane jaune",
+      "scientific": "Gentiana lutea",
+      "asset": "nature/gentiane-jaune",
+      "kind": "plants",
+      "family": "fleur de montagne",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGentiana_lutea_230705.jpg",
+      "license": "CC BY-SA 2.5",
+      "artist": "Bernd Haynold",
+      "credit": "Own work"
+    },
+    {
+      "label": "Edelweiss",
+      "scientific": "Leontopodium nivale",
+      "asset": "nature/edelweiss",
+      "kind": "plants",
+      "family": "fleur de montagne",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACH_Leontopodium_alpinum_1.jpg",
+      "license": "CC BY-SA 4.0",
+      "artist": "Daniel Schwen",
+      "credit": "Own work"
+    },
+    {
+      "label": "Digitale pourpre",
+      "scientific": "Digitalis purpurea",
+      "asset": "nature/digitale-pourpre",
+      "kind": "plants",
+      "family": "fleur toxique",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADigitalis_purpurea_LC0101.jpg",
+      "license": "CC BY-SA 3.0 de",
+      "artist": "Jörg Hempel",
+      "credit": "Own work"
+    },
+    {
+      "label": "Muguet",
+      "scientific": "Convallaria majalis",
+      "asset": "nature/muguet",
+      "kind": "plants",
+      "family": "fleur",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMuguet-J.Eudes-50.jpg",
+      "license": "Public domain",
+      "artist": "J. Eudes (1856-1938)",
+      "credit": "A. Guillaumin, Les Fleurs de Jardins, tome I : Les Fleurs de Printemps, Paul Lechevalier, 1929"
+    },
+    {
+      "label": "Pissenlit",
+      "scientific": "Taraxacum officinale",
+      "asset": "nature/pissenlit",
+      "kind": "plants",
+      "family": "fleur",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADandelion_clock_detail.jpg",
+      "license": "CC BY-SA 2.5",
+      "artist": "che",
+      "credit": "Own work"
+    },
+    {
+      "label": "Chataignier",
+      "scientific": "Castanea sativa",
+      "asset": "nature/chataignier",
+      "kind": "plants",
+      "family": "arbre",
+      "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Castanea%20sativa",
+      "license": "fichier local deja telecharge",
+      "artist": "",
+      "credit": ""
+    },
+    {
+      "label": "Olivier",
+      "scientific": "Olea europaea",
+      "asset": "nature/olivier",
+      "kind": "plants",
+      "family": "arbre",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AIllustration_Olea_europaea0.jpg",
+      "license": "Public domain",
+      "artist": "",
+      "credit": ""
     }
   ]
 }

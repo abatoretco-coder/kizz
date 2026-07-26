@@ -1,4 +1,4 @@
-import { mkdir, readdir, rm, writeFile } from 'node:fs/promises';
+﻿import { mkdir, readdir, rm, writeFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
 
 const ROOT = process.cwd();
@@ -62,7 +62,21 @@ const paintings = [
   ['Pluie, Vapeur et Vitesse', 'William Turner', 'romantisme', 'Royaume-Uni', 'paysage'],
   ['Le Monde de Christina', 'Andrew Wyeth', 'réalisme américain', 'États-Unis', 'paysage'],
   ['Autoportrait au collier d’épines', 'Frida Kahlo', 'surréalisme', 'Mexique', 'portrait'],
-];
+  ['Les Nympheas', 'Claude Monet', 'impressionnisme', 'France', 'paysage'],
+  ['Le Fils de l homme', 'Rene Magritte', 'surrealisme', 'Belgique', 'portrait'],
+  ['Les Deux Fridas', 'Frida Kahlo', 'surrealisme', 'Mexique', 'autoportrait'],
+  ['La Gare Saint-Lazare', 'Claude Monet', 'impressionnisme', 'France', 'ville'],
+  ['Le Cirque', 'Georges Seurat', 'pointillisme', 'France', 'scene'],
+  ['La Danse', 'Henri Matisse', 'fauvisme', 'France', 'scene'],
+  ['L Atelier du peintre', 'Gustave Courbet', 'realisme', 'France', 'atelier'],
+  ['Whaam!', 'Roy Lichtenstein', 'pop art', 'Etats-Unis', 'scene'],
+  ['Marilyn Diptych', 'Andy Warhol', 'pop art', 'Etats-Unis', 'portrait'],
+  ['Number 1A, 1948', 'Jackson Pollock', 'expressionnisme abstrait', 'Etats-Unis', 'abstrait'],
+  ['Femme au chapeau', 'Henri Matisse', 'fauvisme', 'France', 'portrait'],
+  ['Le Tricheur a l as de carreau', 'Georges de La Tour', 'baroque', 'France', 'scene'],
+  ['Le Verrou', 'Jean-Honore Fragonard', 'rococo', 'France', 'scene'],
+  ['La Tour de Babel', 'Pieter Bruegel l Ancien', 'Renaissance nordique', 'Pays-Bas', 'architecture'],
+  ['Le Bain turc', 'Jean-Auguste-Dominique Ingres', 'orientalisme', 'France', 'scene'],];
 
 const figures = [
   ['Cléopâtre VII', 'Égypte antique', 'reine', 'Antiquité', 'règne sur l’Égypte ptolémaïque avant la conquête romaine'],
@@ -115,6 +129,33 @@ const figures = [
   ['Simone Veil', 'France', 'femme politique', 'époque contemporaine', 'porte la loi légalisant l’IVG en France'],
   ['Frida Kahlo', 'Mexique', 'artiste', 'époque contemporaine', 'développe une œuvre autobiographique et symbolique'],
   ['Pablo Picasso', 'Espagne et France', 'artiste', 'époque contemporaine', 'cofonde le cubisme'],
+  ['Christine de Pizan', 'France', 'autrice', 'Moyen Age', 'defend la place des femmes dans la litterature medievale'],
+  ['Hildegarde de Bingen', 'Saint-Empire', 'abbesse et savante', 'Moyen Age', 'compose, ecrit et developpe une pensee encyclopedique'],
+  ['Olympe de Gouges', 'France', 'femme de lettres', 'epoque contemporaine', 'redige la Declaration des droits de la femme et de la citoyenne'],
+  ['Toussaint Louverture', 'Saint-Domingue', 'leader politique', 'epoque contemporaine', 'devient une figure majeure de la revolution haitienne'],
+  ['Harriet Tubman', 'Etats-Unis', 'militante abolitionniste', 'epoque contemporaine', 'aide des personnes esclavisees a fuir par le reseau clandestin'],
+  ['Wangari Maathai', 'Kenya', 'militante ecologiste', 'epoque contemporaine', 'fonde le Green Belt Movement et recoit le prix Nobel de la paix'],
+  ['Hypatie', 'Alexandrie', 'philosophe et mathematicienne', 'Antiquite', 'enseigne les mathematiques et la philosophie a Alexandrie'],
+  ['Avicenne', 'Perse', 'savant et medecin', 'Moyen Age', 'marque la medecine et la philosophie du monde islamique medieval'],
+  ['Averroes', 'Al-Andalus', 'philosophe et medecin', 'Moyen Age', 'commente Aristote et influence la pensee medievale'],
+  ['Mansa Moussa', 'Empire du Mali', 'souverain', 'Moyen Age', 'incarne la puissance et la richesse de l Empire du Mali'],
+  ['Hatchepsout', 'Egypte antique', 'pharaon', 'Antiquite', 'regne comme pharaon et developpe de grands chantiers'],
+  ['Ramses II', 'Egypte antique', 'pharaon', 'Antiquite', 'laisse de nombreux monuments et marque le Nouvel Empire egyptien'],
+  ['Ashoka', 'Inde', 'empereur', 'Antiquite', 'diffuse des edits et soutient le bouddhisme dans l empire Maurya'],
+  ['Qin Shi Huang', 'Chine', 'empereur', 'Antiquite', 'unifie la Chine imperiale et associe son regne a l armee de terre cuite'],
+  ['Sun Tzu', 'Chine', 'stratege', 'Antiquite', 'est associe au traite militaire L Art de la guerre'],
+  ['Wu Zetian', 'Chine', 'imperatrice', 'Moyen Age', 'devient la seule imperatrice regnante de l histoire chinoise'],
+  ['Murasaki Shikibu', 'Japon', 'autrice', 'Moyen Age', 'ecrit Le Dit du Genji dans le Japon de Heian'],
+  ['Tokugawa Ieyasu', 'Japon', 'shogun', 'epoque moderne', 'fonde le shogunat Tokugawa au debut du XVIIe siecle'],
+  ['Soliman le Magnifique', 'Empire ottoman', 'sultan', 'epoque moderne', 'porte l Empire ottoman a son apogee politique et culturel'],
+  ['Moctezuma II', 'Empire azteque', 'souverain', 'epoque moderne', 'dirige les Azteques lors de l arrivee des Espagnols'],
+  ['Mustafa Kemal Ataturk', 'Turquie', 'chef d Etat', 'epoque contemporaine', 'fonde la Republique de Turquie et engage des reformes laiques'],
+  ['Ho Chi Minh', 'Vietnam', 'leader politique', 'epoque contemporaine', 'incarne le mouvement independantiste vietnamien'],
+  ['Simone de Beauvoir', 'France', 'philosophe et autrice', 'epoque contemporaine', 'publie Le Deuxieme Sexe et marque la pensee feministe'],
+  ['Hannah Arendt', 'Allemagne et Etats-Unis', 'philosophe', 'epoque contemporaine', 'analyse le totalitarisme et la responsabilite politique'],
+  ['Alan Turing', 'Royaume-Uni', 'mathematicien', 'epoque contemporaine', 'joue un role cle dans la cryptanalyse et l informatique theorique'],
+  ['Emmy Noether', 'Allemagne', 'mathematicienne', 'epoque contemporaine', 'revolutionne l algebre et relie symetries et lois physiques'],
+  ['Rosalind Franklin', 'Royaume-Uni', 'scientifique', 'epoque contemporaine', 'produit des donnees decisives pour comprendre la structure de l ADN'],
 ];
 
 function slug(value) {
@@ -128,9 +169,24 @@ function selectJpegUrl(info) {
 }
 
 function rotateChoices(values, answer) {
-  const pool = [...new Set(values.filter((value) => value && value !== answer))].slice(0, 3);
+  const normalizedAnswer = slug(answer);
+  const seen = new Set([normalizedAnswer]);
+  const pool = [];
+  for (const value of values) {
+    const key = slug(value);
+    if (!value || seen.has(key)) continue;
+    seen.add(key);
+    pool.push(value);
+    if (pool.length === 3) break;
+  }
   const choices = [answer, ...pool];
-  while (choices.length < 4) choices.push(values[choices.length % values.length]);
+  for (const value of values) {
+    if (choices.length >= 4) break;
+    const key = slug(value);
+    if (!value || seen.has(key)) continue;
+    seen.add(key);
+    choices.push(value);
+  }
   return choices;
 }
 

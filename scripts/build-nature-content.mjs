@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { access, mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const ROOT = process.cwd();
@@ -41,6 +41,38 @@ const species = [
   { kind: 'plants', name: 'Sureau noir', scientific: 'Sambucus nigra', family: 'arbuste', clue: 'arbuste a ombelles blanches puis baies noires', difficulty: 2 },
   { kind: 'plants', name: 'Fougere aigle', scientific: 'Pteridium aquilinum', family: 'fougere', clue: 'grande fougere formant de vastes tapis en sous-bois', difficulty: 2 },
   { kind: 'plants', name: 'Sphaigne', scientific: 'Sphagnum', family: 'mousse', clue: 'mousse des tourbieres capable de retenir beaucoup d eau', difficulty: 3 },
+  { kind: 'animals', name: 'Blaireau europeen', scientific: 'Meles meles', family: 'mammifere', clue: 'masque noir et blanc sur la tete et vie en terrier', difficulty: 1 },
+  { kind: 'animals', name: 'Chamois', scientific: 'Rupicapra rupicapra', family: 'mammifere', clue: 'ongule agile des montagnes aux petites cornes recourbees', difficulty: 2 },
+  { kind: 'animals', name: 'Marmotte des Alpes', scientific: 'Marmota marmota', family: 'mammifere', clue: 'rongeur de montagne connu pour ses sifflements d alerte', difficulty: 1 },
+  { kind: 'animals', name: 'Castor d Europe', scientific: 'Castor fiber', family: 'mammifere', clue: 'queue plate et capacite a modifier les cours d eau', difficulty: 2 },
+  { kind: 'animals', name: 'Ecureuil roux', scientific: 'Sciurus vulgaris', family: 'mammifere', clue: 'queue rousse touffue et vie arboricole', difficulty: 1 },
+  { kind: 'animals', name: 'Phoque veau-marin', scientific: 'Phoca vitulina', family: 'mammifere marin', clue: 'tete ronde et repos frequent sur les bancs de sable', difficulty: 2 },
+  { kind: 'animals', name: 'Macareux moine', scientific: 'Fratercula arctica', family: 'oiseau', clue: 'oiseau marin au bec colore pendant la reproduction', difficulty: 2 },
+  { kind: 'animals', name: 'Heron cendre', scientific: 'Ardea cinerea', family: 'oiseau', clue: 'grand oiseau gris au long cou des zones humides', difficulty: 1 },
+  { kind: 'animals', name: 'Cigogne blanche', scientific: 'Ciconia ciconia', family: 'oiseau', clue: 'plumage blanc et noir avec long bec rouge', difficulty: 1 },
+  { kind: 'animals', name: 'Rougegorge familier', scientific: 'Erithacus rubecula', family: 'oiseau', clue: 'petit oiseau au plastron orange', difficulty: 1 },
+  { kind: 'animals', name: 'Libellule deprimee', scientific: 'Libellula depressa', family: 'insecte', clue: 'libellule a abdomen large souvent bleu chez le male', difficulty: 3 },
+  { kind: 'animals', name: 'Coccinelle a sept points', scientific: 'Coccinella septempunctata', family: 'insecte', clue: 'elytres rouges portant sept points noirs', difficulty: 1 },
+  { kind: 'animals', name: 'Scarabee rhinoceros', scientific: 'Oryctes nasicornis', family: 'insecte', clue: 'grand coleoptere dont le male porte une corne', difficulty: 3 },
+  { kind: 'animals', name: 'Triton palme', scientific: 'Lissotriton helveticus', family: 'amphibien', clue: 'petit triton europeen frequent dans les mares', difficulty: 3 },
+  { kind: 'animals', name: 'Lezard des murailles', scientific: 'Podarcis muralis', family: 'reptile', clue: 'lezard brun gris qui aime les murs chauds et les rocailles', difficulty: 2 },
+  { kind: 'animals', name: 'Vipere aspic', scientific: 'Vipera aspis', family: 'reptile', clue: 'serpent venimeux europeen au museau legerement releve', difficulty: 3 },
+  { kind: 'plants', name: 'Nymphea blanc', scientific: 'Nymphaea alba', family: 'fleur aquatique', clue: 'grande fleur blanche flottant sur les eaux calmes', difficulty: 2 },
+  { kind: 'plants', name: 'Gentiane jaune', scientific: 'Gentiana lutea', family: 'fleur de montagne', clue: 'haute plante de montagne aux fleurs jaunes en etages', difficulty: 2 },
+  { kind: 'plants', name: 'Edelweiss', scientific: 'Leontopodium nivale', family: 'fleur de montagne', clue: 'petite plante alpine aux bractees blanches etoilees', difficulty: 2 },
+  { kind: 'plants', name: 'Digitale pourpre', scientific: 'Digitalis purpurea', family: 'fleur toxique', clue: 'hautes clochettes pourpres alignees sur une hampe', difficulty: 2 },
+  { kind: 'plants', name: 'Muguet', scientific: 'Convallaria majalis', family: 'fleur', clue: 'clochettes blanches parfumees et feuilles ovales', difficulty: 1 },
+  { kind: 'plants', name: 'Pissenlit', scientific: 'Taraxacum officinale', family: 'fleur', clue: 'capitule jaune puis sphere d aigrettes dispersees par le vent', difficulty: 1 },
+  { kind: 'plants', name: 'Chataignier', scientific: 'Castanea sativa', family: 'arbre', clue: 'arbre produisant des chataignes dans des bogues piquantes', difficulty: 1 },
+  { kind: 'plants', name: 'Olivier', scientific: 'Olea europaea', family: 'arbre', clue: 'feuilles gris argente et fruits utilises pour l huile', difficulty: 1 },
+  { kind: 'plants', name: 'Platane commun', scientific: 'Platanus x hispanica', family: 'arbre', clue: 'ecorce qui se detache en plaques claires et vertes', difficulty: 2 },
+  { kind: 'plants', name: 'Laurier rose', scientific: 'Nerium oleander', family: 'arbuste', clue: 'arbuste mediterraneen tres toxique aux fleurs roses', difficulty: 2 },
+  { kind: 'plants', name: 'Bruyere commune', scientific: 'Calluna vulgaris', family: 'arbuste', clue: 'petit arbuste des landes couvert de fleurs mauves', difficulty: 2 },
+  { kind: 'plants', name: 'Genet a balais', scientific: 'Cytisus scoparius', family: 'arbuste', clue: 'rameaux verts et floraison jaune vive', difficulty: 2 },
+  { kind: 'plants', name: 'Roseau commun', scientific: 'Phragmites australis', family: 'graminee', clue: 'hautes tiges de roseliere terminees par un plumeau brun', difficulty: 2 },
+  { kind: 'plants', name: 'Posidonie', scientific: 'Posidonia oceanica', family: 'plante marine', clue: 'plante marine formant des herbiers en Mediterranee', difficulty: 3 },
+  { kind: 'plants', name: 'Lierre grimpant', scientific: 'Hedera helix', family: 'liane', clue: 'feuilles persistantes et tiges qui grimpent aux troncs', difficulty: 1 },
+  { kind: 'plants', name: 'Prele des champs', scientific: 'Equisetum arvense', family: 'prele', clue: 'plante a tiges articulees evoquant une forme tres ancienne', difficulty: 3 },
 ];
 
 function slug(value) {
@@ -54,13 +86,14 @@ function selectJpegUrl(info) {
 }
 
 async function searchCommonsImage(item) {
+  for (const query of [`${item.scientific} ${item.name}`, item.scientific, item.name]) {
   const params = new URLSearchParams({
     action: 'query',
     format: 'json',
     generator: 'search',
     gsrnamespace: '6',
     gsrlimit: '10',
-    gsrsearch: `${item.scientific} ${item.name}`,
+    gsrsearch: query,
     prop: 'imageinfo',
     iiprop: 'url|mime|extmetadata',
     iiurlwidth: '1280',
@@ -86,6 +119,7 @@ async function searchCommonsImage(item) {
       credit: info.extmetadata?.Credit?.value?.replace(/<[^>]+>/g, '') ?? '',
     };
   }
+  }
   return null;
 }
 
@@ -107,7 +141,7 @@ function imageChoiceGroup(items, currentIndex) {
   const localIndex = sameKind.findIndex((item) => item.name === items[currentIndex].name);
   const start = Math.floor(localIndex / 4) * 4;
   const group = sameKind.slice(start, start + 4);
-  while (group.length < 4) group.push(sameKind[group.length]);
+  while (group.length < 4 && sameKind.length) group.push(sameKind[group.length % sameKind.length]);
   return group;
 }
 
@@ -134,11 +168,20 @@ async function main() {
   const manifest = [];
   const imageByName = new Map();
   for (const item of species) {
+    const asset = `nature/${slug(item.name)}`;
+    const filename = join(outDir, `${slug(item.name)}.jpg`);
+    try {
+      await access(filename);
+      imageByName.set(item.name, { asset, sourceUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(item.scientific)}` });
+      manifest.push({ label: item.name, scientific: item.scientific, asset, kind: item.kind, family: item.family, sourceUrl: imageByName.get(item.name).sourceUrl, license: 'fichier local deja telecharge', artist: '', credit: '' });
+      continue;
+    } catch {
+      // No local copy yet.
+    }
     const info = await searchCommonsImage(item);
     if (!info) continue;
-    const asset = `nature/${slug(item.name)}`;
     try {
-      await downloadImage(info.url, join(outDir, `${slug(item.name)}.jpg`));
+      await downloadImage(info.url, filename);
     } catch {
       continue;
     }

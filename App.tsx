@@ -335,44 +335,48 @@ export default function App() {
 
   function selectAnswer(index: number) {
     if (selected !== null) return;
-    setSelected(index);
     const isCorrect = index === quiz[questionIndex].answerIndex;
     const nextAnswers = [...answers, { questionId: quiz[questionIndex].id, selectedIndex: index, correct: isCorrect }];
+    if (!isCorrect) setSelected(index);
     setAnswers(nextAnswers);
     if (topic) void persistDraft(topic, quiz, questionIndex, nextAnswers);
-    Haptics.notificationAsync(isCorrect ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
+    void Haptics.notificationAsync(isCorrect ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
+    if (isCorrect) void continueQuiz(nextAnswers);
   }
 
   function submitFreeText() {
     if (selected !== null || !freeText.trim()) return;
     const isCorrect = isFreeTextCorrect(quiz[questionIndex], freeText);
-    setSelected(-1);
+    if (!isCorrect) setSelected(-1);
     Keyboard.dismiss();
     const nextAnswers = [...answers, { questionId: quiz[questionIndex].id, selectedIndex: -1, selectedText: freeText.trim(), correct: isCorrect }];
     setAnswers(nextAnswers);
     if (topic) void persistDraft(topic, quiz, questionIndex, nextAnswers);
-    Haptics.notificationAsync(isCorrect ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
+    void Haptics.notificationAsync(isCorrect ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
+    if (isCorrect) void continueQuiz(nextAnswers);
   }
 
   function submitMultiText() {
     if (selected !== null) return;
     const grade = gradeMultiText(quiz[questionIndex], fieldValues);
-    setSelected(-2);
+    if (grade.credit < 1) setSelected(-2);
     Keyboard.dismiss();
     const nextAnswers = [...answers, { questionId: quiz[questionIndex].id, selectedIndex: -2, selectedText: JSON.stringify(fieldValues), correct: grade.correct, credit: grade.credit }];
     setAnswers(nextAnswers);
     if (topic) void persistDraft(topic, quiz, questionIndex, nextAnswers);
-    Haptics.notificationAsync(grade.credit === 1 ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
+    void Haptics.notificationAsync(grade.credit === 1 ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
+    if (grade.credit === 1) void continueQuiz(nextAnswers);
   }
 
   function submitMapPoint() {
     if (selected !== null || !mapGuess) return;
     const grade = gradeMapPoint(quiz[questionIndex], mapGuess);
-    setSelected(-3);
+    if (grade.credit < 1) setSelected(-3);
     const nextAnswers = [...answers, { questionId: quiz[questionIndex].id, selectedIndex: -3, selectedText: JSON.stringify(mapGuess), correct: grade.correct, credit: grade.credit }];
     setAnswers(nextAnswers);
     if (topic) void persistDraft(topic, quiz, questionIndex, nextAnswers);
-    Haptics.notificationAsync(grade.credit === 1 ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
+    void Haptics.notificationAsync(grade.credit === 1 ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
+    if (grade.credit === 1) void continueQuiz(nextAnswers);
   }
 
   async function handleToggleFavorite() {
@@ -410,24 +414,24 @@ export default function App() {
     Haptics.selectionAsync();
   }
 
-  async function continueQuiz() {
-    if (questionIndex < quiz.length - 1) {
+  async function continueQuiz(nextAnswers: SessionAnswer[] = answers, activeQuiz: QuizQuestion[] = quiz) {
+    if (questionIndex < activeQuiz.length - 1) {
       const nextIndex = questionIndex + 1;
       setQuestionIndex(nextIndex);
       setSelected(null);
       setFreeText('');
       setFieldValues({});
       setMapGuess(null);
-      if (topic) void persistDraft(topic, quiz, nextIndex, answers);
+      if (topic) void persistDraft(topic, activeQuiz, nextIndex, nextAnswers);
       return;
     }
     if (infiniteDifficulty) {
-      const nextQuestion = await getRandomQuestionByDifficulty(infiniteDifficulty, quiz.map((question) => question.id));
+      const nextQuestion = await getRandomQuestionByDifficulty(infiniteDifficulty, activeQuiz.map((question) => question.id));
       if (!nextQuestion) {
         Alert.alert('Banque vide', 'Impossible de trouver une nouvelle question pour ce niveau.');
         return;
       }
-      const nextQuiz = [...quiz, nextQuestion];
+      const nextQuiz = [...activeQuiz, nextQuestion];
       const nextIndex = questionIndex + 1;
       setQuiz(nextQuiz);
       setQuestionIndex(nextIndex);
@@ -435,10 +439,11 @@ export default function App() {
       setFreeText('');
       setFieldValues({});
       setMapGuess(null);
-      if (topic) void persistDraft(topic, nextQuiz, nextIndex, answers);
+      if (topic) void persistDraft(topic, nextQuiz, nextIndex, nextAnswers);
       return;
     }
-    if (topic) await saveSession(topic.id, answers);
+    setAnswers(nextAnswers);
+    if (topic) await saveSession(topic.id, nextAnswers);
     await clearSessionDraft();
     setDraft(null);
     await refreshStats();
@@ -484,6 +489,8 @@ export default function App() {
     return <View style={styles.loading}><ActivityIndicator color="#2F6B55" size="large" /><Text style={styles.loadingText}>Préparation de ta bibliothèque…</Text></View>;
   }
 
+  const currentAnswer = quiz[questionIndex] ? answers.findLast((answer) => answer.questionId === quiz[questionIndex].id) : undefined;
+
   return (
     <View style={styles.safe}>
       <StatusBar style="light" />
@@ -493,10 +500,10 @@ export default function App() {
       {screen === 'quiz' && topic && quiz.length > 0 && (
         <Quiz
           topic={topic} questions={quiz} index={questionIndex} selected={selected} freeText={freeText}
-          fieldValues={fieldValues} answerCredit={answers.at(-1)?.credit ?? (answers.at(-1)?.correct ? 1 : 0)} onFieldChange={(id, value) => setFieldValues((current) => ({ ...current, [id]: value }))} onSubmitMultiText={submitMultiText}
+          fieldValues={fieldValues} answerCredit={currentAnswer?.credit ?? (currentAnswer?.correct ? 1 : 0)} onFieldChange={(id, value) => setFieldValues((current) => ({ ...current, [id]: value }))} onSubmitMultiText={submitMultiText}
           mapGuess={mapGuess} onMapGuess={setMapGuess} onSubmitMapPoint={submitMapPoint}
-          answerCorrect={answers.at(-1)?.correct ?? false} onFreeTextChange={setFreeText} onSubmitFreeText={submitFreeText}
-          confidence={answers.at(-1)?.questionId === quiz[questionIndex].id ? answers.at(-1)?.confidence : undefined} onConfidence={setAnswerConfidence}
+          answerCorrect={currentAnswer?.correct ?? false} onFreeTextChange={setFreeText} onSubmitFreeText={submitFreeText}
+          confidence={currentAnswer?.confidence} onConfidence={setAnswerConfidence}
           infiniteDifficulty={infiniteDifficulty}
           onSelect={selectAnswer} onToggleFavorite={handleToggleFavorite} onReportQuestion={handleReportQuestion} onContinue={continueQuiz} onClose={closeQuiz}
         />
@@ -528,99 +535,52 @@ function getHomeRecommendation(stats: DashboardStats, draft: SessionDraft | null
 
 type HomeProps = { stats: DashboardStats; topics: Topic[]; progress: TopicProgress[]; recentSessions: RecentSession[]; draft: SessionDraft | null; onResume: () => void; onStart: (topic: Topic) => void; onProgressCell: (topic: Topic, difficulty: Difficulty) => void; onLanguages: () => void; onCompose: () => void; onEndurance: (difficulty: Difficulty) => void; onInfinite: (difficulty: Difficulty) => void; onReview: () => void; onFavorites: () => void; onMaps: () => void; onSearch: () => void; onLibrary: () => void };
 
-function HomeV2({ stats, topics, progress, recentSessions, draft, onResume, onStart, onProgressCell, onLanguages, onCompose, onEndurance, onInfinite, onReview, onFavorites, onMaps, onSearch, onLibrary }: HomeProps) {
-  const { width } = useWindowDimensions();
-  const pagerRef = useRef<ScrollView>(null);
-  const [homePage, setHomePage] = useState(0);
-  const [homePageProgress, setHomePageProgress] = useState(0);
+function HomeV2({ stats, topics, draft, onResume, onStart, onLanguages, onCompose, onEndurance, onInfinite, onReview, onFavorites, onMaps, onSearch, onLibrary }: HomeProps) {
   const accuracy = stats.answered ? Math.round((stats.correct / stats.answered) * 100) : 0;
   const recommendation = getHomeRecommendation(stats, draft);
   const cultureTopics = topics.filter((item) => item.id !== 'language');
-  const homeTabs = ['Dashboard', 'Culture', 'Langues'];
   const runRecommendation = () => {
     if (recommendation.action === 'resume') onResume();
     else if (recommendation.action === 'review') onReview();
     else if (recommendation.action === 'compose') onCompose();
     else onEndurance(2);
   };
-  const updateHomePageProgress = (event: { nativeEvent: { contentOffset: { x: number } } }) => {
-    const progress = Math.max(0, Math.min(2, event.nativeEvent.contentOffset.x / width));
-    setHomePageProgress(progress);
-    setHomePage(Math.round(progress));
-  };
-  const goToHomePage = (index: number) => {
-    setHomePage(index);
-    setHomePageProgress(index);
-    pagerRef.current?.scrollTo({ x: width * index, animated: true });
-  };
   return (
-    <View style={styles.homeRoot}>
+    <ScrollView style={styles.homeRoot} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
       <View style={styles.brandRow}><Image source={require('./assets/kizz-logo-v2.png')} style={styles.logoImage} /><Text style={styles.brand}>Kizz</Text><Pressable onPress={onLibrary} style={styles.libraryShortcut}><Text style={styles.libraryShortcutText}>Banques</Text></Pressable></View>
-      <View style={styles.homeTabs}>
-        <View style={[styles.homeTabIndicator, { transform: [{ translateX: ((width - 44) / 3) * homePageProgress }] }]} />
-        {homeTabs.map((label, index) => (
-          <Pressable key={label} testID={`home-tab-${index}`} accessibilityRole="tab" accessibilityState={{ selected: homePage === index }} onPress={() => goToHomePage(index)} style={styles.homeTab}>
-            <Text style={[styles.homeTabText, homePage === index && styles.homeTabActive]}>{label}</Text>
+      <View style={styles.homeStatsLine}><Text style={styles.homeStatsText}>{stats.sessions} sessions</Text><Text style={styles.homeStatsText}>{stats.answered} reponses</Text><Text style={styles.homeStatsText}>{accuracy}% juste</Text>{stats.dueReview > 0 && <Text style={styles.homeStatsText}>{stats.dueReview} a revoir</Text>}</View>
+      {draft && <Pressable testID="resume-session" accessibilityRole="button" onPress={onResume} style={styles.resumeCard}><View style={styles.resumeProgress}><View style={[styles.resumeProgressFill, { width: `${Math.round(((draft.questionIndex + 1) / draft.questions.length) * 100)}%`, backgroundColor: draft.topic.color }]} /></View><Text style={styles.resumeEyebrow}>SESSION EN COURS</Text><View style={styles.resumeRow}><View><Text style={styles.resumeTitle}>{draft.topic.title}</Text><Text style={styles.resumeText}>Question {draft.questionIndex + 1} sur {draft.questions.length}</Text></View><Text style={[styles.resumeArrow, { color: draft.topic.color }]}>Reprendre -&gt;</Text></View></Pressable>}
+      <Pressable testID="recommended-action" accessibilityRole="button" onPress={runRecommendation} style={({ pressed }) => [styles.recommendCard, pressed && styles.pressed]}>
+        <View style={[styles.recommendRail, { backgroundColor: recommendation.color }]} />
+        <View style={{ flex: 1 }}><Text style={styles.recommendEyebrow}>PROCHAINE SESSION</Text><Text style={styles.recommendTitle}>{recommendation.title}</Text><Text style={styles.recommendText}>{recommendation.text}</Text></View>
+        <Text style={[styles.recommendAction, { color: recommendation.color }]}>{recommendation.label}</Text>
+      </Pressable>
+      <View style={styles.quickRow}>
+        <Pressable testID="compose-session" accessibilityRole="button" onPress={onCompose} style={styles.quickAction}><Text style={styles.quickIcon}>+</Text><Text style={styles.quickText}>Composer</Text></Pressable>
+        <Pressable testID="review-errors" accessibilityRole="button" onPress={onReview} style={styles.quickAction}><Text style={styles.quickIcon}>R</Text><Text style={styles.quickText}>Erreurs</Text></Pressable>
+        <Pressable testID="map-session" accessibilityRole="button" onPress={onMaps} style={styles.quickAction}><Text style={styles.quickIcon}>M</Text><Text style={styles.quickText}>Cartes</Text></Pressable>
+        <Pressable testID="search" accessibilityRole="button" onPress={onSearch} style={styles.quickAction}><Text style={styles.quickIcon}>?</Text><Text style={styles.quickText}>Chercher</Text></Pressable>
+      </View>
+      <View style={styles.modeMiniRow}>
+        <View style={styles.modeMiniCard}><Text style={styles.modeMiniTitle}>Endurance</Text><View style={styles.modeMiniButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`endurance-${difficulty}`} accessibilityRole="button" onPress={() => onEndurance(difficulty)} style={({ pressed }) => [styles.modeMiniButton, pressed && styles.pressed]}><Text style={styles.enduranceButtonText}>{difficulty}</Text></Pressable>)}</View></View>
+        <View style={styles.modeMiniCard}><Text style={styles.modeMiniTitle}>Infini</Text><View style={styles.modeMiniButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`infinite-${difficulty}`} accessibilityRole="button" onPress={() => onInfinite(difficulty)} style={({ pressed }) => [styles.modeMiniButton, pressed && styles.pressed]}><Text style={styles.infiniteButtonText}>{difficulty}</Text></Pressable>)}</View></View>
+      </View>
+      <Pressable testID="language-hub" accessibilityRole="button" onPress={onLanguages} style={({ pressed }) => [styles.languageCompactCard, pressed && styles.pressed]}><View style={styles.languageHeroIcon}><Text style={styles.languageHeroIconText}>Aa</Text></View><View style={{ flex: 1 }}><Text style={styles.languageHeroEyebrow}>LANGUES</Text><Text style={styles.languageHeroTitle}>Espagnol, Allemand, Italien</Text></View><Text style={styles.composeArrow}>-&gt;</Text></Pressable>
+      <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Themes visuels</Text><Text style={styles.sectionHint}>{cultureTopics.length} parcours</Text></View>
+      <View style={styles.topicGrid}>
+        {cultureTopics.map((item) => (
+          <Pressable key={item.id} testID={`topic-${item.id}`} accessibilityRole="button" accessibilityLabel={`Commencer le theme ${item.title}`} onPress={() => onStart(item)} style={({ pressed }) => [styles.topicCard, pressed && styles.pressed]}>
+            <View style={[styles.topicIcon, { backgroundColor: `${item.color}1A` }]}><Text style={[styles.topicIconText, { color: item.color }]}>{item.icon}</Text></View>
+            <Text style={styles.topicTitle}>{item.title}</Text><Text style={styles.topicSubtitle}>{item.subtitle}</Text>
+            <Text style={[styles.go, { color: item.color }]}>Commencer -&gt;</Text>
           </Pressable>
         ))}
       </View>
-      <ScrollView ref={pagerRef} horizontal pagingEnabled showsHorizontalScrollIndicator={false} decelerationRate="fast" onScroll={updateHomePageProgress} scrollEventThrottle={16} style={styles.homePager}>
-        <ScrollView style={{ width }} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
-          <View style={styles.dashboardHeader}><Text style={styles.dashboardTitle}>Tableau de bord</Text><Text style={styles.dashboardCaption}>Progression locale</Text></View>
-          <View style={styles.kpiGrid}>
-            <Kpi value={String(stats.sessions)} label="Sessions" accent="#68D7A2" />
-            <Kpi value={String(stats.answered)} label="Réponses" accent="#75A7FF" />
-            <Kpi value={`${accuracy}%`} label="Précision" accent="#E6B759" />
-            <Kpi value={String(stats.dueReview)} label="À réviser" accent="#D982AD" />
-          </View>
-          <ProgressMatrix progress={progress} onCompose={onCompose} onStartCell={onProgressCell} />
-          <RecentSessions sessions={recentSessions} />
-          {draft && <Pressable testID="resume-session" accessibilityRole="button" onPress={onResume} style={styles.resumeCard}><View style={styles.resumeProgress}><View style={[styles.resumeProgressFill, { width: `${Math.round(((draft.questionIndex + 1) / draft.questions.length) * 100)}%`, backgroundColor: draft.topic.color }]} /></View><Text style={styles.resumeEyebrow}>SESSION EN COURS</Text><View style={styles.resumeRow}><View><Text style={styles.resumeTitle}>{draft.topic.title}</Text><Text style={styles.resumeText}>Question {draft.questionIndex + 1} sur {draft.questions.length}</Text></View><Text style={[styles.resumeArrow, { color: draft.topic.color }]}>Reprendre -&gt;</Text></View></Pressable>}
-          <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Prochaine action</Text><Text style={styles.sectionHint}>utile, courte</Text></View>
-          <Pressable testID="recommended-action" accessibilityRole="button" onPress={runRecommendation} style={({ pressed }) => [styles.recommendCard, pressed && styles.pressed]}>
-            <View style={[styles.recommendRail, { backgroundColor: recommendation.color }]} />
-            <View style={{ flex: 1 }}><Text style={styles.recommendEyebrow}>PROCHAINE ACTION UTILE</Text><Text style={styles.recommendTitle}>{recommendation.title}</Text><Text style={styles.recommendText}>{recommendation.text}</Text></View>
-            <Text style={[styles.recommendAction, { color: recommendation.color }]}>{recommendation.label}</Text>
-          </Pressable>
-          <View style={styles.quickRow}>
-            <Pressable testID="review-errors" accessibilityRole="button" onPress={onReview} style={styles.quickAction}><Text style={styles.quickIcon}>R</Text><Text style={styles.quickText}>Mes erreurs</Text></Pressable>
-            <Pressable testID="favorites" accessibilityRole="button" onPress={onFavorites} style={styles.quickAction}><Text style={styles.quickIcon}>*</Text><Text style={styles.quickText}>Favoris</Text></Pressable>
-            <Pressable testID="map-session" accessibilityRole="button" onPress={onMaps} style={styles.quickAction}><Text style={styles.quickIcon}>+</Text><Text style={styles.quickText}>Cartes</Text></Pressable>
-            <Pressable testID="search" accessibilityRole="button" onPress={onSearch} style={styles.quickAction}><Text style={styles.quickIcon}>?</Text><Text style={styles.quickText}>Rechercher</Text></Pressable>
-          </View>
-          <Text style={styles.privacy}>Tes réponses restent sur ce téléphone. Aucun compte requis.</Text>
-        </ScrollView>
-
-        <ScrollView style={{ width }} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
-          <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Quiz culture</Text><Text style={styles.sectionHint}>{cultureTopics.length} parcours</Text></View>
-          <View style={styles.modeStack}>
-            <Pressable testID="compose-session" accessibilityRole="button" onPress={onCompose} style={({ pressed }) => [styles.composeCard, pressed && styles.pressed]}><View><Text style={styles.composeEyebrow}>SESSION SUR MESURE</Text><Text style={styles.composeTitle}>Themes + difficultes</Text><Text style={styles.modeText}>Compose un mix: mono-theme, multi-theme, niveau fixe ou croise.</Text></View><Text style={styles.composeArrow}>-&gt;</Text></Pressable>
-            <View style={styles.enduranceCard}><View style={{ flex: 1 }}><Text style={styles.composeEyebrow}>MODE ENDURANCE</Text><Text style={styles.composeTitle}>Theme aleatoire par difficulte</Text><Text style={styles.enduranceText}>Choisis le niveau, Kizz tire le theme et lance 10 questions.</Text></View><View style={styles.enduranceButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`endurance-${difficulty}`} accessibilityRole="button" onPress={() => onEndurance(difficulty)} style={({ pressed }) => [styles.enduranceButton, pressed && styles.pressed]}><Text style={styles.enduranceButtonText}>{difficulty}</Text><Text style={styles.enduranceDots}>{'o'.repeat(difficulty)}</Text></Pressable>)}</View></View>
-            <View style={styles.infiniteCard}><View style={{ flex: 1 }}><Text style={styles.infiniteEyebrow}>MODE INFINI CALME</Text><Text style={styles.composeTitle}>Difficulte fixe, themes aleatoires</Text><Text style={styles.infiniteText}>Une question apres l'autre, avec sortie visible et sauvegarde locale.</Text></View><View style={styles.enduranceButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`infinite-${difficulty}`} accessibilityRole="button" onPress={() => onInfinite(difficulty)} style={({ pressed }) => [styles.infiniteButton, pressed && styles.pressed]}><Text style={styles.infiniteButtonText}>{difficulty}</Text><Text style={styles.infiniteDots}>inf</Text></Pressable>)}</View></View>
-          </View>
-          <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Themes</Text><Text style={styles.sectionHint}>QCM, texte, carte</Text></View>
-          <View style={styles.topicGrid}>
-            {cultureTopics.map((item) => (
-              <Pressable key={item.id} testID={`topic-${item.id}`} accessibilityRole="button" accessibilityLabel={`Commencer le theme ${item.title}`} onPress={() => onStart(item)} style={({ pressed }) => [styles.topicCard, pressed && styles.pressed]}>
-                <View style={[styles.topicIcon, { backgroundColor: `${item.color}1A` }]}><Text style={[styles.topicIconText, { color: item.color }]}>{item.icon}</Text></View>
-                <Text style={styles.topicTitle}>{item.title}</Text><Text style={styles.topicSubtitle}>{item.subtitle}</Text>
-                <Text style={[styles.go, { color: item.color }]}>Commencer -&gt;</Text>
-              </Pressable>
-            ))}
-          </View>
-        </ScrollView>
-
-        <ScrollView style={{ width }} contentContainerStyle={styles.homePanel} showsVerticalScrollIndicator={false}>
-          <View style={styles.languagePanelHero}><Text style={styles.languagePanelEyebrow}>LANGUES</Text><Text style={styles.languagePanelTitle}>Une langue a la fois.</Text><Text style={styles.languagePanelText}>Cours courts, vocabulaire frequent, conjugaison en texte libre, puis quiz pour verifier.</Text></View>
-          <Pressable testID="language-hub" accessibilityRole="button" onPress={onLanguages} style={({ pressed }) => [styles.languageHero, pressed && styles.pressed]}><View style={styles.languageHeroIcon}><Text style={styles.languageHeroIconText}>Aa</Text></View><View style={{ flex: 1 }}><Text style={styles.languageHeroEyebrow}>PARCOURS DEDIE</Text><Text style={styles.languageHeroTitle}>Espagnol, Allemand, Italien</Text><Text style={styles.languageHeroText}>Choisis langue, niveau et competence.</Text></View><Text style={styles.composeArrow}>-&gt;</Text></Pressable>
-          <View style={styles.languageMiniGrid}>{LANGUAGE_OPTIONS.map((item) => <View key={item.code} style={styles.languageMiniCard}><Text style={styles.languageMiniCode}>{item.code.toUpperCase()}</Text><Text style={styles.languageMiniName}>{item.name}</Text><Text style={styles.languageMiniText}>Vocabulaire, lecture, ecriture, culture.</Text></View>)}</View>
-          <Text style={styles.privacy}>Objectif: progresser sans bruit. Sessions finies, reprise possible.</Text>
-        </ScrollView>
-      </ScrollView>
-    </View>
+      <Pressable testID="favorites" accessibilityRole="button" onPress={onFavorites} style={styles.libraryShortcut}><Text style={styles.libraryShortcutText}>Favoris</Text></Pressable>
+      <Text style={styles.privacy}>Tes reponses restent sur ce telephone. Aucun compte requis.</Text>
+    </ScrollView>
   );
 }
-
 const LANGUAGE_OPTIONS: Array<{ code: LanguageCode; name: string; native: string }> = [
   { code: 'es', name: 'Espagnol', native: 'Español' },
   { code: 'de', name: 'Allemand', native: 'Deutsch' },
@@ -1397,6 +1357,9 @@ const styles = StyleSheet.create({
   languageProgressCard: { borderRadius: 18, backgroundColor: '#101B1D', borderWidth: 1, borderColor: '#26464D', padding: 13, marginTop: 12, marginBottom: 16 }, languageProgressHeader: { flexDirection: 'row', alignItems: 'baseline', marginBottom: 10 }, languageProgressTitle: { color: '#E6F2F4', fontSize: 13, fontWeight: '900' }, languageProgressMeta: { color: '#78949C', fontSize: 10, fontWeight: '800', marginLeft: 'auto' }, languageProgressGrid: { flexDirection: 'row', gap: 7 }, languageProgressCell: { flex: 1, minHeight: 62, borderRadius: 14, borderWidth: 1, borderColor: '#2A3B3F', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center', paddingVertical: 8 }, languageProgressCellActive: { borderColor: '#5FB8C9', backgroundColor: '#163039' }, languageProgressLevel: { color: '#DCE6E1', fontSize: 12, fontWeight: '900' }, languageProgressAccuracy: { color: '#8EE0B5', fontSize: 13, fontWeight: '900', marginTop: 3 }, languageProgressCount: { color: '#718079', fontSize: 9, fontWeight: '800', marginTop: 2 },
   languagePage: { padding: 22, paddingBottom: 60, backgroundColor: '#0A0E0D' }, languageChoices: { gap: 9, marginBottom: 20 }, languageChoice: { minHeight: 67, borderRadius: 17, borderWidth: 1, borderColor: '#293631', backgroundColor: '#121815', paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center' }, languageChoiceActive: { borderColor: '#5FB8C9', backgroundColor: '#12252B' }, languageChoiceName: { color: '#DCE6E1', fontSize: 15, fontWeight: '800' }, languageChoiceNative: { color: '#70827A', fontSize: 12, marginLeft: 'auto' }, cefrRow: { flexDirection: 'row', gap: 7 }, cefrButton: { flex: 1, height: 48, borderRadius: 14, borderWidth: 1, borderColor: '#2A3530', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center' }, cefrText: { color: '#A1ACA6', fontWeight: '900' }, levelHelp: { color: '#718079', fontSize: 11, lineHeight: 17, marginTop: 9, marginBottom: 14 }, skillList: { gap: 9, marginBottom: 18 }, skillCard: { minHeight: 72, borderRadius: 17, borderWidth: 1, borderColor: '#29332F', backgroundColor: '#121815', padding: 13, flexDirection: 'row', alignItems: 'center' }, skillCardActive: { borderColor: '#417B86', backgroundColor: '#102126' }, skillCheck: { width: 29, height: 29, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', alignItems: 'center', justifyContent: 'center', marginRight: 12 }, skillCheckActive: { backgroundColor: '#5FB8C9', borderColor: '#5FB8C9' }, skillTitle: { color: '#E4ECE8', fontSize: 13, fontWeight: '800' }, skillDetail: { color: '#718079', fontSize: 10, marginTop: 4 }, languageMethod: { borderRadius: 17, backgroundColor: '#121A17', borderWidth: 1, borderColor: '#29352F', padding: 15, marginBottom: 18 }, languageMethodTitle: { color: '#8EDCB6', fontSize: 13, fontWeight: '900' }, languageMethodText: { color: '#7E8C85', fontSize: 11, lineHeight: 18, marginTop: 6 },
   topicGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 }, topicCard: { width: '48%', minHeight: 176, padding: 16, borderRadius: 22, backgroundColor: '#121815', borderWidth: 1, borderColor: '#26312C' }, pressed: { opacity: 0.72, transform: [{ scale: 0.985 }] }, topicIcon: { width: 44, height: 44, borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginBottom: 15 }, topicIconText: { fontSize: 17, fontWeight: '900' }, topicTitle: { color: '#ECF2EF', fontWeight: '900', fontSize: 16 }, topicSubtitle: { color: '#84918A', fontSize: 11.5, lineHeight: 17, marginTop: 4 }, go: { fontSize: 12, fontWeight: '900', marginTop: 'auto' }, privacy: { textAlign: 'center', color: '#66736D', fontSize: 11, marginTop: 28 },
+  homeStatsLine: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: -18, marginBottom: 18 }, homeStatsText: { color: '#9AA9A2', fontSize: 11, fontWeight: '800', paddingHorizontal: 10, paddingVertical: 6, borderRadius: 999, backgroundColor: '#121A17', borderWidth: 1, borderColor: '#24302A' },
+  modeMiniRow: { flexDirection: 'row', gap: 10, marginBottom: 18 }, modeMiniCard: { flex: 1, borderRadius: 18, borderWidth: 1, borderColor: '#26312C', backgroundColor: '#111614', padding: 13 }, modeMiniTitle: { color: '#EEF6F2', fontSize: 14, fontWeight: '900', marginBottom: 10 }, modeMiniButtons: { flexDirection: 'row', gap: 7 }, modeMiniButton: { flex: 1, minHeight: 38, borderRadius: 13, borderWidth: 1, borderColor: '#334139', backgroundColor: '#16201B', alignItems: 'center', justifyContent: 'center' },
+  languageCompactCard: { minHeight: 86, borderRadius: 18, borderWidth: 1, borderColor: '#285262', backgroundColor: '#102027', flexDirection: 'row', alignItems: 'center', padding: 14, gap: 12, marginBottom: 22 },
   quizPage: { flex: 1, backgroundColor: '#0A0E0D' }, quizHeader: { height: 64, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 22, gap: 13 }, close: { fontSize: 32, color: '#829089', lineHeight: 34 }, progressTrack: { flex: 1, height: 7, borderRadius: 8, backgroundColor: '#202925', overflow: 'hidden' }, progressFill: { height: '100%', borderRadius: 8 }, counter: { color: '#78857F', fontWeight: '700', fontSize: 12 }, favoriteStar: { color: '#64716A', fontSize: 24 }, favoriteStarActive: { color: '#E6B759' }, quizBody: { padding: 22, paddingBottom: 32 }, metaRow: { flexDirection: 'row', alignItems: 'center' }, pill: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20, fontSize: 12, fontWeight: '800' }, difficulty: { marginLeft: 'auto', color: '#59655F', letterSpacing: 2, fontSize: 11 }, infiniteQuizHint: { color: '#9B8CB2', fontSize: 11, fontWeight: '800', marginTop: 12 }, questionImageWrap: { height: 190, overflow: 'hidden', borderRadius: 20, backgroundColor: '#17201C', marginTop: 20 }, questionImage: { width: '100%', height: '100%' }, question: { color: '#F1F6F3', fontSize: 28, lineHeight: 35, fontWeight: '800', marginTop: 22, marginBottom: 28 }, choices: { gap: 11 }, choice: { minHeight: 68, borderRadius: 17, borderWidth: 1.5, borderColor: '#2A3530', backgroundColor: '#131917', padding: 12, flexDirection: 'row', alignItems: 'center' }, choiceWithImage: { minHeight: 102 }, choiceImage: { width: 78, height: 78, borderRadius: 12, backgroundColor: '#0B100E', marginRight: 12 }, choiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#13271F' }, choiceWrong: { borderColor: '#E47D70', backgroundColor: '#291816' }, choiceLetter: { width: 38, height: 38, borderRadius: 12, backgroundColor: '#222B27', alignItems: 'center', justifyContent: 'center', marginRight: 13 }, choiceLetterCorrect: { backgroundColor: '#4EBA88' }, choiceLetterWrong: { backgroundColor: '#C96358' }, choiceLetterText: { color: '#A0ACA6', fontWeight: '800' }, choiceLetterActive: { color: '#07110C' }, choiceText: { color: '#E3EAE6', flex: 1, fontSize: 15, fontWeight: '600' }, choiceMark: { color: '#68D7A2', fontSize: 21, fontWeight: '900', marginHorizontal: 6 }, freeInput: { minHeight: 62, borderWidth: 1.5, borderColor: '#303B36', backgroundColor: '#131917', borderRadius: 17, paddingHorizontal: 17, color: '#EDF4F0', fontSize: 16 }, checkButton: { minHeight: 50, backgroundColor: '#68D7A2', borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginTop: 12 }, checkButtonText: { color: '#07110C', fontSize: 15, fontWeight: '900' }, acceptedAnswer: { color: '#F09A8E', fontSize: 13, fontWeight: '700', marginTop: 10 }, explanation: { borderRadius: 17, padding: 17, marginTop: 20, borderLeftWidth: 4 }, explanationCorrect: { backgroundColor: '#13251E', borderLeftColor: '#68D7A2' }, explanationWrong: { backgroundColor: '#281917', borderLeftColor: '#E47D70' }, explanationTitle: { color: '#EDF4F0', fontWeight: '800', fontSize: 16, marginBottom: 6 }, explanationText: { color: '#A4B0AA', lineHeight: 21 }, mediaCredit: { alignSelf: 'flex-start', marginTop: 12, paddingVertical: 6, paddingHorizontal: 9, borderRadius: 10, backgroundColor: '#0E1512', borderWidth: 1, borderColor: '#26342E' }, mediaCreditText: { color: '#8FA19A', fontSize: 11, fontWeight: '800' }, explanationActions: { flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 13 }, learnMore: { alignSelf: 'flex-start', paddingVertical: 5 }, learnMoreText: { color: '#83E3B3', fontWeight: '800', fontSize: 13 }, reportQuestion: { paddingVertical: 5, paddingHorizontal: 2 }, reportQuestionText: { color: '#8A9791', fontWeight: '800', fontSize: 13 },
   mapQuizPage: { flex: 1, backgroundColor: '#0A0E0D' }, mapQuestionPanel: { paddingHorizontal: 16, paddingTop: 4, paddingBottom: 10 }, mapQuestionText: { color: '#F1F6F3', fontSize: 20, lineHeight: 25, fontWeight: '900', marginTop: 10 }, mapStage: { flex: 1, marginHorizontal: 10, marginBottom: 8, borderRadius: 18, overflow: 'hidden', borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23' }, mapActionBar: { paddingHorizontal: 14, paddingTop: 10, paddingBottom: Platform.OS === 'android' ? 16 : 20, borderTopWidth: 1, borderTopColor: '#1F2925', backgroundColor: '#0A0E0D' }, mapResultCard: { borderRadius: 15, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 12, marginBottom: 10 },
   satelliteMapWrap: { height: 430, borderRadius: 14, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 10 }, satelliteMapFullScreen: { flex: 1, height: undefined, marginBottom: 0, borderWidth: 0, borderRadius: 0 }, satelliteMap: { flex: 1, backgroundColor: '#0F1D23' }, mapHint: { position: 'absolute', left: 12, right: 12, bottom: 10, color: '#D5E1DC', fontSize: 11, fontWeight: '800', textAlign: 'center', paddingHorizontal: 10, paddingVertical: 7, borderRadius: 999, backgroundColor: '#07110CCC', overflow: 'hidden' }, mapFeedback: { borderRadius: 16, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 14, marginTop: 10 }, mapFeedbackTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 6 }, mapFeedbackText: { color: '#8FA19A', fontSize: 12, lineHeight: 18 },

@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-06-27T12:48:40.447Z",
-  "imageCount": 99,
+  "generatedAt": "2026-07-26T09:19:36.317Z",
+  "imageCount": 138,
   "sources": [
     {
       "label": "La Joconde",
       "asset": "generated/art-la-joconde",
       "wikidata": null,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALeonard_de_Vinci_-_La_Joconde.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMona_Lisa.jpg",
       "license": "Public domain",
       "artist": "Leonardo da Vinci",
-      "credit": "Giorgione, de Enrico Maria Dal Pozzolo, traduit de l'italien par Anne Guglielmetti, Arles : Actes Sud, 2009, p. 229. ISBN 9782742784486",
+      "credit": "Musée du Louvre",
       "kind": "artwork"
     },
     {
@@ -126,10 +126,10 @@
       "label": "Le Radeau de La Méduse",
       "asset": "generated/art-le-radeau-de-la-meduse",
       "wikidata": null,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATh%C3%A9odore_G%C3%A9ricault_-_Le_Radeau_de_la_M%C3%A9duse.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATh%C3%A9odore_G%C3%A9ricault%2C_Le_Radeau_de_la_M%C3%A9duse.jpg",
       "license": "Public domain",
       "artist": "Théodore Géricault",
-      "credit": "Musée critique de la Sorbonne",
+      "credit": "wartburg.edu",
       "kind": "artwork"
     },
     {
@@ -196,10 +196,10 @@
       "label": "Le Baiser",
       "asset": "generated/art-le-baiser",
       "wikidata": null,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASmooches_(baby_and_child_kiss).jpg",
-      "license": "CC BY-SA 2.0",
-      "artist": "Yogi",
-      "credit": "uploaded to flickr at https://www.flickr.com/photos/yogi/87870568/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AThe_Kiss_by_Gustav_Klimt.jpg",
+      "license": "CC BY-SA 3.0",
+      "artist": "\nKuxu76",
+      "credit": "Own work",
       "kind": "artwork"
     },
     {
@@ -493,6 +493,136 @@
       "kind": "artwork"
     },
     {
+      "label": "Les Nympheas",
+      "asset": "generated/art-les-nympheas",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALe_bassin_aux_nymph%C3%A9as_-_Claude_Monet.jpg",
+      "license": "Public domain",
+      "artist": "Claude Monet",
+      "credit": "1. Private collectioninstitution QS:P195,somevalue,P3831,Q7687172. Christie's, LotFinder:  entry  5100003 (sale 7599, lot 16, london, 24 June 2008)",
+      "kind": "artwork"
+    },
+    {
+      "label": "Le Fils de l homme",
+      "asset": "generated/art-le-fils-de-l-homme",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALa_R%C3%A9volution_surr%C3%A9aliste%2C_n12%2C_1929.djvu",
+      "license": "Public domain",
+      "artist": "\nCollective",
+      "credit": "Bibliothèque nationale de France",
+      "kind": "artwork"
+    },
+    {
+      "label": "Les Deux Fridas",
+      "asset": "generated/art-les-deux-fridas",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGiuseppe_Campuzano_(izq.)_junto_a_Germain_Machuca_para_presentaci%C3%B3n_del_Museo_Travesti_del_Per%C3%BA_en_la_sala_Luis_Mir%C3%B3_Quesada_Garland_de_Miraflores.jpg",
+      "license": "CC BY-SA 4.0",
+      "artist": "Lapalabranecesaria",
+      "credit": "Own work",
+      "kind": "artwork"
+    },
+    {
+      "label": "La Gare Saint-Lazare",
+      "asset": "generated/art-la-gare-saint-lazare",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AClaude_Monet_-_The_Saint-Lazare_Station_-_Google_Art_Project.jpg",
+      "license": "Public domain",
+      "artist": "Claude Monet",
+      "credit": "wAHOCsl09dhUPw at Google Cultural Institute maximum zoom level",
+      "kind": "artwork"
+    },
+    {
+      "label": "Le Cirque",
+      "asset": "generated/art-le-cirque",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGeorges_Seurat_019.jpg",
+      "license": "Public domain",
+      "artist": "Georges Seurat",
+      "credit": "The Yorck Project (2002)       10.000 Meisterwerke der Malerei (DVD-ROM), distributed by DIRECTMEDIA Publishing GmbH.  ISBN:  3936122202. ",
+      "kind": "artwork"
+    },
+    {
+      "label": "La Danse",
+      "asset": "generated/art-la-danse",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AThe_Dance_by_Henri_Matisse_at_the_Hermitage.jpg",
+      "license": "CC BY-SA 4.0",
+      "artist": "Yair-haklai",
+      "credit": "Own work",
+      "kind": "artwork"
+    },
+    {
+      "label": "L Atelier du peintre",
+      "asset": "generated/art-l-atelier-du-peintre",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACourbet_LAtelier_du_peintre.jpg",
+      "license": "Public domain",
+      "artist": "Gustave Courbet",
+      "credit": "Unknown sourceUnknown source",
+      "kind": "artwork"
+    },
+    {
+      "label": "Whaam!",
+      "asset": "generated/art-whaam",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADrawing_for_'Whaam!'_cropped_2.JPG",
+      "license": "Public domain",
+      "artist": "w:Roy Lichtenstein",
+      "credit": "http://www.tate.org.uk/art/artworks/lichtenstein-drawing-for-whaam-t01131",
+      "kind": "artwork"
+    },
+    {
+      "label": "Marilyn Diptych",
+      "asset": "generated/art-marilyn-diptych",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMonroe_in_Niagara_(1953_publicity_photo).jpg",
+      "license": "Public domain",
+      "artist": "Gene Kornman",
+      "credit": "https://www.catawiki.com/fi/l/28112985-gene-korman-1897-1978-marilyn-monroe-niagara-1953",
+      "kind": "artwork"
+    },
+    {
+      "label": "Femme au chapeau",
+      "asset": "generated/art-femme-au-chapeau",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlbert_de_Belleroche_la_Femme_au_chapeau_jaune.jpg",
+      "license": "Public domain",
+      "artist": "Albert de Belleroche",
+      "credit": "Internet",
+      "kind": "artwork"
+    },
+    {
+      "label": "Le Tricheur a l as de carreau",
+      "asset": "generated/art-le-tricheur-a-l-as-de-carreau",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGeorges_de_La_Tour_Le_Tricheur_a_l'as_de_carreau_detail_de_l'as.jpg",
+      "license": "Public domain",
+      "artist": "Ferdine75",
+      "credit": "Own work",
+      "kind": "artwork"
+    },
+    {
+      "label": "Le Verrou",
+      "asset": "generated/art-le-verrou",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJean-Honor%C3%A9_Fragonard_009.jpg",
+      "license": "Public domain",
+      "artist": "Jean-Honoré Fragonard",
+      "credit": "The Yorck Project (2002)       10.000 Meisterwerke der Malerei (DVD-ROM), distributed by DIRECTMEDIA Publishing GmbH.  ISBN:  3936122202. ",
+      "kind": "artwork"
+    },
+    {
+      "label": "Le Bain turc",
+      "asset": "generated/art-le-bain-turc",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALe_Bain_Turc%2C_by_Jean_Auguste_Dominique_Ingres%2C_from_C2RMF.jpg",
+      "license": "Public domain",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "credit": "C2RMF: Galerie de tableaux en très haute définition: image page",
+      "kind": "artwork"
+    },
+    {
       "label": "Platon",
       "asset": "generated/platon",
       "wikidata": "http://www.wikidata.org/entity/Q859",
@@ -528,7 +658,7 @@
       "wikidata": "http://www.wikidata.org/entity/Q937",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albert Einstein Head cleaned.jpg",
       "license": "Public domain",
-      "artist": "Orren Jack Turner",
+      "artist": "Oren Jack Turner",
       "credit": "This image  is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3b46036.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
       "kind": "historical-figure"
     },
@@ -586,10 +716,10 @@
       "label": "Auguste",
       "asset": "generated/auguste",
       "wikidata": null,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APierre-Auguste_Renoir%2C_Portrait_of_Madame_Renoir_(c._1885%2C_small).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAuguste_Couder_BNF_Gallica.jpg",
       "license": "Public domain",
-      "artist": "Pierre-Auguste Renoir",
-      "credit": "[2].",
+      "artist": "UnknownUnknown . Upload, stitch and restoration by Jebulon",
+      "credit": "This file comes from Gallica Digital Library and is available under the digital ID btv1b8438630k",
       "kind": "historical-figure"
     },
     {
@@ -716,10 +846,10 @@
       "label": "Michel-Ange",
       "asset": "generated/michel-ange",
       "wikidata": null,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APortret_van_Ren%C3%A9_Michel_Slodtz_Michel-Ange_Slodtz._(titel_op_object)%2C_RP-P-2010-329-39.jpg",
-      "license": "CC0",
-      "artist": "Rijksmuseum",
-      "credit": "http://hdl.handle.net/10934/RM0001.COLLECT.495382",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMichel-Ange_Buonarotti.jpg",
+      "license": "Public domain",
+      "artist": "Nicolas de Larmessin and Esme de Boulonais",
+      "credit": "Isaac Bullart. Académie Des Sciences Et Des Arts. Amsterdam: Elzevier, 1682.",
       "kind": "historical-figure"
     },
     {
@@ -746,10 +876,10 @@
       "label": "Galilée",
       "asset": "generated/galilee",
       "wikidata": null,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGalileo-sustermans2.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGalileo-sustermans.jpg",
       "license": "Public domain",
       "artist": "Justus Sustermans",
-      "credit": "scan of 2D image as in notes below",
+      "credit": "mechanical reproduction of 2D image",
       "kind": "historical-figure"
     },
     {
@@ -966,10 +1096,10 @@
       "label": "Simone Veil",
       "asset": "generated/simone-veil",
       "wikidata": null,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJean_Veil.jpg",
-      "license": "CC BY-SA 4.0",
-      "artist": "Rémi",
-      "credit": "Own work",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASimone_Veil_bij_uitreiking_Four_Freedoms_Awards_in_Middelburg%2C_Bestanddeelnr_933-0124_-_Restoration.jpg",
+      "license": "CC0",
+      "artist": "Rob Croes / Adam Cuerden",
+      "credit": "http://proxy.handle.net/10648/ad3a7ec8-d0b4-102d-bcf8-003048976d84",
       "kind": "historical-figure"
     },
     {
@@ -990,6 +1120,266 @@
       "license": "Public domain",
       "artist": "Amedeo Modigliani",
       "credit": "http://www.zeno.org/Kunstwerke/B/Modigliani,+Amadeo%3A+Bildnis+Pablo+Picasso",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Christine de Pizan",
+      "asset": "generated/christine-de-pizan",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADe_Pisan_-_%C5%92uvres_po%C3%A9tiques%2C_tome_2.djvu",
+      "license": "Public domain",
+      "artist": "Christine de Pizan",
+      "credit": "Internet Archive identifier: oeuvrespotique02chriuoft",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Hildegarde de Bingen",
+      "asset": "generated/hildegarde-de-bingen",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APhilipp_Foltz_Der_Abschied_K%C3%B6nig_Ottos_vom_M%C3%BCnchner_Hof.jpg",
+      "license": "Public domain",
+      "artist": "Philipp Foltz",
+      "credit": "1. argolikivivliothiki.gr2. akg-images.de",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Olympe de Gouges",
+      "asset": "generated/olympe-de-gouges",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOlympe_de_Gouges.jpg",
+      "license": "Public domain",
+      "artist": "\nUnknown authorUnknown author",
+      "credit": "[1]",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Toussaint Louverture",
+      "asset": "generated/toussaint-louverture",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APortrait_de_Toussaint_Louverture_en_pied.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "Gallica, Bibliothèque nationale de France, département Estampes et photographie, RESERVEFOL-QB-201(146)",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Harriet Tubman",
+      "asset": "generated/harriet-tubman",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHarriet_Tubman_late_in_life3.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "Library of Congress CALL NUMBER:  Illus. in JK1881 .N357 sec. 16, No. 9 NAWSA Coll [Rare Book RR]",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Wangari Maathai",
+      "asset": "generated/wangari-maathai",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWangari_Maathai_in_Nairobi.jpg",
+      "license": "CC BY 2.0",
+      "artist": "Fredrick Onyango",
+      "credit": "https://www.flickr.com/photos/44222307@N00/269107766/",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Hypatie",
+      "asset": "generated/hypatie",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALa_Nouvelle_Hypatie%2C_2017.0.279.jpg",
+      "license": "CC0",
+      "artist": "Naudin, photograveur",
+      "credit": "https://www.parismuseescollections.paris.fr/fr/maison-de-victor-hugo/oeuvres/la-nouvelle-hypatie#infos-principales",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Avicenne",
+      "asset": "generated/avicenne",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAboalis_Avicenne%2C_m%C3%A9decin_CIPB0334.jpg",
+      "license": "Licence Ouverte",
+      "artist": "\nThévet, André, 1504-1592 (graveur)",
+      "credit": "This document belongs to the collections of the Bibliothèque interuniversitaire de santé. It was uploaded to Commons through a partnership with Wikimedia France.",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Averroes",
+      "asset": "generated/averroes",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAverroesColor.jpg",
+      "license": "Public domain",
+      "artist": "",
+      "credit": "",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Mansa Moussa",
+      "asset": "generated/mansa-moussa",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMansamusa.jpg",
+      "license": "Public domain",
+      "artist": "Cresques Abraham",
+      "credit": "Bibliothèque nationale de France\n",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Ramses II",
+      "asset": "generated/ramses-ii",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMummy_of_Ramses_II_by_Boston_Public_Library.jpg",
+      "license": "Public domain",
+      "artist": "William Vaughn Tupper\n\nFlickr uploader BPL",
+      "credit": "Flickr: Mummy of Ramses II",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Ashoka",
+      "asset": "generated/ashoka",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANaib_Subedar_Chhering_Mutup.jpg",
+      "license": "GODL-India",
+      "artist": "Indian Army",
+      "credit": "https://indianarmy.nic.in/Site/FormTemplete/frmPhotoGalleryWithMenuWithTitle.aspx?MnId=nn28V1PdKfonUPXfiehnWQ==&amp;ParentID=O+UKpfd4jd54AY195M4FWw==&amp;flag=jOaMI7WrSei4ErqN3IROrQ==",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Qin Shi Huang",
+      "asset": "generated/qin-shi-huang",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APortrait_of_Qin_Shi_Huang.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "National Geographic",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Sun Tzu",
+      "asset": "generated/sun-tzu",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%E5%90%B4%E5%8F%B8%E9%A9%AC%E5%AD%99%E6%AD%A6.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "Qing Palace Collection Picture Book. Beijing: Palace Museum Press. 1994.",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Wu Zetian",
+      "asset": "generated/wu-zetian",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AA_Tang_Dynasty_Empress_Wu_Zetian.JPG",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "https://imagesonline.bl.uk/asset/3335/\n\nImage taken from An 18th century album of portraits of 86 emperors of China, with Chinese historical notes. Originally published/produced in China, 18th century. (British Library, Shelfmark Or. 2231)",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Murasaki Shikibu",
+      "asset": "generated/murasaki-shikibu",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMurasaki_Shikibu.jpg",
+      "license": "Public domain",
+      "artist": "\nKikuchi Yōsai (1781 - 1878)",
+      "credit": "Wise Personages Past and Present containing portraits of more than five hundred loyalists, royal retainers and heroic women in history. (1868). [1]",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Tokugawa Ieyasu",
+      "asset": "generated/tokugawa-ieyasu",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATokugawa_Ieyasu.jpg",
+      "license": "Public domain",
+      "artist": "Traditionally attributed to Kano Tan'yu. Owned by the 7th Owari Tokugawa Muneharu.",
+      "credit": "Google Arts &amp; Culture  — portrait-of-tokugawa-ieyasu-as-a-shintō-deity-tōshō-daigongen/2AGhE_R2KySk0Q",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Soliman le Magnifique",
+      "asset": "generated/soliman-le-magnifique",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALe_Tour_du_monde_-_07.djvu",
+      "license": "Public domain",
+      "artist": "\nsous la direction d’Édouard Charton",
+      "credit": "http://gallica.bnf.fr",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Moctezuma II",
+      "asset": "generated/moctezuma-ii",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMoctezuma_Xocoyotzin_Newberry.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "Newberry Library: Vault Ayer MS 1168 Doc. 1 and 2",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Mustafa Kemal Ataturk",
+      "asset": "generated/mustafa-kemal-ataturk",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKemal_Atat%C3%BCrk_portrait.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing for more information.",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Ho Chi Minh",
+      "asset": "generated/ho-chi-minh",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHo_Chi_Minh_1946.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": "This image has been extracted from another file",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Simone de Beauvoir",
+      "asset": "generated/simone-de-beauvoir",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASartre_and_de_Beauvoir_at_Balzac_Memorial.jpg",
+      "license": "Public domain",
+      "artist": "Unknown. Copyright holder is Archives Gallimard at Paris, Archives Gallimard no longer exists",
+      "credit": "Schwarzer, Alice: Simone de Beauvoir, Reinbek, Rowohlt, 2007, ISBN: 978-3-498-06400-6, S. 68",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Hannah Arendt",
+      "asset": "generated/hannah-arendt",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHannah_Arendt_1924.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author",
+      "credit": " Young-Bruehl, Elisabeth        Yale University Press Hannah Arendt: For Love of the World  ISBN:  978-0-300-10588-9. ",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Alan Turing",
+      "asset": "generated/alan-turing",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlan_Turing_Aged_16.jpg",
+      "license": "Public domain",
+      "artist": "Possibly Arthur Reginald Chaffin (1893-1954)",
+      "credit": "http://www.turingarchive.org/viewer/?id=521&amp;title=4",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Emmy Noether",
+      "asset": "generated/emmy-noether",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANoether.jpg",
+      "license": "Public domain",
+      "artist": "Unknown authorUnknown author\n\nPublisher: Mathematical Association of America [3], Brooklyn Museum [4], Agnes Scott College [5], [6]",
+      "credit": "Emmy Noether (1882-1935), Archived",
+      "kind": "historical-figure"
+    },
+    {
+      "label": "Rosalind Franklin",
+      "asset": "generated/rosalind-franklin",
+      "wikidata": null,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEleanor_Roosevelt%2C_Dorothy_Lamour%2C_Rosalind_Russell%2C_and_Carol_Bruce_in_Washington%2C_Washington%2C_D.C_-_NARA_-_195323.jpg",
+      "license": "Public domain",
+      "artist": "\nUnknown authorUnknown author or not provided",
+      "credit": "U.S. National Archives and Records Administration",
       "kind": "historical-figure"
     }
   ]

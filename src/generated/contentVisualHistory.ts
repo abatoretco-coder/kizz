@@ -13,7 +13,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Léonard de Vinci ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Joconde est associée à Léonard de Vinci; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -28,7 +28,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-001-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Léonard de Vinci ?",
     "choices": [
       "La Joconde",
@@ -37,7 +37,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Naissance de Vénus"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Léonard de Vinci » est « La Joconde ».",
+    "explanation": "Léonard de Vinci est notamment associé à La Joconde.",
     "tags": [
       "arts",
       "peinture",
@@ -59,7 +59,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Joconde » est « Renaissance ».",
+    "explanation": "La Joconde est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -72,7 +72,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-001-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Léonard de Vinci ?",
     "choices": [
       "Italie",
@@ -81,7 +81,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Léonard de Vinci » est « Italie ».",
+    "explanation": "Léonard de Vinci est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -116,7 +116,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-002-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Qui a peint La Nuit étoilée ?",
     "choices": [
       "Vincent van Gogh",
@@ -125,7 +125,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Vincent van Gogh ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Nuit étoilée est associée à Vincent van Gogh; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -140,7 +140,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-002-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Vincent van Gogh ?",
     "choices": [
       "La Nuit étoilée",
@@ -149,7 +149,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Naissance de Vénus"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Vincent van Gogh » est « La Nuit étoilée ».",
+    "explanation": "Vincent van Gogh est notamment associé à La Nuit étoilée.",
     "tags": [
       "arts",
       "peinture",
@@ -171,7 +171,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Nuit étoilée » est « postimpressionnisme ».",
+    "explanation": "La Nuit étoilée est rangé ici dans le repère postimpressionnisme.",
     "tags": [
       "arts",
       "peinture",
@@ -193,7 +193,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Vincent van Gogh » est « Pays-Bas ».",
+    "explanation": "Vincent van Gogh est ici rattaché au repère Pays-Bas.",
     "tags": [
       "arts",
       "peinture",
@@ -228,7 +228,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-003-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Qui a peint La Jeune Fille à la perle ?",
     "choices": [
       "Johannes Vermeer",
@@ -237,7 +237,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Johannes Vermeer ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Jeune Fille à la perle est associée à Johannes Vermeer; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -261,7 +261,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Naissance de Vénus"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Johannes Vermeer » est « La Jeune Fille à la perle ».",
+    "explanation": "Johannes Vermeer est notamment associé à La Jeune Fille à la perle.",
     "tags": [
       "arts",
       "peinture",
@@ -283,7 +283,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Jeune Fille à la perle » est « baroque ».",
+    "explanation": "La Jeune Fille à la perle est rangé ici dans le repère baroque.",
     "tags": [
       "arts",
       "peinture",
@@ -296,7 +296,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-003-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Johannes Vermeer ?",
     "choices": [
       "Pays-Bas",
@@ -305,7 +305,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Johannes Vermeer » est « Pays-Bas ».",
+    "explanation": "Johannes Vermeer est ici rattaché au repère Pays-Bas.",
     "tags": [
       "arts",
       "peinture",
@@ -349,7 +349,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Sandro Botticelli ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Naissance de Vénus est associée à Sandro Botticelli; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -364,7 +364,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-004-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Sandro Botticelli ?",
     "choices": [
       "La Naissance de Vénus",
@@ -373,7 +373,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Sandro Botticelli » est « La Naissance de Vénus ».",
+    "explanation": "Sandro Botticelli est notamment associé à La Naissance de Vénus.",
     "tags": [
       "arts",
       "peinture",
@@ -395,7 +395,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Naissance de Vénus » est « Renaissance ».",
+    "explanation": "La Naissance de Vénus est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -408,7 +408,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-004-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Sandro Botticelli ?",
     "choices": [
       "Italie",
@@ -417,7 +417,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Sandro Botticelli » est « Italie ».",
+    "explanation": "Sandro Botticelli est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -452,7 +452,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-005-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Qui a peint La Liberté guidant le peuple ?",
     "choices": [
       "Eugène Delacroix",
@@ -461,7 +461,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Eugène Delacroix ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Liberté guidant le peuple est associée à Eugène Delacroix; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -476,7 +476,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-005-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Eugène Delacroix ?",
     "choices": [
       "La Liberté guidant le peuple",
@@ -485,7 +485,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Eugène Delacroix » est « La Liberté guidant le peuple ».",
+    "explanation": "Eugène Delacroix est notamment associé à La Liberté guidant le peuple.",
     "tags": [
       "arts",
       "peinture",
@@ -507,7 +507,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Liberté guidant le peuple » est « romantisme ».",
+    "explanation": "La Liberté guidant le peuple est rangé ici dans le repère romantisme.",
     "tags": [
       "arts",
       "peinture",
@@ -529,7 +529,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Eugène Delacroix » est « France ».",
+    "explanation": "Eugène Delacroix est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -564,7 +564,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-006-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Qui a peint La Grande Vague de Kanagawa ?",
     "choices": [
       "Hokusai",
@@ -573,7 +573,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Hokusai ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Grande Vague de Kanagawa est associée à Hokusai; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -597,7 +597,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Hokusai » est « La Grande Vague de Kanagawa ».",
+    "explanation": "Hokusai est notamment associé à La Grande Vague de Kanagawa.",
     "tags": [
       "arts",
       "peinture",
@@ -619,7 +619,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Grande Vague de Kanagawa » est « ukiyo-e ».",
+    "explanation": "La Grande Vague de Kanagawa est rangé ici dans le repère ukiyo-e.",
     "tags": [
       "arts",
       "peinture",
@@ -641,7 +641,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Hokusai » est « Japon ».",
+    "explanation": "Hokusai est ici rattaché au repère Japon.",
     "tags": [
       "arts",
       "peinture",
@@ -685,7 +685,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Diego Vélasquez ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Les Ménines est associée à Diego Vélasquez; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -700,7 +700,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-007-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Diego Vélasquez ?",
     "choices": [
       "Les Ménines",
@@ -709,7 +709,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Diego Vélasquez » est « Les Ménines ».",
+    "explanation": "Diego Vélasquez est notamment associé à Les Ménines.",
     "tags": [
       "arts",
       "peinture",
@@ -731,7 +731,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Les Ménines » est « baroque ».",
+    "explanation": "Les Ménines est rangé ici dans le repère baroque.",
     "tags": [
       "arts",
       "peinture",
@@ -744,7 +744,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-007-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Diego Vélasquez ?",
     "choices": [
       "Espagne",
@@ -753,7 +753,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Diego Vélasquez » est « Espagne ».",
+    "explanation": "Diego Vélasquez est ici rattaché au repère Espagne.",
     "tags": [
       "arts",
       "peinture",
@@ -788,7 +788,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-008-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Qui a peint Guernica ?",
     "choices": [
       "Pablo Picasso",
@@ -797,7 +797,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Pablo Picasso ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Guernica est associée à Pablo Picasso; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -812,7 +812,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-008-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Pablo Picasso ?",
     "choices": [
       "Guernica",
@@ -821,7 +821,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Pablo Picasso » est « Guernica ».",
+    "explanation": "Pablo Picasso est notamment associé à Guernica.",
     "tags": [
       "arts",
       "peinture",
@@ -843,7 +843,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Guernica » est « cubisme ».",
+    "explanation": "Guernica est rangé ici dans le repère cubisme.",
     "tags": [
       "arts",
       "peinture",
@@ -865,7 +865,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Pablo Picasso » est « Espagne ».",
+    "explanation": "Pablo Picasso est ici rattaché au repère Espagne.",
     "tags": [
       "arts",
       "peinture",
@@ -900,7 +900,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-009-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Qui a peint Le Cri ?",
     "choices": [
       "Edvard Munch",
@@ -909,7 +909,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Edvard Munch ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Cri est associée à Edvard Munch; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -933,7 +933,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Edvard Munch » est « Le Cri ».",
+    "explanation": "Edvard Munch est notamment associé à Le Cri.",
     "tags": [
       "arts",
       "peinture",
@@ -955,7 +955,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Cri » est « expressionnisme ».",
+    "explanation": "Le Cri est rangé ici dans le repère expressionnisme.",
     "tags": [
       "arts",
       "peinture",
@@ -977,7 +977,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Edvard Munch » est « Norvège ».",
+    "explanation": "Edvard Munch est ici rattaché au repère Norvège.",
     "tags": [
       "arts",
       "peinture",
@@ -1021,7 +1021,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Claude Monet ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Impression, soleil levant est associée à Claude Monet; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1036,7 +1036,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-010-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Claude Monet ?",
     "choices": [
       "Impression, soleil levant",
@@ -1045,7 +1045,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Claude Monet » est « Impression, soleil levant ».",
+    "explanation": "Claude Monet est notamment associé à Impression, soleil levant.",
     "tags": [
       "arts",
       "peinture",
@@ -1067,7 +1067,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Impression, soleil levant » est « impressionnisme ».",
+    "explanation": "Impression, soleil levant est rangé ici dans le repère impressionnisme.",
     "tags": [
       "arts",
       "peinture",
@@ -1080,7 +1080,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-010-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Claude Monet ?",
     "choices": [
       "France",
@@ -1089,7 +1089,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Claude Monet » est « France ».",
+    "explanation": "Claude Monet est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -1124,7 +1124,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-011-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Qui a peint La Cène ?",
     "choices": [
       "Léonard de Vinci",
@@ -1133,7 +1133,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Léonard de Vinci ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Cène est associée à Léonard de Vinci; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1148,7 +1148,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-011-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Léonard de Vinci ?",
     "choices": [
       "La Cène",
@@ -1157,7 +1157,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Léonard de Vinci » est « La Cène ».",
+    "explanation": "Léonard de Vinci est notamment associé à La Cène.",
     "tags": [
       "arts",
       "peinture",
@@ -1179,7 +1179,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Cène » est « Renaissance ».",
+    "explanation": "La Cène est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -1201,7 +1201,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Léonard de Vinci » est « Italie ».",
+    "explanation": "Léonard de Vinci est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -1236,7 +1236,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-012-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Qui a peint La Création d’Adam ?",
     "choices": [
       "Michel-Ange",
@@ -1245,7 +1245,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Michel-Ange ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Création d’Adam est associée à Michel-Ange; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1269,7 +1269,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Michel-Ange » est « La Création d’Adam ».",
+    "explanation": "Michel-Ange est notamment associé à La Création d’Adam.",
     "tags": [
       "arts",
       "peinture",
@@ -1291,7 +1291,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Création d’Adam » est « Renaissance ».",
+    "explanation": "La Création d’Adam est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -1304,7 +1304,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-012-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Michel-Ange ?",
     "choices": [
       "Italie",
@@ -1313,7 +1313,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Michel-Ange » est « Italie ».",
+    "explanation": "Michel-Ange est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -1357,7 +1357,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Théodore Géricault ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Radeau de La Méduse est associée à Théodore Géricault; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1372,7 +1372,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-013-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Théodore Géricault ?",
     "choices": [
       "Le Radeau de La Méduse",
@@ -1381,7 +1381,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Théodore Géricault » est « Le Radeau de La Méduse ».",
+    "explanation": "Théodore Géricault est notamment associé à Le Radeau de La Méduse.",
     "tags": [
       "arts",
       "peinture",
@@ -1403,7 +1403,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Radeau de La Méduse » est « romantisme ».",
+    "explanation": "Le Radeau de La Méduse est rangé ici dans le repère romantisme.",
     "tags": [
       "arts",
       "peinture",
@@ -1416,7 +1416,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-013-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Théodore Géricault ?",
     "choices": [
       "France",
@@ -1425,7 +1425,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Théodore Géricault » est « France ».",
+    "explanation": "Théodore Géricault est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -1460,7 +1460,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-014-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Qui a peint Olympia ?",
     "choices": [
       "Édouard Manet",
@@ -1469,7 +1469,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Édouard Manet ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Olympia est associée à Édouard Manet; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1484,7 +1484,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-014-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Édouard Manet ?",
     "choices": [
       "Olympia",
@@ -1493,7 +1493,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Édouard Manet » est « Olympia ».",
+    "explanation": "Édouard Manet est notamment associé à Olympia.",
     "tags": [
       "arts",
       "peinture",
@@ -1515,7 +1515,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Olympia » est « réalisme ».",
+    "explanation": "Olympia est rangé ici dans le repère réalisme.",
     "tags": [
       "arts",
       "peinture",
@@ -1537,7 +1537,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Édouard Manet » est « France ».",
+    "explanation": "Édouard Manet est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -1572,7 +1572,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-015-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Qui a peint Un dimanche après-midi à l’île de la Grande Jatte ?",
     "choices": [
       "Georges Seurat",
@@ -1581,7 +1581,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Georges Seurat ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Un dimanche après-midi à l’île de la Grande Jatte est associée à Georges Seurat; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1605,7 +1605,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Georges Seurat » est « Un dimanche après-midi à l’île de la Grande Jatte ».",
+    "explanation": "Georges Seurat est notamment associé à Un dimanche après-midi à l’île de la Grande Jatte.",
     "tags": [
       "arts",
       "peinture",
@@ -1627,7 +1627,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Un dimanche après-midi à l’île de la Grande Jatte » est « pointillisme ».",
+    "explanation": "Un dimanche après-midi à l’île de la Grande Jatte est rangé ici dans le repère pointillisme.",
     "tags": [
       "arts",
       "peinture",
@@ -1640,7 +1640,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-015-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Georges Seurat ?",
     "choices": [
       "France",
@@ -1649,7 +1649,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Georges Seurat » est « France ».",
+    "explanation": "Georges Seurat est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -1693,7 +1693,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Vincent van Gogh ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Les Tournesols est associée à Vincent van Gogh; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1708,7 +1708,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-016-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Vincent van Gogh ?",
     "choices": [
       "Les Tournesols",
@@ -1717,7 +1717,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Vincent van Gogh » est « Les Tournesols ».",
+    "explanation": "Vincent van Gogh est notamment associé à Les Tournesols.",
     "tags": [
       "arts",
       "peinture",
@@ -1739,7 +1739,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Les Tournesols » est « postimpressionnisme ».",
+    "explanation": "Les Tournesols est rangé ici dans le repère postimpressionnisme.",
     "tags": [
       "arts",
       "peinture",
@@ -1752,7 +1752,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-016-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Vincent van Gogh ?",
     "choices": [
       "Pays-Bas",
@@ -1761,7 +1761,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Vincent van Gogh » est « Pays-Bas ».",
+    "explanation": "Vincent van Gogh est ici rattaché au repère Pays-Bas.",
     "tags": [
       "arts",
       "peinture",
@@ -1796,7 +1796,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-017-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Qui a peint American Gothic ?",
     "choices": [
       "Grant Wood",
@@ -1805,7 +1805,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Grant Wood ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "American Gothic est associée à Grant Wood; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1820,7 +1820,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-017-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Grant Wood ?",
     "choices": [
       "American Gothic",
@@ -1829,7 +1829,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Grant Wood » est « American Gothic ».",
+    "explanation": "Grant Wood est notamment associé à American Gothic.",
     "tags": [
       "arts",
       "peinture",
@@ -1851,7 +1851,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « American Gothic » est « réalisme régional ».",
+    "explanation": "American Gothic est rangé ici dans le repère réalisme régional.",
     "tags": [
       "arts",
       "peinture",
@@ -1864,7 +1864,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-017-country",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel pays sert de repère culturel principal pour Grant Wood ?",
     "choices": [
       "États-Unis",
@@ -1873,7 +1873,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Grant Wood » est « États-Unis ».",
+    "explanation": "Grant Wood est ici rattaché au repère États-Unis.",
     "tags": [
       "arts",
       "peinture",
@@ -1908,7 +1908,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-018-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Qui a peint La Persistance de la mémoire ?",
     "choices": [
       "Salvador Dalí",
@@ -1917,7 +1917,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Salvador Dalí ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Persistance de la mémoire est associée à Salvador Dalí; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -1941,7 +1941,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Salvador Dalí » est « La Persistance de la mémoire ».",
+    "explanation": "Salvador Dalí est notamment associé à La Persistance de la mémoire.",
     "tags": [
       "arts",
       "peinture",
@@ -1963,7 +1963,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Persistance de la mémoire » est « surréalisme ».",
+    "explanation": "La Persistance de la mémoire est rangé ici dans le repère surréalisme.",
     "tags": [
       "arts",
       "peinture",
@@ -1976,7 +1976,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-018-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Salvador Dalí ?",
     "choices": [
       "Espagne",
@@ -1985,7 +1985,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Salvador Dalí » est « Espagne ».",
+    "explanation": "Salvador Dalí est ici rattaché au repère Espagne.",
     "tags": [
       "arts",
       "peinture",
@@ -2029,7 +2029,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Edward Hopper ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Nighthawks est associée à Edward Hopper; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2044,7 +2044,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-019-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Edward Hopper ?",
     "choices": [
       "Nighthawks",
@@ -2053,7 +2053,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Edward Hopper » est « Nighthawks ».",
+    "explanation": "Edward Hopper est notamment associé à Nighthawks.",
     "tags": [
       "arts",
       "peinture",
@@ -2075,7 +2075,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Nighthawks » est « réalisme américain ».",
+    "explanation": "Nighthawks est rangé ici dans le repère réalisme américain.",
     "tags": [
       "arts",
       "peinture",
@@ -2088,7 +2088,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-019-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel pays sert de repère culturel principal pour Edward Hopper ?",
     "choices": [
       "États-Unis",
@@ -2097,7 +2097,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Edward Hopper » est « États-Unis ».",
+    "explanation": "Edward Hopper est ici rattaché au repère États-Unis.",
     "tags": [
       "arts",
       "peinture",
@@ -2132,7 +2132,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-020-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Qui a peint Le Baiser ?",
     "choices": [
       "Gustav Klimt",
@@ -2141,7 +2141,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Gustav Klimt ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Baiser est associée à Gustav Klimt; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2156,7 +2156,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-020-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quelle œuvre est associée à Gustav Klimt ?",
     "choices": [
       "Le Baiser",
@@ -2165,7 +2165,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Gustav Klimt » est « Le Baiser ».",
+    "explanation": "Gustav Klimt est notamment associé à Le Baiser.",
     "tags": [
       "arts",
       "peinture",
@@ -2187,7 +2187,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Baiser » est « symbolisme ».",
+    "explanation": "Le Baiser est rangé ici dans le repère symbolisme.",
     "tags": [
       "arts",
       "peinture",
@@ -2200,7 +2200,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-020-country",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel pays sert de repère culturel principal pour Gustav Klimt ?",
     "choices": [
       "Autriche",
@@ -2209,7 +2209,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Gustav Klimt » est « Autriche ».",
+    "explanation": "Gustav Klimt est ici rattaché au repère Autriche.",
     "tags": [
       "arts",
       "peinture",
@@ -2244,7 +2244,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-021-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Qui a peint Les Demoiselles d’Avignon ?",
     "choices": [
       "Pablo Picasso",
@@ -2253,7 +2253,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Pablo Picasso ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Les Demoiselles d’Avignon est associée à Pablo Picasso; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2268,7 +2268,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-021-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Pablo Picasso ?",
     "choices": [
       "Les Demoiselles d’Avignon",
@@ -2277,7 +2277,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Pablo Picasso » est « Les Demoiselles d’Avignon ».",
+    "explanation": "Pablo Picasso est notamment associé à Les Demoiselles d’Avignon.",
     "tags": [
       "arts",
       "peinture",
@@ -2299,7 +2299,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Les Demoiselles d’Avignon » est « cubisme ».",
+    "explanation": "Les Demoiselles d’Avignon est rangé ici dans le repère cubisme.",
     "tags": [
       "arts",
       "peinture",
@@ -2312,7 +2312,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-021-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Pablo Picasso ?",
     "choices": [
       "Espagne",
@@ -2321,7 +2321,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Pablo Picasso » est « Espagne ».",
+    "explanation": "Pablo Picasso est ici rattaché au repère Espagne.",
     "tags": [
       "arts",
       "peinture",
@@ -2356,7 +2356,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-022-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Qui a peint La Vénus d’Urbino ?",
     "choices": [
       "Titien",
@@ -2365,7 +2365,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Titien ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Vénus d’Urbino est associée à Titien; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2389,7 +2389,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Titien » est « La Vénus d’Urbino ».",
+    "explanation": "Titien est notamment associé à La Vénus d’Urbino.",
     "tags": [
       "arts",
       "peinture",
@@ -2411,7 +2411,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Vénus d’Urbino » est « Renaissance ».",
+    "explanation": "La Vénus d’Urbino est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -2424,7 +2424,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-022-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Titien ?",
     "choices": [
       "Italie",
@@ -2433,7 +2433,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Titien » est « Italie ».",
+    "explanation": "Titien est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -2477,7 +2477,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Giorgione ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Tempête est associée à Giorgione; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2492,7 +2492,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-023-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Giorgione ?",
     "choices": [
       "La Tempête",
@@ -2501,7 +2501,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Giorgione » est « La Tempête ».",
+    "explanation": "Giorgione est notamment associé à La Tempête.",
     "tags": [
       "arts",
       "peinture",
@@ -2523,7 +2523,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Tempête » est « Renaissance ».",
+    "explanation": "La Tempête est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -2545,7 +2545,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Giorgione » est « Italie ».",
+    "explanation": "Giorgione est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -2580,7 +2580,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-024-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Qui a peint Le Printemps ?",
     "choices": [
       "Sandro Botticelli",
@@ -2589,7 +2589,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Sandro Botticelli ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Printemps est associée à Sandro Botticelli; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2604,7 +2604,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-024-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Sandro Botticelli ?",
     "choices": [
       "Le Printemps",
@@ -2613,7 +2613,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Sandro Botticelli » est « Le Printemps ».",
+    "explanation": "Sandro Botticelli est notamment associé à Le Printemps.",
     "tags": [
       "arts",
       "peinture",
@@ -2635,7 +2635,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Printemps » est « Renaissance ».",
+    "explanation": "Le Printemps est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -2648,7 +2648,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-024-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Sandro Botticelli ?",
     "choices": [
       "Italie",
@@ -2657,7 +2657,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Sandro Botticelli » est « Italie ».",
+    "explanation": "Sandro Botticelli est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -2692,7 +2692,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-025-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Qui a peint La Laitière ?",
     "choices": [
       "Johannes Vermeer",
@@ -2701,7 +2701,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Sandro Botticelli"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Johannes Vermeer ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Laitière est associée à Johannes Vermeer; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2725,7 +2725,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Johannes Vermeer » est « La Laitière ».",
+    "explanation": "Johannes Vermeer est notamment associé à La Laitière.",
     "tags": [
       "arts",
       "peinture",
@@ -2747,7 +2747,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Laitière » est « baroque ».",
+    "explanation": "La Laitière est rangé ici dans le repère baroque.",
     "tags": [
       "arts",
       "peinture",
@@ -2760,7 +2760,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-025-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Johannes Vermeer ?",
     "choices": [
       "Pays-Bas",
@@ -2769,7 +2769,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Johannes Vermeer » est « Pays-Bas ».",
+    "explanation": "Johannes Vermeer est ici rattaché au repère Pays-Bas.",
     "tags": [
       "arts",
       "peinture",
@@ -2813,7 +2813,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Jérôme Bosch ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Jardin des délices est associée à Jérôme Bosch; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2828,7 +2828,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-026-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Jérôme Bosch ?",
     "choices": [
       "Le Jardin des délices",
@@ -2837,7 +2837,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Jérôme Bosch » est « Le Jardin des délices ».",
+    "explanation": "Jérôme Bosch est notamment associé à Le Jardin des délices.",
     "tags": [
       "arts",
       "peinture",
@@ -2859,7 +2859,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Jardin des délices » est « Renaissance nordique ».",
+    "explanation": "Le Jardin des délices est rangé ici dans le repère Renaissance nordique.",
     "tags": [
       "arts",
       "peinture",
@@ -2881,7 +2881,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jérôme Bosch » est « Pays-Bas ».",
+    "explanation": "Jérôme Bosch est ici rattaché au repère Pays-Bas.",
     "tags": [
       "arts",
       "peinture",
@@ -2894,7 +2894,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-027-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Qui a peint Les Ambassadeurs ?",
     "choices": [
       "Hans Holbein le Jeune",
@@ -2903,7 +2903,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Hans Holbein le Jeune ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Les Ambassadeurs est associée à Hans Holbein le Jeune; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -2918,7 +2918,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-027-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Hans Holbein le Jeune ?",
     "choices": [
       "Les Ambassadeurs",
@@ -2927,7 +2927,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Hans Holbein le Jeune » est « Les Ambassadeurs ».",
+    "explanation": "Hans Holbein le Jeune est notamment associé à Les Ambassadeurs.",
     "tags": [
       "arts",
       "peinture",
@@ -2949,7 +2949,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Les Ambassadeurs » est « Renaissance nordique ».",
+    "explanation": "Les Ambassadeurs est rangé ici dans le repère Renaissance nordique.",
     "tags": [
       "arts",
       "peinture",
@@ -2971,7 +2971,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Hans Holbein le Jeune » est « Allemagne ».",
+    "explanation": "Hans Holbein le Jeune est ici rattaché au repère Allemagne.",
     "tags": [
       "arts",
       "peinture",
@@ -2984,7 +2984,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-028-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Qui a peint La Ronde de nuit ?",
     "choices": [
       "Rembrandt",
@@ -2993,7 +2993,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Rembrandt ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Ronde de nuit est associée à Rembrandt; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3017,7 +3017,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Rembrandt » est « La Ronde de nuit ».",
+    "explanation": "Rembrandt est notamment associé à La Ronde de nuit.",
     "tags": [
       "arts",
       "peinture",
@@ -3039,7 +3039,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Ronde de nuit » est « baroque ».",
+    "explanation": "La Ronde de nuit est rangé ici dans le repère baroque.",
     "tags": [
       "arts",
       "peinture",
@@ -3052,7 +3052,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-028-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Rembrandt ?",
     "choices": [
       "Pays-Bas",
@@ -3061,7 +3061,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Rembrandt » est « Pays-Bas ».",
+    "explanation": "Rembrandt est ici rattaché au repère Pays-Bas.",
     "tags": [
       "arts",
       "peinture",
@@ -3083,7 +3083,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Francisco de Goya ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Saturne dévorant un de ses fils est associée à Francisco de Goya; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3098,7 +3098,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-029-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Francisco de Goya ?",
     "choices": [
       "Saturne dévorant un de ses fils",
@@ -3107,7 +3107,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Francisco de Goya » est « Saturne dévorant un de ses fils ».",
+    "explanation": "Francisco de Goya est notamment associé à Saturne dévorant un de ses fils.",
     "tags": [
       "arts",
       "peinture",
@@ -3129,7 +3129,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Saturne dévorant un de ses fils » est « romantisme noir ».",
+    "explanation": "Saturne dévorant un de ses fils est rangé ici dans le repère romantisme noir.",
     "tags": [
       "arts",
       "peinture",
@@ -3151,7 +3151,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Francisco de Goya » est « Espagne ».",
+    "explanation": "Francisco de Goya est ici rattaché au repère Espagne.",
     "tags": [
       "arts",
       "peinture",
@@ -3164,7 +3164,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-030-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Qui a peint Le Déjeuner sur l’herbe ?",
     "choices": [
       "Édouard Manet",
@@ -3173,7 +3173,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Édouard Manet ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Déjeuner sur l’herbe est associée à Édouard Manet; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3188,7 +3188,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-030-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Édouard Manet ?",
     "choices": [
       "Le Déjeuner sur l’herbe",
@@ -3197,7 +3197,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Édouard Manet » est « Le Déjeuner sur l’herbe ».",
+    "explanation": "Édouard Manet est notamment associé à Le Déjeuner sur l’herbe.",
     "tags": [
       "arts",
       "peinture",
@@ -3219,7 +3219,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Déjeuner sur l’herbe » est « réalisme ».",
+    "explanation": "Le Déjeuner sur l’herbe est rangé ici dans le repère réalisme.",
     "tags": [
       "arts",
       "peinture",
@@ -3232,7 +3232,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-030-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Édouard Manet ?",
     "choices": [
       "France",
@@ -3241,7 +3241,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Édouard Manet » est « France ».",
+    "explanation": "Édouard Manet est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -3254,7 +3254,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-031-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Qui a peint Bal du moulin de la Galette ?",
     "choices": [
       "Auguste Renoir",
@@ -3263,7 +3263,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Auguste Renoir ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Bal du moulin de la Galette est associée à Auguste Renoir; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3287,7 +3287,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Auguste Renoir » est « Bal du moulin de la Galette ».",
+    "explanation": "Auguste Renoir est notamment associé à Bal du moulin de la Galette.",
     "tags": [
       "arts",
       "peinture",
@@ -3309,7 +3309,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Bal du moulin de la Galette » est « impressionnisme ».",
+    "explanation": "Bal du moulin de la Galette est rangé ici dans le repère impressionnisme.",
     "tags": [
       "arts",
       "peinture",
@@ -3322,7 +3322,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-031-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Auguste Renoir ?",
     "choices": [
       "France",
@@ -3331,7 +3331,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Auguste Renoir » est « France ».",
+    "explanation": "Auguste Renoir est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -3353,7 +3353,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Edgar Degas ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Classe de danse est associée à Edgar Degas; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3368,7 +3368,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-032-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Edgar Degas ?",
     "choices": [
       "La Classe de danse",
@@ -3377,7 +3377,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Edgar Degas » est « La Classe de danse ».",
+    "explanation": "Edgar Degas est notamment associé à La Classe de danse.",
     "tags": [
       "arts",
       "peinture",
@@ -3399,7 +3399,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Classe de danse » est « impressionnisme ».",
+    "explanation": "La Classe de danse est rangé ici dans le repère impressionnisme.",
     "tags": [
       "arts",
       "peinture",
@@ -3421,7 +3421,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Edgar Degas » est « France ».",
+    "explanation": "Edgar Degas est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -3434,7 +3434,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-033-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Qui a peint Les Joueurs de cartes ?",
     "choices": [
       "Paul Cézanne",
@@ -3443,7 +3443,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Paul Cézanne ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Les Joueurs de cartes est associée à Paul Cézanne; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3458,7 +3458,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-033-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Paul Cézanne ?",
     "choices": [
       "Les Joueurs de cartes",
@@ -3467,7 +3467,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Paul Cézanne » est « Les Joueurs de cartes ».",
+    "explanation": "Paul Cézanne est notamment associé à Les Joueurs de cartes.",
     "tags": [
       "arts",
       "peinture",
@@ -3489,7 +3489,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Les Joueurs de cartes » est « postimpressionnisme ».",
+    "explanation": "Les Joueurs de cartes est rangé ici dans le repère postimpressionnisme.",
     "tags": [
       "arts",
       "peinture",
@@ -3502,7 +3502,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-033-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Paul Cézanne ?",
     "choices": [
       "France",
@@ -3511,7 +3511,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Paul Cézanne » est « France ».",
+    "explanation": "Paul Cézanne est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -3524,7 +3524,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-034-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Qui a peint Mont Sainte-Victoire ?",
     "choices": [
       "Paul Cézanne",
@@ -3533,7 +3533,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Paul Cézanne ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Mont Sainte-Victoire est associée à Paul Cézanne; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3557,7 +3557,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Paul Cézanne » est « Mont Sainte-Victoire ».",
+    "explanation": "Paul Cézanne est notamment associé à Mont Sainte-Victoire.",
     "tags": [
       "arts",
       "peinture",
@@ -3579,7 +3579,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Mont Sainte-Victoire » est « postimpressionnisme ».",
+    "explanation": "Mont Sainte-Victoire est rangé ici dans le repère postimpressionnisme.",
     "tags": [
       "arts",
       "peinture",
@@ -3592,7 +3592,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-034-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Paul Cézanne ?",
     "choices": [
       "France",
@@ -3601,7 +3601,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Paul Cézanne » est « France ».",
+    "explanation": "Paul Cézanne est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -3623,7 +3623,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Henri Rousseau ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Douanier Rousseau, Le Rêve est associée à Henri Rousseau; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3638,7 +3638,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-035-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Henri Rousseau ?",
     "choices": [
       "Le Douanier Rousseau, Le Rêve",
@@ -3647,7 +3647,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Henri Rousseau » est « Le Douanier Rousseau, Le Rêve ».",
+    "explanation": "Henri Rousseau est notamment associé à Le Douanier Rousseau, Le Rêve.",
     "tags": [
       "arts",
       "peinture",
@@ -3669,7 +3669,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Douanier Rousseau, Le Rêve » est « naïf ».",
+    "explanation": "Le Douanier Rousseau, Le Rêve est rangé ici dans le repère naïf.",
     "tags": [
       "arts",
       "peinture",
@@ -3691,7 +3691,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Henri Rousseau » est « France ».",
+    "explanation": "Henri Rousseau est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -3704,7 +3704,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-036-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Qui a peint Composition VIII ?",
     "choices": [
       "Vassily Kandinsky",
@@ -3713,7 +3713,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Vassily Kandinsky ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Composition VIII est associée à Vassily Kandinsky; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3728,7 +3728,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-036-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Vassily Kandinsky ?",
     "choices": [
       "Composition VIII",
@@ -3737,7 +3737,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Vassily Kandinsky » est « Composition VIII ».",
+    "explanation": "Vassily Kandinsky est notamment associé à Composition VIII.",
     "tags": [
       "arts",
       "peinture",
@@ -3759,7 +3759,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Composition VIII » est « abstraction ».",
+    "explanation": "Composition VIII est rangé ici dans le repère abstraction.",
     "tags": [
       "arts",
       "peinture",
@@ -3781,7 +3781,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Vassily Kandinsky » est « Russie ».",
+    "explanation": "Vassily Kandinsky est ici rattaché au repère Russie.",
     "tags": [
       "arts",
       "peinture",
@@ -3794,7 +3794,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-037-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Qui a peint Carré noir ?",
     "choices": [
       "Kasimir Malevitch",
@@ -3803,7 +3803,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Kasimir Malevitch ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Carré noir est associée à Kasimir Malevitch; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3827,7 +3827,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Kasimir Malevitch » est « Carré noir ».",
+    "explanation": "Kasimir Malevitch est notamment associé à Carré noir.",
     "tags": [
       "arts",
       "peinture",
@@ -3849,7 +3849,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Carré noir » est « suprématisme ».",
+    "explanation": "Carré noir est rangé ici dans le repère suprématisme.",
     "tags": [
       "arts",
       "peinture",
@@ -3862,7 +3862,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-037-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel pays sert de repère culturel principal pour Kasimir Malevitch ?",
     "choices": [
       "Russie",
@@ -3871,7 +3871,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Kasimir Malevitch » est « Russie ».",
+    "explanation": "Kasimir Malevitch est ici rattaché au repère Russie.",
     "tags": [
       "arts",
       "peinture",
@@ -3893,7 +3893,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Piet Mondrian ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Broadway Boogie-Woogie est associée à Piet Mondrian; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3908,7 +3908,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-038-work",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Piet Mondrian ?",
     "choices": [
       "Broadway Boogie-Woogie",
@@ -3917,7 +3917,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Piet Mondrian » est « Broadway Boogie-Woogie ».",
+    "explanation": "Piet Mondrian est notamment associé à Broadway Boogie-Woogie.",
     "tags": [
       "arts",
       "peinture",
@@ -3939,7 +3939,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Broadway Boogie-Woogie » est « néoplasticisme ».",
+    "explanation": "Broadway Boogie-Woogie est rangé ici dans le repère néoplasticisme.",
     "tags": [
       "arts",
       "peinture",
@@ -3961,7 +3961,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Piet Mondrian » est « Pays-Bas ».",
+    "explanation": "Piet Mondrian est ici rattaché au repère Pays-Bas.",
     "tags": [
       "arts",
       "peinture",
@@ -3974,7 +3974,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-039-artist",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Qui a peint Les Époux Arnolfini ?",
     "choices": [
       "Jan van Eyck",
@@ -3983,7 +3983,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Jan van Eyck ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Les Époux Arnolfini est associée à Jan van Eyck; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -3998,7 +3998,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-039-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quelle œuvre est associée à Jan van Eyck ?",
     "choices": [
       "Les Époux Arnolfini",
@@ -4007,7 +4007,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Jan van Eyck » est « Les Époux Arnolfini ».",
+    "explanation": "Jan van Eyck est notamment associé à Les Époux Arnolfini.",
     "tags": [
       "arts",
       "peinture",
@@ -4029,7 +4029,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Les Époux Arnolfini » est « Renaissance flamande ».",
+    "explanation": "Les Époux Arnolfini est rangé ici dans le repère Renaissance flamande.",
     "tags": [
       "arts",
       "peinture",
@@ -4042,7 +4042,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-039-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Jan van Eyck ?",
     "choices": [
       "Pays-Bas",
@@ -4051,7 +4051,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jan van Eyck » est « Pays-Bas ».",
+    "explanation": "Jan van Eyck est ici rattaché au repère Pays-Bas.",
     "tags": [
       "arts",
       "peinture",
@@ -4064,7 +4064,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-040-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Qui a peint La Bataille de San Romano ?",
     "choices": [
       "Paolo Uccello",
@@ -4073,7 +4073,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Paolo Uccello ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Bataille de San Romano est associée à Paolo Uccello; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4097,7 +4097,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Paolo Uccello » est « La Bataille de San Romano ».",
+    "explanation": "Paolo Uccello est notamment associé à La Bataille de San Romano.",
     "tags": [
       "arts",
       "peinture",
@@ -4119,7 +4119,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Bataille de San Romano » est « Renaissance ».",
+    "explanation": "La Bataille de San Romano est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -4132,7 +4132,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-040-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Paolo Uccello ?",
     "choices": [
       "Italie",
@@ -4141,7 +4141,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Paolo Uccello » est « Italie ».",
+    "explanation": "Paolo Uccello est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -4154,7 +4154,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-041-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Qui a peint La Flagellation du Christ ?",
     "choices": [
       "Piero della Francesca",
@@ -4163,7 +4163,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Piero della Francesca ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Flagellation du Christ est associée à Piero della Francesca; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4187,7 +4187,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Piero della Francesca » est « La Flagellation du Christ ».",
+    "explanation": "Piero della Francesca est notamment associé à La Flagellation du Christ.",
     "tags": [
       "arts",
       "peinture",
@@ -4209,7 +4209,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Flagellation du Christ » est « Renaissance ».",
+    "explanation": "La Flagellation du Christ est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -4231,7 +4231,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Piero della Francesca » est « Italie ».",
+    "explanation": "Piero della Francesca est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -4253,7 +4253,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Raphaël ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Madone Sixtine est associée à Raphaël; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4268,7 +4268,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-042-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Quelle œuvre est associée à Raphaël ?",
     "choices": [
       "La Madone Sixtine",
@@ -4277,7 +4277,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Raphaël » est « La Madone Sixtine ».",
+    "explanation": "Raphaël est notamment associé à La Madone Sixtine.",
     "tags": [
       "arts",
       "peinture",
@@ -4299,7 +4299,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "romantisme"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Madone Sixtine » est « Renaissance ».",
+    "explanation": "La Madone Sixtine est rangé ici dans le repère Renaissance.",
     "tags": [
       "arts",
       "peinture",
@@ -4312,7 +4312,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-042-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Raphaël ?",
     "choices": [
       "Italie",
@@ -4321,7 +4321,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Raphaël » est « Italie ».",
+    "explanation": "Raphaël est ici rattaché au repère Italie.",
     "tags": [
       "arts",
       "peinture",
@@ -4334,7 +4334,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-043-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Qui a peint La Mort de Marat ?",
     "choices": [
       "Jacques-Louis David",
@@ -4343,7 +4343,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Jacques-Louis David ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Mort de Marat est associée à Jacques-Louis David; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4358,7 +4358,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-043-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle œuvre est associée à Jacques-Louis David ?",
     "choices": [
       "La Mort de Marat",
@@ -4367,7 +4367,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Jacques-Louis David » est « La Mort de Marat ».",
+    "explanation": "Jacques-Louis David est notamment associé à La Mort de Marat.",
     "tags": [
       "arts",
       "peinture",
@@ -4389,7 +4389,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Mort de Marat » est « néoclassicisme ».",
+    "explanation": "La Mort de Marat est rangé ici dans le repère néoclassicisme.",
     "tags": [
       "arts",
       "peinture",
@@ -4402,7 +4402,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-043-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Jacques-Louis David ?",
     "choices": [
       "France",
@@ -4411,7 +4411,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jacques-Louis David » est « France ».",
+    "explanation": "Jacques-Louis David est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -4424,7 +4424,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-044-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Qui a peint Le Serment des Horaces ?",
     "choices": [
       "Jacques-Louis David",
@@ -4433,7 +4433,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Jacques-Louis David ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Serment des Horaces est associée à Jacques-Louis David; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4457,7 +4457,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Jacques-Louis David » est « Le Serment des Horaces ».",
+    "explanation": "Jacques-Louis David est notamment associé à Le Serment des Horaces.",
     "tags": [
       "arts",
       "peinture",
@@ -4479,7 +4479,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Serment des Horaces » est « néoclassicisme ».",
+    "explanation": "Le Serment des Horaces est rangé ici dans le repère néoclassicisme.",
     "tags": [
       "arts",
       "peinture",
@@ -4501,7 +4501,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jacques-Louis David » est « France ».",
+    "explanation": "Jacques-Louis David est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -4523,7 +4523,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Jean-Auguste-Dominique Ingres ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Grande Odalisque est associée à Jean-Auguste-Dominique Ingres; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4538,7 +4538,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-045-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Quelle œuvre est associée à Jean-Auguste-Dominique Ingres ?",
     "choices": [
       "La Grande Odalisque",
@@ -4547,7 +4547,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Jean-Auguste-Dominique Ingres » est « La Grande Odalisque ».",
+    "explanation": "Jean-Auguste-Dominique Ingres est notamment associé à La Grande Odalisque.",
     "tags": [
       "arts",
       "peinture",
@@ -4569,7 +4569,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Grande Odalisque » est « néoclassicisme ».",
+    "explanation": "La Grande Odalisque est rangé ici dans le repère néoclassicisme.",
     "tags": [
       "arts",
       "peinture",
@@ -4582,7 +4582,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-045-country",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Jean-Auguste-Dominique Ingres ?",
     "choices": [
       "France",
@@ -4591,7 +4591,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jean-Auguste-Dominique Ingres » est « France ».",
+    "explanation": "Jean-Auguste-Dominique Ingres est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -4604,7 +4604,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-046-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Qui a peint La Liberté ou la Mort ?",
     "choices": [
       "Jean-Baptiste Regnault",
@@ -4613,7 +4613,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Jean-Baptiste Regnault ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "La Liberté ou la Mort est associée à Jean-Baptiste Regnault; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4628,7 +4628,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-046-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle œuvre est associée à Jean-Baptiste Regnault ?",
     "choices": [
       "La Liberté ou la Mort",
@@ -4637,7 +4637,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Jean-Baptiste Regnault » est « La Liberté ou la Mort ».",
+    "explanation": "Jean-Baptiste Regnault est notamment associé à La Liberté ou la Mort.",
     "tags": [
       "arts",
       "peinture",
@@ -4659,7 +4659,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « La Liberté ou la Mort » est « néoclassicisme ».",
+    "explanation": "La Liberté ou la Mort est rangé ici dans le repère néoclassicisme.",
     "tags": [
       "arts",
       "peinture",
@@ -4672,7 +4672,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-046-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel pays sert de repère culturel principal pour Jean-Baptiste Regnault ?",
     "choices": [
       "France",
@@ -4681,7 +4681,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Japon"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jean-Baptiste Regnault » est « France ».",
+    "explanation": "Jean-Baptiste Regnault est ici rattaché au repère France.",
     "tags": [
       "arts",
       "peinture",
@@ -4694,7 +4694,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-047-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Qui a peint Le Voyageur contemplant une mer de nuages ?",
     "choices": [
       "Caspar David Friedrich",
@@ -4703,7 +4703,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Caspar David Friedrich ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Voyageur contemplant une mer de nuages est associée à Caspar David Friedrich; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4727,7 +4727,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Caspar David Friedrich » est « Le Voyageur contemplant une mer de nuages ».",
+    "explanation": "Caspar David Friedrich est notamment associé à Le Voyageur contemplant une mer de nuages.",
     "tags": [
       "arts",
       "peinture",
@@ -4749,7 +4749,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Voyageur contemplant une mer de nuages » est « romantisme ».",
+    "explanation": "Le Voyageur contemplant une mer de nuages est rangé ici dans le repère romantisme.",
     "tags": [
       "arts",
       "peinture",
@@ -4762,7 +4762,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-047-country",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel pays sert de repère culturel principal pour Caspar David Friedrich ?",
     "choices": [
       "Allemagne",
@@ -4771,7 +4771,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Caspar David Friedrich » est « Allemagne ».",
+    "explanation": "Caspar David Friedrich est ici rattaché au repère Allemagne.",
     "tags": [
       "arts",
       "peinture",
@@ -4793,7 +4793,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à William Turner ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Pluie, Vapeur et Vitesse est associée à William Turner; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4808,7 +4808,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-048-work",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Quelle œuvre est associée à William Turner ?",
     "choices": [
       "Pluie, Vapeur et Vitesse",
@@ -4817,7 +4817,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « William Turner » est « Pluie, Vapeur et Vitesse ».",
+    "explanation": "William Turner est notamment associé à Pluie, Vapeur et Vitesse.",
     "tags": [
       "arts",
       "peinture",
@@ -4839,7 +4839,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Pluie, Vapeur et Vitesse » est « romantisme ».",
+    "explanation": "Pluie, Vapeur et Vitesse est rangé ici dans le repère romantisme.",
     "tags": [
       "arts",
       "peinture",
@@ -4861,7 +4861,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « William Turner » est « Royaume-Uni ».",
+    "explanation": "William Turner est ici rattaché au repère Royaume-Uni.",
     "tags": [
       "arts",
       "peinture",
@@ -4874,7 +4874,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-049-artist",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "Qui a peint Le Monde de Christina ?",
     "choices": [
       "Andrew Wyeth",
@@ -4883,7 +4883,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Andrew Wyeth ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Le Monde de Christina est associée à Andrew Wyeth; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4898,7 +4898,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-049-work",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quelle œuvre est associée à Andrew Wyeth ?",
     "choices": [
       "Le Monde de Christina",
@@ -4907,7 +4907,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Andrew Wyeth » est « Le Monde de Christina ».",
+    "explanation": "Andrew Wyeth est notamment associé à Le Monde de Christina.",
     "tags": [
       "arts",
       "peinture",
@@ -4929,7 +4929,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Le Monde de Christina » est « réalisme américain ».",
+    "explanation": "Le Monde de Christina est rangé ici dans le repère réalisme américain.",
     "tags": [
       "arts",
       "peinture",
@@ -4942,7 +4942,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-049-country",
     "topicId": "arts",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel pays sert de repère culturel principal pour Andrew Wyeth ?",
     "choices": [
       "États-Unis",
@@ -4951,7 +4951,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Andrew Wyeth » est « États-Unis ».",
+    "explanation": "Andrew Wyeth est ici rattaché au repère États-Unis.",
     "tags": [
       "arts",
       "peinture",
@@ -4964,7 +4964,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-050-artist",
     "topicId": "arts",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Qui a peint Autoportrait au collier d’épines ?",
     "choices": [
       "Frida Kahlo",
@@ -4973,7 +4973,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Johannes Vermeer"
     ],
     "answerIndex": 0,
-    "explanation": "Cette œuvre est associée à Frida Kahlo ; l’image sert de repère visuel pour relier œuvre et auteur.",
+    "explanation": "Autoportrait au collier d’épines est associée à Frida Kahlo; l image sert de repère visuel pour relier œuvre et auteur.",
     "tags": [
       "arts",
       "peinture",
@@ -4997,7 +4997,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "La Jeune Fille à la perle"
     ],
     "answerIndex": 0,
-    "explanation": "L’œuvre repère pour « Frida Kahlo » est « Autoportrait au collier d’épines ».",
+    "explanation": "Frida Kahlo est notamment associé à Autoportrait au collier d’épines.",
     "tags": [
       "arts",
       "peinture",
@@ -5019,7 +5019,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "baroque"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère retenu pour « Autoportrait au collier d’épines » est « surréalisme ».",
+    "explanation": "Autoportrait au collier d’épines est rangé ici dans le repère surréalisme.",
     "tags": [
       "arts",
       "peinture",
@@ -5032,7 +5032,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "paint-bank-050-country",
     "topicId": "arts",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel pays sert de repère culturel principal pour Frida Kahlo ?",
     "choices": [
       "Mexique",
@@ -5041,7 +5041,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "France"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Frida Kahlo » est « Mexique ».",
+    "explanation": "Frida Kahlo est ici rattaché au repère Mexique.",
     "tags": [
       "arts",
       "peinture",
@@ -5050,6 +5050,1356 @@ export const visualHistoryQuestions: QuestionSeed[] = [
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
     "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Frida%20Kahlo"
+  },
+  {
+    "id": "paint-bank-051-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Les Nympheas ?",
+    "choices": [
+      "Claude Monet",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les Nympheas est associée à Claude Monet; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:impressionnisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Nympheas",
+    "imageAsset": "generated/art-les-nympheas",
+    "imageAlt": "Les Nympheas"
+  },
+  {
+    "id": "paint-bank-051-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Claude Monet ?",
+    "choices": [
+      "Les Nympheas",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Claude Monet est notamment associé à Les Nympheas.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Claude%20Monet"
+  },
+  {
+    "id": "paint-bank-051-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Les Nympheas ?",
+    "choices": [
+      "impressionnisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les Nympheas est rangé ici dans le repère impressionnisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Nympheas%20impressionnisme"
+  },
+  {
+    "id": "paint-bank-051-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Claude Monet ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Claude Monet est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Claude%20Monet"
+  },
+  {
+    "id": "paint-bank-052-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Le Fils de l homme ?",
+    "choices": [
+      "Rene Magritte",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Fils de l homme est associée à Rene Magritte; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:surrealisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Fils%20de%20l%20homme",
+    "imageAsset": "generated/art-le-fils-de-l-homme",
+    "imageAlt": "Le Fils de l homme"
+  },
+  {
+    "id": "paint-bank-052-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Rene Magritte ?",
+    "choices": [
+      "Le Fils de l homme",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rene Magritte est notamment associé à Le Fils de l homme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Rene%20Magritte"
+  },
+  {
+    "id": "paint-bank-052-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Le Fils de l homme ?",
+    "choices": [
+      "surrealisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Fils de l homme est rangé ici dans le repère surrealisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Fils%20de%20l%20homme%20surrealisme"
+  },
+  {
+    "id": "paint-bank-052-country",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "Quel pays sert de repère culturel principal pour Rene Magritte ?",
+    "choices": [
+      "Belgique",
+      "Italie",
+      "Pays-Bas",
+      "France"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rene Magritte est ici rattaché au repère Belgique.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Rene%20Magritte"
+  },
+  {
+    "id": "paint-bank-053-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Les Deux Fridas ?",
+    "choices": [
+      "Frida Kahlo",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les Deux Fridas est associée à Frida Kahlo; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:surrealisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Deux%20Fridas",
+    "imageAsset": "generated/art-les-deux-fridas",
+    "imageAlt": "Les Deux Fridas"
+  },
+  {
+    "id": "paint-bank-053-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Frida Kahlo ?",
+    "choices": [
+      "Les Deux Fridas",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Frida Kahlo est notamment associé à Les Deux Fridas.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Frida%20Kahlo"
+  },
+  {
+    "id": "paint-bank-053-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Les Deux Fridas ?",
+    "choices": [
+      "surrealisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les Deux Fridas est rangé ici dans le repère surrealisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Les%20Deux%20Fridas%20surrealisme"
+  },
+  {
+    "id": "paint-bank-053-country",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "Quel pays sert de repère culturel principal pour Frida Kahlo ?",
+    "choices": [
+      "Mexique",
+      "Italie",
+      "Pays-Bas",
+      "France"
+    ],
+    "answerIndex": 0,
+    "explanation": "Frida Kahlo est ici rattaché au repère Mexique.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Frida%20Kahlo"
+  },
+  {
+    "id": "paint-bank-054-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint La Gare Saint-Lazare ?",
+    "choices": [
+      "Claude Monet",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "La Gare Saint-Lazare est associée à Claude Monet; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:impressionnisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Gare%20Saint-Lazare",
+    "imageAsset": "generated/art-la-gare-saint-lazare",
+    "imageAlt": "La Gare Saint-Lazare"
+  },
+  {
+    "id": "paint-bank-054-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Claude Monet ?",
+    "choices": [
+      "La Gare Saint-Lazare",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Claude Monet est notamment associé à La Gare Saint-Lazare.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Claude%20Monet"
+  },
+  {
+    "id": "paint-bank-054-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout La Gare Saint-Lazare ?",
+    "choices": [
+      "impressionnisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "La Gare Saint-Lazare est rangé ici dans le repère impressionnisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Gare%20Saint-Lazare%20impressionnisme"
+  },
+  {
+    "id": "paint-bank-054-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Claude Monet ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Claude Monet est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Claude%20Monet"
+  },
+  {
+    "id": "paint-bank-055-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Le Cirque ?",
+    "choices": [
+      "Georges Seurat",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Cirque est associée à Georges Seurat; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:pointillisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Cirque",
+    "imageAsset": "generated/art-le-cirque",
+    "imageAlt": "Le Cirque"
+  },
+  {
+    "id": "paint-bank-055-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Georges Seurat ?",
+    "choices": [
+      "Le Cirque",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Georges Seurat est notamment associé à Le Cirque.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Georges%20Seurat"
+  },
+  {
+    "id": "paint-bank-055-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Le Cirque ?",
+    "choices": [
+      "pointillisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Cirque est rangé ici dans le repère pointillisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Cirque%20pointillisme"
+  },
+  {
+    "id": "paint-bank-055-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Georges Seurat ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Georges Seurat est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Georges%20Seurat"
+  },
+  {
+    "id": "paint-bank-056-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint La Danse ?",
+    "choices": [
+      "Henri Matisse",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "La Danse est associée à Henri Matisse; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:fauvisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Danse",
+    "imageAsset": "generated/art-la-danse",
+    "imageAlt": "La Danse"
+  },
+  {
+    "id": "paint-bank-056-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Henri Matisse ?",
+    "choices": [
+      "La Danse",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Henri Matisse est notamment associé à La Danse.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Henri%20Matisse"
+  },
+  {
+    "id": "paint-bank-056-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout La Danse ?",
+    "choices": [
+      "fauvisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "La Danse est rangé ici dans le repère fauvisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Danse%20fauvisme"
+  },
+  {
+    "id": "paint-bank-056-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Henri Matisse ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Henri Matisse est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Henri%20Matisse"
+  },
+  {
+    "id": "paint-bank-057-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint L Atelier du peintre ?",
+    "choices": [
+      "Gustave Courbet",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "L Atelier du peintre est associée à Gustave Courbet; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:realisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=L%20Atelier%20du%20peintre",
+    "imageAsset": "generated/art-l-atelier-du-peintre",
+    "imageAlt": "L Atelier du peintre"
+  },
+  {
+    "id": "paint-bank-057-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Gustave Courbet ?",
+    "choices": [
+      "L Atelier du peintre",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Gustave Courbet est notamment associé à L Atelier du peintre.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Gustave%20Courbet"
+  },
+  {
+    "id": "paint-bank-057-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout L Atelier du peintre ?",
+    "choices": [
+      "realisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "L Atelier du peintre est rangé ici dans le repère realisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=L%20Atelier%20du%20peintre%20realisme"
+  },
+  {
+    "id": "paint-bank-057-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Gustave Courbet ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Gustave Courbet est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Gustave%20Courbet"
+  },
+  {
+    "id": "paint-bank-058-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Whaam! ?",
+    "choices": [
+      "Roy Lichtenstein",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Whaam! est associée à Roy Lichtenstein; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:pop-art"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Whaam!",
+    "imageAsset": "generated/art-whaam",
+    "imageAlt": "Whaam!"
+  },
+  {
+    "id": "paint-bank-058-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Roy Lichtenstein ?",
+    "choices": [
+      "Whaam!",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Roy Lichtenstein est notamment associé à Whaam!.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Roy%20Lichtenstein"
+  },
+  {
+    "id": "paint-bank-058-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Whaam! ?",
+    "choices": [
+      "pop art",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Whaam! est rangé ici dans le repère pop art.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Whaam!%20pop%20art"
+  },
+  {
+    "id": "paint-bank-058-country",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "Quel pays sert de repère culturel principal pour Roy Lichtenstein ?",
+    "choices": [
+      "Etats-Unis",
+      "Italie",
+      "Pays-Bas",
+      "France"
+    ],
+    "answerIndex": 0,
+    "explanation": "Roy Lichtenstein est ici rattaché au repère Etats-Unis.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Roy%20Lichtenstein"
+  },
+  {
+    "id": "paint-bank-059-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Marilyn Diptych ?",
+    "choices": [
+      "Andy Warhol",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Marilyn Diptych est associée à Andy Warhol; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:pop-art"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Marilyn%20Diptych",
+    "imageAsset": "generated/art-marilyn-diptych",
+    "imageAlt": "Marilyn Diptych"
+  },
+  {
+    "id": "paint-bank-059-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Andy Warhol ?",
+    "choices": [
+      "Marilyn Diptych",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Andy Warhol est notamment associé à Marilyn Diptych.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Andy%20Warhol"
+  },
+  {
+    "id": "paint-bank-059-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Marilyn Diptych ?",
+    "choices": [
+      "pop art",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Marilyn Diptych est rangé ici dans le repère pop art.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Marilyn%20Diptych%20pop%20art"
+  },
+  {
+    "id": "paint-bank-059-country",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "Quel pays sert de repère culturel principal pour Andy Warhol ?",
+    "choices": [
+      "Etats-Unis",
+      "Italie",
+      "Pays-Bas",
+      "France"
+    ],
+    "answerIndex": 0,
+    "explanation": "Andy Warhol est ici rattaché au repère Etats-Unis.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Andy%20Warhol"
+  },
+  {
+    "id": "paint-bank-060-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Number 1A, 1948 ?",
+    "choices": [
+      "Jackson Pollock",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Number 1A, 1948 est associée à Jackson Pollock; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:expressionnisme-abstrait"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Number%201A%2C%201948",
+    "imageAsset": "great-wave",
+    "imageAlt": "Number 1A, 1948"
+  },
+  {
+    "id": "paint-bank-060-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Jackson Pollock ?",
+    "choices": [
+      "Number 1A, 1948",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Jackson Pollock est notamment associé à Number 1A, 1948.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Jackson%20Pollock"
+  },
+  {
+    "id": "paint-bank-060-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Number 1A, 1948 ?",
+    "choices": [
+      "expressionnisme abstrait",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Number 1A, 1948 est rangé ici dans le repère expressionnisme abstrait.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Number%201A%2C%201948%20expressionnisme%20abstrait"
+  },
+  {
+    "id": "paint-bank-060-country",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "Quel pays sert de repère culturel principal pour Jackson Pollock ?",
+    "choices": [
+      "Etats-Unis",
+      "Italie",
+      "Pays-Bas",
+      "France"
+    ],
+    "answerIndex": 0,
+    "explanation": "Jackson Pollock est ici rattaché au repère Etats-Unis.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Jackson%20Pollock"
+  },
+  {
+    "id": "paint-bank-061-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Femme au chapeau ?",
+    "choices": [
+      "Henri Matisse",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Femme au chapeau est associée à Henri Matisse; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:fauvisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Femme%20au%20chapeau",
+    "imageAsset": "generated/art-femme-au-chapeau",
+    "imageAlt": "Femme au chapeau"
+  },
+  {
+    "id": "paint-bank-061-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Henri Matisse ?",
+    "choices": [
+      "Femme au chapeau",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Henri Matisse est notamment associé à Femme au chapeau.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Henri%20Matisse"
+  },
+  {
+    "id": "paint-bank-061-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Femme au chapeau ?",
+    "choices": [
+      "fauvisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Femme au chapeau est rangé ici dans le repère fauvisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Femme%20au%20chapeau%20fauvisme"
+  },
+  {
+    "id": "paint-bank-061-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Henri Matisse ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Henri Matisse est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Henri%20Matisse"
+  },
+  {
+    "id": "paint-bank-062-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Le Tricheur a l as de carreau ?",
+    "choices": [
+      "Georges de La Tour",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Tricheur a l as de carreau est associée à Georges de La Tour; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:baroque"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Tricheur%20a%20l%20as%20de%20carreau",
+    "imageAsset": "generated/art-le-tricheur-a-l-as-de-carreau",
+    "imageAlt": "Le Tricheur a l as de carreau"
+  },
+  {
+    "id": "paint-bank-062-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Georges de La Tour ?",
+    "choices": [
+      "Le Tricheur a l as de carreau",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Georges de La Tour est notamment associé à Le Tricheur a l as de carreau.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Georges%20de%20La%20Tour"
+  },
+  {
+    "id": "paint-bank-062-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Le Tricheur a l as de carreau ?",
+    "choices": [
+      "baroque",
+      "Renaissance",
+      "postimpressionnisme",
+      "romantisme"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Tricheur a l as de carreau est rangé ici dans le repère baroque.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Tricheur%20a%20l%20as%20de%20carreau%20baroque"
+  },
+  {
+    "id": "paint-bank-062-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Georges de La Tour ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Georges de La Tour est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Georges%20de%20La%20Tour"
+  },
+  {
+    "id": "paint-bank-063-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Le Verrou ?",
+    "choices": [
+      "Jean-Honore Fragonard",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Verrou est associée à Jean-Honore Fragonard; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:rococo"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Verrou",
+    "imageAsset": "generated/art-le-verrou",
+    "imageAlt": "Le Verrou"
+  },
+  {
+    "id": "paint-bank-063-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Jean-Honore Fragonard ?",
+    "choices": [
+      "Le Verrou",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Jean-Honore Fragonard est notamment associé à Le Verrou.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Jean-Honore%20Fragonard"
+  },
+  {
+    "id": "paint-bank-063-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Le Verrou ?",
+    "choices": [
+      "rococo",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Verrou est rangé ici dans le repère rococo.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Verrou%20rococo"
+  },
+  {
+    "id": "paint-bank-063-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Jean-Honore Fragonard ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Jean-Honore Fragonard est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Jean-Honore%20Fragonard"
+  },
+  {
+    "id": "paint-bank-064-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint La Tour de Babel ?",
+    "choices": [
+      "Pieter Bruegel l Ancien",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "La Tour de Babel est associée à Pieter Bruegel l Ancien; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:renaissance-nordique"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Tour%20de%20Babel",
+    "imageAsset": "birth-venus",
+    "imageAlt": "La Tour de Babel"
+  },
+  {
+    "id": "paint-bank-064-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Pieter Bruegel l Ancien ?",
+    "choices": [
+      "La Tour de Babel",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Pieter Bruegel l Ancien est notamment associé à La Tour de Babel.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Pieter%20Bruegel%20l%20Ancien"
+  },
+  {
+    "id": "paint-bank-064-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout La Tour de Babel ?",
+    "choices": [
+      "Renaissance nordique",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "La Tour de Babel est rangé ici dans le repère Renaissance nordique.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=La%20Tour%20de%20Babel%20Renaissance%20nordique"
+  },
+  {
+    "id": "paint-bank-064-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Pieter Bruegel l Ancien ?",
+    "choices": [
+      "Pays-Bas",
+      "Italie",
+      "France",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Pieter Bruegel l Ancien est ici rattaché au repère Pays-Bas.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Pieter%20Bruegel%20l%20Ancien"
+  },
+  {
+    "id": "paint-bank-065-artist",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Qui a peint Le Bain turc ?",
+    "choices": [
+      "Jean-Auguste-Dominique Ingres",
+      "Léonard de Vinci",
+      "Vincent van Gogh",
+      "Johannes Vermeer"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Bain turc est associée à Jean-Auguste-Dominique Ingres; l image sert de repère visuel pour relier œuvre et auteur.",
+    "tags": [
+      "arts",
+      "peinture",
+      "banque-visuelle",
+      "mouvement:orientalisme"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Bain%20turc",
+    "imageAsset": "generated/art-le-bain-turc",
+    "imageAlt": "Le Bain turc"
+  },
+  {
+    "id": "paint-bank-065-work",
+    "topicId": "arts",
+    "difficulty": 3,
+    "prompt": "Quelle œuvre est associée à Jean-Auguste-Dominique Ingres ?",
+    "choices": [
+      "Le Bain turc",
+      "La Joconde",
+      "La Nuit étoilée",
+      "La Jeune Fille à la perle"
+    ],
+    "answerIndex": 0,
+    "explanation": "Jean-Auguste-Dominique Ingres est notamment associé à Le Bain turc.",
+    "tags": [
+      "arts",
+      "peinture",
+      "artiste",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Jean-Auguste-Dominique%20Ingres"
+  },
+  {
+    "id": "paint-bank-065-movement",
+    "topicId": "arts",
+    "difficulty": 2,
+    "prompt": "À quel mouvement rattache-t-on surtout Le Bain turc ?",
+    "choices": [
+      "orientalisme",
+      "Renaissance",
+      "postimpressionnisme",
+      "baroque"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le Bain turc est rangé ici dans le repère orientalisme.",
+    "tags": [
+      "arts",
+      "peinture",
+      "mouvement",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Le%20Bain%20turc%20orientalisme"
+  },
+  {
+    "id": "paint-bank-065-country",
+    "topicId": "arts",
+    "difficulty": 1,
+    "prompt": "Quel pays sert de repère culturel principal pour Jean-Auguste-Dominique Ingres ?",
+    "choices": [
+      "France",
+      "Italie",
+      "Pays-Bas",
+      "Japon"
+    ],
+    "answerIndex": 0,
+    "explanation": "Jean-Auguste-Dominique Ingres est ici rattaché au repère France.",
+    "tags": [
+      "arts",
+      "peinture",
+      "pays",
+      "banque-visuelle"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Jean-Auguste-Dominique%20Ingres"
   },
   {
     "id": "hist-figure-001-identity",
@@ -5100,7 +6450,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-001-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Cléopâtre VII ?",
     "choices": [
       "Égypte antique",
@@ -5109,7 +6459,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Cléopâtre VII » est « Égypte antique » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Cléopâtre VII est rattaché ici à Égypte antique; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5122,7 +6472,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-001-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Cléopâtre VII ?",
     "choices": [
       "Antiquité",
@@ -5168,7 +6518,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-002-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Jules César ?",
     "choices": [
       "chef politique et militaire",
@@ -5199,7 +6549,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jules César » est « Rome antique » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Jules César est rattaché ici à Rome antique; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5212,7 +6562,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-002-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Jules César ?",
     "choices": [
       "Antiquité",
@@ -5234,7 +6584,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-003-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : devient le premier empereur romain ?",
     "choices": [
       "Auguste",
@@ -5258,7 +6608,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-003-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Auguste ?",
     "choices": [
       "empereur",
@@ -5280,7 +6630,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-003-region",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Auguste ?",
     "choices": [
       "Rome antique",
@@ -5289,7 +6639,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Auguste » est « Rome antique » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Auguste est rattaché ici à Rome antique; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5302,7 +6652,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-003-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Auguste ?",
     "choices": [
       "Antiquité",
@@ -5324,7 +6674,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-004-identity",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : marque l’âge d’or d’Athènes ?",
     "choices": [
       "Périclès",
@@ -5370,7 +6720,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-004-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Périclès ?",
     "choices": [
       "Athènes",
@@ -5379,7 +6729,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Carthage"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Périclès » est « Athènes » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Périclès est rattaché ici à Athènes; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5392,7 +6742,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-004-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Périclès ?",
     "choices": [
       "Antiquité",
@@ -5438,7 +6788,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-005-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Hannibal Barca ?",
     "choices": [
       "général",
@@ -5460,7 +6810,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-005-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Hannibal Barca ?",
     "choices": [
       "Carthage",
@@ -5469,7 +6819,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Hannibal Barca » est « Carthage » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Hannibal Barca est rattaché ici à Carthage; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5482,7 +6832,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-005-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Hannibal Barca ?",
     "choices": [
       "Antiquité",
@@ -5504,7 +6854,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-006-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : fonde un vaste empire de la Grèce à l’Indus ?",
     "choices": [
       "Alexandre le Grand",
@@ -5528,7 +6878,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-006-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Alexandre le Grand ?",
     "choices": [
       "conquérant",
@@ -5559,7 +6909,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Alexandre le Grand » est « Macédoine » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Alexandre le Grand est rattaché ici à Macédoine; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5572,7 +6922,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-006-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Alexandre le Grand ?",
     "choices": [
       "Antiquité",
@@ -5640,7 +6990,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-007-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Socrate ?",
     "choices": [
       "Grèce",
@@ -5649,7 +6999,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Socrate » est « Grèce » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Socrate est rattaché ici à Grèce; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5662,7 +7012,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-007-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Socrate ?",
     "choices": [
       "Antiquité",
@@ -5708,7 +7058,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-008-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Platon ?",
     "choices": [
       "philosophe",
@@ -5739,7 +7089,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Platon » est « Grèce » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Platon est rattaché ici à Grèce; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5752,7 +7102,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-008-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Platon ?",
     "choices": [
       "Antiquité",
@@ -5774,7 +7124,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-009-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : travaille sur logique, sciences et politique ?",
     "choices": [
       "Aristote",
@@ -5798,7 +7148,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-009-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Aristote ?",
     "choices": [
       "philosophe",
@@ -5820,7 +7170,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-009-region",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Aristote ?",
     "choices": [
       "Grèce",
@@ -5829,7 +7179,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Aristote » est « Grèce » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Aristote est rattaché ici à Grèce; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5842,7 +7192,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-009-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Aristote ?",
     "choices": [
       "Antiquité",
@@ -5910,7 +7260,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-010-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Charlemagne ?",
     "choices": [
       "Empire carolingien",
@@ -5919,7 +7269,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Charlemagne » est « Empire carolingien » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Charlemagne est rattaché ici à Empire carolingien; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -5954,7 +7304,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-011-identity",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "Quel personnage correspond à cet indice : joue un rôle majeur dans la politique européenne ?",
     "choices": [
       "Aliénor d’Aquitaine",
@@ -5978,7 +7328,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-011-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Aliénor d’Aquitaine ?",
     "choices": [
       "reine",
@@ -6000,7 +7350,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-011-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "À quel espace historique rattache-t-on Aliénor d’Aquitaine ?",
     "choices": [
       "France et Angleterre",
@@ -6009,7 +7359,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Aliénor d’Aquitaine » est « France et Angleterre » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Aliénor d’Aquitaine est rattaché ici à France et Angleterre; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6068,7 +7418,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-012-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Jeanne d’Arc ?",
     "choices": [
       "figure militaire",
@@ -6090,7 +7440,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-012-region",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Jeanne d’Arc ?",
     "choices": [
       "France",
@@ -6099,7 +7449,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jeanne d’Arc » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Jeanne d’Arc est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6134,7 +7484,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-013-identity",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : reprend Jérusalem aux croisés en 1187 ?",
     "choices": [
       "Saladin",
@@ -6180,7 +7530,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-013-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Saladin ?",
     "choices": [
       "monde musulman",
@@ -6189,7 +7539,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Saladin » est « monde musulman » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Saladin est rattaché ici à monde musulman; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6248,7 +7598,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-014-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Gengis Khan ?",
     "choices": [
       "conquérant",
@@ -6270,7 +7620,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-014-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Gengis Khan ?",
     "choices": [
       "Mongolie",
@@ -6279,7 +7629,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Gengis Khan » est « Mongolie » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Gengis Khan est rattaché ici à Mongolie; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6314,7 +7664,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-015-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : raconte son voyage en Asie ?",
     "choices": [
       "Marco Polo",
@@ -6338,7 +7688,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-015-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Marco Polo ?",
     "choices": [
       "voyageur",
@@ -6369,7 +7719,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Marco Polo » est « Venise » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Marco Polo est rattaché ici à Venise; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6404,7 +7754,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-016-identity",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : prend Constantinople en 1453 ?",
     "choices": [
       "Mehmed II",
@@ -6450,7 +7800,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-016-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Mehmed II ?",
     "choices": [
       "Empire ottoman",
@@ -6459,7 +7809,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Mehmed II » est « Empire ottoman » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Mehmed II est rattaché ici à Empire ottoman; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6494,7 +7844,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-017-identity",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : incarne l’esprit polymathe de la Renaissance ?",
     "choices": [
       "Léonard de Vinci",
@@ -6518,7 +7868,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-017-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Léonard de Vinci ?",
     "choices": [
       "artiste et savant",
@@ -6540,7 +7890,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-017-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Léonard de Vinci ?",
     "choices": [
       "Italie",
@@ -6549,7 +7899,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Léonard de Vinci » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Léonard de Vinci est rattaché ici à Italie; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6562,7 +7912,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-017-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Léonard de Vinci ?",
     "choices": [
       "Renaissance",
@@ -6584,7 +7934,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-018-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : sculpte le David et peint la chapelle Sixtine ?",
     "choices": [
       "Michel-Ange",
@@ -6608,7 +7958,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-018-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Michel-Ange ?",
     "choices": [
       "artiste",
@@ -6639,7 +7989,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Michel-Ange » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Michel-Ange est rattaché ici à Italie; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6652,7 +8002,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-018-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Michel-Ange ?",
     "choices": [
       "Renaissance",
@@ -6674,7 +8024,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-019-identity",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : devient une référence de l’harmonie classique ?",
     "choices": [
       "Raphaël",
@@ -6720,7 +8070,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-019-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Raphaël ?",
     "choices": [
       "Italie",
@@ -6729,7 +8079,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Raphaël » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Raphaël est rattaché ici à Italie; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6742,7 +8092,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-019-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Raphaël ?",
     "choices": [
       "Renaissance",
@@ -6788,7 +8138,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-020-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Nicolas Copernic ?",
     "choices": [
       "astronome",
@@ -6810,7 +8160,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-020-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Nicolas Copernic ?",
     "choices": [
       "Pologne",
@@ -6819,7 +8169,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Nicolas Copernic » est « Pologne » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Nicolas Copernic est rattaché ici à Pologne; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6832,7 +8182,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-020-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Nicolas Copernic ?",
     "choices": [
       "Renaissance",
@@ -6854,7 +8204,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-021-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : observe le ciel avec la lunette astronomique ?",
     "choices": [
       "Galilée",
@@ -6878,7 +8228,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-021-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Galilée ?",
     "choices": [
       "savant",
@@ -6909,7 +8259,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Galilée » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Galilée est rattaché ici à Italie; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -6990,7 +8340,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-022-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Isaac Newton ?",
     "choices": [
       "Angleterre",
@@ -6999,7 +8349,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Isaac Newton » est « Angleterre » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Isaac Newton est rattaché ici à Angleterre; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7058,7 +8408,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-023-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux René Descartes ?",
     "choices": [
       "philosophe",
@@ -7089,7 +8439,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « René Descartes » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "René Descartes est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7124,7 +8474,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-024-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : donne son nom à l’époque élisabéthaine ?",
     "choices": [
       "Élisabeth Ire",
@@ -7148,7 +8498,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-024-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Élisabeth Ire ?",
     "choices": [
       "reine",
@@ -7170,7 +8520,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-024-region",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Élisabeth Ire ?",
     "choices": [
       "Angleterre",
@@ -7179,7 +8529,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Élisabeth Ire » est « Angleterre » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Élisabeth Ire est rattaché ici à Angleterre; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7260,7 +8610,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-025-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Louis XIV ?",
     "choices": [
       "France",
@@ -7269,7 +8619,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Louis XIV » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Louis XIV est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7328,7 +8678,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-026-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Pierre le Grand ?",
     "choices": [
       "tsar",
@@ -7350,7 +8700,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-026-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Pierre le Grand ?",
     "choices": [
       "Russie",
@@ -7359,7 +8709,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Pierre le Grand » est « Russie » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Pierre le Grand est rattaché ici à Russie; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7394,7 +8744,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-027-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : fait de la Russie une grande puissance européenne ?",
     "choices": [
       "Catherine II",
@@ -7418,7 +8768,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-027-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Catherine II ?",
     "choices": [
       "impératrice",
@@ -7449,7 +8799,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Catherine II » est « Russie » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Catherine II est rattaché ici à Russie; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7530,7 +8880,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-028-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Voltaire ?",
     "choices": [
       "France",
@@ -7539,7 +8889,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Voltaire » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Voltaire est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7598,7 +8948,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-029-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Montesquieu ?",
     "choices": [
       "philosophe",
@@ -7629,7 +8979,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Montesquieu » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Montesquieu est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7664,7 +9014,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-030-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : écrit Du contrat social ?",
     "choices": [
       "Jean-Jacques Rousseau",
@@ -7688,7 +9038,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-030-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Jean-Jacques Rousseau ?",
     "choices": [
       "philosophe",
@@ -7710,7 +9060,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-030-region",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 3,
     "prompt": "À quel espace historique rattache-t-on Jean-Jacques Rousseau ?",
     "choices": [
       "Genève",
@@ -7719,7 +9069,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Jean-Jacques Rousseau » est « Genève » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Jean-Jacques Rousseau est rattaché ici à Genève; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7800,7 +9150,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-031-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on George Washington ?",
     "choices": [
       "États-Unis",
@@ -7809,7 +9159,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « George Washington » est « États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "George Washington est rattaché ici à États-Unis; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7822,7 +9172,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-031-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout George Washington ?",
     "choices": [
       "époque contemporaine",
@@ -7844,7 +9194,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-032-identity",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : transforme la France et l’Europe après la Révolution ?",
     "choices": [
       "Napoléon Bonaparte",
@@ -7868,7 +9218,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-032-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Napoléon Bonaparte ?",
     "choices": [
       "empereur",
@@ -7899,7 +9249,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Napoléon Bonaparte » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Napoléon Bonaparte est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -7912,7 +9262,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-032-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Napoléon Bonaparte ?",
     "choices": [
       "époque contemporaine",
@@ -7934,7 +9284,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-033-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : contribue aux indépendances sud-américaines ?",
     "choices": [
       "Simón Bolívar",
@@ -7958,7 +9308,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-033-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Simón Bolívar ?",
     "choices": [
       "indépendantiste",
@@ -7989,7 +9339,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Simón Bolívar » est « Amérique du Sud » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Simón Bolívar est rattaché ici à Amérique du Sud; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8002,7 +9352,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-033-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Simón Bolívar ?",
     "choices": [
       "époque contemporaine",
@@ -8070,7 +9420,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-034-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Abraham Lincoln ?",
     "choices": [
       "États-Unis",
@@ -8079,7 +9429,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Abraham Lincoln » est « États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Abraham Lincoln est rattaché ici à États-Unis; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8092,7 +9442,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-034-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Abraham Lincoln ?",
     "choices": [
       "époque contemporaine",
@@ -8138,7 +9488,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-035-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Giuseppe Garibaldi ?",
     "choices": [
       "révolutionnaire",
@@ -8160,7 +9510,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-035-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Giuseppe Garibaldi ?",
     "choices": [
       "Italie",
@@ -8169,7 +9519,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Giuseppe Garibaldi » est « Italie » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Giuseppe Garibaldi est rattaché ici à Italie; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8182,7 +9532,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-035-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Giuseppe Garibaldi ?",
     "choices": [
       "époque contemporaine",
@@ -8204,7 +9554,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-036-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : joue un rôle central dans l’unité allemande ?",
     "choices": [
       "Otto von Bismarck",
@@ -8228,7 +9578,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-036-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Otto von Bismarck ?",
     "choices": [
       "chancelier",
@@ -8259,7 +9609,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Otto von Bismarck » est « Allemagne » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Otto von Bismarck est rattaché ici à Allemagne; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8272,7 +9622,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-036-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Otto von Bismarck ?",
     "choices": [
       "époque contemporaine",
@@ -8349,7 +9699,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Marie Curie » est « France et Pologne » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Marie Curie est rattaché ici à France et Pologne; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8362,7 +9712,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-037-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Marie Curie ?",
     "choices": [
       "époque contemporaine",
@@ -8384,7 +9734,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-038-identity",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : formule la relativité restreinte puis générale ?",
     "choices": [
       "Albert Einstein",
@@ -8408,7 +9758,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-038-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Albert Einstein ?",
     "choices": [
       "scientifique",
@@ -8430,7 +9780,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-038-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "À quel espace historique rattache-t-on Albert Einstein ?",
     "choices": [
       "Allemagne et États-Unis",
@@ -8439,7 +9789,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Albert Einstein » est « Allemagne et États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Albert Einstein est rattaché ici à Allemagne et États-Unis; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8452,7 +9802,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-038-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Albert Einstein ?",
     "choices": [
       "époque contemporaine",
@@ -8474,7 +9824,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-039-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : écrit un algorithme pour la machine analytique ?",
     "choices": [
       "Ada Lovelace",
@@ -8498,7 +9848,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-039-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Ada Lovelace ?",
     "choices": [
       "mathématicienne",
@@ -8520,7 +9870,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-039-region",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Ada Lovelace ?",
     "choices": [
       "Royaume-Uni",
@@ -8529,7 +9879,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Ada Lovelace » est « Royaume-Uni » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Ada Lovelace est rattaché ici à Royaume-Uni; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8542,7 +9892,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-039-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Ada Lovelace ?",
     "choices": [
       "époque contemporaine",
@@ -8610,7 +9960,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-040-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Charles Darwin ?",
     "choices": [
       "Royaume-Uni",
@@ -8619,7 +9969,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Charles Darwin » est « Royaume-Uni » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Charles Darwin est rattaché ici à Royaume-Uni; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8632,7 +9982,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-040-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Charles Darwin ?",
     "choices": [
       "époque contemporaine",
@@ -8678,7 +10028,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-041-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Florence Nightingale ?",
     "choices": [
       "réformatrice sanitaire",
@@ -8709,7 +10059,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Florence Nightingale » est « Royaume-Uni » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Florence Nightingale est rattaché ici à Royaume-Uni; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8722,7 +10072,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-041-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Florence Nightingale ?",
     "choices": [
       "époque contemporaine",
@@ -8744,7 +10094,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-042-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : défend la désobéissance civile non violente ?",
     "choices": [
       "Mahatma Gandhi",
@@ -8768,7 +10118,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-042-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Mahatma Gandhi ?",
     "choices": [
       "leader politique",
@@ -8799,7 +10149,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Mahatma Gandhi » est « Inde » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Mahatma Gandhi est rattaché ici à Inde; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8812,7 +10162,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-042-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Mahatma Gandhi ?",
     "choices": [
       "époque contemporaine",
@@ -8880,7 +10230,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-043-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Nelson Mandela ?",
     "choices": [
       "Afrique du Sud",
@@ -8889,7 +10239,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Nelson Mandela » est « Afrique du Sud » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Nelson Mandela est rattaché ici à Afrique du Sud; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8902,7 +10252,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-043-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Nelson Mandela ?",
     "choices": [
       "époque contemporaine",
@@ -8924,7 +10274,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-044-identity",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : porte le mouvement américain des droits civiques ?",
     "choices": [
       "Martin Luther King Jr.",
@@ -8948,7 +10298,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-044-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Martin Luther King Jr. ?",
     "choices": [
       "militant",
@@ -8979,7 +10329,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Martin Luther King Jr. » est « États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Martin Luther King Jr. est rattaché ici à États-Unis; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -8992,7 +10342,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-044-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Martin Luther King Jr. ?",
     "choices": [
       "époque contemporaine",
@@ -9014,7 +10364,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-045-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : son refus de céder sa place devient un symbole des droits civiques ?",
     "choices": [
       "Rosa Parks",
@@ -9038,7 +10388,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-045-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Rosa Parks ?",
     "choices": [
       "militante",
@@ -9060,7 +10410,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-045-region",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Rosa Parks ?",
     "choices": [
       "États-Unis",
@@ -9069,7 +10419,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Rosa Parks » est « États-Unis » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Rosa Parks est rattaché ici à États-Unis; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9082,7 +10432,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-045-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Rosa Parks ?",
     "choices": [
       "époque contemporaine",
@@ -9150,7 +10500,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-046-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Winston Churchill ?",
     "choices": [
       "Royaume-Uni",
@@ -9159,7 +10509,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Winston Churchill » est « Royaume-Uni » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Winston Churchill est rattaché ici à Royaume-Uni; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9172,7 +10522,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-046-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Winston Churchill ?",
     "choices": [
       "époque contemporaine",
@@ -9194,7 +10544,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-047-identity",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : incarne la France libre puis fonde la Ve République ?",
     "choices": [
       "Charles de Gaulle",
@@ -9218,7 +10568,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-047-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Charles de Gaulle ?",
     "choices": [
       "chef d’État",
@@ -9249,7 +10599,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Charles de Gaulle » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Charles de Gaulle est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9262,7 +10612,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-047-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Charles de Gaulle ?",
     "choices": [
       "époque contemporaine",
@@ -9284,7 +10634,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-048-identity",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : porte la loi légalisant l’IVG en France ?",
     "choices": [
       "Simone Veil",
@@ -9308,7 +10658,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-048-role",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Simone Veil ?",
     "choices": [
       "femme politique",
@@ -9330,7 +10680,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-048-region",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "À quel espace historique rattache-t-on Simone Veil ?",
     "choices": [
       "France",
@@ -9339,7 +10689,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Simone Veil » est « France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Simone Veil est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9352,7 +10702,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-048-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Simone Veil ?",
     "choices": [
       "époque contemporaine",
@@ -9374,7 +10724,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-049-identity",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 2,
     "prompt": "Quel personnage correspond à cet indice : développe une œuvre autobiographique et symbolique ?",
     "choices": [
       "Frida Kahlo",
@@ -9420,7 +10770,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-049-region",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "À quel espace historique rattache-t-on Frida Kahlo ?",
     "choices": [
       "Mexique",
@@ -9429,7 +10779,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Frida Kahlo » est « Mexique » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Frida Kahlo est rattaché ici à Mexique; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9442,7 +10792,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-049-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Frida Kahlo ?",
     "choices": [
       "époque contemporaine",
@@ -9464,7 +10814,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-050-identity",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Quel personnage correspond à cet indice : cofonde le cubisme ?",
     "choices": [
       "Pablo Picasso",
@@ -9488,7 +10838,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-050-role",
     "topicId": "history",
-    "difficulty": 3,
+    "difficulty": 2,
     "prompt": "Quel rôle décrit le mieux Pablo Picasso ?",
     "choices": [
       "artiste",
@@ -9510,7 +10860,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-050-region",
     "topicId": "history",
-    "difficulty": 1,
+    "difficulty": 3,
     "prompt": "À quel espace historique rattache-t-on Pablo Picasso ?",
     "choices": [
       "Espagne et France",
@@ -9519,7 +10869,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
       "Athènes"
     ],
     "answerIndex": 0,
-    "explanation": "Le repère géographique retenu pour « Pablo Picasso » est « Espagne et France » ; ce cadre aide à replacer le personnage dans son histoire.",
+    "explanation": "Pablo Picasso est rattaché ici à Espagne et France; ce cadre géographique aide à replacer le personnage dans son histoire.",
     "tags": [
       "histoire",
       "personnage-historique",
@@ -9532,7 +10882,7 @@ export const visualHistoryQuestions: QuestionSeed[] = [
   {
     "id": "hist-figure-050-era",
     "topicId": "history",
-    "difficulty": 2,
+    "difficulty": 1,
     "prompt": "Dans quelle période place-t-on surtout Pablo Picasso ?",
     "choices": [
       "époque contemporaine",
@@ -9550,5 +10900,2433 @@ export const visualHistoryQuestions: QuestionSeed[] = [
     ],
     "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
     "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Pablo%20Picasso"
+  },
+  {
+    "id": "hist-figure-051-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : defend la place des femmes dans la litterature medievale ?",
+    "choices": [
+      "Christine de Pizan",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Christine de Pizan est retenu ici pour ce repère : defend la place des femmes dans la litterature medievale.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:moyen-age"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Christine%20de%20Pizan",
+    "imageAsset": "generated/christine-de-pizan",
+    "imageAlt": "Portrait ou représentation de Christine de Pizan"
+  },
+  {
+    "id": "hist-figure-051-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Christine de Pizan ?",
+    "choices": [
+      "autrice",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Christine de Pizan est principalement présenté ici comme autrice.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Christine%20de%20Pizan"
+  },
+  {
+    "id": "hist-figure-051-region",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "À quel espace historique rattache-t-on Christine de Pizan ?",
+    "choices": [
+      "France",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Christine de Pizan est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Christine%20de%20Pizan"
+  },
+  {
+    "id": "hist-figure-051-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Christine de Pizan ?",
+    "choices": [
+      "Moyen Age",
+      "Antiquité",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Christine de Pizan appartient au repère Moyen Age.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Christine%20de%20Pizan"
+  },
+  {
+    "id": "hist-figure-052-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : compose, ecrit et developpe une pensee encyclopedique ?",
+    "choices": [
+      "Hildegarde de Bingen",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hildegarde de Bingen est retenu ici pour ce repère : compose, ecrit et developpe une pensee encyclopedique.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:moyen-age"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hildegarde%20de%20Bingen",
+    "imageAsset": "generated/hildegarde-de-bingen",
+    "imageAlt": "Portrait ou représentation de Hildegarde de Bingen"
+  },
+  {
+    "id": "hist-figure-052-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Hildegarde de Bingen ?",
+    "choices": [
+      "abbesse et savante",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hildegarde de Bingen est principalement présenté ici comme abbesse et savante.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hildegarde%20de%20Bingen"
+  },
+  {
+    "id": "hist-figure-052-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Hildegarde de Bingen ?",
+    "choices": [
+      "Saint-Empire",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hildegarde de Bingen est rattaché ici à Saint-Empire; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hildegarde%20de%20Bingen"
+  },
+  {
+    "id": "hist-figure-052-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Hildegarde de Bingen ?",
+    "choices": [
+      "Moyen Age",
+      "Antiquité",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hildegarde de Bingen appartient au repère Moyen Age.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hildegarde%20de%20Bingen"
+  },
+  {
+    "id": "hist-figure-053-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : redige la Declaration des droits de la femme et de la citoyenne ?",
+    "choices": [
+      "Olympe de Gouges",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Olympe de Gouges est retenu ici pour ce repère : redige la Declaration des droits de la femme et de la citoyenne.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Olympe%20de%20Gouges",
+    "imageAsset": "generated/olympe-de-gouges",
+    "imageAlt": "Portrait ou représentation de Olympe de Gouges"
+  },
+  {
+    "id": "hist-figure-053-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Olympe de Gouges ?",
+    "choices": [
+      "femme de lettres",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Olympe de Gouges est principalement présenté ici comme femme de lettres.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Olympe%20de%20Gouges"
+  },
+  {
+    "id": "hist-figure-053-region",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "À quel espace historique rattache-t-on Olympe de Gouges ?",
+    "choices": [
+      "France",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Olympe de Gouges est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Olympe%20de%20Gouges"
+  },
+  {
+    "id": "hist-figure-053-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Olympe de Gouges ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Olympe de Gouges appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Olympe%20de%20Gouges"
+  },
+  {
+    "id": "hist-figure-054-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : devient une figure majeure de la revolution haitienne ?",
+    "choices": [
+      "Toussaint Louverture",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Toussaint Louverture est retenu ici pour ce repère : devient une figure majeure de la revolution haitienne.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Toussaint%20Louverture",
+    "imageAsset": "generated/toussaint-louverture",
+    "imageAlt": "Portrait ou représentation de Toussaint Louverture"
+  },
+  {
+    "id": "hist-figure-054-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Toussaint Louverture ?",
+    "choices": [
+      "leader politique",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Toussaint Louverture est principalement présenté ici comme leader politique.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Toussaint%20Louverture"
+  },
+  {
+    "id": "hist-figure-054-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Toussaint Louverture ?",
+    "choices": [
+      "Saint-Domingue",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Toussaint Louverture est rattaché ici à Saint-Domingue; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Toussaint%20Louverture"
+  },
+  {
+    "id": "hist-figure-054-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Toussaint Louverture ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Toussaint Louverture appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Toussaint%20Louverture"
+  },
+  {
+    "id": "hist-figure-055-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : aide des personnes esclavisees a fuir par le reseau clandestin ?",
+    "choices": [
+      "Harriet Tubman",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Harriet Tubman est retenu ici pour ce repère : aide des personnes esclavisees a fuir par le reseau clandestin.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Harriet%20Tubman",
+    "imageAsset": "generated/harriet-tubman",
+    "imageAlt": "Portrait ou représentation de Harriet Tubman"
+  },
+  {
+    "id": "hist-figure-055-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Harriet Tubman ?",
+    "choices": [
+      "militante abolitionniste",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Harriet Tubman est principalement présenté ici comme militante abolitionniste.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Harriet%20Tubman"
+  },
+  {
+    "id": "hist-figure-055-region",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "À quel espace historique rattache-t-on Harriet Tubman ?",
+    "choices": [
+      "Etats-Unis",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Harriet Tubman est rattaché ici à Etats-Unis; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Harriet%20Tubman"
+  },
+  {
+    "id": "hist-figure-055-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Harriet Tubman ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Harriet Tubman appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Harriet%20Tubman"
+  },
+  {
+    "id": "hist-figure-056-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : fonde le Green Belt Movement et recoit le prix Nobel de la paix ?",
+    "choices": [
+      "Wangari Maathai",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wangari Maathai est retenu ici pour ce repère : fonde le Green Belt Movement et recoit le prix Nobel de la paix.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Wangari%20Maathai",
+    "imageAsset": "generated/wangari-maathai",
+    "imageAlt": "Portrait ou représentation de Wangari Maathai"
+  },
+  {
+    "id": "hist-figure-056-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Wangari Maathai ?",
+    "choices": [
+      "militante ecologiste",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wangari Maathai est principalement présenté ici comme militante ecologiste.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Wangari%20Maathai"
+  },
+  {
+    "id": "hist-figure-056-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Wangari Maathai ?",
+    "choices": [
+      "Kenya",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wangari Maathai est rattaché ici à Kenya; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Wangari%20Maathai"
+  },
+  {
+    "id": "hist-figure-056-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Wangari Maathai ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wangari Maathai appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Wangari%20Maathai"
+  },
+  {
+    "id": "hist-figure-057-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : enseigne les mathematiques et la philosophie a Alexandrie ?",
+    "choices": [
+      "Hypatie",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hypatie est retenu ici pour ce repère : enseigne les mathematiques et la philosophie a Alexandrie.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:antiquite"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hypatie",
+    "imageAsset": "generated/hypatie",
+    "imageAlt": "Portrait ou représentation de Hypatie"
+  },
+  {
+    "id": "hist-figure-057-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Hypatie ?",
+    "choices": [
+      "philosophe et mathematicienne",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hypatie est principalement présenté ici comme philosophe et mathematicienne.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hypatie"
+  },
+  {
+    "id": "hist-figure-057-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Hypatie ?",
+    "choices": [
+      "Alexandrie",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hypatie est rattaché ici à Alexandrie; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hypatie"
+  },
+  {
+    "id": "hist-figure-057-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Hypatie ?",
+    "choices": [
+      "Antiquite",
+      "Moyen Âge",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hypatie appartient au repère Antiquite.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hypatie"
+  },
+  {
+    "id": "hist-figure-058-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : marque la medecine et la philosophie du monde islamique medieval ?",
+    "choices": [
+      "Avicenne",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Avicenne est retenu ici pour ce repère : marque la medecine et la philosophie du monde islamique medieval.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:moyen-age"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Avicenne",
+    "imageAsset": "generated/avicenne",
+    "imageAlt": "Portrait ou représentation de Avicenne"
+  },
+  {
+    "id": "hist-figure-058-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Avicenne ?",
+    "choices": [
+      "savant et medecin",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Avicenne est principalement présenté ici comme savant et medecin.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Avicenne"
+  },
+  {
+    "id": "hist-figure-058-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Avicenne ?",
+    "choices": [
+      "Perse",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Avicenne est rattaché ici à Perse; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Avicenne"
+  },
+  {
+    "id": "hist-figure-058-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Avicenne ?",
+    "choices": [
+      "Moyen Age",
+      "Antiquité",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Avicenne appartient au repère Moyen Age.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Avicenne"
+  },
+  {
+    "id": "hist-figure-059-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : commente Aristote et influence la pensee medievale ?",
+    "choices": [
+      "Averroes",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Averroes est retenu ici pour ce repère : commente Aristote et influence la pensee medievale.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:moyen-age"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Averroes",
+    "imageAsset": "generated/averroes",
+    "imageAlt": "Portrait ou représentation de Averroes"
+  },
+  {
+    "id": "hist-figure-059-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Averroes ?",
+    "choices": [
+      "philosophe et medecin",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Averroes est principalement présenté ici comme philosophe et medecin.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Averroes"
+  },
+  {
+    "id": "hist-figure-059-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Averroes ?",
+    "choices": [
+      "Al-Andalus",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Averroes est rattaché ici à Al-Andalus; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Averroes"
+  },
+  {
+    "id": "hist-figure-059-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Averroes ?",
+    "choices": [
+      "Moyen Age",
+      "Antiquité",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Averroes appartient au repère Moyen Age.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Averroes"
+  },
+  {
+    "id": "hist-figure-060-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : incarne la puissance et la richesse de l Empire du Mali ?",
+    "choices": [
+      "Mansa Moussa",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mansa Moussa est retenu ici pour ce repère : incarne la puissance et la richesse de l Empire du Mali.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:moyen-age"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mansa%20Moussa",
+    "imageAsset": "generated/mansa-moussa",
+    "imageAlt": "Portrait ou représentation de Mansa Moussa"
+  },
+  {
+    "id": "hist-figure-060-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Mansa Moussa ?",
+    "choices": [
+      "souverain",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mansa Moussa est principalement présenté ici comme souverain.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mansa%20Moussa"
+  },
+  {
+    "id": "hist-figure-060-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Mansa Moussa ?",
+    "choices": [
+      "Empire du Mali",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mansa Moussa est rattaché ici à Empire du Mali; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mansa%20Moussa"
+  },
+  {
+    "id": "hist-figure-060-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Mansa Moussa ?",
+    "choices": [
+      "Moyen Age",
+      "Antiquité",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mansa Moussa appartient au repère Moyen Age.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mansa%20Moussa"
+  },
+  {
+    "id": "hist-figure-061-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : regne comme pharaon et developpe de grands chantiers ?",
+    "choices": [
+      "Hatchepsout",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hatchepsout est retenu ici pour ce repère : regne comme pharaon et developpe de grands chantiers.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:antiquite"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hatchepsout"
+  },
+  {
+    "id": "hist-figure-061-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Hatchepsout ?",
+    "choices": [
+      "pharaon",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hatchepsout est principalement présenté ici comme pharaon.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hatchepsout"
+  },
+  {
+    "id": "hist-figure-061-region",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "À quel espace historique rattache-t-on Hatchepsout ?",
+    "choices": [
+      "Egypte antique",
+      "Rome antique",
+      "Athènes",
+      "Carthage"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hatchepsout est rattaché ici à Egypte antique; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hatchepsout"
+  },
+  {
+    "id": "hist-figure-061-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Hatchepsout ?",
+    "choices": [
+      "Antiquite",
+      "Moyen Âge",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hatchepsout appartient au repère Antiquite.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hatchepsout"
+  },
+  {
+    "id": "hist-figure-062-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : laisse de nombreux monuments et marque le Nouvel Empire egyptien ?",
+    "choices": [
+      "Ramses II",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ramses II est retenu ici pour ce repère : laisse de nombreux monuments et marque le Nouvel Empire egyptien.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:antiquite"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ramses%20II",
+    "imageAsset": "generated/ramses-ii",
+    "imageAlt": "Portrait ou représentation de Ramses II"
+  },
+  {
+    "id": "hist-figure-062-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Ramses II ?",
+    "choices": [
+      "pharaon",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ramses II est principalement présenté ici comme pharaon.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ramses%20II"
+  },
+  {
+    "id": "hist-figure-062-region",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "À quel espace historique rattache-t-on Ramses II ?",
+    "choices": [
+      "Egypte antique",
+      "Rome antique",
+      "Athènes",
+      "Carthage"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ramses II est rattaché ici à Egypte antique; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ramses%20II"
+  },
+  {
+    "id": "hist-figure-062-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Ramses II ?",
+    "choices": [
+      "Antiquite",
+      "Moyen Âge",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ramses II appartient au repère Antiquite.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ramses%20II"
+  },
+  {
+    "id": "hist-figure-063-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : diffuse des edits et soutient le bouddhisme dans l empire Maurya ?",
+    "choices": [
+      "Ashoka",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ashoka est retenu ici pour ce repère : diffuse des edits et soutient le bouddhisme dans l empire Maurya.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:antiquite"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ashoka",
+    "imageAsset": "generated/ashoka",
+    "imageAlt": "Portrait ou représentation de Ashoka"
+  },
+  {
+    "id": "hist-figure-063-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Ashoka ?",
+    "choices": [
+      "empereur",
+      "reine",
+      "chef politique et militaire",
+      "homme d’État"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ashoka est principalement présenté ici comme empereur.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ashoka"
+  },
+  {
+    "id": "hist-figure-063-region",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "À quel espace historique rattache-t-on Ashoka ?",
+    "choices": [
+      "Inde",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ashoka est rattaché ici à Inde; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ashoka"
+  },
+  {
+    "id": "hist-figure-063-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Ashoka ?",
+    "choices": [
+      "Antiquite",
+      "Moyen Âge",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ashoka appartient au repère Antiquite.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ashoka"
+  },
+  {
+    "id": "hist-figure-064-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : unifie la Chine imperiale et associe son regne a l armee de terre cuite ?",
+    "choices": [
+      "Qin Shi Huang",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Qin Shi Huang est retenu ici pour ce repère : unifie la Chine imperiale et associe son regne a l armee de terre cuite.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:antiquite"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Qin%20Shi%20Huang",
+    "imageAsset": "generated/qin-shi-huang",
+    "imageAlt": "Portrait ou représentation de Qin Shi Huang"
+  },
+  {
+    "id": "hist-figure-064-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Qin Shi Huang ?",
+    "choices": [
+      "empereur",
+      "reine",
+      "chef politique et militaire",
+      "homme d’État"
+    ],
+    "answerIndex": 0,
+    "explanation": "Qin Shi Huang est principalement présenté ici comme empereur.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Qin%20Shi%20Huang"
+  },
+  {
+    "id": "hist-figure-064-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Qin Shi Huang ?",
+    "choices": [
+      "Chine",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Qin Shi Huang est rattaché ici à Chine; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Qin%20Shi%20Huang"
+  },
+  {
+    "id": "hist-figure-064-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Qin Shi Huang ?",
+    "choices": [
+      "Antiquite",
+      "Moyen Âge",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Qin Shi Huang appartient au repère Antiquite.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Qin%20Shi%20Huang"
+  },
+  {
+    "id": "hist-figure-065-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : est associe au traite militaire L Art de la guerre ?",
+    "choices": [
+      "Sun Tzu",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Sun Tzu est retenu ici pour ce repère : est associe au traite militaire L Art de la guerre.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:antiquite"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Sun%20Tzu",
+    "imageAsset": "generated/sun-tzu",
+    "imageAlt": "Portrait ou représentation de Sun Tzu"
+  },
+  {
+    "id": "hist-figure-065-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Sun Tzu ?",
+    "choices": [
+      "stratege",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Sun Tzu est principalement présenté ici comme stratege.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Sun%20Tzu"
+  },
+  {
+    "id": "hist-figure-065-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Sun Tzu ?",
+    "choices": [
+      "Chine",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Sun Tzu est rattaché ici à Chine; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Sun%20Tzu"
+  },
+  {
+    "id": "hist-figure-065-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Sun Tzu ?",
+    "choices": [
+      "Antiquite",
+      "Moyen Âge",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Sun Tzu appartient au repère Antiquite.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Sun%20Tzu"
+  },
+  {
+    "id": "hist-figure-066-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : devient la seule imperatrice regnante de l histoire chinoise ?",
+    "choices": [
+      "Wu Zetian",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wu Zetian est retenu ici pour ce repère : devient la seule imperatrice regnante de l histoire chinoise.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:moyen-age"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Wu%20Zetian",
+    "imageAsset": "generated/wu-zetian",
+    "imageAlt": "Portrait ou représentation de Wu Zetian"
+  },
+  {
+    "id": "hist-figure-066-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Wu Zetian ?",
+    "choices": [
+      "imperatrice",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wu Zetian est principalement présenté ici comme imperatrice.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Wu%20Zetian"
+  },
+  {
+    "id": "hist-figure-066-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Wu Zetian ?",
+    "choices": [
+      "Chine",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wu Zetian est rattaché ici à Chine; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Wu%20Zetian"
+  },
+  {
+    "id": "hist-figure-066-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Wu Zetian ?",
+    "choices": [
+      "Moyen Age",
+      "Antiquité",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wu Zetian appartient au repère Moyen Age.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Wu%20Zetian"
+  },
+  {
+    "id": "hist-figure-067-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : ecrit Le Dit du Genji dans le Japon de Heian ?",
+    "choices": [
+      "Murasaki Shikibu",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Murasaki Shikibu est retenu ici pour ce repère : ecrit Le Dit du Genji dans le Japon de Heian.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:moyen-age"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Murasaki%20Shikibu",
+    "imageAsset": "generated/murasaki-shikibu",
+    "imageAlt": "Portrait ou représentation de Murasaki Shikibu"
+  },
+  {
+    "id": "hist-figure-067-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Murasaki Shikibu ?",
+    "choices": [
+      "autrice",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Murasaki Shikibu est principalement présenté ici comme autrice.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Murasaki%20Shikibu"
+  },
+  {
+    "id": "hist-figure-067-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Murasaki Shikibu ?",
+    "choices": [
+      "Japon",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Murasaki Shikibu est rattaché ici à Japon; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Murasaki%20Shikibu"
+  },
+  {
+    "id": "hist-figure-067-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Murasaki Shikibu ?",
+    "choices": [
+      "Moyen Age",
+      "Antiquité",
+      "Renaissance",
+      "époque moderne"
+    ],
+    "answerIndex": 0,
+    "explanation": "Murasaki Shikibu appartient au repère Moyen Age.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Murasaki%20Shikibu"
+  },
+  {
+    "id": "hist-figure-068-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : fonde le shogunat Tokugawa au debut du XVIIe siecle ?",
+    "choices": [
+      "Tokugawa Ieyasu",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Tokugawa Ieyasu est retenu ici pour ce repère : fonde le shogunat Tokugawa au debut du XVIIe siecle.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-moderne"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Tokugawa%20Ieyasu",
+    "imageAsset": "generated/tokugawa-ieyasu",
+    "imageAlt": "Portrait ou représentation de Tokugawa Ieyasu"
+  },
+  {
+    "id": "hist-figure-068-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Tokugawa Ieyasu ?",
+    "choices": [
+      "shogun",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Tokugawa Ieyasu est principalement présenté ici comme shogun.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Tokugawa%20Ieyasu"
+  },
+  {
+    "id": "hist-figure-068-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Tokugawa Ieyasu ?",
+    "choices": [
+      "Japon",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Tokugawa Ieyasu est rattaché ici à Japon; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Tokugawa%20Ieyasu"
+  },
+  {
+    "id": "hist-figure-068-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Tokugawa Ieyasu ?",
+    "choices": [
+      "epoque moderne",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Tokugawa Ieyasu appartient au repère epoque moderne.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Tokugawa%20Ieyasu"
+  },
+  {
+    "id": "hist-figure-069-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : porte l Empire ottoman a son apogee politique et culturel ?",
+    "choices": [
+      "Soliman le Magnifique",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Soliman le Magnifique est retenu ici pour ce repère : porte l Empire ottoman a son apogee politique et culturel.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-moderne"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Soliman%20le%20Magnifique",
+    "imageAsset": "generated/soliman-le-magnifique",
+    "imageAlt": "Portrait ou représentation de Soliman le Magnifique"
+  },
+  {
+    "id": "hist-figure-069-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Soliman le Magnifique ?",
+    "choices": [
+      "sultan",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Soliman le Magnifique est principalement présenté ici comme sultan.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Soliman%20le%20Magnifique"
+  },
+  {
+    "id": "hist-figure-069-region",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "À quel espace historique rattache-t-on Soliman le Magnifique ?",
+    "choices": [
+      "Empire ottoman",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Soliman le Magnifique est rattaché ici à Empire ottoman; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Soliman%20le%20Magnifique"
+  },
+  {
+    "id": "hist-figure-069-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Soliman le Magnifique ?",
+    "choices": [
+      "epoque moderne",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Soliman le Magnifique appartient au repère epoque moderne.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Soliman%20le%20Magnifique"
+  },
+  {
+    "id": "hist-figure-070-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : dirige les Azteques lors de l arrivee des Espagnols ?",
+    "choices": [
+      "Moctezuma II",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Moctezuma II est retenu ici pour ce repère : dirige les Azteques lors de l arrivee des Espagnols.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-moderne"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Moctezuma%20II",
+    "imageAsset": "generated/moctezuma-ii",
+    "imageAlt": "Portrait ou représentation de Moctezuma II"
+  },
+  {
+    "id": "hist-figure-070-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Moctezuma II ?",
+    "choices": [
+      "souverain",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Moctezuma II est principalement présenté ici comme souverain.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Moctezuma%20II"
+  },
+  {
+    "id": "hist-figure-070-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Moctezuma II ?",
+    "choices": [
+      "Empire azteque",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Moctezuma II est rattaché ici à Empire azteque; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Moctezuma%20II"
+  },
+  {
+    "id": "hist-figure-070-era",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Dans quelle période place-t-on surtout Moctezuma II ?",
+    "choices": [
+      "epoque moderne",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Moctezuma II appartient au repère epoque moderne.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Moctezuma%20II"
+  },
+  {
+    "id": "hist-figure-071-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : fonde la Republique de Turquie et engage des reformes laiques ?",
+    "choices": [
+      "Mustafa Kemal Ataturk",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mustafa Kemal Ataturk est retenu ici pour ce repère : fonde la Republique de Turquie et engage des reformes laiques.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mustafa%20Kemal%20Ataturk",
+    "imageAsset": "generated/mustafa-kemal-ataturk",
+    "imageAlt": "Portrait ou représentation de Mustafa Kemal Ataturk"
+  },
+  {
+    "id": "hist-figure-071-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Mustafa Kemal Ataturk ?",
+    "choices": [
+      "chef d Etat",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mustafa Kemal Ataturk est principalement présenté ici comme chef d Etat.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mustafa%20Kemal%20Ataturk"
+  },
+  {
+    "id": "hist-figure-071-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Mustafa Kemal Ataturk ?",
+    "choices": [
+      "Turquie",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mustafa Kemal Ataturk est rattaché ici à Turquie; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mustafa%20Kemal%20Ataturk"
+  },
+  {
+    "id": "hist-figure-071-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Mustafa Kemal Ataturk ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mustafa Kemal Ataturk appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Mustafa%20Kemal%20Ataturk"
+  },
+  {
+    "id": "hist-figure-072-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : incarne le mouvement independantiste vietnamien ?",
+    "choices": [
+      "Ho Chi Minh",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ho Chi Minh est retenu ici pour ce repère : incarne le mouvement independantiste vietnamien.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ho%20Chi%20Minh",
+    "imageAsset": "generated/ho-chi-minh",
+    "imageAlt": "Portrait ou représentation de Ho Chi Minh"
+  },
+  {
+    "id": "hist-figure-072-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Ho Chi Minh ?",
+    "choices": [
+      "leader politique",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ho Chi Minh est principalement présenté ici comme leader politique.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ho%20Chi%20Minh"
+  },
+  {
+    "id": "hist-figure-072-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Ho Chi Minh ?",
+    "choices": [
+      "Vietnam",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ho Chi Minh est rattaché ici à Vietnam; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ho%20Chi%20Minh"
+  },
+  {
+    "id": "hist-figure-072-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Ho Chi Minh ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ho Chi Minh appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Ho%20Chi%20Minh"
+  },
+  {
+    "id": "hist-figure-073-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : publie Le Deuxieme Sexe et marque la pensee feministe ?",
+    "choices": [
+      "Simone de Beauvoir",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Simone de Beauvoir est retenu ici pour ce repère : publie Le Deuxieme Sexe et marque la pensee feministe.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Simone%20de%20Beauvoir",
+    "imageAsset": "generated/simone-de-beauvoir",
+    "imageAlt": "Portrait ou représentation de Simone de Beauvoir"
+  },
+  {
+    "id": "hist-figure-073-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Simone de Beauvoir ?",
+    "choices": [
+      "philosophe et autrice",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Simone de Beauvoir est principalement présenté ici comme philosophe et autrice.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Simone%20de%20Beauvoir"
+  },
+  {
+    "id": "hist-figure-073-region",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "À quel espace historique rattache-t-on Simone de Beauvoir ?",
+    "choices": [
+      "France",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Simone de Beauvoir est rattaché ici à France; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Simone%20de%20Beauvoir"
+  },
+  {
+    "id": "hist-figure-073-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Simone de Beauvoir ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Simone de Beauvoir appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Simone%20de%20Beauvoir"
+  },
+  {
+    "id": "hist-figure-074-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : analyse le totalitarisme et la responsabilite politique ?",
+    "choices": [
+      "Hannah Arendt",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hannah Arendt est retenu ici pour ce repère : analyse le totalitarisme et la responsabilite politique.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hannah%20Arendt",
+    "imageAsset": "generated/hannah-arendt",
+    "imageAlt": "Portrait ou représentation de Hannah Arendt"
+  },
+  {
+    "id": "hist-figure-074-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Hannah Arendt ?",
+    "choices": [
+      "philosophe",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hannah Arendt est principalement présenté ici comme philosophe.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hannah%20Arendt"
+  },
+  {
+    "id": "hist-figure-074-region",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "À quel espace historique rattache-t-on Hannah Arendt ?",
+    "choices": [
+      "Allemagne et Etats-Unis",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hannah Arendt est rattaché ici à Allemagne et Etats-Unis; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hannah%20Arendt"
+  },
+  {
+    "id": "hist-figure-074-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Hannah Arendt ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hannah Arendt appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Hannah%20Arendt"
+  },
+  {
+    "id": "hist-figure-075-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : joue un role cle dans la cryptanalyse et l informatique theorique ?",
+    "choices": [
+      "Alan Turing",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alan Turing est retenu ici pour ce repère : joue un role cle dans la cryptanalyse et l informatique theorique.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Alan%20Turing",
+    "imageAsset": "generated/alan-turing",
+    "imageAlt": "Portrait ou représentation de Alan Turing"
+  },
+  {
+    "id": "hist-figure-075-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Alan Turing ?",
+    "choices": [
+      "mathematicien",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alan Turing est principalement présenté ici comme mathematicien.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Alan%20Turing"
+  },
+  {
+    "id": "hist-figure-075-region",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "À quel espace historique rattache-t-on Alan Turing ?",
+    "choices": [
+      "Royaume-Uni",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alan Turing est rattaché ici à Royaume-Uni; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Alan%20Turing"
+  },
+  {
+    "id": "hist-figure-075-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Alan Turing ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alan Turing appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Alan%20Turing"
+  },
+  {
+    "id": "hist-figure-076-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : revolutionne l algebre et relie symetries et lois physiques ?",
+    "choices": [
+      "Emmy Noether",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Emmy Noether est retenu ici pour ce repère : revolutionne l algebre et relie symetries et lois physiques.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Emmy%20Noether",
+    "imageAsset": "generated/emmy-noether",
+    "imageAlt": "Portrait ou représentation de Emmy Noether"
+  },
+  {
+    "id": "hist-figure-076-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Emmy Noether ?",
+    "choices": [
+      "mathematicienne",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Emmy Noether est principalement présenté ici comme mathematicienne.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Emmy%20Noether"
+  },
+  {
+    "id": "hist-figure-076-region",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "À quel espace historique rattache-t-on Emmy Noether ?",
+    "choices": [
+      "Allemagne",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Emmy Noether est rattaché ici à Allemagne; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Emmy%20Noether"
+  },
+  {
+    "id": "hist-figure-076-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Emmy Noether ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Emmy Noether appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Emmy%20Noether"
+  },
+  {
+    "id": "hist-figure-077-identity",
+    "topicId": "history",
+    "difficulty": 3,
+    "prompt": "Quel personnage correspond à cet indice : produit des donnees decisives pour comprendre la structure de l ADN ?",
+    "choices": [
+      "Rosalind Franklin",
+      "Cléopâtre VII",
+      "Jules César",
+      "Auguste"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rosalind Franklin est retenu ici pour ce repère : produit des donnees decisives pour comprendre la structure de l ADN.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "banque-personnages",
+      "periode:epoque-contemporaine"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Rosalind%20Franklin",
+    "imageAsset": "generated/rosalind-franklin",
+    "imageAlt": "Portrait ou représentation de Rosalind Franklin"
+  },
+  {
+    "id": "hist-figure-077-role",
+    "topicId": "history",
+    "difficulty": 2,
+    "prompt": "Quel rôle décrit le mieux Rosalind Franklin ?",
+    "choices": [
+      "scientifique",
+      "reine",
+      "chef politique et militaire",
+      "empereur"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rosalind Franklin est principalement présenté ici comme scientifique.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "role",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Rosalind%20Franklin"
+  },
+  {
+    "id": "hist-figure-077-region",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "À quel espace historique rattache-t-on Rosalind Franklin ?",
+    "choices": [
+      "Royaume-Uni",
+      "Égypte antique",
+      "Rome antique",
+      "Athènes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rosalind Franklin est rattaché ici à Royaume-Uni; ce cadre géographique aide à replacer le personnage dans son histoire.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "geographie",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Rosalind%20Franklin"
+  },
+  {
+    "id": "hist-figure-077-era",
+    "topicId": "history",
+    "difficulty": 1,
+    "prompt": "Dans quelle période place-t-on surtout Rosalind Franklin ?",
+    "choices": [
+      "epoque contemporaine",
+      "Antiquité",
+      "Moyen Âge",
+      "Renaissance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rosalind Franklin appartient au repère epoque contemporaine.",
+    "tags": [
+      "histoire",
+      "personnage-historique",
+      "periode",
+      "banque-personnages"
+    ],
+    "sourceLabel": "Banque Kizz enrichie - Wikidata/Wikimedia",
+    "sourceUrl": "https://fr.wikipedia.org/w/index.php?search=Rosalind%20Franklin"
   }
 ];
