@@ -26,7 +26,7 @@ export function summarizeLanguageProgress(rows: LanguageProgressSource[]): Langu
 }
 
 function isLanguageCode(value: string | undefined): value is LanguageCode {
-  return value === 'es' || value === 'de' || value === 'it';
+  return value === 'en' || value === 'es' || value === 'de' || value === 'it';
 }
 
 function isCefrLevel(value: string | undefined): value is CefrLevel {

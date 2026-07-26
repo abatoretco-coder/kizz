@@ -59,6 +59,57 @@ function practice(card: PracticeCard): QuestionSeed {
   };
 }
 
+const english: CourseCard[] = [
+  {
+    language: 'en', level: 'A1', id: 'be-have-01',
+    prompt: 'Anglais A1 : dans "I am ready", quel verbe est utilise ?',
+    choices: ['be', 'have', 'do', 'go'],
+    answerIndex: 0,
+    explanation: 'Be sert a dire etre. Au present : I am, you are, he/she/it is.',
+    tags: ['grammar:be-have', 'conjugation:be'],
+  },
+  {
+    language: 'en', level: 'A1', id: 'present-simple-01',
+    prompt: 'Anglais A1 : avec "she", quelle forme est correcte au present simple ?',
+    choices: ['she work', 'she works', 'she working', 'she worked'],
+    answerIndex: 1,
+    explanation: 'Au present simple, he, she et it prennent souvent un -s : she works.',
+    tags: ['grammar:present-simple', 'conjugation:third-person'],
+  },
+  {
+    language: 'en', level: 'A2', id: 'past-simple-01',
+    prompt: 'Anglais A2 : dans "She went home", quel temps porte "went" ?',
+    choices: ['Present simple', 'Futur', 'Preterit', 'Present perfect'],
+    answerIndex: 2,
+    explanation: 'Went est le preterit irregulier de go et raconte une action terminee.',
+    tags: ['grammar:past-simple', 'conjugation:irregular'],
+  },
+  {
+    language: 'en', level: 'B1', id: 'present-perfect-01',
+    prompt: 'Anglais B1 : dans "I have already eaten", quelle structure reconnait-on ?',
+    choices: ['Past continuous', 'Future perfect', 'Imperatif', 'Present perfect'],
+    answerIndex: 3,
+    explanation: 'Le present perfect se forme avec have ou has + participe passe et relie passe et present.',
+    tags: ['grammar:present-perfect', 'conjugation:perfect'],
+  },
+  {
+    language: 'en', level: 'B2', id: 'conditional-01',
+    prompt: 'Anglais B2 : quelle forme complete "If I had time, I ___ travel" ?',
+    choices: ['will', 'would', 'did', 'am'],
+    answerIndex: 1,
+    explanation: 'Would + base verbale exprime ici une consequence hypothetique.',
+    tags: ['grammar:conditional', 'conjugation:would'],
+  },
+  {
+    language: 'en', level: 'C1', id: 'formal-register-01',
+    prompt: 'Anglais C1 : quelle formule convient pour nuancer une affirmation dans un registre formel ?',
+    choices: ['You know, like...', 'Anyway...', 'It should be noted that...', 'No way...'],
+    answerIndex: 2,
+    explanation: 'It should be noted that introduit une precision avec une distance formelle.',
+    tags: ['grammar:register', 'writing:argument'],
+  },
+];
+
 const spanish: CourseCard[] = [
   {
     language: 'es', level: 'A1', id: 'ser-estar-01',
@@ -282,6 +333,15 @@ const italianExtra: CourseCard[] = [
   },
 ];
 
+const englishPractice: PracticeCard[] = [
+  { language: 'en', level: 'A1', id: 'be-i-present', prompt: 'Anglais A1 : complete "I ___ ready" avec be.', acceptedAnswers: ['am'], explanation: 'Avec I, be devient am : I am ready.', tags: ['conjugation:practice', 'conjugation:be'] },
+  { language: 'en', level: 'A1', id: 'have-she-present', prompt: 'Anglais A1 : complete "She ___ a book" avec have.', acceptedAnswers: ['has'], explanation: 'Avec she, have devient has au present simple.', tags: ['conjugation:practice', 'conjugation:have'] },
+  { language: 'en', level: 'A2', id: 'go-past', prompt: 'Anglais A2 : ecris le preterit de "go".', acceptedAnswers: ['went'], explanation: 'Go est irregulier : go, went, gone.', tags: ['conjugation:practice', 'grammar:past-simple'] },
+  { language: 'en', level: 'B1', id: 'eat-perfect', prompt: 'Anglais B1 : complete "I have ___" avec le participe passe de eat.', acceptedAnswers: ['eaten'], explanation: 'Le participe passe de eat est eaten : I have eaten.', tags: ['conjugation:practice', 'grammar:present-perfect'] },
+  { language: 'en', level: 'B2', id: 'would-travel', prompt: 'Anglais B2 : complete "If I had time, I ___ travel."', acceptedAnswers: ['would'], explanation: 'Would introduit la consequence d une hypothese irreelle.', tags: ['conjugation:practice', 'grammar:conditional'] },
+  { language: 'en', level: 'C1', id: 'formal-note', prompt: 'Anglais C1 : complete "It should be ___ that the data is limited."', acceptedAnswers: ['noted'], explanation: 'It should be noted that est une formule formelle pour signaler une precision.', tags: ['conjugation:practice', 'writing:argument'] },
+];
+
 const spanishPractice: PracticeCard[] = [
   { language: 'es', level: 'A1', id: 'hablar-yo-present', prompt: 'Espagnol A1 : conjugue "hablar" au present avec "yo".', acceptedAnswers: ['hablo'], explanation: 'Au present, les verbes reguliers en -ar prennent -o avec yo : yo hablo.', tags: ['conjugation:practice', 'grammar:present'] },
   { language: 'es', level: 'A1', id: 'ser-nosotros-present', prompt: 'Espagnol A1 : conjugue "ser" au present avec "nosotros".', acceptedAnswers: ['somos'], explanation: 'Ser est irregulier : soy, eres, es, somos, sois, son.', tags: ['conjugation:practice', 'conjugation:ser'] },
@@ -310,11 +370,13 @@ const germanPractice: PracticeCard[] = [
 ];
 
 export const languageCourseQuestions: QuestionSeed[] = [
+  ...english.map(course),
   ...spanish.map(course),
   ...spanishExtra.map(course),
   ...german.map(course),
   ...italian.map(course),
   ...italianExtra.map(course),
+  ...englishPractice.map(practice),
   ...spanishPractice.map(practice),
   ...germanPractice.map(practice),
   ...italianPractice.map(practice),

@@ -292,7 +292,7 @@ test('la géographie contient un premier pack carte équilibré', () => {
 });
 
 test('les parcours de langues ne mélangent ni langue, ni niveau, ni compétence', () => {
-  const languages = ['es', 'de', 'it'];
+  const languages = ['en', 'es', 'de', 'it'];
   const levels = ['A1', 'A2', 'B1', 'B2', 'C1'];
   const skills = ['vocabulary', 'reading', 'writing', 'culture'];
   for (const language of languages) {
@@ -321,7 +321,8 @@ test('chaque grand thème reçoit une extension éditoriale ciblée', () => {
 });
 
 test('chaque langue et niveau fournit une session complète et un rang fréquentiel stable', () => {
-  for (const language of ['es', 'de', 'it']) {
+  const languages = ['en', 'es', 'de', 'it'];
+  for (const language of languages) {
     for (const level of ['A1', 'A2', 'B1', 'B2', 'C1']) {
       const cell = questions.filter((question) => question.tags.includes(`lang:${language}`) && question.tags.includes(`cefr:${level}`));
       assert.ok(cell.length >= 10, `${language}/${level}: moins de 10 exercices`);
@@ -330,7 +331,17 @@ test('chaque langue et niveau fournit une session complète et un rang fréquent
     }
   }
   const ranked = questions.filter((question) => question.tags.some((tag) => tag.startsWith('frequency-rank:')));
-  assert.equal(ranked.length, 126);
+  const rankedByLanguage = new Map(languages.map((language) => [language, ranked.filter((question) => question.tags.includes(`lang:${language}`)).length]));
+  assert.deepEqual(Object.fromEntries(rankedByLanguage), { en: 48, es: 48, de: 30, it: 48 });
+  for (const language of languages) {
+    const ranks = new Set(ranked.filter((question) => question.tags.includes(`lang:${language}`)).flatMap((question) => question.tags.filter((tag) => tag.startsWith('frequency-rank:'))));
+    for (const rank of ranks) {
+      const pair = ranked.filter((question) => question.tags.includes(`lang:${language}`) && question.tags.includes(rank));
+      assert.equal(pair.length, 2, `${language}/${rank}: paire frequentielle incomplete`);
+      assert.ok(pair.some((question) => question.tags.includes('mode:recognition')), `${language}/${rank}: reconnaissance absente`);
+      assert.ok(pair.some((question) => question.tags.includes('mode:recall')), `${language}/${rank}: rappel absent`);
+    }
+  }
   assert.ok(ranked.every((question) => question.tags.includes('mode:recognition') || question.tags.includes('mode:recall')));
 });
 

@@ -37,6 +37,28 @@ function makeLanguageQuestions(language: LanguageCode, entries: LanguageEntry[])
 }
 
 export const dedicatedLanguageQuestions: QuestionSeed[] = [
+  ...makeLanguageQuestions('en', [
+    { level: 'A1', skill: 'vocabulary', prompt: 'Que signifie "hello" ?', choices: ['Bonjour', 'Merci', 'Maison', 'Livre'], answerIndex: 0, explanation: 'Hello est une salutation anglaise de base.' },
+    { level: 'A1', skill: 'reading', prompt: '"My name is Sam and I live in London." Où vit Sam ?', choices: ['A Dublin', 'A London', 'A Rome', 'A Berlin'], answerIndex: 1, explanation: 'I live in London signifie je vis a Londres.' },
+    { level: 'A1', skill: 'writing', prompt: 'Ecris "merci" en anglais.', acceptedAnswers: ['thank you', 'thanks'], explanation: 'Thank you est la formule neutre ; thanks est plus court et courant.' },
+    { level: 'A1', skill: 'culture', prompt: 'Quelle ville est la capitale du Royaume-Uni ?', choices: ['Manchester', 'London', 'Edinburgh', 'Cardiff'], answerIndex: 1, explanation: 'London est la capitale du Royaume-Uni.' },
+    { level: 'A2', skill: 'vocabulary', prompt: 'Que signifie "often" ?', choices: ['Souvent', 'Jamais', 'Hier', 'Peut-etre'], answerIndex: 0, explanation: 'Often est un adverbe de frequence qui signifie souvent.' },
+    { level: 'A2', skill: 'reading', prompt: '"The train leaves at eight and arrives at ten." A quelle heure arrive le train ?', choices: ['8 h', '9 h', '10 h', '12 h'], answerIndex: 2, explanation: 'Arrives at ten indique une arrivee a dix heures.' },
+    { level: 'A2', skill: 'writing', prompt: 'Traduis "Je voudrais un café" en anglais.', acceptedAnswers: ['i would like a coffee', 'i’d like a coffee', "i'd like a coffee"], explanation: 'I would like est une demande polie courante.' },
+    { level: 'A2', skill: 'culture', prompt: 'Comment appelle-t-on souvent le métro de Londres ?', choices: ['The Tube', 'The Subway', 'The Metro', 'The Ring'], answerIndex: 0, explanation: 'The Tube est le surnom courant du London Underground.' },
+    { level: 'B1', skill: 'vocabulary', prompt: 'Que signifie "although" ?', choices: ['Bien que', 'Parce que', 'Donc', 'Depuis'], answerIndex: 0, explanation: 'Although introduit une concession : bien que.' },
+    { level: 'B1', skill: 'reading', prompt: '"Although it was raining, we went out." Que comprend-on ?', choices: ['Ils sont sortis malgré la pluie', 'Ils sont restes chez eux', 'Il faisait beau', 'La pluie a cesse'], answerIndex: 0, explanation: 'Although introduit l obstacle : ils sortent malgre la pluie.' },
+    { level: 'B1', skill: 'writing', prompt: 'Complete : "She ___ already eaten."', acceptedAnswers: ['has'], explanation: 'Avec she, le present perfect utilise has + participe passe.' },
+    { level: 'B1', skill: 'culture', prompt: 'Quel auteur est associe a Romeo and Juliet ?', choices: ['William Shakespeare', 'Charles Dickens', 'Jane Austen', 'Oscar Wilde'], answerIndex: 0, explanation: 'Romeo and Juliet est une tragedie de William Shakespeare.' },
+    { level: 'B2', skill: 'vocabulary', prompt: 'Que signifie "however" ?', choices: ['Cependant', 'Par consequent', 'En plus', 'A condition que'], answerIndex: 0, explanation: 'However est un connecteur d opposition equivalent a cependant.' },
+    { level: 'B2', skill: 'reading', prompt: '"Had I known, I would have stayed." Quelle idee exprime la phrase ?', choices: ['Un regret hypothetique passe', 'Une habitude presente', 'Un ordre', 'Un futur certain'], answerIndex: 0, explanation: 'La phrase exprime une condition passee non realisee et un regret.' },
+    { level: 'B2', skill: 'writing', prompt: 'Complete : "If I were you, I ___ wait."', acceptedAnswers: ['would'], explanation: 'Would + base verbale exprime le conseil hypothetique.' },
+    { level: 'B2', skill: 'culture', prompt: 'Quel pays est associe a la fête de Thanksgiving la plus connue internationalement ?', choices: ['Etats-Unis', 'Irlande', 'Australie', 'Nouvelle-Zelande'], answerIndex: 0, explanation: 'Thanksgiving est particulierement associe aux Etats-Unis.' },
+    { level: 'C1', skill: 'vocabulary', prompt: 'Que signifie "to mitigate a risk" ?', choices: ['Attenuer un risque', 'Ignorer un risque', 'Multiplier un risque', 'Prouver un risque'], answerIndex: 0, explanation: 'To mitigate signifie attenuer ou reduire l impact.' },
+    { level: 'C1', skill: 'reading', prompt: '"The proposal is sound, provided that funding remains stable." Quelle condition est posee ?', choices: ['Le financement doit rester stable', 'Le projet est deja annule', 'Le financement est inutile', 'La proposition est fragile par principe'], answerIndex: 0, explanation: 'Provided that introduit une condition necessaire.' },
+    { level: 'C1', skill: 'writing', prompt: 'Complete : "It should be ___ that the sample is limited."', acceptedAnswers: ['noted'], explanation: 'It should be noted that est une formule formelle pour signaler une nuance.' },
+    { level: 'C1', skill: 'culture', prompt: 'Quel mouvement litteraire anglophone est associe a Virginia Woolf ?', choices: ['Modernisme', 'Romantisme', 'Beat Generation', 'Naturalisme'], answerIndex: 0, explanation: 'Virginia Woolf est une figure majeure du modernisme anglophone.' },
+  ]),
   ...makeLanguageQuestions('es', [
     { level: 'A1', skill: 'vocabulary', prompt: 'Que signifie « agua » ?', choices: ['Pain', 'Eau', 'Maison', 'Rue'], answerIndex: 1, explanation: 'Agua est un mot très fréquent qui signifie eau.' },
     { level: 'A1', skill: 'reading', prompt: '« Me llamo Ana y vivo en Madrid. » Où vit Ana ?', choices: ['À Séville', 'À Madrid', 'À Rome', 'À Berlin'], answerIndex: 1, explanation: '« Vivo en Madrid » signifie « je vis à Madrid ».' },

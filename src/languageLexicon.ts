@@ -49,6 +49,17 @@ const spanish: Lexeme[] = [
   ['C1', 'mermar', 'amoindrir', ['accroître', 'consolider', 'révéler']], ['C1', 'hincapié', 'insistance', ['indifférence', 'hasard', 'désaccord']], ['C1', 'enmarañado', 'enchevêtré', ['limpide', 'éphémère', 'immobile']],
 ];
 
+const english: Lexeme[] = [
+  ['A1', 'be', 'etre', ['avoir', 'faire', 'aller']], ['A1', 'have', 'avoir', ['etre', 'venir', 'voir']], ['A1', 'do', 'faire', ['dire', 'savoir', 'prendre']],
+  ['A1', 'go', 'aller', ['rester', 'donner', 'penser']], ['A1', 'say', 'dire', ['lire', 'ouvrir', 'tomber']], ['A1', 'see', 'voir', ['vivre', 'vouloir', 'mettre']],
+  ['A1', 'can', 'pouvoir', ['devoir', 'payer', 'porter']], ['A1', 'want', 'vouloir', ['croire', 'courir', 'perdre']], ['A1', 'house', 'maison', ['rue', 'ville', 'porte']],
+  ['A1', 'day', 'jour', ['nuit', 'mois', 'annee']], ['A1', 'time', 'temps', ['argent', 'famille', 'travail']], ['A1', 'person', 'personne', ['pays', 'question', 'reponse']],
+  ['A2', 'arrive', 'arriver', ['partir', 'rester', 'attendre']], ['A2', 'look for', 'chercher', ['trouver', 'oublier', 'porter']], ['A2', 'come back', 'revenir', ['sortir', 'tomber', 'ouvrir']],
+  ['B1', 'manage to', 'reussir a', ['renoncer a', 'eviter', 'remplacer']], ['B1', 'although', 'bien que', ['parce que', 'donc', 'pendant']], ['B1', 'environment', 'environnement', ['entretien', 'entree', 'distance']],
+  ['B2', 'raise an issue', 'soulever une question', ['cacher un fait', 'terminer', 'mesurer']], ['B2', 'field', 'domaine', ['preuve', 'rythme', 'frontiere']], ['B2', 'carry out', 'mener a bien', ['laisser tomber', 'mettre en doute', 'faire semblant']],
+  ['C1', 'mitigate', 'attenuer', ['accroitre', 'consolider', 'reveler']], ['C1', 'emphasis', 'insistance', ['indifference', 'hasard', 'desaccord']], ['C1', 'intricate', 'complexe / enchevetre', ['limpide', 'ephemere', 'immobile']],
+];
+
 const german: Lexeme[] = [
   ['A1', 'sein', 'être', ['avoir', 'venir', 'rester']], ['A1', 'haben', 'avoir', ['faire', 'dire', 'aller']], ['A1', 'machen', 'faire', ['voir', 'boire', 'dormir']],
   ['A2', 'brauchen', 'avoir besoin de', ['se souvenir de', 'avoir peur de', 'rêver de']], ['A2', 'warten', 'attendre', ['choisir', 'répondre', 'commencer']], ['A2', 'erklären', 'expliquer', ['oublier', 'fermer', 'vendre']],
@@ -69,6 +80,7 @@ const italian: Lexeme[] = [
 ];
 
 export const frequencyLanguageQuestions: QuestionSeed[] = [
+  ...buildLexicon('en', 'anglais', english),
   ...buildLexicon('es', 'espagnol', spanish),
   ...buildLexicon('de', 'allemand', german),
   ...buildLexicon('it', 'italien', italian),

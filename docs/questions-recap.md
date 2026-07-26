@@ -2,15 +2,15 @@
 
 Genere le 2026-07-26 depuis `src/content.ts`.
 
-- Questions: 7072
+- Questions: 7152
 - Themes: 34
-- Types: multiple-choice: 6607, free-text: 391, multi-text: 2, map-point: 72
+- Types: multiple-choice: 6652, free-text: 426, multi-text: 2, map-point: 72
 - Questions avec image: 1044
 - Questions carte: 72
-- Questions sans image/carte: 5956
+- Questions sans image/carte: 6036
 - Questions OpenTDB integrees: 3950
-- Repartition des bonnes reponses QCM A/B/C/D: 1652 / 1652 / 1651 / 1652
-- Revue qualite: 7065 sans signalement, 7 avertissement(s), 0 erreur(s)
+- Repartition des bonnes reponses QCM A/B/C/D: 1663 / 1663 / 1663 / 1663
+- Revue qualite: 7145 sans signalement, 7 avertissement(s), 0 erreur(s)
 - Detail complet: `docs/questions-recap.csv`
 
 ## Synthese par theme
@@ -22,13 +22,8 @@ Genere le 2026-07-26 depuis `src/content.ts`.
 | Sciences | 224 | 0 | 224 | 35 | 104 | 85 | multiple-choice: 201, free-text: 23 | 4 |
 | Sport | 25 | 0 | 25 | 11 | 8 | 6 | multiple-choice: 22, free-text: 3 | 5 |
 | Arts | 327 | 298 | 29 | 111 | 157 | 59 | multiple-choice: 318, free-text: 8, multi-text: 1 | 4 |
-| Langues | 246 | 0 | 246 | 122 | 82 | 42 | free-text: 97, multiple-choice: 149 | 5 |
-| Architecture | 303 | 273 | 30 | 96 | 158 | 49 | multiple-choice: 293, free-text: 10 | 4 |
-| Nature | 193 | 168 | 25 | 88 | 80 | 25 | multiple-choice: 188, free-text: 5 | 5 |
-| Technologie | 23 | 0 | 23 | 8 | 9 | 6 | multiple-choice: 20, free-text: 3 | 4 |
-| Cinéma | 23 | 0 | 23 | 8 | 9 | 6 | multiple-choice: 20, free-text: 3 | 5 |
+| Langues | 326 | 0 | 326 | 166 | 106 | 54 | free-text: 132, multiple-choice: 194 | 5 |
 | Économie | 28 | 0 | 28 | 9 | 10 | 9 | multiple-choice: 25, free-text: 2, multi-text: 1 | 4 |
-| Carte France | 271 | 0 | 271 | 50 | 121 | 100 | map-point: 30, multiple-choice: 232, free-text: 9 | 4 |
 | Astronomie | 19 | 0 | 19 | 9 | 6 | 4 | multiple-choice: 16, free-text: 3 | 2 |
 | OpenTDB - Culture générale | 343 | 0 | 343 | 154 | 128 | 61 | multiple-choice: 343 | 1 |
 | OpenTDB - Livres | 98 | 0 | 98 | 28 | 44 | 26 | multiple-choice: 98 | 1 |
@@ -51,6 +46,11 @@ Genere le 2026-07-26 depuis `src/content.ts`.
 | OpenTDB - Comics | 49 | 0 | 49 | 13 | 23 | 13 | multiple-choice: 49 | 1 |
 | OpenTDB - Anime et manga | 148 | 0 | 148 | 39 | 74 | 35 | multiple-choice: 148 | 1 |
 | OpenTDB - Animation | 49 | 0 | 49 | 13 | 22 | 14 | multiple-choice: 49 | 1 |
+| Carte France | 271 | 0 | 271 | 50 | 121 | 100 | map-point: 30, multiple-choice: 232, free-text: 9 | 4 |
+| Nature | 193 | 168 | 25 | 88 | 80 | 25 | multiple-choice: 188, free-text: 5 | 5 |
+| Technologie | 23 | 0 | 23 | 8 | 9 | 6 | multiple-choice: 20, free-text: 3 | 4 |
+| Cinéma | 23 | 0 | 23 | 8 | 9 | 6 | multiple-choice: 20, free-text: 3 | 5 |
+| Architecture | 303 | 273 | 30 | 96 | 158 | 49 | multiple-choice: 293, free-text: 10 | 4 |
 
 ## Avertissements restants
 

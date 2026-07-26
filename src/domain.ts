@@ -142,7 +142,7 @@ export type SessionFilters = {
   limit: 5 | 10 | 20;
 };
 
-export type LanguageCode = 'es' | 'de' | 'it';
+export type LanguageCode = 'en' | 'es' | 'de' | 'it';
 export type CefrLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1';
 export type LanguageSkill = 'vocabulary' | 'reading' | 'writing' | 'culture' | 'lesson';
 

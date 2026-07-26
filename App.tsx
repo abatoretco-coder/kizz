@@ -195,7 +195,7 @@ export default function App() {
       Alert.alert('Parcours à enrichir', 'Aucune question ne correspond encore à cette combinaison. Ajoute une compétence ou change de niveau.');
       return;
     }
-    const names: Record<LanguageCode, string> = { es: 'Espagnol', de: 'Allemand', it: 'Italien' };
+    const names: Record<LanguageCode, string> = { en: 'Anglais', es: 'Espagnol', de: 'Allemand', it: 'Italien' };
     prepareSession(
       { id: `language-${filters.language}-${filters.level}`, title: `${names[filters.language]} - ${filters.level}`, subtitle: 'Parcours linguistique ciblé', icon: filters.language.toUpperCase(), color: '#5FB8C9' },
       nextQuiz,
@@ -208,7 +208,7 @@ export default function App() {
       Alert.alert('Vocabulaire à enrichir', 'Aucun mot fréquentiel ne correspond encore à cette langue et ce niveau.');
       return;
     }
-    const names: Record<LanguageCode, string> = { es: 'Espagnol', de: 'Allemand', it: 'Italien' };
+    const names: Record<LanguageCode, string> = { en: 'Anglais', es: 'Espagnol', de: 'Allemand', it: 'Italien' };
     prepareSession(
       { id: `daily-vocab-${filters.language}-${filters.level}`, title: `10 mots du jour - ${names[filters.language]}`, subtitle: `Quiz aller-retour niveau ${filters.level}`, icon: '10', color: '#E6B759' },
       nextQuiz,
@@ -565,7 +565,7 @@ function HomeV2({ stats, topics, draft, onResume, onStart, onLanguages, onCompos
         <View style={styles.modeMiniCard}><Text style={styles.modeMiniTitle}>Endurance</Text><View style={styles.modeMiniButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`endurance-${difficulty}`} accessibilityRole="button" onPress={() => onEndurance(difficulty)} style={({ pressed }) => [styles.modeMiniButton, pressed && styles.pressed]}><Text style={styles.enduranceButtonText}>{difficulty}</Text></Pressable>)}</View></View>
         <View style={styles.modeMiniCard}><Text style={styles.modeMiniTitle}>Infini</Text><View style={styles.modeMiniButtons}>{([1, 2, 3] as Difficulty[]).map((difficulty) => <Pressable key={difficulty} testID={`infinite-${difficulty}`} accessibilityRole="button" onPress={() => onInfinite(difficulty)} style={({ pressed }) => [styles.modeMiniButton, pressed && styles.pressed]}><Text style={styles.infiniteButtonText}>{difficulty}</Text></Pressable>)}</View></View>
       </View>
-      <Pressable testID="language-hub" accessibilityRole="button" onPress={onLanguages} style={({ pressed }) => [styles.languageCompactCard, pressed && styles.pressed]}><View style={styles.languageHeroIcon}><Text style={styles.languageHeroIconText}>Aa</Text></View><View style={{ flex: 1 }}><Text style={styles.languageHeroEyebrow}>LANGUES</Text><Text style={styles.languageHeroTitle}>Espagnol, Allemand, Italien</Text></View><Text style={styles.composeArrow}>-&gt;</Text></Pressable>
+      <Pressable testID="language-hub" accessibilityRole="button" onPress={onLanguages} style={({ pressed }) => [styles.languageCompactCard, pressed && styles.pressed]}><View style={styles.languageHeroIcon}><Text style={styles.languageHeroIconText}>Aa</Text></View><View style={{ flex: 1 }}><Text style={styles.languageHeroEyebrow}>LANGUES</Text><Text style={styles.languageHeroTitle}>Anglais, Espagnol, Allemand, Italien</Text></View><Text style={styles.composeArrow}>-&gt;</Text></Pressable>
       <View style={styles.sectionRow}><Text style={styles.sectionTitle}>Themes visuels</Text><Text style={styles.sectionHint}>{cultureTopics.length} parcours</Text></View>
       <View style={styles.topicGrid}>
         {cultureTopics.map((item) => (
@@ -582,6 +582,7 @@ function HomeV2({ stats, topics, draft, onResume, onStart, onLanguages, onCompos
   );
 }
 const LANGUAGE_OPTIONS: Array<{ code: LanguageCode; name: string; native: string }> = [
+  { code: 'en', name: 'Anglais', native: 'English' },
   { code: 'es', name: 'Espagnol', native: 'Español' },
   { code: 'de', name: 'Allemand', native: 'Deutsch' },
   { code: 'it', name: 'Italien', native: 'Italiano' },
@@ -595,37 +596,175 @@ const LANGUAGE_SKILLS: Array<{ id: LanguageSkill; title: string; detail: string 
   { id: 'culture', title: 'Culture', detail: 'Repères du monde hispanique, germanique ou italien' },
 ];
 
+type CourseStep = {
+  title: string;
+  focus: string;
+  lesson: string;
+  examples: string[];
+  remember: string[];
+};
+
+const LANGUAGE_COURSES: Record<LanguageCode, Record<CefrLevel, CourseStep[]>> = {
+  en: {
+    A1: [
+      { title: 'Se présenter', focus: 'être, avoir, phrases courtes', lesson: 'On commence avec des blocs stables : I am, you are, I have. En anglais, le sujet est presque toujours exprimé, même quand il paraît évident en français.', examples: ['I am Ana.', 'I have a brother.', 'This is my bag.'], remember: ['I = je, you = tu/vous', 'am/is/are servent à dire être', 'a/an introduit un nom singulier'] },
+      { title: 'Présent simple', focus: 'habitudes et vérités générales', lesson: 'Le présent simple décrit ce qui est habituel. Attention au -s à la troisième personne : he works, she likes.', examples: ['I live in Paris.', 'She works today.', 'Do you speak English?'], remember: ['do/does sert aux questions', 'does avec he/she/it', 'la négation utilise do not ou does not'] },
+      { title: 'Orthographe utile', focus: 'majuscules et contractions', lesson: 'L’anglais écrit met une majuscule à I. Les contractions sont fréquentes à l’oral et dans les textes simples : I am devient I’m.', examples: ['I’m ready.', 'He isn’t here.', 'We don’t know.'], remember: ['I prend toujours une majuscule', 'n’t marque souvent la négation', 'l’ordre des mots est très important'] },
+    ],
+    A2: [
+      { title: 'Passé simple', focus: 'raconter une action terminée', lesson: 'Le prétérit anglais sert à raconter un fait terminé. Beaucoup de verbes réguliers prennent -ed, mais les verbes fréquents sont souvent irréguliers.', examples: ['I watched a film.', 'She went home.', 'Did you see it?'], remember: ['did signale souvent le passé en question', 'go devient went', 'le verbe revient à la base après did'] },
+      { title: 'Futur proche', focus: 'be going to', lesson: 'Be going to exprime un projet ou une conséquence prévisible. On conjugue be, puis on garde going to + base verbale.', examples: ['I am going to study.', 'It is going to rain.', 'Are they going to come?'], remember: ['am/is/are portent la conjugaison', 'to est suivi de la base verbale', 'utile pour parler de plans'] },
+      { title: 'Quantités', focus: 'some, any, much, many', lesson: 'Some apparaît souvent en phrase affirmative ; any apparaît souvent dans les questions et négations. Much accompagne l’indénombrable, many le dénombrable.', examples: ['I have some time.', 'Do you have any questions?', 'many books, much water'], remember: ['many = éléments comptables', 'much = masse ou abstraction', 'any convient aux questions simples'] },
+    ],
+    B1: [
+      { title: 'Présent perfect', focus: 'lien entre passé et présent', lesson: 'Le present perfect relie une expérience passée au présent. Il se forme avec have/has + participe passé.', examples: ['I have visited London.', 'She has already eaten.', 'Have you ever tried?'], remember: ['ever sert aux expériences', 'already indique déjà', 'le moment exact est souvent secondaire'] },
+      { title: 'Modaux', focus: 'can, must, should', lesson: 'Les modaux ne prennent pas de -s et sont suivis de la base verbale. Ils expriment capacité, obligation ou conseil.', examples: ['She can swim.', 'You must wait.', 'We should leave.'], remember: ['pas de to après can/must/should', 'pas de -s avec he/she', 'la négation se met sur le modal'] },
+      { title: 'Phrases relatives', focus: 'who, which, that', lesson: 'Les relatives ajoutent une information sans recommencer une phrase. Who renvoie surtout aux personnes, which aux choses, that peut souvent remplacer les deux.', examples: ['The woman who called.', 'The book that I bought.', 'A rule which matters.'], remember: ['who pour personnes', 'which pour choses', 'that est très courant'] },
+    ],
+    B2: [
+      { title: 'Argumenter', focus: 'connecteurs et nuance', lesson: 'À ce niveau, on apprend à organiser une idée : however pour opposer, therefore pour conclure, although pour concéder.', examples: ['However, this is costly.', 'Therefore, we changed the plan.', 'Although it was late, we stayed.'], remember: ['however marque une opposition', 'therefore annonce une conséquence', 'although introduit une concession'] },
+      { title: 'Conditionnel', focus: 'hypothèses réalistes et irréelles', lesson: 'Les hypothèses irréelles utilisent souvent if + prétérit, puis would + base verbale.', examples: ['If I had time, I would travel.', 'If she knew, she would help.', 'I would agree if it were clear.'], remember: ['would ne prend pas de -s', 'if porte souvent le prétérit', 'were est fréquent en style soigné'] },
+      { title: 'Passif', focus: 'mettre l’action au centre', lesson: 'Le passif se forme avec be + participe passé. Il sert quand l’auteur de l’action est inconnu ou secondaire.', examples: ['The rule is explained.', 'The bridge was built in 1890.', 'Mistakes were corrected.'], remember: ['be porte le temps', 'participe passé obligatoire', 'by introduit parfois l’agent'] },
+    ],
+    C1: [
+      { title: 'Registre formel', focus: 'précision et distance', lesson: 'L’anglais soutenu préfère souvent des formulations précises : it should be noted that, provided that, nevertheless.', examples: ['It should be noted that...', 'Provided that the data is reliable...', 'Nevertheless, the risk remains.'], remember: ['provided that pose une condition', 'nevertheless nuance fortement', 'éviter les tournures trop orales'] },
+      { title: 'Nominalisation', focus: 'densifier sans alourdir', lesson: 'La nominalisation transforme une action en notion : decide devient decision. Elle aide à écrire de façon académique, mais doit rester lisible.', examples: ['The decision changed the plan.', 'Its implementation was delayed.', 'Further analysis is required.'], remember: ['utile en essai', 'attention aux phrases trop lourdes', 'un verbe clair reste souvent meilleur'] },
+      { title: 'Concession avancée', focus: 'even though, despite, whereas', lesson: 'Les concessions avancées permettent de comparer et de nuancer précisément sans perdre le fil logique.', examples: ['Despite the cost, it worked.', 'Whereas the first option failed, the second was stable.', 'Even though it was complex, it helped.'], remember: ['despite + nom ou -ing', 'whereas oppose deux faits', 'even though renforce la concession'] },
+    ],
+  },
+  es: {
+    A1: [
+      { title: 'Ser et estar', focus: 'identité ou état', lesson: 'Ser sert aux identités, origines et caractéristiques durables. Estar sert surtout aux états temporaires et à la localisation.', examples: ['Soy francés.', 'Estoy cansado.', 'Madrid está en España.'], remember: ['ser = identité', 'estar = état ou lieu', 'les deux signifient être selon le contexte'] },
+      { title: 'Présent régulier', focus: 'hablar, comer, vivir', lesson: 'Les verbes réguliers changent selon la personne. Avec yo, les trois familles prennent souvent -o.', examples: ['yo hablo', 'yo como', 'yo vivo'], remember: ['-ar : hablo, hablas, habla', '-er : como, comes, come', '-ir : vivo, vives, vive'] },
+      { title: 'Accords simples', focus: 'genre et nombre', lesson: 'Le nom donne souvent le genre et le nombre à l’adjectif. On adapte donc bonito/bonita, bonitos/bonitas.', examples: ['un libro bonito', 'una casa bonita', 'dos casas bonitas'], remember: ['-o masculin, -a féminin souvent', 'le pluriel ajoute -s ou -es', 'l’article aide à repérer le genre'] },
+    ],
+    A2: [
+      { title: 'Passé ponctuel', focus: 'pretérito indefinido', lesson: 'Le prétérit raconte une action terminée et située dans le passé : ayer, anoche, el lunes.', examples: ['Ayer comí tarde.', 'Fuimos al cine.', 'Hablé con Ana.'], remember: ['ayer appelle souvent le prétérit', 'ir et ser partagent fui/fuiste/fue', 'action vue comme terminée'] },
+      { title: 'Por et para', focus: 'cause ou but', lesson: 'Para indique souvent un but ou une destination. Por indique souvent une cause, un passage, une durée ou un échange.', examples: ['Trabajo para aprender.', 'Gracias por venir.', 'Paseo por la ciudad.'], remember: ['para = objectif', 'por = cause ou traversée', 'le contexte tranche'] },
+      { title: 'Pronoms objets', focus: 'lo, la, los, las', lesson: 'Les pronoms objets remplacent un complément direct déjà connu. Ils se placent souvent avant le verbe conjugué.', examples: ['Lo veo.', 'La conozco.', 'Los compro.'], remember: ['lo masculin singulier', 'la féminin singulier', 'avant le verbe conjugué'] },
+    ],
+    B1: [
+      { title: 'Imparfait ou prétérit', focus: 'description ou événement', lesson: 'L’imparfait décrit un cadre ou une habitude ; le prétérit fait avancer le récit.', examples: ['Cuando era niño...', 'De repente llegó.', 'Llovía, pero salimos.'], remember: ['imparfait = décor', 'prétérit = événement', 'les deux cohabitent souvent'] },
+      { title: 'Subjonctif de base', focus: 'souhait, doute, volonté', lesson: 'Après querer que, esperar que, es posible que, l’espagnol attend souvent le subjonctif.', examples: ['Quiero que vengas.', 'Espero que esté bien.', 'Es posible que llueva.'], remember: ['deux sujets favorisent le subjonctif', 'vengas vient de venir', 'sea/esté sont très fréquents'] },
+      { title: 'Concession', focus: 'aunque', lesson: 'Aunque introduit une concession. Avec un fait certain, on utilise souvent l’indicatif ; avec un fait incertain, le subjonctif.', examples: ['Aunque llueve, salgo.', 'Aunque llueva, saldré.', 'Aunque era tarde, fuimos.'], remember: ['indicatif = fait constaté', 'subjonctif = hypothèse', 'utile pour nuancer'] },
+    ],
+    B2: [
+      { title: 'Discours indirect', focus: 'décaler les repères', lesson: 'Dans un récit au passé, les repères changent souvent : mañana devient al día siguiente, hoy devient ese día.', examples: ['Dijo que vendría al día siguiente.', 'Explicó que estaba cansado.', 'Preguntó si podía venir.'], remember: ['adapter temps et repères', 'si introduit une question indirecte', 'attention aux pronoms'] },
+      { title: 'Connecteurs', focus: 'argumenter clairement', lesson: 'Sin embargo oppose, por lo tanto conclut, además ajoute, ya que justifie.', examples: ['Sin embargo, no basta.', 'Por lo tanto, cambiamos.', 'Además, es útil.'], remember: ['un connecteur = une relation logique', 'éviter d’enchaîner sans lien', 'varier les transitions'] },
+      { title: 'Subjonctif avancé', focus: 'concession et condition', lesson: 'Des structures comme por muy... que ou siempre que appellent souvent le subjonctif.', examples: ['Por muy difícil que sea...', 'Siempre que vengas temprano...', 'A menos que cambie.'], remember: ['sea est très fréquent', 'condition non garantie = subjonctif', 'sert à écrire plus finement'] },
+    ],
+    C1: [
+      { title: 'Registre soutenu', focus: 'nuancer sans lourdeur', lesson: 'À l’écrit soutenu, des tournures comme cabe matizar que ou conviene señalar que introduisent une réserve.', examples: ['Cabe matizar que...', 'Conviene señalar que...', 'No obstante, cabe añadir...'], remember: ['cabe + infinitif', 'no obstante = néanmoins', 'viser précision et sobriété'] },
+      { title: 'Périphrases', focus: 'valeur aspectuelle', lesson: 'Les périphrases montrent le début, la continuité ou la répétition d’une action : ponerse a, seguir, volver a.', examples: ['Se puso a llorar.', 'Sigue trabajando.', 'Volvió a intentarlo.'], remember: ['ponerse a = commencer soudainement', 'seguir + gérondif = continuer', 'volver a = refaire'] },
+      { title: 'Orthographe fine', focus: 'accents et sens', lesson: 'Les accents distinguent parfois des mots très courts : si/sí, el/él, tu/tú. À l’écrit, ils changent le sens.', examples: ['si = si', 'sí = oui', 'él = lui'], remember: ['accent = information grammaticale', 'les interrogatifs portent souvent un accent', 'relire les monosyllabes'] },
+    ],
+  },
+  de: {
+    A1: [
+      { title: 'Le verbe en deuxième position', focus: 'ordre de phrase', lesson: 'En phrase déclarative simple, le verbe conjugué occupe souvent la deuxième position, même si la phrase commence par un complément.', examples: ['Ich lerne Deutsch.', 'Heute lerne ich.', 'Morgen komme ich.'], remember: ['position 2 pour le verbe', 'le sujet peut venir après', 'l’ordre porte beaucoup de sens'] },
+      { title: 'Sein et haben', focus: 'être et avoir', lesson: 'Sein et haben sont irréguliers et indispensables. Il faut les reconnaître avant de construire des phrases.', examples: ['ich bin', 'du hast', 'wir sind'], remember: ['ich bin = je suis', 'ich habe = j’ai', 'du bist / du hast'] },
+      { title: 'Majuscules des noms', focus: 'orthographe allemande', lesson: 'En allemand, tous les noms communs prennent une majuscule. C’est une règle d’orthographe centrale.', examples: ['das Haus', 'die Sprache', 'ein guter Tag'], remember: ['nom = majuscule', 'les articles aident le genre', 'der/die/das doivent être appris avec le mot'] },
+    ],
+    A2: [
+      { title: 'Accusatif', focus: 'complément direct', lesson: 'Le masculin change à l’accusatif : der devient den, ein devient einen. Féminin, neutre et pluriel changent moins au début.', examples: ['Ich sehe den Mann.', 'Ich kaufe einen Apfel.', 'Ich habe das Buch.'], remember: ['masculin COD = den/einen', 'fragen, sehen, kaufen prennent souvent un COD', 'apprendre cas + genre ensemble'] },
+      { title: 'Verbes séparables', focus: 'préfixe mobile', lesson: 'Certains verbes ont un préfixe qui part en fin de phrase au présent simple.', examples: ['Ich kaufe ein.', 'Der Zug kommt an.', 'Wir stehen früh auf.'], remember: ['einkaufen -> kaufe ... ein', 'ankommen -> kommt ... an', 'le préfixe porte souvent le sens'] },
+      { title: 'Datif utile', focus: 'à quelqu’un', lesson: 'Le datif indique souvent le bénéficiaire ou certains compléments après préposition. Dem apparaît au masculin/neutre.', examples: ['Ich helfe dem Kind.', 'mit dem Zug', 'bei meiner Freundin'], remember: ['helfen prend le datif', 'mit prend le datif', 'der devient dem au masculin'] },
+    ],
+    B1: [
+      { title: 'Parfait', focus: 'haben/sein + participe', lesson: 'Le parfait est très utilisé à l’oral pour raconter le passé. On conjugue haben ou sein, puis on met le participe en fin de proposition.', examples: ['Ich habe gelernt.', 'Ich bin gegangen.', 'Wir haben gegessen.'], remember: ['mouvement souvent avec sein', 'participe à la fin', 'ge- fréquent mais pas universel'] },
+      { title: 'Subordonnées', focus: 'verbe final', lesson: 'Après weil, dass, wenn, le verbe conjugué va souvent à la fin de la subordonnée.', examples: ['..., weil ich müde bin.', 'Ich glaube, dass er kommt.', 'Wenn ich Zeit habe...'], remember: ['weil = verbe final', 'dass = verbe final', 'la principale garde son ordre'] },
+      { title: 'Adjectifs', focus: 'déclinaisons fréquentes', lesson: 'L’adjectif placé devant un nom prend une terminaison. Au début, repère surtout -e et -en dans les groupes très fréquents.', examples: ['der gute Film', 'ein guter Film', 'mit dem guten Film'], remember: ['article + adjectif travaillent ensemble', 'le datif met souvent -en', 'ne pas apprendre les formes isolées'] },
+    ],
+    B2: [
+      { title: 'Konjunktiv II', focus: 'hypothèse et politesse', lesson: 'Le Konjunktiv II exprime l’irréel ou la politesse. Würde + infinitif est très productif.', examples: ['Ich würde kommen.', 'Wenn ich Zeit hätte...', 'Könnten Sie helfen?'], remember: ['würde + infinitif', 'hätte et wäre sont fréquents', 'sert aussi à être poli'] },
+      { title: 'Connecteurs doubles', focus: 'je... desto...', lesson: 'Je... desto... exprime une progression corrélée : plus ceci augmente, plus cela change.', examples: ['Je mehr ich übe, desto besser spreche ich.', 'Je früher, desto besser.', 'Je länger, desto schwieriger.'], remember: ['je dans la subordonnée', 'desto dans la principale', 'verbe conjugué placé selon la structure'] },
+      { title: 'Passif', focus: 'werden + participe', lesson: 'Le passif allemand se forme avec werden + participe passé. Il met le processus au centre.', examples: ['Der Text wird gelesen.', 'Die Regel wurde erklärt.', 'Das Haus wird gebaut.'], remember: ['werden porte le temps', 'participe en fin', 'utile en textes formels'] },
+    ],
+    C1: [
+      { title: 'Nominalisation', focus: 'style académique', lesson: 'L’allemand peut condenser l’information avec des noms abstraits et composés. C’est puissant, mais il faut garder une phrase lisible.', examples: ['die Entscheidungsfindung', 'die Umsetzung des Plans', 'zur Verbesserung'], remember: ['les noms prennent majuscule', 'les composés sont fréquents', 'couper les phrases trop longues'] },
+      { title: 'Discours indirect', focus: 'Konjunktiv I', lesson: 'Dans la presse ou un résumé neutre, le Konjunktiv I rapporte une parole sans l’endosser complètement.', examples: ['Er sagte, er sei müde.', 'Sie erklärte, sie habe Zeit.', 'Der Bericht zeige...'], remember: ['sei/habe très fréquents', 'marque la distance', 'style journalistique'] },
+      { title: 'Prépositions complexes', focus: 'registre formel', lesson: 'Des groupes comme im Hinblick auf, angesichts, infolge structurent une argumentation précise.', examples: ['im Hinblick auf die Kosten', 'angesichts der Lage', 'infolge der Entscheidung'], remember: ['souvent suivis du génitif ou datif', 'à apprendre en bloc', 'utile pour textes C1'] },
+    ],
+  },
+  it: {
+    A1: [
+      { title: 'Essere et avere', focus: 'être et avoir', lesson: 'Essere sert à l’identité, l’état et parfois la localisation. Avere sert à la possession et à beaucoup d’expressions courantes.', examples: ['Sono francese.', 'Ho una domanda.', 'Siamo pronti.'], remember: ['sono = je suis / ils sont selon contexte', 'ho = j’ai', 'accord fréquent avec essere'] },
+      { title: 'Présent en -are', focus: 'parlare', lesson: 'Les verbes réguliers en -are forment une base simple : parl-o, parl-i, parl-a.', examples: ['io parlo', 'tu parli', 'lei parla'], remember: ['io finit souvent en -o', 'tu finit en -i', 'lui/lei finit en -a'] },
+      { title: 'Articles', focus: 'il, lo, la', lesson: 'L’italien choisit l’article selon le genre et le son initial. Lo apparaît devant s + consonne, z, gn, ps.', examples: ['il libro', 'lo studente', 'la casa'], remember: ['apprendre le nom avec son article', 'lo studente, gli studenti', 'la devient l’ devant voyelle'] },
+    ],
+    A2: [
+      { title: 'Passato prossimo', focus: 'passé composé italien', lesson: 'Le passato prossimo se forme avec avere ou essere + participe passé. Avec essere, le participe s’accorde.', examples: ['Ho mangiato.', 'Sono andato.', 'Siamo arrivati.'], remember: ['mouvement souvent avec essere', 'accord avec essere', 'avere pour beaucoup de verbes transitifs'] },
+      { title: 'Prépositions articulées', focus: 'a + il = al', lesson: 'Les prépositions se contractent souvent avec l’article : a + il = al, di + la = della.', examples: ['vado al mercato', 'il nome della città', 'nel libro'], remember: ['a, di, da, in se contractent', 'article toujours important', 'beaucoup s’apprend par blocs'] },
+      { title: 'Accords', focus: 'nom, adjectif, participe', lesson: 'L’adjectif s’accorde avec le nom. Avec essere au passé, le participe s’accorde aussi avec le sujet.', examples: ['una casa bella', 'due libri nuovi', 'Maria è arrivata.'], remember: ['-o/-a, -i/-e', 'essere déclenche l’accord', 'le pluriel féminin finit souvent en -e'] },
+    ],
+    B1: [
+      { title: 'Pronoms directs', focus: 'lo, la, li, le', lesson: 'Les pronoms directs remplacent un objet déjà connu et se placent souvent avant le verbe conjugué.', examples: ['Lo vedo.', 'La compro.', 'Li conosco.'], remember: ['lo masculin singulier', 'la féminin singulier', 'avant le verbe conjugué'] },
+      { title: 'Ci et ne', focus: 'y, en, quantité', lesson: 'Ci peut reprendre un lieu ou une idée. Ne reprend une quantité, une origine ou une partie.', examples: ['Ci vado domani.', 'Ne ho due.', 'Non ne parlo.'], remember: ['ci = y souvent', 'ne = en / de cela', 'très fréquent à l’oral'] },
+      { title: 'Imparfait', focus: 'habitude et description', lesson: 'L’imperfetto décrit le cadre, les habitudes et les états passés.', examples: ['Da bambino giocavo.', 'Era tardi.', 'Faceva freddo.'], remember: ['-avo, -evo, -ivo', 'essere devient ero', 'décrit plus qu’il ne fait avancer'] },
+    ],
+    B2: [
+      { title: 'Congiuntivo', focus: 'opinion, doute, souhait', lesson: 'Après penso che, credo che, benché, l’italien soigné emploie souvent le subjonctif.', examples: ['Penso che sia utile.', 'Credo che abbia ragione.', 'Benché fosse tardi...'], remember: ['sia et abbia très fréquents', 'registre plus soigné', 'après benché presque obligatoire'] },
+      { title: 'Période hypothétique', focus: 'conditionnel et subjonctif', lesson: 'Pour une hypothèse irréelle, l’italien combine souvent congiuntivo imperfetto et condizionale.', examples: ['Se avessi tempo, partirei.', 'Se lo sapessi, te lo direi.', 'Sarei venuto se avessi potuto.'], remember: ['se + subjonctif', 'résultat au conditionnel', 'utile pour regrets et hypothèses'] },
+      { title: 'Connecteurs', focus: 'tuttavia, inoltre, pertanto', lesson: 'Les connecteurs organisent l’argumentation : tuttavia oppose, inoltre ajoute, pertanto conclut.', examples: ['Tuttavia, resta difficile.', 'Inoltre, costa meno.', 'Pertanto, accettiamo.'], remember: ['connecteur = relation logique', 'éviter répétitions', 'registre souvent écrit'] },
+    ],
+    C1: [
+      { title: 'Registre formel', focus: 'réserve et précision', lesson: 'Des tournures comme va precisato che ou occorre sottolineare che structurent un propos soutenu.', examples: ['Va precisato che...', 'Occorre sottolineare che...', 'Alla luce di questi dati...'], remember: ['va + participe', 'alla luce di = à la lumière de', 'viser précision'] },
+      { title: 'Subjonctif imparfait', focus: 'concession et irréel', lesson: 'Fosse, avesse, potesse apparaissent souvent dans les hypothèses et concessions avancées.', examples: ['Benché fosse stanco...', 'Se avessi saputo...', 'Come se potesse cambiare tutto.'], remember: ['fosse = être', 'avesse = avoir', 'souvent après benché ou se'] },
+      { title: 'Nuances lexicales', focus: 'mots abstraits', lesson: 'Le C1 exige de distinguer des nuances : sfumatura, presupposto, riscontro, consapevolezza.', examples: ['una sfumatura importante', 'un presupposto fragile', 'senza riscontro'], remember: ['apprendre les mots en contexte', 'noter les collocations', 'privilégier la précision'] },
+    ],
+  },
+};
+
 function LanguageHub({ progress, onClose, onStart, onDailyVocabulary }: { progress: LanguageProgressCell[]; onClose: () => void; onStart: (filters: LanguageSessionFilters) => void; onDailyVocabulary: (filters: Pick<LanguageSessionFilters, 'language' | 'level'>) => void }) {
-  const [language, setLanguage] = useState<LanguageCode>('es');
+  const [language, setLanguage] = useState<LanguageCode>('en');
   const [level, setLevel] = useState<CefrLevel>('A1');
-  const [skills, setSkills] = useState<LanguageSkill[]>(LANGUAGE_SKILLS.map((skill) => skill.id));
-  const [limit, setLimit] = useState<5 | 10 | 20>(5);
-  const toggleSkill = (skill: LanguageSkill) => setSkills((current) => current.includes(skill) ? current.filter((item) => item !== skill) : [...current, skill]);
+  const [lessonIndex, setLessonIndex] = useState(0);
   const currentProgress = CEFR_LEVELS.map((item) => progress.find((cell) => cell.language === language && cell.level === item) ?? { language, level: item, answered: 0, score: 0, accuracy: 0 });
   const currentLevelProgress = currentProgress.find((cell) => cell.level === level);
+  const courseSteps = LANGUAGE_COURSES[language][level];
+  const lesson = courseSteps[Math.min(lessonIndex, courseSteps.length - 1)];
+  const languageName = LANGUAGE_OPTIONS.find((item) => item.code === language)?.name ?? 'Langue';
+  const allSkills = LANGUAGE_SKILLS.map((skill) => skill.id);
+  const selectLanguage = (nextLanguage: LanguageCode) => {
+    setLanguage(nextLanguage);
+    setLessonIndex(0);
+  };
+  const selectLevel = (nextLevel: CefrLevel) => {
+    setLevel(nextLevel);
+    setLessonIndex(0);
+  };
   return (
     <ScrollView contentContainerStyle={styles.languagePage} showsVerticalScrollIndicator={false}>
-      <View style={styles.libraryHeader}><Pressable onPress={onClose} hitSlop={16}><Text style={styles.back}>‹</Text></Pressable><Text style={styles.libraryTitle}>Parcours Langues</Text></View>
-      <Text style={styles.configTitle}>Une langue à la fois.</Text><Text style={styles.configLead}>Un parcours ciblé, progressif et entièrement hors ligne.</Text>
-      <Text style={styles.configSection}>LANGUE CIBLE</Text>
-      <View style={styles.languageChoices}>{LANGUAGE_OPTIONS.map((item) => <Pressable key={item.code} testID={`language-${item.code}`} onPress={() => setLanguage(item.code)} style={[styles.languageChoice, language === item.code && styles.languageChoiceActive]}><Text style={[styles.languageChoiceName, language === item.code && styles.filterChipTextActive]}>{item.name}</Text><Text style={styles.languageChoiceNative}>{item.native}</Text></Pressable>)}</View>
-      <Text style={styles.configSection}>NIVEAU CECRL</Text>
-      <View style={styles.cefrRow}>{CEFR_LEVELS.map((item) => <Pressable key={item} testID={`cefr-${item}`} onPress={() => setLevel(item)} style={[styles.cefrButton, level === item && styles.filterChipActive]}><Text style={[styles.cefrText, level === item && styles.filterChipTextActive]}>{item}</Text></Pressable>)}</View>
+      <View style={styles.libraryHeader}><Pressable onPress={onClose} hitSlop={16}><Text style={styles.back}>‹</Text></Pressable><Text style={styles.libraryTitle}>Cours de langues</Text></View>
+      <Text style={styles.configTitle}>Cours avant quiz.</Text><Text style={styles.configLead}>Lis une courte leçon, observe les exemples, puis vérifie seulement quand le point est clair.</Text>
+      <Text style={styles.configSection}>LANGUE</Text>
+      <View style={styles.languageChoices}>{LANGUAGE_OPTIONS.map((item) => <Pressable key={item.code} testID={`language-${item.code}`} onPress={() => selectLanguage(item.code)} style={[styles.languageChoice, language === item.code && styles.languageChoiceActive]}><Text style={[styles.languageChoiceName, language === item.code && styles.filterChipTextActive]}>{item.name}</Text><Text style={styles.languageChoiceNative}>{item.native}</Text></Pressable>)}</View>
+      <Text style={styles.configSection}>NIVEAU</Text>
+      <View style={styles.cefrRow}>{CEFR_LEVELS.map((item) => <Pressable key={item} testID={`cefr-${item}`} onPress={() => selectLevel(item)} style={[styles.cefrButton, level === item && styles.filterChipActive]}><Text style={[styles.cefrText, level === item && styles.filterChipTextActive]}>{item}</Text></Pressable>)}</View>
       <View style={styles.languageProgressCard}>
-        <View style={styles.languageProgressHeader}><Text style={styles.languageProgressTitle}>Progression {LANGUAGE_OPTIONS.find((item) => item.code === language)?.name}</Text><Text style={styles.languageProgressMeta}>{currentLevelProgress?.answered ?? 0} rep. niveau {level}</Text></View>
-        <View style={styles.languageProgressGrid}>{currentProgress.map((cell) => <Pressable key={cell.level} onPress={() => setLevel(cell.level)} style={[styles.languageProgressCell, level === cell.level && styles.languageProgressCellActive]}><Text style={[styles.languageProgressLevel, level === cell.level && styles.filterChipTextActive]}>{cell.level}</Text><Text style={styles.languageProgressAccuracy}>{cell.answered ? `${cell.accuracy}%` : '-'}</Text><Text style={styles.languageProgressCount}>{cell.answered} rep.</Text></Pressable>)}</View>
+        <View style={styles.languageProgressHeader}><Text style={styles.languageProgressTitle}>{languageName} {level}</Text><Text style={styles.languageProgressMeta}>{currentLevelProgress?.answered ?? 0} vérif.</Text></View>
+        <View style={styles.languageProgressGrid}>{currentProgress.map((cell) => <Pressable key={cell.level} onPress={() => selectLevel(cell.level)} style={[styles.languageProgressCell, level === cell.level && styles.languageProgressCellActive]}><Text style={[styles.languageProgressLevel, level === cell.level && styles.filterChipTextActive]}>{cell.level}</Text><Text style={styles.languageProgressAccuracy}>{cell.answered ? `${cell.accuracy}%` : '-'}</Text><Text style={styles.languageProgressCount}>{cell.answered} rep.</Text></Pressable>)}</View>
       </View>
-      <Text style={styles.levelHelp}>{level === 'A1' ? 'Débutant : mots et phrases indispensables.' : level === 'A2' ? 'Élémentaire : situations courantes.' : level === 'B1' ? 'Intermédiaire : comprendre et raconter.' : level === 'B2' ? 'Avancé : nuances et argumentation.' : 'Autonome : idiomes, registre et culture fine.'}</Text>
-      <Text style={styles.configSection}>COMPÉTENCES</Text>
-      <View style={styles.skillList}>{LANGUAGE_SKILLS.map((item) => { const active = skills.includes(item.id); return <Pressable key={item.id} testID={`language-skill-${item.id}`} onPress={() => toggleSkill(item.id)} style={[styles.skillCard, active && styles.skillCardActive]}><View style={[styles.skillCheck, active && styles.skillCheckActive]}><Text style={styles.searchCheckText}>{active ? '✓' : ''}</Text></View><View style={{ flex: 1 }}><Text style={styles.skillTitle}>{item.title}</Text><Text style={styles.skillDetail}>{item.detail}</Text></View></Pressable>; })}</View>
-      <Text style={styles.configSection}>LONGUEUR MAXIMALE</Text>
-      <View style={styles.lengthRow}>{([5, 10, 20] as const).map((item) => <Pressable key={item} onPress={() => setLimit(item)} style={[styles.lengthButton, limit === item && styles.lengthButtonActive]}><Text style={[styles.lengthValue, limit === item && styles.lengthValueActive]}>{item}</Text><Text style={styles.lengthLabel}>questions</Text></Pressable>)}</View>
-      <View style={styles.languageMethod}><Text style={styles.languageMethodTitle}>Méthode fréquence</Text><Text style={styles.languageMethodText}>Le vocabulaire est organisé par bandes de fréquence. Le socle commence par les mots les plus utiles avant d’élargir progressivement vers un lexique de 10 000 mots.</Text></View>
+      <View style={styles.courseStepper}>{courseSteps.map((step, index) => <Pressable key={step.title} testID={`course-step-${index}`} onPress={() => setLessonIndex(index)} style={[styles.courseStep, lessonIndex === index && styles.courseStepActive]}><Text style={[styles.courseStepNumber, lessonIndex === index && styles.filterChipTextActive]}>{index + 1}</Text><Text style={[styles.courseStepText, lessonIndex === index && styles.filterChipTextActive]}>{step.title}</Text></Pressable>)}</View>
+      <View style={styles.lessonCard}>
+        <Text style={styles.lessonEyebrow}>{languageName} {level} · {lesson.focus}</Text>
+        <Text style={styles.lessonTitle}>{lesson.title}</Text>
+        <Text style={styles.lessonText}>{lesson.lesson}</Text>
+        <Text style={styles.lessonSubhead}>Exemples</Text>
+        {lesson.examples.map((example) => <Text key={example} style={styles.lessonExample}>{example}</Text>)}
+        <Text style={styles.lessonSubhead}>À retenir</Text>
+        {lesson.remember.map((item) => <Text key={item} style={styles.lessonBullet}>• {item}</Text>)}
+      </View>
+      <View style={styles.lessonActions}>
+        <Pressable disabled={lessonIndex === 0} onPress={() => setLessonIndex((index) => Math.max(0, index - 1))} style={[styles.lessonSecondary, lessonIndex === 0 && styles.disabled]}><Text style={styles.lessonSecondaryText}>Précédent</Text></Pressable>
+        <Pressable testID="next-course-step" onPress={() => lessonIndex < courseSteps.length - 1 ? setLessonIndex((index) => index + 1) : onStart({ language, level, skills: allSkills, limit: 5 })} style={styles.lessonPrimary}><Text style={styles.primaryButtonText}>{lessonIndex < courseSteps.length - 1 ? 'Leçon suivante' : 'Vérifier en 5 questions'}</Text></Pressable>
+      </View>
+      <View style={styles.languageMethod}><Text style={styles.languageMethodTitle}>Parcours conseillé</Text><Text style={styles.languageMethodText}>Commence par ces leçons, puis fais une vérification courte. Le vocabulaire fréquent reste disponible à part pour travailler les mots avant les exercices.</Text></View>
       <Pressable testID="daily-vocabulary" onPress={() => onDailyVocabulary({ language, level })} style={styles.dailyVocabCard}>
-        <View><Text style={styles.dailyVocabEyebrow}>RITUEL COURT</Text><Text style={styles.dailyVocabTitle}>10 mots du jour</Text><Text style={styles.dailyVocabText}>Lis les mots utiles, puis vérifie dans les deux sens: vers le français et depuis le français.</Text></View>
+        <View><Text style={styles.dailyVocabEyebrow}>VOCABULAIRE</Text><Text style={styles.dailyVocabTitle}>Mots fréquents du niveau</Text><Text style={styles.dailyVocabText}>Une petite série pour reconnaître puis écrire les mots utiles.</Text></View>
         <Text style={styles.composeArrow}>→</Text>
       </Pressable>
-      <Pressable testID="launch-language-session" disabled={!skills.length} onPress={() => onStart({ language, level, skills, limit })} style={[styles.primaryButton, !skills.length && styles.disabled]}><Text style={styles.primaryButtonText}>Commencer en {LANGUAGE_OPTIONS.find((item) => item.code === language)?.name}</Text></Pressable>
+      <Pressable testID="launch-language-session" onPress={() => onStart({ language, level, skills: allSkills, limit: 10 })} style={styles.primaryButton}><Text style={styles.primaryButtonText}>Révision complète après le cours</Text></Pressable>
     </ScrollView>
   );
 }
@@ -1356,6 +1495,8 @@ const styles = StyleSheet.create({
   languagePanelHero: { borderRadius: 26, backgroundColor: '#102027', borderWidth: 1, borderColor: '#285262', padding: 20, marginBottom: 14 }, languagePanelEyebrow: { color: '#6FC8D9', fontSize: 10, fontWeight: '900', letterSpacing: 1.4 }, languagePanelTitle: { color: '#F3F9FA', fontSize: 29, lineHeight: 33, fontWeight: '900', letterSpacing: -0.8, marginTop: 8 }, languagePanelText: { color: '#8EA6AD', fontSize: 13, lineHeight: 19, marginTop: 8 }, languageMiniGrid: { gap: 10, marginTop: 14 }, languageMiniCard: { borderRadius: 18, backgroundColor: '#121815', borderWidth: 1, borderColor: '#25302B', padding: 15 }, languageMiniCode: { color: '#5FB8C9', fontSize: 11, fontWeight: '900' }, languageMiniName: { color: '#EAF3EE', fontSize: 16, fontWeight: '900', marginTop: 4 }, languageMiniText: { color: '#7C8B85', fontSize: 11, marginTop: 4 },
   languageProgressCard: { borderRadius: 18, backgroundColor: '#101B1D', borderWidth: 1, borderColor: '#26464D', padding: 13, marginTop: 12, marginBottom: 16 }, languageProgressHeader: { flexDirection: 'row', alignItems: 'baseline', marginBottom: 10 }, languageProgressTitle: { color: '#E6F2F4', fontSize: 13, fontWeight: '900' }, languageProgressMeta: { color: '#78949C', fontSize: 10, fontWeight: '800', marginLeft: 'auto' }, languageProgressGrid: { flexDirection: 'row', gap: 7 }, languageProgressCell: { flex: 1, minHeight: 62, borderRadius: 14, borderWidth: 1, borderColor: '#2A3B3F', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center', paddingVertical: 8 }, languageProgressCellActive: { borderColor: '#5FB8C9', backgroundColor: '#163039' }, languageProgressLevel: { color: '#DCE6E1', fontSize: 12, fontWeight: '900' }, languageProgressAccuracy: { color: '#8EE0B5', fontSize: 13, fontWeight: '900', marginTop: 3 }, languageProgressCount: { color: '#718079', fontSize: 9, fontWeight: '800', marginTop: 2 },
   languagePage: { padding: 22, paddingBottom: 60, backgroundColor: '#0A0E0D' }, languageChoices: { gap: 9, marginBottom: 20 }, languageChoice: { minHeight: 67, borderRadius: 17, borderWidth: 1, borderColor: '#293631', backgroundColor: '#121815', paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center' }, languageChoiceActive: { borderColor: '#5FB8C9', backgroundColor: '#12252B' }, languageChoiceName: { color: '#DCE6E1', fontSize: 15, fontWeight: '800' }, languageChoiceNative: { color: '#70827A', fontSize: 12, marginLeft: 'auto' }, cefrRow: { flexDirection: 'row', gap: 7 }, cefrButton: { flex: 1, height: 48, borderRadius: 14, borderWidth: 1, borderColor: '#2A3530', backgroundColor: '#121815', alignItems: 'center', justifyContent: 'center' }, cefrText: { color: '#A1ACA6', fontWeight: '900' }, levelHelp: { color: '#718079', fontSize: 11, lineHeight: 17, marginTop: 9, marginBottom: 14 }, skillList: { gap: 9, marginBottom: 18 }, skillCard: { minHeight: 72, borderRadius: 17, borderWidth: 1, borderColor: '#29332F', backgroundColor: '#121815', padding: 13, flexDirection: 'row', alignItems: 'center' }, skillCardActive: { borderColor: '#417B86', backgroundColor: '#102126' }, skillCheck: { width: 29, height: 29, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', alignItems: 'center', justifyContent: 'center', marginRight: 12 }, skillCheckActive: { backgroundColor: '#5FB8C9', borderColor: '#5FB8C9' }, skillTitle: { color: '#E4ECE8', fontSize: 13, fontWeight: '800' }, skillDetail: { color: '#718079', fontSize: 10, marginTop: 4 }, languageMethod: { borderRadius: 17, backgroundColor: '#121A17', borderWidth: 1, borderColor: '#29352F', padding: 15, marginBottom: 18 }, languageMethodTitle: { color: '#8EDCB6', fontSize: 13, fontWeight: '900' }, languageMethodText: { color: '#7E8C85', fontSize: 11, lineHeight: 18, marginTop: 6 },
+  courseStepper: { gap: 8, marginBottom: 14 }, courseStep: { minHeight: 42, borderRadius: 14, borderWidth: 1, borderColor: '#293631', backgroundColor: '#111815', paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center' }, courseStepActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, courseStepNumber: { width: 26, height: 26, borderRadius: 9, backgroundColor: '#1C2621', color: '#8EE0B5', fontSize: 12, fontWeight: '900', textAlign: 'center', lineHeight: 26, marginRight: 10, overflow: 'hidden' }, courseStepText: { color: '#DDE8E3', fontSize: 13, fontWeight: '900', flex: 1 },
+  lessonCard: { borderRadius: 20, borderWidth: 1, borderColor: '#2A3B35', backgroundColor: '#111714', padding: 18, marginBottom: 12 }, lessonEyebrow: { color: '#75CFE0', fontSize: 10, fontWeight: '900', letterSpacing: 1.1, textTransform: 'uppercase' }, lessonTitle: { color: '#F1F7F4', fontSize: 24, lineHeight: 29, fontWeight: '900', marginTop: 8 }, lessonText: { color: '#AAB8B1', fontSize: 14, lineHeight: 22, marginTop: 12 }, lessonSubhead: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginTop: 16, marginBottom: 8 }, lessonExample: { color: '#DDE8E3', fontSize: 14, lineHeight: 21, paddingVertical: 8, paddingHorizontal: 11, borderRadius: 12, backgroundColor: '#17211D', marginBottom: 6 }, lessonBullet: { color: '#9DADA5', fontSize: 13, lineHeight: 20, marginBottom: 4 }, lessonActions: { flexDirection: 'row', gap: 9, marginBottom: 16 }, lessonSecondary: { flex: 1, minHeight: 50, borderRadius: 15, borderWidth: 1, borderColor: '#2B3832', alignItems: 'center', justifyContent: 'center', backgroundColor: '#101613' }, lessonSecondaryText: { color: '#AAB8B1', fontSize: 13, fontWeight: '900' }, lessonPrimary: { flex: 1.6, minHeight: 50, borderRadius: 15, alignItems: 'center', justifyContent: 'center', backgroundColor: '#68D7A2' },
   topicGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 }, topicCard: { width: '48%', minHeight: 176, padding: 16, borderRadius: 22, backgroundColor: '#121815', borderWidth: 1, borderColor: '#26312C' }, pressed: { opacity: 0.72, transform: [{ scale: 0.985 }] }, topicIcon: { width: 44, height: 44, borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginBottom: 15 }, topicIconText: { fontSize: 17, fontWeight: '900' }, topicTitle: { color: '#ECF2EF', fontWeight: '900', fontSize: 16 }, topicSubtitle: { color: '#84918A', fontSize: 11.5, lineHeight: 17, marginTop: 4 }, go: { fontSize: 12, fontWeight: '900', marginTop: 'auto' }, privacy: { textAlign: 'center', color: '#66736D', fontSize: 11, marginTop: 28 },
   homeStatsLine: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: -18, marginBottom: 18 }, homeStatsText: { color: '#9AA9A2', fontSize: 11, fontWeight: '800', paddingHorizontal: 10, paddingVertical: 6, borderRadius: 999, backgroundColor: '#121A17', borderWidth: 1, borderColor: '#24302A' },
   modeMiniRow: { flexDirection: 'row', gap: 10, marginBottom: 18 }, modeMiniCard: { flex: 1, borderRadius: 18, borderWidth: 1, borderColor: '#26312C', backgroundColor: '#111614', padding: 13 }, modeMiniTitle: { color: '#EEF6F2', fontSize: 14, fontWeight: '900', marginBottom: 10 }, modeMiniButtons: { flexDirection: 'row', gap: 7 }, modeMiniButton: { flex: 1, minHeight: 38, borderRadius: 13, borderWidth: 1, borderColor: '#334139', backgroundColor: '#16201B', alignItems: 'center', justifyContent: 'center' },
