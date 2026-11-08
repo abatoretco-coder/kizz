@@ -1,0 +1,67 @@
+{
+  "source": "Quiz API v2 - Jonathan Moreschi (https://quizzapi.jomoreschi.fr/)",
+  "retrievedAt": "2026-11-08",
+  "downloadUrl": "https://quizzapi.fr/api/v2/quiz?limit=1000",
+  "termsUrl": "https://github.com/Eromnoj/quizzAPIv2/blob/main/TERMS.md",
+  "use": "Projet personnel non commercial du propriétaire de Kizz",
+  "total": 943,
+  "uniqueIds": 943,
+  "uniquePrompts": 936,
+  "categories": {
+    "art_litterature": 93,
+    "culture_generale": 180,
+    "tv_cinema": 113,
+    "musique": 61,
+    "jeux_videos": 56,
+    "geographie": 112,
+    "actu_politique": 49,
+    "science": 111,
+    "sport": 81,
+    "gastronomie": 36,
+    "histoire": 51
+  },
+  "levels": {
+    "normal": 484,
+    "difficile": 258,
+    "facile": 201
+  },
+  "duplicatePrompts": [
+    {
+      "kept": "cmck8wdut002chzrou5ak9rbs",
+      "duplicate": "cmck8wdus000dhzroron5cshv"
+    },
+    {
+      "kept": "cmt5ejoj7001hhz9csiywz07a",
+      "duplicate": "cmguwgjnu000chzkmzqzb6on6"
+    },
+    {
+      "kept": "cmck8wdv1002whzro4afauftv",
+      "duplicate": "cmck8wdv1002vhzrofb351evs"
+    },
+    {
+      "kept": "cmck8wdus000thzroj6p0e4bq",
+      "duplicate": "cmck8wdut002mhzroo7mayuq3"
+    },
+    {
+      "kept": "cmck8wdus000thzroj6p0e4bq",
+      "duplicate": "cmck8wdv6006whzro4rbthou3"
+    },
+    {
+      "kept": "cmck8wdut0025hzrobfo08oyq",
+      "duplicate": "cmck8wdut002lhzrogaddj428"
+    },
+    {
+      "kept": "cmck8wdv20031hzroqut1jfk3",
+      "duplicate": "cmck8wdv20030hzroy8srbe27"
+    }
+  ],
+  "activeSelection": 114,
+  "activeTopics": {
+    "geography": 47,
+    "france-map": 19,
+    "astronomy": 9,
+    "science": 18,
+    "history": 21
+  },
+  "notes": "Les niveaux bruts sont ceux du fournisseur. La source ne fournit pas d’explications. La sélection active ajoute des explications Kizz et corrige certains énoncés et niveaux."
+}

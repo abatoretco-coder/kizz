@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-11-08",
+  "environment": "Node.js 26, SQLite en mémoire, SQL réel de src/database.ts ; ne représente pas une copie du fichier privé Android",
+  "sqliteVersion": "3.54.0",
+  "bankSha256": "6876782c732222df236980d3086c3979c11d8710755b27152ad19cb212db3399",
+  "integrity": "ok",
+  "foreignKeyViolations": [],
+  "questionCount": 7276,
+  "topicCount": 34,
+  "invalidJsonRows": 0,
+  "byType": [
+    {
+      "type": "free-text",
+      "count": 426
+    },
+    {
+      "type": "map-point",
+      "count": 72
+    },
+    {
+      "type": "multi-text",
+      "count": 2
+    },
+    {
+      "type": "multiple-choice",
+      "count": 6776
+    }
+  ],
+  "exactDuplicateGroups": [
+    [
+      "opentdb-general-knowledge-00036",
+      "opentdb-general-knowledge-00045"
+    ],
+    [
+      "opentdb-general-knowledge-00179",
+      "opentdb-science-nature-02528"
+    ],
+    [
+      "opentdb-science-nature-02431",
+      "opentdb-science-nature-02465"
+    ]
+  ],
+  "tests": [
+    "fresh-bank-roundtrip",
+    "restart-preserves-user-data",
+    "local-editorial-overrides",
+    "session-rollback",
+    "seed-rollback",
+    "personal-import-idempotence",
+    "populated-legacy-schema-migration",
+    "semantic-search-excludes-provenance"
+  ]
+}

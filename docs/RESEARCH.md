@@ -13,6 +13,38 @@ Mise a jour du 27 juin 2026: revue produit rapide de Quizlet, Kahoot, Anki, Duol
 | [joaomanaia/newquiz](https://github.com/joaomanaia/newquiz) | Interface Jetpack Compose récente | Apache-2.0 |
 | [uberspot/OpenTriviaQA](https://github.com/uberspot/OpenTriviaQA) | Banque structurée par catégories et format texte convertible | CC BY-SA 4.0 |
 
+## Reference demandee : La Table des Savoirs - 8 novembre 2026
+
+Site d'Emilien identifie via [ses liens officiels](https://linktr.ee/emilienliens) : [La Table des Savoirs](https://latabledessavoirs.fr/).
+
+Observation directe du reglement public, de l'accueil et du debut du quiz Abordable, sans connexion : deux parcours de dix questions, Abordable et Expert ; saisie libre dans le quiz observe ; possibilite de passer ; reglement prevoyant des variantes de noms, articles et synonymes. Le reglement annonce dix themes par questionnaire. Le parcours Expert n'a pas ete consulte.
+
+Apports retenus pour Kizz : rappel actif, enonces precis, separation entre reperes courants et connaissances plus specialisees, variantes de reponse pertinentes. Kizz conserve ses sessions finies, sa correction explicative et l'absence de chrono impose. Les bonus competitifs, classements mensuels et penalites ne font pas partie de ce lot.
+
+Les [mentions legales](https://latabledessavoirs.fr/mentions-legales) reservent la banque de questions a ZQSD Productions et indiquent qu'une autorisation ecrite est necessaire pour sa reproduction. Aucun enonce ni banque du site n'est importe dans Kizz. Cette reference ne doit pas etre presentee comme une source de textes sous licence ouverte.
+
+## Sources du lot Géographie / France — 8 novembre 2026
+
+Trois packs officiels OpenQuizzDB, rédigés par Philippe Bresoux, ont été
+téléchargés : [Bretagne](https://www.openquizzdb.org/download.php?id=219),
+[Villes de France](https://www.openquizzdb.org/download.php?id=542) et
+[Géo pour tous](https://www.openquizzdb.org/download.php?id=554).
+Chaque fichier disponible contenait quatre questions et aucun champ de
+difficulté : les niveaux du lot Kizz sont des choix éditoriaux locaux.
+Dix adaptations actives, avec corrections et provenance détaillées dans
+`external-data/openquizzdb/README.md`.
+
+Les chefs-lieux et rattachements régionaux sont comparés aux fichiers du
+[COG Insee 2026](https://www.insee.fr/fr/information/8740222), dont un extrait
+indépendant est conservé dans `external-data/insee` pour les tests.
+Repères vérifiés pour les reformulations France :
+[pont d’Oléron, Département de Charente-Maritime](https://la.charente-maritime.fr/routes-transports/ponts/pont-lile-doleron),
+[Tourmalet, office de tourisme](https://www.tourmaletpicdumidi.com/activites-loisirs/velo-dans-les-pyrenees/).
+Les rôles institutionnels des capitales sont notamment précisés à partir du
+[gouvernement suisse](https://www.aboutswitzerland.eda.admin.ch/fr/systeme-politique),
+du [Parlement sri-lankais](https://www.parliament.lk/en/visit-parliament/visiting-parliament/how-to-get-here)
+et de la [Knesset](https://m.knesset.gov.il/en/about/pages/building.aspx).
+
 ## Décisions MVP
 
 - Les sources externes restent des references de structure et de licence; la banque initiale active est maintenue comme contenu Kizz original.

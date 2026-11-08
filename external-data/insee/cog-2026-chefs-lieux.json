@@ -1,0 +1,706 @@
+{
+  "source": "Insee, Code officiel géographique au 1er janvier 2026",
+  "sourceUrl": "https://www.insee.fr/fr/information/8740222",
+  "license": "Licence Ouverte / Open Licence Etalab 2.0",
+  "retrievedAt": "2026-11-08",
+  "departments": [
+    {
+      "code": "01",
+      "name": "Ain",
+      "regionCode": "84",
+      "chiefTown": "Bourg-en-Bresse"
+    },
+    {
+      "code": "02",
+      "name": "Aisne",
+      "regionCode": "32",
+      "chiefTown": "Laon"
+    },
+    {
+      "code": "03",
+      "name": "Allier",
+      "regionCode": "84",
+      "chiefTown": "Moulins"
+    },
+    {
+      "code": "04",
+      "name": "Alpes-de-Haute-Provence",
+      "regionCode": "93",
+      "chiefTown": "Digne-les-Bains"
+    },
+    {
+      "code": "05",
+      "name": "Hautes-Alpes",
+      "regionCode": "93",
+      "chiefTown": "Gap"
+    },
+    {
+      "code": "06",
+      "name": "Alpes-Maritimes",
+      "regionCode": "93",
+      "chiefTown": "Nice"
+    },
+    {
+      "code": "07",
+      "name": "Ardèche",
+      "regionCode": "84",
+      "chiefTown": "Privas"
+    },
+    {
+      "code": "08",
+      "name": "Ardennes",
+      "regionCode": "44",
+      "chiefTown": "Charleville-Mézières"
+    },
+    {
+      "code": "09",
+      "name": "Ariège",
+      "regionCode": "76",
+      "chiefTown": "Foix"
+    },
+    {
+      "code": "10",
+      "name": "Aube",
+      "regionCode": "44",
+      "chiefTown": "Troyes"
+    },
+    {
+      "code": "11",
+      "name": "Aude",
+      "regionCode": "76",
+      "chiefTown": "Carcassonne"
+    },
+    {
+      "code": "12",
+      "name": "Aveyron",
+      "regionCode": "76",
+      "chiefTown": "Rodez"
+    },
+    {
+      "code": "13",
+      "name": "Bouches-du-Rhône",
+      "regionCode": "93",
+      "chiefTown": "Marseille"
+    },
+    {
+      "code": "14",
+      "name": "Calvados",
+      "regionCode": "28",
+      "chiefTown": "Caen"
+    },
+    {
+      "code": "15",
+      "name": "Cantal",
+      "regionCode": "84",
+      "chiefTown": "Aurillac"
+    },
+    {
+      "code": "16",
+      "name": "Charente",
+      "regionCode": "75",
+      "chiefTown": "Angoulême"
+    },
+    {
+      "code": "17",
+      "name": "Charente-Maritime",
+      "regionCode": "75",
+      "chiefTown": "La Rochelle"
+    },
+    {
+      "code": "18",
+      "name": "Cher",
+      "regionCode": "24",
+      "chiefTown": "Bourges"
+    },
+    {
+      "code": "19",
+      "name": "Corrèze",
+      "regionCode": "75",
+      "chiefTown": "Tulle"
+    },
+    {
+      "code": "21",
+      "name": "Côte-d'Or",
+      "regionCode": "27",
+      "chiefTown": "Dijon"
+    },
+    {
+      "code": "22",
+      "name": "Côtes-d'Armor",
+      "regionCode": "53",
+      "chiefTown": "Saint-Brieuc"
+    },
+    {
+      "code": "23",
+      "name": "Creuse",
+      "regionCode": "75",
+      "chiefTown": "Guéret"
+    },
+    {
+      "code": "24",
+      "name": "Dordogne",
+      "regionCode": "75",
+      "chiefTown": "Périgueux"
+    },
+    {
+      "code": "25",
+      "name": "Doubs",
+      "regionCode": "27",
+      "chiefTown": "Besançon"
+    },
+    {
+      "code": "26",
+      "name": "Drôme",
+      "regionCode": "84",
+      "chiefTown": "Valence"
+    },
+    {
+      "code": "27",
+      "name": "Eure",
+      "regionCode": "28",
+      "chiefTown": "Évreux"
+    },
+    {
+      "code": "28",
+      "name": "Eure-et-Loir",
+      "regionCode": "24",
+      "chiefTown": "Chartres"
+    },
+    {
+      "code": "29",
+      "name": "Finistère",
+      "regionCode": "53",
+      "chiefTown": "Quimper"
+    },
+    {
+      "code": "2A",
+      "name": "Corse-du-Sud",
+      "regionCode": "94",
+      "chiefTown": "Ajaccio"
+    },
+    {
+      "code": "2B",
+      "name": "Haute-Corse",
+      "regionCode": "94",
+      "chiefTown": "Bastia"
+    },
+    {
+      "code": "30",
+      "name": "Gard",
+      "regionCode": "76",
+      "chiefTown": "Nîmes"
+    },
+    {
+      "code": "31",
+      "name": "Haute-Garonne",
+      "regionCode": "76",
+      "chiefTown": "Toulouse"
+    },
+    {
+      "code": "32",
+      "name": "Gers",
+      "regionCode": "76",
+      "chiefTown": "Auch"
+    },
+    {
+      "code": "33",
+      "name": "Gironde",
+      "regionCode": "75",
+      "chiefTown": "Bordeaux"
+    },
+    {
+      "code": "34",
+      "name": "Hérault",
+      "regionCode": "76",
+      "chiefTown": "Montpellier"
+    },
+    {
+      "code": "35",
+      "name": "Ille-et-Vilaine",
+      "regionCode": "53",
+      "chiefTown": "Rennes"
+    },
+    {
+      "code": "36",
+      "name": "Indre",
+      "regionCode": "24",
+      "chiefTown": "Châteauroux"
+    },
+    {
+      "code": "37",
+      "name": "Indre-et-Loire",
+      "regionCode": "24",
+      "chiefTown": "Tours"
+    },
+    {
+      "code": "38",
+      "name": "Isère",
+      "regionCode": "84",
+      "chiefTown": "Grenoble"
+    },
+    {
+      "code": "39",
+      "name": "Jura",
+      "regionCode": "27",
+      "chiefTown": "Lons-le-Saunier"
+    },
+    {
+      "code": "40",
+      "name": "Landes",
+      "regionCode": "75",
+      "chiefTown": "Mont-de-Marsan"
+    },
+    {
+      "code": "41",
+      "name": "Loir-et-Cher",
+      "regionCode": "24",
+      "chiefTown": "Blois"
+    },
+    {
+      "code": "42",
+      "name": "Loire",
+      "regionCode": "84",
+      "chiefTown": "Saint-Étienne"
+    },
+    {
+      "code": "43",
+      "name": "Haute-Loire",
+      "regionCode": "84",
+      "chiefTown": "Le Puy-en-Velay"
+    },
+    {
+      "code": "44",
+      "name": "Loire-Atlantique",
+      "regionCode": "52",
+      "chiefTown": "Nantes"
+    },
+    {
+      "code": "45",
+      "name": "Loiret",
+      "regionCode": "24",
+      "chiefTown": "Orléans"
+    },
+    {
+      "code": "46",
+      "name": "Lot",
+      "regionCode": "76",
+      "chiefTown": "Cahors"
+    },
+    {
+      "code": "47",
+      "name": "Lot-et-Garonne",
+      "regionCode": "75",
+      "chiefTown": "Agen"
+    },
+    {
+      "code": "48",
+      "name": "Lozère",
+      "regionCode": "76",
+      "chiefTown": "Mende"
+    },
+    {
+      "code": "49",
+      "name": "Maine-et-Loire",
+      "regionCode": "52",
+      "chiefTown": "Angers"
+    },
+    {
+      "code": "50",
+      "name": "Manche",
+      "regionCode": "28",
+      "chiefTown": "Saint-Lô"
+    },
+    {
+      "code": "51",
+      "name": "Marne",
+      "regionCode": "44",
+      "chiefTown": "Châlons-en-Champagne"
+    },
+    {
+      "code": "52",
+      "name": "Haute-Marne",
+      "regionCode": "44",
+      "chiefTown": "Chaumont"
+    },
+    {
+      "code": "53",
+      "name": "Mayenne",
+      "regionCode": "52",
+      "chiefTown": "Laval"
+    },
+    {
+      "code": "54",
+      "name": "Meurthe-et-Moselle",
+      "regionCode": "44",
+      "chiefTown": "Nancy"
+    },
+    {
+      "code": "55",
+      "name": "Meuse",
+      "regionCode": "44",
+      "chiefTown": "Bar-le-Duc"
+    },
+    {
+      "code": "56",
+      "name": "Morbihan",
+      "regionCode": "53",
+      "chiefTown": "Vannes"
+    },
+    {
+      "code": "57",
+      "name": "Moselle",
+      "regionCode": "44",
+      "chiefTown": "Metz"
+    },
+    {
+      "code": "58",
+      "name": "Nièvre",
+      "regionCode": "27",
+      "chiefTown": "Nevers"
+    },
+    {
+      "code": "59",
+      "name": "Nord",
+      "regionCode": "32",
+      "chiefTown": "Lille"
+    },
+    {
+      "code": "60",
+      "name": "Oise",
+      "regionCode": "32",
+      "chiefTown": "Beauvais"
+    },
+    {
+      "code": "61",
+      "name": "Orne",
+      "regionCode": "28",
+      "chiefTown": "Alençon"
+    },
+    {
+      "code": "62",
+      "name": "Pas-de-Calais",
+      "regionCode": "32",
+      "chiefTown": "Arras"
+    },
+    {
+      "code": "63",
+      "name": "Puy-de-Dôme",
+      "regionCode": "84",
+      "chiefTown": "Clermont-Ferrand"
+    },
+    {
+      "code": "64",
+      "name": "Pyrénées-Atlantiques",
+      "regionCode": "75",
+      "chiefTown": "Pau"
+    },
+    {
+      "code": "65",
+      "name": "Hautes-Pyrénées",
+      "regionCode": "76",
+      "chiefTown": "Tarbes"
+    },
+    {
+      "code": "66",
+      "name": "Pyrénées-Orientales",
+      "regionCode": "76",
+      "chiefTown": "Perpignan"
+    },
+    {
+      "code": "67",
+      "name": "Bas-Rhin",
+      "regionCode": "44",
+      "chiefTown": "Strasbourg"
+    },
+    {
+      "code": "68",
+      "name": "Haut-Rhin",
+      "regionCode": "44",
+      "chiefTown": "Colmar"
+    },
+    {
+      "code": "69",
+      "name": "Rhône",
+      "regionCode": "84",
+      "chiefTown": "Lyon"
+    },
+    {
+      "code": "70",
+      "name": "Haute-Saône",
+      "regionCode": "27",
+      "chiefTown": "Vesoul"
+    },
+    {
+      "code": "71",
+      "name": "Saône-et-Loire",
+      "regionCode": "27",
+      "chiefTown": "Mâcon"
+    },
+    {
+      "code": "72",
+      "name": "Sarthe",
+      "regionCode": "52",
+      "chiefTown": "Le Mans"
+    },
+    {
+      "code": "73",
+      "name": "Savoie",
+      "regionCode": "84",
+      "chiefTown": "Chambéry"
+    },
+    {
+      "code": "74",
+      "name": "Haute-Savoie",
+      "regionCode": "84",
+      "chiefTown": "Annecy"
+    },
+    {
+      "code": "75",
+      "name": "Paris",
+      "regionCode": "11",
+      "chiefTown": "Paris"
+    },
+    {
+      "code": "76",
+      "name": "Seine-Maritime",
+      "regionCode": "28",
+      "chiefTown": "Rouen"
+    },
+    {
+      "code": "77",
+      "name": "Seine-et-Marne",
+      "regionCode": "11",
+      "chiefTown": "Melun"
+    },
+    {
+      "code": "78",
+      "name": "Yvelines",
+      "regionCode": "11",
+      "chiefTown": "Versailles"
+    },
+    {
+      "code": "79",
+      "name": "Deux-Sèvres",
+      "regionCode": "75",
+      "chiefTown": "Niort"
+    },
+    {
+      "code": "80",
+      "name": "Somme",
+      "regionCode": "32",
+      "chiefTown": "Amiens"
+    },
+    {
+      "code": "81",
+      "name": "Tarn",
+      "regionCode": "76",
+      "chiefTown": "Albi"
+    },
+    {
+      "code": "82",
+      "name": "Tarn-et-Garonne",
+      "regionCode": "76",
+      "chiefTown": "Montauban"
+    },
+    {
+      "code": "83",
+      "name": "Var",
+      "regionCode": "93",
+      "chiefTown": "Toulon"
+    },
+    {
+      "code": "84",
+      "name": "Vaucluse",
+      "regionCode": "93",
+      "chiefTown": "Avignon"
+    },
+    {
+      "code": "85",
+      "name": "Vendée",
+      "regionCode": "52",
+      "chiefTown": "La Roche-sur-Yon"
+    },
+    {
+      "code": "86",
+      "name": "Vienne",
+      "regionCode": "75",
+      "chiefTown": "Poitiers"
+    },
+    {
+      "code": "87",
+      "name": "Haute-Vienne",
+      "regionCode": "75",
+      "chiefTown": "Limoges"
+    },
+    {
+      "code": "88",
+      "name": "Vosges",
+      "regionCode": "44",
+      "chiefTown": "Épinal"
+    },
+    {
+      "code": "89",
+      "name": "Yonne",
+      "regionCode": "27",
+      "chiefTown": "Auxerre"
+    },
+    {
+      "code": "90",
+      "name": "Territoire de Belfort",
+      "regionCode": "27",
+      "chiefTown": "Belfort"
+    },
+    {
+      "code": "91",
+      "name": "Essonne",
+      "regionCode": "11",
+      "chiefTown": "Évry-Courcouronnes"
+    },
+    {
+      "code": "92",
+      "name": "Hauts-de-Seine",
+      "regionCode": "11",
+      "chiefTown": "Nanterre"
+    },
+    {
+      "code": "93",
+      "name": "Seine-Saint-Denis",
+      "regionCode": "11",
+      "chiefTown": "Bobigny"
+    },
+    {
+      "code": "94",
+      "name": "Val-de-Marne",
+      "regionCode": "11",
+      "chiefTown": "Créteil"
+    },
+    {
+      "code": "95",
+      "name": "Val-d'Oise",
+      "regionCode": "11",
+      "chiefTown": "Pontoise"
+    },
+    {
+      "code": "971",
+      "name": "Guadeloupe",
+      "regionCode": "01",
+      "chiefTown": "Basse-Terre"
+    },
+    {
+      "code": "972",
+      "name": "Martinique",
+      "regionCode": "02",
+      "chiefTown": "Fort-de-France"
+    },
+    {
+      "code": "973",
+      "name": "Guyane",
+      "regionCode": "03",
+      "chiefTown": "Cayenne"
+    },
+    {
+      "code": "974",
+      "name": "La Réunion",
+      "regionCode": "04",
+      "chiefTown": "Saint-Denis"
+    },
+    {
+      "code": "976",
+      "name": "Mayotte",
+      "regionCode": "06",
+      "chiefTown": "Mamoudzou"
+    }
+  ],
+  "regions": [
+    {
+      "code": "01",
+      "name": "Guadeloupe",
+      "chiefTown": "Basse-Terre"
+    },
+    {
+      "code": "02",
+      "name": "Martinique",
+      "chiefTown": "Fort-de-France"
+    },
+    {
+      "code": "03",
+      "name": "Guyane",
+      "chiefTown": "Cayenne"
+    },
+    {
+      "code": "04",
+      "name": "La Réunion",
+      "chiefTown": "Saint-Denis"
+    },
+    {
+      "code": "06",
+      "name": "Mayotte",
+      "chiefTown": "Mamoudzou"
+    },
+    {
+      "code": "11",
+      "name": "Île-de-France",
+      "chiefTown": "Paris"
+    },
+    {
+      "code": "24",
+      "name": "Centre-Val de Loire",
+      "chiefTown": "Orléans"
+    },
+    {
+      "code": "27",
+      "name": "Bourgogne-Franche-Comté",
+      "chiefTown": "Dijon"
+    },
+    {
+      "code": "28",
+      "name": "Normandie",
+      "chiefTown": "Rouen"
+    },
+    {
+      "code": "32",
+      "name": "Hauts-de-France",
+      "chiefTown": "Lille"
+    },
+    {
+      "code": "44",
+      "name": "Grand Est",
+      "chiefTown": "Strasbourg"
+    },
+    {
+      "code": "52",
+      "name": "Pays de la Loire",
+      "chiefTown": "Nantes"
+    },
+    {
+      "code": "53",
+      "name": "Bretagne",
+      "chiefTown": "Rennes"
+    },
+    {
+      "code": "75",
+      "name": "Nouvelle-Aquitaine",
+      "chiefTown": "Bordeaux"
+    },
+    {
+      "code": "76",
+      "name": "Occitanie",
+      "chiefTown": "Toulouse"
+    },
+    {
+      "code": "84",
+      "name": "Auvergne-Rhône-Alpes",
+      "chiefTown": "Lyon"
+    },
+    {
+      "code": "93",
+      "name": "Provence-Alpes-Côte d'Azur",
+      "chiefTown": "Marseille"
+    },
+    {
+      "code": "94",
+      "name": "Corse",
+      "chiefTown": "Ajaccio"
+    }
+  ]
+}

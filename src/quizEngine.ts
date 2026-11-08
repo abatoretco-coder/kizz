@@ -1,5 +1,18 @@
 import { GeoPoint, QuizQuestion } from './domain';
 
+// Unwrap longitude so a correction crossing the date line uses the shorter arc.
+export function mapCorrectionBounds(guess: GeoPoint, target: GeoPoint): [number, number, number, number] {
+  let targetLon = target.lon;
+  if (targetLon - guess.lon > 180) targetLon -= 360;
+  if (targetLon - guess.lon < -180) targetLon += 360;
+  return [
+    Math.min(guess.lon, targetLon) - 0.5,
+    Math.max(-85, Math.min(guess.lat, target.lat) - 0.5),
+    Math.max(guess.lon, targetLon) + 0.5,
+    Math.min(85, Math.max(guess.lat, target.lat) + 0.5),
+  ];
+}
+
 export function normalizeAnswer(value: string): string {
   return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLocaleLowerCase('fr').replace(/\s+/g, ' ');
 }

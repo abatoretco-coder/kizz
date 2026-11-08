@@ -1,5 +1,15 @@
 # Notes UX Refactor
 
+## Lot qualite du quiz - 8 novembre 2026
+
+- Apres chaque reponse, juste ou fausse, le joueur voit la correction et choisit quand passer a la suivante. Cela remplace le passage automatique des bonnes reponses.
+- Les propositions et champs laissent place a un retour compact : reponse donnee si necessaire, bonne reponse, explication et approfondissement facultatif. L'image correcte est montree pour les QCM a choix d'images.
+- Les illustrations de question sont affichees entieres, avec une hauteur reduite pendant la correction. Le zoom reste disponible.
+- Le corps du quiz revient au debut lors d'un changement de question ou de la validation. La correction reprend l'enonce en petit, puis la reponse et l'explication ; l'illustration reste consultable et zoomable dans ce meme bloc.
+- Le bilan est defilable, avec un score moins encombrant et une action principale pour terminer la session.
+- Le resume du bilan classe toutes les reponses : erreur, credit partiel ou hesitation dans « A revoir » ; bonne reponse sans confiance forte dans « A consolider » ; bonne reponse declaree sure dans « Solide ». Il ne constitue pas une mesure de maitrise durable et ne remplace pas la planification de revision.
+- Les tests protegent la pause de correction sur les quatre formats et le calcul du bilan, y compris sans confiance declaree.
+
 ## Applique
 
 - Home structuree par priorite: dashboard, recommandation utile, modes principaux, actions secondaires, themes.

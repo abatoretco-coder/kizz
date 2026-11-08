@@ -4,14 +4,14 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator, Alert, BackHandler, Image, ImageSourcePropType, Keyboard, KeyboardAvoidingView, Linking, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View,
 } from 'react-native';
-import { Camera, GeoJSONSource, Layer, Map as MapLibreMap, NetworkManager, type PressEvent } from '@maplibre/maplibre-react-native';
+import { Camera, GeoJSONSource, Layer, Map as MapLibreMap, NetworkManager, type CameraRef, type PressEvent } from '@maplibre/maplibre-react-native';
 import type { FeatureCollection } from 'geojson';
 import { AdminQuestion, QuestionReportReason, adminDeleteQuestion, adminUpdateQuestionDifficulty, clearSessionDraft, getAdminQuestions, getDailyVocabularyQuestions, getDashboardStats, getFavoriteQuestions, getFilteredQuestions, getLanguageProgress, getLanguageQuestions, getLibraryStats, getMapPointQuestions, getRandomQuestionByDifficulty, getRandomTopicQuestionsByDifficulty, getRecentSessions, getReviewQuestions, getSessionDraft, getTaggedQuestions, getTopicProgress, getTopics, initializeDatabase, reportQuestion, saveSession, saveSessionDraft, searchQuestions, toggleFavorite } from './src/database';
 import { CefrLevel, DashboardStats, Difficulty, GeoPoint, GeoTarget, LanguageCode, LanguageProgressCell, LanguageSessionFilters, LanguageSkill, LibraryStats, QuizQuestion, RecentSession, SessionAnswer, SessionDraft, SessionFilters, Topic, TopicProgress } from './src/domain';
 import { createAndShareQuestionReports, createAndShareQuizPack, importCsvQuizPackDraft, pickAndImportQuizPack, pickCsvQuizPackDraft } from './src/quizPack';
-import { gradeMapPoint, gradeMultiText, isFreeTextCorrect, shuffleQuestions } from './src/quizEngine';
+import { gradeMapPoint, gradeMultiText, isFreeTextCorrect, mapCorrectionBounds, shuffleQuestions } from './src/quizEngine';
 import { palette } from './src/theme';
-import { summarizeByInteraction } from './src/sessionSummary';
+import { summarizeByInteraction, summarizeForReview } from './src/sessionSummary';
 import { subthemesForTopics } from './src/subthemes';
 import { QuestionReviewSeverity, countReviewStatus, reviewQuestionQuality } from './src/questionReview';
 import { franceDepartmentBoundaryGeoJson, worldBoundaryGeoJson } from './src/mapBoundaries';
@@ -115,6 +115,7 @@ export default function App() {
   const [ready, setReady] = useState(false);
   const [screen, setScreen] = useState<Screen>('home');
   const navigationHistory = useRef<Screen[]>([]);
+  const quizActionPending = useRef(false);
   const [stats, setStats] = useState(emptyStats);
   const [availableTopics, setAvailableTopics] = useState<Topic[]>([]);
   const [topic, setTopic] = useState<Topic | null>(null);
@@ -337,46 +338,42 @@ export default function App() {
     if (selected !== null) return;
     const isCorrect = index === quiz[questionIndex].answerIndex;
     const nextAnswers = [...answers, { questionId: quiz[questionIndex].id, selectedIndex: index, correct: isCorrect }];
-    if (!isCorrect) setSelected(index);
+    setSelected(index);
     setAnswers(nextAnswers);
     if (topic) void persistDraft(topic, quiz, questionIndex, nextAnswers);
     void Haptics.notificationAsync(isCorrect ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
-    if (isCorrect) void continueQuiz(nextAnswers);
   }
 
   function submitFreeText() {
     if (selected !== null || !freeText.trim()) return;
     const isCorrect = isFreeTextCorrect(quiz[questionIndex], freeText);
-    if (!isCorrect) setSelected(-1);
+    setSelected(-1);
     Keyboard.dismiss();
     const nextAnswers = [...answers, { questionId: quiz[questionIndex].id, selectedIndex: -1, selectedText: freeText.trim(), correct: isCorrect }];
     setAnswers(nextAnswers);
     if (topic) void persistDraft(topic, quiz, questionIndex, nextAnswers);
     void Haptics.notificationAsync(isCorrect ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
-    if (isCorrect) void continueQuiz(nextAnswers);
   }
 
   function submitMultiText() {
     if (selected !== null) return;
     const grade = gradeMultiText(quiz[questionIndex], fieldValues);
-    if (grade.credit < 1) setSelected(-2);
+    setSelected(-2);
     Keyboard.dismiss();
     const nextAnswers = [...answers, { questionId: quiz[questionIndex].id, selectedIndex: -2, selectedText: JSON.stringify(fieldValues), correct: grade.correct, credit: grade.credit }];
     setAnswers(nextAnswers);
     if (topic) void persistDraft(topic, quiz, questionIndex, nextAnswers);
     void Haptics.notificationAsync(grade.credit === 1 ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
-    if (grade.credit === 1) void continueQuiz(nextAnswers);
   }
 
   function submitMapPoint() {
     if (selected !== null || !mapGuess) return;
     const grade = gradeMapPoint(quiz[questionIndex], mapGuess);
-    if (grade.credit < 1) setSelected(-3);
+    setSelected(-3);
     const nextAnswers = [...answers, { questionId: quiz[questionIndex].id, selectedIndex: -3, selectedText: JSON.stringify(mapGuess), correct: grade.correct, credit: grade.credit }];
     setAnswers(nextAnswers);
     if (topic) void persistDraft(topic, quiz, questionIndex, nextAnswers);
     void Haptics.notificationAsync(grade.credit === 1 ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
-    if (grade.credit === 1) void continueQuiz(nextAnswers);
   }
 
   async function handleToggleFavorite() {
@@ -415,56 +412,68 @@ export default function App() {
   }
 
   async function continueQuiz(nextAnswers: SessionAnswer[] = answers, activeQuiz: QuizQuestion[] = quiz) {
-    if (questionIndex < activeQuiz.length - 1) {
-      const nextIndex = questionIndex + 1;
-      setQuestionIndex(nextIndex);
-      setSelected(null);
-      setFreeText('');
-      setFieldValues({});
-      setMapGuess(null);
-      if (topic) void persistDraft(topic, activeQuiz, nextIndex, nextAnswers);
-      return;
-    }
-    if (infiniteDifficulty) {
-      const nextQuestion = await getRandomQuestionByDifficulty(infiniteDifficulty, activeQuiz.map((question) => question.id));
-      if (!nextQuestion) {
-        Alert.alert('Banque vide', 'Impossible de trouver une nouvelle question pour ce niveau.');
+    if (quizActionPending.current) return;
+    quizActionPending.current = true;
+    try {
+      if (questionIndex < activeQuiz.length - 1) {
+        const nextIndex = questionIndex + 1;
+        setQuestionIndex(nextIndex);
+        setSelected(null);
+        setFreeText('');
+        setFieldValues({});
+        setMapGuess(null);
+        if (topic) void persistDraft(topic, activeQuiz, nextIndex, nextAnswers);
         return;
       }
-      const nextQuiz = [...activeQuiz, nextQuestion];
-      const nextIndex = questionIndex + 1;
-      setQuiz(nextQuiz);
-      setQuestionIndex(nextIndex);
-      setSelected(null);
-      setFreeText('');
-      setFieldValues({});
-      setMapGuess(null);
-      if (topic) void persistDraft(topic, nextQuiz, nextIndex, nextAnswers);
-      return;
-    }
-    setAnswers(nextAnswers);
-    if (topic) await saveSession(topic.id, nextAnswers);
-    await clearSessionDraft();
-    setDraft(null);
-    await refreshStats();
-    await refreshProgress();
-    await refreshRecentSessions();
-    await refreshLanguageProgress();
-    navigateTo('result', { replace: true });
-  }
-
-  async function closeQuiz() {
-    if (infiniteDifficulty) {
-      if (topic && answers.length) await saveSession(topic.id, answers);
+      if (infiniteDifficulty) {
+        const nextQuestion = await getRandomQuestionByDifficulty(infiniteDifficulty, activeQuiz.map((question) => question.id));
+        if (!nextQuestion) {
+          Alert.alert('Banque vide', 'Impossible de trouver une nouvelle question pour ce niveau.');
+          return;
+        }
+        const nextQuiz = [...activeQuiz, nextQuestion];
+        const nextIndex = questionIndex + 1;
+        setQuiz(nextQuiz);
+        setQuestionIndex(nextIndex);
+        setSelected(null);
+        setFreeText('');
+        setFieldValues({});
+        setMapGuess(null);
+        if (topic) void persistDraft(topic, nextQuiz, nextIndex, nextAnswers);
+        return;
+      }
+      setAnswers(nextAnswers);
+      if (topic) await saveSession(topic.id, nextAnswers);
       await clearSessionDraft();
       setDraft(null);
       await refreshStats();
       await refreshProgress();
       await refreshRecentSessions();
       await refreshLanguageProgress();
+      navigateTo('result', { replace: true });
+    } finally {
+      quizActionPending.current = false;
     }
-    setInfiniteDifficulty(null);
-    navigateTo('home', { replace: true });
+  }
+
+  async function closeQuiz() {
+    if (quizActionPending.current) return;
+    quizActionPending.current = true;
+    try {
+      if (infiniteDifficulty) {
+        if (topic && answers.length) await saveSession(topic.id, answers);
+        await clearSessionDraft();
+        setDraft(null);
+        await refreshStats();
+        await refreshProgress();
+        await refreshRecentSessions();
+        await refreshLanguageProgress();
+      }
+      setInfiniteDifficulty(null);
+      navigateTo('home', { replace: true });
+    } finally {
+      quizActionPending.current = false;
+    }
   }
 
   useEffect(() => {
@@ -505,7 +514,7 @@ export default function App() {
           answerCorrect={currentAnswer?.correct ?? false} onFreeTextChange={setFreeText} onSubmitFreeText={submitFreeText}
           confidence={currentAnswer?.confidence} onConfidence={setAnswerConfidence}
           infiniteDifficulty={infiniteDifficulty}
-          onSelect={selectAnswer} onToggleFavorite={handleToggleFavorite} onReportQuestion={handleReportQuestion} onContinue={continueQuiz} onClose={closeQuiz}
+          onSelect={selectAnswer} onToggleFavorite={handleToggleFavorite} onReportQuestion={handleReportQuestion} onContinue={() => { void continueQuiz(); }} onClose={closeQuiz}
         />
       )}
       {screen === 'result' && topic && (
@@ -772,31 +781,58 @@ function LanguageHub({ progress, onClose, onStart, onDailyVocabulary }: { progre
 function Search({ onClose, onStart }: { onClose: () => void; onStart: (questions: QuizQuestion[]) => void }) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<QuizQuestion[]>([]);
-  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [selected, setSelected] = useState<QuizQuestion[]>([]);
+  const [showSelected, setShowSelected] = useState(false);
+  const [searching, setSearching] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
+  const [retry, setRetry] = useState(0);
 
   useEffect(() => {
-    if (query.trim().length < 2) { setResults([]); return; }
-    const timer = setTimeout(() => searchQuestions(query).then(setResults), 180);
-    return () => clearTimeout(timer);
-  }, [query]);
+    let active = true;
+    setResults([]);
+    setSearchError(null);
+    if (query.trim().length < 2) { setSearching(false); return; }
+    setSearching(true);
+    const timer = setTimeout(async () => {
+      try {
+        const found = await searchQuestions(query);
+        if (active) setResults(found);
+      } catch {
+        if (active) setSearchError('La recherche a échoué. Tu peux réessayer.');
+      } finally {
+        if (active) setSearching(false);
+      }
+    }, 180);
+    return () => { active = false; clearTimeout(timer); };
+  }, [query, retry]);
 
-  function toggle(questionId: string) {
-    setSelectedIds((current) => current.includes(questionId) ? current.filter((id) => id !== questionId) : [...current, questionId]);
+  function toggle(question: QuizQuestion) {
+    setSelected((current) => current.some((item) => item.id === question.id) ? current.filter((item) => item.id !== question.id) : [...current, question]);
   }
-
-  const selected = results.filter((question) => selectedIds.includes(question.id));
+  const displayed = showSelected ? selected : results;
   return (
     <View style={styles.searchPage}>
-      <View style={styles.libraryHeader}><Pressable onPress={onClose} hitSlop={16}><Text style={styles.back}>‹</Text></Pressable><Text style={styles.libraryTitle}>Créer une session</Text></View>
-      <TextInput value={query} onChangeText={setQuery} autoFocus placeholder="Sujet, mot ou notion…" placeholderTextColor="#68746E" style={styles.searchInput} />
-      <Text style={styles.searchHint}>{query.length < 2 ? 'Saisis au moins deux caractères.' : `${results.length} résultat(s) - touche pour sélectionner`}</Text>
-      <ScrollView contentContainerStyle={styles.searchResults} keyboardShouldPersistTaps="handled">
-        {results.map((question) => {
-          const active = selectedIds.includes(question.id);
-          return <Pressable key={question.id} onPress={() => toggle(question.id)} style={[styles.searchResult, active && styles.searchResultActive]}><View style={[styles.searchCheck, active && styles.searchCheckActive]}><Text style={styles.searchCheckText}>{active ? '✓' : ''}</Text></View><View style={{ flex: 1 }}><Text style={styles.searchQuestion}>{question.prompt}</Text><Text style={styles.searchTags}>{question.tags.join(' - ')}</Text></View></Pressable>;
+      <View style={styles.libraryHeader}><Pressable accessibilityRole="button" accessibilityLabel="Revenir à l’accueil" onPress={onClose} hitSlop={16}><Text style={styles.back}>‹</Text></Pressable><Text style={styles.libraryTitle}>Créer une session</Text></View>
+      <TextInput testID="search-query" accessibilityLabel="Rechercher des questions" value={query} onChangeText={(value) => { setQuery(value); setShowSelected(false); }} autoFocus placeholder="Sujet, mot ou notion…" placeholderTextColor="#87958D" style={styles.searchInput} />
+      <View style={styles.searchTabs}>
+        <Pressable testID="search-results-tab" accessibilityRole="tab" accessibilityState={{ selected: !showSelected }} onPress={() => setShowSelected(false)} style={[styles.searchTab, !showSelected && styles.searchResultActive]}><Text style={styles.searchTabText}>Résultats</Text></Pressable>
+        <Pressable testID="search-selection-tab" accessibilityRole="tab" accessibilityState={{ selected: showSelected }} onPress={() => setShowSelected(true)} style={[styles.searchTab, showSelected && styles.searchResultActive]}><Text style={styles.searchTabText}>Sélection ({selected.length})</Text></Pressable>
+      </View>
+      <Text accessibilityLiveRegion="polite" style={styles.searchHint}>{showSelected ? 'Tes questions, dans l’ordre de sélection.' : query.trim().length < 2 ? 'Saisis au moins deux caractères.' : searching ? 'Recherche en cours…' : searchError ? 'Recherche indisponible' : `${results.length} résultat(s) · touche pour sélectionner`}</Text>
+      {showSelected && selected.length > 0 && <Pressable testID="search-clear-selection" accessibilityRole="button" onPress={() => setSelected([])} style={styles.searchClear}><Text style={styles.searchTabText}>Vider la sélection</Text></Pressable>}
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.searchResults} keyboardShouldPersistTaps="handled">
+        {!showSelected && searching && <ActivityIndicator accessibilityLabel="Recherche en cours" color="#68D7A2" style={{ marginVertical: 24 }} />}
+        {!showSelected && searchError && <View><Text style={styles.searchEmpty}>{searchError}</Text><Pressable testID="search-retry" accessibilityRole="button" onPress={() => setRetry((count) => count + 1)} style={styles.searchTab}><Text style={styles.searchTabText}>Réessayer</Text></Pressable></View>}
+        {showSelected && !selected.length && <Text style={styles.searchEmpty}>Ta sélection est vide. Cherche un sujet puis coche les questions qui t’intéressent.</Text>}
+        {!showSelected && query.trim().length >= 2 && !searching && !searchError && !results.length && <Text style={styles.searchEmpty}>Aucune question trouvée. Essaie un autre mot ou un thème plus large.</Text>}
+        {displayed.map((question) => {
+          const active = selected.some((item) => item.id === question.id);
+          const format = question.type === 'map-point' ? 'Placement sur carte' : question.type === 'free-text' ? 'Réponse libre' : question.type === 'multi-text' ? 'Réponse en plusieurs parties' : 'QCM';
+          const level = question.difficulty === 1 ? 'Découverte' : question.difficulty === 2 ? 'Intermédiaire' : 'Expert';
+          return <Pressable key={question.id} testID={`search-question-${question.id}`} accessibilityRole="checkbox" accessibilityState={{ checked: active }} onPress={() => toggle(question)} style={[styles.searchResult, active && styles.searchResultActive]}><View style={[styles.searchCheck, active && styles.searchCheckActive]}><Text style={styles.searchCheckText}>{active ? '✓' : ''}</Text></View><View style={{ flex: 1 }}><Text style={styles.searchQuestion}>{question.prompt}</Text><Text style={styles.searchTags}>{format} · {level}</Text></View></Pressable>;
         })}
       </ScrollView>
-      <View style={styles.searchFooter}><Pressable disabled={!selected.length} onPress={() => onStart(selected)} style={[styles.primaryButton, !selected.length && styles.disabled]}><Text style={styles.primaryButtonText}>Lancer {selected.length || ''} question{selected.length > 1 ? 's' : ''}</Text></Pressable></View>
+      <View style={styles.searchFooter}><Pressable testID="launch-search-session" accessibilityRole="button" accessibilityState={{ disabled: !selected.length }} disabled={!selected.length} onPress={() => onStart(selected)} style={[styles.primaryButton, !selected.length && styles.disabled]}><Text style={styles.primaryButtonText}>{selected.length ? `Lancer ${selected.length} question${selected.length > 1 ? 's' : ''}` : 'Sélectionne des questions'}</Text></Pressable></View>
     </View>
   );
 }
@@ -1190,7 +1226,7 @@ function SessionConfigurator({ topics, initialTopicIds, onClose, onStart }: { to
       <Text style={styles.configTitle}>Que veux-tu réviser ?</Text><Text style={styles.configLead}>Combine librement contenu, niveau et durée.</Text>
       <Text style={styles.configSection}>THÈMES</Text>
       <View style={styles.chipWrap}>
-        <Pressable testID="config-topic-all" onPress={() => setTopicIds([])} style={[styles.filterChip, topicIds.length === 0 && styles.filterChipActive]}><Text style={[styles.filterChipText, topicIds.length === 0 && styles.filterChipTextActive]}>Tous</Text></Pressable>
+        <Pressable testID="config-topic-all" accessibilityRole="button" accessibilityState={{ selected: topicIds.length === 0 }} onPress={() => { setTopicIds([]); setSelectedSubthemes([]); }} style={[styles.filterChip, topicIds.length === 0 && styles.filterChipActive]}><Text style={[styles.filterChipText, topicIds.length === 0 && styles.filterChipTextActive]}>Tous</Text></Pressable>
         {topics.map((topic) => <Pressable key={topic.id} testID={`config-topic-${topic.id}`} onPress={() => toggleTopic(topic.id)} style={[styles.filterChip, topicIds.includes(topic.id) && styles.filterChipActive]}><Text style={[styles.filterChipText, topicIds.includes(topic.id) && styles.filterChipTextActive]}>{topic.title}</Text></Pressable>)}
       </View>
       {!!availableSubthemes.length && <><Text style={styles.configSection}>SOUS-THEMES</Text><View style={styles.chipWrap}><Pressable testID="config-subtheme-all" onPress={() => setSelectedSubthemes([])} style={[styles.filterChip, selectedSubthemes.length === 0 && styles.filterChipActive]}><Text style={[styles.filterChipText, selectedSubthemes.length === 0 && styles.filterChipTextActive]}>Tous</Text></Pressable>{availableSubthemes.map((subtheme) => <Pressable key={subtheme.id} testID={`config-subtheme-${subtheme.id}`} onPress={() => toggleSubtheme(subtheme.tag)} style={[styles.filterChip, selectedSubthemes.includes(subtheme.tag) && styles.filterChipActive]}><Text style={[styles.filterChipText, selectedSubthemes.includes(subtheme.tag) && styles.filterChipTextActive]}>{subtheme.title}</Text></Pressable>)}</View></>}
@@ -1226,6 +1262,14 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
   const hasQuestionMedia = !!imageSource || !!question.choiceImageAssets?.length;
   const visualChoiceOnly = !!question.choiceImageAssets?.length;
   const safeQuestionImageLabel = answered ? question.imageAlt ?? 'Image de la question' : 'Image de la question';
+  const bodyRef = useRef<ScrollView>(null);
+  const correctAnswerLabel = question.type === 'multi-text'
+    ? (question.answerFields ?? []).map((field) => `${field.label} : ${field.acceptedAnswers[0]}`).join('\n')
+    : question.type === 'free-text' ? question.acceptedAnswers?.[0] : question.choices?.[question.answerIndex ?? -1];
+  const givenAnswerLabel = question.type === 'free-text' ? freeText : selected !== null && selected >= 0 ? question.choices?.[selected] : undefined;
+  useEffect(() => {
+    bodyRef.current?.scrollTo({ y: 0, animated: false });
+  }, [index, answered]);
   useEffect(() => {
     for (const item of [question, questions[index + 1]]) {
       if (!item) continue;
@@ -1237,10 +1281,10 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
     return (
       <View style={styles.mapQuizPage}>
         <View style={styles.quizHeader}>
-          <Pressable onPress={onClose} hitSlop={16}><Text style={styles.close}>X</Text></Pressable>
+          <Pressable accessibilityRole="button" accessibilityLabel="Quitter la session" onPress={onClose} hitSlop={16}><Text style={styles.close}>X</Text></Pressable>
           <View style={styles.progressTrack}><View style={[styles.progressFill, { width: infinite ? '100%' : `${((index + (answered ? 1 : 0)) / questions.length) * 100}%`, backgroundColor: topic.color }]} /></View>
           <Text style={styles.counter}>{infinite ? `inf ${index + 1}` : `${index + 1}/${questions.length}`}</Text>
-          <Pressable onPress={onToggleFavorite} hitSlop={12}><Text style={[styles.favoriteStar, question.favorite && styles.favoriteStarActive]}>{question.favorite ? '*' : '-'}</Text></Pressable>
+          <Pressable accessibilityRole="button" accessibilityLabel={question.favorite ? "Retirer des favoris" : "Ajouter aux favoris"} accessibilityState={{ selected: !!question.favorite }} onPress={onToggleFavorite} hitSlop={12}><Text style={[styles.favoriteStar, question.favorite && styles.favoriteStarActive]}>{question.favorite ? '*' : '-'}</Text></Pressable>
         </View>
         <View style={styles.mapQuestionPanel}>
           <View style={styles.metaRow}>
@@ -1254,11 +1298,14 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
         </View>
         <View style={styles.mapActionBar}>
           {answered && question.geoTarget && (
+            <ScrollView style={{ maxHeight: 190 }}>
             <View style={styles.mapResultCard}>
               <Text style={styles.mapFeedbackTitle}>Correction spatiale</Text>
               <Text style={styles.mapFeedbackText}>Distance : {mapGrade.distanceKm ?? '?'} km{mapGrade.direction && !mapGrade.correct ? ` - vise ${mapGrade.direction}` : ''}</Text>
               <Text style={styles.mapFeedbackText}>Tolérance : {question.geoTarget.toleranceKm} km autour de {question.geoTarget.label}.</Text>
+              <Text testID="map-explanation" style={styles.mapExplanation}>{question.explanation}</Text>
             </View>
+            </ScrollView>
           )}
           {!answered ? (
             <Pressable testID="check-map-answer" accessibilityRole="button" disabled={!mapGuess} onPress={onSubmitMapPoint} style={[styles.primaryButton, !mapGuess && styles.disabled]}>
@@ -1277,16 +1324,17 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
   return (
     <KeyboardAvoidingView style={styles.quizPage} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={8}>
       <View style={styles.quizHeader}>
-        <Pressable onPress={onClose} hitSlop={16}><Text style={styles.close}>×</Text></Pressable>
+        <Pressable accessibilityRole="button" accessibilityLabel="Quitter la session" onPress={onClose} hitSlop={16}><Text style={styles.close}>×</Text></Pressable>
         <View style={styles.progressTrack}><View style={[styles.progressFill, { width: infinite ? '100%' : `${((index + (answered ? 1 : 0)) / questions.length) * 100}%`, backgroundColor: topic.color }]} /></View>
-        <Text style={styles.counter}>{infinite ? `∞ ${index + 1}` : `${index + 1}/${questions.length}`}</Text><Pressable onPress={onToggleFavorite} hitSlop={12}><Text style={[styles.favoriteStar, question.favorite && styles.favoriteStarActive]}>{question.favorite ? '★' : '☆'}</Text></Pressable>
+        <Text style={styles.counter}>{infinite ? `∞ ${index + 1}` : `${index + 1}/${questions.length}`}</Text><Pressable accessibilityRole="button" accessibilityLabel={question.favorite ? "Retirer des favoris" : "Ajouter aux favoris"} accessibilityState={{ selected: !!question.favorite }} onPress={onToggleFavorite} hitSlop={12}><Text style={[styles.favoriteStar, question.favorite && styles.favoriteStarActive]}>{question.favorite ? '★' : '☆'}</Text></Pressable>
       </View>
-      <ScrollView contentContainerStyle={styles.quizBody} keyboardShouldPersistTaps="handled">
+      <ScrollView ref={bodyRef} contentContainerStyle={styles.quizBody} keyboardShouldPersistTaps="handled">
         <View style={styles.metaRow}><Text style={[styles.pill, { color: topic.color, backgroundColor: `${topic.color}16` }]}>{topic.title}</Text><Text style={styles.difficulty}>{'●'.repeat(question.difficulty)}{'○'.repeat(3 - question.difficulty)}</Text></View>
         {infinite && <Text style={styles.infiniteQuizHint}>Mode infini - niveau {infiniteDifficulty} - touche × pour arrêter et sauvegarder</Text>}
-        {imageSource && <Pressable accessibilityRole="imagebutton" accessibilityLabel={safeQuestionImageLabel} accessibilityHint="Ouvre l'image en plein ecran" onPress={() => setZoomMedia({ source: imageSource, alt: safeQuestionImageLabel, title: safeQuestionImageLabel })} style={styles.questionImageWrap}><Image source={imageSource} style={styles.questionImage} resizeMode="cover" accessibilityLabel={safeQuestionImageLabel} /></Pressable>}
-        <Text style={styles.question}>{question.prompt}</Text>
-        {(question.type ?? 'multiple-choice') === 'multiple-choice' ? <View style={styles.choices}>
+        {!answered && imageSource && <Pressable accessibilityRole="imagebutton" accessibilityLabel={safeQuestionImageLabel} accessibilityHint="Ouvre l'image en plein ecran" onPress={() => setZoomMedia({ source: imageSource, alt: safeQuestionImageLabel, title: safeQuestionImageLabel })} style={styles.questionImageWrap}><Image source={imageSource} style={styles.questionImage} resizeMode="contain" accessibilityLabel={safeQuestionImageLabel} /></Pressable>}
+        {!answered && <Text style={styles.question}>{question.prompt}</Text>}
+        {!answered && <Text style={styles.answerInstruction}>{question.type === 'multi-text' ? 'Complète chaque champ, puis vérifie.' : question.type === 'free-text' ? 'Écris ta réponse, puis vérifie.' : visualChoiceOnly ? 'Choisis une image. Appui long pour l’agrandir.' : 'Choisis une réponse.'}</Text>}
+        {!answered && ((question.type ?? 'multiple-choice') === 'multiple-choice' ? <View style={styles.choices}>
           {(question.choices ?? []).map((choice, choiceIndex) => {
             const correct = answered && choiceIndex === question.answerIndex;
             const wrong = answered && choiceIndex === selected && !correct;
@@ -1294,7 +1342,7 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
             const choiceImageSource = choiceImageAsset ? QUESTION_IMAGES[choiceImageAsset] : undefined;
             const visibleChoiceLabel = visualChoiceOnly ? `Image ${String.fromCharCode(65 + choiceIndex)}` : choice;
             return (
-              <Pressable key={choice} testID={`choice-${choiceIndex}`} accessibilityRole="button" accessibilityLabel={`Reponse ${String.fromCharCode(65 + choiceIndex)} : ${visibleChoiceLabel}`} accessibilityHint={choiceImageSource ? "Appui long pour agrandir l'image" : undefined} onLongPress={choiceImageSource ? () => setZoomMedia({ source: choiceImageSource, alt: question.choiceImageAlts?.[choiceIndex] ?? visibleChoiceLabel, title: answered ? choice : visibleChoiceLabel }) : undefined} onPress={() => onSelect(choiceIndex)} style={({ pressed }) => [styles.choice, choiceImageSource ? styles.choiceWithImage : undefined, correct ? styles.choiceCorrect : undefined, wrong ? styles.choiceWrong : undefined, pressed && !answered ? styles.pressed : undefined]}>
+              <Pressable key={choice} testID={`choice-${choiceIndex}`} accessibilityRole="button" accessibilityLabel={`Reponse ${String.fromCharCode(65 + choiceIndex)} : ${visibleChoiceLabel}`} accessibilityHint={choiceImageSource ? "Appui long pour agrandir l'image" : undefined} onLongPress={choiceImageSource ? () => setZoomMedia({ source: choiceImageSource, alt: answered ? question.choiceImageAlts?.[choiceIndex] ?? choice : visibleChoiceLabel, title: answered ? choice : visibleChoiceLabel }) : undefined} onPress={() => onSelect(choiceIndex)} style={({ pressed }) => [styles.choice, choiceImageSource ? styles.choiceWithImage : undefined, correct ? styles.choiceCorrect : undefined, wrong ? styles.choiceWrong : undefined, pressed && !answered ? styles.pressed : undefined]}>
                 <View style={[styles.choiceLetter, correct && styles.choiceLetterCorrect, wrong && styles.choiceLetterWrong]}><Text style={[styles.choiceLetterText, (correct || wrong) && styles.choiceLetterActive]}>{String.fromCharCode(65 + choiceIndex)}</Text></View>
                 {choiceImageSource && <Image source={choiceImageSource} style={styles.choiceImage} resizeMode="cover" accessibilityLabel={visibleChoiceLabel} />}
                 <Text style={styles.choiceText}>{answered ? choice : visibleChoiceLabel}</Text><Text style={styles.choiceMark}>{correct ? '✓' : wrong ? '×' : ''}</Text>
@@ -1313,11 +1361,23 @@ function Quiz({ topic, questions, index, selected, freeText, fieldValues, mapGue
           />
           {!answered && <Pressable testID="check-answer" accessibilityRole="button" disabled={!freeText.trim()} onPress={onSubmitFreeText} style={[styles.checkButton, !freeText.trim() && styles.disabled]}><Text style={styles.checkButtonText}>Vérifier</Text></Pressable>}
           {answered && !answerCorrect && <Text style={styles.acceptedAnswer}>Réponse attendue : {(question.acceptedAnswers ?? []).join(' / ')}</Text>}
+        </View>)}
+        {answered && <View testID="answer-feedback" accessibilityLiveRegion="polite" style={[styles.explanation, answerCredit === 1 ? styles.explanationCorrect : answerCredit > 0 ? styles.explanationPartial : styles.explanationWrong]}>
+          <Text style={styles.feedbackPrompt}>{question.prompt}</Text>
+          <Text style={styles.explanationTitle}>{answerCredit === 1 ? '✓ Bonne réponse' : answerCredit > 0 ? 'Réponse partielle' : 'À retenir'}</Text>
+          {answerCredit < 1 && givenAnswerLabel && <Text style={styles.givenAnswer}>Ta réponse : {givenAnswerLabel}</Text>}
+          <Text style={styles.correctAnswer}>{correctAnswerLabel}</Text>
+          {!!question.choiceImageAssets?.length && question.answerIndex !== undefined && <Image source={choiceImageSource(question, question.answerIndex)} style={styles.feedbackImage} resizeMode="contain" accessibilityLabel={question.choiceImageAlts?.[question.answerIndex] ?? correctAnswerLabel} />}
+          {question.type === 'multi-text' && (question.answerFields ?? []).map((field) => <Text key={field.id} style={styles.givenAnswer}>{multiGrade.fieldResults[field.id] ? '✓' : '×'} {field.label} : {fieldValues[field.id] || 'Non renseigné'}</Text>)}
+          {answerCredit > 0 && answerCredit < 1 && <Text style={styles.partialCredit}>{Math.round(answerCredit * 100)} % des éléments trouvés</Text>}
+          <Text style={styles.explanationText}>{question.explanation}</Text>
+          {imageSource && <Pressable accessibilityRole="imagebutton" accessibilityLabel={safeQuestionImageLabel} accessibilityHint="Ouvre l'image en plein ecran" onPress={() => setZoomMedia({ source: imageSource, alt: safeQuestionImageLabel, title: safeQuestionImageLabel })} style={[styles.questionImageWrap, styles.questionImageCorrected]}><Image source={imageSource} style={[styles.questionImage, styles.questionImageCorrected]} resizeMode="contain" accessibilityLabel={safeQuestionImageLabel} /></Pressable>}
+          {(hasQuestionMedia || question.sourceUrl) && <Pressable disabled={!question.sourceUrl} accessibilityRole={question.sourceUrl ? 'link' : 'text'} onPress={question.sourceUrl ? () => Linking.openURL(question.sourceUrl!) : undefined} style={styles.mediaCredit}><Text style={styles.mediaCreditText}>{hasQuestionMedia ? 'Média :' : 'Source :'} {question.sourceLabel}{question.sourceUrl ? '  ↗' : ''}</Text></Pressable>}
+          <View style={styles.explanationActions}>{question.learnMoreUrl && <Pressable accessibilityRole="link" onPress={() => Linking.openURL(question.learnMoreUrl!)} style={styles.learnMore}><Text style={styles.learnMoreText}>Approfondir ↗</Text></Pressable>}<Pressable testID="report-question" accessibilityRole="button" onPress={onReportQuestion} style={styles.reportQuestion}><Text style={styles.reportQuestionText}>Signaler</Text></Pressable></View>
         </View>}
-        {answered && <View style={[styles.explanation, answerCredit === 1 ? styles.explanationCorrect : answerCredit > 0 ? styles.explanationPartial : styles.explanationWrong]}><Text style={styles.explanationTitle}>{answerCredit === 1 ? 'Bien vu' : answerCredit > 0 ? 'Réponse partielle' : 'À retenir'}</Text>{answerCredit > 0 && answerCredit < 1 && <Text style={styles.partialCredit}>{Math.round(answerCredit * 100)} % des éléments trouvés</Text>}<Text style={styles.explanationText}>{question.explanation}</Text>{hasQuestionMedia && <Pressable disabled={!question.sourceUrl} accessibilityRole={question.sourceUrl ? 'link' : 'text'} onPress={question.sourceUrl ? () => Linking.openURL(question.sourceUrl!) : undefined} style={styles.mediaCredit}><Text style={styles.mediaCreditText}>Média : {question.sourceLabel}{question.sourceUrl ? '  ↗' : ''}</Text></Pressable>}<View style={styles.explanationActions}>{question.learnMoreUrl && <Pressable onPress={() => Linking.openURL(question.learnMoreUrl!)} style={styles.learnMore}><Text style={styles.learnMoreText}>En savoir plus  →</Text></Pressable>}<Pressable testID="report-question" onPress={onReportQuestion} style={styles.reportQuestion}><Text style={styles.reportQuestionText}>Signaler</Text></Pressable></View></View>}
-        {answered && <View style={styles.confidenceCard}><Text style={styles.confidenceTitle}>Tu le savais vraiment ?</Text><Text style={styles.confidenceHint}>Facultatif - ajuste seulement la prochaine révision</Text><View style={styles.confidenceRow}>{([{ value: 1, label: 'Hésitant' }, { value: 2, label: 'Moyen' }, { value: 3, label: 'Sûr' }] as const).map((item) => <Pressable key={item.value} testID={`confidence-${item.value}`} onPress={() => onConfidence(item.value)} style={[styles.confidenceButton, confidence === item.value && styles.confidenceButtonActive]}><Text style={[styles.confidenceButtonText, confidence === item.value && styles.confidenceButtonTextActive]}>{item.label}</Text></Pressable>)}</View></View>}
+        {answered && <View style={styles.confidenceCard}><Text style={styles.confidenceTitle}>Tu le savais vraiment ?</Text><Text style={styles.confidenceHint}>Facultatif - ajuste seulement la prochaine révision</Text><View style={styles.confidenceRow}>{([{ value: 1, label: 'Hésitant' }, { value: 2, label: 'Moyen' }, { value: 3, label: 'Sûr' }] as const).map((item) => <Pressable key={item.value} testID={`confidence-${item.value}`} accessibilityRole="button" accessibilityState={{ selected: confidence === item.value }} onPress={() => onConfidence(item.value)} style={[styles.confidenceButton, confidence === item.value && styles.confidenceButtonActive]}><Text style={[styles.confidenceButtonText, confidence === item.value && styles.confidenceButtonTextActive]}>{item.label}</Text></Pressable>)}</View></View>}
       </ScrollView>
-      {answered && <View style={styles.quizFooter}><Pressable testID="continue-quiz" accessibilityRole="button" onPress={onContinue} style={styles.primaryButton}><Text style={styles.primaryButtonText}>{infinite ? 'Question suivante' : index === questions.length - 1 ? 'Voir mon bilan' : 'Continuer'}</Text></Pressable></View>}
+      {answered && <View style={styles.quizFooter}><Pressable testID="continue-quiz" accessibilityRole="button" onPress={onContinue} style={styles.primaryButton}><Text style={styles.primaryButtonText}>{index === questions.length - 1 && !infinite ? 'Voir mon bilan' : 'Question suivante'}</Text></Pressable></View>}
       <MediaZoomModal media={zoomMedia} onClose={() => setZoomMedia(null)} />
     </KeyboardAvoidingView>
   );
@@ -1371,6 +1431,7 @@ function mapPointFeatureCollection(points: Array<{ id: string; point?: GeoPoint 
 }
 
 function SatelliteMapPicker({ question, guess, target, disabled, onPick, fullScreen = false }: { question: QuizQuestion; guess: GeoPoint | null; target?: GeoTarget; disabled: boolean; onPick: (point: GeoPoint) => void; fullScreen?: boolean }) {
+  const cameraRef = useRef<CameraRef>(null);
   const mapKind = isFranceMapQuestion(question) ? 'france' : 'world';
   const isFrance = mapKind === 'france';
   const camera = isFrance
@@ -1379,6 +1440,15 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick, fullScr
   const targetData = useMemo(() => target ? mapPointFeatureCollection([{ id: 'target', point: target, label: target.label }]) : EMPTY_FEATURE_COLLECTION, [target]);
   const boundaryData = (isFrance ? franceDepartmentBoundaryGeoJson : worldBoundaryGeoJson) as unknown as FeatureCollection;
   const guessData = useMemo(() => guess ? mapPointFeatureCollection([{ id: 'guess', point: guess, label: 'Ta réponse' }]) : EMPTY_FEATURE_COLLECTION, [guess]);
+
+  function frameCorrection() {
+    if (!guess || !target) return;
+    cameraRef.current?.fitBounds(mapCorrectionBounds(guess, target), {
+      padding: { top: 24, right: 24, bottom: 64, left: 24 }, duration: 0,
+    });
+  }
+
+  useEffect(() => { frameCorrection(); }, [guess, target]);
 
   useEffect(() => {
     if (Platform.OS === 'android') {
@@ -1396,7 +1466,7 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick, fullScr
   }
 
   return (
-    <View style={[styles.satelliteMapWrap, fullScreen && styles.satelliteMapFullScreen]}>
+    <View onLayout={frameCorrection} style={[styles.satelliteMapWrap, fullScreen && styles.satelliteMapFullScreen]}>
       <MapLibreMap
         key={`${question.id}-${mapKind}`}
         testID="world-map-picker"
@@ -1415,7 +1485,7 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick, fullScr
         androidView="surface"
         style={styles.satelliteMap}
       >
-        <Camera {...camera} />
+        <Camera ref={cameraRef} {...camera} minZoom={target ? 0 : camera.minZoom} />
         <GeoJSONSource id="kizz-boundaries" data={boundaryData}>
           <Layer id="kizz-land-fill" type="fill" paint={{ 'fill-color': isFrance ? '#C9DDA2' : '#B9D19A', 'fill-opacity': 1 }} />
           <Layer id="kizz-land-depth" type="fill" paint={{ 'fill-color': isFrance ? '#7FA46D' : '#7AA377', 'fill-opacity': isFrance ? 0.14 : 0.18 }} />
@@ -1439,20 +1509,16 @@ function SatelliteMapPicker({ question, guess, target, disabled, onPick, fullScr
 
 function Result({ topic, questions, answers, onAgain, onHome }: { topic: Topic; questions: QuizQuestion[]; answers: SessionAnswer[]; onAgain: () => void; onHome: () => void }) {
   const score = answers.reduce((total, answer) => total + (answer.credit ?? (answer.correct ? 1 : 0)), 0);
-  const percent = Math.round((score / answers.length) * 100);
+  const percent = answers.length ? Math.round((score / answers.length) * 100) : 0;
   const message = percent >= 80 ? 'Solide !' : percent >= 50 ? 'Bonne progression' : 'Chaque erreur fait apprendre';
   const interactionStats = summarizeByInteraction(questions, answers);
-  const confidenceStats = [
-    { label: 'A revoir', value: answers.filter((answer) => answer.confidence === 1).length },
-    { label: 'A consolider', value: answers.filter((answer) => answer.confidence === 2).length },
-    { label: 'Solide', value: answers.filter((answer) => answer.confidence === 3).length },
-  ];
+  const confidenceStats = summarizeForReview(answers);
   return (
-    <View style={styles.resultPage}>
+    <ScrollView testID="session-result" style={styles.quizPage} contentContainerStyle={styles.resultPage}>
       <View style={[styles.resultCircle, { borderColor: topic.color }]}><Text style={[styles.resultPercent, { color: topic.color }]}>{percent}%</Text><Text style={styles.resultScore}>{Number.isInteger(score) ? score : score.toFixed(1)} sur {answers.length}</Text></View>
       <Text style={styles.resultTitle}>{message}</Text><Text style={styles.resultText}>Ta session {topic.title.toLowerCase()} est enregistrée uniquement sur cet appareil.</Text>
       <View style={styles.calibrationCard}>
-        <Text style={styles.calibrationTitle}>Calibration memoire</Text>
+        <Text style={styles.calibrationTitle}>Pour la suite</Text>
         <View style={styles.calibrationRow}>
           {confidenceStats.map((stat) => (
             <View key={stat.label} style={styles.calibrationItem}>
@@ -1473,13 +1539,19 @@ function Result({ topic, questions, answers, onAgain, onHome }: { topic: Topic; 
           </View>
         ))}
       </View>}
-      <Pressable onPress={onAgain} style={styles.primaryButton}><Text style={styles.primaryButtonText}>Rejouer ce thème</Text></Pressable>
-      <Pressable onPress={onHome} style={styles.secondaryButton}><Text style={styles.secondaryButtonText}>Retour aux thèmes</Text></Pressable>
-    </View>
+      <Pressable testID="finish-session" accessibilityRole="button" onPress={onHome} style={styles.primaryButton}><Text style={styles.primaryButtonText}>Terminer et revenir à l’accueil</Text></Pressable>
+      <Pressable accessibilityRole="button" onPress={onAgain} style={styles.secondaryButton}><Text style={styles.secondaryButtonText}>Refaire ces questions</Text></Pressable>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  answerInstruction: { color: '#A4B0AA', fontSize: 14, lineHeight: 21, marginBottom: 16 },
+  feedbackPrompt: { color: '#B8C6BE', fontSize: 14, lineHeight: 21, marginBottom: 16 },
+  questionImageCorrected: { height: 140 },
+  correctAnswer: { color: '#EDF4F0', fontSize: 21, lineHeight: 29, fontWeight: '800', marginTop: 4, marginBottom: 12 },
+  givenAnswer: { color: '#C0CAC4', fontSize: 14, lineHeight: 21, marginBottom: 8 },
+  feedbackImage: { width: '100%', height: 170, marginBottom: 12 },
   safe: { flex: 1, backgroundColor: palette.bg, paddingTop: Platform.OS === 'android' ? 24 : 0, paddingBottom: Platform.OS === 'android' ? 48 : 0 }, loading: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: palette.bg, gap: 16, paddingTop: Platform.OS === 'android' ? 24 : 0, paddingBottom: Platform.OS === 'android' ? 48 : 0 }, loadingText: { color: palette.muted },
   homeRoot: { flex: 1, backgroundColor: '#0A0E0D' }, homePager: { flex: 1 }, homePanel: { paddingHorizontal: 22, paddingBottom: 44 }, homeTabs: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 22, marginTop: -24, marginBottom: 18, minHeight: 38, borderRadius: 999, borderWidth: 1, borderColor: '#222C27', backgroundColor: '#101714', overflow: 'hidden' }, homeTabIndicator: { position: 'absolute', left: 0, top: 0, bottom: 0, width: '33.3333%', backgroundColor: '#68D7A2', borderRadius: 999 }, homeTab: { flex: 1, minHeight: 38, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 8, zIndex: 1 }, homeTabText: { color: '#8A9791', fontSize: 11, fontWeight: '800', textAlign: 'center' }, homeTabActive: { color: '#07110C', fontWeight: '900' },
   page: { padding: 22, paddingBottom: 40 }, brandRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 38, paddingHorizontal: 22, paddingTop: 22 }, logo: { width: 40, height: 40, borderRadius: 13, backgroundColor: '#68D7A2', alignItems: 'center', justifyContent: 'center' }, logoText: { color: '#09110E', fontSize: 22, fontWeight: '900' }, brand: { fontSize: 23, fontWeight: '800', color: '#F3F7F5', marginLeft: 11 }, libraryShortcut: { marginLeft: 'auto', backgroundColor: '#17211D', borderWidth: 1, borderColor: '#28362F', paddingHorizontal: 13, paddingVertical: 9, borderRadius: 20 }, libraryShortcutText: { color: '#91E8BD', fontSize: 12, fontWeight: '800' },
@@ -1501,16 +1573,18 @@ const styles = StyleSheet.create({
   homeStatsLine: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: -18, marginBottom: 18 }, homeStatsText: { color: '#9AA9A2', fontSize: 11, fontWeight: '800', paddingHorizontal: 10, paddingVertical: 6, borderRadius: 999, backgroundColor: '#121A17', borderWidth: 1, borderColor: '#24302A' },
   modeMiniRow: { flexDirection: 'row', gap: 10, marginBottom: 18 }, modeMiniCard: { flex: 1, borderRadius: 18, borderWidth: 1, borderColor: '#26312C', backgroundColor: '#111614', padding: 13 }, modeMiniTitle: { color: '#EEF6F2', fontSize: 14, fontWeight: '900', marginBottom: 10 }, modeMiniButtons: { flexDirection: 'row', gap: 7 }, modeMiniButton: { flex: 1, minHeight: 38, borderRadius: 13, borderWidth: 1, borderColor: '#334139', backgroundColor: '#16201B', alignItems: 'center', justifyContent: 'center' },
   languageCompactCard: { minHeight: 86, borderRadius: 18, borderWidth: 1, borderColor: '#285262', backgroundColor: '#102027', flexDirection: 'row', alignItems: 'center', padding: 14, gap: 12, marginBottom: 22 },
-  quizPage: { flex: 1, backgroundColor: '#0A0E0D' }, quizHeader: { height: 64, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 22, gap: 13 }, close: { fontSize: 32, color: '#829089', lineHeight: 34 }, progressTrack: { flex: 1, height: 7, borderRadius: 8, backgroundColor: '#202925', overflow: 'hidden' }, progressFill: { height: '100%', borderRadius: 8 }, counter: { color: '#78857F', fontWeight: '700', fontSize: 12 }, favoriteStar: { color: '#64716A', fontSize: 24 }, favoriteStarActive: { color: '#E6B759' }, quizBody: { padding: 22, paddingBottom: 32 }, metaRow: { flexDirection: 'row', alignItems: 'center' }, pill: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20, fontSize: 12, fontWeight: '800' }, difficulty: { marginLeft: 'auto', color: '#59655F', letterSpacing: 2, fontSize: 11 }, infiniteQuizHint: { color: '#9B8CB2', fontSize: 11, fontWeight: '800', marginTop: 12 }, questionImageWrap: { height: 190, overflow: 'hidden', borderRadius: 20, backgroundColor: '#17201C', marginTop: 20 }, questionImage: { width: '100%', height: '100%' }, question: { color: '#F1F6F3', fontSize: 28, lineHeight: 35, fontWeight: '800', marginTop: 22, marginBottom: 28 }, choices: { gap: 11 }, choice: { minHeight: 68, borderRadius: 17, borderWidth: 1.5, borderColor: '#2A3530', backgroundColor: '#131917', padding: 12, flexDirection: 'row', alignItems: 'center' }, choiceWithImage: { minHeight: 102 }, choiceImage: { width: 78, height: 78, borderRadius: 12, backgroundColor: '#0B100E', marginRight: 12 }, choiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#13271F' }, choiceWrong: { borderColor: '#E47D70', backgroundColor: '#291816' }, choiceLetter: { width: 38, height: 38, borderRadius: 12, backgroundColor: '#222B27', alignItems: 'center', justifyContent: 'center', marginRight: 13 }, choiceLetterCorrect: { backgroundColor: '#4EBA88' }, choiceLetterWrong: { backgroundColor: '#C96358' }, choiceLetterText: { color: '#A0ACA6', fontWeight: '800' }, choiceLetterActive: { color: '#07110C' }, choiceText: { color: '#E3EAE6', flex: 1, fontSize: 15, fontWeight: '600' }, choiceMark: { color: '#68D7A2', fontSize: 21, fontWeight: '900', marginHorizontal: 6 }, freeInput: { minHeight: 62, borderWidth: 1.5, borderColor: '#303B36', backgroundColor: '#131917', borderRadius: 17, paddingHorizontal: 17, color: '#EDF4F0', fontSize: 16 }, checkButton: { minHeight: 50, backgroundColor: '#68D7A2', borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginTop: 12 }, checkButtonText: { color: '#07110C', fontSize: 15, fontWeight: '900' }, acceptedAnswer: { color: '#F09A8E', fontSize: 13, fontWeight: '700', marginTop: 10 }, explanation: { borderRadius: 17, padding: 17, marginTop: 20, borderLeftWidth: 4 }, explanationCorrect: { backgroundColor: '#13251E', borderLeftColor: '#68D7A2' }, explanationWrong: { backgroundColor: '#281917', borderLeftColor: '#E47D70' }, explanationTitle: { color: '#EDF4F0', fontWeight: '800', fontSize: 16, marginBottom: 6 }, explanationText: { color: '#A4B0AA', lineHeight: 21 }, mediaCredit: { alignSelf: 'flex-start', marginTop: 12, paddingVertical: 6, paddingHorizontal: 9, borderRadius: 10, backgroundColor: '#0E1512', borderWidth: 1, borderColor: '#26342E' }, mediaCreditText: { color: '#8FA19A', fontSize: 11, fontWeight: '800' }, explanationActions: { flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 13 }, learnMore: { alignSelf: 'flex-start', paddingVertical: 5 }, learnMoreText: { color: '#83E3B3', fontWeight: '800', fontSize: 13 }, reportQuestion: { paddingVertical: 5, paddingHorizontal: 2 }, reportQuestionText: { color: '#8A9791', fontWeight: '800', fontSize: 13 },
+  quizPage: { flex: 1, backgroundColor: '#0A0E0D' }, quizHeader: { height: 64, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 22, gap: 13 }, close: { fontSize: 32, color: '#829089', lineHeight: 34 }, progressTrack: { flex: 1, height: 7, borderRadius: 8, backgroundColor: '#202925', overflow: 'hidden' }, progressFill: { height: '100%', borderRadius: 8 }, counter: { color: '#78857F', fontWeight: '700', fontSize: 12 }, favoriteStar: { color: '#64716A', fontSize: 24 }, favoriteStarActive: { color: '#E6B759' }, quizBody: { padding: 22, paddingBottom: 32 }, metaRow: { flexDirection: 'row', alignItems: 'center' }, pill: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20, fontSize: 12, fontWeight: '800' }, difficulty: { marginLeft: 'auto', color: '#59655F', letterSpacing: 2, fontSize: 11 }, infiniteQuizHint: { color: '#9B8CB2', fontSize: 11, fontWeight: '800', marginTop: 12 }, questionImageWrap: { height: 190, overflow: 'hidden', borderRadius: 20, backgroundColor: '#17201C', marginTop: 20 }, questionImage: { width: '100%', height: '100%' }, question: { color: '#F1F6F3', fontSize: 28, lineHeight: 35, fontWeight: '800', marginTop: 22, marginBottom: 28 }, choices: { gap: 11 }, choice: { minHeight: 68, borderRadius: 17, borderWidth: 1.5, borderColor: '#2A3530', backgroundColor: '#131917', padding: 12, flexDirection: 'row', alignItems: 'center' }, choiceWithImage: { minHeight: 102 }, choiceImage: { width: 78, height: 78, borderRadius: 12, backgroundColor: '#0B100E', marginRight: 12 }, choiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#13271F' }, choiceWrong: { borderColor: '#E47D70', backgroundColor: '#291816' }, choiceLetter: { width: 38, height: 38, borderRadius: 12, backgroundColor: '#222B27', alignItems: 'center', justifyContent: 'center', marginRight: 13 }, choiceLetterCorrect: { backgroundColor: '#4EBA88' }, choiceLetterWrong: { backgroundColor: '#C96358' }, choiceLetterText: { color: '#A0ACA6', fontWeight: '800' }, choiceLetterActive: { color: '#07110C' }, choiceText: { color: '#E3EAE6', flex: 1, fontSize: 15, fontWeight: '600' }, choiceMark: { color: '#68D7A2', fontSize: 21, fontWeight: '900', marginHorizontal: 6 }, freeInput: { minHeight: 62, borderWidth: 1.5, borderColor: '#303B36', backgroundColor: '#131917', borderRadius: 17, paddingHorizontal: 17, color: '#EDF4F0', fontSize: 16 }, checkButton: { minHeight: 50, backgroundColor: '#68D7A2', borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginTop: 12 }, checkButtonText: { color: '#07110C', fontSize: 15, fontWeight: '900' }, acceptedAnswer: { color: '#F09A8E', fontSize: 13, fontWeight: '700', marginTop: 10 }, explanation: { borderRadius: 17, padding: 17, marginTop: 20, borderLeftWidth: 4 }, explanationCorrect: { backgroundColor: '#13251E', borderLeftColor: '#68D7A2' }, explanationWrong: { backgroundColor: '#281917', borderLeftColor: '#E47D70' }, explanationTitle: { color: '#EDF4F0', fontWeight: '800', fontSize: 16, marginBottom: 6 }, explanationText: { color: '#A4B0AA', lineHeight: 21 }, mediaCredit: { alignSelf: 'flex-start', marginTop: 12, paddingVertical: 6, paddingHorizontal: 9, borderRadius: 10, backgroundColor: '#0E1512', borderWidth: 1, borderColor: '#26342E' }, mediaCreditText: { color: '#8FA19A', fontSize: 11, fontWeight: '800' }, explanationActions: { flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 13 }, learnMore: { alignSelf: 'flex-start', minHeight: 44, justifyContent: 'center', paddingVertical: 5 }, learnMoreText: { color: '#83E3B3', fontWeight: '800', fontSize: 13 }, reportQuestion: { minHeight: 44, justifyContent: 'center', paddingVertical: 5, paddingHorizontal: 8 }, reportQuestionText: { color: '#8A9791', fontWeight: '800', fontSize: 13 },
+  mapExplanation: { color: '#E6EFEA', fontSize: 14, lineHeight: 21, marginTop: 8 },
   mapQuizPage: { flex: 1, backgroundColor: '#0A0E0D' }, mapQuestionPanel: { paddingHorizontal: 16, paddingTop: 4, paddingBottom: 10 }, mapQuestionText: { color: '#F1F6F3', fontSize: 20, lineHeight: 25, fontWeight: '900', marginTop: 10 }, mapStage: { flex: 1, marginHorizontal: 10, marginBottom: 8, borderRadius: 18, overflow: 'hidden', borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23' }, mapActionBar: { paddingHorizontal: 14, paddingTop: 10, paddingBottom: Platform.OS === 'android' ? 16 : 20, borderTopWidth: 1, borderTopColor: '#1F2925', backgroundColor: '#0A0E0D' }, mapResultCard: { borderRadius: 15, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 12, marginBottom: 10 },
   satelliteMapWrap: { height: 430, borderRadius: 14, borderWidth: 1, borderColor: '#2E4238', backgroundColor: '#0F1D23', overflow: 'hidden', marginBottom: 10 }, satelliteMapFullScreen: { flex: 1, height: undefined, marginBottom: 0, borderWidth: 0, borderRadius: 0 }, satelliteMap: { flex: 1, backgroundColor: '#0F1D23' }, mapHint: { position: 'absolute', left: 12, right: 12, bottom: 10, color: '#D5E1DC', fontSize: 11, fontWeight: '800', textAlign: 'center', paddingHorizontal: 10, paddingVertical: 7, borderRadius: 999, backgroundColor: '#07110CCC', overflow: 'hidden' }, mapFeedback: { borderRadius: 16, borderWidth: 1, borderColor: '#2A3A33', backgroundColor: '#111714', padding: 14, marginTop: 10 }, mapFeedbackTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 6 }, mapFeedbackText: { color: '#8FA19A', fontSize: 12, lineHeight: 18 },
   multiFields: { gap: 14 }, multiFieldLabel: { color: '#AAB5AF', fontSize: 11, fontWeight: '800', marginBottom: 7, marginLeft: 3 }, explanationPartial: { backgroundColor: '#2A2414', borderLeftColor: '#E6B759' }, partialCredit: { color: '#E6B759', fontSize: 11, fontWeight: '800', marginBottom: 8 },
   confidenceCard: { borderRadius: 17, borderWidth: 1, borderColor: '#28342E', backgroundColor: '#111714', padding: 15, marginTop: 13 }, confidenceTitle: { color: '#DEE8E3', fontSize: 14, fontWeight: '800' }, confidenceHint: { color: '#65736C', fontSize: 10, marginTop: 3, marginBottom: 12 }, confidenceRow: { flexDirection: 'row', gap: 7 }, confidenceButton: { flex: 1, minHeight: 42, borderRadius: 12, borderWidth: 1, borderColor: '#303C36', alignItems: 'center', justifyContent: 'center' }, confidenceButtonActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, confidenceButtonText: { color: '#8D9A93', fontSize: 11, fontWeight: '800' }, confidenceButtonTextActive: { color: '#07110C' },
   quizFooter: { padding: 18, borderTopWidth: 1, borderTopColor: '#222B27', backgroundColor: '#0A0E0D' }, primaryButton: { backgroundColor: '#68D7A2', minHeight: 56, borderRadius: 17, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 28 }, primaryButtonText: { color: '#07110C', fontWeight: '900', fontSize: 16 }, disabled: { opacity: 0.32 },
-  resultPage: { flex: 1, padding: 28, justifyContent: 'center', alignItems: 'stretch', backgroundColor: '#0A0E0D' }, resultCircle: { width: 180, height: 180, borderRadius: 90, borderWidth: 10, backgroundColor: '#131917', alignSelf: 'center', alignItems: 'center', justifyContent: 'center', marginBottom: 32 }, resultPercent: { fontSize: 43, fontWeight: '900' }, resultScore: { color: '#839089', marginTop: 2 }, resultTitle: { color: '#F0F5F2', fontSize: 30, fontWeight: '800', textAlign: 'center' }, resultText: { color: '#96A29C', fontSize: 15, lineHeight: 22, textAlign: 'center', marginTop: 12, marginBottom: 20 }, calibrationCard: { borderRadius: 18, borderWidth: 1, borderColor: '#26332D', backgroundColor: '#111714', padding: 15, marginBottom: 22 }, calibrationTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 12 }, calibrationRow: { flexDirection: 'row', gap: 8 }, calibrationItem: { flex: 1, borderRadius: 13, backgroundColor: '#171F1B', paddingVertical: 12, alignItems: 'center' }, calibrationValue: { color: '#68D7A2', fontSize: 22, fontWeight: '900' }, calibrationLabel: { color: '#7F8D86', fontSize: 10, fontWeight: '800', marginTop: 3, textAlign: 'center' }, breakdownCard: { borderRadius: 18, borderWidth: 1, borderColor: '#26332D', backgroundColor: '#111714', padding: 15, marginBottom: 22 }, breakdownRow: { minHeight: 34, flexDirection: 'row', alignItems: 'center', borderTopWidth: 1, borderTopColor: '#202A25', paddingTop: 8, marginTop: 7 }, breakdownLabel: { color: '#E6EFEA', fontSize: 12, fontWeight: '900', flex: 1 }, breakdownMeta: { color: '#7F8D86', fontSize: 10, minWidth: 44, textAlign: 'right' }, breakdownScore: { color: '#DDE8E3', fontSize: 11, fontWeight: '900', minWidth: 48, textAlign: 'right' }, breakdownPercent: { color: '#8EE0B5', fontSize: 12, fontWeight: '900', minWidth: 42, textAlign: 'right' }, secondaryButton: { minHeight: 54, alignItems: 'center', justifyContent: 'center', marginTop: 8 }, secondaryButtonText: { color: '#8DDBB2', fontWeight: '800', fontSize: 15 },
+  resultPage: { flexGrow: 1, padding: 24, justifyContent: 'center', alignItems: 'stretch', backgroundColor: '#0A0E0D' }, resultCircle: { width: 136, height: 136, borderRadius: 68, borderWidth: 7, backgroundColor: '#131917', alignSelf: 'center', alignItems: 'center', justifyContent: 'center', marginBottom: 32 }, resultPercent: { fontSize: 43, fontWeight: '900' }, resultScore: { color: '#839089', marginTop: 2 }, resultTitle: { color: '#F0F5F2', fontSize: 25, fontWeight: '800', textAlign: 'center' }, resultText: { color: '#96A29C', fontSize: 15, lineHeight: 22, textAlign: 'center', marginTop: 12, marginBottom: 20 }, calibrationCard: { borderRadius: 18, borderWidth: 1, borderColor: '#26332D', backgroundColor: '#111714', padding: 15, marginBottom: 22 }, calibrationTitle: { color: '#E6EFEA', fontSize: 13, fontWeight: '900', marginBottom: 12 }, calibrationRow: { flexDirection: 'row', gap: 8 }, calibrationItem: { flex: 1, borderRadius: 13, backgroundColor: '#171F1B', paddingVertical: 12, alignItems: 'center' }, calibrationValue: { color: '#68D7A2', fontSize: 22, fontWeight: '900' }, calibrationLabel: { color: '#7F8D86', fontSize: 10, fontWeight: '800', marginTop: 3, textAlign: 'center' }, breakdownCard: { borderRadius: 18, borderWidth: 1, borderColor: '#26332D', backgroundColor: '#111714', padding: 15, marginBottom: 22 }, breakdownRow: { minHeight: 34, flexDirection: 'row', alignItems: 'center', borderTopWidth: 1, borderTopColor: '#202A25', paddingTop: 8, marginTop: 7 }, breakdownLabel: { color: '#E6EFEA', fontSize: 12, fontWeight: '900', flex: 1 }, breakdownMeta: { color: '#7F8D86', fontSize: 10, minWidth: 44, textAlign: 'right' }, breakdownScore: { color: '#DDE8E3', fontSize: 11, fontWeight: '900', minWidth: 48, textAlign: 'right' }, breakdownPercent: { color: '#8EE0B5', fontSize: 12, fontWeight: '900', minWidth: 42, textAlign: 'right' }, secondaryButton: { minHeight: 54, alignItems: 'center', justifyContent: 'center', marginTop: 8 }, secondaryButtonText: { color: '#8DDBB2', fontWeight: '800', fontSize: 15 },
   libraryPage: { padding: 22, paddingBottom: 40, backgroundColor: '#0A0E0D' }, libraryHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 30 }, back: { color: '#83E3B3', fontSize: 40, lineHeight: 40, marginRight: 12 }, libraryTitle: { color: '#E8EFEB', fontSize: 20, fontWeight: '800' }, libraryHero: { color: '#F3F7F5', fontSize: 36, lineHeight: 41, fontWeight: '800', letterSpacing: -1 }, libraryStats: { flexDirection: 'row', backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', borderRadius: 20, paddingVertical: 17, marginBottom: 22 }, actionCard: { flexDirection: 'row', alignItems: 'center', minHeight: 86, borderRadius: 19, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 14, marginBottom: 12 }, actionIcon: { width: 48, height: 48, borderRadius: 15, alignItems: 'center', justifyContent: 'center' }, actionIconText: { color: '#68D7A2', fontWeight: '900', fontSize: 23 }, actionCopy: { flex: 1, paddingHorizontal: 13 }, actionTitle: { color: '#E9F0EC', fontSize: 15, fontWeight: '800' }, actionText: { color: '#84918A', fontSize: 12, lineHeight: 17, marginTop: 3 }, actionArrow: { color: '#5F6C65', fontSize: 28 }, report: { backgroundColor: '#13251E', borderRadius: 15, padding: 15, marginTop: 8 }, reportText: { color: '#8BE4B7', fontSize: 13, fontWeight: '700', lineHeight: 19 }, formatCard: { marginTop: 22, borderTopWidth: 1, borderTopColor: '#28312D', paddingTop: 20 }, formatTitle: { color: '#DDE6E1', fontWeight: '800', marginBottom: 7 }, formatText: { color: '#84918A', fontSize: 12, lineHeight: 19 },
   preparePage: { padding: 22, paddingBottom: 36, backgroundColor: '#0A0E0D' }, prepareEyebrow: { color: '#748079', fontSize: 11, fontWeight: '900', letterSpacing: 1.4 }, prepareBadge: { width: 58, height: 58, borderRadius: 18, alignItems: 'center', justifyContent: 'center', marginBottom: 18 }, prepareBadgeText: { fontSize: 20, fontWeight: '900' }, prepareTitle: { color: '#F2F7F4', fontSize: 36, lineHeight: 40, fontWeight: '900', letterSpacing: -1 }, prepareMeta: { color: '#85918B', fontSize: 13, marginTop: 9, marginBottom: 28 }, calmCard: { backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', borderRadius: 21, padding: 18, marginBottom: 12 }, calmTitle: { color: '#E9F0EC', fontSize: 16, fontWeight: '800' }, calmText: { color: '#89968F', fontSize: 12, lineHeight: 18, marginTop: 5 }, tensionRow: { flexDirection: 'row', gap: 9, marginTop: 18 }, tensionButton: { flex: 1, aspectRatio: 1, maxHeight: 48, borderRadius: 14, borderWidth: 1, borderColor: '#303A35', alignItems: 'center', justifyContent: 'center' }, tensionActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, tensionText: { color: '#A4B0AA', fontWeight: '800' }, tensionTextActive: { color: '#07110C' }, tensionLabels: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 7 }, tensionLabel: { color: '#626F68', fontSize: 10 }, breathCard: { backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', borderRadius: 21, padding: 16, marginBottom: 18, flexDirection: 'row', alignItems: 'center' }, breathOrb: { width: 54, height: 54, borderRadius: 27, backgroundColor: '#202A25', borderWidth: 1, borderColor: '#344139', alignItems: 'center', justifyContent: 'center' }, breathOrbActive: { borderColor: '#68D7A2', backgroundColor: '#163024' }, breathOrbText: { color: '#B7E8CE', fontWeight: '900', fontSize: 16 }, breathCopy: { flex: 1, paddingHorizontal: 13 }, breathButton: { paddingVertical: 9, paddingHorizontal: 11 }, breathButtonText: { color: '#7DDEAD', fontWeight: '800', fontSize: 12 }, reassurance: { color: '#A5B0AA', fontSize: 13, lineHeight: 20, textAlign: 'center', marginHorizontal: 12, marginBottom: 20 }, healthNote: { color: '#5F6B65', fontSize: 10, lineHeight: 15, textAlign: 'center', marginTop: 16 },
-  searchPage: { flex: 1, paddingTop: 20, backgroundColor: '#0A0E0D' }, searchInput: { marginHorizontal: 22, height: 58, borderRadius: 17, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 16, paddingHorizontal: 17 }, searchHint: { color: '#748079', fontSize: 11, marginHorizontal: 24, marginTop: 9 }, searchResults: { padding: 22, gap: 10, paddingBottom: 120 }, searchResult: { minHeight: 74, borderRadius: 17, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 13, flexDirection: 'row', alignItems: 'center' }, searchResultActive: { borderColor: '#68D7A2', backgroundColor: '#12231C' }, searchCheck: { width: 28, height: 28, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', marginRight: 12, alignItems: 'center', justifyContent: 'center' }, searchCheckActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, searchCheckText: { color: '#07110C', fontWeight: '900' }, searchQuestion: { color: '#E5ECE8', fontSize: 14, fontWeight: '700', lineHeight: 19 }, searchTags: { color: '#6F7C75', fontSize: 10, marginTop: 4 }, searchFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, padding: 18, backgroundColor: '#0A0E0DEE', borderTopWidth: 1, borderTopColor: '#222B27' },
+  searchTabs: { flexDirection: 'row', gap: 10, marginHorizontal: 22, marginTop: 14 }, searchTab: { minHeight: 44, paddingHorizontal: 14, paddingVertical: 12, borderRadius: 12, borderWidth: 1, borderColor: '#39443E', justifyContent: 'center' }, searchTabText: { color: '#D9E6DF', fontSize: 13, fontWeight: '700' }, searchClear: { alignSelf: 'flex-start', marginHorizontal: 22, minHeight: 44, justifyContent: 'center' }, searchEmpty: { color: '#AAB8B0', fontSize: 15, lineHeight: 23, paddingVertical: 14 },
+  searchPage: { flex: 1, paddingTop: 20, backgroundColor: '#0A0E0D' }, searchInput: { marginHorizontal: 22, height: 58, borderRadius: 17, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 16, paddingHorizontal: 17 }, searchHint: { color: '#9CAAA2', fontSize: 11, marginHorizontal: 24, marginTop: 9 }, searchResults: { padding: 22, gap: 10, paddingBottom: 16 }, searchResult: { minHeight: 74, borderRadius: 17, backgroundColor: '#131917', borderWidth: 1, borderColor: '#242D29', padding: 13, flexDirection: 'row', alignItems: 'center' }, searchResultActive: { borderColor: '#68D7A2', backgroundColor: '#12231C' }, searchCheck: { width: 28, height: 28, borderRadius: 9, borderWidth: 1, borderColor: '#39443E', marginRight: 12, alignItems: 'center', justifyContent: 'center' }, searchCheckActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, searchCheckText: { color: '#07110C', fontWeight: '900' }, searchQuestion: { color: '#E5ECE8', fontSize: 14, fontWeight: '700', lineHeight: 19 }, searchTags: { color: '#9CAAA2', fontSize: 10, marginTop: 4 }, searchFooter: { padding: 18, backgroundColor: '#0A0E0DEE', borderTopWidth: 1, borderTopColor: '#222B27' },
   dailyVocabCard: { minHeight: 104, borderRadius: 20, backgroundColor: '#211A0F', borderWidth: 1, borderColor: '#4A3518', padding: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }, dailyVocabEyebrow: { color: '#E6B759', fontSize: 9, fontWeight: '900', letterSpacing: 1.2 }, dailyVocabTitle: { color: '#FFF3D7', fontSize: 16, fontWeight: '900', marginTop: 5 }, dailyVocabText: { color: '#A99570', fontSize: 11, lineHeight: 16, marginTop: 5, maxWidth: 260 },
   adminPage: { padding: 22, paddingBottom: 54, backgroundColor: '#0A0E0D' }, adminSearchRow: { flexDirection: 'row', gap: 8, marginBottom: 16 }, adminSearchInput: { flex: 1, minHeight: 52, borderRadius: 15, borderWidth: 1, borderColor: '#303B36', backgroundColor: '#131917', color: '#EFF5F2', fontSize: 14, paddingHorizontal: 14 }, adminSearchButton: { width: 58, borderRadius: 15, backgroundColor: '#68D7A2', alignItems: 'center', justifyContent: 'center' }, adminSearchButtonText: { color: '#07110C', fontWeight: '900' }, adminTopicRow: { gap: 8, paddingRight: 20, paddingBottom: 16 }, adminSummary: { minHeight: 42, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }, adminSummaryText: { color: '#8A9791', fontSize: 12, fontWeight: '800' }, adminList: { gap: 11 }, adminQuestionCard: { borderRadius: 18, borderWidth: 1, borderColor: '#25302B', backgroundColor: '#121815', padding: 14 }, adminQuestionHeader: { flexDirection: 'row', gap: 8, alignItems: 'center', marginBottom: 8 }, adminTopic: { color: '#68D7A2', fontSize: 11, fontWeight: '900' }, adminId: { color: '#5D6963', fontSize: 10, marginLeft: 'auto' }, adminPrompt: { color: '#EAF0ED', fontSize: 14, fontWeight: '800', lineHeight: 20 }, adminMeta: { color: '#78857F', fontSize: 11, marginTop: 8 }, adminActions: { flexDirection: 'row', alignItems: 'center', gap: 7, marginTop: 12 }, adminDifficultyButton: { width: 36, height: 34, borderRadius: 11, borderWidth: 1, borderColor: '#334039', alignItems: 'center', justifyContent: 'center' }, adminDifficultyActive: { backgroundColor: '#68D7A2', borderColor: '#68D7A2' }, adminDifficultyText: { color: '#AAB5AF', fontWeight: '900' }, adminDifficultyTextActive: { color: '#07110C' }, adminDeleteButton: { marginLeft: 'auto', minHeight: 34, borderRadius: 11, borderWidth: 1, borderColor: '#70413B', paddingHorizontal: 12, alignItems: 'center', justifyContent: 'center' }, adminDeleteText: { color: '#F09A8E', fontSize: 12, fontWeight: '900' },
   reviewStats: { flexDirection: 'row', gap: 8, marginBottom: 18 }, reviewStat: { flex: 1, minHeight: 70, borderRadius: 16, borderWidth: 1, padding: 12, justifyContent: 'center' }, reviewStatOk: { backgroundColor: '#102018', borderColor: '#2D6B4D' }, reviewStatWarning: { backgroundColor: '#211A0F', borderColor: '#6B4E20' }, reviewStatError: { backgroundColor: '#251513', borderColor: '#70413B' }, reviewStatValue: { color: '#F0F7F3', fontSize: 22, fontWeight: '900' }, reviewStatLabel: { color: '#8C9992', fontSize: 10, fontWeight: '900', marginTop: 3 }, reviewQuestionCard: { borderRadius: 18, borderWidth: 1, backgroundColor: '#121815', padding: 14 }, reviewCardOk: { borderColor: '#284D3A' }, reviewCardWarning: { borderColor: '#68501F' }, reviewCardError: { borderColor: '#70413B' }, reviewMetaRow: { flexDirection: 'row', alignItems: 'baseline', gap: 8, marginTop: 3 }, reviewStatus: { color: '#EAF3EE', fontSize: 11, fontWeight: '900' }, reviewChoiceList: { gap: 7, marginTop: 12 }, reviewChoice: { minHeight: 38, borderRadius: 12, borderWidth: 1, borderColor: '#28342F', backgroundColor: '#101512', flexDirection: 'row', alignItems: 'center', paddingHorizontal: 10, paddingVertical: 7 }, reviewChoiceCorrect: { borderColor: '#68D7A2', backgroundColor: '#14251E' }, reviewChoiceLetter: { width: 24, color: '#7F8B85', fontSize: 11, fontWeight: '900' }, reviewChoiceLetterCorrect: { color: '#68D7A2' }, reviewChoiceText: { flex: 1, color: '#DDE6E1', fontSize: 12, fontWeight: '700', lineHeight: 17 }, reviewAnswerText: { color: '#91A098', fontSize: 11, fontWeight: '700', marginTop: 9, lineHeight: 16 }, reviewChecks: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 12 }, reviewCheck: { borderRadius: 999, overflow: 'hidden', paddingHorizontal: 9, paddingVertical: 5, fontSize: 10, fontWeight: '900' }, reviewCheckOk: { color: '#8EE0B5', backgroundColor: '#10231A' }, reviewCheckWarning: { color: '#E6B759', backgroundColor: '#241D13' }, reviewCheckError: { color: '#F09A8E', backgroundColor: '#291816' }, reviewExplanation: { color: '#7F8C86', fontSize: 11, lineHeight: 17, marginTop: 11 },

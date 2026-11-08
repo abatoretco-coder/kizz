@@ -104,17 +104,30 @@ export async function initializeDatabase() {
     await db.runAsync("DELETE FROM session_draft WHERE payload_json LIKE '%\"id\":\"daily\"%' OR payload_json LIKE '%\"topicId\":\"daily\"%' OR payload_json LIKE '%\"id\":\"starter\"%' OR payload_json LIKE '%\"topicId\":\"starter\"%'");
     for (const topic of topics) {
       await db.runAsync(
-        'INSERT OR REPLACE INTO topics (id, title, subtitle, icon, color) VALUES (?, ?, ?, ?, ?)',
+        `INSERT INTO topics (id, title, subtitle, icon, color) VALUES (?, ?, ?, ?, ?)
+         ON CONFLICT(id) DO UPDATE SET title=excluded.title, subtitle=excluded.subtitle,
+           icon=excluded.icon, color=excluded.color`,
         topic.id, topic.title, topic.subtitle, topic.icon, topic.color,
       );
     }
     for (const question of questions) {
       await db.runAsync(
-        `INSERT OR REPLACE INTO questions
+        `INSERT INTO questions
           (id, topic_id, difficulty, prompt, choices_json, answer_index, explanation, tags_json, source_label, source_url,
            question_type, accepted_answers_json, answer_fields_json, choice_image_assets_json, choice_image_alts_json, image_url, image_asset, image_alt, learn_more_url,
            interaction_type, prompt_blocks_json, answer_schema_json, geo_target_json)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         ON CONFLICT(id) DO UPDATE SET
+           topic_id=excluded.topic_id, difficulty=excluded.difficulty, prompt=excluded.prompt,
+           choices_json=excluded.choices_json, answer_index=excluded.answer_index,
+           explanation=excluded.explanation, tags_json=excluded.tags_json,
+           source_label=excluded.source_label, source_url=excluded.source_url,
+           question_type=excluded.question_type, accepted_answers_json=excluded.accepted_answers_json,
+           answer_fields_json=excluded.answer_fields_json, choice_image_assets_json=excluded.choice_image_assets_json,
+           choice_image_alts_json=excluded.choice_image_alts_json, image_url=excluded.image_url,
+           image_asset=excluded.image_asset, image_alt=excluded.image_alt, learn_more_url=excluded.learn_more_url,
+           interaction_type=excluded.interaction_type, prompt_blocks_json=excluded.prompt_blocks_json,
+           answer_schema_json=excluded.answer_schema_json, geo_target_json=excluded.geo_target_json`,
         question.id, question.topicId, question.difficulty, question.prompt,
         JSON.stringify(question.choices ?? []), question.answerIndex ?? -1, question.explanation,
         JSON.stringify(question.tags), question.sourceLabel, question.sourceUrl ?? null,
@@ -607,7 +620,15 @@ export async function searchQuestions(query: string, limit = 30): Promise<QuizQu
   const pattern = `%${query.trim()}%`;
   const rows = await db.getAllAsync<QuestionRow>(
     `SELECT q.*, EXISTS(SELECT 1 FROM favorites f WHERE f.question_id = q.id) AS is_favorite
-     FROM questions q WHERE q.prompt LIKE ? OR q.tags_json LIKE ? ORDER BY q.prompt LIMIT ?`, pattern, pattern, limit,
+     FROM questions q
+     WHERE q.prompt LIKE ? OR EXISTS (
+       SELECT 1 FROM json_each(q.tags_json) tag
+       WHERE tag.type = 'text' AND tag.value LIKE ? AND (
+         tag.value NOT LIKE '%:%' OR tag.value LIKE 'subtheme:%'
+         OR tag.value LIKE 'lang:%' OR tag.value LIKE 'cefr:%' OR tag.value LIKE 'skill:%'
+       )
+     )
+     ORDER BY CASE WHEN q.prompt LIKE ? THEN 0 ELSE 1 END, q.prompt LIMIT ?`, pattern, pattern, pattern, limit,
   );
   return rows.map(mapQuestionRow);
 }
@@ -627,26 +648,28 @@ export async function saveSession(topicId: string, answers: SessionAnswer[]) {
   const db = await dbPromise;
   const now = new Date().toISOString();
   const score = answers.reduce((total, answer) => total + (answer.credit ?? (answer.correct ? 1 : 0)), 0);
-  const result = await db.runAsync(
-    'INSERT INTO sessions (topic_id, score, total, completed_at) VALUES (?, ?, ?, ?)',
-    topicId, score, answers.length, now,
-  );
-  for (const answer of answers) {
-    await db.runAsync(
-      'INSERT INTO answers (session_id, question_id, selected_index, selected_text, correct, credit, confidence, answered_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-      result.lastInsertRowId, answer.questionId, answer.selectedIndex, answer.selectedText ?? null, answer.correct ? 1 : 0, answer.credit ?? (answer.correct ? 1 : 0), answer.confidence ?? null, now,
+  await db.withTransactionAsync(async () => {
+    const result = await db.runAsync(
+      'INSERT INTO sessions (topic_id, score, total, completed_at) VALUES (?, ?, ?, ?)',
+      topicId, score, answers.length, now,
     );
-    const previous = await db.getFirstAsync<{ repetitions: number; interval_days: number; ease: number }>('SELECT repetitions, interval_days, ease FROM review_state WHERE question_id = ?', answer.questionId);
-    const credit = answer.credit ?? (answer.correct ? 1 : 0);
-    const next = nextReviewState(previous ? { repetitions: previous.repetitions, intervalDays: previous.interval_days, ease: previous.ease } : undefined, credit, new Date(now), answer.confidence);
-    await db.runAsync(
-      `INSERT INTO review_state (question_id, repetitions, interval_days, ease, due_at, last_credit)
-       VALUES (?, ?, ?, ?, ?, ?)
-       ON CONFLICT(question_id) DO UPDATE SET repetitions=excluded.repetitions, interval_days=excluded.interval_days,
-       ease=excluded.ease, due_at=excluded.due_at, last_credit=excluded.last_credit`,
-      answer.questionId, next.repetitions, next.intervalDays, next.ease, next.dueAt, credit,
-    );
-  }
+    for (const answer of answers) {
+      await db.runAsync(
+        'INSERT INTO answers (session_id, question_id, selected_index, selected_text, correct, credit, confidence, answered_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+        result.lastInsertRowId, answer.questionId, answer.selectedIndex, answer.selectedText ?? null, answer.correct ? 1 : 0, answer.credit ?? (answer.correct ? 1 : 0), answer.confidence ?? null, now,
+      );
+      const previous = await db.getFirstAsync<{ repetitions: number; interval_days: number; ease: number }>('SELECT repetitions, interval_days, ease FROM review_state WHERE question_id = ?', answer.questionId);
+      const credit = answer.credit ?? (answer.correct ? 1 : 0);
+      const next = nextReviewState(previous ? { repetitions: previous.repetitions, intervalDays: previous.interval_days, ease: previous.ease } : undefined, credit, new Date(now), answer.confidence);
+      await db.runAsync(
+        `INSERT INTO review_state (question_id, repetitions, interval_days, ease, due_at, last_credit)
+         VALUES (?, ?, ?, ?, ?, ?)
+         ON CONFLICT(question_id) DO UPDATE SET repetitions=excluded.repetitions, interval_days=excluded.interval_days,
+         ease=excluded.ease, due_at=excluded.due_at, last_credit=excluded.last_credit`,
+        answer.questionId, next.repetitions, next.intervalDays, next.ease, next.dueAt, credit,
+      );
+    }
+  });
 }
 
 export async function getDashboardStats(): Promise<DashboardStats> {

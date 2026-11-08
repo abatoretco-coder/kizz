@@ -1,0 +1,417 @@
+[
+  {
+    "sourceId": "cmqdyhzeq008thzl6136cfkdz",
+    "explanation": "Le Brésil est le plus vaste pays où le portugais est langue officielle. Le Mexique est principalement hispanophone ; la Chine et l’Indonésie ne sont pas lusophones.",
+    "prompt": "Quel pays de langue officielle portugaise possède la plus grande superficie ?",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmqdxa48o008rhzl6uwell0ue",
+    "explanation": "Kyūshū est la plus au sud-ouest des quatre grandes îles japonaises. Hokkaidō est au nord ; Honshū est la plus grande ; Shikoku se trouve au sud de Honshū."
+  },
+  {
+    "sourceId": "cmjj6373t0047hz0l5a9ka8ap",
+    "explanation": "La mer Caspienne est un lac fermé et salé, malgré son nom de mer. Le Baïkal détient le record de volume pour les lacs d’eau douce, pas pour tous les lacs.",
+    "prompt": "En incluant les lacs salés, quel lac est le plus grand du monde par sa superficie et son volume ?",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmnlvdjn2005dhzl6cuhlk5x4",
+    "explanation": "Le Kangchenjunga se trouve dans l’Himalaya, entre le Népal et l’Inde. Il arrive après l’Everest et le K2 dans le classement des sommets par altitude."
+  },
+  {
+    "sourceId": "cmmt8135d001xhzl61n0vati0",
+    "explanation": "Le Tarn rejoint la Garonne près de Moissac, dans le Tarn-et-Garonne. Il appartient donc au bassin de la Garonne, dont les eaux rejoignent l’estuaire de la Gironde.",
+    "topicId": "france-map",
+    "difficulty": 2,
+    "tags": [
+      "fleuve"
+    ]
+  },
+  {
+    "sourceId": "cmsz1e8ds001dhz9cprc0u843",
+    "explanation": "Un lac endoréique peut recevoir des cours d’eau : ce qui le caractérise est l’absence d’écoulement de ses eaux vers l’océan. L’eau se perd notamment par évaporation.",
+    "prompt": "Comment qualifie-t-on un lac dont les eaux n’ont pas d’écoulement vers l’océan ?"
+  },
+  {
+    "sourceId": "cmck8wdv3003uhzrogdjr58yc",
+    "explanation": "Le piton des Neiges est le point culminant de La Réunion. Le piton de la Fournaise est un autre massif volcanique de l’île, connu pour son activité éruptive.",
+    "topicId": "france-map",
+    "tags": [
+      "relief",
+      "ile"
+    ],
+    "prompt": "Quel est le point culminant de l’île de La Réunion ?"
+  },
+  {
+    "sourceId": "cmmgfe8j9001jhzl6xni1iwv8",
+    "explanation": "Méridional signifie situé au sud. Septentrional renvoie au nord, occidental à l’ouest et oriental à l’est : ces quatre adjectifs correspondent aux points cardinaux.",
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmck8wdv3003shzrokp138yav",
+    "explanation": "Le piton de la Fournaise est le volcan actif de La Réunion, dans l’océan Indien. La montagne Pelée se trouve en Martinique ; les noms de volcans ne renvoient pas tous à la même île.",
+    "topicId": "france-map",
+    "tags": [
+      "relief",
+      "ile"
+    ],
+    "prompt": "Quel volcan actif se trouve sur l’île de La Réunion ?"
+  },
+  {
+    "sourceId": "cmo0hs46m006phzl6fuy9an5c",
+    "explanation": "Le pont des Soupirs et le palais des Doges se trouvent à Venise, dans le nord-est de l’Italie. Ils sont proches de la place Saint-Marc, au bord de la lagune."
+  },
+  {
+    "sourceId": "cmskfectk000nhz9c0ygnh4mg",
+    "explanation": "Haïti occupe l’ouest d’Hispaniola et la République dominicaine l’est. Bornéo et Palawan se trouvent en Asie du Sud-Est ; Grand Cayman appartient à un autre archipel caribéen.",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cml4uudk40073hz0lvjqjfjuj",
+    "explanation": "Le lac Vostok est enfoui sous la calotte glaciaire de l’Antarctique. Il ne faut pas le confondre avec un lac de surface : l’eau se trouve sous une épaisse couche de glace.",
+    "prompt": "Sous la calotte glaciaire de quel continent se trouve le lac Vostok ?"
+  },
+  {
+    "sourceId": "cml2dsbrr006phz0lr9holwvw",
+    "explanation": "Le pont-canal de l’Orb se trouve à Béziers. Il permet au canal du Midi de franchir le fleuve : les bateaux circulent dans un canal porté par le pont.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve",
+      "patrimoine"
+    ],
+    "learnMoreUrl": "https://www.beziers-mediterranee.com/patrimoine-culturel/pont-canal/"
+  },
+  {
+    "sourceId": "cmvns7nw70009hz84t6d2tdex",
+    "explanation": "Le Baïkal est un lac d’eau douce de Sibérie, en Russie. Il est le plus profond du monde ; la mer Caspienne est plus grande en superficie, ce qui est un autre critère."
+  },
+  {
+    "sourceId": "cmo6ch59m007hhzl6fxc4ryfu",
+    "explanation": "Luçon est la plus grande île des Philippines et accueille la capitale, Manille. Mindanao est une autre grande île, située dans le sud de l’archipel."
+  },
+  {
+    "sourceId": "cmrzf0o2t001bhzbtz4azqb45",
+    "explanation": "Le Niagara relie le lac Érié au lac Ontario. Les chutes se trouvent donc entre ces deux lacs, sur la frontière entre le Canada et les États-Unis.",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmmw99w8l0027hzl6l45e3pgt",
+    "explanation": "Le nom Hong Kong est généralement traduit par « port parfumé » ou « port aux parfums ». Il s’agit d’un sens du nom, pas d’une description de sa fonction portuaire actuelle."
+  },
+  {
+    "sourceId": "cmskpg08l000thz9c47c0ufgd",
+    "explanation": "Le métro de Lausanne comprend notamment une ligne automatique sur pneus. Zurich, Berne et Genève disposent de transports urbains, mais pas d’un réseau de métro comparable."
+  },
+  {
+    "sourceId": "cmguxjmlc000fhz8niq8xad40",
+    "explanation": "Dubrovnik se trouve sur la côte adriatique de la Croatie, près du Monténégro. La Slovénie et la Bosnie-Herzégovine sont d’autres pays de la région.",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmgqo4uda001bhz95k3qmna19",
+    "explanation": "La France métropolitaine compte treize régions, Corse comprise. Avec les cinq régions d’outre-mer, le total géographique utilisé par l’Insee est de dix-huit régions.",
+    "topicId": "france-map",
+    "tags": [
+      "region"
+    ],
+    "difficulty": 1,
+    "learnMoreUrl": "https://www.insee.fr/fr/information/8740222"
+  },
+  {
+    "sourceId": "cmslsu19w0011hz9cfz0ii2np",
+    "explanation": "Le tunnel du Mont-Blanc relie le secteur de Chamonix, en Haute-Savoie, à celui de Courmayeur, dans le Val d’Aoste. Il franchit le massif entre la France et l’Italie.",
+    "difficulty": 3
+  },
+  {
+    "sourceId": "cmtczwtzc0027hz9c2guqlrj9",
+    "explanation": "Le Touquet-Paris-Plage se trouve sur la rive sud de l’estuaire de la Canche, dans le Pas-de-Calais. La baie de Somme et l’estuaire de l’Authie sont plus au sud.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve",
+      "littoral"
+    ]
+  },
+  {
+    "sourceId": "cmguxjmlc0008hz8ns6my10f0",
+    "explanation": "La Californie borde l’océan Pacifique, sur la façade occidentale des États-Unis. L’Atlantique se trouve de l’autre côté du continent nord-américain.",
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmqv6myd5009fhzl688c7bdrx",
+    "explanation": "Le lac Victoria se partage entre la Tanzanie, l’Ouganda et le Kenya. Le lac Tanganyika est situé plus au sud-ouest et ne borde pas le Kenya."
+  },
+  {
+    "sourceId": "cmgw77wil0003hz0lld7ls14s",
+    "explanation": "Le barrage de la Rance porte une route et une usine marémotrice. Celle-ci exploite les mouvements d’eau liés aux marées, et non le vent ou la chaleur du sous-sol.",
+    "topicId": "france-map",
+    "tags": [
+      "littoral",
+      "patrimoine"
+    ],
+    "prompt": "Quelle installation de production d’électricité se trouve sur le barrage routier de la Rance, près de Saint-Malo ?",
+    "choices": [
+      "Une usine marémotrice",
+      "Une centrale géothermique",
+      "Un parc éolien",
+      "Une centrale solaire"
+    ],
+    "answerIndex": 0,
+    "learnMoreUrl": "https://www.edf.fr/usine-maremotrice-rance/produire-de-lelectricite"
+  },
+  {
+    "sourceId": "cmw0n7wcl0011hz8xy3z7d7f9",
+    "explanation": "Le détroit de Béring sépare la Sibérie de l’Alaska. Gibraltar sépare l’Europe de l’Afrique ; Magellan est au sud de l’Amérique du Sud.",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmck8wdv4004nhzrocg49w9ho",
+    "explanation": "Suez se trouve en Égypte, à l’extrémité sud du canal de Suez. Ce canal relie la mer Rouge à la Méditerranée, dont l’accès nord se trouve près de Port-Saïd.",
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cms8zw14c0021hzbtuvwslz24",
+    "explanation": "Conflans-Sainte-Honorine se trouve au confluent de la Seine et de l’Oise, dans les Yvelines. Son histoire portuaire et fluviale explique son surnom de capitale de la batellerie.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve",
+      "patrimoine"
+    ]
+  },
+  {
+    "sourceId": "cmnxmklii006dhzl632updjo9",
+    "explanation": "La plaine des Jarres se trouve au Laos, dans la région de Xieng Khouang. Ses grands récipients de pierre sont liés à d’anciennes pratiques funéraires.",
+    "learnMoreUrl": "https://whc.unesco.org/en/list/1587/"
+  },
+  {
+    "sourceId": "cmrzf3j5a001dhzbtv8pnrp9p",
+    "explanation": "Le lac Michigan se trouve entièrement aux États-Unis. Les lacs Supérieur, Huron, Érié et Ontario sont partagés entre le Canada et les États-Unis."
+  },
+  {
+    "sourceId": "cmigi4ubu000rhz0lhum5z37c",
+    "explanation": "Le mont Logan est le point culminant du Canada, dans le Yukon. Le Denali, plus élevé, se trouve en Alaska : il est donc aux États-Unis."
+  },
+  {
+    "sourceId": "cmnkdi8fp0057hzl6j4ywppe9",
+    "explanation": "La Neva traverse Saint-Pétersbourg et se jette dans le golfe de Finlande, qui appartient à la mer Baltique. La Volga se termine, elle, dans la mer Caspienne."
+  },
+  {
+    "sourceId": "cmigi1hno000phz0lrn8glbx8",
+    "explanation": "Le Nouveau-Brunswick reconnaît officiellement le français et l’anglais. Il faut distinguer le statut bilingue de cette province de celui du Canada à l’échelle fédérale.",
+    "choices": [
+      "Nouveau-Brunswick",
+      "Québec",
+      "Nouvelle-Écosse",
+      "Ontario"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "sourceId": "cmsjbpyeq000bhz9cm5hbdnz4",
+    "explanation": "Schengen se trouve au Luxembourg, près du point de rencontre avec la France et l’Allemagne, sur la Moselle. Le nom de la commune est aussi celui des accords européens.",
+    "prompt": "Près du point de rencontre de quels trois pays se trouve la commune de Schengen ?"
+  },
+  {
+    "sourceId": "cmn4cdbif0035hzl67n622mcv",
+    "explanation": "L’Aconcagua se trouve en Argentine, dans les Andes, près de la frontière chilienne. Être situé dans la cordillère des Andes ne signifie donc pas être au Chili."
+  },
+  {
+    "sourceId": "cmgqnx0530017hz95bn5nr0g5",
+    "explanation": "L’Allemagne comprend seize Länder, ses États fédérés. Le nombre de Länder ne correspond ni au nombre de pays voisins ni à celui des grandes régions naturelles.",
+    "prompt": "Combien de Länder composent la République fédérale d’Allemagne ?",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmw0n2jqo000vhz8x52b3pp95",
+    "explanation": "Le Danube prend sa source en Allemagne et rejoint la mer Noire. Il traverse ou longe dix pays ; la Volga et le Rhin se terminent dans d’autres bassins maritimes."
+  },
+  {
+    "sourceId": "cmck8wdv8008bhzro9vv4f0l2",
+    "explanation": "La Mayenne et la Sarthe se réunissent près d’Angers pour former la Maine. Celle-ci rejoint ensuite la Loire : Mayenne, Maine et Loire sont donc trois noms successifs dans ce réseau.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve"
+    ],
+    "difficulty": 3
+  },
+  {
+    "sourceId": "cmck8wdv7007rhzrorgt313ka",
+    "explanation": "La France partage une frontière terrestre avec le Brésil par la Guyane. Si l’énoncé se limitait à la France métropolitaine, cette réponse ne conviendrait pas.",
+    "topicId": "france-map",
+    "tags": [
+      "frontiere",
+      "patrimoine"
+    ],
+    "prompt": "En incluant la Guyane, lequel de ces pays partage une frontière terrestre avec la France ?"
+  },
+  {
+    "sourceId": "cmgxpicfy000bhz0lkduqjx9b",
+    "explanation": "L’Orb traverse Béziers avant de rejoindre la Méditerranée. L’Hérault est un autre fleuve côtier de la région ; le Tarn appartient au bassin de la Garonne.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve"
+    ],
+    "difficulty": 3
+  },
+  {
+    "sourceId": "cmsxol82r0017hz9c5oruxgta",
+    "explanation": "Philadelphie se trouve dans l’est de la Pennsylvanie, Pittsburgh dans l’ouest. L’État de New York et l’Ohio sont voisins, mais n’abritent pas ces deux villes."
+  },
+  {
+    "sourceId": "cmck8wdv3003qhzrozp16swnf",
+    "explanation": "La Réunion se trouve dans l’océan Indien, à l’est de Madagascar. Elle ne fait pas partie des Antilles, qui se situent entre la mer des Caraïbes et l’Atlantique.",
+    "topicId": "france-map",
+    "tags": [
+      "ile"
+    ],
+    "difficulty": 1,
+    "choices": [
+      "L’océan Indien",
+      "L’océan Atlantique",
+      "L’océan Pacifique",
+      "L’océan Austral"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "sourceId": "cmck8wdv8008ahzrod9woj8q6",
+    "explanation": "La Creuse est un affluent de la Vienne. La Vienne rejoint ensuite la Loire : une rivière peut donc appartenir au bassin de la Loire sans s’y jeter directement.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve"
+    ],
+    "difficulty": 3
+  },
+  {
+    "sourceId": "cmhg618fy000lhz0lwv3qb3s2",
+    "explanation": "Le drapeau du Paraguay présente des emblèmes différents sur ses deux faces. Les bandes de couleur restent les mêmes : c’est le motif central qui permet de distinguer recto et verso."
+  },
+  {
+    "sourceId": "cml2dcwo2006nhz0lclzkqom5",
+    "explanation": "Uluru se trouve dans le Territoire du Nord, au centre de l’Australie. Un inselberg est un relief isolé qui se détache nettement des terrains environnants."
+  },
+  {
+    "sourceId": "cmd1c8aed0007hz3l0jouec9k",
+    "explanation": "Le Golo est le plus long fleuve de Corse. Il coule dans le nord de l’île et se jette dans la mer Tyrrhénienne, au sud de Bastia.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve",
+      "corse"
+    ],
+    "prompt": "Quel est le plus long fleuve de Corse ?"
+  },
+  {
+    "sourceId": "cmck8wdv80083hzro6ubd8fvv",
+    "explanation": "Le lac Titicaca se trouve dans les Andes, à la frontière du Pérou et de la Bolivie. Le lac Atitlán se trouve au Guatemala, loin de cette région andine.",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmj3gmko8003fhz0ldh1fq1a9",
+    "explanation": "La terre Adélie se trouve sur le continent antarctique. Elle appartient aux Terres australes et antarctiques françaises ; les îles Kerguelen sont, elles, dans l’océan Indien.",
+    "topicId": "france-map",
+    "tags": [
+      "patrimoine"
+    ],
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmck8wdv8008dhzro8wk1usrc",
+    "explanation": "La Dordogne et la Garonne se réunissent pour former l’estuaire de la Gironde. Cet estuaire est donc partagé par deux grands cours d’eau avant leur débouché sur l’Atlantique.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmnabpwyq004hhzl6szzn9ftg",
+    "explanation": "La fosse des Mariannes se trouve dans l’ouest de l’océan Pacifique. Son secteur Challenger Deep correspond aux plus grandes profondeurs océaniques connues.",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmo1pegj20071hzl6cib9y6ch",
+    "explanation": "Le mont Logan se trouve dans le territoire canadien du Yukon, près de l’Alaska. Le Nunavut et les Territoires du Nord-Ouest sont d’autres territoires du Canada."
+  },
+  {
+    "sourceId": "cmck8wdv8008chzro11e052ph",
+    "explanation": "Le Drac rejoint l’Isère dans l’agglomération grenobloise. L’Isère se jette ensuite dans le Rhône : ce réseau appartient donc au bassin du Rhône.",
+    "topicId": "france-map",
+    "tags": [
+      "fleuve"
+    ]
+  },
+  {
+    "sourceId": "cmksogrqa005thz0lms36ub6y",
+    "explanation": "Honshū est la plus grande île du Japon et accueille notamment Tokyo, Kyoto et Osaka. Hokkaidō est au nord ; Kyūshū et Shikoku se trouvent plus au sud."
+  },
+  {
+    "sourceId": "cmkvnrv7s0065hz0luyq43oqv",
+    "explanation": "L’Algérie est le plus vaste pays d’Afrique en superficie. Le Soudan était plus étendu avant l’indépendance du Soudan du Sud en 2011.",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmupr5ter0045hz9c981b02a8",
+    "explanation": "La Corse est surnommée l’île de Beauté. Elle se situe au nord de la Sardaigne, en Méditerranée ; la Sicile est plus au sud-est, près de l’Italie continentale.",
+    "topicId": "france-map",
+    "tags": [
+      "ile",
+      "corse"
+    ],
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmguxjmlc0007hz8nf62e2dkk",
+    "explanation": "La Grande Barrière de corail se trouve au large du Queensland, dans le nord-est de l’Australie. Elle borde la mer de Corail, dans le Pacifique."
+  },
+  {
+    "sourceId": "cmvuxh2uk001rhz84stinpfbz",
+    "explanation": "Istanbul s’étend sur les rives européenne et asiatique du Bosphore. Ce détroit relie la mer Noire à la mer de Marmara et sépare les deux parties de la ville.",
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmgqo0r4n0019hz95ai10zhk3",
+    "explanation": "La Suisse est composée de vingt-six cantons. Certains étaient historiquement qualifiés de demi-cantons, mais le décompte actuel des cantons est bien de vingt-six.",
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmjyeqopp004nhz0l2jayq5wn",
+    "explanation": "Le parc national des lacs de Plitvice se trouve en Croatie. Ses lacs en terrasses sont reliés par des cascades ; le Durmitor est un autre parc, situé au Monténégro."
+  },
+  {
+    "sourceId": "cmj975ai6003thz0lbrm6okbt",
+    "explanation": "Le détroit d’Ormuz relie le golfe Persique au golfe d’Oman. Le canal de Suez relie la Méditerranée à la mer Rouge : ce sont deux passages maritimes distincts.",
+    "prompt": "Quel détroit relie le golfe Persique au golfe d’Oman ?"
+  },
+  {
+    "sourceId": "cmk34k5cj004rhz0l7tpqzupf",
+    "explanation": "Fort Boyard se trouve en Charente-Maritime, entre les îles d’Aix et d’Oléron. C’est un repère du littoral atlantique, à l’ouest de Rochefort.",
+    "topicId": "france-map",
+    "tags": [
+      "patrimoine",
+      "littoral"
+    ]
+  },
+  {
+    "sourceId": "cmguxjmlc0009hz8nstdxz5q4",
+    "explanation": "Le Machu Picchu se trouve au Pérou, dans les Andes, près de la région de Cuzco. Le site appartient à l’histoire inca ; il ne se trouve pas au Mexique.",
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmguxjmlc000ehz8nfxz2azlq",
+    "explanation": "Andorre est un petit État des Pyrénées, entre la France et l’Espagne. Il est enclavé, c’est-à-dire dépourvu d’accès direct à la mer.",
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmkbdluzc0055hz0lxy8x7nl2",
+    "explanation": "Le golfe d’Aden se trouve entre la péninsule Arabique et la Corne de l’Afrique. Il communique avec la mer Rouge par le détroit de Bab-el-Mandeb."
+  },
+  {
+    "sourceId": "cmldkx43b007nhz0l5azilzy6",
+    "explanation": "Le parc et le palais de Sanssouci se trouvent à Potsdam, près de Berlin. Potsdam est en Allemagne, tandis que Vienne est en Autriche et Varsovie en Pologne."
+  },
+  {
+    "sourceId": "cmlwqxft5000shzhy6bk2iigi",
+    "explanation": "Åland est un archipel autonome appartenant à la Finlande, mais sa langue officielle est le suédois. L’appartenance à un pays ne suffit donc pas à déduire la langue locale.",
+    "learnMoreUrl": "https://www.norden.org/en/information/about-aland"
+  }
+]

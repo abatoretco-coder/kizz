@@ -1,0 +1,1458 @@
+[
+  {
+    "id": "cmck8wdut001uhzroy41c544n",
+    "question": "Quelle est la capitale de la Nouvelle-Zélande ?",
+    "answer": "Wellington",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Auckland",
+      "Dublin",
+      "Sydney"
+    ]
+  },
+  {
+    "id": "cmntp8gyy005xhzl6yonj3oty",
+    "question": "Dans quelle ville se trouve la tour de Petřín, souvent comparée à la tour Eiffel ?",
+    "answer": "Prague",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Bratislava",
+      "Ljubljana",
+      "Zagreb"
+    ]
+  },
+  {
+    "id": "cmqdyhzeq008thzl6136cfkdz",
+    "question": "Quel est le plus grand pays lusophone ?",
+    "answer": "Brésil",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Mexique",
+      "Chine",
+      "Indonésie"
+    ]
+  },
+  {
+    "id": "cmigmg6iu000zhz0liwztiv0d",
+    "question": "Dans quel pays se trouve le théâtre Colón, inauguré en 1908, que Georges Clemenceau a qualifié de plus beau théâtre du monde ?",
+    "answer": "Argentine",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Chili",
+      "Pérou",
+      "Colombie"
+    ]
+  },
+  {
+    "id": "cmpvbstjf008lhzl6tsvtihmh",
+    "question": "Quel pays est traversé d'est en ouest par le fleuve Ogooué ?",
+    "answer": "Gabon",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Sénégal",
+      "Cameroun",
+      "Côte d'Ivoire"
+    ]
+  },
+  {
+    "id": "cmqdxa48o008rhzl6uwell0ue",
+    "question": "Parmi les quatre îles principales japonaises, laquelle est la plus au sud-ouest du pays ?",
+    "answer": "Kyūshū",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Honshū",
+      "Shikoku",
+      "Hokkaidō"
+    ]
+  },
+  {
+    "id": "cmozi14vl008bhzl622b7e3r8",
+    "question": "Quelle est la plus grande ville de l'Alaska ?",
+    "answer": "Anchorage",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Fairbanks",
+      "Juneau",
+      "Vancouver"
+    ]
+  },
+  {
+    "id": "cmjj6373t0047hz0l5a9ka8ap",
+    "question": "Quel est le plus grand lac du monde, tant bien par sa superficie que par son volume ?",
+    "answer": "Mer Caspienne",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Lac Baïkal",
+      "Lac Supérieur",
+      "Lac Léman"
+    ]
+  },
+  {
+    "id": "cmnlvdjn2005dhzl6cuhlk5x4",
+    "question": "Quel est le troisième plus haut sommet du monde, avec une altitude de 8 586 m ?",
+    "answer": "Kangchenjunga",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "K2",
+      "Everest",
+      "Lhotse"
+    ]
+  },
+  {
+    "id": "cmmt8135d001xhzl61n0vati0",
+    "question": "Dans quel fleuve le Tarn se jette-t-il ?",
+    "answer": "La Garonne",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "La Dordogne",
+      "La Loire",
+      "Le Rhin"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0001hz8n9ilc7i08",
+    "question": "Quel est le plus long fleuve du monde ?",
+    "answer": "Le Nil",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "L’Amazone",
+      "Le Yangzi Jiang",
+      "Le Mississippi"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0002hz8n4xpz7cgs",
+    "question": "Quel pays a pour capitale Tokyo ?",
+    "answer": "Japon",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Chine",
+      "Corée du Sud",
+      "Taïwan"
+    ]
+  },
+  {
+    "id": "cmsz1e8ds001dhz9cprc0u843",
+    "question": "Comment qualifie-t-on un lac qui n'est ni alimenté ni évacué par un cours d'eau ?",
+    "answer": "Endoréique",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Hypersalin",
+      "Intraterrestre",
+      "Isolé"
+    ]
+  },
+  {
+    "id": "cmgp4gd1l001hhzbjnbnajugy",
+    "question": "Quel pays est le voisin le plus au nord du Ghana ?",
+    "answer": "Burkina Faso",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Niger",
+      "Mali",
+      "Togo"
+    ]
+  },
+  {
+    "id": "cmck8wdv3003uhzrogdjr58yc",
+    "question": "Quel est le point culminant de l'ile de La Réunion ?",
+    "answer": "Le Piton des Neiges",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Le Piton de la Fournaise",
+      "Le Piton Rouge",
+      "La Soufrière"
+    ]
+  },
+  {
+    "id": "cmguxjmlc000jhz8nzwn5bjx8",
+    "question": "Quelle chaîne de montagnes forme une frontière entre la France et l’Espagne ?",
+    "answer": "Les Pyrénées",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Les Alpes",
+      "Les Carpates",
+      "Les Apennins"
+    ]
+  },
+  {
+    "id": "cmmgfe8j9001jhzl6xni1iwv8",
+    "question": "En géographie, quel adjectif utilise-t-on pour qualifier ce qui est du côté du sud ?",
+    "answer": "Méridional",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Septentrional",
+      "Occidental",
+      "Oriental"
+    ]
+  },
+  {
+    "id": "cmck8wdv3003shzrokp138yav",
+    "question": "Quel volcan célèbre se situe sur l’île de la Réunion ?",
+    "answer": "Le Piton de la Fournaise",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "La Grande Soufrière",
+      "Le Mont Rainier",
+      "La montagne Pelée"
+    ]
+  },
+  {
+    "id": "cmqf02wew0093hzl6ibczisef",
+    "question": "Quel est le plus long cours d'eau des îles Britanniques ?",
+    "answer": "Shannon",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Severn",
+      "Tamise",
+      "Trent"
+    ]
+  },
+  {
+    "id": "cmo0hs46m006phzl6fuy9an5c",
+    "question": "Dans quelle ville italienne peut-on se balader entre le pont des Soupirs et le palais des Doges ?",
+    "answer": "Venise",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Rome",
+      "Florence",
+      "Milan"
+    ]
+  },
+  {
+    "id": "cmskfectk000nhz9c0ygnh4mg",
+    "question": "Sur quelle île des Caraïbes se situent les états d'Haïti et de République Dominicaine ?",
+    "answer": "Hispaniola",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Grand Cayman",
+      "Bornéo",
+      "Palawan"
+    ]
+  },
+  {
+    "id": "cml4uudk40073hz0lvjqjfjuj",
+    "question": "Sur quel continent se situe le lac Vostok, septième lac du monde par volume ?",
+    "answer": "Antarctique",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Asie",
+      "Afrique",
+      "Amérique"
+    ]
+  },
+  {
+    "id": "cml2dsbrr006phz0lr9holwvw",
+    "question": "Dans quelle ville est situé le pont-canal de l'Orb ?",
+    "answer": "Béziers",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Arles",
+      "Caen",
+      "Quimper"
+    ]
+  },
+  {
+    "id": "cmvns7nw70009hz84t6d2tdex",
+    "question": "Quel est le lac le plus profond du monde ?",
+    "answer": "Le lac Baïkal",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Le lac Tanganyika",
+      "Le lac Supérieur",
+      "La mer Caspienne"
+    ]
+  },
+  {
+    "id": "cmo6ch59m007hhzl6fxc4ryfu",
+    "question": "Quelle île des Philippines a la plus grande superficie ?",
+    "answer": "Luçon",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Palawan",
+      "Mindanao",
+      "Cebu"
+    ]
+  },
+  {
+    "id": "cmguxjmlc000chz8nz2ksxkd9",
+    "question": "Quel pays possède le plus grand nombre de fuseaux horaires ?",
+    "answer": "France",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "États-Unis",
+      "Russie",
+      "Chine"
+    ]
+  },
+  {
+    "id": "cmrzf0o2t001bhzbtz4azqb45",
+    "question": "Entre quels grands lacs sont situées les chutes du Niagara ?",
+    "answer": "Érié et Ontario",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Michigan et Huron",
+      "Supérieur et Ontario",
+      "Michigan et Érié"
+    ]
+  },
+  {
+    "id": "cmmw99w8l0027hzl6l45e3pgt",
+    "question": "Selon la traduction française de Hong Kong, de quoi la ville est-elle le port ?",
+    "answer": "Parfums",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Soies",
+      "Pêcheurs",
+      "Anges"
+    ]
+  },
+  {
+    "id": "cmguxjmlc000ihz8nvvjeart7",
+    "question": "Quel fleuve traverse la capitale égyptienne ?",
+    "answer": "Le Nil",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Le Tigre",
+      "L’Euphrate",
+      "L’Indus"
+    ]
+  },
+  {
+    "id": "cmskpg08l000thz9c47c0ufgd",
+    "question": "Dans quelle ville se trouve le seul réseau de métro de Suisse ?",
+    "answer": "Lausanne",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Zurich",
+      "Berne",
+      "Genève"
+    ]
+  },
+  {
+    "id": "cmguxjmlc000fhz8niq8xad40",
+    "question": "Dans quel pays se trouve la ville de Dubrovnik ?",
+    "answer": "Croatie",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Monténégro",
+      "Bosnie-Herzégovine",
+      "Slovénie"
+    ]
+  },
+  {
+    "id": "cmitxd4ud001xhz0l34xzhjy9",
+    "question": "Quelle fosse sépare les Petites Antilles des Grandes Antilles ?",
+    "answer": "Fosse d'Anegada",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Fosse de Porto Rico",
+      "Fosse des Caïmans",
+      "Fosse des Mariannes"
+    ]
+  },
+  {
+    "id": "cmrl0xgw80007hzbtx4xh7wj9",
+    "question": "Dans quelle ville polonaise peut-on voir des centaines de sculpture de nains ?",
+    "answer": "Wrocław",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Katowice",
+      "Gdańsk",
+      "Poznań"
+    ]
+  },
+  {
+    "id": "cmgqo4uda001bhz95k3qmna19",
+    "question": "Depuis 2016, combien de régions existe-t-il en France métropolitaine ?",
+    "answer": "13",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "10",
+      "16",
+      "19"
+    ]
+  },
+  {
+    "id": "cmck8wdv3003rhzrocp9rlez9",
+    "question": "Quelle est la capitale (chef-lieu) de l’île de la Réunion ?",
+    "answer": "Saint-Denis",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Saint-Pierre",
+      "Saint-Gilles",
+      "Saint-Paul"
+    ]
+  },
+  {
+    "id": "cmck8wdut001whzroeb0iuqmm",
+    "question": "Quel pays a pour capital Katmandou ?",
+    "answer": "Le Népal",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Le Tibet",
+      "La Corée du Sud",
+      "Le Pakistan"
+    ]
+  },
+  {
+    "id": "cmslsu19w0011hz9cfz0ii2np",
+    "question": "Quelle région administrative italienne est reliée à la Haute-Savoie par le tunnel du Mont-Blanc ?",
+    "answer": "Valle d'Aosta",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Piemonte",
+      "Lombardia",
+      "Liguria"
+    ]
+  },
+  {
+    "id": "cmlmg9ti5000chzhy7pk7qwow",
+    "question": "Selon le recensement de 2018, quelle ville est la plus peuplée au monde ?",
+    "answer": "Tokyo",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Shanghai",
+      "Pékin (Beijing)",
+      "Delhi"
+    ]
+  },
+  {
+    "id": "cmtczwtzc0027hz9c2guqlrj9",
+    "question": "À l'embouchure de quel fleuve se situe la ville du Touquet-Paris-Plage ?",
+    "answer": "La Canche",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "La Somme",
+      "L'Authie",
+      "La Rance"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0008hz8ns6my10f0",
+    "question": "Quel océan borde les côtes de la Californie ?",
+    "answer": "Océan Pacifique",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Océan Atlantique",
+      "Océan Indien",
+      "Mer des Caraïbes"
+    ]
+  },
+  {
+    "id": "cmrbxfpn400ahhzl6c3zln46v",
+    "question": "Quel est le plus grand pays à n'avoir aucune rivière permanente sur son territoire ?",
+    "answer": "Arabie Saoudite",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Mali",
+      "Soudan",
+      "Iran"
+    ]
+  },
+  {
+    "id": "cmqv6myd5009fhzl688c7bdrx",
+    "question": "Quel lac se partagent l'Ouganda, la Tanzanie et le Kenya ?",
+    "answer": "Lac Victoria",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Lac Tchad",
+      "Lac Majeur",
+      "Lac Tanganyika"
+    ]
+  },
+  {
+    "id": "cmgw77wil0003hz0lld7ls14s",
+    "question": "Quelle autre fonction est assurée par le pont routier reliant Saint-Malo à Dinard ?",
+    "answer": "C'est une usine marémotrice",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "C’est un pont-levis pour laisser passer les bateaux",
+      "C’est un viaduc ferroviaire pour les trains",
+      "C’est un barrage de protection contre les tempêtes"
+    ]
+  },
+  {
+    "id": "cmw0n7wcl0011hz8xy3z7d7f9",
+    "question": "Quel détroit sépare l'Asie de l'Amérique du Nord ?",
+    "answer": "Le détroit de Béring",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Le détroit de Gibraltar",
+      "Le détroit de Magellan",
+      "Le détroit de Malacca"
+    ]
+  },
+  {
+    "id": "cmkznng9n006bhz0lpiwpdujv",
+    "question": "Dans quel pays voyagez-vous si vous êtes à bord d'un tap-tap ?",
+    "answer": "Haïti",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Thaïlande",
+      "Bangladesh",
+      "Équateur"
+    ]
+  },
+  {
+    "id": "cmskf5tp2000jhz9cpbpv01vd",
+    "question": "Au 1er janvier 2017, quelle île est la plus peuplée au monde ?",
+    "answer": "Java",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Honshū",
+      "Grande-Bretagne",
+      "Luçon"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0005hz8nl426lhn5",
+    "question": "Quelle est la capitale de l’Espagne ?",
+    "answer": "Madrid",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Barcelone",
+      "Séville",
+      "Valence"
+    ]
+  },
+  {
+    "id": "cmck8wdv4004nhzrocg49w9ho",
+    "question": "Dans quel pays se situe la ville de Suez, célèbre pour son canal ?",
+    "answer": "Égypte",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Turquie",
+      "Arabie Saoudite",
+      "Liban"
+    ]
+  },
+  {
+    "id": "cms8zw14c0021hzbtuvwslz24",
+    "question": "Quelle est la capitale française de la batellerie ?",
+    "answer": "Conflans-Sainte-Honorine",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Le Havre",
+      "Rouen",
+      "Nantes"
+    ]
+  },
+  {
+    "id": "cmvxsleb0000jhz8x9z0yrg4z",
+    "question": "Quel est le plus haut sommet du monde ?",
+    "answer": "L'Everest",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Le K2",
+      "Le Kilimandjaro",
+      "Le Mont Blanc"
+    ]
+  },
+  {
+    "id": "cmnxmklii006dhzl632updjo9",
+    "question": "Dans quel pays se trouve la plaine des Jarres, remarquable par la présence d'imposantes jarres de pierres antiques ?",
+    "answer": "Laos",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Chine",
+      "Pérou",
+      "Mexique"
+    ]
+  },
+  {
+    "id": "cmrzf3j5a001dhzbtv8pnrp9p",
+    "question": "Parmi les Grands Lacs d'Amérique du Nord, lequel est le seul à ne pas être situé sur la frontière canado-américaine ?",
+    "answer": "Michigan",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Supérieur",
+      "Ontario",
+      "Érié"
+    ]
+  },
+  {
+    "id": "cmigi4ubu000rhz0lhum5z37c",
+    "question": "Quel est le point culminant du Canada ?",
+    "answer": "Mont Logan",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Mont Denali",
+      "Mont Lucania",
+      "Mont Columbia"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0000hz8n3dxpajc2",
+    "question": "Quel est le plus grand continent du monde ?",
+    "answer": "L’Asie",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "L’Afrique",
+      "L’Amérique",
+      "L’Europe"
+    ]
+  },
+  {
+    "id": "cmm7kls9m000phzl60bjj8564",
+    "question": "Quel est le lieu habité le plus au nord de la planète ?",
+    "answer": "Alert",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Hammerfest",
+      "Longyearbyen",
+      "Pevek"
+    ]
+  },
+  {
+    "id": "cmnkdi8fp0057hzl6j4ywppe9",
+    "question": "À l'embouchure de quel fleuve se trouve la ville de Saint-Pétersbourg ?",
+    "answer": "Neva",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Volga",
+      "Léna",
+      "Ienisseï"
+    ]
+  },
+  {
+    "id": "cmigi1hno000phz0lrn8glbx8",
+    "question": "Quelle est la seule province canadienne à être officiellement bilingue ?",
+    "answer": "Nouveau-Brunswick",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Québec",
+      "Nunavut",
+      "Ontario"
+    ]
+  },
+  {
+    "id": "cmqu1b5ye009dhzl60x1hv847",
+    "question": "Quel est le point culminant de l'Inde ?",
+    "answer": "Kangchenjunga",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Everest",
+      "K2",
+      "Lhotse"
+    ]
+  },
+  {
+    "id": "cmck8wdv8008khzroztym15l2",
+    "question": "Quel fleuve côtier traverse trois régions différentes et se jette devant le Mont-Saint-Michel ?",
+    "answer": "Le Couesnon ",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "La Sélune",
+      "La Vire",
+      "La Rance"
+    ]
+  },
+  {
+    "id": "cmguwgjnv000ihzkm7axb4hdl",
+    "question": "Dans quel pays se trouve la ville de Marrakech ?",
+    "answer": "Maroc",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Égypte",
+      "Tunisie",
+      "Algérie"
+    ]
+  },
+  {
+    "id": "cmt5ejoj7001hhz9csiywz07a",
+    "question": "Quel est le plus grand océan du monde ?",
+    "answer": "Pacifique ",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Atlantique ",
+      "Indien",
+      "Arctique "
+    ]
+  },
+  {
+    "id": "cmgxmrhri0009hz0lyeke8xb6",
+    "question": "À quel pays correspond la Nouvelle-Hollande ?",
+    "answer": "L'Australie",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "La Belgique",
+      "Le Canada",
+      "L'Afrique du Sud"
+    ]
+  },
+  {
+    "id": "cmsjbpyeq000bhz9cm5hbdnz4",
+    "question": "À proximité de quel tripoint est situé la commune de Shengen ?",
+    "answer": "Allemagne France Luxembourg",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Allemagne Autriche Suisse",
+      "Allemagne Belgique Pays-bas",
+      "Autriche Italie Slovénie"
+    ]
+  },
+  {
+    "id": "cmgl36l4q000phzbjhybugsgc",
+    "question": "Quel pays possède plus de lacs que tout le reste du monde réuni ?",
+    "answer": "Canada",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Etats-Unis",
+      "Finlande",
+      "Russie"
+    ]
+  },
+  {
+    "id": "cmguwgjnu000chzkmzqzb6on6",
+    "question": "Quel est le plus grand océan du monde ?",
+    "answer": "Océan Pacifique",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Océan Atlantique",
+      "Océan Indien",
+      "Océan Arctique"
+    ]
+  },
+  {
+    "id": "cmn0fwvoe002vhzl6aki6x4vj",
+    "question": "Quel est le cap situé le plus au sud-ouest du continent australien, que franchissent les marins partis pour un tour du monde ?",
+    "answer": "Cap Leeuwin",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Cap de Bonne-Espérance",
+      "Cap Horn",
+      "Cap Reinga"
+    ]
+  },
+  {
+    "id": "cmn4cdbif0035hzl67n622mcv",
+    "question": "Dans quel pays d'Amérique du Sud se trouve l'Aconcagua, qui culmine à 6 962 m ?",
+    "answer": "Argentine",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Chili",
+      "Pérou",
+      "Bolivie"
+    ]
+  },
+  {
+    "id": "cmgqnx0530017hz95bn5nr0g5",
+    "question": "De combien de Lands est composé l'état Allemand ?",
+    "answer": "16",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "11",
+      "21",
+      "26"
+    ]
+  },
+  {
+    "id": "cmw0n2jqo000vhz8x52b3pp95",
+    "question": "Quel fleuve d'Europe traverse ou longe dix pays, de la Forêt-Noire allemande à la mer Noire ?",
+    "answer": "Le Danube",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Le Rhin",
+      "La Volga",
+      "Le Dniepr"
+    ]
+  },
+  {
+    "id": "cmguxjmlc000dhz8nvqj7rrkp",
+    "question": "Quel est le point émergé le plus bas de la surface du globe ?",
+    "answer": "La mer Morte",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "La vallée de la Mort",
+      "Le lac Baïkal",
+      "La dépression de Danakil"
+    ]
+  },
+  {
+    "id": "cmck8wdv8008bhzro9vv4f0l2",
+    "question": "Quel est l’exutoire de la rivière Mayenne, c’est-à-dire le cours d’eau dans lequel elle se jette ?",
+    "answer": "La Maine",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "La Loire",
+      "La Sarthe",
+      "L’Erdre"
+    ]
+  },
+  {
+    "id": "cmnabkr6b004fhzl6ktqu5tei",
+    "question": "Où se situent les plus grandes marées en France ?",
+    "answer": "Mont-Saint-Michel",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Saint-Malo",
+      "Brest",
+      "Biarritz"
+    ]
+  },
+  {
+    "id": "cmck8wdv7007rhzrorgt313ka",
+    "question": "Parmi ces pays, lequel est frontalier à la France ?",
+    "answer": "Brésil",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Autriche",
+      "Danemark",
+      "Bulgarie"
+    ]
+  },
+  {
+    "id": "cmgxpicfy000bhz0lkduqjx9b",
+    "question": "Quel fleuve arrose Béziers ?",
+    "answer": "L'Orb",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "L'Hérault",
+      "Le Rhône",
+      "Le Tarn"
+    ]
+  },
+  {
+    "id": "cmsxol82r0017hz9c5oruxgta",
+    "question": "Dans quel État des États-Unis se situent les villes de Philadelphie et Pittsburgh ?",
+    "answer": "Pennsylvanie",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "New York",
+      "Ohio",
+      "Michigan"
+    ]
+  },
+  {
+    "id": "cmnkf2eja0059hzl67ee3iawp",
+    "question": "Quelle capitale nationale fut fondée en 1826 sous le nom de Bytown ?",
+    "answer": "Ottawa",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Canberra",
+      "Wellington",
+      "Nassau"
+    ]
+  },
+  {
+    "id": "cmck8wdv3003qhzrozp16swnf",
+    "question": "Dans quel océan se situe l’île de la Réunion ?",
+    "answer": "L'océan Indien",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "L'océan Antlantique",
+      "L'océan Pacifique",
+      "L'océan Austral"
+    ]
+  },
+  {
+    "id": "cmck8wdv8008ahzrod9woj8q6",
+    "question": "Quel est l’exutoire de la rivière Creuse, c’est-à-dire le cours d’eau dans lequel elle se jette ?",
+    "answer": "La Vienne",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "La Loire",
+      "La Gartempe",
+      "Le Cher"
+    ]
+  },
+  {
+    "id": "cmrjdcjgb0005hzbtwgy2e05j",
+    "question": "Quel est le gentilé des habitants de la ville du Caire, en Égype ?",
+    "answer": "Cairotes",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Cairois",
+      "Cairtois",
+      "Cairroussels"
+    ]
+  },
+  {
+    "id": "cmnw6jay30061hzl6m8vccy1u",
+    "question": "Quelles sont les deux principales rivières qui arrosent la ville de Fort-de-France ?",
+    "answer": "Madame et Monsieur",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Mère et Père",
+      "Sœur et Frère",
+      "Fille et Fils"
+    ]
+  },
+  {
+    "id": "cmhg618fy000lhz0lwv3qb3s2",
+    "question": "Quel est le seul pays dont le drapeau national a un motif spécifique et différent pour son recto ET son verso ?",
+    "answer": "Paraguay",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Pérou",
+      "Inde",
+      "Liechtenstein"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0004hz8nfse429kg",
+    "question": "Quel pays est surnommé le Pays du Soleil Levant ?",
+    "answer": "Japon",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Thaïlande",
+      "Chine",
+      "Inde"
+    ]
+  },
+  {
+    "id": "cmck8wdv3003thzroe5b3cz84",
+    "question": "Quelle est la superficie de l’île de la Réunion ?",
+    "answer": "2 512 km²",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "992 km²",
+      "2 150 km²",
+      "5 240 km²"
+    ]
+  },
+  {
+    "id": "cmj27u1o00035hz0l89crb1xg",
+    "question": "Dans quelle ville se trouve le Cégep de Sainte-Foy?",
+    "answer": "Québec",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Montréal",
+      "Trois-Rivières",
+      "Lévis"
+    ]
+  },
+  {
+    "id": "cml2dcwo2006nhz0lclzkqom5",
+    "question": "Dans quel pays se situe Uluru (Ayers Rock), sans doute le plus célèbre des inselbergs ?",
+    "answer": "Australie",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Etats-Unis",
+      "Argentine",
+      "Afrique-du-Sud"
+    ]
+  },
+  {
+    "id": "cmgtjsy2f001xhz95zypcrbk6",
+    "question": "Quelle est la ville de France la plus peuplée à ne pas être une préfecture ?",
+    "answer": "Reims",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Le Havre",
+      "Saint-Denis",
+      "Brest"
+    ]
+  },
+  {
+    "id": "cmr5f3xlo009thzl6b2bymq9s",
+    "question": "Dans quelle chaîne de montagnes se trouve le sommet appelé Aconcagua ?",
+    "answer": "Les Andes",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "L'Himalaya",
+      "Le Grand Caucase",
+      "La chaîne d'Alaska"
+    ]
+  },
+  {
+    "id": "cmd1c8aed0007hz3l0jouec9k",
+    "question": "Quel est le plus grand fleuve de Corse ?",
+    "answer": "Le Golo",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Le Tavignano",
+      "Le Taravo",
+      "Le Prunelli"
+    ]
+  },
+  {
+    "id": "cmck8wdv80083hzro6ubd8fvv",
+    "question": "Comment s'appelle le lac de plus de 8000 km², situé à la frontière du Pérou et de la Bolivie ?",
+    "answer": "Titicaca",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Maracaibo",
+      "Poopó",
+      "Atitlán"
+    ]
+  },
+  {
+    "id": "cmj3gmko8003fhz0ldh1fq1a9",
+    "question": "Sur quel continent se situe la terre Adélie ?",
+    "answer": "Antarctique",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Océanie",
+      "Afrique",
+      "Amérique"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0003hz8n82o1xe50",
+    "question": "Dans quel pays se trouve la Tour Eiffel ?",
+    "answer": "France",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "Belgique",
+      "Suisse",
+      "Italie"
+    ]
+  },
+  {
+    "id": "cmck8wdv8008dhzro8wk1usrc",
+    "question": "Quel est l’exutoire de la rivière Dordogne, c’est-à-dire le cours d’eau dans lequel elle se jette ?",
+    "answer": "L’estuaire de la Gironde",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "La Charente",
+      "L'Adour",
+      "Le Bassin d'Arcachon"
+    ]
+  },
+  {
+    "id": "cmguwgjnu000ahzkmnfmi3y5y",
+    "question": "Quelle est la capitale de l’Australie ?",
+    "answer": "Canberra",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane"
+    ]
+  },
+  {
+    "id": "cmnabpwyq004hhzl6szzn9ftg",
+    "question": "Comment est appelée la fosse la plus profonde connue dans l'océan ?",
+    "answer": "La Fosse des Mariannes",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "facile",
+    "badAnswers": [
+      "La Fosse des Tonga",
+      "La Fosse des Philippines",
+      "La Fosse du Japon"
+    ]
+  },
+  {
+    "id": "cmo1pegj20071hzl6cib9y6ch",
+    "question": "Sur quel territoire se trouve le Mont Logan, le plus haut sommet du Canada ?",
+    "answer": "Yukon",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Alaska",
+      "Nunavut",
+      "Territoires du Nord-Ouest"
+    ]
+  },
+  {
+    "id": "cmw22nh3m001dhz8xtjx8kfn3",
+    "question": "Quelle ville, inaugurée en 1960, est la capitale du Brésil ?",
+    "answer": "Brasília",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Rio de Janeiro",
+      "São Paulo",
+      "Salvador de Bahia"
+    ]
+  },
+  {
+    "id": "cmck8wdv8008chzro11e052ph",
+    "question": "Quel est l’exutoire de la rivière Drac, c’est-à-dire le cours d’eau dans lequel elle se jette ?",
+    "answer": "L’Isère",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "La Durance",
+      "Le Rhône",
+      "Le Giffre"
+    ]
+  },
+  {
+    "id": "cmksogrqa005thz0lms36ub6y",
+    "question": "Quel est le nom de la plus grande île du Japon ?",
+    "answer": "Honshū",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Hokkaidō",
+      "Kyūshū",
+      "Shikoku"
+    ]
+  },
+  {
+    "id": "cmkvnrv7s0065hz0luyq43oqv",
+    "question": "Quel est le plus grand pays d'Afrique en superficie ?",
+    "answer": "Algérie",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "République Démocratique du Congo",
+      "Soudan",
+      "Afrique du Sud"
+    ]
+  },
+  {
+    "id": "cmupr5ter0045hz9c981b02a8",
+    "question": "Quelle île a pour autre nom \"l'île de Beauté\" ?",
+    "answer": "La Corse",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "La Sardaigne",
+      "Majorque",
+      "La Sicile"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0007hz8nf62e2dkk",
+    "question": "Dans les eaux de quel pays se trouve la Grande Barrière de corail ?",
+    "answer": "Australie",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Nouvelle-Zélande",
+      "Indonésie",
+      "Philippines"
+    ]
+  },
+  {
+    "id": "cmvuxh2uk001rhz84stinpfbz",
+    "question": "Sur quels continents la ville d'Istanbul s'étend-elle, de part et d'autre du Bosphore ?",
+    "answer": "Europe et Asie",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Europe et Afrique",
+      "Asie et Afrique",
+      "Asie et Océanie"
+    ]
+  },
+  {
+    "id": "cmgqo0r4n0019hz95ai10zhk3",
+    "question": "Combien de cantons forment la Confédération Suisse ?",
+    "answer": "26",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "11",
+      "16",
+      "21"
+    ]
+  },
+  {
+    "id": "cmjyeqopp004nhz0l2jayq5wn",
+    "question": "Quel parc national croate se compose de seize lacs reliés par des chutes d'eau ?",
+    "answer": "Plitvice",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Durmitor",
+      "Hohe Tauern",
+      "Białowieża"
+    ]
+  },
+  {
+    "id": "cmj975ai6003thz0lbrm6okbt",
+    "question": "Quel détroit, utilisé pour le trafic pétrolier, relie le golfe Persique et la mer d'Oman ?",
+    "answer": "Détroit d'Ormouz",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Détroit de Gibraltar",
+      "Canal de Suez",
+      "Détroit de Kassos"
+    ]
+  },
+  {
+    "id": "cmguxjmlc000ghz8ndulvn84l",
+    "question": "Quel détroit sépare l'Europe de l'Afrique ?",
+    "answer": "Détroit de Gibraltar",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Détroit de Béring",
+      "Canal de Suez",
+      "Canal de Panama"
+    ]
+  },
+  {
+    "id": "cmk34k5cj004rhz0l7tpqzupf",
+    "question": "Dans quel département français se trouve le célèbre Fort Boyard ?",
+    "answer": "Charente-Maritime",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Bouches-du-Rhône",
+      "Finistère",
+      "Landes"
+    ]
+  },
+  {
+    "id": "cmguxjmlc0009hz8nstdxz5q4",
+    "question": "Dans quel pays peut-on visiter le Machu Picchu ?",
+    "answer": "Pérou",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Mexique",
+      "Chili",
+      "Bolivie"
+    ]
+  },
+  {
+    "id": "cmguxjmlc000ehz8nfxz2azlq",
+    "question": "Quel pays enclavé est situé entre la France et l’Espagne ?",
+    "answer": "Andorre",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "normal",
+    "badAnswers": [
+      "Liechtenstein",
+      "Saint-Marin",
+      "Luxembourg"
+    ]
+  },
+  {
+    "id": "cmkbdluzc0055hz0lxy8x7nl2",
+    "question": "Quel golfe, reliant la mer Rouge à la mer d'Arabie, sépare le continent africain du continent asiatique ?",
+    "answer": "Golfe d'Aden",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Golfe Persique",
+      "Golfe de Suez",
+      "Golfe d'Aqaba"
+    ]
+  },
+  {
+    "id": "cmldkx43b007nhz0l5azilzy6",
+    "question": "Quelle ville, autrefois surnommée “le Versailles prussien”, abrite le parc de Sanssouci ?",
+    "answer": "Potsdam",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Vienne",
+      "Varsovie",
+      "Genève"
+    ]
+  },
+  {
+    "id": "cmlwqxft5000shzhy6bk2iigi",
+    "question": "Quelle est la langue officielle de l'archipel d'Åland ?",
+    "answer": "Suédois",
+    "categoryId": "cmgp9imnk001whzbjhmcc2bn8",
+    "category": "geographie",
+    "difficulty": "difficile",
+    "badAnswers": [
+      "Finnois",
+      "Russe",
+      "Danois"
+    ]
+  }
+]

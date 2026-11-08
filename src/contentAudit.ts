@@ -74,6 +74,9 @@ function hasAmbiguousFreeTextAnswer(value: string) {
 function auditPromptAndExplanation(question: QuestionSeed, issues: ContentAuditIssue[]) {
   const prompt = question.prompt.trim();
   const explanation = question.explanation.trim();
+  if (/\ben observant\b/i.test(prompt) && !isVisualQuestion(question)) {
+    addIssue(issues, question.id, 'error', 'enonce demandant une observation sans media');
+  }
   if (prompt.length < 18) addIssue(issues, question.id, 'warning', 'enonce trop court pour etre vraiment contextualise');
   if (prompt.length > 180) addIssue(issues, question.id, 'warning', 'enonce trop long, risque de lisibilite mobile');
   if (explanation.length < 38) addIssue(issues, question.id, 'warning', 'explication trop courte pour ancrer la reponse');

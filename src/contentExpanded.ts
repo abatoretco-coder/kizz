@@ -38,22 +38,22 @@ export const expandedQuestions: QuestionSeed[] = [
   ]),
 
   ...build('geography', 'geo', 1, [
-    ['Quelle est la capitale de l’Australie ?', ['Sydney', 'Melbourne', 'Canberra', 'Perth'], 2, 'Canberra fut choisie comme compromis entre Sydney et Melbourne.'],
-    ['Sur quel continent se trouve le désert du Sahara ?', ['Asie', 'Afrique', 'Amérique du Sud', 'Océanie'], 1, 'Le Sahara couvre une grande partie de l’Afrique du Nord.'],
-    ['Quel fleuve traverse Paris ?', ['La Loire', 'Le Rhône', 'La Seine', 'La Garonne'], 2, 'La Seine traverse Paris avant de rejoindre la Manche au Havre.'],
-    ['Quel pays a la forme d’une botte sur les cartes ?', ['Grèce', 'Italie', 'Portugal', 'Croatie'], 1, 'La péninsule italienne possède une silhouette caractéristique en forme de botte.'],
+    ['Quelle ville est la capitale de l’Australie, plutôt que ses grandes métropoles côtières ?', ['Sydney', 'Melbourne', 'Canberra', 'Perth'], 2, 'Canberra a été choisie comme capitale fédérale entre Sydney et Melbourne. Une capitale n’est pas forcément la ville la plus connue ni la plus peuplée d’un pays.'],
+    ['Dans quelle partie de l’Afrique s’étend principalement le Sahara ?', ['L’Afrique australe', 'L’Afrique du Nord', 'L’Afrique équatoriale', 'La région des Grands Lacs'], 1, 'Le Sahara s’étend au nord du continent, de la façade atlantique vers la mer Rouge. Au sud se trouve la bande de transition du Sahel.'],
+    ['Quel fleuve traverse Paris puis rejoint la Manche près du Havre ?', ['La Loire', 'Le Rhône', 'La Seine', 'La Garonne'], 2, 'La Seine traverse Paris, puis Rouen, avant son estuaire sur la Manche. La Loire et la Garonne appartiennent à d’autres bassins versants.'],
+    ['Quel pays européen possède une péninsule dont la silhouette évoque une botte ?', ['La Grèce', 'L’Italie', 'Le Portugal', 'La Croatie'], 1, 'La péninsule italienne forme la « botte » reconnaissable sur une carte. Elle est bordée notamment par la mer Tyrrhénienne à l’ouest et l’Adriatique à l’est.'],
   ]),
   ...build('geography', 'geo', 2, [
-    ['Quel détroit sépare l’Espagne du Maroc ?', ['Béring', 'Gibraltar', 'Ormuz', 'Malacca'], 1, 'Le détroit de Gibraltar relie l’Atlantique à la Méditerranée.'],
-    ['Quel est le plus long fleuve d’Europe ?', ['Danube', 'Rhin', 'Volga', 'Dniepr'], 2, 'La Volga parcourt environ 3 530 km avant de se jeter dans la mer Caspienne.'],
-    ['Dans quel pays se trouve le salar d’Uyuni ?', ['Chili', 'Pérou', 'Bolivie', 'Argentine'], 2, 'Le salar d’Uyuni est un immense désert de sel de l’Altiplano bolivien.'],
-    ['Quelle mer borde à la fois la Jordanie et Israël ?', ['Mer Noire', 'Mer Morte', 'Mer d’Aral', 'Mer Rouge uniquement'], 1, 'La mer Morte occupe une dépression entre Israël, la Cisjordanie et la Jordanie.'],
+    ['Quel détroit fait communiquer l’Atlantique et la Méditerranée entre l’Espagne et le Maroc ?', ['Le Bosphore', 'Gibraltar', 'Les Dardanelles', 'Le pas de Calais'], 1, 'Gibraltar est le passage maritime entre les deux rives. Le Bosphore et les Dardanelles se trouvent en Turquie ; le pas de Calais relie la Manche à la mer du Nord.'],
+    ['Quel fleuve européen se jette dans la mer Caspienne après avoir traversé une grande partie de la Russie ?', ['Le Danube', 'Le Rhin', 'La Volga', 'Le Dniepr'], 2, 'La Volga se termine par un delta sur la Caspienne, bassin fermé sans débouché naturel vers l’océan. Le Danube et le Dniepr rejoignent la mer Noire ; le Rhin, la mer du Nord.'],
+    ['Dans quel pays andin se trouve le salar d’Uyuni ?', ['Le Chili', 'Le Pérou', 'La Bolivie', 'L’Argentine'], 2, 'Le salar d’Uyuni est un désert de sel de l’Altiplano bolivien, dans le sud-ouest du pays. Le Chili et l’Argentine voisins possèdent aussi des paysages de salars.'],
+    ['Quel lac très salé se trouve dans la dépression du Jourdain, au sud du lac de Tibériade ?', ['Le lac de Van', 'La mer Morte', 'Le lac d’Ourmia', 'La mer Caspienne'], 1, 'La mer Morte est un lac fermé de la vallée du Jourdain. La mer Rouge, également bordée par Israël et la Jordanie, est un autre plan d’eau : citer seulement ces deux pays serait ambigu.'],
   ]),
   ...build('geography', 'geo', 3, [
-    ['Quelle capitale européenne est traversée par le Vltava ?', ['Prague', 'Vienne', 'Budapest', 'Bratislava'], 0, 'Le Vltava traverse Prague avant de rejoindre l’Elbe.'],
-    ['Quel pays possède l’enclave de Cabinda ?', ['Angola', 'Congo', 'Gabon', 'Cameroun'], 0, 'Cabinda est séparée du reste de l’Angola par une bande de territoire congolais.'],
-    ['Quel sommet est le point culminant de l’Afrique ?', ['Mont Kenya', 'Kilimandjaro', 'Ras Dashan', 'Toubkal'], 1, 'Le pic Uhuru du Kilimandjaro atteint 5 895 mètres en Tanzanie.'],
-    ['Dans quel océan se trouve l’archipel des Kerguelen ?', ['Atlantique Nord', 'Indien austral', 'Pacifique Nord', 'Arctique'], 1, 'Les Kerguelen sont des îles françaises isolées du sud de l’océan Indien.'],
+    ['Quelle capitale est traversée par la Vltava, rivière qui rejoint ensuite l’Elbe ?', ['Prague', 'Vienne', 'Budapest', 'Bratislava'], 0, 'La Vltava traverse Prague. Vienne, Budapest et Bratislava sont situées sur le Danube : ces capitales ne partagent donc pas le même bassin fluvial immédiat.'],
+    ['À quel pays appartient Cabinda, territoire côtier séparé du reste du pays par la République démocratique du Congo ?', ['L’Angola', 'La République du Congo', 'Le Gabon', 'Le Cameroun'], 0, 'Cabinda est une exclave de l’Angola qui possède une façade atlantique. Une bande de territoire de la République démocratique du Congo la sépare de la partie principale de l’Angola.'],
+    ['Quel sommet africain se trouve en Tanzanie et domine le mont Kenya en altitude ?', ['Le mont Kenya', 'Le Kilimandjaro', 'Le Ras Dashan', 'Le Toubkal'], 1, 'Le Kilimandjaro est le point culminant de l’Afrique. Le mont Kenya est au Kenya, le Ras Dashan en Éthiopie et le Toubkal dans l’Atlas marocain.'],
+    ['Dans quel océan se trouve l’archipel français des Kerguelen, au sud de l’équateur ?', ['L’océan Atlantique', 'L’océan Indien', 'L’océan Pacifique', 'L’océan Arctique'], 1, 'Les Kerguelen se trouvent dans le sud de l’océan Indien et appartiennent aux Terres australes et antarctiques françaises. Elles ne sont pas situées sur le continent antarctique.'],
   ]),
 
   ...build('science', 'sci', 1, [
@@ -152,22 +152,22 @@ export const expandedQuestions: QuestionSeed[] = [
   ]),
 
   ...build('technology', 'tech', 1, [
-    ['Que signifie l’abréviation GPS ?', ['Global Positioning System', 'General Phone Service', 'Graphic Power Signal', 'Global Private Server'], 0, 'Le Global Positioning System calcule une position grâce à des satellites.'],
-    ['Quel composant affiche les images d’un ordinateur ?', ['Écran', 'Clavier', 'Routeur', 'Microphone'], 0, 'L’écran convertit le signal vidéo en une image visible.'],
-    ['À quoi sert un mot de passe ?', ['Identifier un fichier', 'Protéger un accès', 'Accélérer le Wi-Fi', 'Refroidir le processeur'], 1, 'Un mot de passe aide à vérifier l’identité d’une personne avant un accès.'],
-    ['Quel appareil distribue souvent le Wi-Fi à domicile ?', ['Routeur', 'Scanner', 'Projecteur', 'Onduleur'], 0, 'Le routeur relie le réseau local à Internet et peut fournir un accès Wi-Fi.'],
+    ['Quel système permet à un téléphone de déterminer sa position grâce à des satellites ?', ['GPS', 'GSM', 'NFC', 'Bluetooth'], 0, 'Le GPS reçoit des signaux satellites pour estimer une position. Cette réception ne nécessite pas Internet ; le téléchargement d’une carte ou d’un itinéraire peut, lui, nécessiter une connexion.'],
+    ['Quel périphérique de sortie affiche le résultat visuel du travail d’un ordinateur ?', ['Écran', 'Clavier', 'Souris', 'Microphone'], 0, 'L’écran restitue une image : c’est un périphérique de sortie. Le clavier, la souris et le microphone transmettent des informations à l’ordinateur : ce sont des périphériques d’entrée.'],
+    ['Lors d’une connexion à un compte, à quoi sert le mot de passe ?', ['Indiquer le nom public du compte', 'Prouver la connaissance d’un secret', 'Définir l’adresse du serveur', 'Choisir le format des fichiers'], 1, 'Le mot de passe est un secret utilisé pour authentifier l’accès. Il ne suffit pas à établir l’identité réelle de la personne qui le saisit, surtout si le secret a été partagé ou volé.'],
+    ['Quel équipement domestique combine souvent routeur et point d’accès Wi-Fi ?', ['Une box Internet', 'Un répéteur Wi-Fi simple', 'Un commutateur Ethernet simple', 'Un adaptateur CPL sans Wi-Fi'], 0, 'Une box combine généralement plusieurs fonctions, dont le routage et un point d’accès Wi-Fi. Un routeur seul n’émet pas nécessairement de réseau sans fil.'],
   ]),
   ...build('technology', 'tech', 2, [
-    ['Que chiffre HTTPS entre un navigateur et un site ?', ['La communication réseau', 'L’écran', 'Le processeur', 'Le clavier'], 0, 'HTTPS utilise TLS pour protéger les données échangées et authentifier le serveur.'],
-    ['Quel format est couramment utilisé pour échanger des données structurées sur le Web ?', ['JSON', 'JPEG', 'MP3', 'EXE'], 0, 'JSON représente des objets, tableaux et valeurs dans un format textuel.'],
-    ['Que fait une sauvegarde incrémentielle ?', ['Copie tout à chaque fois', 'Copie les changements depuis la dernière sauvegarde', 'Supprime les doublons seulement', 'Compresse la mémoire vive'], 1, 'Elle ne copie que les données modifiées depuis la précédente sauvegarde.'],
-    ['Quel composant exécute principalement les instructions d’un programme ?', ['CPU', 'SSD', 'Écran', 'Modem'], 0, 'Le processeur central exécute les instructions et coordonne les calculs.'],
+    ['Que protège principalement HTTPS lorsque tu consultes un site ?', ['Les données échangées pendant leur transport', 'Tous les fichiers déjà présents sur le téléphone', 'La fiabilité de chaque affirmation du site', 'L’anonymat du visiteur auprès du site'], 0, 'HTTPS s’appuie sur TLS pour protéger les échanges et authentifier le serveur. Un site frauduleux peut aussi utiliser HTTPS : la connexion chiffrée ne garantit pas l’honnêteté du contenu.'],
+    ['Quel format textuel représente des objets et des tableaux avec une syntaxe issue de JavaScript ?', ['JSON', 'XML', 'CSV', 'YAML'], 0, 'JSON représente des objets, tableaux et valeurs dans du texte. XML, CSV et YAML sont aussi des formats d’échange, mais ils suivent d’autres syntaxes.'],
+    ['Après une sauvegarde complète, que copie une sauvegarde incrémentielle ?', ['Tous les fichiers, modifiés ou non', 'Les changements depuis la dernière sauvegarde', 'Les changements depuis la dernière sauvegarde complète', 'Uniquement la liste des dossiers'], 1, 'L’incrémentielle copie les changements depuis la sauvegarde précédente. La différentielle repart de la dernière sauvegarde complète : leurs restaurations ne reposent donc pas sur les mêmes ensembles de copies.'],
+    ['Quel composant interprète et exécute les instructions générales d’un programme ?', ['Le processeur central (CPU)', 'La mémoire vive (RAM)', 'Le stockage (SSD)', 'La carte réseau'], 0, 'Le CPU exécute les instructions générales. La RAM conserve les données de travail et le SSD les fichiers durables ; la carte réseau prend en charge les communications.'],
   ]),
   ...build('technology', 'tech', 3, [
-    ['Quel protocole traduit généralement un nom de domaine en adresse IP ?', ['DNS', 'SSH', 'SMTP', 'NTP'], 0, 'Le DNS résout les noms lisibles en adresses utilisées sur le réseau.'],
-    ['Quelle structure de données suit le principe dernier entré, premier sorti ?', ['Pile', 'File', 'Arbre', 'Graphe'], 0, 'Une pile suit le principe LIFO : le dernier élément ajouté sort en premier.'],
-    ['Quel type de chiffrement utilise une paire de clés publique et privée ?', ['Asymétrique', 'Symétrique', 'Par substitution simple', 'Compression sans perte'], 0, 'La cryptographie asymétrique sépare la clé publique de la clé privée.'],
-    ['Dans une base relationnelle, quelle clé identifie une ligne de façon unique ?', ['Clé primaire', 'Clé étrangère', 'Index partiel', 'Vue'], 0, 'La clé primaire impose un identifiant unique à chaque enregistrement.'],
+    ['Quel service résout un nom comme exemple.fr en une adresse IP ?', ['DNS', 'DHCP', 'SMTP', 'NTP'], 0, 'Le DNS associe notamment des noms de domaine à des adresses IP. DHCP attribue une configuration réseau, SMTP transporte du courrier et NTP synchronise les horloges.'],
+    ['Pour vérifier des parenthèses imbriquées, quelle structure permet de refermer d’abord la dernière parenthèse ouverte ?', ['Une pile', 'Une file FIFO', 'Un tas de priorité minimale', 'Une table de hachage sans ordre'], 0, 'Une pile garde les ouvertures dans l’ordre LIFO : la dernière ajoutée est la première retirée. Ce mécanisme permet de comparer chaque fermeture à la bonne ouverture, même lorsque les paires sont imbriquées.'],
+    ['Alice veut recevoir un message chiffré grâce à sa paire de clés. Quelle clé doit rester secrète ?', ['Sa clé privée', 'Sa clé publique', 'Les deux clés doivent être publiées', 'Aucune des deux clés'], 0, 'Dans ce cas de chiffrement asymétrique, on chiffre pour Alice avec sa clé publique. Elle utilise sa clé privée pour déchiffrer : cette dernière ne doit donc pas être diffusée.'],
+    ['Dans une table de commandes, quel dispositif peut identifier une ligne par le couple numéro de commande et numéro de ligne ?', ['Une clé primaire composite', 'Une clé étrangère sur le numéro de commande seul', 'Un index non unique sur les deux numéros', 'Une valeur par défaut sur le numéro de ligne'], 0, 'Une clé primaire composite impose l’unicité du couple et interdit les valeurs nulles. Chaque numéro peut se répéter séparément, mais pas la même combinaison : les deux colonnes identifient ensemble la ligne.'],
   ]),
 
   ...build('cinema', 'cin', 1, [

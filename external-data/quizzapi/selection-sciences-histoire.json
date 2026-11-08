@@ -1,0 +1,480 @@
+[
+  {
+    "sourceId": "cmck8wdv5005uhzrokyq0jo91",
+    "explanation": "La distance moyenne Terre-Lune est d’environ 384 400 km. L’orbite est elliptique : cette distance varie, et le nombre donné n’est donc pas une mesure constante.",
+    "topicId": "astronomy",
+    "learnMoreUrl": "https://science.nasa.gov/moon/top-moon-questions/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmck8wdv5005whzromlwzsru1",
+    "explanation": "La masse reste de 60 kg, car la quantité de matière ne change pas. Sur la Lune, le poids, qui est une force mesurée en newtons, est environ six fois plus faible.",
+    "prompt": "Une personne a une masse de 60 kg sur Terre. Quelle est sa masse sur la Lune ?",
+    "choices": [
+      "Elle reste de 60 kg",
+      "Elle devient de 10 kg",
+      "Elle devient de 360 kg",
+      "Elle devient nulle"
+    ],
+    "answerIndex": 0,
+    "topicId": "science",
+    "tags": [
+      "physique"
+    ],
+    "difficulty": 1,
+    "learnMoreUrl": "https://science.nasa.gov/moon/top-moon-questions/"
+  },
+  {
+    "sourceId": "cmoczvuaa007lhzl660yazr0d",
+    "explanation": "Une pente de 6 % correspond à 6 m de dénivelé pour 100 m horizontaux. Sur 500 m horizontaux, le dénivelé est donc de 500 × 0,06 = 30 m.",
+    "tags": [
+      "physique"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmlmfuyp1000ahzhywjjaw5rn",
+    "explanation": "Phobos et Deimos sont les deux satellites naturels connus de Mars. Ce sont de petits corps, très différents des grandes lunes de Jupiter ou de Saturne.",
+    "topicId": "astronomy",
+    "learnMoreUrl": "https://science.nasa.gov/solar-system/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmmt8eycb0021hzl6t58hhpzw",
+    "explanation": "La troposphère est la couche de l’atmosphère au contact du sol. C’est là que se produisent la plupart des phénomènes météorologiques ; la stratosphère se trouve au-dessus.",
+    "tags": [
+      "terre"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmkznver3006dhz0l56r08o00",
+    "explanation": "Les perturbations de l’orbite d’Uranus ont permis de prévoir la position de Neptune, observée en 1846. Des observations antérieures existaient sans identification comme planète.",
+    "topicId": "astronomy",
+    "learnMoreUrl": "https://science.nasa.gov/solar-system/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmck8wdv8008mhzro37473wvk",
+    "explanation": "Ganymède est un satellite de Jupiter et la plus grande lune du Système solaire par son diamètre. Titan appartient à Saturne ; Europe est une autre lune de Jupiter.",
+    "prompt": "Quelle lune du Système solaire possède le plus grand diamètre ?",
+    "topicId": "astronomy",
+    "learnMoreUrl": "https://science.nasa.gov/solar-system/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmgqehvxt000phz95299eqjva",
+    "explanation": "Un lahar est un écoulement de boue mêlant eau et matériaux volcaniques. Il se distingue d’une coulée de lave, constituée de roche fondue.",
+    "tags": [
+      "geologie"
+    ]
+  },
+  {
+    "sourceId": "cmvnw2xv9000dhz84db614l6s",
+    "explanation": "L’axe terrestre est incliné : au cours de la révolution autour du Soleil, chaque hémisphère reçoit des durées et des angles d’éclairement différents. Les saisons sont opposées entre les deux hémisphères.",
+    "topicId": "astronomy",
+    "difficulty": 1,
+    "learnMoreUrl": "https://science.nasa.gov/solar-system/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmj4dkj1m003lhz0lq0dgmahw",
+    "explanation": "Les érythrocytes sont les globules rouges. Ils transportent notamment l’oxygène grâce à l’hémoglobine ; les globules blancs et les plaquettes ont d’autres fonctions.",
+    "tags": [
+      "biologie"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmlce58kt007bhz0lpkbgmjnt",
+    "explanation": "La Terre passe au périhélie, le point de son orbite le plus proche du Soleil, au début de janvier. Les saisons dépendent surtout de l’inclinaison de l’axe terrestre, pas de cette variation de distance.",
+    "prompt": "À quelle période de l’année la Terre passe-t-elle au plus près du Soleil ?",
+    "topicId": "astronomy",
+    "learnMoreUrl": "https://science.nasa.gov/solar-system/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmkbcl93g0051hz0lb3quoit3",
+    "explanation": "L’entomologie étudie les insectes. Les araignées sont des arachnides : malgré leur petite taille, elles n’appartiennent pas au groupe des insectes.",
+    "tags": [
+      "biologie"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmck8wdv5005thzrognpaaoe4",
+    "explanation": "La révolution de la Lune par rapport aux étoiles dure environ 27,3 jours. Le retour d’une nouvelle lune à la suivante dure environ 29,5 jours, car la Terre avance aussi autour du Soleil.",
+    "prompt": "Quelle est la durée approximative de la révolution de la Lune autour de la Terre, par rapport aux étoiles ?",
+    "choices": [
+      "27,3 jours",
+      "29,5 jours",
+      "24 heures",
+      "365,25 jours"
+    ],
+    "answerIndex": 0,
+    "topicId": "astronomy",
+    "learnMoreUrl": "https://science.nasa.gov/moon/top-moon-questions/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmgqbnwh80003hz95bk6a4jlq",
+    "explanation": "Les quatre satellites galiléens sont Io, Europe, Ganymède et Callisto. Jupiter possède d’autres lunes : le nombre quatre désigne ce groupe historique, pas l’ensemble de ses satellites.",
+    "topicId": "astronomy",
+    "learnMoreUrl": "https://science.nasa.gov/solar-system/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmi99zwpo000nhz0l0m50e86k",
+    "explanation": "Le principe d’incertitude d’Heisenberg relie les dispersions de position et de quantité de mouvement. Il exprime une limite quantique, pas seulement un défaut de précision des appareils.",
+    "tags": [
+      "physique"
+    ]
+  },
+  {
+    "sourceId": "cmguxf7lg0009hz4w0xam4fwo",
+    "explanation": "Dans le vide, la lumière se propage à environ 300 000 km/s. Cette valeur concerne le vide ; dans un milieu comme l’eau ou le verre, sa vitesse de propagation est plus faible.",
+    "tags": [
+      "physique"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmtg2h57n002thz9czito5o1m",
+    "explanation": "Vénus met environ 243 jours terrestres à tourner sur elle-même, contre environ 225 jours pour faire le tour du Soleil. Il faut distinguer cette rotation du jour solaire vénusien.",
+    "topicId": "astronomy",
+    "learnMoreUrl": "https://science.nasa.gov/solar-system/",
+    "tags": [
+      "astronomie",
+      "subtheme:astronomy:solar-system"
+    ]
+  },
+  {
+    "sourceId": "cmguxf7lg000dhz4wcwabhbpc",
+    "explanation": "Une réaction exothermique transfère de l’énergie thermique vers le milieu extérieur. Une réaction endothermique absorbe de l’énergie thermique ; un catalyseur joue un autre rôle.",
+    "tags": [
+      "chimie"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmck8wdv6006chzro3xv8h63u",
+    "explanation": "À vitesse constante, la distance parcourue est le produit de la vitesse par la durée : d = v × t. Les unités doivent être cohérentes, par exemple mètres, mètres par seconde et secondes.",
+    "prompt": "À vitesse constante v pendant une durée t, quelle relation donne la distance d parcourue ?",
+    "tags": [
+      "physique"
+    ],
+    "difficulty": 1,
+    "choices": [
+      "En multipliant la vitesse par la durée",
+      "En divisant la vitesse par la durée",
+      "En divisant la durée par la vitesse",
+      "En additionnant la vitesse et la durée"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "sourceId": "cmck8wdv6006ehzrokvnpre84",
+    "explanation": "Le périmètre d’un carré est quatre fois la longueur de son côté : 4 × 5 = 20 cm. Les 25 cm² correspondent à son aire, qui est une autre grandeur.",
+    "tags": [
+      "mathematiques"
+    ],
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmml1htpt001rhzl63h8jpowp",
+    "explanation": "Une clepsydre mesure une durée à l’aide d’un écoulement d’eau. Un sablier utilise du sable ; un hydromètre mesure une propriété d’un liquide, pas directement le temps.",
+    "prompt": "Comment appelle-t-on un instrument qui mesure le temps par l’écoulement de l’eau ?",
+    "tags": [
+      "physique"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmsgdj95a002vhzbt4nr9bicv",
+    "explanation": "La bissectrice partage un angle en deux angles de même mesure. La médiane relie un sommet au milieu du côté opposé ; la hauteur est perpendiculaire à ce côté.",
+    "tags": [
+      "mathematiques"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmoczhp8e007jhzl6fddx55op",
+    "explanation": "Une pente de 100 % signifie que le dénivelé est égal à la distance horizontale. Le rapport vaut 1, ce qui correspond à un angle de 45°, pas à une paroi verticale.",
+    "prompt": "Une pente de 100 % correspond à quel angle avec l’horizontale ?",
+    "tags": [
+      "physique"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmnhwgjba0055hzl6xtf35cc5",
+    "explanation": "Un kilomètre vaut 1 000 mètres. Pour une surface, il faut multiplier dans les deux directions : 1 km² = 1 000 × 1 000 m², soit un million de mètres carrés.",
+    "tags": [
+      "mathematiques"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmgqe688p000lhz95gqgbmv0t",
+    "explanation": "Le GEIPAN est un service du CNES qui recueille et analyse des témoignages de phénomènes aérospatiaux non identifiés. GEPAN est un ancien nom : le sigle actuel comporte un I.",
+    "prompt": "Quel service du CNES recueille et analyse les témoignages de phénomènes aérospatiaux non identifiés ?",
+    "choices": [
+      "GEIPAN",
+      "CERES",
+      "EUCLID",
+      "SWOT"
+    ],
+    "answerIndex": 0,
+    "tags": [
+      "physique"
+    ],
+    "learnMoreUrl": "https://cnes.fr/en/projects/geipan"
+  },
+  {
+    "sourceId": "cmguxf7lg0000hz4w093e8361",
+    "explanation": "La formule H₂O indique deux atomes d’hydrogène pour un atome d’oxygène. Il s’agit d’une formule moléculaire ; le symbole d’un élément chimique, comme O, désigne autre chose.",
+    "prompt": "Quelle est la formule chimique de l’eau ?",
+    "tags": [
+      "chimie"
+    ],
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmguxf7lg0007hz4w11i3k4dr",
+    "explanation": "La vaporisation est le passage de l’état liquide à l’état gazeux. Elle peut se produire par évaporation ou par ébullition ; la fusion correspond au passage du solide au liquide.",
+    "tags": [
+      "physique"
+    ],
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmck8wdv50060hzro11lepa5h",
+    "explanation": "En 1957, l’URSS place Spoutnik 1 en orbite : c’est le premier satellite artificiel de la Terre. Le premier vol humain dans l’espace et le premier pas sur la Lune ont lieu plus tard.",
+    "prompt": "En quelle année le premier satellite artificiel, Spoutnik 1, est-il placé en orbite ?",
+    "choices": [
+      "1957",
+      "1961",
+      "1969",
+      "1975"
+    ],
+    "answerIndex": 0,
+    "tags": [
+      "xxe",
+      "monde"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmih0ctjd0013hz0lyv7az61d",
+    "explanation": "Le némès est une coiffe de tissu rayé associée aux pharaons. L’uræus est le cobra dressé qui peut orner le front ; il ne désigne pas l’ensemble de la coiffe.",
+    "tags": [
+      "antiquite",
+      "monde"
+    ]
+  },
+  {
+    "sourceId": "cmmgf3orx001hhzl6ri9ml69g",
+    "explanation": "Louis XII meurt sans fils en 1515 et François Ier lui succède. Leurs liens familiaux appartiennent aux branches de la dynastie des Valois ; Henri II est le fils de François Ier.",
+    "tags": [
+      "france",
+      "renaissance"
+    ]
+  },
+  {
+    "sourceId": "cmguxt8tz000chze6hrnqxkrk",
+    "explanation": "L’assassinat de François-Ferdinand à Sarajevo le 28 juin 1914 déclenche la crise de juillet. C’est un événement déclencheur, à distinguer des causes multiples du conflit, dont les rivalités et les alliances.",
+    "prompt": "Quel événement de Sarajevo, en juin 1914, déclenche la crise qui mène à la Première Guerre mondiale ?",
+    "tags": [
+      "xxe",
+      "monde"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmguxt8u0000ehze6u5zztliy",
+    "explanation": "Le Code civil des Français est promulgué en 1804. Le Code pénal napoléonien date de 1810 : préciser l’année permet de distinguer deux codes différents.",
+    "prompt": "Quel code est promulgué sous Napoléon Bonaparte en 1804 ?",
+    "tags": [
+      "france",
+      "xixe"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cml2ff9o7006vhz0llsnh5lm3",
+    "explanation": "La ville portait le nom néerlandais de Nouvelle-Amsterdam avant la prise de contrôle anglaise de 1664. Elle reçoit alors le nom de New York.",
+    "tags": [
+      "monde",
+      "moderne"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmu19ftaj003nhz9ccwpoud4z",
+    "explanation": "Napoléon est exilé sur l’île d’Elbe en 1814, après sa première abdication. Son exil à Sainte-Hélène commence en 1815, après les Cent-Jours et Waterloo.",
+    "tags": [
+      "france",
+      "xixe"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmguxt8u0000dhze612k0r7m1",
+    "explanation": "Le traité de Tordesillas est signé en 1494 entre les couronnes espagnole et portugaise. Il fixe une ligne de partage de leurs prétentions, sans constituer un accord de l’ensemble des peuples concernés.",
+    "prompt": "Quel traité fixe en 1494 une ligne de partage des revendications espagnoles et portugaises sur les terres à découvrir ?",
+    "tags": [
+      "monde",
+      "moderne"
+    ]
+  },
+  {
+    "sourceId": "cmgqonud0001fhz95jk2vzaox",
+    "explanation": "Le porc-épic est un emblème de Louis XII, visible dans plusieurs décors royaux. La salamandre est, elle, associée à François Ier, son successeur.",
+    "tags": [
+      "france",
+      "renaissance"
+    ]
+  },
+  {
+    "sourceId": "cmguxt8tz0007hze6biage9uc",
+    "explanation": "Le traité de Versailles est signé avec l’Allemagne le 28 juin 1919. D’autres traités concernent d’autres vaincus, comme Trianon pour la Hongrie : Versailles ne résume pas tous les accords de paix.",
+    "prompt": "Quel traité de paix est signé le 28 juin 1919 entre l’Allemagne et les puissances alliées ?",
+    "tags": [
+      "xxe",
+      "monde"
+    ],
+    "learnMoreUrl": "https://www.chateauversailles.fr/decouvrir/histoire/grandes-dates/traite-versailles"
+  },
+  {
+    "sourceId": "cmguxt8u0000fhze6uyrrtgxd",
+    "explanation": "Tenochtitlán était la capitale des Mexicas, au cœur de l’Empire aztèque, sur le site de l’actuelle Mexico. La capitale de l’Empire inca était Cuzco, dans les Andes.",
+    "tags": [
+      "monde",
+      "moderne"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmoramgzq0089hzl61n3lp1de",
+    "explanation": "La première ligne du métro londonien ouvre en 1863. Elle fonctionne initialement avec des locomotives à vapeur ; les métros de Paris et de New York apparaissent plus tard.",
+    "tags": [
+      "monde",
+      "xixe"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmguxt8tz0001hze6mcn1l4qi",
+    "explanation": "Le premier voyage de Christophe Colomb atteint les Antilles en 1492. Le continent américain était déjà peuplé et les Scandinaves avaient atteint l’Amérique du Nord plusieurs siècles auparavant.",
+    "prompt": "En quelle année le premier voyage de Christophe Colomb atteint-il les Antilles ?",
+    "tags": [
+      "monde",
+      "moderne"
+    ],
+    "difficulty": 1
+  },
+  {
+    "sourceId": "cmnaeyria004phzl6doy66vpw",
+    "explanation": "Jeanne Barret embarque dans l’expédition de Bougainville au XVIIIe siècle et est reconnue comme la première femme à accomplir un tour du monde. Elle se fait passer pour un homme pour pouvoir embarquer.",
+    "tags": [
+      "france",
+      "moderne"
+    ],
+    "difficulty": 3
+  },
+  {
+    "sourceId": "cmjhh18nb0045hz0l2w5w87sf",
+    "explanation": "Niépce réalise le Point de vue du Gras depuis sa maison de Saint-Loup-de-Varennes, près de Chalon-sur-Saône. La commune précise évite de confondre le lieu de prise de vue avec la grande ville voisine.",
+    "prompt": "Dans quelle commune Nicéphore Niépce réalise-t-il le Point de vue du Gras, la plus ancienne photographie conservée ?",
+    "choices": [
+      "Saint-Loup-de-Varennes",
+      "Chalon-sur-Saône",
+      "Dijon",
+      "Beaune"
+    ],
+    "answerIndex": 0,
+    "tags": [
+      "france",
+      "xixe"
+    ],
+    "learnMoreUrl": "https://archivesniepce.com/index.php/la-premiere-photographie"
+  },
+  {
+    "sourceId": "cmtt0ny850033hz9c5m8x8gy9",
+    "explanation": "La Méduse est la frégate dont le naufrage en 1816 inspire le tableau de Géricault. Le titre renvoie donc à un navire réel, et non à la créature mythologique du même nom.",
+    "tags": [
+      "france",
+      "xixe"
+    ]
+  },
+  {
+    "sourceId": "cmm6dgxeg000bhzl6b5ke1s76",
+    "explanation": "L’Empire byzantin prolonge l’Empire romain d’Orient, avec Constantinople pour capitale. Le nom « byzantin » est une appellation historique postérieure, pas le nom que ses habitants donnaient à leur État.",
+    "tags": [
+      "monde",
+      "moyen-age"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmck8wdut002nhzrolt819hvh",
+    "explanation": "Des systèmes d’écriture apparaissent en Mésopotamie à la fin du IVe millénaire avant notre ère, vers 3300 av. J.-C. Cette date est approximative et ne désigne pas une invention unique partout dans le monde.",
+    "prompt": "Vers quelle date apparaissent les premières traces d’écriture en Mésopotamie ?",
+    "tags": [
+      "monde",
+      "antiquite"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmck8wdut002ohzrod1cggy3w",
+    "explanation": "Le Tribunal militaire international juge de grands responsables nazis à Nuremberg en 1945-1946. D’autres procès ont eu lieu ailleurs : l’énoncé précise donc le tribunal et la période.",
+    "prompt": "Dans quelle ville le Tribunal militaire international juge-t-il de grands responsables nazis en 1945-1946 ?",
+    "tags": [
+      "monde",
+      "xxe"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmn2vfp0x002zhzl69gzvd42k",
+    "explanation": "Charles VII est sacré à Reims en 1429, après la levée du siège d’Orléans. Orléans est donc liée à la campagne de Jeanne d’Arc, mais le sacre a lieu à Reims.",
+    "tags": [
+      "france",
+      "moyen-age"
+    ],
+    "difficulty": 2
+  },
+  {
+    "sourceId": "cmgqpf5si001jhz95x1drssj7",
+    "explanation": "Charlemagne devient roi des Francs en 768, d’abord aux côtés de son frère Carloman. Son couronnement comme empereur a lieu en 800 : ce sont deux étapes distinctes.",
+    "tags": [
+      "france",
+      "moyen-age"
+    ]
+  }
+]

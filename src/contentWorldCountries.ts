@@ -93,7 +93,7 @@ export const countryCapitalData: CountryCapital[] = [
   { country: 'Iran', capital: 'Téhéran', continent: 'asie' },
   { country: 'Irlande', capital: 'Dublin', continent: 'europe' },
   { country: 'Islande', capital: 'Reykjavik', continent: 'europe' },
-  { country: 'Israël', capital: 'Jérusalem', continent: 'asie', note: 'Le statut de Jérusalem est politiquement disputé ; beaucoup d’États maintiennent leurs ambassades à Tel-Aviv.' },
+  { country: 'Israël', capital: 'Jérusalem', continent: 'asie', note: 'La Knesset, parlement israélien, siège à Jérusalem. Le statut international de la ville est disputé : la question porte ici sur le lieu de cette institution.' },
   { country: 'Italie', capital: 'Rome', continent: 'europe' },
   { country: 'Jamaïque', capital: 'Kingston', continent: 'amerique' },
   { country: 'Japon', capital: 'Tokyo', continent: 'asie' },
@@ -177,9 +177,9 @@ export const countryCapitalData: CountryCapital[] = [
   { country: 'Somalie', capital: 'Mogadiscio', continent: 'afrique' },
   { country: 'Soudan', capital: 'Khartoum', continent: 'afrique' },
   { country: 'Soudan du Sud', capital: 'Djouba', continent: 'afrique' },
-  { country: 'Sri Lanka', capital: 'Sri Jayawardenepura Kotte', continent: 'asie' },
+  { country: 'Sri Lanka', capital: 'Sri Jayawardenepura Kotte', continent: 'asie', note: 'Sri Jayawardenepura Kotte accueille le Parlement du Sri Lanka. Colombo, toute proche, conserve de nombreuses fonctions économiques et administratives : la question précise donc le rôle législatif.' },
   { country: 'Suède', capital: 'Stockholm', continent: 'europe' },
-  { country: 'Suisse', capital: 'Berne', continent: 'europe' },
+  { country: 'Suisse', capital: 'Berne', continent: 'europe', note: 'Berne est la ville fédérale, siège des autorités fédérales et capitale de fait de la Suisse. Zurich et Genève ne remplissent pas ce rôle.' },
   { country: 'Suriname', capital: 'Paramaribo', continent: 'amerique' },
   { country: 'Syrie', capital: 'Damas', continent: 'asie' },
   { country: 'Tadjikistan', capital: 'Douchanbé', continent: 'asie' },
@@ -235,21 +235,45 @@ function capitalDifficulty(row: CountryCapital): Difficulty {
   return 3;
 }
 
-function choicesFrom<T extends CountryCapital>(rows: T[], index: number, selector: (row: T) => string) {
-  const correct = selector(rows[index]);
-  const choices = [correct];
-  let offset = 7;
-  while (choices.length < 4) {
-    const candidate = selector(rows[(index + offset) % rows.length]);
-    if (!choices.includes(candidate)) choices.push(candidate);
-    offset += 11;
-  }
-  return choices as [string, string, string, string];
+function distractorRows(row: CountryCapital, index: number, excludeHomonyms = false) {
+  const candidates = countryCapitalData.filter((candidate) => candidate.country !== row.country
+    && candidate.continent === row.continent
+    && (!excludeHomonyms || (!sameNameCapital(candidate) && !capitalNamePartOfCountry(candidate))));
+  const start = index % candidates.length;
+  return [...candidates.slice(start), ...candidates.slice(0, start)].slice(0, 3);
 }
 
-function explanationFor(row: CountryCapital) {
-  return row.note ?? `${row.capital} est la capitale associée au pays ${row.country} ; c’est le repère politique principal à relier à ce pays dans les atlas usuels.`;
+function choicesFrom(row: CountryCapital, index: number, selector: (row: CountryCapital) => string): [string, string, string, string] {
+  return [selector(row), ...distractorRows(row, index).map(selector)] as [string, string, string, string];
 }
+
+function explanationFor(row: CountryCapital, index: number) {
+  if (row.note) return row.note;
+  const other = distractorRows(row, index)[0];
+  return `${row.capital} est la capitale du pays « ${row.country} ». À distinguer de ${other.capital}, capitale du pays « ${other.country} ».`;
+}
+
+const preciseCapitalPrompts: Record<string, string> = {
+  'afrique-du-sud': 'Quelle ville est la capitale administrative de l’Afrique du Sud ?',
+  bolivie: 'Quelle ville est la capitale constitutionnelle de la Bolivie, distincte du siège du gouvernement à La Paz ?',
+  benin: 'Quelle ville est la capitale officielle du Bénin, tandis que Cotonou accueille de nombreuses institutions ?',
+  nauru: 'Quel district de Nauru accueille les principales institutions de cet État qui n’a pas de capitale officielle ?',
+  suisse: 'Quelle ville suisse porte le titre de ville fédérale et accueille les autorités fédérales ?',
+  'sri-lanka': 'Quelle ville est la capitale législative du Sri Lanka ?',
+  israel: 'Quelle ville abrite la Knesset, le parlement israélien ?',
+  palestine: 'Quelle ville l’État de Palestine revendique-t-il comme capitale ?',
+};
+
+const preciseCountryPrompts: Record<string, string> = {
+  'afrique-du-sud': 'De quel pays Pretoria est-elle la capitale administrative ?',
+  bolivie: 'De quel pays Sucre est-elle la capitale constitutionnelle, tandis que le gouvernement siège à La Paz ?',
+  benin: 'De quel pays Porto-Novo est-elle la capitale officielle ?',
+  nauru: 'Quel État insulaire du Pacifique a ses principales institutions dans le district de Yaren ?',
+  suisse: 'De quel pays Berne est-elle la ville fédérale ?',
+  'sri-lanka': 'De quel pays Sri Jayawardenepura Kotte est-elle la capitale législative ?',
+  israel: 'De quel État la Knesset, située à Jérusalem, est-elle le parlement ?',
+  palestine: 'Quel État revendique Jérusalem-Est comme capitale et possède de nombreuses institutions à Ramallah ?',
+};
 
 function sameNameCapital(row: CountryCapital) {
   return slug(row.capital) === slug(row.country);
@@ -273,25 +297,17 @@ function capitalContinentLabel(continent: CountryCapital['continent']) {
 }
 
 function choicesExcludingHomonyms(selector: (row: CountryCapital) => string, row: CountryCapital, index: number) {
-  const choices = [selector(row)];
-  let offset = 5;
-  while (choices.length < 4) {
-    const candidateRow = countryCapitalData[(index + offset) % countryCapitalData.length];
-    const candidate = selector(candidateRow);
-    if (!sameNameCapital(candidateRow) && !choices.includes(candidate)) choices.push(candidate);
-    offset += 9;
-  }
-  return choices as [string, string, string, string];
+  return [selector(row), ...distractorRows(row, index, true).map(selector)] as [string, string, string, string];
 }
 
 const capitalQuestions: QuestionSeed[] = countryCapitalData.map((row, index) => ({
   id: `world-capital-${slug(row.country)}`,
   topicId: 'geography',
   difficulty: capitalDifficulty(row),
-  prompt: sameNameCapital(row) ? `Pays du monde : quelle capitale ${capitalContinentLabel(row.continent)} porte exactement le nom de son pays ?` : capitalNamePartOfCountry(row) ? `Pays du monde : quelle capitale ${capitalContinentLabel(row.continent)} reprend une partie du nom de son pays ?` : `Pays du monde : pour ${row.country}, quelle ville est la capitale ?`,
-  choices: sameNameCapital(row) || capitalNamePartOfCountry(row) ? choicesExcludingHomonyms((item) => item.capital, row, index) : choicesFrom(countryCapitalData, index, (item) => item.capital),
+  prompt: preciseCapitalPrompts[slug(row.country)] ?? (sameNameCapital(row) ? `Pays du monde : quelle capitale ${capitalContinentLabel(row.continent)} porte exactement le nom de son pays ?` : capitalNamePartOfCountry(row) ? `Pays du monde : quelle capitale ${capitalContinentLabel(row.continent)} reprend une partie du nom de son pays ?` : `Quelle est la capitale du pays « ${row.country} » ?`),
+  choices: sameNameCapital(row) || capitalNamePartOfCountry(row) ? choicesExcludingHomonyms((item) => item.capital, row, index) : choicesFrom(row, index, (item) => item.capital),
   answerIndex: 0,
-  explanation: explanationFor(row),
+  explanation: explanationFor(row, index),
   tags: ['geography', 'capitales', 'pays-du-monde', 'coverage:world-countries', `continent:${row.continent}`],
   sourceLabel: 'Compilation Kizz d’après listes ONU/ISO et atlas usuels',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`${row.country} capitale`)}`,
@@ -301,10 +317,10 @@ const countryQuestions: QuestionSeed[] = countryCapitalData.map((row, index) => 
   id: `world-country-${slug(row.country)}`,
   topicId: 'geography',
   difficulty: capitalDifficulty(row),
-  prompt: sameNameCapital(row) ? `Pays du monde : quel pays ${countryContinentLabel(row.continent)} a une capitale homonyme ?` : slug(row.capital).includes(slug(row.country)) ? `Pays du monde : ${maskedCapital(row)} est la capitale de quel pays ?` : `Pays du monde : ${row.capital} est la capitale de quel pays ?`,
-  choices: sameNameCapital(row) ? choicesExcludingHomonyms((item) => item.country, row, index) : choicesFrom(countryCapitalData, index, (item) => item.country),
+  prompt: preciseCountryPrompts[slug(row.country)] ?? (sameNameCapital(row) ? `Pays du monde : quel pays ${countryContinentLabel(row.continent)} a une capitale homonyme ?` : slug(row.capital).includes(slug(row.country)) ? `Pays du monde : ${maskedCapital(row)} est la capitale de quel pays ?` : `${row.capital} est la capitale de quel pays ?`),
+  choices: sameNameCapital(row) ? choicesExcludingHomonyms((item) => item.country, row, index) : choicesFrom(row, index, (item) => item.country),
   answerIndex: 0,
-  explanation: explanationFor(row),
+  explanation: explanationFor(row, index),
   tags: ['geography', 'capitales', 'pays-du-monde', 'coverage:world-countries', `continent:${row.continent}`],
   sourceLabel: 'Compilation Kizz d’après listes ONU/ISO et atlas usuels',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`${row.capital} ${row.country}`)}`,

@@ -273,7 +273,7 @@ const mediumDepartmentCodeCodes = new Set([
 ]);
 
 function normalizedName(value: string) {
-  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/’/g, "'");
 }
 
 function regionChiefTownDifficulty(region: FranceRegion): Difficulty {
@@ -295,54 +295,72 @@ function departmentCodeDifficulty(department: FranceDepartment): Difficulty {
   return 3;
 }
 
-function choicesFrom<T>(rows: T[], index: number, selector: (row: T) => string) {
-  const correct = selector(rows[index]);
-  const choices = [correct];
-  let offset = 5;
-  while (choices.length < 4) {
-    const candidate = selector(rows[(index + offset) % rows.length]);
-    if (!choices.includes(candidate)) choices.push(candidate);
-    offset += 7;
-  }
-  return choices as [string, string, string, string];
+function departmentDistractors(department: FranceDepartment) {
+  const overseas = department.code.length === 3;
+  return franceDepartmentData
+    .filter((candidate) => candidate.code !== department.code && (candidate.code.length === 3) === overseas)
+    .sort((left, right) => Number(right.region === department.region) - Number(left.region === department.region)
+      || Math.abs(parseInt(left.code, 10) - parseInt(department.code, 10)) - Math.abs(parseInt(right.code, 10) - parseInt(department.code, 10))
+      || left.code.localeCompare(right.code))
+    .slice(0, 3);
 }
 
-const regionQuestions: QuestionSeed[] = franceRegionData.map((region, index) => ({
+function departmentChoices(department: FranceDepartment, selector: (row: FranceDepartment) => string): [string, string, string, string] {
+  return [selector(department), ...departmentDistractors(department).map(selector)] as [string, string, string, string];
+}
+
+function regionChoices(region: FranceRegion): [string, string, string, string] {
+  const localCities = franceDepartmentData.filter((department) => department.region === region.name).map((department) => department.chiefTown);
+  const regionalCities = franceRegionData.filter((candidate) => candidate.kind === region.kind).map((candidate) => candidate.chiefTown);
+  return [...new Set([region.chiefTown, ...localCities, ...regionalCities])].slice(0, 4) as [string, string, string, string];
+}
+
+function regionExplanation(region: FranceRegion) {
+  const other = franceDepartmentData.find((department) => department.region === region.name && department.chiefTown !== region.chiefTown);
+  return other
+    ? `${region.chiefTown} est le chef-lieu de la région ${region.name}. ${other.chiefTown} est le chef-lieu du département ${other.name} : département et région sont deux échelles différentes.`
+    : `${region.chiefTown} est le chef-lieu de la région ${region.name}. Le département correspondant a ici le même chef-lieu ; cela ne rend pas les notions de département et de région interchangeables.`;
+}
+
+const regionQuestions: QuestionSeed[] = franceRegionData.map((region) => ({
   id: `fr-region-cheflieu-${slug(region.name)}`,
   topicId: franceMapTopic.id,
   difficulty: regionChiefTownDifficulty(region),
-  prompt: `Régions de France : quel est le chef-lieu de la région ${region.name} ?`,
-  choices: choicesFrom(franceRegionData, index, (item) => item.chiefTown),
+  prompt: `Quel est le chef-lieu de la région « ${region.name} » ?`,
+  choices: regionChoices(region),
   answerIndex: 0,
-  explanation: `${region.chiefTown} est le chef-lieu de la région ${region.name}.`,
+  explanation: regionExplanation(region),
   tags: ['france', 'region', 'chef-lieu', 'coverage:france-regions', region.kind],
-  sourceLabel: 'Code officiel géographique / contenu original Kizz',
+  sourceLabel: 'Insee, Code officiel géographique 2026 — formulation Kizz',
+  sourceUrl: 'https://www.insee.fr/fr/information/8740222',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`région ${region.name}`)}`,
 }));
 
-const departmentChiefTownQuestions: QuestionSeed[] = franceDepartmentData.map((department, index) => ({
+const departmentChiefTownQuestions: QuestionSeed[] = franceDepartmentData.map((department) => ({
   id: `fr-dept-cheflieu-${department.code.toLowerCase()}`,
   topicId: franceMapTopic.id,
   difficulty: departmentChiefTownDifficulty(department),
-  prompt: department.name.includes(department.chiefTown) ? `Départements de France : quel est le chef-lieu du département ${department.code} ?` : `Départements de France : quel est le chef-lieu du département ${department.name} (${department.code}) ?`,
-  choices: choicesFrom(franceDepartmentData, index, (item) => item.chiefTown),
+  prompt: department.name.includes(department.chiefTown) ? `Quel est le chef-lieu du département ${department.code} ?` : `Quel est le chef-lieu du département ${department.code} (${department.name}) ?`,
+  choices: departmentChoices(department, (item) => item.chiefTown),
   answerIndex: 0,
-  explanation: `${department.chiefTown} est le chef-lieu du département ${department.name}, dans la région ${department.region}.`,
+  explanation: `${department.chiefTown} est le chef-lieu du département ${department.name} (${department.code}), dans la région ${department.region}. Le chef-lieu est la ville où se situe la préfecture.`,
   tags: ['france', 'departement', 'chef-lieu', 'coverage:france-departements-cheflieux'],
-  sourceLabel: 'Code officiel géographique / contenu original Kizz',
+  sourceLabel: 'Insee, Code officiel géographique 2026 — formulation Kizz',
+  sourceUrl: 'https://www.insee.fr/fr/information/8740222',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`département ${department.name}`)}`,
 }));
 
-const departmentCodeQuestions: QuestionSeed[] = franceDepartmentData.map((department, index) => ({
+const departmentCodeQuestions: QuestionSeed[] = franceDepartmentData.map((department) => ({
   id: `fr-dept-code-${department.code.toLowerCase()}`,
   topicId: franceMapTopic.id,
   difficulty: departmentCodeDifficulty(department),
-  prompt: `Départements de France : quel département porte le code ${department.code} ?`,
-  choices: choicesFrom(franceDepartmentData, index, (item) => item.name),
+  prompt: `Quel département porte le code ${department.code} ?`,
+  choices: departmentChoices(department, (item) => item.name),
   answerIndex: 0,
-  explanation: `Le code ${department.code} correspond au département ${department.name} ; son chef-lieu est ${department.chiefTown}.`,
+  explanation: `Le code ${department.code} correspond au département ${department.name}, dont le chef-lieu est ${department.chiefTown}. Ce code départemental est distinct du code postal à cinq chiffres d’une adresse.`,
   tags: ['france', 'departement', 'code-departement', 'coverage:france-departements'],
-  sourceLabel: 'Code officiel géographique / contenu original Kizz',
+  sourceLabel: 'Insee, Code officiel géographique 2026 — formulation Kizz',
+  sourceUrl: 'https://www.insee.fr/fr/information/8740222',
   learnMoreUrl: `https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(`département ${department.name}`)}`,
 }));
 

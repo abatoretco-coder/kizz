@@ -23,6 +23,9 @@ import { openTdbQuestions, openTdbTopics } from './generated/contentOpenTdb';
 import { scienceChemistryQuestions } from './contentScienceChemistry';
 import { formatBalanceQuestions } from './contentFormatBalance';
 import { visualImageExpansionQuestions } from './contentVisualImageExpansion';
+import { openQuizzGeoQuestions } from './contentOpenQuizzGeo';
+import { quizzApiGeoQuestions } from './contentQuizzApiGeo';
+import { quizzApiExpansionQuestions } from './contentQuizzApiExpansion';
 
 const retiredTopicIds = new Set(['daily']);
 
@@ -87,6 +90,9 @@ const rawQuestions: QuestionSeed[] = [
   ...geoMapQuestions,
   ...economyQuestions,
   ...franceMapQuestions,
+  ...openQuizzGeoQuestions,
+  ...quizzApiGeoQuestions,
+  ...quizzApiExpansionQuestions,
   ...gameStyleQuestions,
   ...quizShowExpansionQuestions,
   ...worldCountryQuestions,
@@ -162,6 +168,7 @@ function normalizedText(value: string) {
 }
 
 const difficultyOverrides: Partial<Record<string, QuestionSeed['difficulty']>> = {
+  'x-tech-3-01': 2,
   'paint-bank-036-work': 2,
   'paint-bank-037-artist': 3,
   'paint-bank-009-artist': 2,
@@ -185,6 +192,7 @@ const difficultyOverrides: Partial<Record<string, QuestionSeed['difficulty']>> =
 
 function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
   const difficulty = difficultyOverrides[question.id] ?? question.difficulty;
+  const hasReferenceImage = !!question.imageAsset || !!question.imageUrl || question.promptBlocks?.some((block) => block.type === 'image');
   const prompt = question.prompt
     .replace(/^Selectionne l image de (.+)\.$/, 'Sélectionne l’image de $1.')
     .replace(/^Quelle ville ou zone Grece est associee a ce repere architectural \?$/, 'Quelle ville ou zone de Grèce est associée à ce repère architectural ?')
@@ -195,8 +203,8 @@ function cleanGeneratedText(question: QuestionSeed): QuestionSeed {
     .replace('Quel rôle décrit le mieux', 'En observant ce portrait, quel rôle décrit le mieux')
     .replace('À quel espace historique rattache-t-on', 'En observant ce portrait, à quel espace historique rattache-t-on')
     .replace('Dans quelle période place-t-on surtout', 'En observant ce portrait, dans quelle période place-t-on surtout')
-    .replace('Dans quelle ville ou zone se trouve', 'En observant ce monument, dans quelle ville ou zone se trouve')
-    .replace('Dans quel pays se trouve', 'En observant ce monument, dans quel pays se trouve')
+    .replace('Dans quelle ville ou zone se trouve', (text) => hasReferenceImage ? 'En observant ce monument, dans quelle ville ou zone se trouve' : text)
+    .replace('Dans quel pays se trouve', (text) => hasReferenceImage ? 'En observant ce monument, dans quel pays se trouve' : text)
     .replace('Quelle ville ou zone correspond a ce repere architectural', 'En observant ce monument, quelle ville ou zone correspond à ce repère architectural')
     .replace('Quelle espece correspond a cet indice', 'En observant cette image, quelle espèce correspond aussi à cet indice')
     .replace('Quelle œuvre est associée à', 'En observant cette œuvre, quel titre est associé à')
@@ -243,6 +251,7 @@ function enrichSubthemeTags(question: QuestionSeed): QuestionSeed {
     if (question.type === 'map-point') tags.add('subtheme:france:map');
     else if (hasAny(tags, ['region', 'coverage:france-regions'])) tags.add('subtheme:france:regions');
     else if (hasAny(tags, ['departement', 'chef-lieu', 'code-departement', 'coverage:france-departements', 'coverage:france-departements-cheflieux'])) tags.add('subtheme:france:departments');
+    else if (hasAny(tags, ['culture-regionale', 'patrimoine', 'relief', 'fleuve', 'littoral', 'ile', 'delta', 'monument'])) tags.add('subtheme:france:landmarks');
     else tags.add('subtheme:france:admin');
   }
   if (question.topicId === 'history') {
@@ -257,7 +266,8 @@ function enrichSubthemeTags(question: QuestionSeed): QuestionSeed {
     if (!hasPrefix(tags, 'subtheme:history:')) tags.add('subtheme:history:world');
   }
   if (question.topicId === 'science') {
-    if (hasAny(tags, ['biologie', 'cellule', 'corps-humain'])) tags.add('subtheme:science:biology');
+    if (tags.has('mathematiques')) tags.add('subtheme:science:mathematics');
+    else if (hasAny(tags, ['biologie', 'cellule', 'corps-humain'])) tags.add('subtheme:science:biology');
     else if (tags.has('chimie')) tags.add('subtheme:science:chemistry');
     else if (hasAny(tags, ['terre', 'geologie'])) tags.add('subtheme:science:earth');
     else tags.add('subtheme:science:physics');
